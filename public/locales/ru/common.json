@@ -1,0 +1,90 @@
+{
+    "header": {
+        "description": "Неофициальная база данных для сервера Harbor C1 X1"
+    },
+    "navigation": {
+        "armorsets": "Комплекты Брони",
+        "skills": "Навыки",
+        "weapons": "Оружие",
+        "armor": "Броня",
+        "miscellaneous": "Разное"
+    },
+    "itemsPage": {
+        "searchPlaceholder": "Поиск предметов..."
+    },
+    "armorSetsPage": {
+        "searchPlaceholder": "Поиск комплектов брони...",
+        "name": "Название",
+        "physicalDefense": "Физическая защита",
+        "basePrice": "Базовая цена",
+        "parts": "Части",
+        "bonus": "Бонус",
+        "setBonus": "Бонус комплекта"
+    },
+    "skillsPage": {
+        "searchPlaceholder": "Поиск навыков..."
+    },
+    "itemDetails": {
+        "changed": "Этот предмет изменен на Harbor",
+        "new": "Этот предмет существует только на Harbor",
+        "partOfSets": "Входит в комплекты",
+        "armorType": "Тип брони",
+        "basePrice": "Базовая цена",
+        "pieces": "Части"
+    },
+    "skillDetails": {
+        "changed": "Этот навык изменен на Harbor",
+        "new": "Этот навык существует только на Harbor",
+        "level": "Уровень",
+        "levels": "Уровни"
+    },
+    "armorSetDetails": {
+        "loading": "Загрузка комплекта брони...",
+        "notFound": "Комплект брони не найден",
+        "totalPDef": "Общая физическая защита",
+        "basePrice": "Базовая цена",
+        "part": "Часть",
+        "pDef": "Физическая защита",
+        "crystalCount": "Количество кристаллов"
+    },
+    "pagination": {
+        "pageInfo": "Страница {{ current }} из {{ total }}"
+    },
+    "footer": {
+        "text": "Lineage II и весь связанный контент являются собственностью компании NCSOFT Corporation и её партнёров. Данная база данных предоставляется исключительно в информационных целях."
+    },
+    "filters": {
+        "filters": "Фильтры",
+        "viewMode": "Режим отображения",
+        "viewModeGrid": "Сетка",
+        "viewModeTable": "Таблица",
+        "armorType": "Тип брони",
+        "grade": "Грейд",
+        "weaponType": "Тип оружия",
+        "columns": "Колонки",
+        "onlyNewItems": "Только новые предметы",
+        "onlyChangedItems": "Только измененные предметы",
+        "onlyNewSkills": "Только новые навыки",
+        "onlyChangedSkills": "Только измененные навыки",
+        "mergeLevels": "Объединить уровни",
+        "bodyPart": "Часть тела"
+    },
+    "externalLinks": {
+        "elmoreLab": "Перейти на ElmoreLab",
+        "l2hub": "Перейти на L2hub"
+    },
+    "badge": {
+        "new": "НОВЫЙ",
+        "changed": "ИЗМЕНЕН"
+    },
+    "columns": {
+        "name": "Название",
+        "description": "Описание",
+        "crystal_type": "Грейд",
+        "physical_defense": "Физ. защита",
+        "magical_defense": "Маг. защита",
+        "physical_damage": "Физ. урон",
+        "magical_damage": "Маг. урон",
+        "attack_speed": "Скорость атаки"
+    }
+}

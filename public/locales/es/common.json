@@ -1,0 +1,90 @@
+{
+    "header": {
+        "description": "Base de datos no oficial para el servidor Harbor C1 X1"
+    },
+    "navigation": {
+        "armorsets": "Conjuntos de Armadura",
+        "skills": "Habilidades",
+        "weapons": "Armas",
+        "armor": "Armadura",
+        "miscellaneous": "Diversos"
+    },
+    "itemsPage": {
+        "searchPlaceholder": "Buscar objetos..."
+    },
+    "armorSetsPage": {
+        "searchPlaceholder": "Buscar conjuntos de armadura...",
+        "name": "Nombre",
+        "physicalDefense": "Defensa Física",
+        "basePrice": "Precio Base",
+        "parts": "Partes",
+        "bonus": "Bonificación",
+        "setBonus": "Bonificación de Conjunto"
+    },
+    "skillsPage": {
+        "searchPlaceholder": "Buscar habilidades..."
+    },
+    "itemDetails": {
+        "changed": "Este objeto ha sido modificado en Harbor",
+        "new": "Este objeto solo existe en Harbor",
+        "partOfSets": "Parte de Conjuntos de Armadura",
+        "armorType": "Tipo de Armadura",
+        "basePrice": "Precio Base",
+        "pieces": "Partes"
+    },
+    "skillDetails": {
+        "changed": "Esta habilidad ha sido modificada en Harbor",
+        "new": "Esta habilidad existe en Harbor",
+        "level": "Nivel",
+        "levels": "Niveles"
+    },
+    "armorSetDetails": {
+        "loading": "Cargando conjunto de armadura...",
+        "notFound": "Conjunto de armadura no encontrado",
+        "totalPDef": "Defensa Física Total",
+        "basePrice": "Precio Base",
+        "part": "Parte",
+        "pDef": "Defensa Física",
+        "crystalCount": "Cantidad de Cristal"
+    },
+    "pagination": {
+        "pageInfo": "Página {{ current }} de {{ total }}"
+    },
+    "footer": {
+        "text": "Lineage II y todos los contenidos asociados son propiedad de NCSOFT Corporation y sus socios. Esta base de datos se proporciona con fines informativos únicamente."
+    },
+    "filters": {
+        "filters": "Filtros",
+        "viewMode": "Modo de Vista",
+        "viewModeGrid": "Cuadrícula",
+        "viewModeTable": "Tabla",
+        "armorType": "Tipo de Armadura",
+        "grade": "Grado",
+        "weaponType": "Tipo de Arma",
+        "columns": "Columnas",
+        "onlyNewItems": "Solo nuevos objetos",
+        "onlyChangedItems": "Solo objetos modificados",
+        "onlyNewSkills": "Solo nuevas habilidades",
+        "onlyChangedSkills": "Solo habilidades modificadas",
+        "mergeLevels": "Fusionar niveles",
+        "bodyPart": "Parte del cuerpo"
+    },
+    "externalLinks": {
+        "elmoreLab": "Ver en ElmoreLab",
+        "l2hub": "Ver en L2hub"
+    },
+    "badge": {
+        "new": "NUEVO",
+        "changed": "MODIFICADO"
+    },
+    "columns": {
+        "name": "Nombre",
+        "description": "Descripción",
+        "crystal_type": "Grado",
+        "physical_defense": "P. Def",
+        "magical_defense": "M. Def",
+        "physical_damage": "P. Atk",
+        "magical_damage": "M. Atk",
+        "attack_speed": "Atk Spd"
+    }
+}

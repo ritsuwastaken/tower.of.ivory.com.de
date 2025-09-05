@@ -1,0 +1,91 @@
+{
+    "header": {
+        "description": "Unofficial database for Harbor C1 X1 server"
+    },
+    "navigation": {
+        "armorsets": "Armor Sets",
+        "skills": "Skills",
+        "weapons": "Weapons",
+        "armor": "Armor",
+        "miscellaneous": "Miscellaneous"
+    },
+    "itemsPage": {
+        "searchPlaceholder": "Search items..."
+    },
+    "armorSetsPage": {
+        "searchPlaceholder": "Search armor sets...",
+        "name": "Name",
+        "physicalDefense": "Physical Defense",
+        "basePrice": "Base Price",
+        "parts": "Parts",
+        "bonus": "Bonus",
+        "setBonus": "Set Bonus"
+    },
+    "skillsPage": {
+        "searchPlaceholder": "Search skills..."
+    },
+    "itemDetails": {
+        "changed": "This item is changed on Harbor",
+        "new": "This item only exists on Harbor",
+        "partOfSets": "Part of Sets",
+        "armorType": "Armor Type",
+        "basePrice": "Base Price",
+        "pieces": "Pieces"
+    },
+    "skillDetails": {
+        "changed": "This skill is changed on Harbor",
+        "new": "This skill only exists on Harbor",
+        "level": "Level",
+        "levels": "Levels"
+    },
+    "pagination": {
+        "pageInfo": "Page {{ current }} of {{ total }}"
+    },
+    "footer": {
+        "text": "Lineage II and all associated content is property of NCSOFT Corporation and their partners. This database is provided for informational purposes only."
+    },
+    "filters": {
+        "filters": "Filters",
+        "viewMode": "View Mode",
+        "viewModeGrid": "Grid",
+        "viewModeTable": "Table",
+        "armorType": "Armor Type",
+        "grade": "Grade",
+        "weaponType": "Weapon Type",
+        "columns": "Columns",
+        "onlyNewItems": "Only new items",
+        "onlyChangedItems": "Only changed items",
+        "onlyNewSkills": "Only new skills",
+        "onlyChangedSkills": "Only changed skills",
+        "mergeLevels": "Merge levels",
+        "bodyPart": "Body Part"
+    },
+    "armorSetDetails": {
+        "loading": "Loading armor set...",
+        "notFound": "Armor set not found",
+        "totalPDef": "Total P.Def",
+        "basePrice": "Base Price",
+        "part": "Part",
+        "pDef": "P.Def",
+        "crystalCount": "Crystal Count",
+        "unnamedItem": "Unnamed item with id"
+    },
+    "externalLinks": {
+        "elmoreLab": "View on ElmoreLab",
+        "l2hub": "View on L2hub"
+    },
+    "badge": {
+        "new": "NEW",
+        "changed": "CHANGED"
+    },
+    "columns": {
+        "name": "Name",
+        "description": "Description",
+        "crystal_type": "Grade",
+        "physical_defense": "P. Def",
+        "magical_defense": "M. Def",
+        "physical_damage": "P. Atk",
+        "magical_damage": "M. Atk",
+        "attack_speed": "Atk Spd"
+    }
+}

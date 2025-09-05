@@ -1,0 +1,91 @@
+{
+    "header": {
+        "description": "Inoffizielle Datenbank für den Harbor C1 X1-Server"
+    },
+    "navigation": {
+        "armorsets": "Rüstungssets",
+        "skills": "Fertigkeiten",
+        "weapons": "Waffen",
+        "armor": "Rüstung",
+        "miscellaneous": "Verschiedenes"
+    },
+    "itemsPage": {
+        "searchPlaceholder": "Gegenstände suchen..."
+    },
+    "armorSetsPage": {
+        "searchPlaceholder": "Rüstungssets suchen...",
+        "name": "Name",
+        "physicalDefense": "Physische Verteidigung",
+        "basePrice": "Grundpreis",
+        "parts": "Teile",
+        "bonus": "Bonus",
+        "setBonus": "Set-Bonus"
+    },
+    "skillsPage": {
+        "searchPlaceholder": "Fertigkeiten suchen..."
+    },
+    "itemDetails": {
+        "changed": "Dieser Gegenstand wurde in Harbor geändert",
+        "new": "Dieser Gegenstand existiert nur in Harbor",
+        "partOfSets": "Teil von Sets",
+        "armorType": "Rüstungstyp",
+        "basePrice": "Grundpreis",
+        "pieces": "Teile"
+    },
+    "skillDetails": {
+        "changed": "Diese Fertigkeit wurde in Harbor geändert",
+        "new": "Diese Fertigkeit existiert nur in Harbor",
+        "level": "Stufe",
+        "levels": "Stufen"
+    },
+    "pagination": {
+        "pageInfo": "Seite {{ current }} von {{ total }}"
+    },
+    "footer": {
+        "text": "Lineage II und alle zugehörigen Inhalte sind Eigentum der NCSOFT Corporation und ihrer Partner. Diese Datenbank dient ausschließlich zu Informationszwecken."
+    },
+    "filters": {
+        "filters": "Filter",
+        "viewMode": "Ansichtsmodus",
+        "viewModeGrid": "Raster",
+        "viewModeTable": "Tabelle",
+        "armorType": "Rüstungstyp",
+        "grade": "Grad",
+        "weaponType": "Waffentyp",
+        "columns": "Spalten",
+        "onlyNewItems": "Nur neue Gegenstände",
+        "onlyChangedItems": "Nur geänderte Gegenstände",
+        "onlyNewSkills": "Nur neue Fertigkeiten",
+        "onlyChangedSkills": "Nur geänderte Fertigkeiten",
+        "mergeLevels": "Stufen zusammenführen",
+        "bodyPart": "Körperteil"
+    },
+    "armorSetDetails": {
+        "loading": "Rüstungsset wird geladen...",
+        "notFound": "Rüstungsset nicht gefunden",
+        "totalPDef": "Gesamtverteidigung",
+        "basePrice": "Grundpreis",
+        "part": "Teil",
+        "pDef": "Verteidigung",
+        "crystalCount": "Kristallanzahl",
+        "unnamedItem": "Unbenannter Gegenstand mit ID"
+    },
+    "externalLinks": {
+        "elmoreLab": "Auf ElmoreLab ansehen",
+        "l2hub": "Auf L2hub ansehen"
+    },
+    "badge": {
+        "new": "NEU",
+        "changed": "GEÄNDERT"
+    },
+    "columns": {
+        "name": "Name",
+        "description": "Beschreibung",
+        "crystal_type": "Grad",
+        "physical_defense": "P. Def",
+        "magical_defense": "M. Def",
+        "physical_damage": "P. Atk",
+        "magical_damage": "M. Atk",
+        "attack_speed": "Atk Spd"
+    }
+}
