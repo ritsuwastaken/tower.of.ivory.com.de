@@ -9,7 +9,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useMemo, useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { ExternalLinks } from './ExternalLinks'
-import styles from './ItemDetails.module.css'
+import styled from 'styled-components'
 
 interface SkillDetailsProps {
   id: number
@@ -17,14 +17,14 @@ interface SkillDetailsProps {
 
 const SkillDetailsLoading = () => {
   return (
-    <div className={styles.container}>
-      <Link rel="canonical" href="/skills" className={styles.backButton}>
+    <Container>
+      <StyledLink rel="canonical" href="/skills">
         ⟵
-      </Link>
-      <div className={styles.contentWrapper}>
-        <div className={styles.tableContainer}>
-          <div className={styles.itemHeader}>
-            <div className={styles.headerLeft}>
+      </StyledLink>
+      <ContentWrapper>
+        <TableContainer>
+          <ItemHeader>
+            <HeaderLeft>
               <Skeleton
                 borderRadius={8}
                 width={64}
@@ -32,7 +32,7 @@ const SkillDetailsLoading = () => {
                 baseColor="#2a2a2a"
                 highlightColor="#3a3a3a"
               />
-              <div className={styles.headerInfo}>
+              <HeaderInfo>
                 <h1>
                   <Skeleton
                     width={200}
@@ -41,64 +41,64 @@ const SkillDetailsLoading = () => {
                     highlightColor="#3a3a3a"
                   />
                 </h1>
-                <div className={styles.mobileLevelSelect}>
+                <MobileLevelSelect>
                   <Skeleton
                     width={100}
                     height={30}
                     baseColor="#2a2a2a"
                     highlightColor="#3a3a3a"
                   />
-                </div>
-              </div>
-            </div>
-            <div className={styles.headerRight}>
+                </MobileLevelSelect>
+              </HeaderInfo>
+            </HeaderLeft>
+            <HeaderRight>
               <Skeleton
                 width={120}
                 height={30}
                 baseColor="#2a2a2a"
                 highlightColor="#3a3a3a"
               />
-            </div>
-          </div>
+            </HeaderRight>
+          </ItemHeader>
 
-          <div className={styles.description}>
+          <Description>
             <Skeleton count={3} baseColor="#2a2a2a" highlightColor="#3a3a3a" />
-          </div>
+          </Description>
 
-          <div className={styles.stats}>
+          <Stats>
             {Array(8)
               .fill(0)
               .map((_, index) => (
-                <div key={index} className={styles.statRow}>
-                  <span className={styles.label}>
+                <StatRow key={index}>
+                  <Label>
                     <Skeleton
                       width={100}
                       baseColor="#2a2a2a"
                       highlightColor="#3a3a3a"
                     />
-                  </span>
-                  <span className={styles.value}>
+                  </Label>
+                  <Value>
                     <Skeleton
                       width={80}
                       baseColor="#2a2a2a"
                       highlightColor="#3a3a3a"
                     />
-                  </span>
-                </div>
+                  </Value>
+                </StatRow>
               ))}
-          </div>
+          </Stats>
 
-          <div className={styles.meshTextureSection}>
+          <MeshTextureSection>
             <Skeleton
               width={200}
               height={36}
               baseColor="#2a2a2a"
               highlightColor="#3a3a3a"
             />
-          </div>
-        </div>
+          </MeshTextureSection>
+        </TableContainer>
 
-        <div className={`${styles.skillLevels} ${styles.desktopOnly}`}>
+        <SkillLevels className="desktopOnly">
           <h2>
             <Skeleton
               width={100}
@@ -109,50 +109,50 @@ const SkillDetailsLoading = () => {
           {Array(5)
             .fill(0)
             .map((_, index) => (
-              <div key={index} className={styles.levelCard}>
-                <div className={styles.levelHeader}>
-                  <div className={styles.levelNumberContainer}>
+              <LevelCard key={index}>
+                <LevelHeader>
+                  <LevelNumberContainer>
                     <Skeleton
                       width={80}
                       height={20}
                       baseColor="#2a2a2a"
                       highlightColor="#3a3a3a"
                     />
-                  </div>
+                  </LevelNumberContainer>
                   <Skeleton
                     width={60}
                     height={20}
                     baseColor="#2a2a2a"
                     highlightColor="#3a3a3a"
                   />
-                </div>
+                </LevelHeader>
                 {index % 2 === 0 && (
-                  <div className={styles.levelDescription}>
+                  <SmallLevelDescription>
                     <Skeleton
                       count={2}
                       baseColor="#2a2a2a"
                       highlightColor="#3a3a3a"
                     />
-                  </div>
+                  </SmallLevelDescription>
                 )}
-              </div>
+              </LevelCard>
             ))}
-        </div>
-      </div>
-    </div>
+        </SkillLevels>
+      </ContentWrapper>
+    </Container>
   )
 }
 
 const SkillNotFound = () => {
   return (
-    <div className={styles.container}>
-      <Link rel="canonical" href="/skills" className={styles.backButton}>
+    <Container>
+      <StyledLink rel="canonical" href="/skills">
         ⟵
-      </Link>
-      <div className={styles.tableContainer}>
-        <div className={styles.error}>Skill not found</div>
-      </div>
-    </div>
+      </StyledLink>
+      <TableContainer>
+        <ErrorText>Skill not found</ErrorText>
+      </TableContainer>
+    </Container>
   )
 }
 
@@ -257,30 +257,23 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
       <Head
         description={`${selectedSkill.name} Lvl. ${selectedSkill.skill_level} | Skills`}
       />
-      <div className={styles.container}>
-        <Link
-          rel="canonical"
-          href="/skills"
-          className={styles.backButton}
-          scroll={false}
-        >
+      <Container>
+        <StyledLink rel="canonical" href="/skills" scroll={false}>
           ⟵
-        </Link>
+        </StyledLink>
 
-        <div className={styles.contentWrapper}>
-          <div className={styles.tableContainer}>
+        <ContentWrapper>
+          <TableContainer>
             {skill?.levels?.some(
               (level) => level.is_new || level.is_changed,
             ) && (
-              <div
-                className={`${styles.notificationPanel} ${skill.levels?.every((level) => level.is_new) ? styles.newItem : styles.changedItem}`}
-              >
+              <div className={`notificationPanel ${skill.levels?.every((level) => level.is_new) ? 'newItem' : 'changedItem'}`}>
                 {skill.levels?.every((level) => level.is_new) ? (
                   t('skillDetails.new')
                 ) : hasChangedProperties ? (
                   <a
                     href="#changes-section"
-                    className={styles.notificationLink}
+                    className="notificationLink"
                     onClick={handleNotificationClick}
                   >
                     {t('skillDetails.changed')}
@@ -290,8 +283,8 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                 )}
               </div>
             )}
-            <div className={styles.itemHeader}>
-              <div className={styles.headerLeft}>
+            <ItemHeader>
+              <HeaderLeft>
                 <Image
                   src={`/icon/${selectedSkill?.icon?.split('.').at(-1)}.webp`}
                   alt={
@@ -300,24 +293,24 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                   }
                   width={64}
                   height={64}
-                  className={styles.icon}
+                  className="icon"
                 />
-                <div className={styles.headerInfo}>
+                <HeaderInfo>
                   <h1>{selectedSkill.name}</h1>
-                  <div className={styles.mobileLevelSelect}>
+                  <MobileLevelSelect>
                     <button
-                      className={styles.levelDropdownButton}
+                      className="levelDropdownButton"
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     >
                       Level {selectedSkill.skill_level}
-                      <span className={styles.dropdownArrow}>▼</span>
+                      <span className="dropdownArrow">▼</span>
                     </button>
                     {isDropdownOpen && (
-                      <div className={styles.mobileDropdown}>
+                      <div className="mobileDropdown">
                         {skill?.levels?.map((levelData: Skill) => (
                           <button
                             key={levelData.skill_level}
-                            className={`${styles.mobileDropdownItem} ${Number(levelData.skill_level) === Number(selectedSkill.skill_level) ? styles.activeItem : ''}`}
+                            className={`mobileDropdownItem ${Number(levelData.skill_level) === Number(selectedSkill.skill_level) ? 'activeItem' : ''}`}
                             onClick={() => handleLevelClick(levelData)}
                           >
                             Level {levelData.skill_level} (MP:{' '}
@@ -326,18 +319,18 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                         ))}
                       </div>
                     )}
-                  </div>
-                </div>
-              </div>
+                  </MobileLevelSelect>
+                </HeaderInfo>
+              </HeaderLeft>
               <ExternalLinks data={selectedSkill} />
-            </div>
+            </ItemHeader>
 
-            <div className={styles.description}>
+            <Description>
               {selectedSkill?.description?.replace(/\\n/g, '\n') ||
                 'No description available.'}
-            </div>
+            </Description>
 
-            <div className={styles.stats}>
+            <Stats>
               {Object.entries(selectedSkill).map(([key, value]) => {
                 if (
                   key === 'icon' ||
@@ -351,24 +344,24 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                   return null
 
                 return (
-                  <div key={key} className={styles.statRow}>
-                    <span className={styles.label}>
+                  <StatRow key={key}>
+                    <Label>
                       {formatColumnName(key)}:
-                    </span>
-                    <span className={styles.value}>
+                    </Label>
+                    <Value>
                       {Array.isArray(value)
                         ? value.join(', ')
                         : value?.toString()}
-                    </span>
-                  </div>
+                    </Value>
+                  </StatRow>
                 )
               })}
-            </div>
+            </Stats>
 
             {hasChangedProperties && (
-              <div className={styles.meshTextureSection} id="changes-section">
+              <MeshTextureSection id="changes-section">
                 <button
-                  className={styles.collapseButton}
+                  className="collapseButton"
                   onClick={() =>
                     setShowChangedProperties(!showChangedProperties)
                   }
@@ -377,25 +370,25 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                 </button>
 
                 {showChangedProperties && (
-                  <div className={styles.meshTextureContent}>
+                  <MeshTextureContent>
                     {Object.entries(selectedSkill.changes || {}).map(
                       ([key, { old: oldValue, new: newValue }]) => {
                         const isNumeric =
                           !isNaN(Number(oldValue)) && !isNaN(Number(newValue))
 
                         return (
-                          <div key={key} className={styles.statRow}>
-                            <span className={styles.label}>
+                          <StatRow key={key}>
+                            <Label>
                               {formatColumnName(key)}:
-                            </span>
-                            <span className={styles.value}>
+                            </Label>
+                            <Value>
                               {isNumeric ? (
                                 <>
                                   {oldValue?.toString()}
                                   {Number(newValue) > Number(oldValue) ? (
                                     <>
                                       {' '}
-                                      <span className={styles.increased}>
+                                      <span className="increased">
                                         →
                                       </span>{' '}
                                       {newValue?.toString()}
@@ -403,7 +396,7 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                                   ) : (
                                     <>
                                       {' '}
-                                      <span className={styles.decreased}>
+                                      <span className="decreased">
                                         →
                                       </span>{' '}
                                       {newValue?.toString()}
@@ -419,18 +412,18 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                                       : oldValue?.toString()}
                                 </>
                               )}
-                            </span>
-                          </div>
+                            </Value>
+                          </StatRow>
                         )
                       },
                     )}
-                  </div>
+                  </MeshTextureContent>
                 )}
-              </div>
+              </MeshTextureSection>
             )}
-          </div>
+          </TableContainer>
 
-          <div className={`${styles.skillLevels} ${styles.desktopOnly}`}>
+          <SkillLevels className="desktopOnly">
             <h2>{t('skillDetails.levels')}</h2>
             {skill?.levels?.map((levelData: Skill) => {
               const isDefault = levelData.skill_level === 1
@@ -439,46 +432,405 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
               const mpConsume = levelData.mp_consume || 0
               const hpConsume = levelData.hp_consume || 0
               return (
-                <button
+                <LevelCard
                   key={levelData.skill_level}
-                  className={`${styles.levelCard} ${Number(levelData.skill_level) === Number(selectedSkill.skill_level) ? styles.activeLevel : ''}`}
+                  className={`${Number(levelData.skill_level) === Number(selectedSkill.skill_level) ? 'activeLevel' : ''}`}
                   onClick={() => handleLevelClick(levelData)}
                 >
-                  <div className={styles.levelHeader}>
-                    <div className={styles.levelNumberContainer}>
-                      <span className={styles.levelNumber}>
+                  <LevelHeader>
+                    <LevelNumberContainer>
+                      <span className="levelNumber">
                         {t('skillDetails.level')} {levelData.skill_level}
                       </span>
                       {levelData.is_new && (
-                        <span className={`${styles.levelTag} ${styles.newTag}`}>
+                        <span className={`levelTag newTag`}>
                           {t('badge.new')}
                         </span>
                       )}
                       {levelData.is_changed && !levelData.is_new && (
-                        <span
-                          className={`${styles.levelTag} ${styles.changedTag}`}
-                        >
+                        <span className={`levelTag changedTag`}>
                           {t('badge.changed')}
                         </span>
                       )}
-                    </div>
-                    <span className={styles.consume}>
-                      <span className={styles.mpConsume}>{mpConsume}</span> |{' '}
-                      <span className={styles.hpConsume}>{hpConsume}</span>
+                    </LevelNumberContainer>
+                    <span className="consume">
+                      <span className="mpConsume">{mpConsume}</span> |{' '}
+                      <span className="hpConsume">{hpConsume}</span>
                     </span>
-                  </div>
+                  </LevelHeader>
                   {hasDifferentDescription && !isDefault && (
-                    <div className={styles.levelDescription}>
+                    <SmallLevelDescription>
                       {levelData?.description?.replace(/\\n/g, '\n') ||
                         'No description available.'}
-                    </div>
+                    </SmallLevelDescription>
                   )}
-                </button>
+                </LevelCard>
               )
             })}
-          </div>
-        </div>
-      </div>
+          </SkillLevels>
+        </ContentWrapper>
+      </Container>
     </>
   )
 }
+
+// Styled components (ported from ItemDetails.module.css)
+
+const Container = styled.div``
+
+const StyledLink = styled(Link)`
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+  line-height: 1;
+
+  &:hover {
+    color: #fff;
+  }
+`
+
+const ContentWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`
+
+const TableContainer = styled.div`
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+  min-width: 0;
+
+  .notificationPanel {
+    margin-bottom: 1rem;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .newItem {
+    background-color: rgba(0, 128, 0, 0.15);
+    border-left: 4px solid #008000;
+    color: #006400;
+  }
+
+  .changedItem {
+    background-color: rgba(255, 165, 0, 0.15);
+    border-left: 4px solid #ffa500;
+    color: #8b4513;
+  }
+
+  .notificationLink {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+`
+
+const ItemHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+`
+
+const HeaderLeft = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .icon {
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    padding: 0.5rem;
+  }
+`
+
+const HeaderRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`
+
+const HeaderInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      word-break: break-word;
+    }
+  }
+`
+
+const MobileLevelSelect = styled.div`
+  display: none;
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+
+  .levelDropdownButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.875rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease;
+  }
+
+  .levelDropdownButton:hover {
+    background: #333;
+  }
+
+  .dropdownArrow {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+  }
+
+  .mobileDropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    margin-top: 0.25rem;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .mobileDropdownItem {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #333;
+    color: #ddd;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background 0.2s ease;
+  }
+
+  .mobileDropdownItem:last-child {
+    border-bottom: none;
+  }
+
+  .mobileDropdownItem:hover {
+    background: #333;
+  }
+
+  .activeItem {
+    background: #444 !important;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+    position: relative;
+  }
+`
+
+const Description = styled.div`
+  color: #888;
+  font-style: italic;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  white-space: pre-line;
+`
+
+const Stats = styled.div`
+  display: grid;
+  gap: 0.5rem;
+`
+
+const StatRow = styled.div`
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  padding: 0.5rem;
+  border-bottom: 1px solid #2a2a2a;
+
+  @media (max-width: 768px) {
+    grid-template-columns: none;
+  }
+`
+
+const Label = styled.span`
+  color: #888;
+`
+
+const Value = styled.span`
+  color: #fff;
+  line-break: anywhere;
+`
+
+const MeshTextureSection = styled.div`
+  padding-top: 5px;
+
+  .collapseButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 0;
+    text-align: left;
+    width: 100%;
+    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .collapseButton:hover {
+    color: #ccc;
+  }
+`
+
+const MeshTextureContent = styled.div`
+  margin-top: 5px;
+
+  .increased {
+    color: #4caf50;
+    font-weight: bold;
+  }
+
+  .decreased {
+    color: #f44336;
+    font-weight: bold;
+  }
+`
+
+const SkillLevels = styled.div`
+  width: 300px;
+  padding: 1rem;
+  background: #1a1a1a;
+  border-radius: 8px;
+  font-size: 0.875rem;
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`
+
+const LevelCard = styled.button`
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0;
+  background: var(--background-darker);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  color: var(--text-color);
+
+  &.activeLevel {
+    background: #4a4a4a !important;
+    font-weight: 500;
+  }
+`
+
+const LevelHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  .consume {
+    color: #4a4a4a;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .mpConsume {
+    color: #4499ff;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .hpConsume {
+    color: #ff4444;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+`
+
+const LevelNumberContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  .levelNumber {
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+
+  .levelTag {
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .newTag {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .changedTag {
+    background-color: #ff9800;
+    color: white;
+  }
+`
+
+const SmallLevelDescription = styled.div`
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+`
+
+const ErrorText = styled.div`
+  color: #ff6b6b;
+  padding: 1rem 0;
+`

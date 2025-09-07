@@ -11,7 +11,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
-import styles from './ItemDetails.module.css'
+import styled from 'styled-components'
 
 interface ItemDetailsProps {
   id: number
@@ -19,10 +19,10 @@ interface ItemDetailsProps {
 
 const ItemDetailsLoading = () => {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.tableContainer}>
-        <div className={styles.itemHeader}>
-          <div className={styles.headerLeft}>
+    <ContentWrapper>
+      <TableContainer>
+        <ItemHeader>
+          <HeaderLeft>
             <Skeleton
               borderRadius={8}
               width={64}
@@ -38,118 +38,118 @@ const ItemDetailsLoading = () => {
                 highlightColor="#3a3a3a"
               />
             </h1>
-          </div>
-          <div className={styles.headerRight}>
+          </HeaderLeft>
+          <HeaderRight>
             <Skeleton
               width={120}
               height={30}
               baseColor="#2a2a2a"
               highlightColor="#3a3a3a"
             />
-          </div>
-        </div>
+          </HeaderRight>
+        </ItemHeader>
 
-        <div className={styles.description}>
+        <Description>
           <Skeleton count={3} baseColor="#2a2a2a" highlightColor="#3a3a3a" />
-        </div>
+        </Description>
 
-        <div className={styles.stats}>
+        <Stats>
           {Array(8)
             .fill(0)
             .map((_, index) => (
-              <div key={index} className={styles.statRow}>
-                <span className={styles.label}>
+              <StatRow key={index}>
+                <Label>
                   <Skeleton
                     width={100}
                     baseColor="#2a2a2a"
                     highlightColor="#3a3a3a"
                   />
-                </span>
-                <span className={styles.value}>
+                </Label>
+                <Value>
                   <Skeleton
                     width={80}
                     baseColor="#2a2a2a"
                     highlightColor="#3a3a3a"
                   />
-                </span>
-              </div>
+                </Value>
+              </StatRow>
             ))}
-        </div>
+        </Stats>
 
-        <div className={styles.meshTextureSection}>
+        <MeshTextureSection>
           <Skeleton
             width={200}
             height={36}
             baseColor="#2a2a2a"
             highlightColor="#3a3a3a"
           />
-        </div>
+        </MeshTextureSection>
 
-        <div className={styles.meshTextureSection}>
+        <MeshTextureSection>
           <Skeleton
             width={200}
             height={36}
             baseColor="#2a2a2a"
             highlightColor="#3a3a3a"
           />
-        </div>
-      </div>
+        </MeshTextureSection>
+      </TableContainer>
 
-      <div className={styles.armorSets}>
+      <ArmorSets>
         <h2>
           <Skeleton width={150} baseColor="#2a2a2a" highlightColor="#3a3a3a" />
         </h2>
-        <div className={styles.setCard}>
-          <h3 className={styles.setName}>
+        <SetCard>
+          <h3 className="setName">
             <Skeleton
               width={180}
               baseColor="#2a2a2a"
               highlightColor="#3a3a3a"
             />
           </h3>
-          <div className={styles.setVisualContainer}>
+          <SetVisualContainer>
             <Skeleton
               width={80}
               height={120}
               baseColor="#2a2a2a"
               highlightColor="#3a3a3a"
             />
-          </div>
-          <div className={styles.setInfo}>
+          </SetVisualContainer>
+          <SetInfo>
             {Array(3)
               .fill(0)
               .map((_, index) => (
-                <div key={index} className={styles.setInfoItem}>
-                  <span className={styles.setInfoLabel}>
+                <SetInfoItem key={index}>
+                  <SetInfoLabel>
                     <Skeleton
                       width={70}
                       baseColor="#2a2a2a"
                       highlightColor="#3a3a3a"
                     />
-                  </span>
-                  <span className={styles.setInfoValue}>
+                  </SetInfoLabel>
+                  <SetInfoValue>
                     <Skeleton
                       width={50}
                       baseColor="#2a2a2a"
                       highlightColor="#3a3a3a"
                     />
-                  </span>
-                </div>
+                  </SetInfoValue>
+                </SetInfoItem>
               ))}
-          </div>
-        </div>
-      </div>
-    </div>
+          </SetInfo>
+        </SetCard>
+      </ArmorSets>
+    </ContentWrapper>
   )
 }
 
 const ItemDetailsError = () => {
   return (
-    <div className={styles.contentWrapper}>
-      <div className={styles.tableContainer}>
-        <div className={styles.error}>Item not found</div>
-      </div>
-    </div>
+    <ContentWrapper>
+      <TableContainer>
+        <ErrorText>Item not found</ErrorText>
+      </TableContainer>
+    </ContentWrapper>
   )
 }
 
@@ -283,22 +283,21 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
     item?.is_changed && item?.changes && Object.keys(item.changes).length > 0
 
   return (
-    <div className={styles.container}>
+    <Container>
       <Head
         description={
           isLoading ? 'Loading...' : isError ? 'Item Not found' : item?.name
         }
       />
-      <a
+      <BackButton
         href="#"
         onClick={(e) => {
           e.preventDefault()
           router.back()
         }}
-        className={styles.backButton}
       >
         ⟵
-      </a>
+      </BackButton>
       {isLoading ? (
         <ItemDetailsLoading />
       ) : isError ? (
@@ -306,23 +305,23 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
       ) : (
         renderItemDetails()
       )}
-    </div>
+    </Container>
   )
 
   function renderItemDetails() {
     return (
-      <div className={styles.contentWrapper}>
-        <div className={styles.tableContainer}>
+      <ContentWrapper>
+        <TableContainer>
           {(item?.is_new || item?.is_changed) && (
             <div
-              className={`${styles.notificationPanel} ${item?.is_new ? styles.newItem : styles.changedItem}`}
+              className={`notificationPanel ${item?.is_new ? 'newItem' : 'changedItem'}`}
             >
               {item?.is_new ? (
                 t('itemDetails.new')
               ) : hasChangedProperties ? (
                 <a
                   href="#changes-section"
-                  className={styles.notificationLink}
+                  className="notificationLink"
                   onClick={() => {
                     setShowChangedProperties(true)
                   }}
@@ -334,26 +333,26 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
               )}
             </div>
           )}
-          <div className={styles.itemHeader}>
-            <div className={styles.headerLeft}>
+          <ItemHeader>
+            <HeaderLeft>
               <Image
                 src={`/icon/${item?.icon?.[0].split('.').at(-1)}.webp`}
                 alt={item?.name || item?.object_name || ''}
                 width={64}
                 height={64}
-                className={styles.icon}
+                className="icon"
               />
               <h1>{item?.name || item?.object_name}</h1>
-            </div>
+            </HeaderLeft>
             {item && <ExternalLinks data={item} />}
-          </div>
+          </ItemHeader>
 
-          <div className={styles.description}>
+          <Description>
             {item?.description?.replace(/\\n/g, '\n') ||
               'No description available.'}
-          </div>
+          </Description>
 
-          <div className={styles.stats}>
+          <Stats>
             {priorityPropertyOrder.map((priorityKey) => {
               const actualKey = Object.keys(item || {}).find(
                 (key) => key.toLowerCase() === priorityKey,
@@ -363,11 +362,11 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
               const value = item?.[actualKey as keyof Item]
 
               return (
-                <div key={actualKey} className={styles.statRow}>
-                  <span className={styles.label}>
+                <StatRow key={actualKey}>
+                  <Label>
                     {formatColumnName(actualKey)}:
-                  </span>
-                  <span className={styles.value}>
+                  </Label>
+                  <Value>
                     {actualKey.toLowerCase() === 'crystal_type'
                       ? String(value).toLowerCase() === 'none'
                         ? String(value)
@@ -375,8 +374,8 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                       : Array.isArray(value)
                         ? value.join(', ')
                         : String(value)}
-                  </span>
-                </div>
+                  </Value>
+                </StatRow>
               )
             })}
 
@@ -402,50 +401,50 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                 )
 
               return (
-                <div key={key} className={styles.statRow}>
-                  <span className={styles.label}>{formatColumnName(key)}:</span>
-                  <span className={styles.value}>
+                <StatRow key={key}>
+                  <Label>{formatColumnName(key)}:</Label>
+                  <Value>
                     {Array.isArray(value)
                       ? value.join(', ')
                       : value?.toString()}
                     {isChanged && (
-                      <span className={styles.changedTag}>(changed)</span>
+                      <span className="changedTag">(changed)</span>
                     )}
-                  </span>
-                </div>
+                  </Value>
+                </StatRow>
               )
             })}
-          </div>
+          </Stats>
 
           {hasChangedProperties && (
-            <div className={styles.meshTextureSection} id="changes-section">
+            <MeshTextureSection id="changes-section">
               <button
-                className={styles.collapseButton}
+                className="collapseButton"
                 onClick={() => setShowChangedProperties(!showChangedProperties)}
               >
                 {showChangedProperties ? '−' : '+'} Changed Properties
               </button>
 
               {showChangedProperties && (
-                <div className={styles.meshTextureContent}>
+                <MeshTextureContent>
                   {Object.entries(item.changes || {}).map(
                     ([key, { old: oldValue, new: newValue }]) => {
                       const isNumeric =
                         !isNaN(Number(oldValue)) && !isNaN(Number(newValue))
 
                       return (
-                        <div key={key} className={styles.statRow}>
-                          <span className={styles.label}>
+                        <StatRow key={key}>
+                          <Label>
                             {formatColumnName(key)}:
-                          </span>
-                          <span className={styles.value}>
+                          </Label>
+                          <Value>
                             {isNumeric ? (
                               <>
                                 {oldValue?.toString()}
                                 {Number(newValue) > Number(oldValue) ? (
                                   <>
                                     {' '}
-                                    <span className={styles.increased}>
+                                    <span className="increased">
                                       →
                                     </span>{' '}
                                     {newValue?.toString()}
@@ -453,7 +452,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                                 ) : (
                                   <>
                                     {' '}
-                                    <span className={styles.decreased}>
+                                    <span className="decreased">
                                       →
                                     </span>{' '}
                                     {newValue?.toString()}
@@ -469,52 +468,52 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                                     : oldValue?.toString()}
                               </>
                             )}
-                          </span>
-                        </div>
+                          </Value>
+                        </StatRow>
                       )
                     },
                   )}
-                </div>
+                </MeshTextureContent>
               )}
-            </div>
+            </MeshTextureSection>
           )}
 
           {hasDropProperties && (
-            <div className={styles.meshTextureSection}>
+            <MeshTextureSection>
               <button
-                className={styles.collapseButton}
+                className="collapseButton"
                 onClick={() => setShowDropProperties(!showDropProperties)}
               >
                 {showDropProperties ? '−' : '+'} Drop Properties
               </button>
 
               {showDropProperties && (
-                <div className={styles.meshTextureContent}>
+                <MeshTextureContent>
                   {Object.entries(item || {}).map(([key, value]) => {
                     if (!isDropProperty(key)) return null
 
                     return (
-                      <div key={key} className={styles.statRow}>
-                        <span className={styles.label}>
+                      <StatRow key={key}>
+                        <Label>
                           {formatColumnName(key)}:
-                        </span>
-                        <span className={styles.value}>
+                        </Label>
+                        <Value>
                           {Array.isArray(value)
                             ? value.join(', ')
                             : value?.toString()}
-                        </span>
-                      </div>
+                        </Value>
+                      </StatRow>
                     )
                   })}
-                </div>
+                </MeshTextureContent>
               )}
-            </div>
+            </MeshTextureSection>
           )}
 
           {hasMeshTextureProperties && (
-            <div className={styles.meshTextureSection}>
+            <MeshTextureSection>
               <button
-                className={styles.collapseButton}
+                className="collapseButton"
                 onClick={() => setShowMeshTexture(!showMeshTexture)}
               >
                 {showMeshTexture ? '−' : '+'} Mesh, Texture & Projectile
@@ -522,142 +521,393 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
               </button>
 
               {showMeshTexture && (
-                <div className={styles.meshTextureContent}>
+                <MeshTextureContent>
                   {Object.entries(item || {}).map(([key, value]) => {
                     if (!isMeshTextureProperty(key)) return null
 
                     return (
-                      <div key={key} className={styles.statRow}>
-                        <span className={styles.label}>
+                      <StatRow key={key}>
+                        <Label>
                           {formatColumnName(key)}:
-                        </span>
-                        <span className={styles.value}>
+                        </Label>
+                        <Value>
                           {Array.isArray(value)
                             ? value.join(', ')
                             : value?.toString()}
-                        </span>
-                      </div>
+                        </Value>
+                      </StatRow>
                     )
                   })}
-                </div>
+                </MeshTextureContent>
               )}
-            </div>
+            </MeshTextureSection>
           )}
 
           {hasSoundProperties && (
-            <div className={styles.meshTextureSection}>
+            <MeshTextureSection>
               <button
-                className={styles.collapseButton}
+                className="collapseButton"
                 onClick={() => setShowSound(!showSound)}
               >
                 {showSound ? '−' : '+'} Sound Properties
               </button>
 
               {showSound && (
-                <div className={styles.meshTextureContent}>
+                <MeshTextureContent>
                   {Object.entries(item || {}).map(([key, value]) => {
                     if (!isSoundProperty(key)) return null
 
                     return (
-                      <div key={key} className={styles.statRow}>
-                        <span className={styles.label}>
+                      <StatRow key={key}>
+                        <Label>
                           {formatColumnName(key)}:
-                        </span>
-                        <span className={styles.value}>
+                        </Label>
+                        <Value>
                           {Array.isArray(value)
                             ? value.join(', ')
                             : value?.toString()}
-                        </span>
-                      </div>
+                        </Value>
+                      </StatRow>
                     )
                   })}
-                </div>
+                </MeshTextureContent>
               )}
-            </div>
+            </MeshTextureSection>
           )}
 
           {hasEffectProperties && (
-            <div className={styles.meshTextureSection}>
+            <MeshTextureSection>
               <button
-                className={styles.collapseButton}
+                className="collapseButton"
                 onClick={() => setShowEffectProperties(!showEffectProperties)}
               >
                 {showEffectProperties ? '−' : '+'} Other Properties
               </button>
 
               {showEffectProperties && (
-                <div className={styles.meshTextureContent}>
+                <MeshTextureContent>
                   {Object.entries(item || {}).map(([key, value]) => {
                     if (!isEffectProperty(key)) return null
 
                     return (
-                      <div key={key} className={styles.statRow}>
-                        <span className={styles.label}>
+                      <StatRow key={key}>
+                        <Label>
                           {formatColumnName(key)}:
-                        </span>
-                        <span className={styles.value}>
+                        </Label>
+                        <Value>
                           {Array.isArray(value)
                             ? value.join(', ')
                             : value?.toString()}
-                        </span>
-                      </div>
+                        </Value>
+                      </StatRow>
                     )
                   })}
-                </div>
+                </MeshTextureContent>
               )}
-            </div>
+            </MeshTextureSection>
           )}
-        </div>
+        </TableContainer>
 
         {item?.sets && item?.sets.length > 0 && (
-          <div className={styles.armorSets}>
+          <ArmorSets>
             <h2>{t('itemDetails.partOfSets')}</h2>
             {item?.sets.map((armorSet) => (
               <Link
                 rel="canonical"
                 key={armorSet.id}
                 href={`/armorsets/${armorSet.id}`}
-                className={styles.setCard}
+                className="setCard"
               >
-                <h3 className={styles.setName}>{armorSet.name}</h3>
-                <div className={styles.setVisualContainer}>
+                <h3 className="setName">{armorSet.name}</h3>
+                <SetVisualContainer>
                   <ArmorSetVisual armorSet={armorSet} />
-                </div>
-                <div className={styles.setInfo}>
-                  <div className={styles.setInfoItem}>
-                    <span className={styles.setInfoLabel}>
+                </SetVisualContainer>
+                <SetInfo>
+                  <SetInfoItem>
+                    <SetInfoLabel>
                       {t('itemDetails.armorType')}:
-                    </span>
-                    <span className={styles.setInfoValue}>
+                    </SetInfoLabel>
+                    <SetInfoValue>
                       {armorSet.armor_type ||
                         armorSet.items?.[0]?.armor_type ||
                         'N/A'}
-                    </span>
-                  </div>
-                  <div className={styles.setInfoItem}>
-                    <span className={styles.setInfoLabel}>
+                    </SetInfoValue>
+                  </SetInfoItem>
+                  <SetInfoItem>
+                    <SetInfoLabel>
                       {t('itemDetails.basePrice')}:
-                    </span>
-                    <span className={styles.setInfoValue}>
+                    </SetInfoLabel>
+                    <SetInfoValue>
                       {armorSet.items
                         ?.reduce((sum, item) => sum + (item.base_price || 0), 0)
                         .toLocaleString() || 'N/A'}
-                    </span>
-                  </div>
-                  <div className={styles.setInfoItem}>
-                    <span className={styles.setInfoLabel}>
+                    </SetInfoValue>
+                  </SetInfoItem>
+                  <SetInfoItem>
+                    <SetInfoLabel>
                       {t('itemDetails.pieces')}:
-                    </span>
-                    <span className={styles.setInfoValue}>
+                    </SetInfoLabel>
+                    <SetInfoValue>
                       {armorSet.items?.length || 0}
-                    </span>
-                  </div>
-                </div>
+                    </SetInfoValue>
+                  </SetInfoItem>
+                </SetInfo>
               </Link>
             ))}
-          </div>
+          </ArmorSets>
         )}
-      </div>
+      </ContentWrapper>
     )
   }
 }
+
+// Styled components converted from ItemDetails.module.css
+
+const Container = styled.div``
+
+const ContentWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`
+
+const TableContainer = styled.div`
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+  min-width: 0;
+
+  .notificationPanel {
+    margin-bottom: 1rem;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .newItem {
+    background-color: rgba(0, 128, 0, 0.15);
+    border-left: 4px solid #008000;
+    color: #006400;
+  }
+
+  .changedItem {
+    background-color: rgba(255, 165, 0, 0.15);
+    border-left: 4px solid #ffa500;
+    color: #8b4513;
+  }
+
+  .notificationLink {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+`
+
+const ItemHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+`
+
+const HeaderLeft = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .icon {
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    padding: 0.5rem;
+  }
+`
+
+const HeaderRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`
+
+const Description = styled.div`
+  color: #888;
+  font-style: italic;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  white-space: pre-line;
+`
+
+const Stats = styled.div`
+  display: grid;
+  gap: 0.5rem;
+`
+
+const StatRow = styled.div`
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  padding: 0.5rem;
+  border-bottom: 1px solid #2a2a2a;
+
+  @media (max-width: 768px) {
+    grid-template-columns: none;
+  }
+`
+
+const Label = styled.span`
+  color: #888;
+`
+
+const Value = styled.span`
+  color: #fff;
+  line-break: anywhere;
+
+  .changedTag {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 0.8rem;
+    color: #ff6b6b;
+    font-weight: bold;
+  }
+`
+
+const MeshTextureSection = styled.div`
+  padding-top: 5px;
+
+  .collapseButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 0;
+    text-align: left;
+    width: 100%;
+    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+  }
+
+  .collapseButton:hover {
+    color: #ccc;
+  }
+`
+
+const MeshTextureContent = styled.div`
+  margin-top: 5px;
+
+  .increased {
+    color: #4caf50;
+    font-weight: bold;
+  }
+
+  .decreased {
+    color: #f44336;
+    font-weight: bold;
+  }
+`
+
+const BackButton = styled.a`
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+  line-height: 1;
+
+  &:hover {
+    color: #fff;
+  }
+`
+
+const ArmorSets = styled.div`
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+
+  h2 {
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .setCard {
+    display: block;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  .setCard:hover,
+  .setCard:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: #2a2a2a;
+  }
+
+  .setName {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+`
+
+const SetVisualContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+`
+
+const SetInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+`
+
+const SetInfoItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+
+const SetInfoLabel = styled.span`
+  color: var(--text-color-secondary, #666);
+  font-weight: 500;
+`
+
+const SetInfoValue = styled.span`
+  color: var(--text-color, #333);
+`
+
+const SetCard = styled.div``
+
+const ErrorText = styled.div`
+  color: #ff6b6b;
+  padding: 1rem 0;
+`
