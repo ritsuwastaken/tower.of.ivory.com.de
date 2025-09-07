@@ -3275,7 +3275,7 @@
         "description": "Part of the sets:                                                             Compound Scale set            Dwarven Scale set               Mithril Heavy set."
       }
     ],
-    "set_bonus": ""
+    "set_bonus": "DEX +1, Move speed +5 | Accuracy +2, P. Atk +14 | CON -1"
   },
   {
     "id": "divine_set",
@@ -9277,7 +9277,7 @@
         "description": "Part of the set:                    Half Plate set M. Def +40."
       }
     ],
-    "set_bonus": ""
+    "set_bonus": "P.Atk +18, DEX +1, Speed +5 | Root, Sleep Resist +25 % | With Plate Shield M. Def +40"
   },
   {
     "id": "elven_mithril_set",
