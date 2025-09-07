@@ -25,6 +25,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["scripts/**/*", ".next/types/**/*.ts", "src/**/*"],
+  "include": [".next/types/**/*.ts", "src/**/*"],
   "exclude": ["node_modules"]
 }
