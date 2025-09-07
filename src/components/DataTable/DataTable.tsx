@@ -234,7 +234,7 @@ const Container = styled.div`
   border-radius: 8px;
   padding: 1rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 890px) {
     padding: 0.5rem;
     border-radius: 4px;
   }
@@ -261,7 +261,7 @@ const SearchAndFiltersContainer = styled.div`
   flex: 1;
   position: relative;
 
-  @media (max-width: 768px) {
+  @media (max-width: 890px) {
     gap: 0.5rem;
   }
 `
@@ -277,7 +277,7 @@ const SearchInput = styled.input.attrs({
   background-color: #2a2a2a;
   color: #fff;
 
-  @media (max-width: 768px) {
+  @media (max-width: 890px) {
     padding: 0.5rem;
   }
 
@@ -294,7 +294,7 @@ const Table = styled.table.attrs({
   border-collapse: collapse;
   table-layout: auto;
 
-  @media (max-width: 768px) {
+  @media (max-width: 890px) {
     thead {
       display: none;
     }
@@ -376,7 +376,7 @@ const Td = styled.td`
   border-bottom: 1px solid #2a2a2a;
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 890px) {
     text-align: left;
     img,
     video {
@@ -410,7 +410,7 @@ const TableRow = styled.tr.attrs<{ onClick?: () => void }>((props) => ({
     background-color: #222222;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 890px) {
     transition: background-color 0.2s ease;
 
     &:hover,
