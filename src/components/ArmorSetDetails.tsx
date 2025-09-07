@@ -6,6 +6,17 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import Skeleton from 'react-loading-skeleton'
 import styled from 'styled-components'
+import {
+  BackButton,
+  Container,
+  Description,
+  ErrorText,
+  HeaderInfo,
+  HeaderLeft,
+  HeaderRight,
+  ItemHeader,
+  TableContainer,
+} from '@/components/primitives/DetailsPrimitives'
 import { ArmorSetVisual } from './ArmorSetVisual'
 import { ExternalLinks } from './ExternalLinks'
 import { Head } from './Head'
@@ -324,9 +335,7 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
                               <ParamLabel>
                                 {t('armorSetDetails.pDef')}:
                               </ParamLabel>
-                              <ParamValue>
-                                {item.physical_defense}
-                              </ParamValue>
+                              <ParamValue>{item.physical_defense}</ParamValue>
                             </PartParam>
                           )}
                           {item.base_price && (
@@ -344,9 +353,7 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
                               <ParamLabel>
                                 {t('armorSetDetails.crystalCount')}:
                               </ParamLabel>
-                              <ParamValue>
-                                {item.crystal_count}
-                              </ParamValue>
+                              <ParamValue>{item.crystal_count}</ParamValue>
                             </PartParam>
                           )}
                         </PartParams>
@@ -370,60 +377,10 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
   }
 }
 
-// Styled components (converted from ItemDetails.module.css where applicable)
-
-const Container = styled.div``
-
-const TableContainer = styled.div`
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 1;
-  min-width: 0;
-`
-
-const ItemHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    width: 100%;
-  }
-`
-
-const HeaderLeft = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-`
-
 const Icon = styled.div`
   border-radius: 8px;
   background-color: #2a2a2a;
   padding: 0.5rem;
-`
-
-const HeaderInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  @media (max-width: 768px) {
-    h1 {
-      margin: 0;
-      font-size: 1.5rem;
-      word-break: break-word;
-    }
-  }
 `
 
 const TotalDefense = styled.div`
@@ -436,45 +393,6 @@ const TotalPrice = styled.div`
   margin-top: 4px;
   color: #ddd;
   font-size: 0.95rem;
-`
-
-const HeaderRight = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    order: 1;
-  }
-`
-
-const BackButton = styled.a`
-  display: inline-block;
-  color: #888;
-  text-decoration: none;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: color 0.2s ease;
-  line-height: 1;
-
-  &:hover {
-    color: #fff;
-  }
-`
-
-const Description = styled.div`
-  color: #888;
-  font-style: italic;
-  padding: 1rem;
-  background-color: #2a2a2a;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  white-space: pre-line;
 `
 
 const PartsContainer = styled.div`
@@ -594,9 +512,4 @@ const PartLinks = styled.div`
     align-self: flex-start;
     margin-top: 8px;
   }
-`
-
-const ErrorText = styled.div`
-  color: #ff6b6b;
-  padding: 1rem 0;
 `

@@ -12,6 +12,22 @@ import { useRouter } from 'next/router'
 import { useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import styled from 'styled-components'
+import {
+  BackButton,
+  Container,
+  Description,
+  ErrorText,
+  HeaderLeft,
+  HeaderRight,
+  ItemHeader,
+  Label,
+  MeshTextureContent,
+  MeshTextureSection,
+  StatRow,
+  Stats,
+  TableContainer,
+  Value,
+} from '@/components/primitives/DetailsPrimitives'
 
 interface ItemDetailsProps {
   id: number
@@ -363,9 +379,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
 
               return (
                 <StatRow key={actualKey}>
-                  <Label>
-                    {formatColumnName(actualKey)}:
-                  </Label>
+                  <Label>{formatColumnName(actualKey)}:</Label>
                   <Value>
                     {actualKey.toLowerCase() === 'crystal_type'
                       ? String(value).toLowerCase() === 'none'
@@ -407,9 +421,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                     {Array.isArray(value)
                       ? value.join(', ')
                       : value?.toString()}
-                    {isChanged && (
-                      <span className="changedTag">(changed)</span>
-                    )}
+                    {isChanged && <span className="changedTag">(changed)</span>}
                   </Value>
                 </StatRow>
               )
@@ -434,9 +446,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
 
                       return (
                         <StatRow key={key}>
-                          <Label>
-                            {formatColumnName(key)}:
-                          </Label>
+                          <Label>{formatColumnName(key)}:</Label>
                           <Value>
                             {isNumeric ? (
                               <>
@@ -444,17 +454,13 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                                 {Number(newValue) > Number(oldValue) ? (
                                   <>
                                     {' '}
-                                    <span className="increased">
-                                      →
-                                    </span>{' '}
+                                    <span className="increased">→</span>{' '}
                                     {newValue?.toString()}
                                   </>
                                 ) : (
                                   <>
                                     {' '}
-                                    <span className="decreased">
-                                      →
-                                    </span>{' '}
+                                    <span className="decreased">→</span>{' '}
                                     {newValue?.toString()}
                                   </>
                                 )}
@@ -494,9 +500,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
 
                     return (
                       <StatRow key={key}>
-                        <Label>
-                          {formatColumnName(key)}:
-                        </Label>
+                        <Label>{formatColumnName(key)}:</Label>
                         <Value>
                           {Array.isArray(value)
                             ? value.join(', ')
@@ -527,9 +531,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
 
                     return (
                       <StatRow key={key}>
-                        <Label>
-                          {formatColumnName(key)}:
-                        </Label>
+                        <Label>{formatColumnName(key)}:</Label>
                         <Value>
                           {Array.isArray(value)
                             ? value.join(', ')
@@ -559,9 +561,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
 
                     return (
                       <StatRow key={key}>
-                        <Label>
-                          {formatColumnName(key)}:
-                        </Label>
+                        <Label>{formatColumnName(key)}:</Label>
                         <Value>
                           {Array.isArray(value)
                             ? value.join(', ')
@@ -591,9 +591,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
 
                     return (
                       <StatRow key={key}>
-                        <Label>
-                          {formatColumnName(key)}:
-                        </Label>
+                        <Label>{formatColumnName(key)}:</Label>
                         <Value>
                           {Array.isArray(value)
                             ? value.join(', ')
@@ -624,9 +622,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                 </SetVisualContainer>
                 <SetInfo>
                   <SetInfoItem>
-                    <SetInfoLabel>
-                      {t('itemDetails.armorType')}:
-                    </SetInfoLabel>
+                    <SetInfoLabel>{t('itemDetails.armorType')}:</SetInfoLabel>
                     <SetInfoValue>
                       {armorSet.armor_type ||
                         armorSet.items?.[0]?.armor_type ||
@@ -634,9 +630,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                     </SetInfoValue>
                   </SetInfoItem>
                   <SetInfoItem>
-                    <SetInfoLabel>
-                      {t('itemDetails.basePrice')}:
-                    </SetInfoLabel>
+                    <SetInfoLabel>{t('itemDetails.basePrice')}:</SetInfoLabel>
                     <SetInfoValue>
                       {armorSet.items
                         ?.reduce((sum, item) => sum + (item.base_price || 0), 0)
@@ -644,12 +638,8 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                     </SetInfoValue>
                   </SetInfoItem>
                   <SetInfoItem>
-                    <SetInfoLabel>
-                      {t('itemDetails.pieces')}:
-                    </SetInfoLabel>
-                    <SetInfoValue>
-                      {armorSet.items?.length || 0}
-                    </SetInfoValue>
+                    <SetInfoLabel>{t('itemDetails.pieces')}:</SetInfoLabel>
+                    <SetInfoValue>{armorSet.items?.length || 0}</SetInfoValue>
                   </SetInfoItem>
                 </SetInfo>
               </Link>
@@ -661,10 +651,6 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
   }
 }
 
-// Styled components converted from ItemDetails.module.css
-
-const Container = styled.div``
-
 const ContentWrapper = styled.div`
   display: flex;
   gap: 1rem;
@@ -672,167 +658,6 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-  }
-`
-
-const TableContainer = styled.div`
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 1;
-  min-width: 0;
-
-  .notificationPanel {
-    margin-bottom: 1rem;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-weight: 500;
-  }
-
-  .newItem {
-    background-color: rgba(0, 128, 0, 0.15);
-    border-left: 4px solid #008000;
-    color: #006400;
-  }
-
-  .changedItem {
-    background-color: rgba(255, 165, 0, 0.15);
-    border-left: 4px solid #ffa500;
-    color: #8b4513;
-  }
-
-  .notificationLink {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-  }
-`
-
-const ItemHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    width: 100%;
-  }
-`
-
-const HeaderLeft = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  .icon {
-    border-radius: 8px;
-    background-color: #2a2a2a;
-    padding: 0.5rem;
-  }
-`
-
-const HeaderRight = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-`
-
-const Description = styled.div`
-  color: #888;
-  font-style: italic;
-  padding: 1rem;
-  background-color: #2a2a2a;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  white-space: pre-line;
-`
-
-const Stats = styled.div`
-  display: grid;
-  gap: 0.5rem;
-`
-
-const StatRow = styled.div`
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  padding: 0.5rem;
-  border-bottom: 1px solid #2a2a2a;
-
-  @media (max-width: 768px) {
-    grid-template-columns: none;
-  }
-`
-
-const Label = styled.span`
-  color: #888;
-`
-
-const Value = styled.span`
-  color: #fff;
-  line-break: anywhere;
-
-  .changedTag {
-    display: inline-block;
-    margin-left: 8px;
-    font-size: 0.8rem;
-    color: #ff6b6b;
-    font-weight: bold;
-  }
-`
-
-const MeshTextureSection = styled.div`
-  padding-top: 5px;
-
-  .collapseButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px 0;
-    text-align: left;
-    width: 100%;
-    color: #999;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1rem;
-  }
-
-  .collapseButton:hover {
-    color: #ccc;
-  }
-`
-
-const MeshTextureContent = styled.div`
-  margin-top: 5px;
-
-  .increased {
-    color: #4caf50;
-    font-weight: bold;
-  }
-
-  .decreased {
-    color: #f44336;
-    font-weight: bold;
-  }
-`
-
-const BackButton = styled.a`
-  display: inline-block;
-  color: #888;
-  text-decoration: none;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: color 0.2s ease;
-  line-height: 1;
-
-  &:hover {
-    color: #fff;
   }
 `
 
@@ -859,7 +684,9 @@ const ArmorSets = styled.div`
     margin-bottom: 16px;
     text-decoration: none;
     color: inherit;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
     outline: none;
   }
 
@@ -906,8 +733,3 @@ const SetInfoValue = styled.span`
 `
 
 const SetCard = styled.div``
-
-const ErrorText = styled.div`
-  color: #ff6b6b;
-  padding: 1rem 0;
-`

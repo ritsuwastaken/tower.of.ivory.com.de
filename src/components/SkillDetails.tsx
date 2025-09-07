@@ -10,6 +10,22 @@ import React, { useMemo, useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import { ExternalLinks } from './ExternalLinks'
 import styled from 'styled-components'
+import {
+  Container,
+  Description,
+  ErrorText,
+  HeaderLeft,
+  HeaderRight,
+  HeaderInfo,
+  ItemHeader,
+  Label,
+  MeshTextureContent,
+  MeshTextureSection,
+  StatRow,
+  Stats,
+  TableContainer,
+  Value,
+} from '@/components/primitives/DetailsPrimitives'
 
 interface SkillDetailsProps {
   id: number
@@ -267,7 +283,9 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
             {skill?.levels?.some(
               (level) => level.is_new || level.is_changed,
             ) && (
-              <div className={`notificationPanel ${skill.levels?.every((level) => level.is_new) ? 'newItem' : 'changedItem'}`}>
+              <div
+                className={`notificationPanel ${skill.levels?.every((level) => level.is_new) ? 'newItem' : 'changedItem'}`}
+              >
                 {skill.levels?.every((level) => level.is_new) ? (
                   t('skillDetails.new')
                 ) : hasChangedProperties ? (
@@ -345,9 +363,7 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
 
                 return (
                   <StatRow key={key}>
-                    <Label>
-                      {formatColumnName(key)}:
-                    </Label>
+                    <Label>{formatColumnName(key)}:</Label>
                     <Value>
                       {Array.isArray(value)
                         ? value.join(', ')
@@ -378,9 +394,7 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
 
                         return (
                           <StatRow key={key}>
-                            <Label>
-                              {formatColumnName(key)}:
-                            </Label>
+                            <Label>{formatColumnName(key)}:</Label>
                             <Value>
                               {isNumeric ? (
                                 <>
@@ -388,17 +402,13 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                                   {Number(newValue) > Number(oldValue) ? (
                                     <>
                                       {' '}
-                                      <span className="increased">
-                                        →
-                                      </span>{' '}
+                                      <span className="increased">→</span>{' '}
                                       {newValue?.toString()}
                                     </>
                                   ) : (
                                     <>
                                       {' '}
-                                      <span className="decreased">
-                                        →
-                                      </span>{' '}
+                                      <span className="decreased">→</span>{' '}
                                       {newValue?.toString()}
                                     </>
                                   )}
@@ -474,10 +484,6 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
   )
 }
 
-// Styled components (ported from ItemDetails.module.css)
-
-const Container = styled.div``
-
 const StyledLink = styled(Link)`
   display: inline-block;
   color: #888;
@@ -499,88 +505,6 @@ const ContentWrapper = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
-  }
-`
-
-const TableContainer = styled.div`
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 1;
-  min-width: 0;
-
-  .notificationPanel {
-    margin-bottom: 1rem;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-weight: 500;
-  }
-
-  .newItem {
-    background-color: rgba(0, 128, 0, 0.15);
-    border-left: 4px solid #008000;
-    color: #006400;
-  }
-
-  .changedItem {
-    background-color: rgba(255, 165, 0, 0.15);
-    border-left: 4px solid #ffa500;
-    color: #8b4513;
-  }
-
-  .notificationLink {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-  }
-`
-
-const ItemHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    width: 100%;
-  }
-`
-
-const HeaderLeft = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  .icon {
-    border-radius: 8px;
-    background-color: #2a2a2a;
-    padding: 0.5rem;
-  }
-`
-
-const HeaderRight = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-`
-
-const HeaderInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  @media (max-width: 768px) {
-    h1 {
-      margin: 0;
-      font-size: 1.5rem;
-      word-break: break-word;
-    }
   }
 `
 
@@ -660,77 +584,6 @@ const MobileLevelSelect = styled.div`
   @media (max-width: 768px) {
     display: block;
     position: relative;
-  }
-`
-
-const Description = styled.div`
-  color: #888;
-  font-style: italic;
-  padding: 1rem;
-  background-color: #2a2a2a;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  white-space: pre-line;
-`
-
-const Stats = styled.div`
-  display: grid;
-  gap: 0.5rem;
-`
-
-const StatRow = styled.div`
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  padding: 0.5rem;
-  border-bottom: 1px solid #2a2a2a;
-
-  @media (max-width: 768px) {
-    grid-template-columns: none;
-  }
-`
-
-const Label = styled.span`
-  color: #888;
-`
-
-const Value = styled.span`
-  color: #fff;
-  line-break: anywhere;
-`
-
-const MeshTextureSection = styled.div`
-  padding-top: 5px;
-
-  .collapseButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px 0;
-    text-align: left;
-    width: 100%;
-    color: #999;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1rem;
-  }
-
-  .collapseButton:hover {
-    color: #ccc;
-  }
-`
-
-const MeshTextureContent = styled.div`
-  margin-top: 5px;
-
-  .increased {
-    color: #4caf50;
-    font-weight: bold;
-  }
-
-  .decreased {
-    color: #f44336;
-    font-weight: bold;
   }
 `
 
@@ -828,9 +681,4 @@ const SmallLevelDescription = styled.div`
   color: var(--text-muted);
   margin-top: 0.5rem;
   line-height: 1.4;
-`
-
-const ErrorText = styled.div`
-  color: #ff6b6b;
-  padding: 1rem 0;
 `
