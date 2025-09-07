@@ -120,7 +120,6 @@ const HeaderLink = styled(Link).attrs({
 
 const HeaderRight = styled.div`
   display: flex;
-  flex-wrap: wrap;
   gap: 0.5rem;
   font-size: 0.75rem;
   align-items: center;
