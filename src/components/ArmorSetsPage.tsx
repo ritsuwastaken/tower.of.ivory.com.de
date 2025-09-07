@@ -185,30 +185,23 @@ export const ArmorSetsPage = () => {
     }
   }, [])
 
-  const columns = useMemo(
-    () =>
-      Object.entries(columnVisibility).map(([key, visible]) => ({
-        key: key as keyof ArmorSet | 'visual',
-        label:
-          key === 'visual'
-            ? ''
-            : key === 'name'
-              ? t('armorSetsPage.name')
-              : key === 'grade'
-                ? t('filters.grade')
-                : key === 'items'
-                  ? t('armorSetsPage.parts')
-                  : key === 'bonus_stats'
-                    ? t('armorSetsPage.bonus')
-                    : key === 'physical_defense'
-                      ? t('armorSetsPage.physicalDefense')
-                      : key === 'base_price'
-                        ? t('armorSetsPage.basePrice')
-                        : formatColumnName(key),
-        visible: visible as boolean,
-      })),
-    [columnVisibility, formatColumnName, t],
-  )
+  const columns = useMemo(() => {
+    const labelMap: Partial<Record<keyof ArmorSet | 'visual', string>> = {
+      visual: '',
+      name: t('armorSetsPage.name'),
+      grade: t('filters.grade'),
+      items: t('armorSetsPage.parts'),
+      bonus_stats: t('armorSetsPage.bonus'),
+      physical_defense: t('armorSetsPage.physicalDefense'),
+      base_price: t('armorSetsPage.basePrice'),
+    }
+
+    return Object.entries(columnVisibility).map(([key, visible]) => ({
+      key: key as keyof ArmorSet | 'visual',
+      label: labelMap[key as keyof typeof labelMap] ?? formatColumnName(key),
+      visible: Boolean(visible),
+    }))
+  }, [columnVisibility, formatColumnName, t])
 
   return (
     <DataTable
