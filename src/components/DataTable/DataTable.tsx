@@ -28,9 +28,11 @@ export function DataTable<T>({
   currentPage,
   totalPages,
   onPageChange,
+  enableGridView = false,
 }: DataTableProps<T>) {
   const [showFilters, setShowFilters] = useState(false)
   const visibleColumns = columns.filter((col) => col.visible)
+  const effectiveViewMode = enableGridView ? viewMode : 'table'
   const pagination = (
     <Pagination
       currentPage={currentPage}
@@ -72,8 +74,9 @@ export function DataTable<T>({
               columnVisibility={columnVisibility}
               onColumnVisibilityChange={onColumnVisibilityChange}
               formatColumnName={formatColumnName}
-              viewMode={viewMode}
-              onViewModeChange={onViewModeChange}
+              viewMode={effectiveViewMode}
+              onViewModeChange={enableGridView ? onViewModeChange : undefined}
+              allowGridView={enableGridView}
             />
           </SearchAndFiltersContainer>
         </FiltersContainer>
@@ -109,7 +112,7 @@ export function DataTable<T>({
   }
 
   function renderLoading() {
-    return viewMode === 'table' ? (
+    return effectiveViewMode === 'table' ? (
       <Table>
         <thead>
           <tr>
@@ -157,7 +160,7 @@ export function DataTable<T>({
   }
 
   function renderData() {
-    return viewMode === 'table' ? (
+    return effectiveViewMode === 'table' ? (
       <Table>
         <thead>
           <tr>

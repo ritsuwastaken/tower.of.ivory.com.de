@@ -212,6 +212,7 @@ export const ArmorSetsPage = () => {
 
   return (
     <DataTable
+      enableGridView
       data={currentArmorSets}
       columns={columns}
       isLoading={isLoading}

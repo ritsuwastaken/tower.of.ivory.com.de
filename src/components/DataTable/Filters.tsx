@@ -14,6 +14,7 @@ export function Filters({
   formatColumnName,
   viewMode,
   onViewModeChange,
+  allowGridView,
 }: FiltersProps) {
   const toggleRef = useRef<HTMLButtonElement>(null)
   const filtersRef = useRef<HTMLDivElement>(null)
@@ -35,18 +36,20 @@ export function Filters({
 
       {showFilters && !isLoading && (
         <FiltersSection ref={filtersRef}>
-          <FilterGroup>
-            <FilterLabel>View:</FilterLabel>
-            <ViewToggle
-              onClick={() =>
-                onViewModeChange?.(viewMode === 'table' ? 'grid' : 'table')
-              }
-              disabled={isLoading}
-              style={{ width: '100%', marginBottom: '1rem' }}
-            >
-              {viewMode === 'table' ? 'Grid View' : 'Table View'}
-            </ViewToggle>
-          </FilterGroup>
+          {allowGridView && (
+            <FilterGroup>
+              <FilterLabel>View:</FilterLabel>
+              <ViewToggle
+                onClick={() =>
+                  onViewModeChange?.(viewMode === 'table' ? 'grid' : 'table')
+                }
+                disabled={isLoading}
+                style={{ width: '100%', marginBottom: '1rem' }}
+              >
+                {viewMode === 'table' ? 'Grid View' : 'Table View'}
+              </ViewToggle>
+            </FilterGroup>
+          )}
 
           {filters.map((filter) => (
             <FilterGroup key={filter.id}>

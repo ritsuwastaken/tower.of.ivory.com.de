@@ -27,6 +27,7 @@ export interface FiltersProps {
   formatColumnName: (column: string) => string
   viewMode: 'table' | 'grid'
   onViewModeChange?: (mode: 'table' | 'grid') => void
+  allowGridView?: boolean
 }
 
 interface FilterOption {
@@ -77,4 +78,5 @@ export interface DataTableProps<T> {
   currentPage: number
   totalPages: number
   onPageChange: (page: number) => void
+  enableGridView?: boolean
 }
