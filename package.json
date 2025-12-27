@@ -11,14 +11,14 @@
     "format:check": "prettier . --check"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.68.0",
-    "i18next": "^24.2.3",
-    "next": "15.2.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-i18next": "^15.4.1",
+    "@tanstack/react-query": "^5.90.12",
+    "i18next": "^25.7.3",
+    "next": "^16.1.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-i18next": "^16.5.0",
     "react-loading-skeleton": "^3.5.0",
-    "styled-components": "^6.1.16"
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
