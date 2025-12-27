@@ -404,11 +404,11 @@
     "changes": {
       "description": {
         "old": "Increases defense and  maximum HP when used  as a set along with  Wooden Gaiters and a  Wooden Helmet.",
-        "new": "The historians of Elmoreadensaid that access to the river would be closed if you         wanted to enter it again,       and they were right, becausethe world would never be thesame again, it had changed.                                            The old power no longer had its advantages, it was time   to look for new ways."
+        "new": "The historians of Elmoreaden said that access to the river would be closed if you wanted to enter it again, and they were right, becausethe world would never be thesame again, it had changed.                                                                   The old power no longer had its advantages, it was time to look for new ways."
       }
     },
     "name": "Wooden Breastplate",
-    "description": "The historians of Elmoreadensaid that access to the river would be closed if you         wanted to enter it again,       and they were right, becausethe world would never be thesame again, it had changed.                                            The old power no longer had its advantages, it was time   to look for new ways."
+    "description": "The historians of Elmoreaden said that access to the river would be closed if you wanted to enter it again, and they were right, becausethe world would never be thesame again, it had changed.                                                                   The old power no longer had its advantages, it was time to look for new ways."
   },
   {
     "object_id": 24,
@@ -3494,11 +3494,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set."
+        "new": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set                  White Magic set."
       }
     },
     "name": "Bronze Helmet",
-    "description": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set."
+    "description": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set                  White Magic set."
   },
   {
     "object_id": 47,
@@ -5017,11 +5017,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "Set: Mithril Breastplate,        Gaiters, Helmet                                                                | Poison, Bleed Resist +20%    | M.Def +50, P.Def +7%           | +90HP with Hoplon Shield."
+        "new": "Set: Mithril Breastplate,        Gaiters, Helmet                                                                | Poison, Bleed Resist +20%    | M.Def +50, P.Def +8%           | +90HP with Hoplon Shield."
       }
     },
     "name": "Mithril Breastplate",
-    "description": "Set: Mithril Breastplate,        Gaiters, Helmet                                                                | Poison, Bleed Resist +20%    | M.Def +50, P.Def +7%           | +90HP with Hoplon Shield."
+    "description": "Set: Mithril Breastplate,        Gaiters, Helmet                                                                | Poison, Bleed Resist +20%    | M.Def +50, P.Def +8%           | +90HP with Hoplon Shield."
   },
   {
     "object_id": 59,
@@ -5326,11 +5326,11 @@
     "changes": {
       "description": {
         "old": "A one-piece upper and  lower body armor.  Additional lower body  armor cannot be worn  while wearing this  armor.",
-        "new": "Hybrid set: Armor                 Composite Helmet.                                                          | MP +170, Casting Spd +28     | P. Atk +26, CON -1               | + With Shield +50 M. Def. "
+        "new": "Hybrid set: Armor                 Composite Helmet.                                                           | MP +170, Casting Spd +28     | P.Atk +26 MP Regen +0.4     | CON -1                              | + With Shield +50 M. Def."
       }
     },
     "name": "Composite Armor",
-    "description": "Hybrid set: Armor                 Composite Helmet.                                                          | MP +170, Casting Spd +28     | P. Atk +26, CON -1               | + With Shield +50 M. Def. "
+    "description": "Hybrid set: Armor                 Composite Helmet.                                                           | MP +170, Casting Spd +28     | P.Atk +26 MP Regen +0.4     | CON -1                              | + With Shield +50 M. Def."
   },
   {
     "object_id": 61,
@@ -5583,10 +5583,10 @@
     "armor_type": "none",
     "weight": 1290,
     "material_type": "mithril",
-    "crystal_type": "d",
+    "crystal_type": "c",
     "avoid_modify": 0,
     "durability": 97,
-    "physical_defense": 24,
+    "physical_defense": 32,
     "magical_defense": 0,
     "mp_bonus": 0,
     "base_price": 45900,
@@ -5617,6 +5617,14 @@
         "new": [
           "FMagic.FMagic_m003_t09_b"
         ]
+      },
+      "crystal_type": {
+        "old": "d",
+        "new": "c"
+      },
+      "physical_defense": {
+        "old": 24,
+        "new": 32
       },
       "description": {
         "old": "",
@@ -7369,11 +7377,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "Set: Compound Scale Mail,     Gaiters, Helmet                                                                | Magic Def +47, DEX +1          | Speed +5, Evasion +2           | P. Atk -3"
+        "new": "Set: Compound Scale Mail,     Gaiters, Helmet                                                                | Magic Def +47, DEX +1          | Speed +5, Evasion +4           | P. Atk -3"
       }
     },
     "name": "Compound Scale Mail",
-    "description": "Set: Compound Scale Mail,     Gaiters, Helmet                                                                | Magic Def +47, DEX +1          | Speed +5, Evasion +2           | P. Atk -3"
+    "description": "Set: Compound Scale Mail,     Gaiters, Helmet                                                                | Magic Def +47, DEX +1          | Speed +5, Evasion +4           | P. Atk -3"
   },
   {
     "object_id": 350,
@@ -7510,11 +7518,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "Lost Dwarven Artifact                                                     Dwarven Scale Mail              Dwarven Scale Gaiters         Helmet                                                                           | DEX +1, Move speed +5        | Accuracy +2, P. Atk +14        | CON -1"
+        "new": "Lost Dwarven Artifact                                                     Dwarven Scale Mail              Dwarven Scale Gaiters         Helmet                                                                           | DEX +1, Move speed +5        | Accuracy +2, P. Atk +12        | CON -1"
       }
     },
     "name": "Dwarven Scale Mail",
-    "description": "Lost Dwarven Artifact                                                     Dwarven Scale Mail              Dwarven Scale Gaiters         Helmet                                                                           | DEX +1, Move speed +5        | Accuracy +2, P. Atk +14        | CON -1"
+    "description": "Lost Dwarven Artifact                                                     Dwarven Scale Mail              Dwarven Scale Gaiters         Helmet                                                                           | DEX +1, Move speed +5        | Accuracy +2, P. Atk +12        | CON -1"
   },
   {
     "object_id": 351,
@@ -7786,11 +7794,11 @@
     "changes": {
       "description": {
         "old": "When wearing this  along with brigandine  gaiters and  brigandine helmet as  a set, it will  increase one’s  maximum HP value and  P. Def. In addition  to wearing this set,  if one carries a  brigandine shield, an  additional effect  will be generated.",
-        "new": "Set: Brigandine Tunic           Brigandine Gaiters           Brigandine Helmet                + Shield                                                                         | P.Def +5%, HP +180              | DEX +1, Speed +5                | + With Shield HP +50"
+        "new": "Set: Brigandine Tunic           Brigandine Gaiters           Brigandine Helmet                + Shield                                                                         | P.Def +6%, HP +180              | DEX +1, Speed +5                | + With Shield HP +50"
       }
     },
     "name": "Brigandine Tunic",
-    "description": "Set: Brigandine Tunic           Brigandine Gaiters           Brigandine Helmet                + Shield                                                                         | P.Def +5%, HP +180              | DEX +1, Speed +5                | + With Shield HP +50"
+    "description": "Set: Brigandine Tunic           Brigandine Gaiters           Brigandine Helmet                + Shield                                                                         | P.Def +6%, HP +180              | DEX +1, Speed +5                | + With Shield HP +50"
   },
   {
     "object_id": 353,
@@ -7927,11 +7935,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "Made in the Ivory Tower                                                  Half Plate Armor                   Half Plate Gaiters                 Plate Helmet                                                                   | P.Atk +18, DEX +1, Speed +5  | Root, Sleep Resist +25 %     | With Plate Shield M. Def +40"
+        "new": "Made in the Ivory Tower                                                  Half Plate Armor                   Half Plate Gaiters                 Plate Helmet                                                                   | P.Atk +16, DEX +1, Speed +5  | Root, Sleep Resist +20 %     | With Plate Shield M. Def +40"
       }
     },
     "name": "Half Plate Armor",
-    "description": "Made in the Ivory Tower                                                  Half Plate Armor                   Half Plate Gaiters                 Plate Helmet                                                                   | P.Atk +18, DEX +1, Speed +5  | Root, Sleep Resist +25 %     | With Plate Shield M. Def +40"
+    "description": "Made in the Ivory Tower                                                  Half Plate Armor                   Half Plate Gaiters                 Plate Helmet                                                                   | P.Atk +16, DEX +1, Speed +5  | Root, Sleep Resist +20 %     | With Plate Shield M. Def +40"
   },
   {
     "object_id": 354,
@@ -8305,11 +8313,11 @@
       },
       "description": {
         "old": "",
-        "new": "Set: Shirt, Gaiters,Boots,       Gloves, + Shield                                                              | Attack Speed +6% for:          Swords and Blunts                | DEX +2 , Speed +5               | CON -1                               | + With Dwarven Shield:        Shield Def +6% | M. Def +50"
+        "new": "Set: Shirt, Gaiters, Gloves     Boots, + Dwarven Shield                                                   | Atk. Spd +6% for: Sword,      | Blunt, Pole, Dual. Speed +5   | Dex +2, CON -1                                                             + Dwarven Shield:                 Shield Def +6% | M. Def +50"
       }
     },
     "name": "Dwarven Chain Mail Shirt",
-    "description": "Set: Shirt, Gaiters,Boots,       Gloves, + Shield                                                              | Attack Speed +6% for:          Swords and Blunts                | DEX +2 , Speed +5               | CON -1                               | + With Dwarven Shield:        Shield Def +6% | M. Def +50"
+    "description": "Set: Shirt, Gaiters, Gloves     Boots, + Dwarven Shield                                                   | Atk. Spd +6% for: Sword,      | Blunt, Pole, Dual. Speed +5   | Dex +2, CON -1                                                             + Dwarven Shield:                 Shield Def +6% | M. Def +50"
   },
   {
     "object_id": 356,
@@ -8476,11 +8484,11 @@
     "changes": {
       "description": {
         "old": "A one-piece upper and  lower body armor.  Additional lower body  armor cannot be worn  while wearing this.",
-        "new": "Set: FP Armor, FP Helmet       + Full Plate Shield                                                           | DEX +2, Speed +5, P.Atk +30  | Sleep, Hold resist +20%        | + Shield - Shield Def. +6%"
+        "new": "Set: FP Armor, FP Helmet      + Full Plate Shield                                                           | DEX +2, Speed +5, P.Atk +30  | Sleep, Hold resist +15%       | + Shield - Shield Def. +6%"
       }
     },
     "name": "Full Plate Armor",
-    "description": "Set: FP Armor, FP Helmet       + Full Plate Shield                                                           | DEX +2, Speed +5, P.Atk +30  | Sleep, Hold resist +20%        | + Shield - Shield Def. +6%"
+    "description": "Set: FP Armor, FP Helmet      + Full Plate Shield                                                           | DEX +2, Speed +5, P.Atk +30  | Sleep, Hold resist +15%       | + Shield - Shield Def. +6%"
   },
   {
     "object_id": 357,
@@ -14284,11 +14292,11 @@
     "changes": {
       "description": {
         "old": "Maximum MP increases  when worn as a set  along with the  Reinforced Leather  Gaiters and  Reinforced Leather  Boots.",
-        "new": "Set: Reinforced Leather Shirt Reinforced Leather Gaiters     Reinforced Leather Boots                                                 | P.Def +7%, M.Def +47            | Evasion +2, P.Atk -3"
+        "new": "Set: Reinforced Leather Shirt Reinforced Leather Gaiters     Reinforced Leather Boots                                                 | P.Def +8%, M.Def +47            | Evasion +2, P.Atk -3"
       }
     },
     "name": "Reinforced Leather Shirt",
-    "description": "Set: Reinforced Leather Shirt Reinforced Leather Gaiters     Reinforced Leather Boots                                                 | P.Def +7%, M.Def +47            | Evasion +2, P.Atk -3"
+    "description": "Set: Reinforced Leather Shirt Reinforced Leather Gaiters     Reinforced Leather Boots                                                 | P.Def +8%, M.Def +47            | Evasion +2, P.Atk -3"
   },
   {
     "object_id": 395,
@@ -15100,11 +15108,11 @@
       },
       "description": {
         "old": "",
-        "new": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +2           | CON -1                              | With Gloves +40 MP"
+        "new": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +40 MP"
       }
     },
     "name": "Plated Leather",
-    "description": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +2           | CON -1                              | With Gloves +40 MP"
+    "description": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +40 MP"
   },
   {
     "object_id": 399,
@@ -15501,11 +15509,11 @@
       },
       "description": {
         "old": "",
-        "new": "Set: Rind Leather Armor        Rind Leather Gaiters             Rind Leather Gloves                                                         | Shock Resist  +25%            | MEN +3, HP +210                  | M. Atk -6%"
+        "new": "Set: Rind Leather Armor        Rind Leather Gaiters             Rind Leather Gloves                                                         | Shock Resist  +25%            | MEN +3, HP +210                  | MP Regen +0.4, M. Atk -6%"
       }
     },
     "name": "Rind Leather Armor",
-    "description": "Set: Rind Leather Armor        Rind Leather Gaiters             Rind Leather Gloves                                                         | Shock Resist  +25%            | MEN +3, HP +210                  | M. Atk -6%"
+    "description": "Set: Rind Leather Armor        Rind Leather Gaiters             Rind Leather Gloves                                                         | Shock Resist  +25%            | MEN +3, HP +210                  | MP Regen +0.4, M. Atk -6%"
   },
   {
     "object_id": 400,
@@ -15853,11 +15861,11 @@
     "changes": {
       "description": {
         "old": "A one-piece upper and  lower body armor.  Additional lower body  armor cannot be worn  while wearing this.",
-        "new": "As everyone knows, this high-quality armor is made from the skin of a drake that lives in the Dragon Valley. But why is it red and the scales are so large? No one has ever seen a big red dragon...                                                                        Set: Drake Armor, Boots                                                   | P.Atk +28, Atk.Spd +5.5%       | Sleep, Hold resist +10%        | M.Def +60"
+        "new": "As everyone knows, this high-quality armor is made from the skin of a drake that lives in the Dragon Valley. But why is it red and the scales are so large? No one has ever seen a big red dragon...                                                                        Set: Drake Armor, Boots                                                   | P.Atk +28, Atk.Spd +5.5%       | Sleep, Hold resist +10%        | M.Def +50"
       }
     },
     "name": "Drake Leather Armor",
-    "description": "As everyone knows, this high-quality armor is made from the skin of a drake that lives in the Dragon Valley. But why is it red and the scales are so large? No one has ever seen a big red dragon...                                                                        Set: Drake Armor, Boots                                                   | P.Atk +28, Atk.Spd +5.5%       | Sleep, Hold resist +10%        | M.Def +60"
+    "description": "As everyone knows, this high-quality armor is made from the skin of a drake that lives in the Dragon Valley. But why is it red and the scales are so large? No one has ever seen a big red dragon...                                                                        Set: Drake Armor, Boots                                                   | P.Atk +28, Atk.Spd +5.5%       | Sleep, Hold resist +10%        | M.Def +50"
   },
   {
     "object_id": 402,
@@ -21176,11 +21184,11 @@
       },
       "description": {
         "old": "",
-        "new": "Stolen cloth, and buried deep from evil eyes.                Set: Dark Elven Tunic,           Stockings, Bronze Helmet                                                 | MP Regen +0.7, P.Def +4%     | Resist Root / Sleep +25%"
+        "new": "Stolen cloth, and buried deep from evil eyes.                Set: Dark Elven Tunic,           Stockings, Bronze Helmet                                                 | MP Regen +0.5, P.Def +5%     | Resist Root / Sleep +25%"
       }
     },
     "name": "Dark Elven Tunic",
-    "description": "Stolen cloth, and buried deep from evil eyes.                Set: Dark Elven Tunic,           Stockings, Bronze Helmet                                                 | MP Regen +0.7, P.Def +4%     | Resist Root / Sleep +25%"
+    "description": "Stolen cloth, and buried deep from evil eyes.                Set: Dark Elven Tunic,           Stockings, Bronze Helmet                                                 | MP Regen +0.5, P.Def +5%     | Resist Root / Sleep +25%"
   },
   {
     "object_id": 434,
@@ -21317,11 +21325,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "Set: Tunic, Stockings +Shield                                           | MP +80, MP Regen +0.7         | M. Atk -5%, Weight Limit       +4000 with Bronze Shield"
+        "new": "Set: Tunic, Stockings,           Bronze Helmet +Shield                                                      | MP +55, MP Regen +0.4        | M. Atk -5%, Weight Limit      +4000 with Bronze Shield."
       }
     },
     "name": "White Tunic",
-    "description": "Set: Tunic, Stockings +Shield                                           | MP +80, MP Regen +0.7         | M. Atk -5%, Weight Limit       +4000 with Bronze Shield"
+    "description": "Set: Tunic, Stockings,           Bronze Helmet +Shield                                                      | MP +55, MP Regen +0.4        | M. Atk -5%, Weight Limit      +4000 with Bronze Shield."
   },
   {
     "object_id": 435,
@@ -21458,11 +21466,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "Set: Tunic, Stockings,            Bronze Helmet                                                                | Casting Speed +5%               | M.Def +37, CON -1"
+        "new": "Set: Tunic, Stockings,           Bronze Helmet                                                                 | Casting Spd +6%, M.Def +37  | Bow Resist +7%, CON -1"
       }
     },
     "name": "Mystic's Tunic",
-    "description": "Set: Tunic, Stockings,            Bronze Helmet                                                                | Casting Speed +5%               | M.Def +37, CON -1"
+    "description": "Set: Tunic, Stockings,           Bronze Helmet                                                                 | Casting Spd +6%, M.Def +37  | Bow Resist +7%, CON -1"
   },
   {
     "object_id": 436,
@@ -21599,11 +21607,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "Set: Tunic, Stockings, gloves | M.Atk +8% MP regen. -0.3"
+        "new": "Set: Tunic, Stockings, gloves                                           | M.Atk +8%, Bow resist +6%    | MP Regeneration -0.2"
       }
     },
     "name": "Tunic of Knowledge",
-    "description": "Set: Tunic, Stockings, gloves | M.Atk +8% MP regen. -0.3"
+    "description": "Set: Tunic, Stockings, gloves                                           | M.Atk +8%, Bow resist +6%    | MP Regeneration -0.2"
   },
   {
     "object_id": 437,
@@ -21738,13 +21746,17 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "name": {
+        "old": "Mithril Tunic",
+        "new": "Elven Mithril Tunic"
+      },
       "description": {
         "old": "",
-        "new": "Set: Tunic, Stockings, Gloves | Wit +1, HP +105,  M. Atk -5%"
+        "new": "Set: Elven Mithril Tunic,         Stockings, Gloves                                                           | WIT +1, HP +125                   | Bow Resist +5%"
       }
     },
-    "name": "Mithril Tunic",
-    "description": "Set: Tunic, Stockings, Gloves | Wit +1, HP +105,  M. Atk -5%"
+    "name": "Elven Mithril Tunic",
+    "description": "Set: Elven Mithril Tunic,         Stockings, Gloves                                                           | WIT +1, HP +125                   | Bow Resist +5%"
   },
   {
     "object_id": 438,
@@ -22052,11 +22064,11 @@
     "changes": {
       "description": {
         "old": "Physical defensive  ability and magic  casting speed  increase when worn as  a set along with the  Karmian Hose and  Karmian Gloves.",
-        "new": "Set: Tunic, Stockings, Gloves                                           | P.Def +6%, Cast.Spd +8%      | M. Atk -8%"
+        "new": "Set: Tunic, Stockings, Gloves                                           | P.Def +4%, Cast. Spd +8%     | Bow resist +10%"
       }
     },
     "name": "Karmian Tunic",
-    "description": "Set: Tunic, Stockings, Gloves                                           | P.Def +6%, Cast.Spd +8%      | M. Atk -8%"
+    "description": "Set: Tunic, Stockings, Gloves                                           | P.Def +4%, Cast. Spd +8%     | Bow resist +10%"
   },
   {
     "object_id": 440,
@@ -22223,11 +22235,11 @@
     "changes": {
       "description": {
         "old": "A one-piece upper and  lower body armor.  Additional lower body  armor cannot be worn  while wearing this.",
-        "new": "One-piece armor created from ancient threads, making it as fragile as paper.          Set: Robe, Shining Circlet, +   Gloves of Seal                                                               | Cast.Spd +8%, HP +190         | M.Def +60                           | With Gloves of Seal CON +1"
+        "new": "One-piece armor created from ancient threads, making it as fragile as paper.          Set: Robe, Shining Circlet,  +   Gloves of Seal                                                              | Cast. Spd +8%, HP +210        | Bow Resistance +15%           | With Gloves of Seal CON +2"
       }
     },
     "name": "Robe of Seal",
-    "description": "One-piece armor created from ancient threads, making it as fragile as paper.          Set: Robe, Shining Circlet, +   Gloves of Seal                                                               | Cast.Spd +8%, HP +190         | M.Def +60                           | With Gloves of Seal CON +1"
+    "description": "One-piece armor created from ancient threads, making it as fragile as paper.          Set: Robe, Shining Circlet,  +   Gloves of Seal                                                              | Cast. Spd +8%, HP +210        | Bow Resistance +15%           | With Gloves of Seal CON +2"
   },
   {
     "object_id": 441,
@@ -22364,11 +22376,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "A Powerful Robe, that rewards the wearer with the ability to master the mindset of the powerful.                                                              Set: Demon's Tunic               Demon's Stockings               Demon's Gloves                                                              | INT +5, WIT -1, -270 HP"
+        "new": "A Powerful Robe, that           rewards the wearer with the  ability to master the mindset of the powerful.                                                              Set: Demon's Tunic               Demon's Stockings               Demon's Gloves                                                             | INT +5, Bow Resistance +20% | WIT -1, -270 HP                  "
       }
     },
     "name": "Demon's Tunic",
-    "description": "A Powerful Robe, that rewards the wearer with the ability to master the mindset of the powerful.                                                              Set: Demon's Tunic               Demon's Stockings               Demon's Gloves                                                              | INT +5, WIT -1, -270 HP"
+    "description": "A Powerful Robe, that           rewards the wearer with the  ability to master the mindset of the powerful.                                                              Set: Demon's Tunic               Demon's Stockings               Demon's Gloves                                                             | INT +5, Bow Resistance +20% | WIT -1, -270 HP                  "
   },
   {
     "object_id": 442,
@@ -22505,11 +22517,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "The luxury of two kingdoms.   Set: Tunic, Stockings, gloves                                           | P.Def +6%, WIT +1                | MP +171, MP Regen +0.9"
+        "new": "The luxury of two kingdoms.  Set: Tunic, Stockings, gloves                                            | P.Def +6%, WIT +1, INT -1      | MP +171, MP Regen +0.9      | Dagger and Bow Resist +5%"
       }
     },
     "name": "Divine Tunic",
-    "description": "The luxury of two kingdoms.   Set: Tunic, Stockings, gloves                                           | P.Def +6%, WIT +1                | MP +171, MP Regen +0.9"
+    "description": "The luxury of two kingdoms.  Set: Tunic, Stockings, gloves                                            | P.Def +6%, WIT +1, INT -1      | MP +171, MP Regen +0.9      | Dagger and Bow Resist +5%"
   },
   {
     "object_id": 443,
@@ -26549,12 +26561,16 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "name": {
+        "old": "Mithril Stockings",
+        "new": "Elven Mithril Stockings"
+      },
       "description": {
         "old": "",
         "new": "Part of the set:                    Elven Mithril set"
       }
     },
-    "name": "Mithril Stockings",
+    "name": "Elven Mithril Stockings",
     "description": "Part of the set:                    Elven Mithril set"
   },
   {
@@ -62585,11 +62601,11 @@
     "changes": {
       "description": {
         "old": "A tunic with rune  characters of mana,  embroidered with silk  thread",
-        "new": "Once upon a time this magical rag had incredible power, but the merchants of all cities were outraged that the rag had high popularity devaluing the rest of the goods.\\nThen the merchants turned to the magicians in the Ivory Tower and they, for a high fee, destroyed the traces of magical power, thereby restoring the economy of the kingdom."
+        "new": "Once upon a time this magical rag had incredible power, but the merchants of all cities were outraged that the rag had high popularity devaluing the rest of the goods.                                                                        Then the merchants turned to the magicians in the Ivory Tower and they, for a high fee, destroyed the traces of magical power, thereby restoring the economy of the kingdom."
       }
     },
     "name": "Tunic of Devotion",
-    "description": "Once upon a time this magical rag had incredible power, but the merchants of all cities were outraged that the rag had high popularity devaluing the rest of the goods.\\nThen the merchants turned to the magicians in the Ivory Tower and they, for a high fee, destroyed the traces of magical power, thereby restoring the economy of the kingdom."
+    "description": "Once upon a time this magical rag had incredible power, but the merchants of all cities were outraged that the rag had high popularity devaluing the rest of the goods.                                                                        Then the merchants turned to the magicians in the Ivory Tower and they, for a high fee, destroyed the traces of magical power, thereby restoring the economy of the kingdom."
   },
   {
     "object_id": 1102,
@@ -71474,13 +71490,13 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
-      "description": {
-        "old": "",
-        "new": "Set: Elven Mithril Tunic, Stockings, Gloves |  WIT+1, HP+105, M. Atk -5%"
+      "name": {
+        "old": "Elven Mithril Tunic",
+        "new": "Dark Mithril Tunic"
       }
     },
-    "name": "Elven Mithril Tunic",
-    "description": "Set: Elven Mithril Tunic, Stockings, Gloves |  WIT+1, HP+105, M. Atk -5%"
+    "name": "Dark Mithril Tunic",
+    "description": ""
   },
   {
     "object_id": 2397,
@@ -89784,6 +89800,136 @@
     "description": ""
   },
   {
+    "object_id": 9950,
+    "object_name": "flower_cap",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "harbor.virus_icon.virus_01_h_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.viRUS_MF_01_m002_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.viRUS_FF_01_m002_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.viRUS_MM_01_m002_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.viRUS_FM_01_m002_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.viRUS_ME_01_m002_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.viRUS_FE_01_m002_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.viRUS_MD_01_m002_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.viRUS_FD_01_m002_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.viRUS_MW_01_m002_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.viRUS_FW_01_m002_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.viRUS_MO_01_m002_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.viRUS_FO_01_m002_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.viRUS_MS_01_m002_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.viRUS_FS_01_m002_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Diadem",
+    "description": "Hair accessory worn by a bride at her wedding ceremony.  This hair accessory can only be worn by females only."
+  },
+  {
     "object_id": 9961,
     "object_name": "black _feather_mask",
     "body_part": [
@@ -89914,6 +90060,526 @@
     "description": "A head accessory decorated with a black feather."
   },
   {
+    "object_id": 9951,
+    "object_name": "bear_cap",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_bear_cap_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_bear_cap_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_bear_cap_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_bear_cap_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_bear_cap_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_bear_cap_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_bear_cap_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_bear_cap_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_bear_cap_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_bear_cap_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_bear_cap_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_bear_cap_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_bear_cap_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_bear_cap_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_bear_cap_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Teddy Bear Hat",
+    "description": "A fun, bear-shaped hair accessory."
+  },
+  {
+    "object_id": 9952,
+    "object_name": "pig_cap",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_pig_cap_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_pig_cap_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_pig_cap_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_pig_cap_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_pig_cap_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_pig_cap_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_pig_cap_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_pig_cap_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_pig_cap_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_pig_cap_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_pig_cap_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_pig_cap_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_pig_cap_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_pig_cap_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_pig_cap_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Piggy Hat",
+    "description": "A fun, pig-shaped hair accessory."
+  },
+  {
+    "object_id": 9953,
+    "object_name": "jester_cap_1",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_jester_cap_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_jester_cap_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_jester_cap_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_jester_cap_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_jester_cap_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_jester_cap_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_jester_cap_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_jester_cap_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_jester_cap_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_jester_cap_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_jester_cap_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_jester_cap_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_jester_cap_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_jester_cap_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_jester_cap_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Jester Hat",
+    "description": "A festive jester hat with a split top. "
+  },
+  {
+    "object_id": 9954,
+    "object_name": "magic_cap",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "harbor.virus_icon.virus_03_h_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.viRUS_MF_03_m002_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.viRUS_FF_03_m002_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.viRUS_MM_03_m002_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.viRUS_FM_03_m002_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.viRUS_ME_03_m002_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.viRUS_FE_03_m002_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.viRUS_MD_03_m002_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.viRUS_FD_03_m002_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.viRUS_MW_03_m002_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.viRUS_FW_03_m002_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.viRUS_MO_03_m002_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.viRUS_FO_03_m002_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.viRUS_MS_03_m002_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.viRUS_FS_03_m002_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Wizard's Hat",
+    "description": "A wizard's hat with a wide brim and bent tip."
+  },
+  {
     "object_id": 9955,
     "object_name": "dapper_cap",
     "body_part": [
@@ -90042,6 +90708,526 @@
     "is_changed": false,
     "name": "Dapper Cap",
     "description": "Stylish cap with a visor."
+  },
+  {
+    "object_id": 9956,
+    "object_name": "romantic_chaperon",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_romantic_chaperon_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_romantic_cap_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_romantic_cap_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_romantic_cap_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_romantic_cap_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_romantic_cap_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_romantic_cap_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_romantic_cap_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_romantic_cap_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_romantic_cap_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_romantic_cap_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_romantic_cap_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_romantic_cap_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_romantic_cap_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_romantic_cap_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Romantic Chapeau",
+    "description": "An extravagant chapeau adorned with feathers. "
+  },
+  {
+    "object_id": 9957,
+    "object_name": "iron_circlet",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_iron_circlet_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_iron_circlet_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_iron_circlet_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_iron_circlet_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_iron_circlet_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_iron_circlet_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_iron_circlet_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_iron_circlet_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_iron_circlet_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_iron_circlet_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_iron_circlet_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_iron_circlet_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_iron_circlet_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_iron_circlet_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_iron_circlet_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Iron Circlet",
+    "description": "Hair accessory used in overseas events.  This item is designed for use in events only and cannot be exchanged or dropped."
+  },
+  {
+    "object_id": 9958,
+    "object_name": "valakas_circlet",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_valakas_circlet_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_valakas_circlet_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_valakas_circlet_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_valakas_circlet_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_valakas_circlet_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_valakas_circlet_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_valakas_circlet_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_valakas_circlet_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_valakas_circlet_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_valakas_circlet_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_valakas_circlet_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_valakas_circlet_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_valakas_circlet_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_valakas_circlet_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_valakas_circlet_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Valakas Slayer Circlet",
+    "description": "The circlet presented to a player who has defeated Valakas."
+  },
+  {
+    "object_id": 9959,
+    "object_name": "antaras_circlet",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_antaras_circlet_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_antaras_circlet_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_antaras_circlet_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_antaras_circlet_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_antaras_circlet_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_antaras_circlet_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_antaras_circlet_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_antaras_circlet_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_antaras_circlet_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_antaras_circlet_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_antaras_circlet_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_antaras_circlet_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_antaras_circlet_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_antaras_circlet_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_antaras_circlet_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Antharas Slayer Circlet",
+    "description": "The circlet presented to a player who has defeated Antharas."
   },
   {
     "object_id": 9972,
@@ -90694,6 +91880,396 @@
     "description": "A mysterious costume accessory that covers half of the wearer's face."
   },
   {
+    "object_id": 9962,
+    "object_name": "half_face_1",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessary_black_half_mask_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_half_face1_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_half_face1_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_half_face1_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_half_face1_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_half_face1_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_half_face1_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_half_face1_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_half_face1_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_half_face1_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_half_face1_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_half_face1_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_half_face1_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_half_face1_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_half_face1_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Black Half-Mask",
+    "description": "A black-colored half mask."
+  },
+  {
+    "object_id": 9964,
+    "object_name": "black_butterfly_hearpin",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessary_butterfly_hearpin_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_black_butterfly_hearpin_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_black_butterfly_hearpin_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_black_butterfly_hearpin_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_black_butterfly_hearpin_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_black_butterfly_hearpin_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_black_butterfly_hearpin_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_black_butterfly_hearpin_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_black_butterfly_hearpin_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_black_butterfly_hearpin_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_black_butterfly_hearpin_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_black_butterfly_hearpin_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_black_butterfly_hearpin_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_black_butterfly_hearpin_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_black_butterfly_hearpin_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Butterfly Hairpin",
+    "description": "Hairpin in the shape of a butterfly. This is a female-only hair accessory."
+  },
+  {
+    "object_id": 9969,
+    "object_name": "middle_ages",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessary_middle_ages_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_middle_ages_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_middle_ages_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_middle_ages_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_middle_ages_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_middle_ages_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_middle_ages_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_middle_ages_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_middle_ages_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_middle_ages_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_middle_ages_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_middle_ages_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_middle_ages_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_middle_ages_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_middle_ages_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Leather Cap",
+    "description": "A medieval-era hat made of leather."
+  },
+  {
     "object_id": 9967,
     "object_name": "eye_patch",
     "body_part": [
@@ -91214,6 +92790,656 @@
     "description": "Stylish cap with a visor."
   },
   {
+    "object_id": 9973,
+    "object_name": "sea_robber",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessary_sea_robber_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_sea_robber_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_sea_robber_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_sea_robber_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_sea_robber_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_sea_robber_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_sea_robber_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_sea_robber_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_sea_robber_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_sea_robber_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_sea_robber_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_sea_robber_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_sea_robber_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_sea_robber_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_sea_robber_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Pirate Hat",
+    "description": "Hat worn by pirates."
+  },
+  {
+    "object_id": 9975,
+    "object_name": "magic_cap_1",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "harbor.accessory_magician_cap2_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.viRUS1_MF_03_m002_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.viRUS1_FF_03_m002_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.viRUS1_MM_03_m002_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.viRUS1_FM_03_m002_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.viRUS1_ME_03_m002_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.viRUS1_FE_03_m002_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.viRUS1_MD_03_m002_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.viRUS1_FD_03_m002_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.viRUS1_MW_03_m002_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.viRUS1_FW_03_m002_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.viRUS1_MO_03_m002_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.viRUS1_FO_03_m002_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.viRUS1_MS_03_m002_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.viRUS1_FS_03_m002_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Refined Wizard's Hat",
+    "description": "A wizard's hat with a wide brim and bent tip."
+  },
+  {
+    "object_id": 9976,
+    "object_name": "jester_cap_1",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_jester_cap_2_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_jester_cap1_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_jester_cap1_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_jester_cap1_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_jester_cap1_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_jester_cap1_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_jester_cap1_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_jester_cap1_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_jester_cap1_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_jester_cap1_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_jester_cap1_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_jester_cap1_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_jester_cap1_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_jester_cap1_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_jester_cap1_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Refined Jester Hat",
+    "description": "A festive jester hat with a split top."
+  },
+  {
+    "object_id": 9977,
+    "object_name": "archer_hat",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_archer_hat2_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_archer_hat_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_archer_hat_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_archer_hat_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_archer_hat_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_archer_hat_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_archer_hat_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_archer_hat_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_archer_hat_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_archer_hat_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_archer_hat_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_archer_hat_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_archer_hat_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_archer_hat_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_archer_hat_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Refined Romantic Chapeau",
+    "description": "An extravagant chapeau adorned with feathers."
+  },
+  {
+    "object_id": 9978,
+    "object_name": "dandy_cap_1",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_dandy_cap2_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_dandy_cap1_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_dandy_cap1_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_dandy_cap1_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_dandy_cap1_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_dandy_cap1_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_dandy_cap1_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_dandy_cap1_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_dandy_cap1_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_dandy_cap1_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_dandy_cap1_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_dandy_cap1_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_dandy_cap1_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_dandy_cap1_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_dandy_cap1_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Refined Dapper Cap",
+    "description": "A stylish cap with a visor."
+  },
+  {
     "object_id": 9981,
     "object_name": "demon_circlet",
     "body_part": [
@@ -91602,6 +93828,656 @@
     "is_changed": false,
     "name": "Goddess Circlet",
     "description": "A goddess circlet. Female only."
+  },
+  {
+    "object_id": 9863,
+    "object_name": "hairpin",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_hairpin_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_hairpin_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_hairpin_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_hairpin_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_hairpin_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_hairpin_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_hairpin_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_hairpin_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_hairpin_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_hairpin_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_hairpin_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_hairpin_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_hairpin_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_hairpin_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_hairpin_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Single Stem Flower",
+    "description": "Hair pin made in the shape of a flower."
+  },
+  {
+    "object_id": 9882,
+    "object_name": "hair_cornu",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_hair_cornu_i00"
+    ],
+    "mfighter_mesh": [
+      "ElmoreLab.ElmoreLabMF_hair_cornu_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "ElmoreLab.ElmoreLabFF_hair_cornu_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "ElmoreLab.ElmoreLabMM_hair_cornu_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "ElmoreLab.ElmoreLabFM_hair_cornu_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "ElmoreLab.ElmoreLabME_hair_cornu_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "ElmoreLab.ElmoreLabFE_hair_cornu_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "ElmoreLab.ElmoreLabMDe_hair_cornu_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "ElmoreLab.ElmoreLabFDe_hair_cornu_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "ElmoreLab.ElmoreLabMD_hair_cornu_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "ElmoreLab.ElmoreLabFD_hair_cornu_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "ElmoreLab.ElmoreLabMO_hair_cornu_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "ElmoreLab.ElmoreLabFO_hair_cornu_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "ElmoreLab.ElmoreLabMS_hair_cornu_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "ElmoreLab.ElmoreLabFS_hair_cornu_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Demon Horns",
+    "description": "A hair accessory for the 2006 Halloween Event."
+  },
+  {
+    "object_id": 9891,
+    "object_name": "bamboo_hat",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_bamboo_hat_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_bamboo_hat_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_bamboo_hat_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_bamboo_hat_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_bamboo_hat_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_bamboo_hat_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_bamboo_hat_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_bamboo_hat_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_bamboo_hat_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_bamboo_hat_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_bamboo_hat_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_bamboo_hat_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_bamboo_hat_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_bamboo_hat_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_bamboo_hat_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Assasin's Bamboo Hat",
+    "description": "This simple-looking hat hides more than you think. "
+  },
+  {
+    "object_id": 9893,
+    "object_name": "br_close_helmet",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.br_close_helmet_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_br_close_helmet_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_br_close_helmet_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_br_close_helmet_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_br_close_helmet_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_br_close_helmet_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_br_close_helmet_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_br_close_helmet_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_br_close_helmet_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_br_close_helmet_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_br_close_helmet_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_br_close_helmet_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_br_close_helmet_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_br_close_helmet_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_br_close_helmet_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Warrior's Helmet",
+    "description": "Helmet of a brave ancient warrior."
+  },
+  {
+    "object_id": 9894,
+    "object_name": "br_napoleonic_cap",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.br_napoleonic_cap_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_br_napoleonic_cap_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_br_napoleonic_cap_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_br_napoleonic_cap_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_br_napoleonic_cap_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_br_napoleonic_cap_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_br_napoleonic_cap_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_br_napoleonic_cap_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_br_napoleonic_cap_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_br_napoleonic_cap_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_br_napoleonic_cap_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_br_napoleonic_cap_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_br_napoleonic_cap_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_br_napoleonic_cap_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_br_napoleonic_cap_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Napoleon Hat",
+    "description": "A Napoleon Hat accessory that has world conquering energy."
   },
   {
     "object_id": 9971,
@@ -92644,6 +95520,916 @@
     "description": "A mask of impeccable crimes that hides your true identity. A facial accessory that leaves no one indifferent."
   },
   {
+    "object_id": 9985,
+    "object_name": "romantic_chaperon_gold",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.bm_romantic_chaperon_gold"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_romantic_chaperon_gold_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_romantic_chaperon_gold_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_romantic_chaperon_gold_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_romantic_chaperon_gold_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_romantic_chaperon_gold_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_romantic_chaperon_gold_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_romantic_chaperon_gold_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_romantic_chaperon_gold_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_romantic_chaperon_gold_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_romantic_chaperon_gold_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_romantic_chaperon_gold_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_romantic_chaperon_gold_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_romantic_chaperon_gold_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_romantic_chaperon_gold_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Romantic Chapeau - Gold",
+    "description": "An extravagant chapeau adorned with feathers. "
+  },
+  {
+    "object_id": 9986,
+    "object_name": "romantic_chaperon_white",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.pi_silverchaperon"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_romantic_chaperon_white_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_romantic_chaperon_white_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_romantic_chaperon_white_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_romantic_chaperon_white_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_romantic_chaperon_white_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_romantic_chaperon_white_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_romantic_chaperon_white_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_romantic_chaperon_white_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_romantic_chaperon_white_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_romantic_chaperon_white_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_romantic_chaperon_white_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_romantic_chaperon_white_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_romantic_chaperon_white_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_romantic_chaperon_white_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Romantic Chapeau - White",
+    "description": "An extravagant chapeau adorned with feathers. "
+  },
+  {
+    "object_id": 9989,
+    "object_name": "straw_hat",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_straw_hat_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_straw_hat_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_straw_hat_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_straw_hat_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_straw_hat_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_straw_hat_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_straw_hat_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_straw_hat_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_straw_hat_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_straw_hat_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_straw_hat_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_straw_hat_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_straw_hat_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_straw_hat_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_straw_hat_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Straw Hat",
+    "description": "Best defense for those who prefers strolling on a sunny day. "
+  },
+  {
+    "object_id": 9990,
+    "object_name": "explorer_hat",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_explorer_hat_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_explorer_hat_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_explorer_hat_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_explorer_hat_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_explorer_hat_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_explorer_hat_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_explorer_hat_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_explorer_hat_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_explorer_hat_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_explorer_hat_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_explorer_hat_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_explorer_hat_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_explorer_hat_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_explorer_hat_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_explorer_hat_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Adventurer Hat",
+    "description": "This stylish and practical hat will let everyone know that you're a true adventure lover. "
+  },
+  {
+    "object_id": 9995,
+    "object_name": "event_magicial_cap",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_magicial_cap_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_Event_magicial_cap_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_Event_magicial_cap_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_Event_magicial_cap_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_Event_magicial_cap_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_Event_magicial_cap_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_Event_magicial_cap_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_Event_magicial_cap_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_Event_magicial_cap_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_Event_magicial_cap_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_Event_magicial_cap_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_Event_magicial_cap_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_Event_magicial_cap_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_Event_magicial_cap_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_Event_magicial_cap_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Top Hat",
+    "description": "A hat of a mysterious magician."
+  },
+  {
+    "object_id": 9996,
+    "object_name": "uniform_hat",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.br_uniform_hat_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_Br_Uniform_Hat_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_Br_Uniform_Hat_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_Br_Uniform_Hat_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_Br_Uniform_Hat_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_Br_Uniform_Hat_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_Br_Uniform_Hat_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_Br_Uniform_Hat_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_Br_Uniform_Hat_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_Br_Uniform_Hat_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_Br_Uniform_Hat_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_Br_Uniform_Hat_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_Br_Uniform_Hat_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_Br_Uniform_Hat_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_Br_Uniform_Hat_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Uniform Hat",
+    "description": "A uniform hat that makes you feel like a proper seaman."
+  },
+  {
+    "object_id": 9997,
+    "object_name": "white_uniform_hat",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.br_navy_cap_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_Br_Uniform_Hat1_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_Br_Uniform_Hat1_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_Br_Uniform_Hat1_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_Br_Uniform_Hat1_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_br_Uniform_Hat1_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_Br_Uniform_Hat1_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_Br_Uniform_Hat1_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_Br_Uniform_Hat1_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_Br_Uniform_Hat1_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_Br_Uniform_Hat1_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_Br_Uniform_Hat1_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_Br_Uniform_Hat1_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_Br_Uniform_Hat1_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_Br_Uniform_Hat1_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "White Uniform Hat",
+    "description": "A white uniform hat that makes you feel like a proper seaman."
+  },
+  {
     "object_id": 9993,
     "object_name": "half_face_mask_p1",
     "body_part": [
@@ -92902,5 +96688,395 @@
     "is_changed": false,
     "name": "White Mask of Grief",
     "description": "A mask of impeccable crimes that hides your true identity. A facial accessory that leaves no one indifferent."
+  },
+  {
+    "object_id": 9883,
+    "object_name": "hair_cornu_event",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.accessory_hair_cornu_event_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.ElmoreLabMF_hair_cornu_event_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.ElmoreLabFF_hair_cornu_event_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.ElmoreLabMM_hair_cornu_event_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.ElmoreLabFM_hair_cornu_event_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.ElmoreLabME_hair_cornu_event_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.ElmoreLabFE_hair_cornu_event_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.ElmoreLabMDe_hair_cornu_event_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.ElmoreLabFDe_hair_cornu_event_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.ElmoreLabMD_hair_cornu_event_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.ElmoreLabFD_hair_cornu_event_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.ElmoreLabMO_hair_cornu_event_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.ElmoreLabFO_hair_cornu_event_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.ElmoreLabMS_hair_cornu_event_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.ElmoreLabFS_hair_cornu_event_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 0,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Event Demon Horns",
+    "description": "A hair accessory for the 2006 Halloween Event.   This hair accessory can be worn only during the end of year holiday season."
+  },
+  {
+    "object_id": 7836,
+    "object_name": "santas_cap",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_santas_cap_m002_a"
+    ],
+    "drop_texture": [
+      "Harbor.santas_hat_m002_a_t00"
+    ],
+    "icon": [
+      "icon.accessory_santas_cap_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.Harbor_MF_santas_hat_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.Harbor_FF_santas_hat_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.Harbor_MM_santas_hat_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.Harbor_FM_santas_hat_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.Harbor_ME_santas_hat_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.Harbor_FE_santas_hat_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.Harbor_MDe_santas_hat_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.Harbor_FDe_santas_hat_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.Harbor_MD_santas_hat_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.Harbor_FD_santas_hat_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.Harbor_MO_santas_hat_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.Harbor_FO_santas_hat_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.Harbor_MS_santas_hat_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.Harbor_FS_santas_hat_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 90,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Santa's Hat",
+    "description": "A Santa Claus hat that was created to celebrate the X-Mas and New Year event.  This hat can be worn only during the end of year holiday season."
+  },
+  {
+    "object_id": 7838,
+    "object_name": "santas_cap_icon",
+    "body_part": [
+      "head"
+    ],
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_santas_cap_m002_a"
+    ],
+    "drop_texture": [
+      "Harbor.santas_cap_m002_a_t00"
+    ],
+    "icon": [
+      "icon.accessory_santas_antler_i00"
+    ],
+    "mfighter_mesh": [
+      "Harbor.Harbor_MF_santas_cap_m003_a"
+    ],
+    "mfighter_texture": [
+      "none"
+    ],
+    "ffighter_mesh": [
+      "Harbor.Harbor_FF_santas_cap_m003_a"
+    ],
+    "ffighter_texture": [
+      "none"
+    ],
+    "mmagic_mesh": [
+      "Harbor.Harbor_MM_santas_cap_m003_a"
+    ],
+    "mmagic_texture": [
+      "none"
+    ],
+    "fmagic_mesh": [
+      "Harbor.Harbor_FM_santas_cap_m003_a"
+    ],
+    "fmagic_texture": [
+      "none"
+    ],
+    "melf_mesh": [
+      "Harbor.Harbor_ME_santas_cap_m003_a"
+    ],
+    "melf_texture": [
+      "none"
+    ],
+    "felf_mesh": [
+      "Harbor.Harbor_FE_santas_cap_m003_a"
+    ],
+    "felf_texture": [
+      "none"
+    ],
+    "mdarkelf_mesh": [
+      "Harbor.Harbor_MDe_santas_cap_m003_a"
+    ],
+    "mdarkelf_texture": [
+      "none"
+    ],
+    "fdarkelf_mesh": [
+      "Harbor.Harbor_FDe_santas_cap_m003_a"
+    ],
+    "fdarkelf_texture": [
+      "none"
+    ],
+    "mdwarf_mesh": [
+      "Harbor.Harbor_MD_santas_cap_m003_a"
+    ],
+    "mdwarf_texture": [
+      "none"
+    ],
+    "fdwarf_mesh": [
+      "Harbor.Harbor_FD_santas_cap_m003_a"
+    ],
+    "fdwarf_texture": [
+      "none"
+    ],
+    "morc_mesh": [
+      "Harbor.Harbor_MO_santas_cap_m003_a"
+    ],
+    "morc_texture": [
+      "none"
+    ],
+    "forc_mesh": [
+      "Harbor.Harbor_FO_santas_cap_m003_a"
+    ],
+    "forc_texture": [
+      "none"
+    ],
+    "mshaman_mesh": [
+      "Harbor.Harbor_MS_santas_cap_m003_a"
+    ],
+    "mshaman_texture": [
+      "none"
+    ],
+    "fshaman_mesh": [
+      "Harbor.Harbor_FS_santas_cap_m003_a"
+    ],
+    "fshaman_texture": [
+      "none"
+    ],
+    "npc_mesh": [
+      "none"
+    ],
+    "npc_texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "none"
+    ],
+    "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+    "attack_effect": "LineageEffect.p_u002_a",
+    "armor_type": "none",
+    "weight": 0,
+    "material_type": "leather",
+    "crystal_type": "none",
+    "avoid_modify": 0,
+    "durability": 90,
+    "physical_defense": 0,
+    "magical_defense": 0,
+    "mp_bonus": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Santa's Hat with horns",
+    "description": "A Santa Claus hat that was created to celebrate the X-Mas and New Year event.  This hat can be worn only during the end of year holiday season."
   }
 ]

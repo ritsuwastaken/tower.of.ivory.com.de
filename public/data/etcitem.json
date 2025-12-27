@@ -36446,7 +36446,7 @@
       "dropitemstex.drop_scroll_t00"
     ],
     "icon": [
-      "icon.etc_scroll_of_return_i00"
+      "icon.scrollhall"
     ],
     "mesh": [
       "none"
@@ -36466,7 +36466,17 @@
     "base_price": 500,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "icon": {
+        "old": [
+          "icon.etc_scroll_of_return_i00"
+        ],
+        "new": [
+          "icon.scrollhall"
+        ]
+      }
+    },
     "name": "Scroll of Escape: Clan Hall",
     "description": "A scroll that  relocates you to your  hideaway. If you  don't have a  hideaway, it will  relocate you to the  nearest village."
   },
@@ -36484,7 +36494,7 @@
       "dropitemstex.drop_scroll_t00"
     ],
     "icon": [
-      "icon.etc_scroll_of_return_i00"
+      "icon.scrollcastle"
     ],
     "mesh": [
       "none"
@@ -36504,7 +36514,17 @@
     "base_price": 500,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "icon": {
+        "old": [
+          "icon.etc_scroll_of_return_i00"
+        ],
+        "new": [
+          "icon.scrollcastle"
+        ]
+      }
+    },
     "name": "Scroll of Escape: Castle",
     "description": "A scroll that  relocates you to your  castle. If you don't  have a castle, it  will relocate you to  the nearest village."
   },
@@ -36551,16 +36571,16 @@
     "object_name": "advanced_antidote",
     "drop_type": 0,
     "drop_anim_type": 3,
-    "drop_radius": "2.3",
-    "drop_height": "5.5",
+    "drop_radius": "4.3",
+    "drop_height": 3,
     "drop_mesh": [
-      "dropitems.drop_test_tube_m00"
+      "dropitems.drop_leaf_m00"
     ],
     "drop_texture": [
-      "dropitemstex.drop_test_tube_green_t00"
+      "dropitemstex.drop_leaf_t00"
     ],
     "icon": [
-      "icon.etc_reagent_green_i00"
+      "icon.antidote2"
     ],
     "mesh": [
       "none"
@@ -36580,7 +36600,41 @@
     "base_price": 180,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "drop_radius": {
+        "old": "2.3",
+        "new": "4.3"
+      },
+      "drop_height": {
+        "old": "5.5",
+        "new": 3
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_test_tube_m00"
+        ],
+        "new": [
+          "dropitems.drop_leaf_m00"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_test_tube_green_t00"
+        ],
+        "new": [
+          "dropitemstex.drop_leaf_t00"
+        ]
+      },
+      "icon": {
+        "old": [
+          "icon.etc_reagent_green_i00"
+        ],
+        "new": [
+          "icon.antidote2"
+        ]
+      }
+    },
     "name": "Greater Antidote",
     "description": "A high-quality  reagent that  neutralizes powerful  poison"
   },
@@ -40516,8 +40570,14 @@
     "base_price": 1700,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Dark Stocking Fabric",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Dark Stocking Fabric",
+        "new": "White Stockings Fabric"
+      }
+    },
+    "name": "White Stockings Fabric",
     "description": "A key material that  dwarves use to make  the Dark Hose. Can be  sold in the shop."
   },
   {
@@ -40934,8 +40994,14 @@
     "base_price": 3921,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Mithril Tunic Fabric",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Mithril Tunic Fabric",
+        "new": "Elven Mithril Tunic Fabric"
+      }
+    },
+    "name": "Elven Mithril Tunic Fabric",
     "description": "A key material that  dwarves use to make  the Mithril Tunic.  Can be sold in the  shop."
   },
   {
@@ -50524,8 +50590,14 @@
     "base_price": 4480,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Recipe: Mithril Tunic",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Recipe: Mithril Tunic",
+        "new": "Recipe: Elven Mithril Tunic"
+      }
+    },
+    "name": "Recipe: Elven Mithril Tunic",
     "description": "A recipe for making  the Mithril Tunic.  Create item skill  level 3 is required."
   },
   {
@@ -50562,8 +50634,14 @@
     "base_price": 2800,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Recipe: Mithril Stockings",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Recipe: Mithril Stockings",
+        "new": "Recipe: Elven Mithril Stockings"
+      }
+    },
+    "name": "Recipe: Elven Mithril Stockings",
     "description": "A recipe for making  Mithril Hose. Create  item skill level 3 is  required."
   },
   {
@@ -51075,10 +51153,14 @@
         "new": [
           "icon.c"
         ]
+      },
+      "description": {
+        "old": "A recipe for making  Mithril Boots. Create  Item lv. 3 required.",
+        "new": "A recipe for making  Mithril Boots. Create  Item lv. 4 required."
       }
     },
     "name": "Recipe: Mithril Boots",
-    "description": "A recipe for making  Mithril Boots. Create  Item lv. 3 required."
+    "description": "A recipe for making  Mithril Boots. Create  Item lv. 4 required."
   },
   {
     "object_id": 2204,
@@ -91232,14 +91314,20 @@
     "equip_sound": "none",
     "etcitem_type": "none",
     "weight": 60,
-    "consume_type": "consume_type_normal",
+    "consume_type": "consume_type_stackable",
     "material_type": "paper",
     "crystal_type": "none",
     "durability": 0,
     "base_price": 10,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "consume_type": {
+        "old": "consume_type_normal",
+        "new": "consume_type_stackable"
+      }
+    },
     "name": "Wish Potion",
     "description": "Magic potion that is  said to make wishes  come true."
   },
@@ -118631,6 +118719,42 @@
     "description": "Recipe for making  hazard bow. Requires  create item skill  level 7."
   },
   {
+    "object_id": 4490,
+    "object_name": "q_dualsword_seal_d_grade",
+    "drop_type": 0,
+    "drop_anim_type": 0,
+    "drop_radius": "2.7",
+    "drop_height": 5,
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.dualsword_seal"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "none",
+    "equip_sound": "none",
+    "etcitem_type": "none",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "steel",
+    "crystal_type": "none",
+    "durability": 100,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Dualsword Seal ",
+    "description": "A seal that grants access to the world's first dual swords. It can be obtained by completing challenging quests in the starting villages, which mark the end of a newcomer's journey."
+  },
+  {
     "object_id": 4200,
     "object_name": "sb_restore_life1",
     "drop_type": 0,
@@ -118968,8 +119092,14 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "L2day - Heart Piece 1",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "L2day - Heart Piece 1",
+        "new": "Harbor Event - Heart Piece 1"
+      }
+    },
+    "name": "Harbor Event - Heart Piece 1",
     "description": "A L2 Day event item.  If you make a heart  and take it to the  event coordinator,  you will receive a  wonderful gift!"
   },
   {
@@ -119006,8 +119136,14 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "L2day - Heart Piece 2",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "L2day - Heart Piece 2",
+        "new": "Harbor Event - Heart Piece 2"
+      }
+    },
+    "name": "Harbor Event - Heart Piece 2",
     "description": "A L2 Day event item.  If you make a heart  and take it to the  event coordinator,  you will receive a  wonderful gift!"
   },
   {
@@ -119044,8 +119180,14 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "L2day - Heart Piece 3",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "L2day - Heart Piece 3",
+        "new": "Harbor Event - Heart Piece 3"
+      }
+    },
+    "name": "Harbor Event - Heart Piece 3",
     "description": "A L2 Day event item.  If you make a heart  and take it to the  event coordinator,  you will receive a  wonderful gift!"
   },
   {
@@ -119082,8 +119224,14 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "L2day - Heart Piece 4",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "L2day - Heart Piece 4",
+        "new": "Harbor Event - Heart Piece 4"
+      }
+    },
+    "name": "Harbor Event - Heart Piece 4",
     "description": "A L2 Day event item.  If you make a heart  and take it to the  event coordinator,  you will receive a  wonderful gift!"
   },
   {
@@ -119120,8 +119268,14 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "L2day - Heart Piece 5",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "L2day - Heart Piece 5",
+        "new": "Harbor Event - Heart Piece 5"
+      }
+    },
+    "name": "Harbor Event - Heart Piece 5",
     "description": "A L2 Day event item.  If you make a heart  and take it to the  event coordinator,  you will receive a  wonderful gift!"
   },
   {
@@ -119158,8 +119312,14 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "L2day - Heart Piece 6",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "L2day - Heart Piece 6",
+        "new": "Harbor Event - Heart Piece 6"
+      }
+    },
+    "name": "Harbor Event - Heart Piece 6",
     "description": "A L2 Day event item.  If you make a heart  and take it to the  event coordinator,  you will receive a  wonderful gift!"
   },
   {
@@ -119196,8 +119356,14 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "L2day - Heart Piece 7",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "L2day - Heart Piece 7",
+        "new": "Harbor Event - Heart Piece 7"
+      }
+    },
+    "name": "Harbor Event - Heart Piece 7",
     "description": "A L2 Day event item.  If you make a heart  and take it to the  event coordinator,  you will receive a  wonderful gift!"
   },
   {
@@ -119234,8 +119400,14 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "L2day - Heart Piece 8",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "L2day - Heart Piece 8",
+        "new": "Harbor Event - Heart Piece 8"
+      }
+    },
+    "name": "Harbor Event - Heart Piece 8",
     "description": "A L2 Day event item.  If you make a heart  and take it to the  event coordinator,  you will receive a  wonderful gift!"
   },
   {
@@ -119272,8 +119444,14 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "L2day - Heart Piece 9",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "L2day - Heart Piece 9",
+        "new": "Harbor Event - Heart Piece 9"
+      }
+    },
+    "name": "Harbor Event - Heart Piece 9",
     "description": "A L2 Day event item.  If you make a heart  and take it to the  event coordinator,  you will receive a  wonderful gift!"
   },
   {
@@ -119493,5 +119671,1013 @@
     "is_changed": false,
     "name": "Rune 1+1",
     "description": "Allows two players to play with 1 IP from two PCs"
+  },
+  {
+    "object_id": 4926,
+    "object_name": "harbor_event_scroll_of_guidance",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Guidance",
+    "description": "Increases accuracy.  Intensity 6."
+  },
+  {
+    "object_id": 4927,
+    "object_name": "harbor_event_scroll_of_death_whisper",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Death Whisper",
+    "description": "Increases critical  attack power.  Intensity 4."
+  },
+  {
+    "object_id": 4928,
+    "object_name": "harbor_event_scroll_of_focus",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Focus",
+    "description": "Increases critical  rate. Intensity 4."
+  },
+  {
+    "object_id": 4929,
+    "object_name": "harbor_event_scroll_of_greater_acumen",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Greater Acumen",
+    "description": "Increases spell  casting speed.  Intensity 4."
+  },
+  {
+    "object_id": 4930,
+    "object_name": "harbor_event_scroll_of_haste",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Haste",
+    "description": "Increases attack  speed. Intensity 3."
+  },
+  {
+    "object_id": 4931,
+    "object_name": "harbor_event_scroll_of_agility",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Agility",
+    "description": "Increases evasion.  Intensity 4."
+  },
+  {
+    "object_id": 4932,
+    "object_name": "harbor_event_scroll_of_empower",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Mystic Empower ",
+    "description": "Increases magic  power. Intensity 4."
+  },
+  {
+    "object_id": 4933,
+    "object_name": "harbor_event_scroll_of_might",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Might",
+    "description": "Increases attack  power. Intensity 4."
+  },
+  {
+    "object_id": 4934,
+    "object_name": "harbor_event_scroll_of_wind_walk",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Windwalk",
+    "description": "Increases movement  speed. Intensity 3."
+  },
+  {
+    "object_id": 4935,
+    "object_name": "harbor_event_scroll_of_shield",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Shield",
+    "description": "Increases defense.  Intensity 4."
+  },
+  {
+    "object_id": 4960,
+    "object_name": "harbor_event_blessed_scroll_of_resurrection_20",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.eventscrollres"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Resurrection 20%",
+    "description": "A magic scroll that  resurrects a dead  player and restores 20% of his/her  experience"
+  },
+  {
+    "object_id": 5218,
+    "object_name": "harbor_event_scroll_of_mana_regeneration",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_white_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Mana Regeneration",
+    "description": "MP is instantly  restored.  Intensity 5."
+  },
+  {
+    "object_id": 5233,
+    "object_name": "harbor_event_atonement_pact1",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.pkscroll"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_normal",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Atonement Pact ",
+    "description": "Having torn the red-hot         thread and opened the         scroll, you see a list of all     your victims, each of whom   left a trace in your memory                                              You want to atone for your    sins in order to doom your    peace, but everything has itsprice - the Scroll will atone for only a part of your crimes."
+  },
+  {
+    "object_id": 4958,
+    "object_name": "harbor_event_scroll_of_escape",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.eventscrollsoe"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Escape",
+    "description": "A magical scroll that faster relocates the player  to the nearest  village"
+  },
+  {
+    "object_id": 4959,
+    "object_name": "harbor_event_scroll_of_resurrection",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.etc_scroll_of_resurrection_i01"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 120,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Scroll of Resurrection",
+    "description": "A magic scroll that  resurrects a dead  player and restores  all his/her  experience"
+  },
+  {
+    "object_id": 5560,
+    "object_name": "x_mas_tree1",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_x_mas_gift_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_x_mas_gift_t00"
+    ],
+    "icon": [
+      "icon.etc_x_mas_tree_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_book",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Christmas Tree",
+    "description": "Summons a Christmas Tree."
+  },
+  {
+    "object_id": 5561,
+    "object_name": "x_mas_tree2",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_x_mas_gift_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_x_mas_gift_t00"
+    ],
+    "icon": [
+      "icon.etc_x_mas_tree_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_book",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Special Christmas Tree",
+    "description": "Summons a Christmas tree that will increase HP and MP regeneration.  This effect is only produced if the Special Christmas Tree is summoned outside of a village."
+  },
+  {
+    "object_id": 6389,
+    "object_name": "small_gourd_seed",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t01"
+    ],
+    "icon": [
+      "icon.etc_gourd_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_sack",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Pumpkin Seed",
+    "description": "L2 Harbor Event - Double-click it and a young pumpkin will appear."
+  },
+  {
+    "object_id": 6390,
+    "object_name": "big_gourd_seed",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t01"
+    ],
+    "icon": [
+      "icon.etc_gourd_i01"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_sack",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Large Pumpkin Seed",
+    "description": "L2 Harbor Event - Double-click it and a young large pumpkin will appear."
+  },
+  {
+    "object_id": 6391,
+    "object_name": "gourd_nectar1",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t01"
+    ],
+    "icon": [
+      "icon.etc_nectar_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_sack",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Nectar",
+    "description": "L2 Harbor Event - Gregory will give you a pumpkin seed for it, or it can be also used to raise a pumpkin."
+  },
+  {
+    "object_id": 4422,
+    "object_name": "dragon_bugle_wind",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.etc_bugle_i00"
+    ],
+    "mesh": [
+      "LineageDecos.x_mas_tree_m00"
+    ],
+    "texture": [
+      "LineageDecosTex.x_mas_tree_t00"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_sack",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 20,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Dragon Bugle of Wind",
+    "description": "A bugle used to play the strider of the Wind."
+  },
+  {
+    "object_id": 4423,
+    "object_name": "dragon_bugle_star",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.etc_bugle_i00"
+    ],
+    "mesh": [
+      "LineageDecos.x_mas_tree_m00"
+    ],
+    "texture": [
+      "LineageDecosTex.x_mas_tree_t00"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_sack",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 20,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Dragon Bugle of Star",
+    "description": "A bugle used to play the strider of a Star."
+  },
+  {
+    "object_id": 4424,
+    "object_name": "dragon_bugle_dusk",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_sack_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sack_t00"
+    ],
+    "icon": [
+      "icon.etc_bugle_i00"
+    ],
+    "mesh": [
+      "LineageDecos.x_mas_tree_m00"
+    ],
+    "texture": [
+      "LineageDecosTex.x_mas_tree_t00"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_sack",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 20,
+    "consume_type": "consume_type_stackable",
+    "material_type": "paper",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Dragon Bugle of Dusk",
+    "description": "A bugle used to play the strider of the Dusk."
+  },
+  {
+    "object_id": 5555,
+    "object_name": "x_mas_2004",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_x_mas_gift_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_x_mas_gift_t00"
+    ],
+    "icon": [
+      "icon.etc_x_mas_2004_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_book",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Token of Love",
+    "description": "A commemorative item for Christmas, 2004."
+  },
+  {
+    "object_id": 5556,
+    "object_name": "deco_star",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_x_mas_gift_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_x_mas_gift_t00"
+    ],
+    "icon": [
+      "icon.etc_deco_star_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_book",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Star Ornament",
+    "description": "An essential ingredient needed to make a Christmas Tree. Take it to a Santa trainee, and he will create a Christmas Tree for you."
+  },
+  {
+    "object_id": 5557,
+    "object_name": "deco_bead",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_x_mas_gift_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_x_mas_gift_t00"
+    ],
+    "icon": [
+      "icon.etc_deco_bead_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_book",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Bead Ornament",
+    "description": "An ingredient of a Christmas Tree. Take it to a Santa trainee, along with the other necessary ingredients, and he will create a Christmas Tree for you."
+  },
+  {
+    "object_id": 5558,
+    "object_name": "fir_spring",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_x_mas_gift_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_x_mas_gift_t00"
+    ],
+    "icon": [
+      "icon.etc_fir_spring_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_book",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Fir Tree Branch",
+    "description": "An ingredient of a Christmas Tree. Take it to a Santa trainee, along with the other necessary ingredients, and he will create a Christmas Tree for you."
+  },
+  {
+    "object_id": 5559,
+    "object_name": "flowerpot",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_x_mas_gift_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_x_mas_gift_t00"
+    ],
+    "icon": [
+      "icon.etc_flowerpot_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_book",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_stackable",
+    "material_type": "wood",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Flower Pot",
+    "description": "An ingredient of a Christmas Tree. Take it to a Santa trainee, along with the other necessary ingredients, and he will create a Christmas Tree for you."
   }
 ]

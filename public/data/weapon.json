@@ -361,9 +361,15 @@
     "base_price": 138,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Apprentice's Wand",
-    "description": ""
+    "description": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 7,
@@ -422,9 +428,15 @@
     "base_price": 768,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Apprentice's Rod",
-    "description": ""
+    "description": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 8,
@@ -483,9 +495,15 @@
     "base_price": 12500,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Willow Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 9,
@@ -544,9 +562,15 @@
     "base_price": 54100,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Cedar Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 10,
@@ -2258,9 +2282,15 @@
     "base_price": 716000,
     "crystal_count": 1301,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Sword of Magic",
-    "description": ""
+    "description": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 84,
@@ -2319,9 +2349,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Homunkulus's Sword",
-    "description": ""
+    "description": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 85,
@@ -2685,9 +2721,15 @@
     "base_price": 1400000,
     "crystal_count": 2545,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Goat Head Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 91,
@@ -2807,9 +2849,15 @@
     "base_price": 8680000,
     "crystal_count": 1157,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Sprite's Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 93,
@@ -3234,9 +3282,15 @@
     "base_price": 12500,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Apprentice's Spellbook",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 100,
@@ -3295,9 +3349,15 @@
     "base_price": 244000,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Voodoo Doll",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 101,
@@ -3356,9 +3416,15 @@
     "base_price": 409000,
     "crystal_count": 743,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Scroll of Wisdom",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 102,
@@ -3525,18 +3591,18 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_shield",
     "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 6400,
+    "weight": 1380,
     "soulshot_count": 0,
     "spiritshot_count": 0,
     "material_type": "oriharukon",
-    "crystal_type": "b",
+    "crystal_type": "none",
     "physical_damage": 0,
     "random_damage": 0,
     "weapon_type": "none",
     "critical": 0,
     "hit_modify": 0,
     "avoid_modify": "-8",
-    "shield_defense": 216,
+    "shield_defense": 90,
     "shield_defense_rate": 20,
     "attack_speed": 0,
     "mp_consume": 0,
@@ -3545,9 +3611,27 @@
     "base_price": 545000,
     "crystal_count": 72,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "weight": {
+        "old": 6400,
+        "new": 1380
+      },
+      "crystal_type": {
+        "old": "b",
+        "new": "none"
+      },
+      "shield_defense": {
+        "old": 216,
+        "new": 90
+      },
+      "description": {
+        "old": "",
+        "new": "This shield withstood all types of blows from orcish weapons. As soon as the blacksmith Altran studied it more closely, he recognized its high durability and called it the Shield of Victory. However, he does not reveal the secret of its manufacture."
+      }
+    },
     "name": "Shield of Victory",
-    "description": ""
+    "description": "This shield withstood all types of blows from orcish weapons. As soon as the blacksmith Altran studied it more closely, he recognized its high durability and called it the Shield of Victory. However, he does not reveal the secret of its manufacture."
   },
   {
     "object_id": 105,
@@ -3846,18 +3930,18 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_shield",
     "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 4800,
+    "weight": 1340,
     "soulshot_count": 0,
     "spiritshot_count": 0,
     "material_type": "blood_steel",
-    "crystal_type": "b",
+    "crystal_type": "d",
     "physical_damage": 0,
     "random_damage": 0,
     "weapon_type": "none",
     "critical": 0,
     "hit_modify": 0,
     "avoid_modify": "-8",
-    "shield_defense": 216,
+    "shield_defense": 128,
     "shield_defense_rate": 20,
     "attack_speed": 0,
     "mp_consume": 0,
@@ -3866,9 +3950,31 @@
     "base_price": 545000,
     "crystal_count": 72,
     "is_new": false,
-    "is_changed": false,
-    "name": "Shield of Solar Eclipse",
-    "description": ""
+    "is_changed": true,
+    "changes": {
+      "weight": {
+        "old": 4800,
+        "new": 1340
+      },
+      "crystal_type": {
+        "old": "b",
+        "new": "d"
+      },
+      "shield_defense": {
+        "old": 216,
+        "new": 128
+      },
+      "name": {
+        "old": "Shield of Solar Eclipse",
+        "new": "Dark Mirror Shield"
+      },
+      "description": {
+        "old": "",
+        "new": "7 Dark Sins were absorbed by this pure mirror while it was for many years among the sinister walls of the Dark School."
+      }
+    },
+    "name": "Dark Mirror Shield",
+    "description": "7 Dark Sins were absorbed by this pure mirror while it was for many years among the sinister walls of the Dark School."
   },
   {
     "object_id": 110,
@@ -3950,18 +4056,18 @@
       "LineageWeapons.shield_of_pledge_m00_sh"
     ],
     "drop_texture": [
-      "LineageWeaponsTex.shield_of_pledge_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
+      "LineageWeaponsTex.unicorn_tears_shield_t00_sh",
+      "LineageWeaponsTex.unicorn_tears_shield_t01_sh"
     ],
     "icon": [
-      "icon.shield_shield_of_pledge_i00"
+      "icon.unicorn_tears_shield"
     ],
     "mesh": [
       "LineageWeapons.shield_of_pledge_m00_sh"
     ],
     "texture": [
-      "LineageWeaponsTex.shield_of_pledge_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
+      "LineageWeaponsTex.unicorn_tears_shield_t00_sh",
+      "LineageWeaponsTex.unicorn_tears_shield_t01_sh"
     ],
     "crystallizable": 1,
     "item_sound": [
@@ -3972,18 +4078,18 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_shield",
     "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 4800,
+    "weight": 1220,
     "soulshot_count": 0,
     "spiritshot_count": 0,
     "material_type": "fine_steel",
-    "crystal_type": "b",
+    "crystal_type": "c",
     "physical_damage": 0,
     "random_damage": 0,
     "weapon_type": "none",
     "critical": 0,
     "hit_modify": 0,
     "avoid_modify": "-8",
-    "shield_defense": 216,
+    "shield_defense": 203,
     "shield_defense_rate": 20,
     "attack_speed": 0,
     "mp_consume": 0,
@@ -3992,9 +4098,59 @@
     "base_price": 545000,
     "crystal_count": 72,
     "is_new": false,
-    "is_changed": false,
-    "name": "Shield of Pledge",
-    "description": ""
+    "is_changed": true,
+    "changes": {
+      "drop_texture": {
+        "old": [
+          "LineageWeaponsTex.shield_of_pledge_t00_sh",
+          "LineageWeaponsTex.buckler_t01_sh"
+        ],
+        "new": [
+          "LineageWeaponsTex.unicorn_tears_shield_t00_sh",
+          "LineageWeaponsTex.unicorn_tears_shield_t01_sh"
+        ]
+      },
+      "icon": {
+        "old": [
+          "icon.shield_shield_of_pledge_i00"
+        ],
+        "new": [
+          "icon.unicorn_tears_shield"
+        ]
+      },
+      "texture": {
+        "old": [
+          "LineageWeaponsTex.shield_of_pledge_t00_sh",
+          "LineageWeaponsTex.buckler_t01_sh"
+        ],
+        "new": [
+          "LineageWeaponsTex.unicorn_tears_shield_t00_sh",
+          "LineageWeaponsTex.unicorn_tears_shield_t01_sh"
+        ]
+      },
+      "weight": {
+        "old": 4800,
+        "new": 1220
+      },
+      "crystal_type": {
+        "old": "b",
+        "new": "c"
+      },
+      "shield_defense": {
+        "old": 216,
+        "new": 203
+      },
+      "name": {
+        "old": "Shield of Pledge",
+        "new": "Unicorn Tears Shield"
+      },
+      "description": {
+        "old": "",
+        "new": "A crystal clear unicorn tear, contained in a mirrored flask, served as an antidote and was opened only in emergency cases."
+      }
+    },
+    "name": "Unicorn Tears Shield",
+    "description": "A crystal clear unicorn tear, contained in a mirrored flask, served as an antidote and was opened only in emergency cases."
   },
   {
     "object_id": 120,
@@ -5633,10 +5789,14 @@
         "new": [
           "LineageWeaponsTex.gladius_t00_wp"
         ]
+      },
+      "description": {
+        "old": "",
+        "new": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
       }
     },
     "name": "Sword of Mystic",
-    "description": ""
+    "description": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 144,
@@ -5695,9 +5855,15 @@
     "base_price": 716000,
     "crystal_count": 1301,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Sword of Occult",
-    "description": ""
+    "description": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 145,
@@ -5756,9 +5922,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Sword of Whispering Death",
-    "description": ""
+    "description": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 146,
@@ -5939,9 +6111,15 @@
     "base_price": 8680000,
     "crystal_count": 1157,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Sword of Valhalla",
-    "description": ""
+    "description": "A magical sword that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 149,
@@ -7531,9 +7709,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical axe that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Nirvana Axe",
-    "description": ""
+    "description": "A magical axe that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 175,
@@ -7653,9 +7837,15 @@
     "base_price": 136000,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Journeyman's Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 177,
@@ -7714,9 +7904,15 @@
     "base_price": 244000,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Mage Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 178,
@@ -7775,9 +7971,15 @@
     "base_price": 409000,
     "crystal_count": 743,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Bone Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 179,
@@ -7836,9 +8038,15 @@
     "base_price": 644000,
     "crystal_count": 1170,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Mace of Prayer",
-    "description": ""
+    "description": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 180,
@@ -7897,9 +8105,15 @@
     "base_price": 644000,
     "crystal_count": 1170,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Mace of Judgment",
-    "description": ""
+    "description": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 181,
@@ -7958,9 +8172,15 @@
     "base_price": 644000,
     "crystal_count": 1170,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Mace of Miracle",
-    "description": ""
+    "description": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 182,
@@ -8019,9 +8239,15 @@
     "base_price": 644000,
     "crystal_count": 1170,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Doom Hammer",
-    "description": ""
+    "description": "A magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 183,
@@ -8080,9 +8306,15 @@
     "base_price": 644000,
     "crystal_count": 1170,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Mystic Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 184,
@@ -8141,9 +8373,15 @@
     "base_price": 644000,
     "crystal_count": 1170,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Conjuror's Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 185,
@@ -8202,9 +8440,15 @@
     "base_price": 644000,
     "crystal_count": 1170,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Staff of Mana",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 186,
@@ -8263,9 +8507,15 @@
     "base_price": 967000,
     "crystal_count": 1758,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Staff of Magic",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 187,
@@ -8324,9 +8574,15 @@
     "base_price": 1800000,
     "crystal_count": 3272,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Atuba Hammer",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 188,
@@ -8385,9 +8641,15 @@
     "base_price": 1800000,
     "crystal_count": 3272,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Ghost Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 189,
@@ -8446,9 +8708,15 @@
     "base_price": 1800000,
     "crystal_count": 3272,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Staff of Life",
-    "description": ""
+    "description": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 190,
@@ -8507,9 +8775,15 @@
     "base_price": 1800000,
     "crystal_count": 3272,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Atuba Mace",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 191,
@@ -8568,9 +8842,15 @@
     "base_price": 2290000,
     "crystal_count": 916,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Heavy Doom Hammer",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 192,
@@ -8629,9 +8909,15 @@
     "base_price": 2290000,
     "crystal_count": 916,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Crystal Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 193,
@@ -8690,9 +8976,15 @@
     "base_price": 2290000,
     "crystal_count": 916,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Stick of Faith",
-    "description": ""
+    "description": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 194,
@@ -8751,9 +9043,15 @@
     "base_price": 2290000,
     "crystal_count": 916,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Heavy Doom Axe",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 195,
@@ -8812,9 +9110,15 @@
     "base_price": 2870000,
     "crystal_count": 1148,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Cursed Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 196,
@@ -8873,9 +9177,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Stick of Eternity",
-    "description": ""
+    "description": "A magical wand that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 197,
@@ -8891,19 +9201,19 @@
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "LineageWeapons.apprentices_staff_m00_wp"
+      "LineageWeapons.crystal_staff_m00_wp"
     ],
     "drop_texture": [
-      "LineageWeaponsTex.apprentices_staff_t00_wp"
+      "LineageWeaponsTex.Paradiastaff"
     ],
     "icon": [
-      "icon.weapon_apprentices_staff_i00"
+      "icon.paradiastaff"
     ],
     "mesh": [
-      "LineageWeapons.apprentices_staff_m00_wp"
+      "LineageWeapons.crystal_staff_m00_wp"
     ],
     "texture": [
-      "LineageWeaponsTex.apprentices_staff_t00_wp"
+      "LineageWeaponsTex.Paradiastaff"
     ],
     "crystallizable": 1,
     "item_sound": [
@@ -8934,9 +9244,55 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "drop_mesh": {
+        "old": [
+          "LineageWeapons.apprentices_staff_m00_wp"
+        ],
+        "new": [
+          "LineageWeapons.crystal_staff_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "LineageWeaponsTex.apprentices_staff_t00_wp"
+        ],
+        "new": [
+          "LineageWeaponsTex.Paradiastaff"
+        ]
+      },
+      "icon": {
+        "old": [
+          "icon.weapon_apprentices_staff_i00"
+        ],
+        "new": [
+          "icon.paradiastaff"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "LineageWeapons.apprentices_staff_m00_wp"
+        ],
+        "new": [
+          "LineageWeapons.crystal_staff_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "LineageWeaponsTex.apprentices_staff_t00_wp"
+        ],
+        "new": [
+          "LineageWeaponsTex.Paradiastaff"
+        ]
+      },
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Paradia Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 198,
@@ -8995,9 +9351,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Inferno Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 199,
@@ -9056,9 +9418,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Paagrio Hammer",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 200,
@@ -9117,9 +9485,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Sage's Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 201,
@@ -9178,9 +9552,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Club of Nature",
-    "description": ""
+    "description": "A magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 202,
@@ -9239,9 +9619,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
     "name": "Mace of The Underworld",
-    "description": ""
+    "description": "A magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
   },
   {
     "object_id": 203,
@@ -9300,9 +9686,15 @@
     "base_price": 4780000,
     "crystal_count": 1912,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a mage axe, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Paagrio Axe",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a mage axe, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 204,
@@ -9361,9 +9753,15 @@
     "base_price": 6130000,
     "crystal_count": 2452,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Deadman's Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 205,
@@ -9431,10 +9829,14 @@
         "new": [
           "icon.weapon_cedar_staff_i00"
         ]
+      },
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
       }
     },
     "name": "Ghoul's Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 206,
@@ -9493,9 +9895,15 @@
     "base_price": 6130000,
     "crystal_count": 2452,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Demon's Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 207,
@@ -9615,9 +10023,15 @@
     "base_price": 8680000,
     "crystal_count": 1157,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Staff of Seal",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 209,
@@ -9676,9 +10090,15 @@
     "base_price": 13100000,
     "crystal_count": 1746,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Divine Staff",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 210,
@@ -9737,9 +10157,15 @@
     "base_price": 13100000,
     "crystal_count": 1746,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Staff of Evil Sprit",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 211,
@@ -9798,9 +10224,15 @@
     "base_price": 13100000,
     "crystal_count": 1746,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
     "name": "Staff of Nobility",
-    "description": ""
+    "description": "The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 212,
@@ -9819,16 +10251,16 @@
       "LineageWeapons.dasparions_staff_m00_wp"
     ],
     "drop_texture": [
-      "LineageWeaponsTex.dasparions_staff_t00_wp"
+      "LineageWeaponsTex.shillienstaff"
     ],
     "icon": [
-      "icon.weapon_dasparions_staff_i00"
+      "icon.shillienstaff"
     ],
     "mesh": [
       "LineageWeapons.dasparions_staff_m00_wp"
     ],
     "texture": [
-      "LineageWeaponsTex.dasparions_staff_t00_wp"
+      "LineageWeaponsTex.shillienstaff"
     ],
     "crystallizable": 1,
     "item_sound": [
@@ -9843,7 +10275,7 @@
     "soulshot_count": 1,
     "spiritshot_count": 1,
     "material_type": "adamantaite",
-    "crystal_type": "a",
+    "crystal_type": "b",
     "physical_damage": 207,
     "random_damage": 20,
     "weapon_type": "blunt",
@@ -9859,9 +10291,43 @@
     "base_price": 18300000,
     "crystal_count": 1464,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "drop_texture": {
+        "old": [
+          "LineageWeaponsTex.dasparions_staff_t00_wp"
+        ],
+        "new": [
+          "LineageWeaponsTex.shillienstaff"
+        ]
+      },
+      "icon": {
+        "old": [
+          "icon.weapon_dasparions_staff_i00"
+        ],
+        "new": [
+          "icon.shillienstaff"
+        ]
+      },
+      "texture": {
+        "old": [
+          "LineageWeaponsTex.dasparions_staff_t00_wp"
+        ],
+        "new": [
+          "LineageWeaponsTex.shillienstaff"
+        ]
+      },
+      "crystal_type": {
+        "old": "a",
+        "new": "b"
+      },
+      "description": {
+        "old": "",
+        "new": "The staff contains the soul of Antharas, which grants casting speed and MP regeneration."
+      }
+    },
     "name": "Dasparion's Staff",
-    "description": ""
+    "description": "The staff contains the soul of Antharas, which grants casting speed and MP regeneration."
   },
   {
     "object_id": 213,
@@ -11657,9 +12123,15 @@
     "base_price": 967000,
     "crystal_count": 1758,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Dagger of Mana",
-    "description": ""
+    "description": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 239,
@@ -11718,9 +12190,15 @@
     "base_price": 967000,
     "crystal_count": 1758,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Mystic Knife",
-    "description": ""
+    "description": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 240,
@@ -11779,9 +12257,15 @@
     "base_price": 967000,
     "crystal_count": 1758,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Conjurer's Knife",
-    "description": ""
+    "description": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 241,
@@ -11840,9 +12324,15 @@
     "base_price": 967000,
     "crystal_count": 1758,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Shillien Knife",
-    "description": ""
+    "description": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 242,
@@ -11942,10 +12432,14 @@
         "new": [
           "LineageWeaponsTex.kris"
         ]
+      },
+      "description": {
+        "old": "",
+        "new": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
       }
     },
     "name": "Soulfire Dirk",
-    "description": ""
+    "description": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 243,
@@ -12004,114 +12498,268 @@
     "base_price": 8680000,
     "crystal_count": 1157,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Hell Knife",
-    "description": ""
+    "description": "A magical dagger that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 244,
-    "object_name": "_elven_fighter_fist",
+    "object_name": "iron_splitter",
     "body_part": [
-      "rhand"
+      "lrhand"
     ],
-    "animation": 3,
-    "drop_type": 0,
-    "drop_anim_type": 3,
-    "drop_radius": "5.3",
-    "drop_height": 20,
+    "animation": 2,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": "7.3",
+    "drop_height": 10,
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "dropitems.drop_sack_m00"
+      "LineageWeapons.great_sword_m00_wp"
     ],
     "drop_texture": [
-      "dropitemstex.drop_sack_t00"
+      "LineageWeaponsTex.ironsplitter"
     ],
     "icon": [
-      "none"
+      "icon.ironsplittericon"
     ],
     "mesh": [
-      "none"
+      "LineageWeapons.great_sword_m00_wp"
     ],
     "texture": [
-      "none"
+      "LineageWeaponsTex.ironsplitter"
     ],
-    "crystallizable": 0,
+    "crystallizable": 1,
     "item_sound": [
-      "ItemSound.axe_1",
-      "ItemSound.fist_2",
-      "ItemSound.club_2",
-      "ItemSound.spear_9"
+      "ItemSound.sword_great_7",
+      "ItemSound.sword_great_4",
+      "ItemSound.sword_big_9",
+      "ItemSound.public_sword_shing_1"
     ],
-    "drop_sound": "ItemSound.itemdrop_weapon_fist",
-    "equip_sound": "ItemSound.itemequip_weapon_fist",
-    "weight": 0,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "leather",
-    "crystal_type": "none",
-    "physical_damage": 0,
-    "random_damage": 5,
-    "weapon_type": "fist",
-    "critical": 4,
-    "hit_modify": "4.75",
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 1740,
+    "soulshot_count": 2,
+    "spiritshot_count": 2,
+    "material_type": "steel",
+    "crystal_type": "c",
+    "physical_damage": 148,
+    "random_damage": 10,
+    "weapon_type": "sword",
+    "critical": 8,
+    "hit_modify": 0,
     "avoid_modify": 0,
     "shield_defense": 0,
     "shield_defense_rate": 0,
     "attack_speed": 325,
     "mp_consume": 0,
-    "magical_damage": 0,
+    "magical_damage": 68,
     "durability": 95,
     "is_new": false,
-    "is_changed": false,
-    "name": "Elven Fighter Fist",
+    "is_changed": true,
+    "changes": {
+      "object_name": {
+        "old": "_elven_fighter_fist",
+        "new": "iron_splitter"
+      },
+      "body_part": {
+        "old": [
+          "rhand"
+        ],
+        "new": [
+          "lrhand"
+        ]
+      },
+      "animation": {
+        "old": 3,
+        "new": 2
+      },
+      "drop_type": {
+        "old": 0,
+        "new": 1
+      },
+      "drop_anim_type": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_radius": {
+        "old": "5.3",
+        "new": "7.3"
+      },
+      "drop_height": {
+        "old": 20,
+        "new": 10
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_sack_m00"
+        ],
+        "new": [
+          "LineageWeapons.great_sword_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "new": [
+          "LineageWeaponsTex.ironsplitter"
+        ]
+      },
+      "icon": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "icon.ironsplittericon"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeapons.great_sword_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeaponsTex.ironsplitter"
+        ]
+      },
+      "crystallizable": {
+        "old": 0,
+        "new": 1
+      },
+      "item_sound": {
+        "old": [
+          "ItemSound.axe_1",
+          "ItemSound.fist_2",
+          "ItemSound.club_2",
+          "ItemSound.spear_9"
+        ],
+        "new": [
+          "ItemSound.sword_great_7",
+          "ItemSound.sword_great_4",
+          "ItemSound.sword_big_9",
+          "ItemSound.public_sword_shing_1"
+        ]
+      },
+      "drop_sound": {
+        "old": "ItemSound.itemdrop_weapon_fist",
+        "new": "ItemSound.itemdrop_weapon_sword"
+      },
+      "equip_sound": {
+        "old": "ItemSound.itemequip_weapon_fist",
+        "new": "ItemSound.itemequip_weapon_sword"
+      },
+      "weight": {
+        "old": 0,
+        "new": 1740
+      },
+      "soulshot_count": {
+        "old": 0,
+        "new": 2
+      },
+      "spiritshot_count": {
+        "old": 0,
+        "new": 2
+      },
+      "material_type": {
+        "old": "leather",
+        "new": "steel"
+      },
+      "crystal_type": {
+        "old": "none",
+        "new": "c"
+      },
+      "physical_damage": {
+        "old": 0,
+        "new": 148
+      },
+      "random_damage": {
+        "old": 5,
+        "new": 10
+      },
+      "weapon_type": {
+        "old": "fist",
+        "new": "sword"
+      },
+      "critical": {
+        "old": 4,
+        "new": 8
+      },
+      "hit_modify": {
+        "old": "4.75",
+        "new": 0
+      },
+      "magical_damage": {
+        "old": 0,
+        "new": 68
+      },
+      "name": {
+        "old": "Elven Fighter Fist",
+        "new": "Iron Splitter"
+      }
+    },
+    "name": "Iron Splitter",
     "description": ""
   },
   {
     "object_id": 245,
-    "object_name": "_darkelven_fighter_fist",
+    "object_name": "Shillien_staff",
     "body_part": [
-      "rhand"
+      "lrhand"
     ],
-    "animation": 3,
-    "drop_type": 0,
-    "drop_anim_type": 3,
-    "drop_radius": "2.7",
-    "drop_height": 5,
+    "animation": 4,
+    "drop_type": 3,
+    "drop_anim_type": 1,
+    "drop_radius": 15,
+    "drop_height": "5.3",
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "dropitems.drop_sack_m00"
+      "LineageWeapons.dasparions_staff_m00_wp"
     ],
     "drop_texture": [
-      "dropitemstex.drop_sack_t00"
+      "LineageWeaponsTex.shillienstaff"
     ],
     "icon": [
-      "none"
+      "icon.shillienstaff"
     ],
     "mesh": [
-      "none"
+      "LineageWeapons.dasparions_staff_m00_wp"
     ],
     "texture": [
-      "none"
+      "LineageWeaponsTex.shillienstaff"
     ],
-    "crystallizable": 0,
+    "crystallizable": 1,
     "item_sound": [
       "ItemSound.staff_3",
-      "ItemSound.fist_1",
-      "ItemSound.mace_1",
-      "ItemSound.sword_mid_9"
+      "ItemSound.spear_5",
+      "ItemSound.axe_5",
+      "ItemSound.sword_mid_2"
     ],
-    "drop_sound": "ItemSound.itemdrop_weapon_fist",
-    "equip_sound": "ItemSound.itemequip_weapon_fist",
-    "weight": 0,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "leather",
-    "crystal_type": "none",
-    "physical_damage": 0,
-    "random_damage": 5,
-    "weapon_type": "fist",
+    "drop_sound": "ItemSound.itemdrop_weapon_staff",
+    "equip_sound": "ItemSound.itemequip_weapon_staff",
+    "weight": 990,
+    "soulshot_count": 3,
+    "spiritshot_count": 3,
+    "material_type": "wood",
+    "crystal_type": "c",
+    "physical_damage": 152,
+    "random_damage": 20,
+    "weapon_type": "blunt",
     "critical": 4,
     "hit_modify": "4.75",
     "avoid_modify": 0,
@@ -12119,101 +12767,1002 @@
     "shield_defense_rate": 0,
     "attack_speed": 325,
     "mp_consume": 0,
-    "magical_damage": 0,
+    "magical_damage": 111,
     "durability": 95,
     "is_new": false,
-    "is_changed": false,
-    "name": "Dark Fighter Fist",
-    "description": ""
+    "is_changed": true,
+    "changes": {
+      "object_name": {
+        "old": "_darkelven_fighter_fist",
+        "new": "Shillien_staff"
+      },
+      "body_part": {
+        "old": [
+          "rhand"
+        ],
+        "new": [
+          "lrhand"
+        ]
+      },
+      "animation": {
+        "old": 3,
+        "new": 4
+      },
+      "drop_type": {
+        "old": 0,
+        "new": 3
+      },
+      "drop_anim_type": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_radius": {
+        "old": "2.7",
+        "new": 15
+      },
+      "drop_height": {
+        "old": 5,
+        "new": "5.3"
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_sack_m00"
+        ],
+        "new": [
+          "LineageWeapons.dasparions_staff_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "new": [
+          "LineageWeaponsTex.shillienstaff"
+        ]
+      },
+      "icon": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "icon.shillienstaff"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeapons.dasparions_staff_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeaponsTex.shillienstaff"
+        ]
+      },
+      "crystallizable": {
+        "old": 0,
+        "new": 1
+      },
+      "item_sound": {
+        "old": [
+          "ItemSound.staff_3",
+          "ItemSound.fist_1",
+          "ItemSound.mace_1",
+          "ItemSound.sword_mid_9"
+        ],
+        "new": [
+          "ItemSound.staff_3",
+          "ItemSound.spear_5",
+          "ItemSound.axe_5",
+          "ItemSound.sword_mid_2"
+        ]
+      },
+      "drop_sound": {
+        "old": "ItemSound.itemdrop_weapon_fist",
+        "new": "ItemSound.itemdrop_weapon_staff"
+      },
+      "equip_sound": {
+        "old": "ItemSound.itemequip_weapon_fist",
+        "new": "ItemSound.itemequip_weapon_staff"
+      },
+      "weight": {
+        "old": 0,
+        "new": 990
+      },
+      "soulshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "spiritshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "material_type": {
+        "old": "leather",
+        "new": "wood"
+      },
+      "crystal_type": {
+        "old": "none",
+        "new": "c"
+      },
+      "physical_damage": {
+        "old": 0,
+        "new": 152
+      },
+      "random_damage": {
+        "old": 5,
+        "new": 20
+      },
+      "weapon_type": {
+        "old": "fist",
+        "new": "blunt"
+      },
+      "magical_damage": {
+        "old": 0,
+        "new": 111
+      },
+      "name": {
+        "old": "Dark Fighter Fist",
+        "new": "Shillien Staff"
+      },
+      "description": {
+        "old": "",
+        "new": "Ancient lost shillien staff. The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+      }
+    },
+    "name": "Shillien Staff",
+    "description": "Ancient lost shillien staff. The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
   },
   {
     "object_id": 246,
-    "object_name": "_human_fighter_fist",
+    "object_name": "iron_divider",
     "body_part": [
-      "rhand"
+      "lrhand"
     ],
-    "animation": 3,
-    "drop_type": 0,
-    "drop_anim_type": 3,
-    "drop_radius": "2.7",
-    "drop_height": 5,
+    "animation": 2,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": "7.3",
+    "drop_height": 10,
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "dropitems.drop_sack_m00"
+      "LineageWeapons.flamberge_m00_wp"
     ],
     "drop_texture": [
-      "dropitemstex.drop_sack_t00"
+      "LineageWeaponsTex.irondivider"
     ],
     "icon": [
-      "none"
+      "icon.irondividericon"
     ],
     "mesh": [
-      "none"
+      "LineageWeapons.flamberge_m00_wp"
     ],
     "texture": [
-      "none"
+      "LineageWeaponsTex.irondivider"
     ],
-    "crystallizable": 0,
+    "crystallizable": 1,
     "item_sound": [
-      "ItemSound.staff_2",
-      "ItemSound.fist_2",
-      "ItemSound.mace_3",
-      "ItemSound.staff_1"
+      "ItemSound.sword_great_7",
+      "ItemSound.sword_great_4",
+      "ItemSound.sword_big_9",
+      "ItemSound.public_sword_shing_1"
     ],
-    "drop_sound": "ItemSound.itemdrop_weapon_fist",
-    "equip_sound": "ItemSound.itemequip_weapon_fist",
-    "weight": 0,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "leather",
-    "crystal_type": "none",
-    "physical_damage": 0,
-    "random_damage": 5,
-    "weapon_type": "fist",
-    "critical": 4,
-    "hit_modify": "4.75",
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 1740,
+    "soulshot_count": 3,
+    "spiritshot_count": 3,
+    "material_type": "steel",
+    "crystal_type": "c",
+    "physical_damage": 190,
+    "random_damage": 10,
+    "weapon_type": "sword",
+    "critical": 8,
+    "hit_modify": 0,
     "avoid_modify": 0,
     "shield_defense": 0,
     "shield_defense_rate": 0,
     "attack_speed": 325,
     "mp_consume": 0,
-    "magical_damage": 0,
+    "magical_damage": 83,
     "durability": 95,
     "is_new": false,
-    "is_changed": false,
-    "name": "Human Fighter Fist",
+    "is_changed": true,
+    "changes": {
+      "object_name": {
+        "old": "_human_fighter_fist",
+        "new": "iron_divider"
+      },
+      "body_part": {
+        "old": [
+          "rhand"
+        ],
+        "new": [
+          "lrhand"
+        ]
+      },
+      "animation": {
+        "old": 3,
+        "new": 2
+      },
+      "drop_type": {
+        "old": 0,
+        "new": 1
+      },
+      "drop_anim_type": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_radius": {
+        "old": "2.7",
+        "new": "7.3"
+      },
+      "drop_height": {
+        "old": 5,
+        "new": 10
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_sack_m00"
+        ],
+        "new": [
+          "LineageWeapons.flamberge_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "new": [
+          "LineageWeaponsTex.irondivider"
+        ]
+      },
+      "icon": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "icon.irondividericon"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeapons.flamberge_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeaponsTex.irondivider"
+        ]
+      },
+      "crystallizable": {
+        "old": 0,
+        "new": 1
+      },
+      "item_sound": {
+        "old": [
+          "ItemSound.staff_2",
+          "ItemSound.fist_2",
+          "ItemSound.mace_3",
+          "ItemSound.staff_1"
+        ],
+        "new": [
+          "ItemSound.sword_great_7",
+          "ItemSound.sword_great_4",
+          "ItemSound.sword_big_9",
+          "ItemSound.public_sword_shing_1"
+        ]
+      },
+      "drop_sound": {
+        "old": "ItemSound.itemdrop_weapon_fist",
+        "new": "ItemSound.itemdrop_weapon_sword"
+      },
+      "equip_sound": {
+        "old": "ItemSound.itemequip_weapon_fist",
+        "new": "ItemSound.itemequip_weapon_sword"
+      },
+      "weight": {
+        "old": 0,
+        "new": 1740
+      },
+      "soulshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "spiritshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "material_type": {
+        "old": "leather",
+        "new": "steel"
+      },
+      "crystal_type": {
+        "old": "none",
+        "new": "c"
+      },
+      "physical_damage": {
+        "old": 0,
+        "new": 190
+      },
+      "random_damage": {
+        "old": 5,
+        "new": 10
+      },
+      "weapon_type": {
+        "old": "fist",
+        "new": "sword"
+      },
+      "critical": {
+        "old": 4,
+        "new": 8
+      },
+      "hit_modify": {
+        "old": "4.75",
+        "new": 0
+      },
+      "magical_damage": {
+        "old": 0,
+        "new": 83
+      },
+      "name": {
+        "old": "Human Fighter Fist",
+        "new": "Iron Divider"
+      }
+    },
+    "name": "Iron Divider",
     "description": ""
   },
   {
     "object_id": 247,
-    "object_name": "_dwern_fist",
+    "object_name": "hunter_divider",
     "body_part": [
       "rhand"
     ],
-    "animation": 3,
-    "drop_type": 0,
-    "drop_anim_type": 3,
-    "drop_radius": "2.7",
-    "drop_height": 5,
+    "animation": 1,
+    "drop_type": 3,
+    "drop_anim_type": 1,
+    "drop_radius": 15,
+    "drop_height": "5.3",
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "dropitems.drop_sack_m00"
+      "LineageWeapons.battle_axe_m00_wp"
     ],
     "drop_texture": [
-      "dropitemstex.drop_sack_t00"
+      "LineageWeaponsTex.hunterdivider"
     ],
     "icon": [
-      "none"
+      "icon.hunterdividericon"
     ],
     "mesh": [
-      "none"
+      "LineageWeapons.battle_axe_m00_wp"
     ],
     "texture": [
-      "none"
+      "LineageWeaponsTex.hunterdivider"
     ],
-    "crystallizable": 0,
+    "crystallizable": 1,
+    "item_sound": [
+      "ItemSound.axe_1",
+      "ItemSound.axe_3",
+      "ItemSound.hammer_3",
+      "ItemSound.sword_mid_2"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_blunt",
+    "equip_sound": "ItemSound.itemequip_weapon_blunt",
+    "weight": 1720,
+    "soulshot_count": 2,
+    "spiritshot_count": 2,
+    "material_type": "fine_steel",
+    "crystal_type": "c",
+    "physical_damage": 98,
+    "random_damage": 20,
+    "weapon_type": "blunt",
+    "critical": 4,
+    "hit_modify": "4.75",
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 379,
+    "mp_consume": 0,
+    "magical_damage": 91,
+    "durability": 95,
+    "is_new": false,
+    "is_changed": true,
+    "changes": {
+      "object_name": {
+        "old": "_dwern_fist",
+        "new": "hunter_divider"
+      },
+      "animation": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_type": {
+        "old": 0,
+        "new": 3
+      },
+      "drop_anim_type": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_radius": {
+        "old": "2.7",
+        "new": 15
+      },
+      "drop_height": {
+        "old": 5,
+        "new": "5.3"
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_sack_m00"
+        ],
+        "new": [
+          "LineageWeapons.battle_axe_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "new": [
+          "LineageWeaponsTex.hunterdivider"
+        ]
+      },
+      "icon": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "icon.hunterdividericon"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeapons.battle_axe_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeaponsTex.hunterdivider"
+        ]
+      },
+      "crystallizable": {
+        "old": 0,
+        "new": 1
+      },
+      "item_sound": {
+        "old": [
+          "ItemSound.club_2",
+          "ItemSound.staff_1",
+          "ItemSound.fist_3",
+          "ItemSound.staff_1"
+        ],
+        "new": [
+          "ItemSound.axe_1",
+          "ItemSound.axe_3",
+          "ItemSound.hammer_3",
+          "ItemSound.sword_mid_2"
+        ]
+      },
+      "drop_sound": {
+        "old": "ItemSound.itemdrop_weapon_fist",
+        "new": "ItemSound.itemdrop_weapon_blunt"
+      },
+      "equip_sound": {
+        "old": "ItemSound.itemequip_weapon_fist",
+        "new": "ItemSound.itemequip_weapon_blunt"
+      },
+      "weight": {
+        "old": 0,
+        "new": 1720
+      },
+      "soulshot_count": {
+        "old": 0,
+        "new": 2
+      },
+      "spiritshot_count": {
+        "old": 0,
+        "new": 2
+      },
+      "material_type": {
+        "old": "leather",
+        "new": "fine_steel"
+      },
+      "crystal_type": {
+        "old": "none",
+        "new": "c"
+      },
+      "physical_damage": {
+        "old": 0,
+        "new": 98
+      },
+      "random_damage": {
+        "old": 5,
+        "new": 20
+      },
+      "weapon_type": {
+        "old": "fist",
+        "new": "blunt"
+      },
+      "attack_speed": {
+        "old": 325,
+        "new": 379
+      },
+      "magical_damage": {
+        "old": 0,
+        "new": 91
+      },
+      "name": {
+        "old": "Dwarven Fighter Fist",
+        "new": "Hunter Divider"
+      },
+      "description": {
+        "old": "",
+        "new": "This axe was used in the construction of Hunter's Village and is considered a local relic.\\nA magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+      }
+    },
+    "name": "Hunter Divider",
+    "description": "This axe was used in the construction of Hunter's Village and is considered a local relic.\\nA magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills."
+  },
+  {
+    "object_id": 248,
+    "object_name": "grasper",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 4,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": "17.5",
+    "drop_height": "2.4",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.dragon_axe_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.dragon_axe_t00_wp"
+    ],
+    "icon": [
+      "icon.weapon_dragon_axe_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.dragon_axe_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.dragon_axe_t00_wp"
+    ],
+    "crystallizable": 1,
+    "item_sound": [
+      "ItemSound.sword_great_3",
+      "ItemSound.axe_4",
+      "ItemSound.sword_big_8",
+      "ItemSound.axe_3"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_blunt",
+    "equip_sound": "ItemSound.itemequip_weapon_blunt",
+    "weight": 2010,
+    "soulshot_count": 2,
+    "spiritshot_count": 2,
+    "material_type": "bone",
+    "crystal_type": "c",
+    "physical_damage": 148,
+    "random_damage": 20,
+    "weapon_type": "blunt",
+    "critical": 4,
+    "hit_modify": "4.75",
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 325,
+    "mp_consume": 0,
+    "magical_damage": 68,
+    "durability": 85,
+    "is_new": false,
+    "is_changed": true,
+    "changes": {
+      "object_name": {
+        "old": "_orcish_fighter_fist",
+        "new": "grasper"
+      },
+      "body_part": {
+        "old": [
+          "rhand"
+        ],
+        "new": [
+          "lrhand"
+        ]
+      },
+      "animation": {
+        "old": 3,
+        "new": 4
+      },
+      "drop_type": {
+        "old": 0,
+        "new": 1
+      },
+      "drop_anim_type": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_radius": {
+        "old": "2.7",
+        "new": "17.5"
+      },
+      "drop_height": {
+        "old": 5,
+        "new": "2.4"
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_sack_m00"
+        ],
+        "new": [
+          "LineageWeapons.dragon_axe_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "new": [
+          "LineageWeaponsTex.dragon_axe_t00_wp"
+        ]
+      },
+      "icon": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "icon.weapon_dragon_axe_i00"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeapons.dragon_axe_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeaponsTex.dragon_axe_t00_wp"
+        ]
+      },
+      "crystallizable": {
+        "old": 0,
+        "new": 1
+      },
+      "item_sound": {
+        "old": [
+          "ItemSound.axe_1",
+          "ItemSound.fist_2",
+          "ItemSound.club_2",
+          "ItemSound.spear_9"
+        ],
+        "new": [
+          "ItemSound.sword_great_3",
+          "ItemSound.axe_4",
+          "ItemSound.sword_big_8",
+          "ItemSound.axe_3"
+        ]
+      },
+      "drop_sound": {
+        "old": "ItemSound.itemdrop_weapon_fist",
+        "new": "ItemSound.itemdrop_weapon_blunt"
+      },
+      "equip_sound": {
+        "old": "ItemSound.itemequip_weapon_fist",
+        "new": "ItemSound.itemequip_weapon_blunt"
+      },
+      "weight": {
+        "old": 0,
+        "new": 2010
+      },
+      "soulshot_count": {
+        "old": 0,
+        "new": 2
+      },
+      "spiritshot_count": {
+        "old": 0,
+        "new": 2
+      },
+      "material_type": {
+        "old": "leather",
+        "new": "bone"
+      },
+      "crystal_type": {
+        "old": "none",
+        "new": "c"
+      },
+      "physical_damage": {
+        "old": 0,
+        "new": 148
+      },
+      "random_damage": {
+        "old": 5,
+        "new": 20
+      },
+      "weapon_type": {
+        "old": "fist",
+        "new": "blunt"
+      },
+      "magical_damage": {
+        "old": 0,
+        "new": 68
+      },
+      "durability": {
+        "old": 95,
+        "new": 85
+      },
+      "name": {
+        "old": "Orc Fighter Fist",
+        "new": "Grasper"
+      }
+    },
+    "name": "Grasper",
+    "description": ""
+  },
+  {
+    "object_id": 249,
+    "object_name": "hunter_grasper",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 4,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": "17.5",
+    "drop_height": "2.4",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.dragon_axe_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.dragon_axe_t00_wp"
+    ],
+    "icon": [
+      "icon.weapon_dragon_axe_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.dragon_axe_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.dragon_axe_t00_wp"
+    ],
+    "crystallizable": 1,
+    "item_sound": [
+      "ItemSound.sword_great_3",
+      "ItemSound.axe_4",
+      "ItemSound.sword_big_8",
+      "ItemSound.axe_3"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_blunt",
+    "equip_sound": "ItemSound.itemequip_weapon_blunt",
+    "weight": 2010,
+    "soulshot_count": 3,
+    "spiritshot_count": 3,
+    "material_type": "bone",
+    "crystal_type": "c",
+    "physical_damage": 190,
+    "random_damage": 20,
+    "weapon_type": "blunt",
+    "critical": 4,
+    "hit_modify": "4.75",
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 325,
+    "mp_consume": 0,
+    "magical_damage": 83,
+    "durability": 85,
+    "is_new": false,
+    "is_changed": true,
+    "changes": {
+      "object_name": {
+        "old": "_elven_magician_fist",
+        "new": "hunter_grasper"
+      },
+      "body_part": {
+        "old": [
+          "rhand"
+        ],
+        "new": [
+          "lrhand"
+        ]
+      },
+      "animation": {
+        "old": 3,
+        "new": 4
+      },
+      "drop_type": {
+        "old": 0,
+        "new": 1
+      },
+      "drop_anim_type": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_radius": {
+        "old": "2.7",
+        "new": "17.5"
+      },
+      "drop_height": {
+        "old": 5,
+        "new": "2.4"
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_sack_m00"
+        ],
+        "new": [
+          "LineageWeapons.dragon_axe_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "new": [
+          "LineageWeaponsTex.dragon_axe_t00_wp"
+        ]
+      },
+      "icon": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "icon.weapon_dragon_axe_i00"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeapons.dragon_axe_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeaponsTex.dragon_axe_t00_wp"
+        ]
+      },
+      "crystallizable": {
+        "old": 0,
+        "new": 1
+      },
+      "item_sound": {
+        "old": [
+          "ItemSound.staff_3",
+          "ItemSound.fist_1",
+          "ItemSound.mace_1",
+          "ItemSound.sword_mid_9"
+        ],
+        "new": [
+          "ItemSound.sword_great_3",
+          "ItemSound.axe_4",
+          "ItemSound.sword_big_8",
+          "ItemSound.axe_3"
+        ]
+      },
+      "drop_sound": {
+        "old": "ItemSound.itemdrop_weapon_fist",
+        "new": "ItemSound.itemdrop_weapon_blunt"
+      },
+      "equip_sound": {
+        "old": "ItemSound.itemequip_weapon_fist",
+        "new": "ItemSound.itemequip_weapon_blunt"
+      },
+      "weight": {
+        "old": 0,
+        "new": 2010
+      },
+      "soulshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "spiritshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "material_type": {
+        "old": "leather",
+        "new": "bone"
+      },
+      "crystal_type": {
+        "old": "none",
+        "new": "c"
+      },
+      "physical_damage": {
+        "old": 0,
+        "new": 190
+      },
+      "random_damage": {
+        "old": 5,
+        "new": 20
+      },
+      "weapon_type": {
+        "old": "fist",
+        "new": "blunt"
+      },
+      "magical_damage": {
+        "old": 0,
+        "new": 83
+      },
+      "durability": {
+        "old": 95,
+        "new": 85
+      },
+      "name": {
+        "old": "Elven Mystic Fist",
+        "new": "Hunter Grasper"
+      }
+    },
+    "name": "Hunter Grasper",
+    "description": ""
+  },
+  {
+    "object_id": 250,
+    "object_name": "secateur",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 7,
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.7",
+    "drop_height": 8,
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.baghnakh_m00_wp",
+      "LineageWeapons.baghnakh_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.secateur",
+      "LineageWeaponsTex.secateur"
+    ],
+    "icon": [
+      "icon.secateuricon"
+    ],
+    "mesh": [
+      "LineageWeapons.baghnakh_m00_wp",
+      "LineageWeapons.baghnakh_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.secateur",
+      "LineageWeaponsTex.secateur"
+    ],
+    "crystallizable": 1,
     "item_sound": [
       "ItemSound.club_2",
       "ItemSound.staff_1",
@@ -12222,14 +13771,14 @@
     ],
     "drop_sound": "ItemSound.itemdrop_weapon_fist",
     "equip_sound": "ItemSound.itemequip_weapon_fist",
-    "weight": 0,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "leather",
-    "crystal_type": "none",
-    "physical_damage": 0,
+    "weight": 1490,
+    "soulshot_count": 2,
+    "spiritshot_count": 2,
+    "material_type": "fine_steel",
+    "crystal_type": "c",
+    "physical_damage": 148,
     "random_damage": 5,
-    "weapon_type": "fist",
+    "weapon_type": "dualfist",
     "critical": 4,
     "hit_modify": "4.75",
     "avoid_modify": 0,
@@ -12237,188 +13786,131 @@
     "shield_defense_rate": 0,
     "attack_speed": 325,
     "mp_consume": 0,
-    "magical_damage": 0,
+    "magical_damage": 68,
     "durability": 95,
     "is_new": false,
-    "is_changed": false,
-    "name": "Dwarven Fighter Fist",
-    "description": ""
-  },
-  {
-    "object_id": 248,
-    "object_name": "_orcish_fighter_fist",
-    "body_part": [
-      "rhand"
-    ],
-    "animation": 3,
-    "drop_type": 0,
-    "drop_anim_type": 3,
-    "drop_radius": "2.7",
-    "drop_height": 5,
-    "projectile": "none",
-    "curvature": 1000,
-    "drop_mesh": [
-      "dropitems.drop_sack_m00"
-    ],
-    "drop_texture": [
-      "dropitemstex.drop_sack_t00"
-    ],
-    "icon": [
-      "none"
-    ],
-    "mesh": [
-      "none"
-    ],
-    "texture": [
-      "none"
-    ],
-    "crystallizable": 0,
-    "item_sound": [
-      "ItemSound.axe_1",
-      "ItemSound.fist_2",
-      "ItemSound.club_2",
-      "ItemSound.spear_9"
-    ],
-    "drop_sound": "ItemSound.itemdrop_weapon_fist",
-    "equip_sound": "ItemSound.itemequip_weapon_fist",
-    "weight": 0,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "leather",
-    "crystal_type": "none",
-    "physical_damage": 0,
-    "random_damage": 5,
-    "weapon_type": "fist",
-    "critical": 4,
-    "hit_modify": "4.75",
-    "avoid_modify": 0,
-    "shield_defense": 0,
-    "shield_defense_rate": 0,
-    "attack_speed": 325,
-    "mp_consume": 0,
-    "magical_damage": 0,
-    "durability": 95,
-    "is_new": false,
-    "is_changed": false,
-    "name": "Orc Fighter Fist",
-    "description": ""
-  },
-  {
-    "object_id": 249,
-    "object_name": "_elven_magician_fist",
-    "body_part": [
-      "rhand"
-    ],
-    "animation": 3,
-    "drop_type": 0,
-    "drop_anim_type": 3,
-    "drop_radius": "2.7",
-    "drop_height": 5,
-    "projectile": "none",
-    "curvature": 1000,
-    "drop_mesh": [
-      "dropitems.drop_sack_m00"
-    ],
-    "drop_texture": [
-      "dropitemstex.drop_sack_t00"
-    ],
-    "icon": [
-      "none"
-    ],
-    "mesh": [
-      "none"
-    ],
-    "texture": [
-      "none"
-    ],
-    "crystallizable": 0,
-    "item_sound": [
-      "ItemSound.staff_3",
-      "ItemSound.fist_1",
-      "ItemSound.mace_1",
-      "ItemSound.sword_mid_9"
-    ],
-    "drop_sound": "ItemSound.itemdrop_weapon_fist",
-    "equip_sound": "ItemSound.itemequip_weapon_fist",
-    "weight": 0,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "leather",
-    "crystal_type": "none",
-    "physical_damage": 0,
-    "random_damage": 5,
-    "weapon_type": "fist",
-    "critical": 4,
-    "hit_modify": "4.75",
-    "avoid_modify": 0,
-    "shield_defense": 0,
-    "shield_defense_rate": 0,
-    "attack_speed": 325,
-    "mp_consume": 0,
-    "magical_damage": 0,
-    "durability": 95,
-    "is_new": false,
-    "is_changed": false,
-    "name": "Elven Mystic Fist",
-    "description": ""
-  },
-  {
-    "object_id": 250,
-    "object_name": "_darkelven_magician_fist",
-    "body_part": [
-      "rhand"
-    ],
-    "animation": 3,
-    "drop_type": 0,
-    "drop_anim_type": 3,
-    "drop_radius": "2.7",
-    "drop_height": 5,
-    "projectile": "none",
-    "curvature": 1000,
-    "drop_mesh": [
-      "dropitems.drop_sack_m00"
-    ],
-    "drop_texture": [
-      "dropitemstex.drop_sack_t00"
-    ],
-    "icon": [
-      "none"
-    ],
-    "mesh": [
-      "none"
-    ],
-    "texture": [
-      "none"
-    ],
-    "crystallizable": 0,
-    "item_sound": [
-      "ItemSound.staff_2",
-      "ItemSound.fist_2",
-      "ItemSound.mace_3",
-      "ItemSound.staff_1"
-    ],
-    "drop_sound": "ItemSound.itemdrop_weapon_fist",
-    "equip_sound": "ItemSound.itemequip_weapon_fist",
-    "weight": 0,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "leather",
-    "crystal_type": "none",
-    "physical_damage": 0,
-    "random_damage": 5,
-    "weapon_type": "fist",
-    "critical": 4,
-    "hit_modify": "4.75",
-    "avoid_modify": 0,
-    "shield_defense": 0,
-    "shield_defense_rate": 0,
-    "attack_speed": 325,
-    "mp_consume": 0,
-    "magical_damage": 0,
-    "durability": 95,
-    "is_new": false,
-    "is_changed": false,
-    "name": "Dark Mystic Fist",
+    "is_changed": true,
+    "changes": {
+      "object_name": {
+        "old": "_darkelven_magician_fist",
+        "new": "secateur"
+      },
+      "body_part": {
+        "old": [
+          "rhand"
+        ],
+        "new": [
+          "lrhand"
+        ]
+      },
+      "animation": {
+        "old": 3,
+        "new": 7
+      },
+      "drop_height": {
+        "old": 5,
+        "new": 8
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_sack_m00"
+        ],
+        "new": [
+          "LineageWeapons.baghnakh_m00_wp",
+          "LineageWeapons.baghnakh_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "new": [
+          "LineageWeaponsTex.secateur",
+          "LineageWeaponsTex.secateur"
+        ]
+      },
+      "icon": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "icon.secateuricon"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeapons.baghnakh_m00_wp",
+          "LineageWeapons.baghnakh_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeaponsTex.secateur",
+          "LineageWeaponsTex.secateur"
+        ]
+      },
+      "crystallizable": {
+        "old": 0,
+        "new": 1
+      },
+      "item_sound": {
+        "old": [
+          "ItemSound.staff_2",
+          "ItemSound.fist_2",
+          "ItemSound.mace_3",
+          "ItemSound.staff_1"
+        ],
+        "new": [
+          "ItemSound.club_2",
+          "ItemSound.staff_1",
+          "ItemSound.fist_3",
+          "ItemSound.staff_1"
+        ]
+      },
+      "weight": {
+        "old": 0,
+        "new": 1490
+      },
+      "soulshot_count": {
+        "old": 0,
+        "new": 2
+      },
+      "spiritshot_count": {
+        "old": 0,
+        "new": 2
+      },
+      "material_type": {
+        "old": "leather",
+        "new": "fine_steel"
+      },
+      "crystal_type": {
+        "old": "none",
+        "new": "c"
+      },
+      "physical_damage": {
+        "old": 0,
+        "new": 148
+      },
+      "weapon_type": {
+        "old": "fist",
+        "new": "dualfist"
+      },
+      "magical_damage": {
+        "old": 0,
+        "new": 68
+      },
+      "name": {
+        "old": "Dark Mystic Fist",
+        "new": "Secateur"
+      }
+    },
+    "name": "Secateur",
     "description": ""
   },
   {
@@ -14181,10 +15673,14 @@
         "new": [
           "LineageWeaponsTex.LongBow"
         ]
+      },
+      "description": {
+        "old": "",
+        "new": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
       }
     },
     "name": "Long Bow",
-    "description": ""
+    "description": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
   },
   {
     "object_id": 276,
@@ -14426,9 +15922,15 @@
     "base_price": 1400000,
     "crystal_count": 2545,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
+      }
+    },
     "name": "Strengthened Long Bow",
-    "description": ""
+    "description": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
   },
   {
     "object_id": 280,
@@ -14609,9 +16111,15 @@
     "base_price": 2870000,
     "crystal_count": 1148,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
+      }
+    },
     "name": "Crossbow",
-    "description": ""
+    "description": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
   },
   {
     "object_id": 283,
@@ -14670,9 +16178,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
+      }
+    },
     "name": "Akat Long Bow",
-    "description": ""
+    "description": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
   },
   {
     "object_id": 284,
@@ -14731,9 +16245,19 @@
     "base_price": 8680000,
     "crystal_count": 1157,
     "is_new": false,
-    "is_changed": false,
-    "name": "Heavy Crossbow",
-    "description": ""
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Heavy Crossbow",
+        "new": "Dark Elven Long Bow"
+      },
+      "description": {
+        "old": "",
+        "new": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
+      }
+    },
+    "name": "Dark Elven Long Bow",
+    "description": "A heavy bow imbued with     magical power and casting    speed, but its heaviness      makes shots slow. Made specifically for dark archers."
   },
   {
     "object_id": 285,
@@ -16195,9 +17719,15 @@
     "base_price": 768,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Buffalo's Horn",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 309,
@@ -16281,10 +17811,14 @@
         "new": [
           "LineageWeaponsTex.tearsofeva"
         ]
+      },
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
       }
     },
     "name": "Tears of Eva",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 310,
@@ -16343,9 +17877,15 @@
     "base_price": 136000,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Relic of The Saints",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 311,
@@ -16404,9 +17944,15 @@
     "base_price": 244000,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Crucifix of Blessing",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 312,
@@ -16490,10 +18036,14 @@
         "new": [
           "LineageWeaponsTex.temptation"
         ]
+      },
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
       }
     },
     "name": "Branch of Life",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 313,
@@ -16552,9 +18102,15 @@
     "base_price": 409000,
     "crystal_count": 743,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Temptation of Abyss",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 314,
@@ -16613,9 +18169,15 @@
     "base_price": 409000,
     "crystal_count": 743,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Proof of Revenge",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 315,
@@ -16674,9 +18236,15 @@
     "base_price": 644000,
     "crystal_count": 1170,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Divine Tome",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 316,
@@ -16735,9 +18303,15 @@
     "base_price": 967000,
     "crystal_count": 1758,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Blood of Saints",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 317,
@@ -16796,9 +18370,15 @@
     "base_price": 967000,
     "crystal_count": 1758,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Tome of Blood",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 318,
@@ -16857,9 +18437,15 @@
     "base_price": 1400000,
     "crystal_count": 2545,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Crucifix of Blood",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 319,
@@ -16918,9 +18504,15 @@
     "base_price": 1400000,
     "crystal_count": 2545,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Eye of Infinity",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 320,
@@ -16979,9 +18571,15 @@
     "base_price": 1520000,
     "crystal_count": 2763,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Blue Crystal Skull",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 321,
@@ -17068,11 +18666,11 @@
       },
       "description": {
         "old": "",
-        "new": "The last will of the mighty demon was heard, you managed to learn his secrets, his fears, his mysteries, he begged you to take everything you learned with you to the grave. However, after hearing this, you realize that Hell - is the other side of Paradise."
+        "new": "The last will of the mighty demon was heard, you managed to learn his secrets, his fears, his mysteries, he begged you to take everything you learned with you to the grave. However, after hearing this, you realize that Hell - is the other side of Paradise. Your concentration and MP are increased."
       }
     },
     "name": "Demon Fangs",
-    "description": "The last will of the mighty demon was heard, you managed to learn his secrets, his fears, his mysteries, he begged you to take everything you learned with you to the grave. However, after hearing this, you realize that Hell - is the other side of Paradise."
+    "description": "The last will of the mighty demon was heard, you managed to learn his secrets, his fears, his mysteries, he begged you to take everything you learned with you to the grave. However, after hearing this, you realize that Hell - is the other side of Paradise. Your concentration and MP are increased."
   },
   {
     "object_id": 322,
@@ -17131,9 +18729,15 @@
     "base_price": 1800000,
     "crystal_count": 3272,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Vajra Wands",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 323,
@@ -17192,9 +18796,15 @@
     "base_price": 1800000,
     "crystal_count": 3272,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Ancient Reagent",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 324,
@@ -17314,9 +18924,15 @@
     "base_price": 2870000,
     "crystal_count": 1148,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Horn of Glory",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 326,
@@ -17400,10 +19016,14 @@
         "new": [
           "LineageWeaponsTex.heathens"
         ]
+      },
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
       }
     },
     "name": "Heathen's Book",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 327,
@@ -17462,9 +19082,15 @@
     "base_price": 4300000,
     "crystal_count": 1720,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Hex Doll",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 328,
@@ -17706,9 +19332,15 @@
     "base_price": 6130000,
     "crystal_count": 2452,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Cerberus Eye",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 332,
@@ -17950,9 +19582,15 @@
     "base_price": 13100000,
     "crystal_count": 1746,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Soul Crystal",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 336,
@@ -18255,9 +19893,15 @@
     "base_price": 18300000,
     "crystal_count": 2440,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "",
+        "new": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
+      }
+    },
     "name": "Unicorn's Horn",
-    "description": ""
+    "description": "A magical book that contains all the wisdom of the Einhovant's school of magic. Your concentration and MP are increased."
   },
   {
     "object_id": 341,
@@ -20566,18 +22210,18 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_shield",
     "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 560,
+    "weight": 1310,
     "soulshot_count": 0,
     "spiritshot_count": 0,
     "material_type": "steel",
-    "crystal_type": "b",
+    "crystal_type": "d",
     "physical_damage": 0,
     "random_damage": 0,
     "weapon_type": "none",
     "critical": 0,
     "hit_modify": 0,
     "avoid_modify": "-8",
-    "shield_defense": 230,
+    "shield_defense": 154,
     "shield_defense_rate": 20,
     "attack_speed": 0,
     "mp_consume": 0,
@@ -20586,9 +22230,31 @@
     "base_price": 845000,
     "crystal_count": 112,
     "is_new": false,
-    "is_changed": false,
-    "name": "Sage's Shield",
-    "description": ""
+    "is_changed": true,
+    "changes": {
+      "weight": {
+        "old": 560,
+        "new": 1310
+      },
+      "crystal_type": {
+        "old": "b",
+        "new": "d"
+      },
+      "shield_defense": {
+        "old": 230,
+        "new": 154
+      },
+      "name": {
+        "old": "Sage's Shield",
+        "new": "Web Shield"
+      },
+      "description": {
+        "old": "",
+        "new": "While Orfen was weaving the Threads of the Future, this shield lay nearby and absorbed their special energy."
+      }
+    },
+    "name": "Web Shield",
+    "description": "While Orfen was weaving the Threads of the Future, this shield lay nearby and absorbed their special energy."
   },
   {
     "object_id": 656,
@@ -21700,18 +23366,18 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_shield",
     "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 480,
+    "weight": 1290,
     "soulshot_count": 0,
     "spiritshot_count": 0,
     "material_type": "damascus",
-    "crystal_type": "b",
+    "crystal_type": "c",
     "physical_damage": 0,
     "random_damage": 0,
     "weapon_type": "none",
     "critical": 0,
     "hit_modify": 0,
     "avoid_modify": "-8",
-    "shield_defense": 216,
+    "shield_defense": 166,
     "shield_defense_rate": 20,
     "attack_speed": 0,
     "mp_consume": 0,
@@ -21720,9 +23386,31 @@
     "base_price": 545000,
     "crystal_count": 72,
     "is_new": false,
-    "is_changed": false,
-    "name": "Avadon Shield",
-    "description": ""
+    "is_changed": true,
+    "changes": {
+      "weight": {
+        "old": 480,
+        "new": 1290
+      },
+      "crystal_type": {
+        "old": "b",
+        "new": "c"
+      },
+      "shield_defense": {
+        "old": 216,
+        "new": 166
+      },
+      "name": {
+        "old": "Avadon Shield",
+        "new": "Red Crystal Shield"
+      },
+      "description": {
+        "old": "",
+        "new": "The Dragons of Aden warned the people of the approaching doom, but no one wanted to believe the wind that came from the rocks."
+      }
+    },
+    "name": "Red Crystal Shield",
+    "description": "The Dragons of Aden warned the people of the approaching doom, but no one wanted to believe the wind that came from the rocks."
   },
   {
     "object_id": 674,
@@ -22027,9 +23715,15 @@
     "base_price": 25500,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "The wand presented to  those who have  finished their  studies at the school  of magic ",
+        "new": "A magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills. The wand presented to  those who have  finished their  studies at the school  of magic "
+      }
+    },
     "name": "Wand of Adept",
-    "description": "The wand presented to  those who have  finished their  studies at the school  of magic "
+    "description": "A magical blunt that has absorbed the wisdom of elven knowledge, reducing the cost of magical skills. The wand presented to  those who have  finished their  studies at the school  of magic "
   },
   {
     "object_id": 748,
@@ -24102,7 +25796,7 @@
       "LineageWeaponsTex.orcish_sword_t00_wp"
     ],
     "icon": [
-      "icon.weapon_crimson_sword_i00"
+      "icon.weapon_orcish_sword_i00"
     ],
     "mesh": [
       "LineageWeapons.orcish_sword_m00_wp"
@@ -24139,7 +25833,17 @@
     "base_price": 25500,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "icon": {
+        "old": [
+          "icon.weapon_crimson_sword_i00"
+        ],
+        "new": [
+          "icon.weapon_orcish_sword_i00"
+        ]
+      }
+    },
     "name": "Butcher's Sword",
     "description": "A sword granted to  young Orc fighters  who distinguished  themselves at war"
   },
@@ -25081,11 +26785,11 @@
     "changes": {
       "description": {
         "old": "",
-        "new": "Part of Full Plate Set            Shield Defence +6%."
+        "new": "Part of Full Plate Set            Shield Defence +6%"
       }
     },
     "name": "Full Plate Shield",
-    "description": "Part of Full Plate Set            Shield Defence +6%."
+    "description": "Part of Full Plate Set            Shield Defence +6%"
   },
   {
     "object_id": 2498,
@@ -34967,6 +36671,455 @@
     "description": ""
   },
   {
+    "object_id": 7770,
+    "object_name": "broad_sword*broad_sword",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 3,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": 6,
+    "drop_height": "1.3",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.broad_sword_m00_wp",
+      "LineageWeapons.broad_sword_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.broad_sword_t00_wp",
+      "LineageWeaponsTex.broad_sword_t00_wp"
+    ],
+    "icon": [
+      "icon.broadsword_broadsword",
+      "icon.weapon_broad_sword_i00",
+      "icon.weapon_broad_sword_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.broad_sword_m00_wp",
+      "LineageWeapons.broad_sword_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.broad_sword_t00_wp",
+      "LineageWeaponsTex.broad_sword_t00_wp"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "ItemSound.public_sword_shing_1",
+      "ItemSound.sword_great_4",
+      "ItemSound.sword_mid_2",
+      "ItemSound.public_sword_shing_3"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 2720,
+    "soulshot_count": 0,
+    "spiritshot_count": 0,
+    "material_type": "fine_steel",
+    "crystal_type": "none",
+    "physical_damage": 16,
+    "random_damage": 10,
+    "weapon_type": "dual",
+    "critical": 8,
+    "hit_modify": 0,
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 325,
+    "mp_consume": 0,
+    "magical_damage": 10,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Broadsword * Broadsword",
+    "description": "First starter set of swords."
+  },
+  {
+    "object_id": 7771,
+    "object_name": "butcher*butcher",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 3,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": 6,
+    "drop_height": "1.3",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.orcish_sword_m00_wp",
+      "LineageWeapons.orcish_sword_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.orcish_sword_t00_wp",
+      "LineageWeaponsTex.orcish_sword_t00_wp"
+    ],
+    "icon": [
+      "icon.butcher_butcher",
+      "icon.weapon_orcish_sword_i00",
+      "icon.weapon_orcish_sword_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.orcish_sword_m00_wp",
+      "LineageWeapons.orcish_sword_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.orcish_sword_t00_wp",
+      "LineageWeaponsTex.orcish_sword_t00_wp"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "ItemSound.public_sword_shing_1",
+      "ItemSound.sword_great_4",
+      "ItemSound.sword_mid_2",
+      "ItemSound.public_sword_shing_3"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 2720,
+    "soulshot_count": 2,
+    "spiritshot_count": 2,
+    "material_type": "fine_steel",
+    "crystal_type": "none",
+    "physical_damage": 21,
+    "random_damage": 10,
+    "weapon_type": "dual",
+    "critical": 8,
+    "hit_modify": 0,
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 325,
+    "mp_consume": 0,
+    "magical_damage": 12,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Butcher * Butcher",
+    "description": "Rare swords of the starting journey."
+  },
+  {
+    "object_id": 7772,
+    "object_name": "gladius*gladius",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 3,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": 6,
+    "drop_height": "1.3",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.gladius_m00_wp",
+      "LineageWeapons.gladius_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.gladius_t00_wp",
+      "LineageWeaponsTex.gladius_t00_wp"
+    ],
+    "icon": [
+      "icon.gladius_gladius",
+      "icon.weapon_gladius_i00",
+      "icon.weapon_gladius_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.gladius_m00_wp",
+      "LineageWeapons.gladius_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.gladius_t00_wp",
+      "LineageWeaponsTex.gladius_t00_wp"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "ItemSound.public_sword_shing_1",
+      "ItemSound.sword_great_4",
+      "ItemSound.sword_mid_2",
+      "ItemSound.public_sword_shing_3"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 2720,
+    "soulshot_count": 2,
+    "spiritshot_count": 2,
+    "material_type": "fine_steel",
+    "crystal_type": "none",
+    "physical_damage": 29,
+    "random_damage": 10,
+    "weapon_type": "dual",
+    "critical": 8,
+    "hit_modify": 0,
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 325,
+    "mp_consume": 0,
+    "magical_damage": 17,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Gladius * Gladius",
+    "description": "Special swords of the starting journey imbued with soul magic."
+  },
+  {
+    "object_id": 7773,
+    "object_name": "long_sword*long_sword",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 3,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": 6,
+    "drop_height": "1.3",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.long_sword_m00_wp",
+      "LineageWeapons.long_sword_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.long_sword_t00_wp",
+      "LineageWeaponsTex.long_sword_t00_wp"
+    ],
+    "icon": [
+      "icon.long_sword_long_sword",
+      "icon.weapon_long_sword_i00",
+      "icon.weapon_long_sword_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.long_sword_m00_wp",
+      "LineageWeapons.long_sword_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.long_sword_t00_wp",
+      "LineageWeaponsTex.long_sword_t00_wp"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "ItemSound.public_sword_shing_1",
+      "ItemSound.sword_great_4",
+      "ItemSound.sword_mid_2",
+      "ItemSound.public_sword_shing_3"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 2720,
+    "soulshot_count": 2,
+    "spiritshot_count": 2,
+    "material_type": "fine_steel",
+    "crystal_type": "none",
+    "physical_damage": 38,
+    "random_damage": 10,
+    "weapon_type": "dual",
+    "critical": 8,
+    "hit_modify": 0,
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 325,
+    "mp_consume": 0,
+    "magical_damage": 21,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Long Sword * Long Sword",
+    "description": "The strongest set of swords at the start of the journey."
+  },
+  {
+    "object_id": 7774,
+    "object_name": "watershadow*watershadow",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 3,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": 6,
+    "drop_height": "1.3",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.sword_of_watershadow_m00_wp",
+      "LineageWeapons.sword_of_watershadow_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.sword_of_watershadow_t00_wp",
+      "LineageWeaponsTex.sword_of_watershadow_t00_wp"
+    ],
+    "icon": [
+      "icon.watershadow_watershadow",
+      "icon.weapon_sword_of_watershadow_i00",
+      "icon.weapon_sword_of_watershadow_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.sword_of_watershadow_m00_wp",
+      "LineageWeapons.sword_of_watershadow_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.sword_of_watershadow_t00_wp",
+      "LineageWeaponsTex.sword_of_watershadow_t00_wp"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "ItemSound.public_sword_shing_1",
+      "ItemSound.sword_great_4",
+      "ItemSound.sword_mid_2",
+      "ItemSound.public_sword_shing_3"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 2720,
+    "soulshot_count": 2,
+    "spiritshot_count": 2,
+    "material_type": "fine_steel",
+    "crystal_type": "none",
+    "physical_damage": 38,
+    "random_damage": 10,
+    "weapon_type": "dual",
+    "critical": 8,
+    "hit_modify": 0,
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 325,
+    "mp_consume": 0,
+    "magical_damage": 21,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Watershadow * Watershadow",
+    "description": "The strongest set of rare swords at the beginning of the journey."
+  },
+  {
+    "object_id": 7775,
+    "object_name": "falchion*falchion",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 3,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": 6,
+    "drop_height": "1.3",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.falchion_m00_wp",
+      "LineageWeapons.falchion_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.falchion_t00_wp",
+      "LineageWeaponsTex.falchion_t00_wp"
+    ],
+    "icon": [
+      "icon.falchion_falchion",
+      "icon.weapon_falchion_i00",
+      "icon.weapon_falchion_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.falchion_m00_wp",
+      "LineageWeapons.falchion_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.falchion_t00_wp",
+      "LineageWeaponsTex.falchion_t00_wp"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "ItemSound.public_sword_shing_1",
+      "ItemSound.sword_great_4",
+      "ItemSound.sword_mid_2",
+      "ItemSound.public_sword_shing_3"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 2720,
+    "soulshot_count": 2,
+    "spiritshot_count": 2,
+    "material_type": "fine_steel",
+    "crystal_type": "d",
+    "physical_damage": 49,
+    "random_damage": 10,
+    "weapon_type": "dual",
+    "critical": 8,
+    "hit_modify": 0,
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 325,
+    "mp_consume": 0,
+    "magical_damage": 26,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Falchion * Falchion",
+    "description": "The first set of swords of the new level, emphasizing your new status."
+  },
+  {
+    "object_id": 7776,
+    "object_name": "magic_bow",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 5,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": 15,
+    "drop_height": "2.8",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.dark_elven_bow_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.magic_bow"
+    ],
+    "icon": [
+      "icon.magic_bow"
+    ],
+    "mesh": [
+      "LineageWeapons.dark_elven_bow_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.magic_bow"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "ItemSound.bow_big_1",
+      "ItemSound.bow_small_4",
+      "ItemSound.bow_small_5",
+      "ItemSound.bow_big_3"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_bow",
+    "equip_sound": "ItemSound.itemequip_weapon_bow",
+    "weight": 1880,
+    "soulshot_count": 7,
+    "spiritshot_count": 2,
+    "material_type": "steel",
+    "crystal_type": "none",
+    "physical_damage": 70,
+    "random_damage": 5,
+    "weapon_type": "bow",
+    "critical": 12,
+    "hit_modify": "-3.75",
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 227,
+    "mp_consume": 3,
+    "magical_damage": 23,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Magic Swamp Bow",
+    "description": "The first magical swamp bow of the beginning of the path, endowed with magical power and increased casting speed, but due to its weight, shots are slowed down."
+  },
+  {
     "object_id": 2915,
     "object_name": "__old_knight_sword",
     "body_part": [
@@ -36730,9 +38883,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "Chronicle I  Souvenir!!!",
+        "new": "Chronicle I Harbor Event Souvenir!!!"
+      }
+    },
     "name": "Chrono Cithara",
-    "description": "Chronicle I  Souvenir!!!"
+    "description": "Chronicle I Harbor Event Souvenir!!!"
   },
   {
     "object_id": 4219,
@@ -37044,367 +39203,180 @@
     "description": ""
   },
   {
-    "object_id": 10000,
-    "object_name": "web_shield",
+    "object_id": 5133,
+    "object_name": "chrono_tambourine",
     "body_part": [
       "lhand"
     ],
-    "animation": 0,
-    "drop_type": 3,
-    "drop_anim_type": 2,
-    "drop_radius": 5,
-    "drop_height": 5,
+    "animation": 1,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": "7.3",
+    "drop_height": 15,
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "LineageWeapons.sages_shield_m00_sh"
+      "LineageWeapons.chrono_tambourine_m00_wp"
     ],
     "drop_texture": [
-      "LineageWeaponsTex.sages_shield_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
+      "LineageWeaponsTex.chrono_tambourine_t00_wp"
     ],
     "icon": [
-      "icon.shield_sages_shield_i00"
+      "icon.weapon_chrono_tambourine_i00"
     ],
     "mesh": [
-      "LineageWeapons.sages_shield_m00_sh"
+      "LineageWeapons.chrono_tambourine_m00_wp"
     ],
     "texture": [
-      "LineageWeaponsTex.sages_shield_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
+      "LineageWeaponsTex.chrono_tambourine_t00_wp"
     ],
-    "crystallizable": 1,
+    "crystallizable": 0,
     "item_sound": [
-      "ItemSound.shield_steel_5",
-      "ItemSound.shield_steel_3",
-      "MonSound.Hit_Metal_Clang_8",
-      "MonSound.Hit_Metal_Clang_10"
+      "ItemSound2.memorial_1",
+      "ItemSound2.memorial_2",
+      "ItemSound2.memorial_3",
+      "ItemSound2.memorial_4"
     ],
-    "drop_sound": "ItemSound.item_drop_equip_armor_shield",
-    "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 1310,
+    "drop_sound": "none",
+    "equip_sound": "ItemSound.Itemequip_etc_key",
+    "weight": 0,
     "soulshot_count": 0,
     "spiritshot_count": 0,
     "material_type": "steel",
-    "crystal_type": "d",
-    "physical_damage": 0,
-    "random_damage": 0,
-    "weapon_type": "none",
-    "critical": 0,
-    "hit_modify": 0,
-    "avoid_modify": "-8",
-    "shield_defense": 154,
-    "shield_defense_rate": 20,
-    "attack_speed": 0,
-    "mp_consume": 0,
-    "magical_damage": 0,
-    "durability": 90,
-    "is_new": true,
-    "is_changed": false,
-    "name": "Web Shield",
-    "description": "While Orfen was weaving the Threads of the Future, this shield lay nearby and absorbed their special energy."
-  },
-  {
-    "object_id": 10001,
-    "object_name": "unicorn_tears_shield",
-    "body_part": [
-      "lhand"
-    ],
-    "animation": 0,
-    "drop_type": 3,
-    "drop_anim_type": 2,
-    "drop_radius": 5,
-    "drop_height": 8,
-    "projectile": "none",
-    "curvature": 1000,
-    "drop_mesh": [
-      "LineageWeapons.shield_of_pledge_m00_sh"
-    ],
-    "drop_texture": [
-      "LineageWeaponsTex.unicorn_tears_shield_t00_sh",
-      "LineageWeaponsTex.unicorn_tears_shield_t01_sh"
-    ],
-    "icon": [
-      "icon.unicorn_tears_shield"
-    ],
-    "mesh": [
-      "LineageWeapons.shield_of_pledge_m00_sh"
-    ],
-    "texture": [
-      "LineageWeaponsTex.unicorn_tears_shield_t00_sh",
-      "LineageWeaponsTex.unicorn_tears_shield_t01_sh"
-    ],
-    "crystallizable": 1,
-    "item_sound": [
-      "ItemSound.shield_steel_1",
-      "ItemSound.shield_steel_8",
-      "MonSound.Hit_Metal_clang_8",
-      "MonSound.Hit_Metal_clang_10"
-    ],
-    "drop_sound": "ItemSound.item_drop_equip_armor_shield",
-    "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 1220,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "fine_steel",
-    "crystal_type": "c",
-    "physical_damage": 0,
-    "random_damage": 0,
-    "weapon_type": "none",
-    "critical": 0,
-    "hit_modify": 0,
-    "avoid_modify": "-8",
-    "shield_defense": 203,
-    "shield_defense_rate": 20,
-    "attack_speed": 0,
-    "mp_consume": 0,
-    "magical_damage": 0,
-    "durability": 90,
-    "is_new": true,
-    "is_changed": false,
-    "name": "Unicorn Tears Shield",
-    "description": "A crystal clear unicorn tear, contained in a mirrored flask, served as an antidote and was opened only in emergency cases."
-  },
-  {
-    "object_id": 10002,
-    "object_name": "dark_mirror_shield",
-    "body_part": [
-      "lhand"
-    ],
-    "animation": 0,
-    "drop_type": 3,
-    "drop_anim_type": 2,
-    "drop_radius": 5,
-    "drop_height": 8,
-    "projectile": "none",
-    "curvature": 1000,
-    "drop_mesh": [
-      "LineageWeapons.shield_of_sola_eclipse_m00_sh"
-    ],
-    "drop_texture": [
-      "LineageWeaponsTex.shield_of_sola_eclipse_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
-    ],
-    "icon": [
-      "icon.shield_shield_of_sola_eclipse_i00"
-    ],
-    "mesh": [
-      "LineageWeapons.shield_of_sola_eclipse_m00_sh"
-    ],
-    "texture": [
-      "LineageWeaponsTex.shield_of_sola_eclipse_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
-    ],
-    "crystallizable": 1,
-    "item_sound": [
-      "ItemSound.shield_steel_1",
-      "ItemSound.shield_steel_8",
-      "MonSound.Hit_Metal_clang_8",
-      "MonSound.Hit_Metal_clang_10"
-    ],
-    "drop_sound": "ItemSound.item_drop_equip_armor_shield",
-    "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 1340,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "blood_steel",
-    "crystal_type": "d",
-    "physical_damage": 0,
-    "random_damage": 0,
-    "weapon_type": "none",
-    "critical": 0,
-    "hit_modify": 0,
-    "avoid_modify": "-8",
-    "shield_defense": 128,
-    "shield_defense_rate": 20,
-    "attack_speed": 0,
-    "mp_consume": 0,
-    "magical_damage": 0,
-    "durability": 90,
-    "is_new": true,
-    "is_changed": false,
-    "name": "Dark Mirror Shield",
-    "description": "7 Dark Sins were absorbed by this pure mirror while it was for many years among the sinister walls of the Dark School."
-  },
-  {
-    "object_id": 10003,
-    "object_name": "red_crystal_shield",
-    "body_part": [
-      "lhand"
-    ],
-    "animation": 0,
-    "drop_type": 3,
-    "drop_anim_type": 2,
-    "drop_radius": 5,
-    "drop_height": 8,
-    "projectile": "none",
-    "curvature": 1000,
-    "drop_mesh": [
-      "LineageWeapons.shield_of_pledge_m00_sh"
-    ],
-    "drop_texture": [
-      "LineageWeaponsTex.shield_of_pledge_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
-    ],
-    "icon": [
-      "icon.shield_shield_of_pledge_i00"
-    ],
-    "mesh": [
-      "LineageWeapons.shield_of_pledge_m00_sh"
-    ],
-    "texture": [
-      "LineageWeaponsTex.shield_of_pledge_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
-    ],
-    "crystallizable": 1,
-    "item_sound": [
-      "ItemSound.shield_steel_1",
-      "ItemSound.shield_steel_8",
-      "MonSound.Hit_Metal_clang_8",
-      "MonSound.Hit_Metal_clang_10"
-    ],
-    "drop_sound": "ItemSound.item_drop_equip_armor_shield",
-    "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 1290,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "fine_steel",
-    "crystal_type": "c",
-    "physical_damage": 0,
-    "random_damage": 0,
-    "weapon_type": "none",
-    "critical": 0,
-    "hit_modify": 0,
-    "avoid_modify": "-8",
-    "shield_defense": 166,
-    "shield_defense_rate": 20,
-    "attack_speed": 0,
-    "mp_consume": 0,
-    "magical_damage": 0,
-    "durability": 90,
-    "is_new": true,
-    "is_changed": false,
-    "name": "Red Crystal Shield",
-    "description": "The Dragons of Aden warned the people of the approaching doom, but no one wanted to believe the wind that came from the rocks."
-  },
-  {
-    "object_id": 10004,
-    "object_name": "shield_of_victory",
-    "body_part": [
-      "lhand"
-    ],
-    "animation": 0,
-    "drop_type": 3,
-    "drop_anim_type": 2,
-    "drop_radius": 5,
-    "drop_height": 8,
-    "projectile": "none",
-    "curvature": 1000,
-    "drop_mesh": [
-      "LineageWeapons.shield_of_victory_m00_sh"
-    ],
-    "drop_texture": [
-      "LineageWeaponsTex.shield_of_victory_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
-    ],
-    "icon": [
-      "icon.shield_shield_of_victory_i00"
-    ],
-    "mesh": [
-      "LineageWeapons.shield_of_victory_m00_sh"
-    ],
-    "texture": [
-      "LineageWeaponsTex.shield_of_victory_t00_sh",
-      "LineageWeaponsTex.buckler_t01_sh"
-    ],
-    "crystallizable": 1,
-    "item_sound": [
-      "ItemSound.shield_steel_2",
-      "MonSound.Hit_Metal_clang_8",
-      "MonSound.Hit_Metal_clang_10",
-      "ItemSound.shield_steel_8"
-    ],
-    "drop_sound": "ItemSound.item_drop_equip_armor_shield",
-    "equip_sound": "ItemSound.item_drop_equip_armor_shield",
-    "weight": 1380,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "oriharukon",
     "crystal_type": "none",
-    "physical_damage": 0,
-    "random_damage": 0,
-    "weapon_type": "none",
-    "critical": 0,
-    "hit_modify": 0,
-    "avoid_modify": "-8",
-    "shield_defense": 90,
-    "shield_defense_rate": 20,
-    "attack_speed": 0,
-    "mp_consume": 0,
-    "magical_damage": 0,
-    "durability": 90,
-    "is_new": true,
-    "is_changed": false,
-    "name": "Shield of Victory",
-    "description": "This shield withstood all types of blows from orcish weapons. As soon as the blacksmith Altran studied it more closely, he recognized its high durability and called it the Shield of Victory. However, he does not reveal the secret of its manufacture."
-  },
-  {
-    "object_id": 11111,
-    "object_name": "hunter_devider",
-    "body_part": [
-      "rhand"
-    ],
-    "animation": 1,
-    "drop_type": 3,
-    "drop_anim_type": 1,
-    "drop_radius": 15,
-    "drop_height": "5.3",
-    "projectile": "none",
-    "curvature": 1000,
-    "drop_mesh": [
-      "LineageWeapons.battle_axe_m00_wp"
-    ],
-    "drop_texture": [
-      "LineageWeaponsTex.battle_axe_t00_wp"
-    ],
-    "icon": [
-      "icon.weapon_battle_axe_i00"
-    ],
-    "mesh": [
-      "LineageWeapons.battle_axe_m00_wp"
-    ],
-    "texture": [
-      "LineageWeaponsTex.battle_axe_t00_wp"
-    ],
-    "crystallizable": 1,
-    "item_sound": [
-      "ItemSound.axe_1",
-      "ItemSound.axe_3",
-      "ItemSound.hammer_3",
-      "ItemSound.sword_mid_2"
-    ],
-    "drop_sound": "ItemSound.itemdrop_weapon_blunt",
-    "equip_sound": "ItemSound.itemequip_weapon_blunt",
-    "weight": 1720,
-    "soulshot_count": 2,
-    "spiritshot_count": 2,
-    "material_type": "fine_steel",
-    "crystal_type": "c",
-    "physical_damage": 122,
-    "random_damage": 20,
-    "weapon_type": "blunt",
-    "critical": 4,
-    "hit_modify": "4.75",
+    "physical_damage": 1,
+    "random_damage": 1,
+    "weapon_type": "sword",
+    "critical": 1,
+    "hit_modify": "-25",
     "avoid_modify": 0,
     "shield_defense": 0,
     "shield_defense_rate": 0,
     "attack_speed": 379,
     "mp_consume": 0,
-    "magical_damage": 68,
+    "magical_damage": 1,
     "durability": 95,
     "is_new": true,
     "is_changed": false,
-    "name": "Hunter Devider",
-    "description": "This axe was used in the construction of Hunter's Village and is considered a local relic."
+    "name": "Chrono Tambourine",
+    "description": "L2 Harbor Event Souvenir!!!"
+  },
+  {
+    "object_id": 7058,
+    "object_name": "chrono_darbuka",
+    "body_part": [
+      "lhand"
+    ],
+    "animation": 1,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": "7.3",
+    "drop_height": 15,
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.chrono_darbuka_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.chrono_darbuka_t00_wp"
+    ],
+    "icon": [
+      "icon.weapon_chrono_darbuka_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.chrono_darbuka_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.chrono_darbuka_t00_wp"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "ItemSound2.memorial_1",
+      "ItemSound2.memorial_2",
+      "ItemSound2.memorial_3",
+      "ItemSound2.memorial_4"
+    ],
+    "drop_sound": "none",
+    "equip_sound": "ItemSound.Itemequip_etc_key",
+    "weight": 0,
+    "soulshot_count": 0,
+    "spiritshot_count": 0,
+    "material_type": "steel",
+    "crystal_type": "none",
+    "physical_damage": 1,
+    "random_damage": 1,
+    "weapon_type": "sword",
+    "critical": 1,
+    "hit_modify": "-25",
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 379,
+    "mp_consume": 0,
+    "magical_damage": 1,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Chrono Darbuka",
+    "description": "L2 Harbor Event Souvenir!!!"
+  },
+  {
+    "object_id": 8350,
+    "object_name": "chrono_maracas",
+    "body_part": [
+      "lhand"
+    ],
+    "animation": 1,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": "7.3",
+    "drop_height": 15,
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.dagger_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.dagger_t00_wp"
+    ],
+    "icon": [
+      "icon.weapon_chrono_cithara_i00"
+    ],
+    "mesh": [
+      "LineageWeapons.chrono_cithara_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.chrono_cithara_t00_wp"
+    ],
+    "crystallizable": 0,
+    "item_sound": [
+      "ItemSound2.memorial_1",
+      "ItemSound2.memorial_2",
+      "ItemSound2.memorial_3",
+      "ItemSound2.memorial_4"
+    ],
+    "drop_sound": "none",
+    "equip_sound": "ItemSound.Itemequip_etc_key",
+    "weight": 0,
+    "soulshot_count": 0,
+    "spiritshot_count": 0,
+    "material_type": "steel",
+    "crystal_type": "none",
+    "physical_damage": 1,
+    "random_damage": 1,
+    "weapon_type": "sword",
+    "critical": 1,
+    "hit_modify": "-25",
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 379,
+    "mp_consume": 0,
+    "magical_damage": 1,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Chrono Maracas",
+    "description": "L2 Harbor Event Souvenir!!!"
   }
 ]
