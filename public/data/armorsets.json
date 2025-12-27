@@ -4,6 +4,7 @@
     "name": "Cursed Set",
     "armor_type": "magic",
     "grade": "d",
+    "set_bonus": " M.Atk +6%, MP +44, CON -1",
     "items": [
       {
         "object_id": 432,
@@ -422,14 +423,14 @@
         "name": "Bone Helmet",
         "description": "Part of the sets:                                                             Ring Mail set                       Cursed Mage set"
       }
-    ],
-    "set_bonus": " M.Atk +6%, MP +44, CON -1"
+    ]
   },
   {
     "id": "knowledge_set",
     "name": "Knowledge Set",
     "armor_type": "magic",
     "grade": "d",
+    "set_bonus": " M.Atk +8%, Bow resist +6%    | MP Regeneration -0.2",
     "items": [
       {
         "object_id": 436,
@@ -848,14 +849,14 @@
         "name": "Gloves of Knowledge",
         "description": "Part of the set:                    Knowledge set"
       }
-    ],
-    "set_bonus": " M.Atk +8%, Bow resist +6%    | MP Regeneration -0.2"
+    ]
   },
   {
     "id": "hard_leather_set",
     "name": "Hard Leather Set",
     "armor_type": "light",
     "grade": "none",
+    "set_bonus": " Atk.Spd +4%, Magic Def +30",
     "items": [
       {
         "object_id": 27,
@@ -1274,14 +1275,14 @@
         "name": "Hard Leather Helmet",
         "description": "Part of the sets:                                                             Magic Mage set                   Hard Leather set."
       }
-    ],
-    "set_bonus": " Atk.Spd +4%, Magic Def +30"
+    ]
   },
   {
     "id": "magic_set",
     "name": "Magic Set",
     "armor_type": "magic",
     "grade": "none",
+    "set_bonus": " Casting Speed +4%",
     "items": [
       {
         "object_id": 1102,
@@ -1700,14 +1701,14 @@
         "name": "Hard Leather Helmet",
         "description": "Part of the sets:                                                             Magic Mage set                   Hard Leather set."
       }
-    ],
-    "set_bonus": " Casting Speed +4%"
+    ]
   },
   {
     "id": "karmian_set",
     "name": "Karmian Set",
     "armor_type": "magic",
     "grade": "c",
+    "set_bonus": " P.Def +4%, Cast. Spd +8%     | Bow resist +10%",
     "items": [
       {
         "object_id": 439,
@@ -2126,14 +2127,14 @@
         "name": "Karmian Gloves",
         "description": "Part of the set: Karmian set               "
       }
-    ],
-    "set_bonus": " P.Def +4%, Cast. Spd +8%     | Bow resist +10%"
+    ]
   },
   {
     "id": "dark_elven_set",
     "name": "Dark Elven Set",
     "armor_type": "magic",
     "grade": "d",
+    "set_bonus": " MP Regen +0.5, P.Def +5%     | Resist Root / Sleep +25%",
     "items": [
       {
         "object_id": 433,
@@ -2560,14 +2561,14 @@
         "name": "Bronze Helmet",
         "description": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set                  White Magic set."
       }
-    ],
-    "set_bonus": " MP Regen +0.5, P.Def +5%     | Resist Root / Sleep +25%"
+    ]
   },
   {
     "id": "bronze_set",
     "name": "Bronze Set",
     "armor_type": "heavy",
     "grade": "none",
+    "set_bonus": " Speed +4, Atk. Spd +4%       | Magic Defence +35",
     "items": [
       {
         "object_id": 26,
@@ -2848,14 +2849,14 @@
         "name": "Bronze Gaiters",
         "description": "...the Merchants began to      willingly send volunteers for  it in order to earn good         money. But for the sake of a  good price, the Merchants     had to negotiate with the Elf  mages so that they would     invest all the power              of speed.                                                                      Part of the set: Bronze set."
       }
-    ],
-    "set_bonus": " Speed +4, Atk. Spd +4%       | Magic Defence +35"
+    ]
   },
   {
     "id": "dwarven_scale_set",
     "name": "Dwarven Scale Set",
     "armor_type": "heavy",
     "grade": "d",
+    "set_bonus": " DEX +1, Move speed +5        | Accuracy +2, P. Atk +12        | CON -1",
     "items": [
       {
         "object_id": 350,
@@ -3274,14 +3275,14 @@
         "name": "Helmet",
         "description": "Part of the sets:                                                             Compound Scale set            Dwarven Scale set               Mithril Heavy set."
       }
-    ],
-    "set_bonus": " DEX +1, Move speed +5        | Accuracy +2, P. Atk +12        | CON -1"
+    ]
   },
   {
     "id": "divine_set",
     "name": "Divine Set",
     "armor_type": "magic",
     "grade": "c",
+    "set_bonus": " P.Def +6%, WIT +1, INT -1      | MP +171, MP Regen +0.9      | Dagger and Bow Resist +5%",
     "items": [
       {
         "object_id": 442,
@@ -3704,14 +3705,14 @@
         "name": "Divine Gloves",
         "description": "Part of the set: Divine set                                 "
       }
-    ],
-    "set_bonus": " P.Def +6%, WIT +1, INT -1      | MP +171, MP Regen +0.9      | Dagger and Bow Resist +5%"
+    ]
   },
   {
     "id": "composite_set",
     "name": "Composite Set",
     "armor_type": "heavy",
     "grade": "c",
+    "set_bonus": " MP +170, Casting Spd +28     | P.Atk +26 MP Regen +0.4     | CON -1                              | + With Shield +50 M. Def.",
     "items": [
       {
         "object_id": 60,
@@ -4091,14 +4092,14 @@
         "name": "Composite Shield",
         "description": "+ 50 M. Def. with Composite Armor and Helmet"
       }
-    ],
-    "set_bonus": " MP +170, Casting Spd +28     | P.Atk +26 MP Regen +0.4     | CON -1                              | + With Shield +50 M. Def."
+    ]
   },
   {
     "id": "demons_set",
     "name": "Demon's Set",
     "armor_type": "magic",
     "grade": "c",
+    "set_bonus": " INT +5, Bow Resistance +20% | WIT -1, -270 HP                  ",
     "items": [
       {
         "object_id": 441,
@@ -4517,14 +4518,14 @@
         "name": "Demon's Gloves",
         "description": "Part of the set: Demon's set                    "
       }
-    ],
-    "set_bonus": " INT +5, Bow Resistance +20% | WIT -1, -270 HP                  "
+    ]
   },
   {
     "id": "mystics_set",
     "name": "Mystic's Set",
     "armor_type": "magic",
     "grade": "d",
+    "set_bonus": " Casting Spd +6%, M.Def +37  | Bow Resist +7%, CON -1",
     "items": [
       {
         "object_id": 435,
@@ -4943,14 +4944,14 @@
         "name": "Bronze Helmet",
         "description": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set                  White Magic set."
       }
-    ],
-    "set_bonus": " Casting Spd +6%, M.Def +37  | Bow Resist +7%, CON -1"
+    ]
   },
   {
     "id": "white_set",
     "name": "White Set",
     "armor_type": "magic",
     "grade": "d",
+    "set_bonus": " MP +55, MP Regen +0.4        | M. Atk -5%, Weight Limit      +4000 with Bronze Shield.",
     "items": [
       {
         "object_id": 434,
@@ -5304,14 +5305,14 @@
         "name": "Bronze Shield",
         "description": "Part of the set:                    White Mage set.                                                             With Bronze Shield:              +4000 Weight Limit."
       }
-    ],
-    "set_bonus": " MP +55, MP Regen +0.4        | M. Atk -5%, Weight Limit      +4000 with Bronze Shield."
+    ]
   },
   {
     "id": "ring_mail_set",
     "name": "Ring Mail Set",
     "armor_type": "heavy",
     "grade": "d",
+    "set_bonus": " Magic Defence +42              | Speed +5, MP +38",
     "items": [
       {
         "object_id": 347,
@@ -5730,14 +5731,14 @@
         "name": "Bone Helmet",
         "description": "Part of the sets:                                                             Ring Mail set                       Cursed Mage set"
       }
-    ],
-    "set_bonus": " Magic Defence +42              | Speed +5, MP +38"
+    ]
   },
   {
     "id": "reinforced_leather_set",
     "name": "Reinforced Leather Set",
     "armor_type": "light",
     "grade": "d",
+    "set_bonus": " P.Def +8%, M.Def +47            | Evasion +2, P.Atk -3",
     "items": [
       {
         "object_id": 394,
@@ -6156,14 +6157,14 @@
         "name": "Reinforced Leather Boots",
         "description": "Part of the set:                    Reinforced Leather set"
       }
-    ],
-    "set_bonus": " P.Def +8%, M.Def +47            | Evasion +2, P.Atk -3"
+    ]
   },
   {
     "id": "puma_skin_set",
     "name": "Puma Skin Set",
     "armor_type": "light",
     "grade": "d",
+    "set_bonus": " MP +45, Evasion +2               | Magical Defence +40",
     "items": [
       {
         "object_id": 391,
@@ -6582,14 +6583,14 @@
         "name": "Leather Boots",
         "description": "Part of the set:                    Puma Leather set"
       }
-    ],
-    "set_bonus": " MP +45, Evasion +2               | Magical Defence +40"
+    ]
   },
   {
     "id": "mithril_heavy_set",
     "name": "Mithril Heavy Set",
     "armor_type": "heavy",
     "grade": "d",
+    "set_bonus": " Poison, Bleed Resist +20%    | M.Def +50, P.Def +8%           | +90HP with Hoplon Shield.",
     "items": [
       {
         "object_id": 58,
@@ -7077,14 +7078,14 @@
         "name": "Hoplon",
         "description": "Part of the set:                    Mithril Heavy set.                                                           With Hoplon: +90 HP."
       }
-    ],
-    "set_bonus": " Poison, Bleed Resist +20%    | M.Def +50, P.Def +8%           | +90HP with Hoplon Shield."
+    ]
   },
   {
     "id": "mithril_banded_set",
     "name": "Mithril Banded Set",
     "armor_type": "light",
     "grade": "d",
+    "set_bonus": " P.Atk +14, Atk.Spd +4%         | HP +110, MEN -1",
     "items": [
       {
         "object_id": 393,
@@ -7935,14 +7936,14 @@
         "name": "Bronze Helmet",
         "description": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set                  White Magic set."
       }
-    ],
-    "set_bonus": " P.Atk +14, Atk.Spd +4%         | HP +110, MEN -1"
+    ]
   },
   {
-    "id": "manticor_skin_set",
-    "name": "Manticor Skin Set",
+    "id": "manticore_skin_set",
+    "name": "Manticore Skin Set",
     "armor_type": "light",
     "grade": "d",
+    "set_bonus": " MP +92, P.Def +4%                | MP Regen +0.6",
     "items": [
       {
         "object_id": 395,
@@ -8361,14 +8362,14 @@
         "name": "Manticore Skin Boots",
         "description": "Part of the set:                    Manticore Skin set"
       }
-    ],
-    "set_bonus": " MP +92, P.Def +4%                | MP Regen +0.6"
+    ]
   },
   {
     "id": "half_plate_set",
     "name": "Half Plate Set",
     "armor_type": "heavy",
     "grade": "d",
+    "set_bonus": " P.Atk +16, DEX +1, Speed +5  | Root, Sleep Resist +20 %     | With Plate Shield M. Def +40",
     "items": [
       {
         "object_id": 353,
@@ -8856,14 +8857,14 @@
         "name": "Plate Shield",
         "description": "Part of the set:                    Half Plate set M. Def +40."
       }
-    ],
-    "set_bonus": " P.Atk +16, DEX +1, Speed +5  | Root, Sleep Resist +20 %     | With Plate Shield M. Def +40"
+    ]
   },
   {
     "id": "elven_mithril_set",
     "name": "Elven Mithril Set",
     "armor_type": "magic",
     "grade": "d",
+    "set_bonus": " WIT +1, HP +125                   | Bow Resist +5%",
     "items": [
       {
         "object_id": 437,
@@ -9290,14 +9291,14 @@
         "name": "Elven Mithril Gloves",
         "description": "Part of the set:                    Elven Mithril set"
       }
-    ],
-    "set_bonus": " WIT +1, HP +125                   | Bow Resist +5%"
+    ]
   },
   {
     "id": "compound_scale_set",
     "name": "Compound Scale Set",
     "armor_type": "heavy",
     "grade": "d",
+    "set_bonus": " Magic Def +47, DEX +1          | Speed +5, Evasion +4           | P. Atk -3",
     "items": [
       {
         "object_id": 349,
@@ -9716,14 +9717,14 @@
         "name": "Helmet",
         "description": "Part of the sets:                                                             Compound Scale set            Dwarven Scale set               Mithril Heavy set."
       }
-    ],
-    "set_bonus": " Magic Def +47, DEX +1          | Speed +5, Evasion +4           | P. Atk -3"
+    ]
   },
   {
     "id": "brigandine_set",
     "name": "Brigandine Set",
     "armor_type": "heavy",
     "grade": "d",
+    "set_bonus": " P.Def +6%, HP +180              | DEX +1, Speed +5                | + With Shield HP +50",
     "items": [
       {
         "object_id": 352,
@@ -10211,14 +10212,14 @@
         "name": "Brigandine Shield",
         "description": "Part of the set:                    Brigandine set,  +50HP."
       }
-    ],
-    "set_bonus": " P.Def +6%, HP +180              | DEX +1, Speed +5                | + With Shield HP +50"
+    ]
   },
   {
     "id": "scale_set",
     "name": "Scale Set",
     "armor_type": "heavy",
     "grade": "d",
+    "set_bonus": " Speed +5, MP +66                | Casting Spd +20                  | MP Regen +0.6, M.Def -4",
     "items": [
       {
         "object_id": 348,
@@ -10637,14 +10638,14 @@
         "name": "Bronze Helmet",
         "description": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set                  White Magic set."
       }
-    ],
-    "set_bonus": " Speed +5, MP +66                | Casting Spd +20                  | MP Regen +0.6, M.Def -4"
+    ]
   },
   {
     "id": "lion_skin_set",
     "name": "Lion Skin Set",
     "armor_type": "light",
     "grade": "d",
+    "set_bonus": " P.Atk +12, MP +58                 | Casting Spd +20, CON -1",
     "items": [
       {
         "object_id": 392,
@@ -11063,14 +11064,14 @@
         "name": "Bronze Helmet",
         "description": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set                  White Magic set."
       }
-    ],
-    "set_bonus": " P.Atk +12, MP +58                 | Casting Spd +20, CON -1"
+    ]
   },
   {
     "id": "theca_leather_set",
     "name": "Theca Leather Set",
     "armor_type": "light",
     "grade": "c",
+    "set_bonus": " Accuracy +2, Atk.Spd +4.2 % | P.Def +5.26%, P. Atk +24        | MEN -1.",
     "items": [
       {
         "object_id": 400,
@@ -11617,14 +11618,14 @@
         "name": "Theca Leather Boots",
         "description": "Part of the set:                    Theca Leather set"
       }
-    ],
-    "set_bonus": " Accuracy +2, Atk.Spd +4.2 % | P.Def +5.26%, P. Atk +24        | MEN -1."
+    ]
   },
   {
-    "id": "mithril_light_set",
+    "id": "mithril_leather_set",
     "name": "Mithril Leather Set",
     "armor_type": "light",
     "grade": "c",
+    "set_bonus": " Evasion +4, MEN +1               | P.Atk +22, P.Def -3.5%",
     "items": [
       {
         "object_id": 397,
@@ -12123,14 +12124,14 @@
         "name": "Mithril Boots",
         "description": "Part of the set:                    Mithril Leather set"
       }
-    ],
-    "set_bonus": " Evasion +4, MEN +1               | P.Atk +22, P.Def -3.5%"
+    ]
   },
   {
     "id": "dwarven_chain_set",
     "name": "Dwarven Chain Set",
     "armor_type": "heavy",
     "grade": "c",
+    "set_bonus": " Atk. Spd +6% for: Sword,      | Blunt, Pole, Dual. Speed +5   | Dex +2, CON -1                                                             + Dwarven Shield:                 Shield Def +6% | M. Def +50",
     "items": [
       {
         "object_id": 355,
@@ -12924,14 +12925,14 @@
         "name": "Dwarven Chain Shield",
         "description": "Part of the set:                    Dwarven Chain Mail set.                                                  With Dwarven Chain Shield:   Shield Defence +6%              M. Def +50."
       }
-    ],
-    "set_bonus": " Atk. Spd +6% for: Sword,      | Blunt, Pole, Dual. Speed +5   | Dex +2, CON -1                                                             + Dwarven Shield:                 Shield Def +6% | M. Def +50"
+    ]
   },
   {
     "id": "rind_leather_set",
     "name": "Rind Leather Set",
     "armor_type": "light",
     "grade": "c",
+    "set_bonus": " Shock Resist  +25%            | MEN +3, HP +210                  | MP Regen +0.4, M. Atk -6%",
     "items": [
       {
         "object_id": 399,
@@ -14094,14 +14095,14 @@
         "name": "Rind Leather Gloves",
         "description": "Part of the set:                    Rind Leather set"
       }
-    ],
-    "set_bonus": " Shock Resist  +25%            | MEN +3, HP +210                  | MP Regen +0.4, M. Atk -6%"
+    ]
   },
   {
     "id": "chain_mail_set",
     "name": "Chain Mail Set",
     "armor_type": "heavy",
     "grade": "c",
+    "set_bonus": " HP +240, Physical Def +6%   | DEX+1, Speed +6, P, Atk -4    | + Chain Shield MEN +2",
     "items": [
       {
         "object_id": 354,
@@ -14669,14 +14670,14 @@
         "name": "Chain Shield",
         "description": "Part of the set:                    Chain Mail set +2 MEN."
       }
-    ],
-    "set_bonus": " HP +240, Physical Def +6%   | DEX+1, Speed +6, P, Atk -4    | + Chain Shield MEN +2"
+    ]
   },
   {
     "id": "full_plate_set",
     "name": "Full Plate Set",
     "armor_type": "heavy",
     "grade": "c",
+    "set_bonus": " DEX +2, Speed +5, P.Atk +30  | Sleep, Hold resist +15%       | + Shield - Shield Def. +6%",
     "items": [
       {
         "object_id": 356,
@@ -15056,14 +15057,14 @@
         "name": "Full Plate Shield",
         "description": "Part of Full Plate Set            Shield Defence +6%"
       }
-    ],
-    "set_bonus": " DEX +2, Speed +5, P.Atk +30  | Sleep, Hold resist +15%       | + Shield - Shield Def. +6%"
+    ]
   },
   {
     "id": "seal_set",
     "name": "Seal Set",
     "armor_type": "magic",
     "grade": "c",
+    "set_bonus": " Cast. Spd +8%, HP +210        | Bow Resistance +15%           | With Gloves of Seal CON +2",
     "items": [
       {
         "object_id": 440,
@@ -15536,14 +15537,14 @@
         "name": "Gloves of Seal",
         "description": "Part of the set:                    Seal Mage set +1 CON."
       }
-    ],
-    "set_bonus": " Cast. Spd +8%, HP +210        | Bow Resistance +15%           | With Gloves of Seal CON +2"
+    ]
   },
   {
     "id": "plated_leather_set",
     "name": "Plated Leather Set",
     "armor_type": "light",
     "grade": "c",
+    "set_bonus": " M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +40 MP",
     "items": [
       {
         "object_id": 398,
@@ -16794,14 +16795,14 @@
         "name": "Plated Leather Gloves",
         "description": "Part of the set:                    Plated Leather, +40 MP."
       }
-    ],
-    "set_bonus": " M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +40 MP"
+    ]
   },
   {
     "id": "drake_leather_set",
     "name": "Drake Leather Set",
     "armor_type": "light",
     "grade": "c",
+    "set_bonus": " P.Atk +28, Atk.Spd +5.5%       | Sleep, Hold resist +10%        | M.Def +50",
     "items": [
       {
         "object_id": 401,
@@ -17352,14 +17353,14 @@
         "name": "Drake Leather Boots",
         "description": "Part of the set:                    Drake Leather set"
       }
-    ],
-    "set_bonus": " P.Atk +28, Atk.Spd +5.5%       | Sleep, Hold resist +10%        | M.Def +50"
+    ]
   },
   {
     "id": "sages_rag_set",
     "name": "Sage's Rag Set",
     "armor_type": "magic",
     "grade": "d",
+    "set_bonus": " Cast Spd. +7%, P.Def +5%     | MP regen +0.6, Speed -3",
     "items": [
       {
         "object_id": 438,
@@ -17686,14 +17687,14 @@
         "name": "Sage's Worn Gloves",
         "description": "Parts of the Set:                  Sage's Rag set"
       }
-    ],
-    "set_bonus": " Cast Spd. +7%, P.Def +5%     | MP regen +0.6, Speed -3"
+    ]
   },
   {
     "id": "salamander_skin_set",
     "name": "Salamander Skin Set",
     "armor_type": "light",
     "grade": "d",
+    "set_bonus": " M. Def +37, Atk. Spd +5%       | Evasion +2",
     "items": [
       {
         "object_id": 396,
@@ -18008,7 +18009,6 @@
         "name": "Salamander Skin Boots",
         "description": "Forgotten fire cloth.                                                        Part of the set:                    Salamander Skin."
       }
-    ],
-    "set_bonus": " M. Def +37, Atk. Spd +5%       | Evasion +2"
+    ]
   }
 ]
