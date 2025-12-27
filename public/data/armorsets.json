@@ -14891,8 +14891,8 @@
         "description": "Part of the set:                    Chain Mail set"
       },
       {
-        "object_id": 497,
-        "object_name": "chain_helmet",
+        "object_id": 2413,
+        "object_name": "chain_hood",
         "body_part": [
           "head"
         ],
@@ -14907,7 +14907,7 @@
           "dropitemstex.drop_sack_t00"
         ],
         "icon": [
-          "icon.armor_helmet_i00"
+          "icon.armor_leather_helmet_i00"
         ],
         "mfighter_mesh": [
           "none"
@@ -15008,19 +15008,25 @@
         "attack_effect": "LineageEffect.p_u002_a",
         "armor_type": "none",
         "weight": 620,
-        "material_type": "fine_steel",
+        "material_type": "leather",
         "crystal_type": "c",
         "avoid_modify": 0,
         "durability": 90,
-        "physical_defense": 45,
+        "physical_defense": 47,
         "magical_defense": 0,
         "mp_bonus": 0,
-        "base_price": 147000,
-        "crystal_count": 59,
+        "base_price": 189000,
+        "crystal_count": 75,
         "is_new": false,
-        "is_changed": false,
-        "name": "Chain Helmet",
-        "description": ""
+        "is_changed": true,
+        "changes": {
+          "description": {
+            "old": "",
+            "new": "Part of the set:                    Chain Mail set"
+          }
+        },
+        "name": "Chain Hood",
+        "description": "Part of the set:                    Chain Mail set"
       },
       {
         "object_id": 2495,
