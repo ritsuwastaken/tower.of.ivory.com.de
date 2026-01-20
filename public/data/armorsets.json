@@ -5304,6 +5304,144 @@
         },
         "name": "Bronze Shield",
         "description": "Part of the set:                    White Mage set.                                                             With Bronze Shield:              +4000 Weight Limit."
+      },
+      {
+        "object_id": 46,
+        "object_name": "bronze_helmet",
+        "body_part": [
+          "head"
+        ],
+        "drop_type": 0,
+        "drop_anim_type": 3,
+        "drop_radius": "2.7",
+        "drop_height": 5,
+        "drop_mesh": [
+          "dropitems.drop_sack_m00"
+        ],
+        "drop_texture": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "icon": [
+          "icon.armor_helmet_i00"
+        ],
+        "mfighter_mesh": [
+          "none"
+        ],
+        "mfighter_texture": [
+          "none"
+        ],
+        "ffighter_mesh": [
+          "none"
+        ],
+        "ffighter_texture": [
+          "none"
+        ],
+        "mmagic_mesh": [
+          "none"
+        ],
+        "mmagic_texture": [
+          "none"
+        ],
+        "fmagic_mesh": [
+          "none"
+        ],
+        "fmagic_texture": [
+          "none"
+        ],
+        "melf_mesh": [
+          "none"
+        ],
+        "melf_texture": [
+          "none"
+        ],
+        "felf_mesh": [
+          "none"
+        ],
+        "felf_texture": [
+          "none"
+        ],
+        "mdarkelf_mesh": [
+          "none"
+        ],
+        "mdarkelf_texture": [
+          "none"
+        ],
+        "fdarkelf_mesh": [
+          "none"
+        ],
+        "fdarkelf_texture": [
+          "none"
+        ],
+        "mdwarf_mesh": [
+          "none"
+        ],
+        "mdwarf_texture": [
+          "none"
+        ],
+        "fdwarf_mesh": [
+          "none"
+        ],
+        "fdwarf_texture": [
+          "none"
+        ],
+        "morc_mesh": [
+          "none"
+        ],
+        "morc_texture": [
+          "none"
+        ],
+        "forc_mesh": [
+          "none"
+        ],
+        "forc_texture": [
+          "none"
+        ],
+        "mshaman_mesh": [
+          "none"
+        ],
+        "mshaman_texture": [
+          "none"
+        ],
+        "fshaman_mesh": [
+          "none"
+        ],
+        "fshaman_texture": [
+          "none"
+        ],
+        "npc_mesh": [
+          "none"
+        ],
+        "npc_texture": [
+          "none"
+        ],
+        "crystallizable": 1,
+        "item_sound": [
+          "none"
+        ],
+        "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
+        "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
+        "attack_effect": "LineageEffect.p_u002_a",
+        "armor_type": "none",
+        "weight": 630,
+        "material_type": "bronze",
+        "crystal_type": "d",
+        "avoid_modify": 0,
+        "durability": 90,
+        "physical_defense": 33,
+        "magical_defense": 0,
+        "mp_bonus": 0,
+        "base_price": 50000,
+        "crystal_count": 90,
+        "is_new": false,
+        "is_changed": true,
+        "changes": {
+          "description": {
+            "old": "",
+            "new": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set                  White Magic set."
+          }
+        },
+        "name": "Bronze Helmet",
+        "description": "Part of the sets:                                                             Lion Skin set                       Scale Mail set                      Dark Elven set                     Mystic Mage set                  Mithril Banded set                  White Magic set."
       }
     ]
   },
