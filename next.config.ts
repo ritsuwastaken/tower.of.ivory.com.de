@@ -1,5 +1,10 @@
 import type { NextConfig } from 'next'
 
+const isGitHubPages = process.env.GITHUB_PAGES === '1'
+const basePath = isGitHubPages
+  ? (process.env.GITHUB_PAGES_BASE_PATH || '/tower.of.ivory.com.de')
+  : undefined
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   compiler: {
@@ -11,6 +16,12 @@ const nextConfig: NextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  ...(isGitHubPages && {
+    output: 'export',
+    basePath,
+    assetPrefix: basePath?.endsWith('/') ? basePath : `${basePath}/`,
+    trailingSlash: true,
+  }),
   async redirects() {
     return [
       {
