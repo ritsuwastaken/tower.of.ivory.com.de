@@ -290,7 +290,7 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
                       {item.icon && (
                         <PartIcon>
                           <Image
-                            src={`/icon/${item?.icon?.[0]?.split('.')[1]}.webp`}
+                            src={getDataUrl(`/icon/${item?.icon?.[0]?.split('.')[1]}.webp`)}
                             alt={
                               item.name ||
                               `${t('armorSetDetails.unnamedItem')} ${item.object_id}`

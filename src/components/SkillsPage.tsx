@@ -209,8 +209,8 @@ export const SkillsPage = () => {
             <Image
               src={
                 failedImages.has(skill.skill_id)
-                  ? '/icon/etc_alphabet_s_i00.webp'
-                  : `/icon/${skill.icon?.split('.').at(-1)}.webp`
+                  ? getDataUrl('/icon/etc_alphabet_s_i00.webp')
+                  : getDataUrl(`/icon/${skill.icon?.split('.').at(-1)}.webp`)
               }
               alt={skill.name || `Unnamed skill with id ${skill.skill_id}`}
               width={32}

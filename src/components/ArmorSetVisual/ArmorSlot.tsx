@@ -1,4 +1,5 @@
 import { ArmorSet } from '@/types/armorset'
+import { getDataUrl } from '@/utils/dataUrl'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
@@ -49,13 +50,13 @@ export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
           }}
         >
           <StyledImage
-            src={`/icon/${iconToUse?.split('.').at(-1)}.webp`}
+            src={getDataUrl(`/icon/${iconToUse?.split('.').at(-1)}.webp`)}
             alt={`${armorSet.name} ${slot.type}`}
             width={32}
             height={32}
             onError={(e) => {
               ;(e.target as HTMLImageElement).src =
-                '/icon/etc_alphabet_ii_i00.webp'
+                getDataUrl('/icon/etc_alphabet_ii_i00.webp')
             }}
           />
         </IconWrapper>

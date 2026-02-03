@@ -353,7 +353,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
           <ItemHeader>
             <HeaderLeft>
               <Image
-                src={`/icon/${item?.icon?.[0].split('.').at(-1)}.webp`}
+                src={getDataUrl(`/icon/${item?.icon?.[0].split('.').at(-1)}.webp`)}
                 alt={item?.name || item?.object_name || ''}
                 width={64}
                 height={64}

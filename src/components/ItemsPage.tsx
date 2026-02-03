@@ -250,8 +250,8 @@ export const ItemsPage = ({
             <Image
               src={
                 failedImages.has(item.object_id)
-                  ? '/icon/etc_alphabet_ii_i00.webp'
-                  : `/icon/${item?.icon?.[0].split('.').at(-1)}.webp`
+                  ? getDataUrl('/icon/etc_alphabet_ii_i00.webp')
+                  : getDataUrl(`/icon/${item?.icon?.[0].split('.').at(-1)}.webp`)
               }
               alt={item.name || item.object_name}
               width={32}

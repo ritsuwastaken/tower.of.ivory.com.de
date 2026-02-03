@@ -305,7 +305,7 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
             <ItemHeader>
               <HeaderLeft>
                 <Image
-                  src={`/icon/${selectedSkill?.icon?.split('.').at(-1)}.webp`}
+                  src={getDataUrl(`/icon/${selectedSkill?.icon?.split('.').at(-1)}.webp`)}
                   alt={
                     selectedSkill.name ||
                     `Unnamed skill with id ${selectedSkill.skill_id}`
