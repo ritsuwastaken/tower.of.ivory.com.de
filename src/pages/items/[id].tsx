@@ -1,4 +1,5 @@
 import { Item } from '@/types/item'
+import { getDataUrl } from '@/utils/dataUrl'
 import { useParams, useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
@@ -12,9 +13,9 @@ export default function ItemPage() {
     const run = async () => {
       try {
         const [weaponsRes, armorRes, etcRes] = await Promise.all([
-          fetch('/data/weapon.json'),
-          fetch('/data/armor.json'),
-          fetch('/data/etcitem.json'),
+          fetch(getDataUrl('/data/weapon.json')),
+          fetch(getDataUrl('/data/armor.json')),
+          fetch(getDataUrl('/data/etcitem.json')),
         ])
         if (!weaponsRes.ok || !armorRes.ok || !etcRes.ok) {
           throw new Error('Failed')

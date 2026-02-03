@@ -1,4 +1,5 @@
 import { ArmorSet } from '@/types/armorset'
+import { getDataUrl } from '@/utils/dataUrl'
 import { getTotalBasePrice, getTotalPhysicalDefense } from '@/utils/getTotalX'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
@@ -180,7 +181,7 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
   } = useQuery<ArmorSet, Error>({
     queryKey: ['armorSet', id],
     queryFn: async () => {
-      const response = await fetch('/data/armorsets.json')
+      const response = await fetch(getDataUrl('/data/armorsets.json'))
       if (!response.ok) {
         throw new Error('Failed to fetch armor sets')
       }

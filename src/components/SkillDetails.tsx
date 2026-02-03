@@ -1,6 +1,7 @@
 import { Head } from '@/components/Head'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types/skill'
+import { getDataUrl } from '@/utils/dataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -192,7 +193,7 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
   } = useQuery<Skill, Error>({
     queryKey: ['skill', id],
     queryFn: async () => {
-      const response = await fetch('/data/skills.json')
+      const response = await fetch(getDataUrl('/data/skills.json'))
       if (!response.ok) {
         throw new Error('Failed to fetch skills data')
       }

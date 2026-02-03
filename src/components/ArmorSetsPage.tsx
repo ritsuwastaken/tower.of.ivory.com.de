@@ -3,6 +3,7 @@ import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { ArmorSet } from '@/types/armorset'
 import { getTotalBasePrice, getTotalPhysicalDefense } from '@/utils/getTotalX'
+import { getDataUrl } from '@/utils/dataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
@@ -45,7 +46,7 @@ export const ArmorSetsPage = () => {
   const { data: armorSetsData = [], isLoading } = useQuery<ArmorSet[], Error>({
     queryKey: ['armorSets'],
     queryFn: async () => {
-      const response = await fetch(`/data/armorsets.json`)
+      const response = await fetch(getDataUrl('/data/armorsets.json'))
       if (!response.ok) {
         throw new Error('Failed to fetch armor sets')
       }

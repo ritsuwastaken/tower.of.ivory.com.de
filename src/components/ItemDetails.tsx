@@ -4,6 +4,7 @@ import { Head } from '@/components/Head'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { ArmorSet } from '@/types/armorset'
 import { Item } from '@/types/item'
+import { getDataUrl } from '@/utils/dataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -187,10 +188,10 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
     queryKey: ['item', id],
     queryFn: async () => {
       const [weaponsRes, armorRes, etcRes, setsRes] = await Promise.all([
-        fetch('/data/weapon.json'),
-        fetch('/data/armor.json'),
-        fetch('/data/etcitem.json'),
-        fetch('/data/armorsets.json'),
+        fetch(getDataUrl('/data/weapon.json')),
+        fetch(getDataUrl('/data/armor.json')),
+        fetch(getDataUrl('/data/etcitem.json')),
+        fetch(getDataUrl('/data/armorsets.json')),
       ])
 
       if (!weaponsRes.ok || !armorRes.ok || !etcRes.ok || !setsRes.ok) {

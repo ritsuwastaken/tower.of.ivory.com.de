@@ -1,6 +1,7 @@
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Item } from '@/types/item'
+import { getDataUrl } from '@/utils/dataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -124,7 +125,7 @@ export const ItemsPage = ({
   const { data: items = [], isLoading } = useQuery<Item[], Error>({
     queryKey: ['items', type],
     queryFn: async () => {
-      const url = `/data/${type}.json`
+      const url = getDataUrl(`/data/${type}.json`)
       const response = await fetch(url)
       const data = await response.json()
       return Array.isArray(data) ? data : []
