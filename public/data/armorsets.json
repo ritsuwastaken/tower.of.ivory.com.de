@@ -11759,8 +11759,8 @@
     ]
   },
   {
-    "id": "tempered_mithril_leather_set",
-    "name": "Tempered Mithril Leather Set",
+    "id": "tempered_mithril_set",
+    "name": "Tempered Mithril Set",
     "armor_type": "light",
     "grade": "c",
     "set_bonus": " Evasion +4, MEN +1              | P.Atk +22, P.Def -3.5%.",
