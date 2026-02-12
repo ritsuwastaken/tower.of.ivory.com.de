@@ -11759,11 +11759,11 @@
     ]
   },
   {
-    "id": "mithril_leather_set",
-    "name": "Mithril Leather Set",
+    "id": "tempered_mithril_leather_set",
+    "name": "Tempered Mithril Leather Set",
     "armor_type": "light",
     "grade": "c",
-    "set_bonus": " Evasion +4, MEN +1               | P.Atk +22, P.Def -3.5%",
+    "set_bonus": " Evasion +4, MEN +1              | P.Atk +22, P.Def -3.5%.",
     "items": [
       {
         "object_id": 397,
@@ -11922,13 +11922,17 @@
               "FMagic.FMagic_m003_t09_u"
             ]
           },
+          "name": {
+            "old": "Mithril Shirt",
+            "new": "Tempered Mithril Shirt"
+          },
           "description": {
             "old": "",
-            "new": "Set: Shirt, Tempered Mithril     Gaiters, Mithril Boots                                                       | Evasion +4, MEN +1               | P.Atk +22, P.Def -3.5%"
+            "new": "Set: Tempered Mithril Shirt     Tempered Mithril Gaiters       Tempered Mithril Boots                                                     | Evasion +4, MEN +1              | P.Atk +22, P.Def -3.5%."
           }
         },
-        "name": "Mithril Shirt",
-        "description": "Set: Shirt, Tempered Mithril     Gaiters, Mithril Boots                                                       | Evasion +4, MEN +1               | P.Atk +22, P.Def -3.5%"
+        "name": "Tempered Mithril Shirt",
+        "description": "Set: Tempered Mithril Shirt     Tempered Mithril Gaiters       Tempered Mithril Boots                                                     | Evasion +4, MEN +1              | P.Atk +22, P.Def -3.5%."
       },
       {
         "object_id": 2387,
@@ -12254,13 +12258,17 @@
             "old": 24,
             "new": 32
           },
+          "name": {
+            "old": "Mithril Boots",
+            "new": "Tempered Mithril Boots"
+          },
           "description": {
             "old": "",
-            "new": "Part of the set:                    Mithril Leather set"
+            "new": "Part of the set:                    Tempered Mithril set"
           }
         },
-        "name": "Mithril Boots",
-        "description": "Part of the set:                    Mithril Leather set"
+        "name": "Tempered Mithril Boots",
+        "description": "Part of the set:                    Tempered Mithril set"
       }
     ]
   },
@@ -15669,11 +15677,11 @@
           },
           "description": {
             "old": "",
-            "new": "Part of the set:                    Seal Mage set +1 CON."
+            "new": "Part of the set:                    Seal Mage set +2 CON."
           }
         },
         "name": "Gloves of Seal",
-        "description": "Part of the set:                    Seal Mage set +1 CON."
+        "description": "Part of the set:                    Seal Mage set +2 CON."
       }
     ]
   },
@@ -15682,7 +15690,7 @@
     "name": "Plated Leather Set",
     "armor_type": "light",
     "grade": "c",
-    "set_bonus": " M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +40 MP",
+    "set_bonus": " M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +18 P.Atk",
     "items": [
       {
         "object_id": 398,
@@ -16017,11 +16025,11 @@
           },
           "description": {
             "old": "",
-            "new": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +40 MP"
+            "new": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +18 P.Atk"
           }
         },
         "name": "Plated Leather",
-        "description": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +40 MP"
+        "description": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +18 P.Atk"
       },
       {
         "object_id": 418,

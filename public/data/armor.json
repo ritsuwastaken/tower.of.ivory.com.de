@@ -5626,13 +5626,17 @@
         "old": 24,
         "new": 32
       },
+      "name": {
+        "old": "Mithril Boots",
+        "new": "Tempered Mithril Boots"
+      },
       "description": {
         "old": "",
-        "new": "Part of the set:                    Mithril Leather set"
+        "new": "Part of the set:                    Tempered Mithril set"
       }
     },
-    "name": "Mithril Boots",
-    "description": "Part of the set:                    Mithril Leather set"
+    "name": "Tempered Mithril Boots",
+    "description": "Part of the set:                    Tempered Mithril set"
   },
   {
     "object_id": 63,
@@ -14767,13 +14771,17 @@
           "FMagic.FMagic_m003_t09_u"
         ]
       },
+      "name": {
+        "old": "Mithril Shirt",
+        "new": "Tempered Mithril Shirt"
+      },
       "description": {
         "old": "",
-        "new": "Set: Shirt, Tempered Mithril     Gaiters, Mithril Boots                                                       | Evasion +4, MEN +1               | P.Atk +22, P.Def -3.5%"
+        "new": "Set: Tempered Mithril Shirt     Tempered Mithril Gaiters       Tempered Mithril Boots                                                     | Evasion +4, MEN +1              | P.Atk +22, P.Def -3.5%."
       }
     },
-    "name": "Mithril Shirt",
-    "description": "Set: Shirt, Tempered Mithril     Gaiters, Mithril Boots                                                       | Evasion +4, MEN +1               | P.Atk +22, P.Def -3.5%"
+    "name": "Tempered Mithril Shirt",
+    "description": "Set: Tempered Mithril Shirt     Tempered Mithril Gaiters       Tempered Mithril Boots                                                     | Evasion +4, MEN +1              | P.Atk +22, P.Def -3.5%."
   },
   {
     "object_id": 398,
@@ -15108,11 +15116,11 @@
       },
       "description": {
         "old": "",
-        "new": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +40 MP"
+        "new": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +18 P.Atk"
       }
     },
     "name": "Plated Leather",
-    "description": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +40 MP"
+    "description": "Hybrid set :                         Plated Leather Armor            Plated Leather Gaiters          Plated Leather Boots                                                       | M.Def +50, Cast. Spd +28      | MP +170, Accuracy +4           | CON -1                              | With Gloves +18 P.Atk"
   },
   {
     "object_id": 399,
@@ -70195,8 +70203,14 @@
     "base_price": 973000,
     "crystal_count": 129,
     "is_new": false,
-    "is_changed": false,
-    "name": "Zubei's Leather Shirt",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Zubei's Leather Shirt",
+        "new": "Zubei's Leather Gaiters"
+      }
+    },
+    "name": "Zubei's Leather Gaiters",
     "description": ""
   },
   {
@@ -81041,11 +81055,11 @@
       },
       "description": {
         "old": "",
-        "new": "Part of the set:                    Seal Mage set +1 CON."
+        "new": "Part of the set:                    Seal Mage set +2 CON."
       }
     },
     "name": "Gloves of Seal",
-    "description": "Part of the set:                    Seal Mage set +1 CON."
+    "description": "Part of the set:                    Seal Mage set +2 CON."
   },
   {
     "object_id": 2458,

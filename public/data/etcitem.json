@@ -18218,8 +18218,14 @@
     "base_price": 3,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Hub Scent",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Hub Scent",
+        "new": "Bone Arrow"
+      }
+    },
+    "name": "Bone Arrow",
     "description": "An arrow made from a  piece of sharpened  bone. It is used as  an arrow for a D  grade bow."
   },
   {
@@ -41532,9 +41538,19 @@
     "base_price": 1120,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Mithril Boots Design",
-    "description": "A key material for  Dwarves to make  Mithril Boots. This  can be sold at shops."
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Mithril Boots Design",
+        "new": "Tempered Mithril Boots Design"
+      },
+      "description": {
+        "old": "A key material for  Dwarves to make  Mithril Boots. This  can be sold at shops.",
+        "new": "A key material for  Dwarves to make  Tempered Mithril Boots. This  can be sold at shops."
+      }
+    },
+    "name": "Tempered Mithril Boots Design",
+    "description": "A key material for  Dwarves to make  Tempered Mithril Boots. This  can be sold at shops."
   },
   {
     "object_id": 1959,
@@ -41646,9 +41662,19 @@
     "base_price": 6250,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Mithril Shirt Fabric",
-    "description": "A key material that  dwarves use to make  the Mithril Shirt.  Can be sold in the  shop."
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Mithril Shirt Fabric",
+        "new": "Tempered Mithril Shirt Fabric"
+      },
+      "description": {
+        "old": "A key material that  dwarves use to make  the Mithril Shirt.  Can be sold in the  shop.",
+        "new": "A key material that  dwarves use to make  the Tempered Mithril Shirt.  Can be sold in the  shop."
+      }
+    },
+    "name": "Tempered Mithril Shirt Fabric",
+    "description": "A key material that  dwarves use to make  the Tempered Mithril Shirt.  Can be sold in the  shop."
   },
   {
     "object_id": 1962,
@@ -51154,13 +51180,17 @@
           "icon.c"
         ]
       },
+      "name": {
+        "old": "Recipe: Mithril Boots",
+        "new": "Recipe: Tempered Mithril Boots"
+      },
       "description": {
         "old": "A recipe for making  Mithril Boots. Create  Item lv. 3 required.",
-        "new": "A recipe for making  Mithril Boots. Create  Item lv. 4 required."
+        "new": "A recipe for making  Tempered Mithril Boots. Create  Item lv. 4 required."
       }
     },
-    "name": "Recipe: Mithril Boots",
-    "description": "A recipe for making  Mithril Boots. Create  Item lv. 4 required."
+    "name": "Recipe: Tempered Mithril Boots",
+    "description": "A recipe for making  Tempered Mithril Boots. Create  Item lv. 4 required."
   },
   {
     "object_id": 2204,
@@ -51301,10 +51331,18 @@
         "new": [
           "icon.c"
         ]
+      },
+      "name": {
+        "old": "Recipe: Mithril Shirt",
+        "new": "Recipe: Tempered Mithril Shirt"
+      },
+      "description": {
+        "old": "A recipe for making  the Mithril Shirt.  Create item skill  level 4 is required.",
+        "new": "A recipe for making  the Tempered Mithril Shirt.  Create item skill  level 4 is required."
       }
     },
-    "name": "Recipe: Mithril Shirt",
-    "description": "A recipe for making  the Mithril Shirt.  Create item skill  level 4 is required."
+    "name": "Recipe: Tempered Mithril Shirt",
+    "description": "A recipe for making  the Tempered Mithril Shirt.  Create item skill  level 4 is required."
   },
   {
     "object_id": 2207,
@@ -75240,9 +75278,19 @@
     "base_price": 4250,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Spellbook: Holy Strike",
-    "description": "A spellbook for  learning the Holy  Strike spell"
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Spellbook: Holy Strike",
+        "new": "Spellbook: Sunstroke"
+      },
+      "description": {
+        "old": "A spellbook for  learning the Holy  Strike spell",
+        "new": "A spellbook for  learning the Sunstroke spell"
+      }
+    },
+    "name": "Spellbook: Sunstroke",
+    "description": "A spellbook for  learning the Sunstroke spell"
   },
   {
     "object_id": 3044,
@@ -101409,9 +101457,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "Kill crimson bind and  get 50 chains of  deadman.",
+        "new": "Kill crimson bind fettered soul and get 50 chains of  deadman."
+      }
+    },
     "name": "Request 1C 7",
-    "description": "Kill crimson bind and  get 50 chains of  deadman."
+    "description": "Kill crimson bind fettered soul and get 50 chains of  deadman."
   },
   {
     "object_id": 3734,
@@ -102313,9 +102367,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "Kill pan ruem or pan  ruem elder and  collect and bring 40  manes that were  obtained.",
+        "new": "Kill Pan Ruem Satyr or Pan Ruem Satyr Elder and collect and bring 40 manes that were obtained."
+      }
+    },
     "name": "Request 2C 9",
-    "description": "Kill pan ruem or pan  ruem elder and  collect and bring 40  manes that were  obtained."
+    "description": "Kill Pan Ruem Satyr or Pan Ruem Satyr Elder and collect and bring 40 manes that were obtained."
   },
   {
     "object_id": 3757,
@@ -102351,9 +102411,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "Kill forest runner  and collect and bring  40 hamadryadesung  shards.",
+        "new": "Kill flowers Forest Runner and collect and bring 40 hamadryadesung shards."
+      }
+    },
     "name": "Request 2C 10",
-    "description": "Kill forest runner  and collect and bring  40 hamadryadesung  shards."
+    "description": "Kill flowers Forest Runner and collect and bring 40 hamadryadesung shards."
   },
   {
     "object_id": 3758,
@@ -102485,9 +102551,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "Kill timak overlord  okun and bring the  head.",
+        "new": "Kill Timak Overlord until their leader okun and bring the head."
+      }
+    },
     "name": "Request 2U 1",
-    "description": "Kill timak overlord  okun and bring the  head."
+    "description": "Kill Timak Overlord until their leader okun and bring the head."
   },
   {
     "object_id": 3761,
@@ -102523,9 +102595,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "Kill taik overlord  kakran and bring the  head.",
+        "new": "Kill the Taik Orc Captain until their leader Taik Kakran, appears. Loot his head.."
+      }
+    },
     "name": "Request 2U 2",
-    "description": "Kill taik overlord  kakran and bring the  head."
+    "description": "Kill the Taik Orc Captain until their leader Taik Kakran, appears. Loot his head.."
   },
   {
     "object_id": 3762,
@@ -104197,9 +104275,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "Certificate of having  killed taik overlord  kakran. Take it to  Hunter Guild Member  Tor.",
+        "new": "Certificate of having killed taik overlord kakran. Take it to  Hunter Guild Member  Tor."
+      }
+    },
     "name": "Kakran's Head",
-    "description": "Certificate of having  killed taik overlord  kakran. Take it to  Hunter Guild Member  Tor."
+    "description": "Certificate of having killed taik overlord kakran. Take it to  Hunter Guild Member  Tor."
   },
   {
     "object_id": 3804,
@@ -104881,9 +104965,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "Haggard backskin of  inpicio. Ingedient  used for removing  impurities from fairy  stone.",
+        "new": "Haggard backskin of toad lord inpicio. Ingedient used for removing  impurities from fairy stone."
+      }
+    },
     "name": "Toad Lord Back Skin",
-    "description": "Haggard backskin of  inpicio. Ingedient  used for removing  impurities from fairy  stone."
+    "description": "Haggard backskin of toad lord inpicio. Ingedient used for removing  impurities from fairy stone."
   },
   {
     "object_id": 3821,
@@ -108292,9 +108382,13 @@
         "new": [
           "icon.blessedn"
         ]
+      },
+      "name": {
+        "old": "Blessed Spiritshot - None Grade",
+        "new": "Blessed Spiritshot: None Grade"
       }
     },
-    "name": "Blessed Spiritshot - None Grade",
+    "name": "Blessed Spiritshot: None Grade",
     "description": ""
   },
   {
@@ -108340,9 +108434,13 @@
         "new": [
           "icon.blessedd"
         ]
+      },
+      "name": {
+        "old": "Blessed Spiritshot - D Grade",
+        "new": "Blessed Spiritshot: D Grade"
       }
     },
-    "name": "Blessed Spiritshot - D Grade",
+    "name": "Blessed Spiritshot: D Grade",
     "description": ""
   },
   {
@@ -108388,9 +108486,13 @@
         "new": [
           "icon.blessedc"
         ]
+      },
+      "name": {
+        "old": "Blessed Spiritshot - C Grade",
+        "new": "Blessed Spiritshot: C Grade"
       }
     },
-    "name": "Blessed Spiritshot - C Grade",
+    "name": "Blessed Spiritshot: C Grade",
     "description": ""
   },
   {
@@ -108436,9 +108538,13 @@
         "new": [
           "icon.blessedb"
         ]
+      },
+      "name": {
+        "old": "Blessed Spiritshot - B Grade",
+        "new": "Blessed Spiritshot: B Grade"
       }
     },
-    "name": "Blessed Spiritshot - B Grade",
+    "name": "Blessed Spiritshot: B Grade",
     "description": ""
   },
   {
@@ -108475,8 +108581,14 @@
     "base_price": 290,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Blessed Spiritshot - A Grade",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Blessed Spiritshot - A Grade",
+        "new": "Blessed Spiritshot: A Grade"
+      }
+    },
+    "name": "Blessed Spiritshot: A Grade",
     "description": ""
   },
   {
@@ -108513,8 +108625,14 @@
     "base_price": 350,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Blessed Spiritshot - S Grade",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Blessed Spiritshot - S Grade",
+        "new": "Blessed Spiritshot: S Grade"
+      }
+    },
+    "name": "Blessed Spiritshot: S Grade",
     "description": ""
   },
   {
@@ -114224,8 +114342,14 @@
     "base_price": 4453,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Zubei's Helment Design",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Zubei's Helment Design",
+        "new": "Zubei's Helmet Design"
+      }
+    },
+    "name": "Zubei's Helmet Design",
     "description": "Main ingredient  definitely required  for a Dwarf to make  shrnoen helmet. Can  also be sold at  ordinary shops."
   },
   {
@@ -120262,7 +120386,7 @@
       "dropitemstex.drop_x_mas_gift_t00"
     ],
     "icon": [
-      "icon.etc_x_mas_tree_i00"
+      "icon.tree2"
     ],
     "mesh": [
       "none"
@@ -120679,5 +120803,77 @@
     "is_changed": false,
     "name": "Flower Pot",
     "description": "An ingredient of a Christmas Tree. Take it to a Santa trainee, along with the other necessary ingredients, and he will create a Christmas Tree for you."
+  },
+  {
+    "object_id": 5650,
+    "object_name": "evileye_sword_blade",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "2.2",
+    "drop_height": 7,
+    "drop_mesh": [
+      "dropitems.drop_sword_body_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_sword_body_t00"
+    ],
+    "icon": [
+      "icon.etc_sword_body_i00"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_swordbody",
+    "equip_sound": "none",
+    "etcitem_type": "material",
+    "weight": 60,
+    "consume_type": "consume_type_stackable",
+    "material_type": "liquid",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Evilante Sword Blade",
+    "description": "A key material that dwarves use to make the Evilante Sword. Can be sold in the shop."
+  },
+  {
+    "object_id": 5651,
+    "object_name": "rp_evileye_sword",
+    "drop_type": 0,
+    "drop_anim_type": 3,
+    "drop_radius": "6.7",
+    "drop_height": 3,
+    "drop_mesh": [
+      "dropitems.drop_scroll_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_scroll_t00"
+    ],
+    "icon": [
+      "icon.c"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_etc_paper",
+    "equip_sound": "none",
+    "etcitem_type": "recipe",
+    "weight": 30,
+    "consume_type": "consume_type_normal",
+    "material_type": "liquid",
+    "crystal_type": "none",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Recipe: Evilante Sword",
+    "description": "A recipe for making Evilante Sword. Create item skill level 5 is required."
   }
 ]

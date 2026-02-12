@@ -12710,10 +12710,14 @@
       "name": {
         "old": "Elven Fighter Fist",
         "new": "Iron Splitter"
+      },
+      "description": {
+        "old": "",
+        "new": "A heavy sword with a mysterious symbol of the dark forests."
       }
     },
     "name": "Iron Splitter",
-    "description": ""
+    "description": "A heavy sword with a mysterious symbol of the dark forests."
   },
   {
     "object_id": 245,
@@ -12912,11 +12916,11 @@
       },
       "description": {
         "old": "",
-        "new": "Ancient lost shillien staff. The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+        "new": "The most ancient artifact of the goddess Shillen. It is part of the staff of Dasparion, divided by the goddess at the birth of Antharas. Increases casting speed and mp regeneration."
       }
     },
     "name": "Shillien Staff",
-    "description": "Ancient lost shillien staff. The School of Dark Arts receives Elven secrets that allow it to enchant a staff, granting it increased spell casting speed and mp regeneration."
+    "description": "The most ancient artifact of the goddess Shillen. It is part of the staff of Dasparion, divided by the goddess at the birth of Antharas. Increases casting speed and mp regeneration."
   },
   {
     "object_id": 246,
@@ -12935,7 +12939,7 @@
       "LineageWeapons.flamberge_m00_wp"
     ],
     "drop_texture": [
-      "LineageWeaponsTex.irondivider"
+      "LineageWeaponsTex.ironsplitter_t00_wp"
     ],
     "icon": [
       "icon.irondividericon"
@@ -12944,7 +12948,7 @@
       "LineageWeapons.flamberge_m00_wp"
     ],
     "texture": [
-      "LineageWeaponsTex.irondivider"
+      "LineageWeaponsTex.ironsplitter_t00_wp"
     ],
     "crystallizable": 1,
     "item_sound": [
@@ -13020,7 +13024,7 @@
           "dropitemstex.drop_sack_t00"
         ],
         "new": [
-          "LineageWeaponsTex.irondivider"
+          "LineageWeaponsTex.ironsplitter_t00_wp"
         ]
       },
       "icon": {
@@ -13044,7 +13048,7 @@
           "none"
         ],
         "new": [
-          "LineageWeaponsTex.irondivider"
+          "LineageWeaponsTex.ironsplitter_t00_wp"
         ]
       },
       "crystallizable": {
@@ -13120,10 +13124,14 @@
       "name": {
         "old": "Human Fighter Fist",
         "new": "Iron Divider"
+      },
+      "description": {
+        "old": "",
+        "new": "At the heart of the sword is a poisonous wyvern eye, which releases toxins throughout the blade."
       }
     },
     "name": "Iron Divider",
-    "description": ""
+    "description": "At the heart of the sword is a poisonous wyvern eye, which releases toxins throughout the blade."
   },
   {
     "object_id": 247,
@@ -13338,19 +13346,19 @@
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "LineageWeapons.dragon_axe_m00_wp"
+      "LineageWeapons.dragon_axe_m01_wp"
     ],
     "drop_texture": [
-      "LineageWeaponsTex.dragon_axe_t00_wp"
+      "LineageWeaponsTex.grasper"
     ],
     "icon": [
-      "icon.weapon_dragon_axe_i00"
+      "icon.graspericon"
     ],
     "mesh": [
-      "LineageWeapons.dragon_axe_m00_wp"
+      "LineageWeapons.dragon_axe_m01_wp"
     ],
     "texture": [
-      "LineageWeaponsTex.dragon_axe_t00_wp"
+      "LineageWeaponsTex.grasper"
     ],
     "crystallizable": 1,
     "item_sound": [
@@ -13418,7 +13426,7 @@
           "dropitems.drop_sack_m00"
         ],
         "new": [
-          "LineageWeapons.dragon_axe_m00_wp"
+          "LineageWeapons.dragon_axe_m01_wp"
         ]
       },
       "drop_texture": {
@@ -13426,7 +13434,7 @@
           "dropitemstex.drop_sack_t00"
         ],
         "new": [
-          "LineageWeaponsTex.dragon_axe_t00_wp"
+          "LineageWeaponsTex.grasper"
         ]
       },
       "icon": {
@@ -13434,7 +13442,7 @@
           "none"
         ],
         "new": [
-          "icon.weapon_dragon_axe_i00"
+          "icon.graspericon"
         ]
       },
       "mesh": {
@@ -13442,7 +13450,7 @@
           "none"
         ],
         "new": [
-          "LineageWeapons.dragon_axe_m00_wp"
+          "LineageWeapons.dragon_axe_m01_wp"
         ]
       },
       "texture": {
@@ -13450,7 +13458,7 @@
           "none"
         ],
         "new": [
-          "LineageWeaponsTex.dragon_axe_t00_wp"
+          "LineageWeaponsTex.grasper"
         ]
       },
       "crystallizable": {
@@ -13522,10 +13530,14 @@
       "name": {
         "old": "Orc Fighter Fist",
         "new": "Grasper"
+      },
+      "description": {
+        "old": "",
+        "new": "A rare axe found in a labyrinthine ravine in Hunter Village, wrested from the clutches of treacherous plants."
       }
     },
     "name": "Grasper",
-    "description": ""
+    "description": "A rare axe found in a labyrinthine ravine in Hunter Village, wrested from the clutches of treacherous plants."
   },
   {
     "object_id": 249,
@@ -13541,19 +13553,19 @@
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "LineageWeapons.dragon_axe_m00_wp"
+      "LineageWeapons.dragon_axe_m01_wp"
     ],
     "drop_texture": [
-      "LineageWeaponsTex.dragon_axe_t00_wp"
+      "LineageWeaponsTex.ivygrasper"
     ],
     "icon": [
-      "icon.weapon_dragon_axe_i00"
+      "icon.ivygraspericon"
     ],
     "mesh": [
-      "LineageWeapons.dragon_axe_m00_wp"
+      "LineageWeapons.dragon_axe_m01_wp"
     ],
     "texture": [
-      "LineageWeaponsTex.dragon_axe_t00_wp"
+      "LineageWeaponsTex.ivygrasper"
     ],
     "crystallizable": 1,
     "item_sound": [
@@ -13621,7 +13633,7 @@
           "dropitems.drop_sack_m00"
         ],
         "new": [
-          "LineageWeapons.dragon_axe_m00_wp"
+          "LineageWeapons.dragon_axe_m01_wp"
         ]
       },
       "drop_texture": {
@@ -13629,7 +13641,7 @@
           "dropitemstex.drop_sack_t00"
         ],
         "new": [
-          "LineageWeaponsTex.dragon_axe_t00_wp"
+          "LineageWeaponsTex.ivygrasper"
         ]
       },
       "icon": {
@@ -13637,7 +13649,7 @@
           "none"
         ],
         "new": [
-          "icon.weapon_dragon_axe_i00"
+          "icon.ivygraspericon"
         ]
       },
       "mesh": {
@@ -13645,7 +13657,7 @@
           "none"
         ],
         "new": [
-          "LineageWeapons.dragon_axe_m00_wp"
+          "LineageWeapons.dragon_axe_m01_wp"
         ]
       },
       "texture": {
@@ -13653,7 +13665,7 @@
           "none"
         ],
         "new": [
-          "LineageWeaponsTex.dragon_axe_t00_wp"
+          "LineageWeaponsTex.ivygrasper"
         ]
       },
       "crystallizable": {
@@ -13724,11 +13736,15 @@
       },
       "name": {
         "old": "Elven Mystic Fist",
-        "new": "Hunter Grasper"
+        "new": "Ivy Grasper"
+      },
+      "description": {
+        "old": "",
+        "new": "The blade's high toxin content proves it has destroyed hundreds of poisonous plants."
       }
     },
-    "name": "Hunter Grasper",
-    "description": ""
+    "name": "Ivy Grasper",
+    "description": "The blade's high toxin content proves it has destroyed hundreds of poisonous plants."
   },
   {
     "object_id": 250,
@@ -13908,56 +13924,60 @@
       "name": {
         "old": "Dark Mystic Fist",
         "new": "Secateur"
+      },
+      "description": {
+        "old": "",
+        "new": "The claws are infected with a rare poison infection from the Enchanted Valley."
       }
     },
     "name": "Secateur",
-    "description": ""
+    "description": "The claws are infected with a rare poison infection from the Enchanted Valley."
   },
   {
     "object_id": 251,
-    "object_name": "_human_magician_fist",
+    "object_name": "oakstaff",
     "body_part": [
-      "rhand"
+      "lrhand"
     ],
-    "animation": 3,
-    "drop_type": 0,
-    "drop_anim_type": 3,
-    "drop_radius": "2.7",
-    "drop_height": 5,
+    "animation": 4,
+    "drop_type": 3,
+    "drop_anim_type": 1,
+    "drop_radius": 15,
+    "drop_height": "5.3",
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "dropitems.drop_sack_m00"
+      "LineageWeapons.dasparions_staff_m00_wp"
     ],
     "drop_texture": [
-      "dropitemstex.drop_sack_t00"
+      "LineageWeaponsTex.oakstaff_wp"
     ],
     "icon": [
-      "none"
+      "icon.oakstafficon"
     ],
     "mesh": [
-      "none"
+      "LineageWeapons.dasparions_staff_m00_wp"
     ],
     "texture": [
-      "none"
+      "LineageWeaponsTex.oakstaff_wp"
     ],
-    "crystallizable": 0,
+    "crystallizable": 1,
     "item_sound": [
-      "ItemSound.club_2",
-      "ItemSound.staff_1",
-      "ItemSound.fist_3",
-      "ItemSound.staff_1"
+      "ItemSound.staff_3",
+      "ItemSound.spear_5",
+      "ItemSound.axe_5",
+      "ItemSound.sword_mid_2"
     ],
-    "drop_sound": "ItemSound.itemdrop_weapon_fist",
-    "equip_sound": "ItemSound.itemequip_weapon_fist",
-    "weight": 0,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "leather",
-    "crystal_type": "none",
-    "physical_damage": 0,
-    "random_damage": 5,
-    "weapon_type": "fist",
+    "drop_sound": "ItemSound.itemdrop_weapon_staff",
+    "equip_sound": "ItemSound.itemequip_weapon_staff",
+    "weight": 990,
+    "soulshot_count": 3,
+    "spiritshot_count": 3,
+    "material_type": "wood",
+    "crystal_type": "c",
+    "physical_damage": 141,
+    "random_damage": 20,
+    "weapon_type": "blunt",
     "critical": 4,
     "hit_modify": "4.75",
     "avoid_modify": 0,
@@ -13965,58 +13985,202 @@
     "shield_defense_rate": 0,
     "attack_speed": 325,
     "mp_consume": 0,
-    "magical_damage": 0,
+    "magical_damage": 104,
     "durability": 95,
     "is_new": false,
-    "is_changed": false,
-    "name": "Human Mystic Fist",
-    "description": ""
+    "is_changed": true,
+    "changes": {
+      "object_name": {
+        "old": "_human_magician_fist",
+        "new": "oakstaff"
+      },
+      "body_part": {
+        "old": [
+          "rhand"
+        ],
+        "new": [
+          "lrhand"
+        ]
+      },
+      "animation": {
+        "old": 3,
+        "new": 4
+      },
+      "drop_type": {
+        "old": 0,
+        "new": 3
+      },
+      "drop_anim_type": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_radius": {
+        "old": "2.7",
+        "new": 15
+      },
+      "drop_height": {
+        "old": 5,
+        "new": "5.3"
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_sack_m00"
+        ],
+        "new": [
+          "LineageWeapons.dasparions_staff_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "new": [
+          "LineageWeaponsTex.oakstaff_wp"
+        ]
+      },
+      "icon": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "icon.oakstafficon"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeapons.dasparions_staff_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeaponsTex.oakstaff_wp"
+        ]
+      },
+      "crystallizable": {
+        "old": 0,
+        "new": 1
+      },
+      "item_sound": {
+        "old": [
+          "ItemSound.club_2",
+          "ItemSound.staff_1",
+          "ItemSound.fist_3",
+          "ItemSound.staff_1"
+        ],
+        "new": [
+          "ItemSound.staff_3",
+          "ItemSound.spear_5",
+          "ItemSound.axe_5",
+          "ItemSound.sword_mid_2"
+        ]
+      },
+      "drop_sound": {
+        "old": "ItemSound.itemdrop_weapon_fist",
+        "new": "ItemSound.itemdrop_weapon_staff"
+      },
+      "equip_sound": {
+        "old": "ItemSound.itemequip_weapon_fist",
+        "new": "ItemSound.itemequip_weapon_staff"
+      },
+      "weight": {
+        "old": 0,
+        "new": 990
+      },
+      "soulshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "spiritshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "material_type": {
+        "old": "leather",
+        "new": "wood"
+      },
+      "crystal_type": {
+        "old": "none",
+        "new": "c"
+      },
+      "physical_damage": {
+        "old": 0,
+        "new": 141
+      },
+      "random_damage": {
+        "old": 5,
+        "new": 20
+      },
+      "weapon_type": {
+        "old": "fist",
+        "new": "blunt"
+      },
+      "magical_damage": {
+        "old": 0,
+        "new": 104
+      },
+      "name": {
+        "old": "Human Mystic Fist",
+        "new": "Oak Staff"
+      },
+      "description": {
+        "old": "",
+        "new": "An old Oak tree containing mists trapped within a poisoned crystal was lost by Hunter Village mages. Increases casting speed and mp regeneration."
+      }
+    },
+    "name": "Oak Staff",
+    "description": "An old Oak tree containing mists trapped within a poisoned crystal was lost by Hunter Village mages. Increases casting speed and mp regeneration."
   },
   {
     "object_id": 252,
-    "object_name": "_orcish_shaman_fist",
+    "object_name": "evileye_sword",
     "body_part": [
       "rhand"
     ],
-    "animation": 3,
-    "drop_type": 0,
-    "drop_anim_type": 3,
-    "drop_radius": "2.7",
-    "drop_height": 5,
+    "animation": 1,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": "7.3",
+    "drop_height": 10,
     "projectile": "none",
     "curvature": 1000,
     "drop_mesh": [
-      "dropitems.drop_sack_m00"
+      "LineageWeapons.sword_of_delusion_m00_wp"
     ],
     "drop_texture": [
-      "dropitemstex.drop_sack_t00"
+      "LineageWeaponsTex.evilante_sword_t00_wp"
     ],
     "icon": [
-      "none"
+      "icon.evileyeswordicon"
     ],
     "mesh": [
-      "none"
+      "LineageWeapons.sword_of_delusion_m00_wp"
     ],
     "texture": [
-      "none"
+      "LineageWeaponsTex.evilante_sword_t00_wp"
     ],
-    "crystallizable": 0,
+    "crystallizable": 1,
     "item_sound": [
-      "ItemSound.axe_1",
-      "ItemSound.fist_2",
-      "ItemSound.club_2",
-      "ItemSound.spear_9"
+      "ItemSound.sword_great_4",
+      "ItemSound.sword_big_3",
+      "ItemSound.sword_mid_3",
+      "ItemSound.public_sword_shing_2"
     ],
-    "drop_sound": "ItemSound.itemdrop_weapon_fist",
-    "equip_sound": "ItemSound.itemequip_weapon_fist",
-    "weight": 0,
-    "soulshot_count": 0,
-    "spiritshot_count": 0,
-    "material_type": "leather",
-    "crystal_type": "none",
-    "physical_damage": 0,
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 1400,
+    "soulshot_count": 3,
+    "spiritshot_count": 3,
+    "material_type": "mithril",
+    "crystal_type": "c",
+    "physical_damage": 144,
     "random_damage": 10,
-    "weapon_type": "fist",
+    "weapon_type": "sword",
     "critical": 8,
     "hit_modify": 0,
     "avoid_modify": 0,
@@ -14024,12 +14188,148 @@
     "shield_defense_rate": 0,
     "attack_speed": 379,
     "mp_consume": 0,
-    "magical_damage": 0,
-    "durability": 95,
+    "magical_damage": 78,
+    "durability": 90,
     "is_new": false,
-    "is_changed": false,
-    "name": "Orc Shaman Fist",
-    "description": ""
+    "is_changed": true,
+    "changes": {
+      "object_name": {
+        "old": "_orcish_shaman_fist",
+        "new": "evileye_sword"
+      },
+      "animation": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_type": {
+        "old": 0,
+        "new": 1
+      },
+      "drop_anim_type": {
+        "old": 3,
+        "new": 1
+      },
+      "drop_radius": {
+        "old": "2.7",
+        "new": "7.3"
+      },
+      "drop_height": {
+        "old": 5,
+        "new": 10
+      },
+      "drop_mesh": {
+        "old": [
+          "dropitems.drop_sack_m00"
+        ],
+        "new": [
+          "LineageWeapons.sword_of_delusion_m00_wp"
+        ]
+      },
+      "drop_texture": {
+        "old": [
+          "dropitemstex.drop_sack_t00"
+        ],
+        "new": [
+          "LineageWeaponsTex.evilante_sword_t00_wp"
+        ]
+      },
+      "icon": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "icon.evileyeswordicon"
+        ]
+      },
+      "mesh": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeapons.sword_of_delusion_m00_wp"
+        ]
+      },
+      "texture": {
+        "old": [
+          "none"
+        ],
+        "new": [
+          "LineageWeaponsTex.evilante_sword_t00_wp"
+        ]
+      },
+      "crystallizable": {
+        "old": 0,
+        "new": 1
+      },
+      "item_sound": {
+        "old": [
+          "ItemSound.axe_1",
+          "ItemSound.fist_2",
+          "ItemSound.club_2",
+          "ItemSound.spear_9"
+        ],
+        "new": [
+          "ItemSound.sword_great_4",
+          "ItemSound.sword_big_3",
+          "ItemSound.sword_mid_3",
+          "ItemSound.public_sword_shing_2"
+        ]
+      },
+      "drop_sound": {
+        "old": "ItemSound.itemdrop_weapon_fist",
+        "new": "ItemSound.itemdrop_weapon_sword"
+      },
+      "equip_sound": {
+        "old": "ItemSound.itemequip_weapon_fist",
+        "new": "ItemSound.itemequip_weapon_sword"
+      },
+      "weight": {
+        "old": 0,
+        "new": 1400
+      },
+      "soulshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "spiritshot_count": {
+        "old": 0,
+        "new": 3
+      },
+      "material_type": {
+        "old": "leather",
+        "new": "mithril"
+      },
+      "crystal_type": {
+        "old": "none",
+        "new": "c"
+      },
+      "physical_damage": {
+        "old": 0,
+        "new": 144
+      },
+      "weapon_type": {
+        "old": "fist",
+        "new": "sword"
+      },
+      "magical_damage": {
+        "old": 0,
+        "new": 78
+      },
+      "durability": {
+        "old": 95,
+        "new": 90
+      },
+      "name": {
+        "old": "Orc Shaman Fist",
+        "new": "Evilante Sword"
+      },
+      "description": {
+        "old": "",
+        "new": "The opulence of two kingdoms. After being stolen many years later, it was found in Enchanted Valley Lake. To this day, it remains unknown who stole it."
+      }
+    },
+    "name": "Evilante Sword",
+    "description": "The opulence of two kingdoms. After being stolen many years later, it was found in Enchanted Valley Lake. To this day, it remains unknown who stole it."
   },
   {
     "object_id": 253,
@@ -23377,7 +23677,7 @@
     "critical": 0,
     "hit_modify": 0,
     "avoid_modify": "-8",
-    "shield_defense": 166,
+    "shield_defense": 190,
     "shield_defense_rate": 20,
     "attack_speed": 0,
     "mp_consume": 0,
@@ -23398,7 +23698,7 @@
       },
       "shield_defense": {
         "old": 216,
-        "new": 166
+        "new": 190
       },
       "name": {
         "old": "Avadon Shield",
@@ -36595,6 +36895,71 @@
     "is_new": false,
     "is_changed": false,
     "name": "Tsurugi*Samurai Longsword",
+    "description": ""
+  },
+  {
+    "object_id": 4234,
+    "object_name": "evileye_sword*evileye_sword",
+    "body_part": [
+      "lrhand"
+    ],
+    "animation": 3,
+    "drop_type": 1,
+    "drop_anim_type": 1,
+    "drop_radius": 6,
+    "drop_height": "1.3",
+    "projectile": "none",
+    "curvature": 1000,
+    "drop_mesh": [
+      "LineageWeapons.sword_of_delusion_m00_wp",
+      "LineageWeapons.sword_of_delusion_m00_wp"
+    ],
+    "drop_texture": [
+      "LineageWeaponsTex.evilante_sword_t00_wp",
+      "LineageWeaponsTex.evilante_sword_t00_wp"
+    ],
+    "icon": [
+      "icon.weapon_dual_sword_i00",
+      "icon.evileyeswordicon",
+      "icon.evileyeswordicon"
+    ],
+    "mesh": [
+      "LineageWeapons.sword_of_delusion_m00_wp",
+      "LineageWeapons.sword_of_delusion_m00_wp"
+    ],
+    "texture": [
+      "LineageWeaponsTex.evilante_sword_t00_wp",
+      "LineageWeaponsTex.evilante_sword_t00_wp"
+    ],
+    "crystallizable": 1,
+    "item_sound": [
+      "ItemSound.sword_mid_5",
+      "ItemSound.public_sword_shing_3",
+      "ItemSound.sword_small_8",
+      "ItemSound.public_sword_shing_1"
+    ],
+    "drop_sound": "ItemSound.itemdrop_weapon_sword",
+    "equip_sound": "ItemSound.itemequip_weapon_sword",
+    "weight": 2090,
+    "soulshot_count": 1,
+    "spiritshot_count": 1,
+    "material_type": "fine_steel",
+    "crystal_type": "b",
+    "physical_damage": 228,
+    "random_damage": 10,
+    "weapon_type": "dual",
+    "critical": 8,
+    "hit_modify": 0,
+    "avoid_modify": 0,
+    "shield_defense": 0,
+    "shield_defense_rate": 0,
+    "attack_speed": 325,
+    "mp_consume": 0,
+    "magical_damage": 97,
+    "durability": 95,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Evilante*Evilante Swords",
     "description": ""
   },
   {
