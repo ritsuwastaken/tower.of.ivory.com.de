@@ -1,5 +1,6 @@
 import { Item } from '@/types/item'
 import { Skill } from '@/types/skill'
+import { getOriginalObjectName } from '@/utils/getOriginalObjectName'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import styled from 'styled-components'
@@ -30,8 +31,10 @@ export const ExternalLinks = ({ data }: ExternalLinksProps) => {
     }
   } else {
     if (!data.is_new) {
+      const objectName = getOriginalObjectName(data)
+
       links.push({
-        url: `https://l2hub.info/c1/items/${data?.object_name
+        url: `https://l2hub.info/c1/items/${objectName
           ?.replace(/[\[\]]/g, '')
           .toLowerCase()
           .replace(/ /g, '_')}`,
@@ -40,7 +43,7 @@ export const ExternalLinks = ({ data }: ExternalLinksProps) => {
     }
 
     links.push({
-      url: `https://knowledgedb.elmorelab.com/#/items?itemId=${data?.object_id}&chronicle=c1`,
+      url: `https://knowledgedb.elmorelab.com/#/items?itemId=${data.object_id}&chronicle=c1`,
       label: t('externalLinks.elmoreLab'),
     })
   }
