@@ -290,13 +290,13 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                 {skill.levels?.every((level) => level.is_new) ? (
                   t('skillDetails.new')
                 ) : hasChangedProperties ? (
-                  <a
+                  <Link
                     href="#changes-section"
                     className="notificationLink"
                     onClick={handleNotificationClick}
                   >
                     {t('skillDetails.changed')}
-                  </a>
+                  </Link>
                 ) : (
                   t('skillDetails.changed')
                 )}

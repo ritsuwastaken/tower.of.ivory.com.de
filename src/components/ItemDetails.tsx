@@ -336,7 +336,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
               {item?.is_new ? (
                 t('itemDetails.new')
               ) : hasChangedProperties ? (
-                <a
+                <Link
                   href="#changes-section"
                   className="notificationLink"
                   onClick={() => {
@@ -344,7 +344,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                   }}
                 >
                   {t('itemDetails.changed')}
-                </a>
+                </Link>
               ) : (
                 t('itemDetails.changed')
               )}
