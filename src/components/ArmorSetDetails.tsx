@@ -1,5 +1,6 @@
 import { ArmorSet } from '@/types/armorset'
 import { getDataUrl } from '@/utils/dataUrl'
+import { getItemUrl } from '@/utils/getItemRoute'
 import { getTotalBasePrice, getTotalPhysicalDefense } from '@/utils/getTotalX'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
@@ -306,7 +307,7 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
                       <PartMainContainer>
                         <PartMain>
                           <a
-                            href={`/items/${item.object_id}`}
+                            href={getItemUrl(item)}
                             className="partLink"
                           >
                             <span className="partName">{item.name}</span>
