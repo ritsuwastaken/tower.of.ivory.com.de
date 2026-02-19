@@ -22,6 +22,7 @@ import {
 import { ArmorSetVisual } from './ArmorSetVisual'
 import { ExternalLinks } from './ExternalLinks'
 import { Head } from './Head'
+import Link from 'next/link'
 
 interface ArmorSetDetailsProps {
   id: string
@@ -308,9 +309,9 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
                     <PartHeader>
                       <PartMainContainer>
                         <PartMain>
-                          <a href={getItemUrl(item)} className="partLink">
+                          <Link href={getItemUrl(item)} className="partLink">
                             <span className="partName">{item.name}</span>
-                          </a>
+                          </Link>
                         </PartMain>
                         <PartParams>
                           {item.body_part && (
