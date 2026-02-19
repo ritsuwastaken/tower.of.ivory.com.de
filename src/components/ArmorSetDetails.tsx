@@ -291,7 +291,9 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
                       {item.icon && (
                         <PartIcon>
                           <Image
-                            src={getDataUrl(`/icon/${item?.icon?.[0]?.split('.')[1]}.webp`)}
+                            src={getDataUrl(
+                              `/icon/${item?.icon?.[0]?.split('.')[1]}.webp`,
+                            )}
                             alt={
                               item.name ||
                               `${t('armorSetDetails.unnamedItem')} ${item.object_id}`
@@ -306,10 +308,7 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
                     <PartHeader>
                       <PartMainContainer>
                         <PartMain>
-                          <a
-                            href={getItemUrl(item)}
-                            className="partLink"
-                          >
+                          <a href={getItemUrl(item)} className="partLink">
                             <span className="partName">{item.name}</span>
                           </a>
                         </PartMain>
