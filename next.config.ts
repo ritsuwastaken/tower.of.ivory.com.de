@@ -3,8 +3,8 @@ import type { NextConfig } from 'next'
 const isGitHubPages = process.env.GITHUB_PAGES === '1'
 const basePath = isGitHubPages
   ? (process.env.GITHUB_PAGES_BASE_PATH !== undefined
-      ? process.env.GITHUB_PAGES_BASE_PATH
-      : '/tower.of.ivory.com.de')
+    ? process.env.GITHUB_PAGES_BASE_PATH
+    : '/tower.of.ivory.com.de')
   : undefined
 
 const nextConfig: NextConfig = {
@@ -44,6 +44,15 @@ const nextConfig: NextConfig = {
           {
             key: 'Cache-Control',
             value: 'public, max-age=3600',
+          },
+        ],
+      },
+      {
+        source: '/data/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=300',
           },
         ],
       },
