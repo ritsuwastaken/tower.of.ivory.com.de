@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:data": "npx ts-node data/build.ts",
     "build:gh-pages": "GITHUB_PAGES=1 next build",
     "start": "next start",
     "lint": "next lint",

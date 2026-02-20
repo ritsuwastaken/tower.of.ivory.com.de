@@ -1,0 +1,330 @@
+[
+    {
+        "id": "cursed_set",
+        "name": "Cursed Set",
+        "items": [
+            "cursed_tunic",
+            "cursed_hose",
+            "bone_helmet"
+        ]
+    },
+    {
+        "id": "knowledge_set",
+        "name": "Knowledge Set",
+        "items": [
+            "tunic_of_knowledge",
+            "hose_of_knowledge",
+            "gloves_of_knowledge"
+        ]
+    },
+    {
+        "id": "hard_leather_set",
+        "name": "Hard Leather Set",
+        "items": [
+            "hard_leather_shirt",
+            "hard_leather_gaiters",
+            "hard_leather_helmet"
+        ]
+    },
+    {
+        "id": "magic_set",
+        "name": "Magic Set",
+        "items": [
+            "tunic_of_magicpower",
+            "hose_of_magicpower",
+            "hard_leather_helmet"
+        ]
+    },
+    {
+        "id": "karmian_set",
+        "name": "Karmian Set",
+        "items": [
+            "karmian_tunic",
+            "karmian_hose",
+            "karmian_gloves"
+        ]
+    },
+    {
+        "id": "dark_elven_set",
+        "name": "Dark Elven Set",
+        "items": [
+            "elven_tunic",
+            "elven_hose",
+            "bronze_helmet"
+        ]
+    },
+    {
+        "id": "bronze_set",
+        "name": "Bronze Set",
+        "items": [
+            "bronze_breastplate",
+            "bronze_gaiters"
+        ]
+    },
+    {
+        "id": "dwarven_scale_set",
+        "name": "Dwarven Scale Set",
+        "items": [
+            "dwarven_scale_mail",
+            "dwarven_scale_gaiters",
+            "helmet"
+        ]
+    },
+    {
+        "id": "divine_set",
+        "name": "Divine Set",
+        "items": [
+            "divine_tunic",
+            "divine_hose",
+            "blessed_gloves"
+        ]
+    },
+    {
+        "id": "composite_set",
+        "name": "Composite Set",
+        "items": [
+            "composite_armor",
+            "composite_helmet",
+            "composite_shield"
+        ]
+    },
+    {
+        "id": "demons_set",
+        "name": "Demon's Set",
+        "items": [
+            "demon's_tunic",
+            "demon's_hose",
+            "demon's_gloves"
+        ]
+    },
+    {
+        "id": "mystics_set",
+        "name": "Mystic's Set",
+        "items": [
+            "mage's_tunic",
+            "mage's_hose",
+            "bronze_helmet"
+        ]
+    },
+    {
+        "id": "white_set",
+        "name": "White Set",
+        "items": [
+            "white_tunic",
+            "dark_hose",
+            "bronze_shield",
+            "bronze_helmet"
+        ]
+    },
+    {
+        "id": "ring_mail_set",
+        "name": "Ring Mail Set",
+        "items": [
+            "ring_breastplate",
+            "iron_plate_gaiters",
+            "bone_helmet"
+        ]
+    },
+    {
+        "id": "reinforced_leather_set",
+        "name": "Reinforced Leather Set",
+        "items": [
+            "reinforce_leather_shirt",
+            "reinforce_leather_gaiters",
+            "reinforce_leather_boots"
+        ]
+    },
+    {
+        "id": "puma_skin_set",
+        "name": "Puma Skin Set",
+        "items": [
+            "puma_skin_shirt",
+            "puma_skin_gaiters",
+            "leather_boots"
+        ]
+    },
+    {
+        "id": "mithril_heavy_set",
+        "name": "Mithril Heavy Set",
+        "items": [
+            "mithril_breastplate",
+            "mithril_gaiters",
+            "helmet",
+            "hoplon"
+        ]
+    },
+    {
+        "id": "mithril_banded_set",
+        "name": "Mithril Banded Set",
+        "items": [
+            "mithril_banded_mail",
+            "mithril_banded_gaiters",
+            "bronze_helmet"
+        ]
+    },
+    {
+        "id": "manticore_skin_set",
+        "name": "Manticore Skin Set",
+        "items": [
+            "manticor_skin_shirt",
+            "manticor_skin_gaiters",
+            "manticor_skin_boots"
+        ]
+    },
+    {
+        "id": "half_plate_set",
+        "name": "Half Plate Set",
+        "items": [
+            "half_plate",
+            "plate_gaiters",
+            "plate_helmet",
+            "plate_shield"
+        ]
+    },
+    {
+        "id": "elven_mithril_set",
+        "name": "Elven Mithril Set",
+        "items": [
+            "mithril_tunic",
+            "mithril_hose",
+            "elven_mithril_gloves"
+        ]
+    },
+    {
+        "id": "compound_scale_set",
+        "name": "Compound Scale Set",
+        "items": [
+            "compound_scale_mail",
+            "compound_scale_gaiters",
+            "helmet"
+        ]
+    },
+    {
+        "id": "brigandine_set",
+        "name": "Brigandine Set",
+        "items": [
+            "brigandine",
+            "brigandine_gaiters",
+            "brigandine_helmet",
+            "brigandine_shield"
+        ]
+    },
+    {
+        "id": "scale_set",
+        "name": "Scale Set",
+        "items": [
+            "scale_mail",
+            "scale_gaiters",
+            "bronze_helmet"
+        ]
+    },
+    {
+        "id": "lion_skin_set",
+        "name": "Lion Skin Set",
+        "items": [
+            "lion_skin_shirt",
+            "lion_skin_gaiters",
+            "bronze_helmet"
+        ]
+    },
+    {
+        "id": "theca_leather_set",
+        "name": "Theca Leather Set",
+        "items": [
+            "theca_leather_mail",
+            "theca_leather_gaiters",
+            "theca_leather_boots"
+        ]
+    },
+    {
+        "id": "tempered_mithril_set",
+        "name": "Tempered Mithril Set",
+        "items": [
+            "tempered_mithril_shirt",
+            "tempered_mithril_gaiters",
+            "mithril_boots"
+        ]
+    },
+    {
+        "id": "dwarven_chain_set",
+        "name": "Dwarven Chain Set",
+        "items": [
+            "dwarven_chain_mail_shirt",
+            "dwarven_chain_gaiters",
+            "dwarven_chain_gloves",
+            "dwarven_chain_boots",
+            "dwarven_chain_shield"
+        ]
+    },
+    {
+        "id": "rind_leather_set",
+        "name": "Rind Leather Set",
+        "items": [
+            "rind_leather_mail",
+            "rind_leather_gaiters",
+            "rind_leather_gloves"
+        ]
+    },
+    {
+        "id": "chain_mail_set",
+        "name": "Chain Mail Set",
+        "items": [
+            "chain_mail_shirt",
+            "chain_gaiters",
+            "chain_hood",
+            "chain_shield"
+        ]
+    },
+    {
+        "id": "full_plate_set",
+        "name": "Full Plate Set",
+        "items": [
+            "full_plate_armor",
+            "full_plate_helmet",
+            "full_plate_shield"
+        ]
+    },
+    {
+        "id": "seal_set",
+        "name": "Seal Set",
+        "items": [
+            "robe_of_seal",
+            "shining_circlet",
+            "gloves_of_seal"
+        ]
+    },
+    {
+        "id": "plated_leather_set",
+        "name": "Plated Leather Set",
+        "items": [
+            "plated_leather",
+            "plated_leather_gaiters",
+            "plated_leather_boots",
+            "plated_leather_gloves"
+        ]
+    },
+    {
+        "id": "drake_leather_set",
+        "name": "Drake Leather Set",
+        "items": [
+            "drake_leather_mail",
+            "drake_leather_boots"
+        ]
+    },
+    {
+        "id": "sages_rag_set",
+        "name": "Sage's Rag Set",
+        "items": [
+            "sage's_rag",
+            "sage's_worn_gloves"
+        ]
+    },
+    {
+        "id": "salamander_skin_set",
+        "name": "Salamander Skin Set",
+        "items": [
+            "slamander_skin_mail",
+            "slamander_skin_boots"
+        ]
+    }
+]

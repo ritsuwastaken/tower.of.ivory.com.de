@@ -43,7 +43,3 @@ next-env.d.ts
 
 # vscode
 .vscode/
-
-# scripts and raw data
-scripts/
-raw_data/
