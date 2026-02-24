@@ -1,6 +1,7 @@
 import { ArmorSet } from '@/types/armorset'
 import { getDataUrl } from '@/utils/dataUrl'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
 
@@ -12,7 +13,10 @@ interface ArmorSlotProps {
   armorSet: ArmorSet
 }
 
-export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
+export const ArmorSlot = ({
+  slot,
+  armorSet,
+}: ArmorSlotProps) => {
   const router = useRouter()
   const armorPiece = armorSet.items?.find((piece) =>
     piece.body_part?.some((part: string) =>
@@ -41,12 +45,10 @@ export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
     <GridSlot $position={slot.position} $isEmpty={!hasItem}>
       {hasItem ? (
         <IconWrapper
-          title={itemToLink?.name || ''}
+          rel="canonical"
+          href={`/${type}/${itemToLink?.object_id}`}
           onClick={(e) => {
             e.stopPropagation()
-            if (itemToLink?.object_id) {
-              router.push(`/${type}/${itemToLink.object_id}`)
-            }
           }}
         >
           <StyledImage
@@ -55,8 +57,9 @@ export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
             width={32}
             height={32}
             onError={(e) => {
-              ;(e.target as HTMLImageElement).src =
-                getDataUrl('/icon/etc_alphabet_ii_i00.webp')
+              ;(e.target as HTMLImageElement).src = getDataUrl(
+                '/icon/etc_alphabet_ii_i00.webp',
+              )
             }}
           />
         </IconWrapper>
@@ -129,7 +132,7 @@ const GridSlot = styled.div<{ $position: string; $isEmpty: boolean }>`
   }}
 `
 
-const IconWrapper = styled.div`
+const IconWrapper = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;

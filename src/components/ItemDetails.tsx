@@ -353,7 +353,9 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
           <ItemHeader>
             <HeaderLeft>
               <Image
-                src={getDataUrl(`/icon/${item?.icon?.[0].split('.').at(-1)}.webp`)}
+                src={getDataUrl(
+                  `/icon/${item?.icon?.[0].split('.').at(-1)}.webp`,
+                )}
                 alt={item?.name || item?.object_name || ''}
                 width={64}
                 height={64}
@@ -611,13 +613,14 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
           <ArmorSets>
             <h2>{t('itemDetails.partOfSets')}</h2>
             {item?.sets.map((armorSet) => (
-              <Link
-                rel="canonical"
-                key={armorSet.id}
-                href={`/armorsets/${armorSet.id}`}
-                className="setCard"
-              >
-                <h3 className="setName">{armorSet.name}</h3>
+              <div key={armorSet.id}>
+                <Link
+                  rel="canonical"
+                  key={armorSet.id}
+                  href={`/armorsets/${armorSet.id}`}
+                >
+                  <h3 className="setName">{armorSet.name}</h3>
+                </Link>
                 <SetVisualContainer>
                   <ArmorSetVisual armorSet={armorSet} />
                 </SetVisualContainer>
@@ -643,7 +646,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                     <SetInfoValue>{armorSet.items?.length || 0}</SetInfoValue>
                   </SetInfoItem>
                 </SetInfo>
-              </Link>
+              </div>
             ))}
           </ArmorSets>
         )}
@@ -663,46 +666,32 @@ const ContentWrapper = styled.div`
 `
 
 const ArmorSets = styled.div`
+  display: flex;
+  flex-direction: column;
   background-color: #1a1a1a;
   border-radius: 8px;
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   align-self: flex-start;
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    align-self: center;
+  }
 
   h2 {
     margin-top: 0;
-    padding-bottom: 12px;
     border-bottom: 1px solid var(--border-color);
     font-size: 1.2rem;
     text-align: center;
   }
 
-  .setCard {
-    display: block;
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 16px;
-    text-decoration: none;
-    color: inherit;
-    transition:
-      transform 0.2s,
-      box-shadow 0.2s;
-    outline: none;
-  }
-
-  .setCard:hover,
-  .setCard:focus {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    background-color: #2a2a2a;
-  }
-
   .setName {
     margin-top: 0;
-    margin-bottom: 12px;
     font-size: 1rem;
     color: var(--primary-color);
     text-align: center;
+    text-decoration: underline;
   }
 `
 
