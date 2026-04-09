@@ -1019,7 +1019,7 @@ item_name_begin	id=1018	name=[Rant's Receipt]	description=[The receipt issued by
 item_name_begin	id=1019	name=[official Letter]	description=[An official letter  that the Lord of  Gludio has sent to  Sir Colin Windawood,  calling a meeting.  Deliver this to Sir  Windawood.]	item_name_end			
 item_name_begin	id=1020	name=[Flame Shard]	description=[A fragment of  elemental stone of  fire. Can be taken  from the fire spirit  Salamander. Give to  Trader Katrine.]	item_name_end			
 item_name_begin	id=1021	name=[Ice Shard]	description=[A fragment of  elemental stone of  water. Can be taken  from the water spirit  Undine. Give to  Trader Katrine.]	item_name_end			
-item_name_begin	id=1022	name=[Lilith's Letter]	description=[A letter written by  Rylith in longing for  her lover, separated  a thousand years  ago. Find out news  about her lover for  her.]	item_name_end			
+item_name_begin	id=1022	name=[Lilith's Letter]	description=[A letter written by  Lilith in longing for  her lover, separated  a thousand years  ago. Find out news  about her lover for  her.]	item_name_end			
 item_name_begin	id=1023	name=[Theon's Diary]	description=[A diary written by  Theon in longing for  his lover, separated  a thousand years ago.  Take this to Rylith.]	item_name_end			
 item_name_begin	id=1024	name=[Adamantite Ore]	description=[Adamantite ore. All  of it is imported  from Gracia. Gather  20 of these and take  them to Gatekeeper  Wilphrod.]	item_name_end			
 item_name_begin	id=1025	name=[Clay Tablet]	description=[A tablet praising  Beleth that the Devil  Nerkas possessed.  Deliver this to High  Priest Biotin.]	item_name_end			
@@ -1942,7 +1942,7 @@ item_name_begin	id=1941	name=[Brigandine Temper]	description=[A key material tha
 item_name_begin	id=1942	name=[Manticore Skin Shirt Texture]	description=[A key material that  dwarves use to make  the Manticor Skin  Shirt. Can be sold in  the shop.]	item_name_end			
 item_name_begin	id=1943	name=[Manticore Skin Gaiters Pattern]	description=[A key material that  dwarves use to make  the Manticor Skin  Gaiters. Can be sold  in the shop.]	item_name_end			
 item_name_begin	id=1944	name=[Elven Mithril Tunic Fabric]	description=[A key material that  dwarves use to make  the Mithril Tunic.  Can be sold in the  shop.]	item_name_end			
-item_name_begin	id=1945	name=[Mithril Stocking Design]	description=[A key material that  dwarves use to make  Mithril Hose. Can be  sold in the shop.]	item_name_end			
+item_name_begin	id=1945	name=[Elven Mithril Stocking Design]	description=[A key material that  dwarves use to make  Mithril Hose. Can be  sold in the shop.]	item_name_end			
 item_name_begin	id=1946	name=[Rip Gauntlets Pattern]	description=[A key material that  dwarves use to make  the Gauntlet of  Repose of the Soul.  Can be sold in the  shop.]	item_name_end			
 item_name_begin	id=1947	name=[Kite Shield Fragment]	description=[A key material that  dwarves use to make  the Kite Shield. Can  be sold in the shop.]	item_name_end			
 item_name_begin	id=1948	name=[Boots of Power Pattern]	description=[A key material that  dwarves use to make  the Boots of Power.  Can be sold in the  shop.]	item_name_end			
@@ -3433,7 +3433,7 @@ item_name_begin	id=3424	name=[Bloody Claw]	description=[A claw dripping with  an
 item_name_begin	id=3425	name=[Bloody Nail]	description=[A nail dripping with  animal blood. Collect  50 of these and take  them to Martin, the  Pet Manager of the  Town of Gludin.]	item_name_end			
 item_name_begin	id=3426	name=[Bloody Kasha Fang]	description=[A fang of a kasha  dripping with animal  blood. Collect 50 of  these and take them  to Martin, the Pet  Manager of the Town  of Gludin.]	item_name_end			
 item_name_begin	id=3427	name=[Bloody Tarantula Nail]	description=[A nail of a tarantula  dripping with animal  blood. Collect 50 of  these and take them  to Martin, the Pet  Manager of the Town  of Gludin.]	item_name_end			
-item_name_begin	id=3428	name=[Crystal Brooch]	description=[A brooch received  from Warehouse Keeper  Wilfred. Present  this to Rylin of the  temple at the Village  of Talking Island.]	item_name_end			
+item_name_begin	id=3428	name=[Crystal Brooch]	description=[A brooch received  from Warehouse Keeper  Wilfred. Present  this to Lilith of the  temple at the Village  of Talking Island.]	item_name_end			
 item_name_begin	id=3429	name=[Spellbook:  Greater Heal11]	description=[A spellbook for  learning the Greater  Heal spell]	item_name_end			
 item_name_begin	id=3430	name=[Spellbook:  Greater Battle Heal11]	description=[A spellbook for  learning the Greater  Battle Heal spell]	item_name_end			
 item_name_begin	id=3431	name=[Spellbook:  Greater Group Heal11]	description=[A spellbook for  learning the Greater  Group Heal spell]	item_name_end			
@@ -4014,7 +4014,7 @@ item_name_begin	id=4005	name=[Mercenary Disposition Badge]	description=[Oren/Spe
 item_name_begin	id=4006	name=[Mercenary Disposition Badge]	description=[Oren/Bow/Mobile]	item_name_end			
 item_name_begin	id=4007	name=[Mercenary Disposition Badge]	description=[Oren/Cleric/Mobile]	item_name_end			
 item_name_begin	id=4008	name=[Mercenary Disposition Badge]	description=[Oren/Wizard/Mobile]	item_name_end			
-item_name_begin	id=4009	name=[Mercenary Disposition Badge]	description=[Dion/Teleporter/Inner  Castle, Guardian]	item_name_end			
+item_name_begin	id=4009	name=[Mercenary Disposition Badge]	description=[Oren/Teleporter/Inner  Castle, Guardian]	item_name_end			
 item_name_begin	id=4010	name=[Mercenary Disposition Badge]	description=[Oren/Teleporter/Outer  Castle, Guardian]	item_name_end			
 item_name_begin	id=4011	name=[Mercenary Disposition Badge]	description=[Oren/Teleporter/Inner  Castle, Outer Castle]	item_name_end			
 item_name_begin	id=4012	name=[Mercenary Disposition Badge]	description=[Aden/Sword/Stationary]	item_name_end			
@@ -4329,6 +4329,7 @@ item_name_begin	id=5556	name=[Star Ornament]	description=[An essential ingredien
 item_name_begin	id=5557	name=[Bead Ornament]	description=[An ingredient of a Christmas Tree. Take it to a Santa trainee, along with the other necessary ingredients, and he will create a Christmas Tree for you.]	item_name_end
 item_name_begin	id=5558	name=[Fir Tree Branch]	description=[An ingredient of a Christmas Tree. Take it to a Santa trainee, along with the other necessary ingredients, and he will create a Christmas Tree for you.]	item_name_end
 item_name_begin	id=5559	name=[Flower Pot]	description=[An ingredient of a Christmas Tree. Take it to a Santa trainee, along with the other necessary ingredients, and he will create a Christmas Tree for you.]	item_name_end
+item_name_begin	id=5600	name=[Harbor Birthday 1 year]	description=[A commemorative item for 1st Harbor Birthday, 14.02.2026.]	item_name_end
 item_name_begin	id=9883	name=[Harbor Event Demon Horns]	description=[A hair accessory for the 2006 Halloween Event.   This hair accessory can be worn only during the end of year holiday season.]	item_name_end
 item_name_begin	id=7836	name=[Harbor Santa's Hat]	description=[A Santa Claus hat that was created to celebrate the X-Mas and New Year event.  This hat can be worn only during the end of year holiday season.]	item_name_end
 item_name_begin	id=7838	name=[Harbor Santa's Hat with horns]	description=[A Santa Claus hat that was created to celebrate the X-Mas and New Year event.  This hat can be worn only during the end of year holiday season.]	item_name_end

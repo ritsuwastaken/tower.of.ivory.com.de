@@ -8458,9 +8458,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "A letter written by  Rylith in longing for  her lover, separated  a thousand years  ago. Find out news  about her lover for  her.",
+        "new": "A letter written by  Lilith in longing for  her lover, separated  a thousand years  ago. Find out news  about her lover for  her."
+      }
+    },
     "name": "Lilith's Letter",
-    "description": "A letter written by  Rylith in longing for  her lover, separated  a thousand years  ago. Find out news  about her lover for  her."
+    "description": "A letter written by  Lilith in longing for  her lover, separated  a thousand years  ago. Find out news  about her lover for  her."
   },
   {
     "object_id": 1023,
@@ -41044,8 +41050,14 @@
     "base_price": 2518,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
-    "name": "Mithril Stocking Design",
+    "is_changed": true,
+    "changes": {
+      "name": {
+        "old": "Mithril Stocking Design",
+        "new": "Elven Mithril Stocking Design"
+      }
+    },
+    "name": "Elven Mithril Stocking Design",
     "description": "A key material that  dwarves use to make  Mithril Hose. Can be  sold in the shop."
   },
   {
@@ -89924,9 +89936,15 @@
     "base_price": 0,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "A brooch received  from Warehouse Keeper  Wilfred. Present  this to Rylin of the  temple at the Village  of Talking Island.",
+        "new": "A brooch received  from Warehouse Keeper  Wilfred. Present  this to Lilith of the  temple at the Village  of Talking Island."
+      }
+    },
     "name": "Crystal Brooch",
-    "description": "A brooch received  from Warehouse Keeper  Wilfred. Present  this to Rylin of the  temple at the Village  of Talking Island."
+    "description": "A brooch received  from Warehouse Keeper  Wilfred. Present  this to Lilith of the  temple at the Village  of Talking Island."
   },
   {
     "object_id": 3429,
@@ -110867,9 +110885,15 @@
     "base_price": 100000,
     "crystal_count": 0,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "description": {
+        "old": "Dion/Teleporter/Inner  Castle, Guardian",
+        "new": "Oren/Teleporter/Inner  Castle, Guardian"
+      }
+    },
     "name": "Mercenary Disposition Badge",
-    "description": "Dion/Teleporter/Inner  Castle, Guardian"
+    "description": "Oren/Teleporter/Inner  Castle, Guardian"
   },
   {
     "object_id": 4010,

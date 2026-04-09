@@ -35831,7 +35831,7 @@
     "icon": "icon.skill0050",
     "operate_type": 0,
     "is_magic": 0,
-    "mp_consume": 7,
+    "mp_consume": 0,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -35848,6 +35848,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 7,
+        "new": 0
+      },
       "skill_time": {
         "old": "0.9",
         "new": "0.7"
@@ -35866,7 +35870,7 @@
     "icon": "icon.skill0050",
     "operate_type": 0,
     "is_magic": 0,
-    "mp_consume": 7,
+    "mp_consume": 0,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -35883,6 +35887,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 7,
+        "new": 0
+      },
       "skill_time": {
         "old": "0.9",
         "new": "0.7"
@@ -35901,7 +35909,7 @@
     "icon": "icon.skill0050",
     "operate_type": 0,
     "is_magic": 0,
-    "mp_consume": 7,
+    "mp_consume": 0,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -35918,6 +35926,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 7,
+        "new": 0
+      },
       "skill_time": {
         "old": "0.9",
         "new": "0.7"
@@ -35936,7 +35948,7 @@
     "icon": "icon.skill0050",
     "operate_type": 0,
     "is_magic": 0,
-    "mp_consume": 7,
+    "mp_consume": 0,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -35953,6 +35965,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 7,
+        "new": 0
+      },
       "skill_time": {
         "old": "0.9",
         "new": "0.7"
@@ -52571,11 +52587,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 369.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 369."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 369."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 369."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 369."
   },
   {
     "skill_id": 6,
@@ -52610,11 +52626,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 392.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 392."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 392."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 392."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 392."
   },
   {
     "skill_id": 6,
@@ -52649,11 +52665,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 417.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 417."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 417."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 417."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 417."
   },
   {
     "skill_id": 6,
@@ -52688,11 +52704,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 442.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 442."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 442."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 442."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 442."
   },
   {
     "skill_id": 6,
@@ -52727,11 +52743,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 469.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 469."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 469."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 469."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 469."
   },
   {
     "skill_id": 6,
@@ -52766,11 +52782,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 496.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 496."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 496."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 496."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 496."
   },
   {
     "skill_id": 6,
@@ -52805,11 +52821,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 525.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 525."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 525."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 525."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 525."
   },
   {
     "skill_id": 6,
@@ -52844,11 +52860,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 555.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 555."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 555."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 555."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 555."
   },
   {
     "skill_id": 6,
@@ -52883,11 +52899,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 586.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 586."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 586."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 586."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 586."
   },
   {
     "skill_id": 6,
@@ -52922,11 +52938,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 618.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 618."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 618."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 618."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 618."
   },
   {
     "skill_id": 6,
@@ -52961,11 +52977,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 651.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 651."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 651."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 651."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 651."
   },
   {
     "skill_id": 6,
@@ -53000,11 +53016,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 686.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 686."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 686."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 686."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 686."
   },
   {
     "skill_id": 6,
@@ -53039,11 +53055,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 722.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 722."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 722."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 722."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 722."
   },
   {
     "skill_id": 6,
@@ -53078,11 +53094,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 758.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 758."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 758."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 758."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 758."
   },
   {
     "skill_id": 6,
@@ -53117,11 +53133,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 796.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 796."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 796."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 796."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 796."
   },
   {
     "skill_id": 6,
@@ -53156,11 +53172,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 835.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 835."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 835."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 835."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 835."
   },
   {
     "skill_id": 6,
@@ -53195,11 +53211,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 875.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 875."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 875."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 875."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 875."
   },
   {
     "skill_id": 6,
@@ -53234,11 +53250,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 916.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 916."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 916."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 916."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 916."
   },
   {
     "skill_id": 6,
@@ -53273,11 +53289,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 959.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 959."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 959."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 959."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 959."
   },
   {
     "skill_id": 6,
@@ -53312,11 +53328,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 1002.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 1002."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 1002."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 1002."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 1002."
   },
   {
     "skill_id": 6,
@@ -53351,11 +53367,11 @@
       },
       "description": {
         "old": "Emits blade beam to strike a long-distant enemy. Available with blades, blunts and double-blades. Power 1046.",
-        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 1046."
+        "new": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 1046."
       }
     },
     "name": "Sonic Blaster",
-    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed increases for a short time. Available with blades, blunts and double-blades. Power 1046."
+    "description": "Requires at least 1 charge. Emits blade beam to strike a long-distant enemy. After use, your running speed and attack speed increases for a short time. Available with blades, blunts and double-blades. Power 1046."
   },
   {
     "skill_id": 7,
@@ -53735,7 +53751,7 @@
     "icon": "icon.skill0008",
     "operate_type": 0,
     "is_magic": 0,
-    "mp_consume": 10,
+    "mp_consume": 0,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -53752,6 +53768,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 10,
+        "new": 0
+      },
       "skill_time": {
         "old": "0.9",
         "new": "0.7"
@@ -53770,7 +53790,7 @@
     "icon": "icon.skill0008",
     "operate_type": 0,
     "is_magic": 0,
-    "mp_consume": 10,
+    "mp_consume": 0,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -53787,6 +53807,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 10,
+        "new": 0
+      },
       "skill_time": {
         "old": "0.9",
         "new": "0.7"
@@ -53805,7 +53829,7 @@
     "icon": "icon.skill0008",
     "operate_type": 0,
     "is_magic": 0,
-    "mp_consume": 10,
+    "mp_consume": 0,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -53822,6 +53846,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 10,
+        "new": 0
+      },
       "skill_time": {
         "old": "0.9",
         "new": "0.7"
@@ -53840,7 +53868,7 @@
     "icon": "icon.skill0008",
     "operate_type": 0,
     "is_magic": 0,
-    "mp_consume": 10,
+    "mp_consume": 0,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -53857,6 +53885,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 10,
+        "new": 0
+      },
       "skill_time": {
         "old": "0.9",
         "new": "0.7"
@@ -73877,7 +73909,7 @@
     "icon": "icon.skill1233",
     "operate_type": 1,
     "is_magic": 1,
-    "mp_consume": 65,
+    "mp_consume": 58,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -73894,6 +73926,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 65,
+        "new": 58
+      },
       "cast_range": {
         "old": 600,
         "new": 900
@@ -73912,7 +73948,7 @@
     "icon": "icon.skill1233",
     "operate_type": 1,
     "is_magic": 1,
-    "mp_consume": 77,
+    "mp_consume": 68,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -73929,6 +73965,10 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 77,
+        "new": 68
+      },
       "cast_range": {
         "old": 600,
         "new": 900
@@ -107468,7 +107508,7 @@
     "skill_id": 3720,
     "skill_level": 1,
     "icon": "icon.weapon_hunting_bow_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107493,7 +107533,7 @@
     "skill_id": 3720,
     "skill_level": 2,
     "icon": "icon.weapon_hunting_bow_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107518,7 +107558,7 @@
     "skill_id": 3720,
     "skill_level": 3,
     "icon": "icon.weapon_hunting_bow_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107543,7 +107583,7 @@
     "skill_id": 3720,
     "skill_level": 4,
     "icon": "icon.weapon_hunting_bow_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107568,7 +107608,7 @@
     "skill_id": 3720,
     "skill_level": 5,
     "icon": "icon.weapon_hunting_bow_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107593,7 +107633,7 @@
     "skill_id": 3720,
     "skill_level": 6,
     "icon": "icon.weapon_hunting_bow_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107618,7 +107658,7 @@
     "skill_id": 3721,
     "skill_level": 1,
     "icon": "icon.weapon_willow_staff_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107643,7 +107683,7 @@
     "skill_id": 3721,
     "skill_level": 2,
     "icon": "icon.weapon_willow_staff_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107668,7 +107708,7 @@
     "skill_id": 3721,
     "skill_level": 3,
     "icon": "icon.weapon_willow_staff_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107693,7 +107733,7 @@
     "skill_id": 3722,
     "skill_level": 1,
     "icon": "icon.weapon_apprentices_spellbook_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107718,7 +107758,7 @@
     "skill_id": 3722,
     "skill_level": 2,
     "icon": "icon.weapon_apprentices_spellbook_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107743,7 +107783,7 @@
     "skill_id": 3722,
     "skill_level": 3,
     "icon": "icon.weapon_apprentices_spellbook_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107768,7 +107808,7 @@
     "skill_id": 3722,
     "skill_level": 4,
     "icon": "icon.weapon_apprentices_spellbook_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
@@ -107793,7 +107833,7 @@
     "skill_id": 3723,
     "skill_level": 1,
     "icon": "icon.weapon_apprentices_rod_i01",
-    "operate_type": 0,
+    "operate_type": 2,
     "is_magic": 0,
     "mp_consume": 0,
     "hp_consume": 0,
