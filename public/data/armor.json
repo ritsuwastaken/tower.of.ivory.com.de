@@ -89830,88 +89830,88 @@
       "dropitemstex.drop_sack_t00"
     ],
     "icon": [
-      "harbor.virus_icon.virus_01_h_i00"
+      "elmorelab.virus_icon.virus_01_h_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.viRUS_MF_01_m002_a"
+      "elmorelab.viRUS_MF_01_m002_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.viRUS_FF_01_m002_a"
+      "elmorelab.viRUS_FF_01_m002_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.viRUS_MM_01_m002_a"
+      "elmorelab.viRUS_MM_01_m002_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.viRUS_FM_01_m002_a"
+      "elmorelab.viRUS_FM_01_m002_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.viRUS_ME_01_m002_a"
+      "elmorelab.viRUS_ME_01_m002_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.viRUS_FE_01_m002_a"
+      "elmorelab.viRUS_FE_01_m002_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.viRUS_MD_01_m002_a"
+      "elmorelab.viRUS_MD_01_m002_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.viRUS_FD_01_m002_a"
+      "elmorelab.viRUS_FD_01_m002_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.viRUS_MW_01_m002_a"
+      "elmorelab.viRUS_MW_01_m002_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.viRUS_FW_01_m002_a"
+      "elmorelab.viRUS_FW_01_m002_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.viRUS_MO_01_m002_a"
+      "elmorelab.viRUS_MO_01_m002_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.viRUS_FO_01_m002_a"
+      "elmorelab.viRUS_FO_01_m002_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.viRUS_MS_01_m002_a"
+      "elmorelab.viRUS_MS_01_m002_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.viRUS_FS_01_m002_a"
+      "elmorelab.viRUS_FS_01_m002_a"
     ],
     "fshaman_texture": [
       "none"
@@ -90093,85 +90093,85 @@
       "icon.accessory_bear_cap_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_bear_cap_m003_a"
+      "elmorelab.ElmoreLabMF_bear_cap_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_bear_cap_m003_a"
+      "elmorelab.ElmoreLabFF_bear_cap_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_bear_cap_m003_a"
+      "elmorelab.ElmoreLabMM_bear_cap_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_bear_cap_m003_a"
+      "elmorelab.ElmoreLabFM_bear_cap_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_bear_cap_m003_a"
+      "elmorelab.ElmoreLabME_bear_cap_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_bear_cap_m003_a"
+      "elmorelab.ElmoreLabFE_bear_cap_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_bear_cap_m003_a"
+      "elmorelab.ElmoreLabMDe_bear_cap_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_bear_cap_m003_a"
+      "elmorelab.ElmoreLabFDe_bear_cap_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_bear_cap_m003_a"
+      "elmorelab.ElmoreLabMD_bear_cap_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_bear_cap_m003_a"
+      "elmorelab.ElmoreLabFD_bear_cap_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_bear_cap_m003_a"
+      "elmorelab.ElmoreLabMO_bear_cap_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_bear_cap_m003_a"
+      "elmorelab.ElmoreLabFO_bear_cap_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_bear_cap_m003_a"
+      "elmorelab.ElmoreLabMS_bear_cap_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_bear_cap_m003_a"
+      "elmorelab.ElmoreLabFS_bear_cap_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -90223,85 +90223,85 @@
       "icon.accessory_pig_cap_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_pig_cap_m003_a"
+      "elmorelab.ElmoreLabMF_pig_cap_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_pig_cap_m003_a"
+      "elmorelab.ElmoreLabFF_pig_cap_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_pig_cap_m003_a"
+      "elmorelab.ElmoreLabMM_pig_cap_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_pig_cap_m003_a"
+      "elmorelab.ElmoreLabFM_pig_cap_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_pig_cap_m003_a"
+      "elmorelab.ElmoreLabME_pig_cap_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_pig_cap_m003_a"
+      "elmorelab.ElmoreLabFE_pig_cap_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_pig_cap_m003_a"
+      "elmorelab.ElmoreLabMDe_pig_cap_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_pig_cap_m003_a"
+      "elmorelab.ElmoreLabFDe_pig_cap_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_pig_cap_m003_a"
+      "elmorelab.ElmoreLabMD_pig_cap_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_pig_cap_m003_a"
+      "elmorelab.ElmoreLabFD_pig_cap_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_pig_cap_m003_a"
+      "elmorelab.ElmoreLabMO_pig_cap_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_pig_cap_m003_a"
+      "elmorelab.ElmoreLabFO_pig_cap_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_pig_cap_m003_a"
+      "elmorelab.ElmoreLabMS_pig_cap_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_pig_cap_m003_a"
+      "elmorelab.ElmoreLabFS_pig_cap_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -90353,85 +90353,85 @@
       "icon.accessory_jester_cap_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_jester_cap_m003_a"
+      "elmorelab.ElmoreLabMF_jester_cap_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_jester_cap_m003_a"
+      "elmorelab.ElmoreLabFF_jester_cap_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_jester_cap_m003_a"
+      "elmorelab.ElmoreLabMM_jester_cap_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_jester_cap_m003_a"
+      "elmorelab.ElmoreLabFM_jester_cap_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_jester_cap_m003_a"
+      "elmorelab.ElmoreLabME_jester_cap_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_jester_cap_m003_a"
+      "elmorelab.ElmoreLabFE_jester_cap_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_jester_cap_m003_a"
+      "elmorelab.ElmoreLabMDe_jester_cap_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_jester_cap_m003_a"
+      "elmorelab.ElmoreLabFDe_jester_cap_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_jester_cap_m003_a"
+      "elmorelab.ElmoreLabMD_jester_cap_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_jester_cap_m003_a"
+      "elmorelab.ElmoreLabFD_jester_cap_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_jester_cap_m003_a"
+      "elmorelab.ElmoreLabMO_jester_cap_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_jester_cap_m003_a"
+      "elmorelab.ElmoreLabFO_jester_cap_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_jester_cap_m003_a"
+      "elmorelab.ElmoreLabMS_jester_cap_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_jester_cap_m003_a"
+      "elmorelab.ElmoreLabFS_jester_cap_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -90480,88 +90480,88 @@
       "dropitemstex.drop_sack_t00"
     ],
     "icon": [
-      "harbor.virus_icon.virus_03_h_i00"
+      "elmorelab.virus_icon.virus_03_h_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.viRUS_MF_03_m002_a"
+      "elmorelab.viRUS_MF_03_m002_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.viRUS_FF_03_m002_a"
+      "elmorelab.viRUS_FF_03_m002_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.viRUS_MM_03_m002_a"
+      "elmorelab.viRUS_MM_03_m002_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.viRUS_FM_03_m002_a"
+      "elmorelab.viRUS_FM_03_m002_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.viRUS_ME_03_m002_a"
+      "elmorelab.viRUS_ME_03_m002_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.viRUS_FE_03_m002_a"
+      "elmorelab.viRUS_FE_03_m002_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.viRUS_MD_03_m002_a"
+      "elmorelab.viRUS_MD_03_m002_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.viRUS_FD_03_m002_a"
+      "elmorelab.viRUS_FD_03_m002_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.viRUS_MW_03_m002_a"
+      "elmorelab.viRUS_MW_03_m002_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.viRUS_FW_03_m002_a"
+      "elmorelab.viRUS_FW_03_m002_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.viRUS_MO_03_m002_a"
+      "elmorelab.viRUS_MO_03_m002_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.viRUS_FO_03_m002_a"
+      "elmorelab.viRUS_FO_03_m002_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.viRUS_MS_03_m002_a"
+      "elmorelab.viRUS_MS_03_m002_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.viRUS_FS_03_m002_a"
+      "elmorelab.viRUS_FS_03_m002_a"
     ],
     "fshaman_texture": [
       "none"
@@ -90743,85 +90743,85 @@
       "icon.accessory_romantic_chaperon_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabMF_romantic_cap_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabFF_romantic_cap_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabMM_romantic_cap_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabFM_romantic_cap_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabME_romantic_cap_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabFE_romantic_cap_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabMDe_romantic_cap_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabFDe_romantic_cap_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabMD_romantic_cap_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabFD_romantic_cap_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabMO_romantic_cap_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabFO_romantic_cap_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabMS_romantic_cap_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_romantic_cap_m003_a"
+      "elmorelab.ElmoreLabFS_romantic_cap_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -90873,85 +90873,85 @@
       "icon.accessory_iron_circlet_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabMF_iron_circlet_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabFF_iron_circlet_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabMM_iron_circlet_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabFM_iron_circlet_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabME_iron_circlet_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabFE_iron_circlet_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabMDe_iron_circlet_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabFDe_iron_circlet_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabMD_iron_circlet_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabFD_iron_circlet_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabMO_iron_circlet_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabFO_iron_circlet_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabMS_iron_circlet_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_iron_circlet_m003_a"
+      "elmorelab.ElmoreLabFS_iron_circlet_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -91003,85 +91003,85 @@
       "icon.accessory_valakas_circlet_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabMF_valakas_circlet_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabFF_valakas_circlet_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabMM_valakas_circlet_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabFM_valakas_circlet_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabME_valakas_circlet_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabFE_valakas_circlet_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabMDe_valakas_circlet_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabFDe_valakas_circlet_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabMD_valakas_circlet_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabFD_valakas_circlet_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabMO_valakas_circlet_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabFO_valakas_circlet_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabMS_valakas_circlet_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_valakas_circlet_m003_a"
+      "elmorelab.ElmoreLabFS_valakas_circlet_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -91133,85 +91133,85 @@
       "icon.accessory_antaras_circlet_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabMF_antaras_circlet_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabFF_antaras_circlet_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabMM_antaras_circlet_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabFM_antaras_circlet_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabME_antaras_circlet_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabFE_antaras_circlet_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabMDe_antaras_circlet_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabFDe_antaras_circlet_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabMD_antaras_circlet_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabFD_antaras_circlet_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabMO_antaras_circlet_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabFO_antaras_circlet_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabMS_antaras_circlet_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_antaras_circlet_m003_a"
+      "elmorelab.ElmoreLabFS_antaras_circlet_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -91913,85 +91913,85 @@
       "icon.accessary_black_half_mask_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_half_face1_m003_a"
+      "elmorelab.ElmoreLabMF_half_face1_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_half_face1_m003_a"
+      "elmorelab.ElmoreLabFF_half_face1_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_half_face1_m003_a"
+      "elmorelab.ElmoreLabMM_half_face1_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_half_face1_m003_a"
+      "elmorelab.ElmoreLabFM_half_face1_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_half_face1_m003_a"
+      "elmorelab.ElmoreLabME_half_face1_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_half_face1_m003_a"
+      "elmorelab.ElmoreLabFE_half_face1_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_half_face1_m003_a"
+      "elmorelab.ElmoreLabMDe_half_face1_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_half_face1_m003_a"
+      "elmorelab.ElmoreLabFDe_half_face1_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_half_face1_m003_a"
+      "elmorelab.ElmoreLabMD_half_face1_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_half_face1_m003_a"
+      "elmorelab.ElmoreLabFD_half_face1_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_half_face1_m003_a"
+      "elmorelab.ElmoreLabMO_half_face1_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_half_face1_m003_a"
+      "elmorelab.ElmoreLabFO_half_face1_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_half_face1_m003_a"
+      "elmorelab.ElmoreLabMS_half_face1_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_half_face1_m003_a"
+      "elmorelab.ElmoreLabFS_half_face1_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -92043,85 +92043,85 @@
       "icon.accessary_butterfly_hearpin_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabMF_black_butterfly_hearpin_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabFF_black_butterfly_hearpin_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabMM_black_butterfly_hearpin_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabFM_black_butterfly_hearpin_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabME_black_butterfly_hearpin_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabFE_black_butterfly_hearpin_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabMDe_black_butterfly_hearpin_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabFDe_black_butterfly_hearpin_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabMD_black_butterfly_hearpin_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabFD_black_butterfly_hearpin_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabMO_black_butterfly_hearpin_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabFO_black_butterfly_hearpin_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabMS_black_butterfly_hearpin_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_black_butterfly_hearpin_m003_a"
+      "elmorelab.ElmoreLabFS_black_butterfly_hearpin_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -92173,85 +92173,85 @@
       "icon.accessary_middle_ages_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_middle_ages_m003_a"
+      "elmorelab.ElmoreLabMF_middle_ages_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_middle_ages_m003_a"
+      "elmorelab.ElmoreLabFF_middle_ages_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_middle_ages_m003_a"
+      "elmorelab.ElmoreLabMM_middle_ages_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_middle_ages_m003_a"
+      "elmorelab.ElmoreLabFM_middle_ages_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_middle_ages_m003_a"
+      "elmorelab.ElmoreLabME_middle_ages_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_middle_ages_m003_a"
+      "elmorelab.ElmoreLabFE_middle_ages_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_middle_ages_m003_a"
+      "elmorelab.ElmoreLabMDe_middle_ages_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_middle_ages_m003_a"
+      "elmorelab.ElmoreLabFDe_middle_ages_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_middle_ages_m003_a"
+      "elmorelab.ElmoreLabMD_middle_ages_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_middle_ages_m003_a"
+      "elmorelab.ElmoreLabFD_middle_ages_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_middle_ages_m003_a"
+      "elmorelab.ElmoreLabMO_middle_ages_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_middle_ages_m003_a"
+      "elmorelab.ElmoreLabFO_middle_ages_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_middle_ages_m003_a"
+      "elmorelab.ElmoreLabMS_middle_ages_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_middle_ages_m003_a"
+      "elmorelab.ElmoreLabFS_middle_ages_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -92658,7 +92658,7 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
     "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
-    "attack_effect": "LineageEffect.p_u002_b",
+    "attack_effect": "LineageEffect.p_u002_a",
     "armor_type": "none",
     "weight": 0,
     "material_type": "leather",
@@ -92788,7 +92788,7 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
     "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
-    "attack_effect": "LineageEffect.p_u002_b",
+    "attack_effect": "LineageEffect.p_u002_a",
     "armor_type": "none",
     "weight": 0,
     "material_type": "leather",
@@ -92823,85 +92823,85 @@
       "icon.accessary_sea_robber_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_sea_robber_m003_a"
+      "elmorelab.ElmoreLabMF_sea_robber_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_sea_robber_m003_a"
+      "elmorelab.ElmoreLabFF_sea_robber_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_sea_robber_m003_a"
+      "elmorelab.ElmoreLabMM_sea_robber_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_sea_robber_m003_a"
+      "elmorelab.ElmoreLabFM_sea_robber_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_sea_robber_m003_a"
+      "elmorelab.ElmoreLabME_sea_robber_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_sea_robber_m003_a"
+      "elmorelab.ElmoreLabFE_sea_robber_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_sea_robber_m003_a"
+      "elmorelab.ElmoreLabMDe_sea_robber_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_sea_robber_m003_a"
+      "elmorelab.ElmoreLabFDe_sea_robber_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_sea_robber_m003_a"
+      "elmorelab.ElmoreLabMD_sea_robber_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_sea_robber_m003_a"
+      "elmorelab.ElmoreLabFD_sea_robber_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_sea_robber_m003_a"
+      "elmorelab.ElmoreLabMO_sea_robber_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_sea_robber_m003_a"
+      "elmorelab.ElmoreLabFO_sea_robber_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_sea_robber_m003_a"
+      "elmorelab.ElmoreLabMS_sea_robber_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_sea_robber_m003_a"
+      "elmorelab.ElmoreLabFS_sea_robber_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -92950,88 +92950,88 @@
       "dropitemstex.drop_sack_t00"
     ],
     "icon": [
-      "harbor.accessory_magician_cap2_i00"
+      "elmorelab.accessory_magician_cap2_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.viRUS1_MF_03_m002_a"
+      "elmorelab.viRUS1_MF_03_m002_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.viRUS1_FF_03_m002_a"
+      "elmorelab.viRUS1_FF_03_m002_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.viRUS1_MM_03_m002_a"
+      "elmorelab.viRUS1_MM_03_m002_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.viRUS1_FM_03_m002_a"
+      "elmorelab.viRUS1_FM_03_m002_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.viRUS1_ME_03_m002_a"
+      "elmorelab.viRUS1_ME_03_m002_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.viRUS1_FE_03_m002_a"
+      "elmorelab.viRUS1_FE_03_m002_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.viRUS1_MD_03_m002_a"
+      "elmorelab.viRUS1_MD_03_m002_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.viRUS1_FD_03_m002_a"
+      "elmorelab.viRUS1_FD_03_m002_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.viRUS1_MW_03_m002_a"
+      "elmorelab.viRUS1_MW_03_m002_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.viRUS1_FW_03_m002_a"
+      "elmorelab.viRUS1_FW_03_m002_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.viRUS1_MO_03_m002_a"
+      "elmorelab.viRUS1_MO_03_m002_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.viRUS1_FO_03_m002_a"
+      "elmorelab.viRUS1_FO_03_m002_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.viRUS1_MS_03_m002_a"
+      "elmorelab.viRUS1_MS_03_m002_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.viRUS1_FS_03_m002_a"
+      "elmorelab.viRUS1_FS_03_m002_a"
     ],
     "fshaman_texture": [
       "none"
@@ -93083,85 +93083,85 @@
       "icon.accessory_jester_cap_2_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabMF_jester_cap1_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabFF_jester_cap1_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabMM_jester_cap1_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabFM_jester_cap1_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabME_jester_cap1_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabFE_jester_cap1_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabMDe_jester_cap1_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabFDe_jester_cap1_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabMD_jester_cap1_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabFD_jester_cap1_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabMO_jester_cap1_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabFO_jester_cap1_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabMS_jester_cap1_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_jester_cap1_m003_a"
+      "elmorelab.ElmoreLabFS_jester_cap1_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -93213,85 +93213,85 @@
       "icon.accessory_archer_hat2_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_archer_hat_m003_a"
+      "elmorelab.ElmoreLabMF_archer_hat_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_archer_hat_m003_a"
+      "elmorelab.ElmoreLabFF_archer_hat_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_archer_hat_m003_a"
+      "elmorelab.ElmoreLabMM_archer_hat_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_archer_hat_m003_a"
+      "elmorelab.ElmoreLabFM_archer_hat_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_archer_hat_m003_a"
+      "elmorelab.ElmoreLabME_archer_hat_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_archer_hat_m003_a"
+      "elmorelab.ElmoreLabFE_archer_hat_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_archer_hat_m003_a"
+      "elmorelab.ElmoreLabMDe_archer_hat_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_archer_hat_m003_a"
+      "elmorelab.ElmoreLabFDe_archer_hat_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_archer_hat_m003_a"
+      "elmorelab.ElmoreLabMD_archer_hat_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_archer_hat_m003_a"
+      "elmorelab.ElmoreLabFD_archer_hat_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_archer_hat_m003_a"
+      "elmorelab.ElmoreLabMO_archer_hat_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_archer_hat_m003_a"
+      "elmorelab.ElmoreLabFO_archer_hat_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_archer_hat_m003_a"
+      "elmorelab.ElmoreLabMS_archer_hat_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_archer_hat_m003_a"
+      "elmorelab.ElmoreLabFS_archer_hat_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -93343,85 +93343,85 @@
       "icon.accessory_dandy_cap2_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabMF_dandy_cap1_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabFF_dandy_cap1_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabMM_dandy_cap1_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabFM_dandy_cap1_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabME_dandy_cap1_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabFE_dandy_cap1_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabMDe_dandy_cap1_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabFDe_dandy_cap1_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabMD_dandy_cap1_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabFD_dandy_cap1_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabMO_dandy_cap1_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabFO_dandy_cap1_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabMS_dandy_cap1_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_dandy_cap1_m003_a"
+      "elmorelab.ElmoreLabFS_dandy_cap1_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -93568,7 +93568,7 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
     "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
-    "attack_effect": "LineageEffect.p_u002_b",
+    "attack_effect": "LineageEffect.p_u002_a",
     "armor_type": "none",
     "weight": 0,
     "material_type": "leather",
@@ -93698,7 +93698,7 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
     "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
-    "attack_effect": "LineageEffect.p_u002_b",
+    "attack_effect": "LineageEffect.p_u002_a",
     "armor_type": "none",
     "weight": 0,
     "material_type": "leather",
@@ -93828,7 +93828,7 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
     "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
-    "attack_effect": "LineageEffect.p_u002_b",
+    "attack_effect": "LineageEffect.p_u002_a",
     "armor_type": "none",
     "weight": 0,
     "material_type": "leather",
@@ -93863,85 +93863,85 @@
       "icon.accessory_hairpin_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_hairpin_m003_a"
+      "elmorelab.ElmoreLabMF_hairpin_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_hairpin_m003_a"
+      "elmorelab.ElmoreLabFF_hairpin_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_hairpin_m003_a"
+      "elmorelab.ElmoreLabMM_hairpin_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_hairpin_m003_a"
+      "elmorelab.ElmoreLabFM_hairpin_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_hairpin_m003_a"
+      "elmorelab.ElmoreLabME_hairpin_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_hairpin_m003_a"
+      "elmorelab.ElmoreLabFE_hairpin_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_hairpin_m003_a"
+      "elmorelab.ElmoreLabMDe_hairpin_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_hairpin_m003_a"
+      "elmorelab.ElmoreLabFDe_hairpin_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_hairpin_m003_a"
+      "elmorelab.ElmoreLabMD_hairpin_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_hairpin_m003_a"
+      "elmorelab.ElmoreLabFD_hairpin_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_hairpin_m003_a"
+      "elmorelab.ElmoreLabMO_hairpin_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_hairpin_m003_a"
+      "elmorelab.ElmoreLabFO_hairpin_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_hairpin_m003_a"
+      "elmorelab.ElmoreLabMS_hairpin_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_hairpin_m003_a"
+      "elmorelab.ElmoreLabFS_hairpin_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -94123,85 +94123,85 @@
       "icon.accessory_bamboo_hat_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabMF_bamboo_hat_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabFF_bamboo_hat_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabMM_bamboo_hat_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabFM_bamboo_hat_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabME_bamboo_hat_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabFE_bamboo_hat_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabMDe_bamboo_hat_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabFDe_bamboo_hat_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabMD_bamboo_hat_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabFD_bamboo_hat_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabMO_bamboo_hat_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabFO_bamboo_hat_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabMS_bamboo_hat_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_bamboo_hat_m003_a"
+      "elmorelab.ElmoreLabFS_bamboo_hat_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -94253,85 +94253,85 @@
       "icon.br_close_helmet_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabMF_br_close_helmet_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabFF_br_close_helmet_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabMM_br_close_helmet_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabFM_br_close_helmet_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabME_br_close_helmet_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabFE_br_close_helmet_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabMDe_br_close_helmet_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabFDe_br_close_helmet_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabMD_br_close_helmet_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabFD_br_close_helmet_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabMO_br_close_helmet_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabFO_br_close_helmet_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabMS_br_close_helmet_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_br_close_helmet_m003_a"
+      "elmorelab.ElmoreLabFS_br_close_helmet_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -94383,85 +94383,85 @@
       "icon.br_napoleonic_cap_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabMF_br_napoleonic_cap_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabFF_br_napoleonic_cap_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabMM_br_napoleonic_cap_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabFM_br_napoleonic_cap_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabME_br_napoleonic_cap_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabFE_br_napoleonic_cap_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabMDe_br_napoleonic_cap_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabFDe_br_napoleonic_cap_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabMD_br_napoleonic_cap_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabFD_br_napoleonic_cap_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabMO_br_napoleonic_cap_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabFO_br_napoleonic_cap_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabMS_br_napoleonic_cap_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_br_napoleonic_cap_m003_a"
+      "elmorelab.ElmoreLabFS_br_napoleonic_cap_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -94608,7 +94608,7 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
     "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
-    "attack_effect": "LineageEffect.p_u002_b",
+    "attack_effect": "LineageEffect.p_u002_a",
     "armor_type": "none",
     "weight": 0,
     "material_type": "leather",
@@ -94738,7 +94738,7 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
     "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
-    "attack_effect": "LineageEffect.p_u002_b",
+    "attack_effect": "LineageEffect.p_u002_a",
     "armor_type": "none",
     "weight": 0,
     "material_type": "leather",
@@ -94868,7 +94868,7 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
     "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
-    "attack_effect": "LineageEffect.p_u002_b",
+    "attack_effect": "LineageEffect.p_u002_a",
     "armor_type": "none",
     "weight": 0,
     "material_type": "leather",
@@ -94998,7 +94998,7 @@
     ],
     "drop_sound": "ItemSound.item_drop_equip_armor_helmet",
     "equip_sound": "ItemSound.item_drop_equip_armor_helmet",
-    "attack_effect": "LineageEffect.p_u002_b",
+    "attack_effect": "LineageEffect.p_u002_a",
     "armor_type": "none",
     "weight": 0,
     "material_type": "leather",
@@ -95553,85 +95553,85 @@
       "icon.bm_romantic_chaperon_gold"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabMF_romantic_chaperon_gold_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabFF_romantic_chaperon_gold_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabMM_romantic_chaperon_gold_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabFM_romantic_chaperon_gold_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabME_romantic_chaperon_gold_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabFE_romantic_chaperon_gold_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabMDe_romantic_chaperon_gold_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabFDe_romantic_chaperon_gold_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabMD_romantic_chaperon_gold_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabFD_romantic_chaperon_gold_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabMO_romantic_chaperon_gold_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabFO_romantic_chaperon_gold_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabMS_romantic_chaperon_gold_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_romantic_chaperon_gold_m003_a"
+      "elmorelab.ElmoreLabFS_romantic_chaperon_gold_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -95683,85 +95683,85 @@
       "icon.pi_silverchaperon"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabMF_romantic_chaperon_white_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabFF_romantic_chaperon_white_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabMM_romantic_chaperon_white_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabFM_romantic_chaperon_white_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabME_romantic_chaperon_white_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabFE_romantic_chaperon_white_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabMDe_romantic_chaperon_white_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabFDe_romantic_chaperon_white_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabMD_romantic_chaperon_white_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabFD_romantic_chaperon_white_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabMO_romantic_chaperon_white_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabFO_romantic_chaperon_white_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabMS_romantic_chaperon_white_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_romantic_chaperon_white_m003_a"
+      "elmorelab.ElmoreLabFS_romantic_chaperon_white_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -95813,85 +95813,85 @@
       "icon.accessory_straw_hat_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_straw_hat_m003_a"
+      "elmorelab.ElmoreLabMF_straw_hat_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_straw_hat_m003_a"
+      "elmorelab.ElmoreLabFF_straw_hat_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_straw_hat_m003_a"
+      "elmorelab.ElmoreLabMM_straw_hat_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_straw_hat_m003_a"
+      "elmorelab.ElmoreLabFM_straw_hat_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_straw_hat_m003_a"
+      "elmorelab.ElmoreLabME_straw_hat_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_straw_hat_m003_a"
+      "elmorelab.ElmoreLabFE_straw_hat_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_straw_hat_m003_a"
+      "elmorelab.ElmoreLabMDe_straw_hat_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_straw_hat_m003_a"
+      "elmorelab.ElmoreLabFDe_straw_hat_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_straw_hat_m003_a"
+      "elmorelab.ElmoreLabMD_straw_hat_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_straw_hat_m003_a"
+      "elmorelab.ElmoreLabFD_straw_hat_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_straw_hat_m003_a"
+      "elmorelab.ElmoreLabMO_straw_hat_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_straw_hat_m003_a"
+      "elmorelab.ElmoreLabFO_straw_hat_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_straw_hat_m003_a"
+      "elmorelab.ElmoreLabMS_straw_hat_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_straw_hat_m003_a"
+      "elmorelab.ElmoreLabFS_straw_hat_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -95943,85 +95943,85 @@
       "icon.accessory_explorer_hat_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabMF_explorer_hat_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabFF_explorer_hat_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabMM_explorer_hat_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabFM_explorer_hat_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabME_explorer_hat_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabFE_explorer_hat_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabMDe_explorer_hat_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabFDe_explorer_hat_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabMD_explorer_hat_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabFD_explorer_hat_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabMO_explorer_hat_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabFO_explorer_hat_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabMS_explorer_hat_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_explorer_hat_m003_a"
+      "elmorelab.ElmoreLabFS_explorer_hat_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -96073,85 +96073,85 @@
       "icon.accessory_magicial_cap_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabMF_Event_magicial_cap_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabFF_Event_magicial_cap_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabMM_Event_magicial_cap_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabFM_Event_magicial_cap_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabME_Event_magicial_cap_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabFE_Event_magicial_cap_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabMDe_Event_magicial_cap_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabFDe_Event_magicial_cap_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabMD_Event_magicial_cap_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabFD_Event_magicial_cap_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabMO_Event_magicial_cap_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabFO_Event_magicial_cap_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabMS_Event_magicial_cap_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_Event_magicial_cap_m003_a"
+      "elmorelab.ElmoreLabFS_Event_magicial_cap_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -96203,85 +96203,85 @@
       "icon.br_uniform_hat_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabMF_Br_Uniform_Hat_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabFF_Br_Uniform_Hat_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabMM_Br_Uniform_Hat_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabFM_Br_Uniform_Hat_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabME_Br_Uniform_Hat_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabFE_Br_Uniform_Hat_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabMDe_Br_Uniform_Hat_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabFDe_Br_Uniform_Hat_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabMD_Br_Uniform_Hat_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabFD_Br_Uniform_Hat_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabMO_Br_Uniform_Hat_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabFO_Br_Uniform_Hat_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabMS_Br_Uniform_Hat_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_Br_Uniform_Hat_m003_a"
+      "elmorelab.ElmoreLabFS_Br_Uniform_Hat_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -96333,85 +96333,85 @@
       "icon.br_navy_cap_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabMF_Br_Uniform_Hat1_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabFF_Br_Uniform_Hat1_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabMM_Br_Uniform_Hat1_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabFM_Br_Uniform_Hat1_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabME_br_Uniform_Hat1_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabFE_Br_Uniform_Hat1_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabMDe_Br_Uniform_Hat1_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabFDe_Br_Uniform_Hat1_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabMD_Br_Uniform_Hat1_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabFD_Br_Uniform_Hat1_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabMO_Br_Uniform_Hat1_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabFO_Br_Uniform_Hat1_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabMS_Br_Uniform_Hat1_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_Br_Uniform_Hat1_m003_a"
+      "elmorelab.ElmoreLabFS_Br_Uniform_Hat1_m003_a"
     ],
     "fshaman_texture": [
       "none"
@@ -96723,85 +96723,85 @@
       "icon.accessory_hair_cornu_event_i00"
     ],
     "mfighter_mesh": [
-      "Harbor.ElmoreLabMF_hair_cornu_event_m003_a"
+      "Harbor.Harbor_MF_hair_cornu_event_m003_a"
     ],
     "mfighter_texture": [
       "none"
     ],
     "ffighter_mesh": [
-      "Harbor.ElmoreLabFF_hair_cornu_event_m003_a"
+      "Harbor.Harbor_FF_hair_cornu_event_m003_a"
     ],
     "ffighter_texture": [
       "none"
     ],
     "mmagic_mesh": [
-      "Harbor.ElmoreLabMM_hair_cornu_event_m003_a"
+      "Harbor.Harbor_MM_hair_cornu_event_m003_a"
     ],
     "mmagic_texture": [
       "none"
     ],
     "fmagic_mesh": [
-      "Harbor.ElmoreLabFM_hair_cornu_event_m003_a"
+      "Harbor.Harbor_FM_hair_cornu_event_m003_a"
     ],
     "fmagic_texture": [
       "none"
     ],
     "melf_mesh": [
-      "Harbor.ElmoreLabME_hair_cornu_event_m003_a"
+      "Harbor.Harbor_ME_hair_cornu_event_m003_a"
     ],
     "melf_texture": [
       "none"
     ],
     "felf_mesh": [
-      "Harbor.ElmoreLabFE_hair_cornu_event_m003_a"
+      "Harbor.Harbor_FE_hair_cornu_event_m003_a"
     ],
     "felf_texture": [
       "none"
     ],
     "mdarkelf_mesh": [
-      "Harbor.ElmoreLabMDe_hair_cornu_event_m003_a"
+      "Harbor.Harbor_MDe_hair_cornu_event_m003_a"
     ],
     "mdarkelf_texture": [
       "none"
     ],
     "fdarkelf_mesh": [
-      "Harbor.ElmoreLabFDe_hair_cornu_event_m003_a"
+      "Harbor.Harbor_FDe_hair_cornu_event_m003_a"
     ],
     "fdarkelf_texture": [
       "none"
     ],
     "mdwarf_mesh": [
-      "Harbor.ElmoreLabMD_hair_cornu_event_m003_a"
+      "Harbor.Harbor_MD_hair_cornu_event_m003_a"
     ],
     "mdwarf_texture": [
       "none"
     ],
     "fdwarf_mesh": [
-      "Harbor.ElmoreLabFD_hair_cornu_event_m003_a"
+      "Harbor.Harbor_FD_hair_cornu_event_m003_a"
     ],
     "fdwarf_texture": [
       "none"
     ],
     "morc_mesh": [
-      "Harbor.ElmoreLabMO_hair_cornu_event_m003_a"
+      "Harbor.Harbor_MO_hair_cornu_event_m003_a"
     ],
     "morc_texture": [
       "none"
     ],
     "forc_mesh": [
-      "Harbor.ElmoreLabFO_hair_cornu_event_m003_a"
+      "Harbor.Harbor_FO_hair_cornu_event_m003_a"
     ],
     "forc_texture": [
       "none"
     ],
     "mshaman_mesh": [
-      "Harbor.ElmoreLabMS_hair_cornu_event_m003_a"
+      "Harbor.Harbor_MS_hair_cornu_event_m003_a"
     ],
     "mshaman_texture": [
       "none"
     ],
     "fshaman_mesh": [
-      "Harbor.ElmoreLabFS_hair_cornu_event_m003_a"
+      "Harbor.Harbor_FS_hair_cornu_event_m003_a"
     ],
     "fshaman_texture": [
       "none"
