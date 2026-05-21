@@ -350,7 +350,7 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
                               </ParamValue>
                             </PartParam>
                           )}
-                          {item.crystal_count && (
+                          {!!item.crystal_count && (
                             <PartParam>
                               <ParamLabel>
                                 {t('armorSetDetails.crystalCount')}:
