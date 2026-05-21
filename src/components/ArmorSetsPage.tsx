@@ -165,31 +165,34 @@ export const ArmorSetsPage = () => {
     return baseFilters
   }, [grade, armorType, uniqueGrades, uniqueArmorTypes, t, capitalizeGrade])
 
-  const renderCell = useCallback((armorSet: ArmorSet, column: string) => {
-    switch (column) {
-      case 'visual':
-        return <ArmorSetVisual armorSet={armorSet} />
-      case 'name':
-        return (
-          <Link
-            rel="canonical"
-            href={`/armorsets/${armorSet.id}`}
-            onClick={(e) => e.stopPropagation()}
-            tabIndex={-1}
-          >
-            {armorSet.name}
-          </Link>
-        )
-      case 'grade':
-        return capitalizeGrade(armorSet.grade)
-      case 'items':
-        return armorSet.items?.map((item) => item.name).join(', ') || '-'
-      case 'bonus_stats':
-        return armorSet.set_bonus || '-'
-      default:
-        return armorSet[column as keyof ArmorSet]?.toString() || '-'
-    }
-  }, [capitalizeGrade])
+  const renderCell = useCallback(
+    (armorSet: ArmorSet, column: string) => {
+      switch (column) {
+        case 'visual':
+          return <ArmorSetVisual armorSet={armorSet} />
+        case 'name':
+          return (
+            <Link
+              rel="canonical"
+              href={`/armorsets/${armorSet.id}`}
+              onClick={(e) => e.stopPropagation()}
+              tabIndex={-1}
+            >
+              {armorSet.name}
+            </Link>
+          )
+        case 'grade':
+          return capitalizeGrade(armorSet.grade)
+        case 'items':
+          return armorSet.items?.map((item) => item.name).join(', ') || '-'
+        case 'bonus_stats':
+          return armorSet.set_bonus || '-'
+        default:
+          return armorSet[column as keyof ArmorSet]?.toString() || '-'
+      }
+    },
+    [capitalizeGrade],
+  )
 
   const columns = useMemo(() => {
     const labelMap: Partial<Record<keyof ArmorSet | 'visual', string>> = {

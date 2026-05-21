@@ -256,7 +256,9 @@ export const ItemsPage = ({
               src={
                 failedImages.has(item.object_id)
                   ? getDataUrl('/icon/etc_alphabet_ii_i00.webp')
-                  : getDataUrl(`/icon/${item?.icon?.[0].split('.').at(-1)}.webp`)
+                  : getDataUrl(
+                      `/icon/${item?.icon?.[0].split('.').at(-1)}.webp`,
+                    )
               }
               alt={item.name || item.object_name}
               width={32}
@@ -389,15 +391,7 @@ export const ItemsPage = ({
     }
 
     return baseFilters
-  }, [
-    items,
-    type,
-    crystalType,
-    bodyPart,
-    armorType,
-    weaponType,
-    t,
-  ])
+  }, [items, type, crystalType, bodyPart, armorType, weaponType, t])
 
   const checkboxFilters = useMemo(
     () => [

@@ -34,7 +34,7 @@ interface ItemDetailsProps {
   id: number
 }
 
-const BIRTHDAY_ITEM_ID_2026 = 5600;
+const BIRTHDAY_ITEM_ID_2026 = 5600
 
 const ItemDetailsLoading = () => {
   return (
@@ -376,7 +376,9 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
           <Description>
             {item?.description?.replace(/\\n/g, '\n') ||
               t('details.noDescription')}
-            {item?.object_id === BIRTHDAY_ITEM_ID_2026 && <HarborBirthdayItem />}
+            {item?.object_id === BIRTHDAY_ITEM_ID_2026 && (
+              <HarborBirthdayItem />
+            )}
           </Description>
 
           <Stats>

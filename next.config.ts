@@ -2,9 +2,9 @@ import type { NextConfig } from 'next'
 
 const isGitHubPages = process.env.GITHUB_PAGES === '1'
 const basePath = isGitHubPages
-  ? (process.env.GITHUB_PAGES_BASE_PATH !== undefined
+  ? process.env.GITHUB_PAGES_BASE_PATH !== undefined
     ? process.env.GITHUB_PAGES_BASE_PATH
-    : '/tower.of.ivory.com.de')
+    : '/tower.of.ivory.com.de'
   : undefined
 
 const nextConfig: NextConfig = {
@@ -21,7 +21,11 @@ const nextConfig: NextConfig = {
   ...(isGitHubPages && {
     output: 'export',
     basePath: basePath ?? '',
-    assetPrefix: basePath ? (basePath.endsWith('/') ? basePath : `${basePath}/`) : '/',
+    assetPrefix: basePath
+      ? basePath.endsWith('/')
+        ? basePath
+        : `${basePath}/`
+      : '/',
     trailingSlash: true,
   }),
   env: {

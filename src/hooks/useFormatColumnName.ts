@@ -10,8 +10,7 @@ const defaultFormat = (key: string) =>
 export const useFormatColumnName = () => {
   const { t } = useTranslation()
   return useCallback(
-    (key: string) =>
-      t(`columns.${key}`, { defaultValue: defaultFormat(key) }),
+    (key: string) => t(`columns.${key}`, { defaultValue: defaultFormat(key) }),
     [t],
   )
 }

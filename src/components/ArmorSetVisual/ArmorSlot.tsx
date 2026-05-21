@@ -13,10 +13,7 @@ interface ArmorSlotProps {
   armorSet: ArmorSet
 }
 
-export const ArmorSlot = ({
-  slot,
-  armorSet,
-}: ArmorSlotProps) => {
+export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
   const router = useRouter()
   const armorPiece = armorSet.items?.find((piece) =>
     piece.body_part?.some((part: string) =>
