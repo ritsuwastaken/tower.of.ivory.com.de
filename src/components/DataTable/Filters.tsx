@@ -153,6 +153,7 @@ const FiltersSection = styled.div`
 
 const FilterGroup = styled.div`
   margin-bottom: 1rem;
+  padding: 0.25rem 0;
 `
 
 const FilterLabel = styled.label`
@@ -192,6 +193,19 @@ const CheckboxLabel = styled.label`
   align-items: center;
   gap: 0.5rem;
   color: #888;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+
+  input {
+    cursor: pointer;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    color: #fff;
+  }
 `
 
 const ViewToggle = styled.button`

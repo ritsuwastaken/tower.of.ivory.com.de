@@ -30,20 +30,14 @@ export function useDataTable<T>({
   const [columnVisibility, setColumnVisibility] = useState(
     defaultColumnVisibility,
   )
-  const [viewMode, setViewMode] = useState<'table' | 'grid'>(defaultViewMode)
 
-  const handleSort = useCallback(
-    (column: keyof T) => {
-      setSortConfig({
-        column,
-        direction:
-          sortConfig.column === column && sortConfig.direction === 'asc'
-            ? 'desc'
-            : 'asc',
-      })
-    },
-    [sortConfig],
-  )
+  const handleSort = useCallback((column: keyof T) => {
+    setSortConfig((prev) => ({
+      column,
+      direction:
+        prev.column === column && prev.direction === 'asc' ? 'desc' : 'asc',
+    }))
+  }, [])
 
   const handleColumnVisibilityChange = useCallback(
     (column: string, visible: boolean) => {
@@ -52,9 +46,22 @@ export function useDataTable<T>({
     [],
   )
 
-  const handleViewModeChange = useCallback((mode: 'table' | 'grid') => {
-    setViewMode(mode)
-  }, [])
+  const handleViewModeChange = useCallback(
+    (mode: 'table' | 'grid') => {
+      const params = new URLSearchParams(searchParams)
+
+      if (mode === defaultViewMode) {
+        params.delete('view')
+      } else {
+        params.set('view', mode)
+      }
+
+      router.replace(`${pathname}?${params}`, {
+        scroll: false,
+      })
+    },
+    [router, pathname, searchParams, defaultViewMode],
+  )
 
   const handlePageChange = useCallback((page: number) => {
     setCurrentPage(page)
@@ -69,9 +76,8 @@ export function useDataTable<T>({
     setSearchTerm('')
     setCurrentPage(1)
     setColumnVisibility(defaultColumnVisibility)
-    setViewMode(defaultViewMode)
     onResetFilters?.()
-  }, [defaultColumnVisibility, defaultViewMode, onResetFilters])
+  }, [defaultColumnVisibility, onResetFilters])
 
   useEffect(() => {
     if (isInitialMount.current) {
@@ -79,34 +85,30 @@ export function useDataTable<T>({
       return
     }
 
-    const params = new URLSearchParams()
+    const params = new URLSearchParams(searchParams)
 
-    if (searchTerm) params.set('search', searchTerm)
-    if (currentPage > 1) params.set('page', currentPage.toString())
-    if (viewMode !== defaultViewMode) params.set('view', viewMode)
+    if (searchTerm) {
+      params.set('search', searchTerm)
+    } else {
+      params.delete('search')
+    }
+
+    if (currentPage > 1) {
+      params.set('page', currentPage.toString())
+    } else {
+      params.delete('page')
+    }
 
     const newUrl = `${pathname}?${params.toString()}`
     const currentUrl = `${pathname}?${searchParams.toString()}`
 
-    if (currentUrl !== newUrl) {
+    if (newUrl !== currentUrl) {
       router.replace(newUrl, { scroll: false })
     }
-  }, [
-    searchTerm,
-    currentPage,
-    viewMode,
-    pathname,
-    router,
-    searchParams,
-    defaultViewMode,
-  ])
+  }, [searchTerm, currentPage, pathname, router, searchParams])
 
-  useEffect(() => {
-    const viewFromParams = searchParams.get('view') as 'table' | 'grid' | null
-    if (viewFromParams && ['table', 'grid'].includes(viewFromParams)) {
-      setViewMode(viewFromParams)
-    }
-  }, [searchParams])
+  const viewMode: 'table' | 'grid' =
+    searchParams.get('view') === 'grid' ? 'grid' : 'table'
 
   return {
     searchTerm,

@@ -287,139 +287,160 @@ export const ItemsPage = ({
     [failedImages, type, formatCrystalType],
   )
 
-  const filters = useMemo(() => {
-    const uniqueBodyParts = [
-      ...new Set(
-        items
-          .flatMap((item) => item.body_part)
-          .filter((part): part is string => !!part?.length)
-          .map((part) => part.toLowerCase()),
-      ),
-    ].sort()
+  const uniqueBodyParts = useMemo(
+    () =>
+      [
+        ...new Set(
+          items
+            .flatMap((item) => item.body_part)
+            .filter((part): part is string => !!part?.length)
+            .map((part) => part.toLowerCase()),
+        ),
+      ].sort(),
+    [items],
+  )
 
-    const uniqueArmorTypes = [
-      ...new Set(
-        items
-          .map((item) => item.armor_type)
-          .filter(Boolean)
-          .map((type) => type!.toLowerCase()),
-      ),
-    ].sort()
+  const uniqueArmorTypes = useMemo(
+    () =>
+      [
+        ...new Set(
+          items
+            .map((item) => item.armor_type)
+            .filter(Boolean)
+            .map((type) => type!.toLowerCase()),
+        ),
+      ].sort(),
+    [items],
+  )
 
-    const uniqueWeaponTypes = [
-      ...new Set(
-        items
-          .map((item) => item.weapon_type)
-          .filter(Boolean)
-          .map((type) => type!.toLowerCase()),
-      ),
-    ].sort()
+  const uniqueWeaponTypes = useMemo(
+    () =>
+      [
+        ...new Set(
+          items
+            .map((item) => item.weapon_type)
+            .filter(Boolean)
+            .map((type) => type!.toLowerCase()),
+        ),
+      ].sort(),
+    [items],
+  )
 
-    const baseFilters = [
-      {
-        id: 'crystal-type',
-        label: t('filters.grade'),
-        value: crystalType,
-        onChange: setCrystalType,
-        options: [
-          { value: '', label: t('filters.all') },
-          { value: 'None', label: t('filters.gradeNone') },
-          { value: 'D', label: 'D' },
-          { value: 'C', label: 'C' },
-          { value: 'B', label: 'B' },
-          { value: 'A', label: 'A' },
-          { value: 'S', label: 'S' },
-        ],
-      },
-    ]
+  const filters = [
+    {
+      id: 'crystal-type',
+      label: t('filters.grade'),
+      value: crystalType,
+      onChange: setCrystalType,
+      options: [
+        { value: '', label: t('filters.all') },
+        { value: 'None', label: t('filters.gradeNone') },
+        { value: 'D', label: 'D' },
+        { value: 'C', label: 'C' },
+        { value: 'B', label: 'B' },
+        { value: 'A', label: 'A' },
+        { value: 'S', label: 'S' },
+      ],
+    },
 
-    if (uniqueBodyParts.length > 0) {
-      baseFilters.push({
-        id: 'body-part',
-        label: t('filters.bodyPart'),
-        value: bodyPart,
-        onChange: setBodyPart,
-        options: [
-          { value: '', label: t('filters.all') },
-          ...uniqueBodyParts.map((part) => ({
-            value: part,
-            label: part
-              .split(' ')
-              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(' '),
-          })),
-        ],
-      })
-    }
+    ...(uniqueBodyParts.length > 0
+      ? [
+          {
+            id: 'body-part',
+            label: t('filters.bodyPart'),
+            value: bodyPart,
+            onChange: setBodyPart,
+            options: [
+              { value: '', label: t('filters.all') },
+              ...uniqueBodyParts.map((part) => ({
+                value: part,
+                label: part
+                  .split(' ')
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(' '),
+              })),
+            ],
+          },
+        ]
+      : []),
 
-    if (uniqueArmorTypes.length > 0 && type === 'armor') {
-      baseFilters.push({
-        id: 'armor-type',
-        label: t('filters.armorType'),
-        value: armorType,
-        onChange: setArmorType,
-        options: [
-          { value: '', label: t('filters.all') },
-          ...uniqueArmorTypes.map((type) => ({
-            value: type,
-            label: type
-              .split(' ')
-              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(' '),
-          })),
-        ],
-      })
-    }
+    ...(uniqueArmorTypes.length > 0 && type === 'armor'
+      ? [
+          {
+            id: 'armor-type',
+            label: t('filters.armorType'),
+            value: armorType,
+            onChange: setArmorType,
+            options: [
+              { value: '', label: t('filters.all') },
+              ...uniqueArmorTypes.map((type) => ({
+                value: type,
+                label: type
+                  .split(' ')
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(' '),
+              })),
+            ],
+          },
+        ]
+      : []),
 
-    if (uniqueWeaponTypes.length > 0 && type === 'weapon') {
-      baseFilters.push({
-        id: 'weapon-type',
-        label: t('filters.weaponType'),
-        value: weaponType,
-        onChange: setWeaponType,
-        options: [
-          { value: '', label: t('filters.all') },
-          ...uniqueWeaponTypes.map((type) => ({
-            value: type,
-            label: type
-              .split(' ')
-              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(' '),
-          })),
-        ],
-      })
-    }
+    ...(uniqueWeaponTypes.length > 0 && type === 'weapon'
+      ? [
+          {
+            id: 'weapon-type',
+            label: t('filters.weaponType'),
+            value: weaponType,
+            onChange: setWeaponType,
+            options: [
+              { value: '', label: t('filters.all') },
+              ...uniqueWeaponTypes.map((type) => ({
+                value: type,
+                label: type
+                  .split(' ')
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                  .join(' '),
+              })),
+            ],
+          },
+        ]
+      : []),
+  ]
 
-    return baseFilters
-  }, [items, type, crystalType, bodyPart, armorType, weaponType, t])
+  const checkboxFilters = [
+    {
+      id: 'new-items',
+      label: t('filters.onlyNewItems'),
+      checked: showNew,
+      onChange: () => {
+        setShowNew((prev) => {
+          const next = !prev
 
-  const checkboxFilters = useMemo(
-    () => [
-      {
-        id: 'new-items',
-        label: t('filters.onlyNewItems'),
-        checked: showNew,
-        onChange: () => {
-          setShowNew(!showNew)
-          if (!showNew) {
+          if (next) {
             setShowChanged(false)
           }
-        },
+
+          return next
+        })
       },
-      {
-        id: 'changed-items',
-        label: t('filters.onlyChangedItems'),
-        checked: showChanged,
-        onChange: () => {
-          setShowChanged(!showChanged)
-          if (!showChanged) {
+    },
+    {
+      id: 'changed-items',
+      label: t('filters.onlyChangedItems'),
+      checked: showChanged,
+      onChange: () => {
+        setShowChanged((prev) => {
+          const next = !prev
+
+          if (next) {
             setShowNew(false)
           }
-        },
+
+          return next
+        })
       },
-    ],
-    [showNew, showChanged, t],
-  )
+    },
+  ]
 
   return (
     <DataTable

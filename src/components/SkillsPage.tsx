@@ -56,7 +56,7 @@ export const SkillsPage = () => {
   const router = useRouter()
   const formatColumnName = useFormatColumnName()
 
-  const [mergeSkills, setMergeSkills] = useState(true)
+  const [mergeSkillsEnabled, setMergeSkillsEnabled] = useState(true)
   const [showNew, setShowNew] = useState(false)
   const [showChanged, setShowChanged] = useState(false)
   const [failedImages, setFailedImages] = useState<Set<number>>(new Set())
@@ -86,6 +86,8 @@ export const SkillsPage = () => {
       return Array.isArray(data) ? data : []
     },
   })
+
+  const mergeSkills = mergeSkillsEnabled && !showNew && !showChanged
 
   const processedSkills = useMemo(() => {
     return mergeSkills ? mergeSkillLevels(skills) : skills
@@ -129,56 +131,62 @@ export const SkillsPage = () => {
   }
 
   useEffect(() => {
-    if (showNew || showChanged) {
-      setMergeSkills(false)
-    }
-  }, [showNew, showChanged])
-
-  useEffect(() => {
     handleColumnVisibilityChange('skill_level', !mergeSkills)
   }, [mergeSkills, handleColumnVisibilityChange])
 
-  const checkboxFilters = useMemo(
-    () => [
-      {
-        id: 'merge-levels',
-        label: t('filters.mergeLevels'),
-        checked: mergeSkills,
-        onChange: () => {
-          setMergeSkills(!mergeSkills)
-          if (!mergeSkills) {
+  const checkboxFilters = [
+    {
+      id: 'merge-levels',
+      label: t('filters.mergeLevels'),
+      checked: mergeSkills,
+      onChange: () => {
+        setMergeSkillsEnabled((prev) => {
+          const next = !prev
+
+          if (next) {
             setShowNew(false)
             setShowChanged(false)
           }
-        },
+
+          return next
+        })
       },
-      {
-        id: 'new-items',
-        label: t('filters.onlyNewSkills'),
-        checked: showNew,
-        onChange: () => {
-          setShowNew(!showNew)
-          if (!showNew) {
-            setMergeSkills(false)
+    },
+    {
+      id: 'new-items',
+      label: t('filters.onlyNewSkills'),
+      checked: showNew,
+      onChange: () => {
+        setShowNew((prev) => {
+          const next = !prev
+
+          if (next) {
             setShowChanged(false)
+            setMergeSkillsEnabled(false)
           }
-        },
+
+          return next
+        })
       },
-      {
-        id: 'changed-items',
-        label: t('filters.onlyChangedSkills'),
-        checked: showChanged,
-        onChange: () => {
-          setShowChanged(!showChanged)
-          if (!showChanged) {
-            setMergeSkills(false)
+    },
+    {
+      id: 'changed-items',
+      label: t('filters.onlyChangedSkills'),
+      checked: showChanged,
+      onChange: () => {
+        setShowChanged((prev) => {
+          const next = !prev
+
+          if (next) {
             setShowNew(false)
+            setMergeSkillsEnabled(false)
           }
-        },
+
+          return next
+        })
       },
-    ],
-    [mergeSkills, showNew, showChanged, t],
-  )
+    },
+  ]
 
   const columns = useMemo(
     () =>
@@ -252,7 +260,7 @@ export const SkillsPage = () => {
       noResultsMessage={t('skillsPage.noResults')}
       onResetFilters={() => {
         handleResetFilters()
-        setMergeSkills(true)
+        setMergeSkillsEnabled(true)
         setShowNew(false)
         setShowChanged(false)
       }}
