@@ -1,4 +1,5 @@
 import { useOnClickOutside } from '@/hooks/useOnClickOutside'
+import { useTranslation } from 'react-i18next'
 import { useRef } from 'react'
 import styled from 'styled-components'
 import { FiltersProps } from './types'
@@ -16,6 +17,7 @@ export function Filters({
   onViewModeChange,
   allowGridView,
 }: FiltersProps) {
+  const { t } = useTranslation()
   const toggleRef = useRef<HTMLButtonElement>(null)
   const filtersRef = useRef<HTMLDivElement>(null)
   useOnClickOutside(filtersRef, (e) => {
@@ -31,14 +33,14 @@ export function Filters({
         onClick={() => setShowFilters(!showFilters)}
         disabled={isLoading}
       >
-        Filters
+        {t('filters.filters')}
       </FiltersToggle>
 
       {showFilters && !isLoading && (
         <FiltersSection ref={filtersRef}>
           {allowGridView && (
             <FilterGroup>
-              <FilterLabel>View:</FilterLabel>
+              <FilterLabel>{t('filters.view')}:</FilterLabel>
               <ViewToggle
                 onClick={() =>
                   onViewModeChange?.(viewMode === 'table' ? 'grid' : 'table')
@@ -46,7 +48,9 @@ export function Filters({
                 disabled={isLoading}
                 style={{ width: '100%', marginBottom: '1rem' }}
               >
-                {viewMode === 'table' ? 'Grid View' : 'Table View'}
+                {viewMode === 'table'
+                  ? t('filters.viewModeGrid')
+                  : t('filters.viewModeTable')}
               </ViewToggle>
             </FilterGroup>
           )}
@@ -82,7 +86,7 @@ export function Filters({
           ))}
 
           <FilterGroup>
-            <FilterLabel>Columns:</FilterLabel>
+            <FilterLabel>{t('filters.columns')}:</FilterLabel>
             <ColumnToggles>
               {Object.entries(columnVisibility).map(([column, isVisible]) => (
                 <CheckboxLabel key={column}>

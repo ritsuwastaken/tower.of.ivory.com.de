@@ -120829,6 +120829,40 @@
     "description": "An ingredient of a Christmas Tree. Take it to a Santa trainee, along with the other necessary ingredients, and he will create a Christmas Tree for you."
   },
   {
+    "object_id": 5600,
+    "object_name": "harbor_bday_1_year",
+    "drop_type": "0 drop_anim_type",
+    "drop_radius": "6.7",
+    "drop_height": "3.5",
+    "drop_mesh": [
+      "dropitems.drop_x_mas_gift_m00"
+    ],
+    "drop_texture": [
+      "dropitemstex.drop_x_mas_gift_t00"
+    ],
+    "icon": [
+      "l2font.birthdayharbor"
+    ],
+    "mesh": [
+      "none"
+    ],
+    "texture": [
+      "none"
+    ],
+    "crystallizable": 0,
+    "drop_sound": "ItemSound.itemdrop_book",
+    "equip_sound": "none",
+    "etcitem_type": "scroll",
+    "weight": 0,
+    "consume_type": "consume_type_normal",
+    "material_type": "wood crystal_type",
+    "durability": 0,
+    "is_new": true,
+    "is_changed": false,
+    "name": "Harbor Birthday 1 year",
+    "description": "A commemorative item for 1st Harbor Birthday, 14.02.2026."
+  },
+  {
     "object_id": 5650,
     "object_name": "evileye_sword_blade",
     "drop_type": 0,

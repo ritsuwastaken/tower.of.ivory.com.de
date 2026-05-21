@@ -1,6 +1,31 @@
 {
     "header": {
-        "description": "Inoffizielle Datenbank für den Harbor C1 X1-Server"
+        "description": "Inoffizielle Datenbank für den Harbor C1 X1-Server",
+        "lastUpdate": "Letzte Aktualisierung"
+    },
+    "meta": {
+        "loading": "Wird geladen...",
+        "itemNotFound": "Gegenstand nicht gefunden",
+        "skillNotFound": "Fertigkeit nicht gefunden",
+        "armorSetNotFound": "Rüstungsset nicht gefunden"
+    },
+    "common": {
+        "yes": "Ja",
+        "no": "Nein"
+    },
+    "dataTable": {
+        "searchPlaceholder": "Suchen…",
+        "noResults": "Keine Einträge",
+        "resetFilters": "Filter zurücksetzen?"
+    },
+    "details": {
+        "noDescription": "Keine Beschreibung in den Client-Daten vorhanden.",
+        "notApplicable": "—",
+        "propertyChanged": "(geändert)",
+        "sections": {
+            "changedProperties": "Geänderte Werte",
+            "otherProperties": "Weitere Eigenschaften"
+        }
     },
     "navigation": {
         "armorsets": "Rüstungssets",
@@ -10,10 +35,12 @@
         "miscellaneous": "Verschiedenes"
     },
     "itemsPage": {
-        "searchPlaceholder": "Gegenstände suchen..."
+        "searchPlaceholder": "Gegenstände suchen…",
+        "noResults": "Keine passenden Gegenstände gefunden"
     },
     "armorSetsPage": {
-        "searchPlaceholder": "Rüstungssets suchen...",
+        "noResults": "Keine passenden Rüstungssets gefunden",
+        "searchPlaceholder": "Rüstungssets suchen…",
         "name": "Name",
         "physicalDefense": "Physische Verteidigung",
         "basePrice": "Grundpreis",
@@ -22,7 +49,8 @@
         "setBonus": "Set-Bonus"
     },
     "skillsPage": {
-        "searchPlaceholder": "Fertigkeiten suchen..."
+        "searchPlaceholder": "Fertigkeiten suchen…",
+        "noResults": "Keine passenden Fertigkeiten gefunden"
     },
     "itemDetails": {
         "changed": "Dieser Gegenstand wurde in Harbor geändert",
@@ -36,7 +64,11 @@
         "changed": "Diese Fertigkeit wurde in Harbor geändert",
         "new": "Diese Fertigkeit existiert nur in Harbor",
         "level": "Stufe",
-        "levels": "Stufen"
+        "levels": "Stufen",
+        "unnamedSkill": "Unbenannte Fertigkeit (ID {{id}})",
+        "pageTitle": "{{name}} · Stufe {{level}} · {{section}}",
+        "levelShort": "Stufe {{level}}",
+        "levelWithMp": "Stufe {{level}} (MP: {{mp}})"
     },
     "pagination": {
         "pageInfo": "Seite {{ current }} von {{ total }}"
@@ -46,6 +78,9 @@
     },
     "filters": {
         "filters": "Filter",
+        "view": "Ansicht",
+        "all": "Alle",
+        "gradeNone": "Keiner",
         "viewMode": "Ansichtsmodus",
         "viewModeGrid": "Raster",
         "viewModeTable": "Tabelle",
@@ -61,12 +96,12 @@
         "bodyPart": "Körperteil"
     },
     "armorSetDetails": {
-        "loading": "Rüstungsset wird geladen...",
+        "loading": "Rüstungsset wird geladen…",
         "notFound": "Rüstungsset nicht gefunden",
-        "totalPDef": "Gesamtverteidigung",
+        "totalPDef": "Gesamt P.Def",
         "basePrice": "Grundpreis",
         "part": "Teil",
-        "pDef": "Verteidigung",
+        "pDef": "P.Def",
         "crystalCount": "Kristallanzahl",
         "unnamedItem": "Unbenannter Gegenstand mit ID"
     },

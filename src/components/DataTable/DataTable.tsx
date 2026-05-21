@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import styled from 'styled-components'
@@ -16,7 +17,7 @@ export function DataTable<T>({
   sortConfig,
   onRowClick,
   renderCell,
-  noResultsMessage = 'No results found',
+  noResultsMessage,
   onResetFilters,
   filters = [],
   checkboxFilters = [],
@@ -30,6 +31,7 @@ export function DataTable<T>({
   onPageChange,
   enableGridView = false,
 }: DataTableProps<T>) {
+  const { t } = useTranslation()
   const [showFilters, setShowFilters] = useState(false)
   const visibleColumns = columns.filter((col) => col.visible)
   const effectiveViewMode = enableGridView ? viewMode : 'table'
@@ -50,7 +52,7 @@ export function DataTable<T>({
         ? renderLoading()
         : data.length > 0
           ? renderData()
-          : renderNoResults()}
+          : renderNoResults(noResultsMessage ?? t('dataTable.noResults'))}
       {pagination}
     </Container>
   )
@@ -63,7 +65,9 @@ export function DataTable<T>({
             <SearchInput
               value={searchTerm}
               onChange={(e) => onSearchChange(e.target.value)}
-              placeholder={searchPlaceholder || 'Search...'}
+              placeholder={
+                searchPlaceholder || t('dataTable.searchPlaceholder')
+              }
             />
             <Filters
               isLoading={isLoading}
@@ -216,14 +220,16 @@ export function DataTable<T>({
     )
   }
 
-  function renderNoResults() {
+  function renderNoResults(message: string) {
     return (
       <NoResults>
-        {noResultsMessage}
+        {message}
         {onResetFilters && (
           <>
             ,{' '}
-            <ResetFilters onClick={onResetFilters}>reset filters?</ResetFilters>
+            <ResetFilters onClick={onResetFilters}>
+              {t('dataTable.resetFilters')}
+            </ResetFilters>
           </>
         )}
       </NoResults>

@@ -216,10 +216,15 @@ export const ItemsPage = ({
     currentPage * itemsPerPage,
   )
 
-  const formatCrystalType = (type: string | undefined): string => {
-    if (!type) return '-'
-    return type.toLowerCase() === 'none' ? 'None' : type.toUpperCase()
-  }
+  const formatCrystalType = useCallback(
+    (type: string | undefined): string => {
+      if (!type) return '-'
+      return type.toLowerCase() === 'none'
+        ? t('filters.gradeNone')
+        : type.toUpperCase()
+    },
+    [t],
+  )
 
   const columns = useMemo(
     () =>
@@ -277,7 +282,7 @@ export const ItemsPage = ({
             : item[column as keyof Item]?.toString() || '-'
       }
     },
-    [failedImages, type],
+    [failedImages, type, formatCrystalType],
   )
 
   const filters = useMemo(() => {
@@ -311,12 +316,12 @@ export const ItemsPage = ({
     const baseFilters = [
       {
         id: 'crystal-type',
-        label: 'Grade',
+        label: t('filters.grade'),
         value: crystalType,
         onChange: setCrystalType,
         options: [
-          { value: '', label: '-' },
-          { value: 'None', label: 'None' },
+          { value: '', label: t('filters.all') },
+          { value: 'None', label: t('filters.gradeNone') },
           { value: 'D', label: 'D' },
           { value: 'C', label: 'C' },
           { value: 'B', label: 'B' },
@@ -329,11 +334,11 @@ export const ItemsPage = ({
     if (uniqueBodyParts.length > 0) {
       baseFilters.push({
         id: 'body-part',
-        label: 'Body Part',
+        label: t('filters.bodyPart'),
         value: bodyPart,
         onChange: setBodyPart,
         options: [
-          { value: '', label: '-' },
+          { value: '', label: t('filters.all') },
           ...uniqueBodyParts.map((part) => ({
             value: part,
             label: part
@@ -348,11 +353,11 @@ export const ItemsPage = ({
     if (uniqueArmorTypes.length > 0 && type === 'armor') {
       baseFilters.push({
         id: 'armor-type',
-        label: 'Armor Type',
+        label: t('filters.armorType'),
         value: armorType,
         onChange: setArmorType,
         options: [
-          { value: '', label: '-' },
+          { value: '', label: t('filters.all') },
           ...uniqueArmorTypes.map((type) => ({
             value: type,
             label: type
@@ -367,11 +372,11 @@ export const ItemsPage = ({
     if (uniqueWeaponTypes.length > 0 && type === 'weapon') {
       baseFilters.push({
         id: 'weapon-type',
-        label: 'Weapon Type',
+        label: t('filters.weaponType'),
         value: weaponType,
         onChange: setWeaponType,
         options: [
-          { value: '', label: '-' },
+          { value: '', label: t('filters.all') },
           ...uniqueWeaponTypes.map((type) => ({
             value: type,
             label: type
@@ -384,13 +389,21 @@ export const ItemsPage = ({
     }
 
     return baseFilters
-  }, [items, type, crystalType, bodyPart, armorType, weaponType])
+  }, [
+    items,
+    type,
+    crystalType,
+    bodyPart,
+    armorType,
+    weaponType,
+    t,
+  ])
 
   const checkboxFilters = useMemo(
     () => [
       {
         id: 'new-items',
-        label: 'Only New Items',
+        label: t('filters.onlyNewItems'),
         checked: showNew,
         onChange: () => {
           setShowNew(!showNew)
@@ -401,7 +414,7 @@ export const ItemsPage = ({
       },
       {
         id: 'changed-items',
-        label: 'Only Changed Items',
+        label: t('filters.onlyChangedItems'),
         checked: showChanged,
         onChange: () => {
           setShowChanged(!showChanged)
@@ -411,7 +424,7 @@ export const ItemsPage = ({
         },
       },
     ],
-    [showNew, showChanged],
+    [showNew, showChanged, t],
   )
 
   return (
@@ -433,7 +446,7 @@ export const ItemsPage = ({
       renderCell={renderCell}
       filters={filters}
       checkboxFilters={checkboxFilters}
-      noResultsMessage="No items found matching your criteria"
+      noResultsMessage={t('itemsPage.noResults')}
       onResetFilters={handleResetFilters}
       columnVisibility={columnVisibility}
       onColumnVisibilityChange={handleColumnVisibilityChange}

@@ -1,6 +1,31 @@
 {
     "header": {
-        "description": "Unofficial database for Harbor C1 X1 server"
+        "description": "Unofficial database for Harbor C1 X1 server",
+        "lastUpdate": "Last update"
+    },
+    "meta": {
+        "loading": "Loading...",
+        "itemNotFound": "Item not found",
+        "skillNotFound": "Skill not found",
+        "armorSetNotFound": "Armor set not found"
+    },
+    "common": {
+        "yes": "Yes",
+        "no": "No"
+    },
+    "dataTable": {
+        "searchPlaceholder": "Search...",
+        "noResults": "No results found",
+        "resetFilters": "Reset filters?"
+    },
+    "details": {
+        "noDescription": "No description available.",
+        "notApplicable": "—",
+        "propertyChanged": "(changed)",
+        "sections": {
+            "changedProperties": "Changed properties",
+            "otherProperties": "Other properties"
+        }
     },
     "navigation": {
         "armorsets": "Armor Sets",
@@ -10,9 +35,11 @@
         "miscellaneous": "Miscellaneous"
     },
     "itemsPage": {
-        "searchPlaceholder": "Search items..."
+        "searchPlaceholder": "Search items...",
+        "noResults": "No items found matching your criteria"
     },
     "armorSetsPage": {
+        "noResults": "No armor sets found matching your criteria",
         "searchPlaceholder": "Search armor sets...",
         "name": "Name",
         "physicalDefense": "Physical Defense",
@@ -22,7 +49,8 @@
         "setBonus": "Set Bonus"
     },
     "skillsPage": {
-        "searchPlaceholder": "Search skills..."
+        "searchPlaceholder": "Search skills...",
+        "noResults": "No skills found matching your criteria"
     },
     "itemDetails": {
         "changed": "This item is changed on Harbor",
@@ -36,7 +64,11 @@
         "changed": "This skill is changed on Harbor",
         "new": "This skill only exists on Harbor",
         "level": "Level",
-        "levels": "Levels"
+        "levels": "Levels",
+        "unnamedSkill": "Unnamed skill (id {{id}})",
+        "pageTitle": "{{name}} · Lvl. {{level}} · {{section}}",
+        "levelShort": "Level {{level}}",
+        "levelWithMp": "Level {{level}} (MP: {{mp}})"
     },
     "pagination": {
         "pageInfo": "Page {{ current }} of {{ total }}"
@@ -46,6 +78,9 @@
     },
     "filters": {
         "filters": "Filters",
+        "view": "View",
+        "all": "All",
+        "gradeNone": "None",
         "viewMode": "View Mode",
         "viewModeGrid": "Grid",
         "viewModeTable": "Table",

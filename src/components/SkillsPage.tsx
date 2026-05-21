@@ -212,7 +212,10 @@ export const SkillsPage = () => {
                   ? getDataUrl('/icon/etc_alphabet_s_i00.webp')
                   : getDataUrl(`/icon/${skill.icon?.split('.').at(-1)}.webp`)
               }
-              alt={skill.name || `Unnamed skill with id ${skill.skill_id}`}
+              alt={
+                skill.name ||
+                t('skillDetails.unnamedSkill', { id: skill.skill_id })
+              }
               width={32}
               height={32}
               onError={() => {
@@ -225,12 +228,12 @@ export const SkillsPage = () => {
             />
           )
         case 'is_magic':
-          return skill[column] ? 'Yes' : 'No'
+          return skill[column] ? t('common.yes') : t('common.no')
         default:
           return skill[column as keyof Skill]?.toString() || '-'
       }
     },
-    [failedImages],
+    [failedImages, t],
   )
 
   return (
@@ -246,7 +249,7 @@ export const SkillsPage = () => {
       onRowClick={(skill) => handleSkillClick(skill.skill_id)}
       renderCell={renderCell}
       checkboxFilters={checkboxFilters}
-      noResultsMessage="No skills found matching your criteria"
+      noResultsMessage={t('skillsPage.noResults')}
       onResetFilters={() => {
         handleResetFilters()
         setMergeSkills(true)

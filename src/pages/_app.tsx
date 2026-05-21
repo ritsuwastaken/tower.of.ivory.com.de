@@ -11,10 +11,12 @@ import {
 import { AppProps } from 'next/app'
 import { Roboto_Mono } from 'next/font/google'
 import Head from 'next/head'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import 'react-loading-skeleton/dist/skeleton.css'
 import styled from 'styled-components'
-import '../i18n'
+import i18n from '../i18n'
+
+const SUPPORTED_LANGUAGES = ['en', 'es', 'pt', 'ru', 'de'] as const
 
 const queryClientConfig: QueryClientConfig = {
   defaultOptions: {
@@ -29,6 +31,32 @@ const queryClientConfig: QueryClientConfig = {
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient(queryClientConfig))
+
+  useEffect(() => {
+    const baseLng = (lng: string) => lng.split('-')[0] || 'en'
+    const applyHtmlLang = (lng: string) => {
+      document.documentElement.lang = baseLng(lng)
+    }
+
+    const handleLanguageChanged = (lng: string) => applyHtmlLang(lng)
+
+    i18n.on('languageChanged', handleLanguageChanged)
+
+    const stored = localStorage.getItem('i18nextLng')
+    if (
+      stored &&
+      (SUPPORTED_LANGUAGES as readonly string[]).includes(stored) &&
+      baseLng(i18n.language) !== stored
+    ) {
+      void i18n.changeLanguage(stored)
+    } else {
+      applyHtmlLang(i18n.language)
+    }
+
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged)
+    }
+  }, [])
 
   return (
     <QueryClientProvider client={queryClient}>

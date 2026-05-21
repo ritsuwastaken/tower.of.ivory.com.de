@@ -161,13 +161,14 @@ const SkillDetailsLoading = () => {
 }
 
 const SkillNotFound = () => {
+  const { t } = useTranslation()
   return (
     <Container>
       <StyledLink rel="canonical" href="/skills">
         ⟵
       </StyledLink>
       <TableContainer>
-        <ErrorText>Skill not found</ErrorText>
+        <ErrorText>{t('meta.skillNotFound')}</ErrorText>
       </TableContainer>
     </Container>
   )
@@ -246,7 +247,7 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
   if (isLoading) {
     return (
       <>
-        <Head description="Loading..." />
+        <Head description={t('meta.loading')} />
         <SkillDetailsLoading />
       </>
     )
@@ -255,7 +256,7 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
   if (!selectedSkill || isError) {
     return (
       <>
-        <Head description="Error" />
+        <Head description={t('meta.skillNotFound')} />
         <SkillNotFound />
       </>
     )
@@ -272,7 +273,13 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
   return (
     <>
       <Head
-        description={`${selectedSkill.name} Lvl. ${selectedSkill.skill_level} | Skills`}
+        description={t('skillDetails.pageTitle', {
+          name:
+            selectedSkill.name ||
+            t('skillDetails.unnamedSkill', { id: selectedSkill.skill_id }),
+          level: selectedSkill.skill_level ?? 1,
+          section: t('navigation.skills'),
+        })}
       />
       <Container>
         <StyledLink rel="canonical" href="/skills" scroll={false}>
@@ -308,7 +315,9 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                   src={getDataUrl(`/icon/${selectedSkill?.icon?.split('.').at(-1)}.webp`)}
                   alt={
                     selectedSkill.name ||
-                    `Unnamed skill with id ${selectedSkill.skill_id}`
+                    t('skillDetails.unnamedSkill', {
+                      id: selectedSkill.skill_id,
+                    })
                   }
                   width={64}
                   height={64}
@@ -321,7 +330,9 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                       className="levelDropdownButton"
                       onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     >
-                      Level {selectedSkill.skill_level}
+                      {t('skillDetails.levelShort', {
+                        level: selectedSkill.skill_level,
+                      })}
                       <span className="dropdownArrow">▼</span>
                     </button>
                     {isDropdownOpen && (
@@ -332,8 +343,10 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                             className={`mobileDropdownItem ${Number(levelData.skill_level) === Number(selectedSkill.skill_level) ? 'activeItem' : ''}`}
                             onClick={() => handleLevelClick(levelData)}
                           >
-                            Level {levelData.skill_level} (MP:{' '}
-                            {levelData.mp_consume || 0})
+                            {t('skillDetails.levelWithMp', {
+                              level: levelData.skill_level,
+                              mp: levelData.mp_consume || 0,
+                            })}
                           </button>
                         ))}
                       </div>
@@ -346,7 +359,7 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
 
             <Description>
               {selectedSkill?.description?.replace(/\\n/g, '\n') ||
-                'No description available.'}
+                t('details.noDescription')}
             </Description>
 
             <Stats>
@@ -383,7 +396,8 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                     setShowChangedProperties(!showChangedProperties)
                   }
                 >
-                  {showChangedProperties ? '−' : '+'} Changed Properties
+                  {showChangedProperties ? '−' : '+'}{' '}
+                  {t('details.sections.changedProperties')}
                 </button>
 
                 {showChangedProperties && (
@@ -472,7 +486,7 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
                   {hasDifferentDescription && !isDefault && (
                     <SmallLevelDescription>
                       {levelData?.description?.replace(/\\n/g, '\n') ||
-                        'No description available.'}
+                        t('details.noDescription')}
                     </SmallLevelDescription>
                   )}
                 </LevelCard>

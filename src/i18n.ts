@@ -27,10 +27,7 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng:
-    typeof window !== 'undefined'
-      ? localStorage.getItem('i18nextLng') || 'en'
-      : 'en',
+  lng: 'en',
   fallbackLng: 'en',
   debug: process.env.NODE_ENV === 'development',
 

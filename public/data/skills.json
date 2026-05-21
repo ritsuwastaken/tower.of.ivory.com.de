@@ -60799,11 +60799,11 @@
     "icon": "icon.skill0051",
     "operate_type": 0,
     "is_magic": 0,
-    "mp_consume": 44,
+    "mp_consume": 12,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
-    "cast_range": 750,
+    "cast_range": 650,
     "skill_time": "1.5",
     "reuse_delay": 10,
     "abnormal_time": 0,
@@ -60816,9 +60816,13 @@
     "is_new": false,
     "is_changed": true,
     "changes": {
+      "mp_consume": {
+        "old": 44,
+        "new": 12
+      },
       "cast_range": {
         "old": 400,
-        "new": 750
+        "new": 650
       }
     },
     "name": "Lure",
@@ -61829,11 +61833,11 @@
     "icon": "icon.skill0106",
     "operate_type": 1,
     "is_magic": 0,
-    "mp_consume": 45,
+    "mp_consume": 35,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
-    "cast_range": 400,
+    "cast_range": 500,
     "skill_time": "1.2",
     "reuse_delay": 120,
     "abnormal_time": 120,
@@ -61844,7 +61848,17 @@
     "bar_level_main": 1,
     "bar_level_sub_max": 1,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "mp_consume": {
+        "old": 45,
+        "new": 35
+      },
+      "cast_range": {
+        "old": 400,
+        "new": 500
+      }
+    },
     "name": "Veil",
     "description": "Blurs the enemy’s sight to disable preemptive attacks."
   },
@@ -61854,11 +61868,11 @@
     "icon": "icon.skill0106",
     "operate_type": 1,
     "is_magic": 0,
-    "mp_consume": 56,
+    "mp_consume": 45,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
-    "cast_range": 400,
+    "cast_range": 500,
     "skill_time": "1.2",
     "reuse_delay": 120,
     "abnormal_time": 120,
@@ -61869,7 +61883,17 @@
     "bar_level_main": 2,
     "bar_level_sub_max": 1,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "mp_consume": {
+        "old": 56,
+        "new": 45
+      },
+      "cast_range": {
+        "old": 400,
+        "new": 500
+      }
+    },
     "name": "Veil",
     "description": "Blurs the enemy’s sight to disable preemptive attacks."
   },
@@ -64176,7 +64200,7 @@
     "icon": "icon.skill0221",
     "operate_type": 3,
     "is_magic": 0,
-    "mp_consume": 0,
+    "mp_consume": 20,
     "hp_consume": 0,
     "consume_item_id": 0,
     "consume_item_count": 0,
@@ -64191,7 +64215,13 @@
     "bar_level_main": 1,
     "bar_level_sub_max": 1,
     "is_new": false,
-    "is_changed": false,
+    "is_changed": true,
+    "changes": {
+      "mp_consume": {
+        "old": 0,
+        "new": 20
+      }
+    },
     "name": "Silent Move",
     "description": "Disables preemptive attacks from enemies. Continuously consumes MP."
   },

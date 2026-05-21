@@ -67,10 +67,15 @@ export const ArmorSetsPage = () => {
     ...new Set(armorSetsData.map((set) => set.armor_type)),
   ].sort()
 
-  const capitalizeGrade = (grade: string | undefined): string => {
-    if (!grade) return '-'
-    return grade.toLowerCase() === 'none' ? 'None' : grade.toUpperCase()
-  }
+  const capitalizeGrade = useCallback(
+    (grade: string | undefined): string => {
+      if (!grade) return '-'
+      return grade.toLowerCase() === 'none'
+        ? t('filters.gradeNone')
+        : grade.toUpperCase()
+    },
+    [t],
+  )
 
   const handleRowClick = ({ id }: ArmorSet) => {
     router.push(`/armorsets/${id}`)
@@ -135,7 +140,7 @@ export const ArmorSetsPage = () => {
         value: grade,
         onChange: setGrade,
         options: [
-          { value: '', label: '-' },
+          { value: '', label: t('filters.all') },
           ...uniqueGrades.map((g) => ({
             value: g,
             label: capitalizeGrade(g),
@@ -148,7 +153,7 @@ export const ArmorSetsPage = () => {
         value: armorType,
         onChange: setArmorType,
         options: [
-          { value: '', label: '-' },
+          { value: '', label: t('filters.all') },
           ...uniqueArmorTypes.map((type) => ({
             value: type,
             label: type,
@@ -158,7 +163,7 @@ export const ArmorSetsPage = () => {
     ]
 
     return baseFilters
-  }, [grade, armorType, uniqueGrades, uniqueArmorTypes, t])
+  }, [grade, armorType, uniqueGrades, uniqueArmorTypes, t, capitalizeGrade])
 
   const renderCell = useCallback((armorSet: ArmorSet, column: string) => {
     switch (column) {
@@ -184,7 +189,7 @@ export const ArmorSetsPage = () => {
       default:
         return armorSet[column as keyof ArmorSet]?.toString() || '-'
     }
-  }, [])
+  }, [capitalizeGrade])
 
   const columns = useMemo(() => {
     const labelMap: Partial<Record<keyof ArmorSet | 'visual', string>> = {
@@ -218,7 +223,7 @@ export const ArmorSetsPage = () => {
       onRowClick={handleRowClick}
       renderCell={renderCell}
       filters={filters}
-      noResultsMessage="No armor sets found matching your criteria"
+      noResultsMessage={t('armorSetsPage.noResults')}
       onResetFilters={() => {
         handleResetFilters()
         setGrade('')

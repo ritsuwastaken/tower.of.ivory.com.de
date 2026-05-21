@@ -161,10 +161,11 @@ const ItemDetailsLoading = () => {
 }
 
 const ItemDetailsError = () => {
+  const { t } = useTranslation()
   return (
     <ContentWrapper>
       <TableContainer>
-        <ErrorText>Item not found</ErrorText>
+        <ErrorText>{t('meta.itemNotFound')}</ErrorText>
       </TableContainer>
     </ContentWrapper>
   )
@@ -303,7 +304,11 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
     <Container>
       <Head
         description={
-          isLoading ? 'Loading...' : isError ? 'Item Not found' : item?.name
+          isLoading
+            ? t('meta.loading')
+            : isError
+              ? t('meta.itemNotFound')
+              : item?.name
         }
       />
       <BackButton
@@ -368,7 +373,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
 
           <Description>
             {item?.description?.replace(/\\n/g, '\n') ||
-              'No description available.'}
+              t('details.noDescription')}
           </Description>
 
           <Stats>
@@ -424,7 +429,12 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                     {Array.isArray(value)
                       ? value.join(', ')
                       : value?.toString()}
-                    {isChanged && <span className="changedTag">(changed)</span>}
+                    {isChanged && (
+                      <span className="changedTag">
+                        {' '}
+                        {t('details.propertyChanged')}
+                      </span>
+                    )}
                   </Value>
                 </StatRow>
               )
@@ -437,7 +447,8 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                 className="collapseButton"
                 onClick={() => setShowChangedProperties(!showChangedProperties)}
               >
-                {showChangedProperties ? '−' : '+'} Changed Properties
+                {showChangedProperties ? '−' : '+'}{' '}
+                {t('details.sections.changedProperties')}
               </button>
 
               {showChangedProperties && (
@@ -584,7 +595,8 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                 className="collapseButton"
                 onClick={() => setShowEffectProperties(!showEffectProperties)}
               >
-                {showEffectProperties ? '−' : '+'} Other Properties
+                {showEffectProperties ? '−' : '+'}{' '}
+                {t('details.sections.otherProperties')}
               </button>
 
               {showEffectProperties && (
@@ -630,7 +642,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                     <SetInfoValue>
                       {armorSet.armor_type ||
                         armorSet.items?.[0]?.armor_type ||
-                        'N/A'}
+                        t('details.notApplicable')}
                     </SetInfoValue>
                   </SetInfoItem>
                   <SetInfoItem>
@@ -638,7 +650,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                     <SetInfoValue>
                       {armorSet.items
                         ?.reduce((sum, item) => sum + (item.base_price || 0), 0)
-                        .toLocaleString() || 'N/A'}
+                        .toLocaleString() || t('details.notApplicable')}
                     </SetInfoValue>
                   </SetInfoItem>
                   <SetInfoItem>

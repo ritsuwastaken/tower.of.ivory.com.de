@@ -2,7 +2,7 @@ import { useOnClickOutside } from '@/hooks/useOnClickOutside'
 import { getFlagEmoji } from '@/utils/getFlagEmoji'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
-import { useRef, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 export const Header = () => {
@@ -11,33 +11,60 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const availableLanguages = ['en', 'es', 'pt', 'ru', 'de']
-  const languages = availableLanguages.map((code) => ({
-    code,
-    label: code.toLowerCase(),
-    flag: getFlagEmoji(code),
-  }))
+  const lastUpdateDate = useMemo(() => {
+    if (!process.env.NEXT_PUBLIC_LAST_UPDATE) return null
+    return new Date(
+      parseInt(process.env.NEXT_PUBLIC_LAST_UPDATE),
+    ).toLocaleString(i18n.language, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  }, [i18n.language])
+
+  const languages = useMemo(
+    () =>
+      ['en', 'es', 'pt', 'ru', 'de'].map((code) => ({
+        code,
+        label: code.toLowerCase(),
+        flag: getFlagEmoji(code),
+      })),
+    [],
+  )
+
+  const currentLanguage = useMemo(
+    () => languages.find((lang) => lang.code === i18n.language),
+    [languages, i18n.language],
+  )
+
+  const handleLanguageChange = useCallback(
+    (languageCode: string) => {
+      i18n.changeLanguage(languageCode)
+      setIsOpen(false)
+    },
+    [i18n],
+  )
 
   useOnClickOutside(dropdownRef, () => setIsOpen(false))
-
-  const currentLanguage = languages.find((lang) => lang.code === i18n.language)
-
-  const handleLanguageChange = (languageCode: string) => {
-    i18n.changeLanguage(languageCode)
-    setIsOpen(false)
-  }
 
   return (
     <HeaderWrapper>
       <HeaderLeft>
         <HeaderLink rel="canonical" href="/armorsets">
           <h3 translate="no">Tower of Ivory</h3>
-          <p>{t('header.description')}</p>
+
+          <Description>{t('header.description')}</Description>
+
+          {lastUpdateDate && (
+            <LastUpdate>
+              {t('header.lastUpdate')}: {lastUpdateDate}
+            </LastUpdate>
+          )}
         </HeaderLink>
       </HeaderLeft>
       <HeaderRight>
         <LanguageSelector ref={dropdownRef}>
-          <LanguageButton onClick={() => setIsOpen(!isOpen)}>
+          <LanguageButton onClick={() => setIsOpen((prev) => !prev)}>
             <span>{currentLanguage?.label}</span>
           </LanguageButton>
 
@@ -81,17 +108,20 @@ export const Header = () => {
 
 const HeaderWrapper = styled.header`
   display: flex;
-  flex-wrap: nowrap;
   align-items: center;
-  gap: 1rem;
   justify-content: space-between;
-  background-color: #1a1a1a;
-  border-radius: 8px;
+  gap: 1rem;
   padding: 0.5rem 0.75rem;
   margin-bottom: 1rem;
+
+  background-color: #1a1a1a;
+  border-radius: 8px;
 `
 
 const HeaderLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+
   h3 {
     font-size: 0.9rem;
     font-weight: 500;
@@ -103,11 +133,7 @@ const HeaderLeft = styled.div`
 const HeaderLink = styled(Link).attrs({
   tabIndex: -1,
 })`
-  p {
-    margin-top: 0.2rem;
-    font-size: 0.7rem;
-    color: #888;
-  }
+  text-decoration: none;
 
   &:hover h3 {
     color: #7a7a7a;
@@ -118,11 +144,26 @@ const HeaderLink = styled(Link).attrs({
   }
 `
 
+const Description = styled.p`
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+
+  font-size: 0.7rem;
+  color: #888;
+`
+
+const LastUpdate = styled.p`
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+
+  font-size: 0.65rem;
+  color: #666;
+`
+
 const HeaderRight = styled.div`
   display: flex;
-  gap: 0.5rem;
-  font-size: 0.75rem;
   align-items: center;
+  gap: 0.5rem;
 `
 
 const LanguageSelector = styled.div`
@@ -132,21 +173,22 @@ const LanguageSelector = styled.div`
 const LanguageButton = styled.button`
   display: flex;
   align-items: center;
-  background-color: #1a1a1a;
+
+  padding: 0.5rem 0.8rem;
+
   border: none;
   border-radius: 4px;
-  padding: 0.5rem 0.8rem;
+
+  background-color: #1a1a1a;
   cursor: pointer;
   font-size: 0.9rem;
+
   transition: all 0.2s ease;
 
-  &:hover {
-    background-color: #4a4a4a;
-  }
-
+  &:hover,
   &:focus {
-    outline: none;
     background-color: #4a4a4a;
+    outline: none;
   }
 `
 
@@ -154,26 +196,31 @@ const LanguageDropdown = styled.div`
   position: absolute;
   top: 100%;
   right: 0;
+
   margin-top: 0.3rem;
+
   background-color: #1a1a1a;
   border-radius: 4px;
+
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 100;
   overflow: hidden;
+  z-index: 100;
 `
 
 const LanguageOption = styled.button<{ $isActive?: boolean }>`
   display: flex;
   align-items: center;
-  padding: 0.7rem 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  background-color: ${(props) => (props.$isActive ? '#7a7a7a' : 'transparent')};
-  font-weight: ${(props) => (props.$isActive ? '500' : 'normal')};
-  border: none;
+
   width: 100%;
+  padding: 0.7rem 1rem;
+
+  border: none;
+  background-color: ${(props) => (props.$isActive ? '#7a7a7a' : 'transparent')};
+
+  font-weight: ${(props) => (props.$isActive ? '500' : 'normal')};
+
+  cursor: pointer;
   text-align: left;
-  color: inherit;
 
   &:hover {
     background-color: #4a4a4a;
@@ -181,26 +228,27 @@ const LanguageOption = styled.button<{ $isActive?: boolean }>`
 `
 
 const LanguageFlag = styled.span`
-  font-size: 1.1rem;
   margin-right: 0.5rem;
+  font-size: 1.1rem;
 `
 
 const GitHubLink = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #1a1a1a;
-  border: none;
-  border-radius: 4px;
+
   padding: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
+
+  border-radius: 4px;
+
   color: #888;
   text-decoration: none;
 
+  transition: 0.2s;
+
   &:hover {
-    background-color: #4a4a4a;
     color: #fff;
+    background-color: #4a4a4a;
   }
 
   &:focus {
@@ -213,6 +261,7 @@ const GitHubIcon = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 16px;
   height: 16px;
 `

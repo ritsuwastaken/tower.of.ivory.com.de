@@ -211,9 +211,9 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
       <Head
         description={
           isLoading
-            ? 'Loading...'
+            ? t('meta.loading')
             : isError
-              ? 'Armor Set Not Found'
+              ? t('meta.armorSetNotFound')
               : armorSet?.name
         }
       />
