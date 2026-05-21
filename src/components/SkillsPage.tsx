@@ -209,7 +209,7 @@ export const SkillsPage = () => {
             <Image
               src={
                 failedImages.has(skill.skill_id)
-                  ? getDataUrl('/icon/etc_alphabet_s_i00.webp')
+                  ? getDataUrl('/icon/skill0000.webp')
                   : getDataUrl(`/icon/${skill.icon?.split('.').at(-1)}.webp`)
               }
               alt={

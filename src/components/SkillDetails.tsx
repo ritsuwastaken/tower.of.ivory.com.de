@@ -312,7 +312,9 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
             <ItemHeader>
               <HeaderLeft>
                 <Image
-                  src={getDataUrl(`/icon/${selectedSkill?.icon?.split('.').at(-1)}.webp`)}
+                  src={getDataUrl(
+                    `/icon/${selectedSkill?.icon?.toLowerCase()?.split('.').at(-1)}.webp`,
+                  )}
                   alt={
                     selectedSkill.name ||
                     t('skillDetails.unnamedSkill', {
