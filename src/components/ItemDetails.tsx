@@ -34,6 +34,8 @@ interface ItemDetailsProps {
   id: number
 }
 
+const BIRTHDAY_ITEM_ID_2026 = 5600;
+
 const ItemDetailsLoading = () => {
   return (
     <ContentWrapper>
@@ -374,6 +376,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
           <Description>
             {item?.description?.replace(/\\n/g, '\n') ||
               t('details.noDescription')}
+            {item?.object_id === BIRTHDAY_ITEM_ID_2026 && <HarborBirthdayItem />}
           </Description>
 
           <Stats>
@@ -735,3 +738,13 @@ const SetInfoValue = styled.span`
 `
 
 const SetCard = styled.div``
+
+const HarborBirthdayItem = styled.img.attrs({
+  src: getDataUrl('/icon/harborlove.webp'),
+  alt: 'Harbor Birthday 1 year',
+})`
+  max-height: 256px;
+  max-width: 256px;
+  border-radius: 4px;
+  margin-top: 8px;
+`

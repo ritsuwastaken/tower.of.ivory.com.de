@@ -101,6 +101,8 @@ export const Description = styled.div`
   border-radius: 4px;
   margin-bottom: 1rem;
   white-space: pre-line;
+  display: flex;
+  flex-direction: column;
 `
 
 export const Stats = styled.div`
