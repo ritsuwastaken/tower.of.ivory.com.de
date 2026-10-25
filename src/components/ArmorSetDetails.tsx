@@ -6,7 +6,6 @@ import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import Skeleton from 'react-loading-skeleton'
 import styled from 'styled-components'
 import {
   BackButton,
@@ -19,10 +18,11 @@ import {
   ItemHeader,
   TableContainer,
 } from '@/components/primitives/DetailsPrimitives'
+import { Head } from '@/components/Head'
 import { ArmorSetVisual } from './ArmorSetVisual'
 import { ExternalLinks } from './ExternalLinks'
-import { Head } from './Head'
 import Link from 'next/link'
+import { Skeleton } from './Skeleton'
 
 interface ArmorSetDetailsProps {
   id: string

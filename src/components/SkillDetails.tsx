@@ -8,7 +8,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
 import React, { useMemo, useState } from 'react'
-import Skeleton from 'react-loading-skeleton'
 import { ExternalLinks } from './ExternalLinks'
 import styled from 'styled-components'
 import {
@@ -27,6 +26,7 @@ import {
   TableContainer,
   Value,
 } from '@/components/primitives/DetailsPrimitives'
+import { Skeleton } from './Skeleton'
 
 interface SkillDetailsProps {
   id: number

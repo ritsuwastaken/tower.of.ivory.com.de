@@ -91,7 +91,6 @@ export const ItemsPage = ({
   } = useDataTable<Item>({
     itemsPerPage: 50,
     defaultColumnVisibility: getDefaultColumns(type),
-    defaultViewMode: 'table',
     onResetFilters: () => {
       setCrystalType('')
       setBodyPart('')

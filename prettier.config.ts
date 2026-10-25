@@ -1,10 +1,10 @@
-import { type Config } from "prettier";
+import { type Config } from 'prettier'
 
 const config: Config = {
-  trailingComma: "all",
+  trailingComma: 'all',
   tabWidth: 2,
   semi: false,
   singleQuote: true,
-};
+}
 
-export default config;
+export default config

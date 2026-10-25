@@ -12,7 +12,6 @@ import { AppProps } from 'next/app'
 import { Roboto_Mono } from 'next/font/google'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import 'react-loading-skeleton/dist/skeleton.css'
 import styled from 'styled-components'
 import i18n from '../i18n'
 

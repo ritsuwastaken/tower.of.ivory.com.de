@@ -11,7 +11,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
-import Skeleton from 'react-loading-skeleton'
 import styled from 'styled-components'
 import {
   BackButton,
@@ -29,6 +28,7 @@ import {
   TableContainer,
   Value,
 } from '@/components/primitives/DetailsPrimitives'
+import { Skeleton } from './Skeleton'
 
 interface ItemDetailsProps {
   id: number

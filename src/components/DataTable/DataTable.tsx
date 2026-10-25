@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
-import Skeleton from 'react-loading-skeleton'
 import styled from 'styled-components'
 import { Pagination } from '../Pagination'
 import { Filters } from './Filters'
 import { DataTableProps } from './types'
+import { Skeleton } from '../Skeleton'
 
 export function DataTable<T>({
   data,
@@ -413,10 +413,6 @@ const TableRow = styled.tr.attrs<{ onClick?: () => void }>((props) => ({
   &:focus-within {
     background-color: #222222;
     outline: none;
-  }
-
-  &.selected {
-    background-color: #222222;
   }
 
   @media (max-width: 890px) {

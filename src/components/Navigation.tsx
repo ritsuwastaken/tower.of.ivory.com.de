@@ -33,8 +33,6 @@ type NavigationItem = {
   type: string
   path: string
   translationKey: string
-  disabled?: boolean
-  soon?: boolean
 }
 
 export const Navigation = () => {
@@ -53,7 +51,7 @@ export const Navigation = () => {
   }, [pathname])
 
   const handleCategoryChange = useCallback(
-    (type: string, path: string) => {
+    (path: string) => {
       const searchValue = searchParams.get('search')
       const queryString = searchValue ? `?search=${searchValue}` : ''
       router.push(`${path}${queryString}`)
@@ -67,7 +65,7 @@ export const Navigation = () => {
         <TabButton
           key={type}
           $isActive={currentType === type}
-          onClick={() => handleCategoryChange(type, path)}
+          onClick={() => handleCategoryChange(path)}
         >
           {t(translationKey)}
         </TabButton>

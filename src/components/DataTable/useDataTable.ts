@@ -4,14 +4,12 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 interface UseDataTableOptions {
   itemsPerPage?: number
   defaultColumnVisibility?: Record<string, boolean>
-  defaultViewMode?: 'table' | 'grid'
   onResetFilters?: () => void
 }
 
 export function useDataTable<T>({
   itemsPerPage = 50,
   defaultColumnVisibility = {},
-  defaultViewMode = 'table',
   onResetFilters,
 }: UseDataTableOptions = {}) {
   const router = useRouter()
@@ -49,18 +47,12 @@ export function useDataTable<T>({
   const handleViewModeChange = useCallback(
     (mode: 'table' | 'grid') => {
       const params = new URLSearchParams(searchParams)
-
-      if (mode === defaultViewMode) {
-        params.delete('view')
-      } else {
-        params.set('view', mode)
-      }
-
+      params.set('view', mode)
       router.replace(`${pathname}?${params}`, {
         scroll: false,
       })
     },
-    [router, pathname, searchParams, defaultViewMode],
+    [router, pathname, searchParams],
   )
 
   const handlePageChange = useCallback((page: number) => {

@@ -4,7 +4,13 @@ import { useEventListener } from './useEventListener'
 export function useOnClickOutside<T extends HTMLElement = HTMLElement>(
   ref: RefObject<T | null> | RefObject<T | null>[],
   handler: (event: MouseEvent | TouchEvent | FocusEvent) => void,
-  eventType: 'mousedown' | 'mouseup' | 'touchstart' | 'touchend' | 'focusin' | 'focusout' = 'mousedown',
+  eventType:
+    | 'mousedown'
+    | 'mouseup'
+    | 'touchstart'
+    | 'touchend'
+    | 'focusin'
+    | 'focusout' = 'mousedown',
   eventListenerOptions: AddEventListenerOptions = {},
 ): void {
   useEventListener(
@@ -17,8 +23,8 @@ export function useOnClickOutside<T extends HTMLElement = HTMLElement>(
 
       const isOutside = Array.isArray(ref)
         ? ref
-          .filter((r) => Boolean(r.current))
-          .every((r) => r.current && !r.current.contains(target))
+            .filter((r) => Boolean(r.current))
+            .every((r) => r.current && !r.current.contains(target))
         : ref.current && !ref.current.contains(target)
 
       isOutside && handler(event)

@@ -65,11 +65,9 @@ export const SkillsPage = () => {
     currentPage,
     sortConfig,
     columnVisibility,
-    viewMode,
     itemsPerPage,
     handleSort,
     handleColumnVisibilityChange,
-    handleViewModeChange,
     handlePageChange,
     handleSearchChange,
     handleResetFilters,
@@ -266,8 +264,6 @@ export const SkillsPage = () => {
       columnVisibility={columnVisibility}
       onColumnVisibilityChange={handleColumnVisibilityChange}
       formatColumnName={formatColumnName}
-      viewMode={viewMode}
-      onViewModeChange={handleViewModeChange}
       currentPage={currentPage}
       totalPages={Math.ceil(filteredSkills.length / itemsPerPage)}
       onPageChange={handlePageChange}
