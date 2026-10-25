@@ -1,8 +1,7 @@
 import { ArmorSet } from '@/types/armorset'
-import { getDataUrl } from '@/utils/dataUrl'
+import { getDataUrl } from '@/utils/getDataUrl'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
 
 interface ArmorSlotProps {
@@ -14,7 +13,6 @@ interface ArmorSlotProps {
 }
 
 export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
-  const router = useRouter()
   const armorPiece = armorSet.items?.find((piece) =>
     piece.body_part?.some((part: string) =>
       part.toLowerCase().includes(slot.type.toLowerCase()),

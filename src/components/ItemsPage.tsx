@@ -1,7 +1,7 @@
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Item } from '@/types/item'
-import { getDataUrl } from '@/utils/dataUrl'
+import { getDataUrl } from '@/utils/getDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -82,11 +82,9 @@ export const ItemsPage = ({
     currentPage,
     sortConfig,
     columnVisibility,
-    viewMode,
     itemsPerPage,
     handleSort,
     handleColumnVisibilityChange,
-    handleViewModeChange,
     handlePageChange,
     handleSearchChange,
     handleResetFilters,
@@ -447,8 +445,6 @@ export const ItemsPage = ({
       currentPage={currentPage}
       totalPages={Math.ceil(filteredItems.length / itemsPerPage)}
       onPageChange={handlePageChange}
-      viewMode={viewMode}
-      onViewModeChange={handleViewModeChange}
       data={currentItems}
       columns={columns}
       isLoading={isLoading}

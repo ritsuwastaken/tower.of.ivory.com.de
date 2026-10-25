@@ -1,7 +1,7 @@
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types/skill'
-import { getDataUrl } from '@/utils/dataUrl'
+import { getDataUrl } from '@/utils/getDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -43,7 +43,6 @@ const mergeSkillLevels = (skills: Skill[]): Skill[] => {
         const latestData = { ...skill }
         delete latestData.levels
         Object.assign(existingSkill, latestData)
-        existingSkill.levels = existingSkill.levels
       }
     }
   })

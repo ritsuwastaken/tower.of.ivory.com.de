@@ -1,6 +1,6 @@
 import { ArmorSet } from '@/types/armorset'
-import { getDataUrl } from '@/utils/dataUrl'
-import { getItemUrl } from '@/utils/getItemRoute'
+import { getDataUrl } from '@/utils/getDataUrl'
+import { getItemUrl } from '@/utils/getItemUrl'
 import { getTotalBasePrice, getTotalPhysicalDefense } from '@/utils/getTotalX'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'

@@ -1,12 +1,8 @@
 import { Item } from '@/types/item'
 
-export function getItemRoutePath(item: Item): 'weapons' | 'armor' | 'etc' {
-  if (item.armor_type) {
-    return 'armor'
-  }
-  if (item.weapon_type) {
-    return 'weapons'
-  }
+function getItemRoutePath(item: Item): 'weapons' | 'armor' | 'etc' {
+  if (item.armor_type) return 'armor'
+  if (item.weapon_type) return 'weapons'
   return 'etc'
 }
 

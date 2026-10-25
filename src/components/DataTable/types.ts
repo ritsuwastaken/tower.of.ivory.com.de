@@ -30,19 +30,6 @@ export interface FiltersProps {
   allowGridView?: boolean
 }
 
-interface FilterOption {
-  value: string
-  label: string
-}
-
-interface FilterConfig {
-  id: string
-  label: string
-  options: FilterOption[]
-  value: string
-  onChange: (value: string) => void
-}
-
 export interface DataTableProps<T> {
   data: T[]
   columns: {

@@ -1,7 +1,7 @@
 import { Head } from '@/components/Head'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types/skill'
-import { getDataUrl } from '@/utils/dataUrl'
+import { getDataUrl } from '@/utils/getDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -635,7 +635,6 @@ const LevelCard = styled.button`
   cursor: pointer;
   padding: 0.5rem 0.75rem;
   margin: 0.5rem 0;
-  background: var(--background-darker);
   border-radius: 6px;
   transition: all 0.2s ease;
   color: var(--text-color);
@@ -702,7 +701,6 @@ const LevelNumberContainer = styled.div`
 
 const SmallLevelDescription = styled.div`
   font-size: 0.8125rem;
-  color: var(--text-muted);
   margin-top: 0.5rem;
   line-height: 1.4;
 `

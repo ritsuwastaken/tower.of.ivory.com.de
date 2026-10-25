@@ -6,13 +6,6 @@ export const GlobalStyles = createGlobalStyle`
     --text-color: #fff;
   }
   
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #0a0a0a;
-      --foreground: #ededed;
-    }
-  }
-  
   html,
   body {
     min-height: 100vh;

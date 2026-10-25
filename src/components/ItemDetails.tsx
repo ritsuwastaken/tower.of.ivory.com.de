@@ -4,7 +4,7 @@ import { Head } from '@/components/Head'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { ArmorSet } from '@/types/armorset'
 import { Item } from '@/types/item'
-import { getDataUrl } from '@/utils/dataUrl'
+import { getDataUrl } from '@/utils/getDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -698,7 +698,6 @@ const ArmorSets = styled.div`
 
   h2 {
     margin-top: 0;
-    border-bottom: 1px solid var(--border-color);
     font-size: 1.2rem;
     text-align: center;
   }
@@ -706,7 +705,6 @@ const ArmorSets = styled.div`
   .setName {
     margin-top: 0;
     font-size: 1rem;
-    color: var(--primary-color);
     text-align: center;
     text-decoration: underline;
   }

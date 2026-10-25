@@ -81,7 +81,6 @@
         "view": "View",
         "all": "All",
         "gradeNone": "None",
-        "viewMode": "View Mode",
         "viewModeGrid": "Grid",
         "viewModeTable": "Table",
         "armorType": "Armor Type",
@@ -96,7 +95,6 @@
         "bodyPart": "Body Part"
     },
     "armorSetDetails": {
-        "loading": "Loading armor set...",
         "notFound": "Armor set not found",
         "totalPDef": "Total P.Def",
         "basePrice": "Base Price",
