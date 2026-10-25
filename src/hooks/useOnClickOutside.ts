@@ -81,12 +81,7 @@ function useEventListener<
 }
 
 type EventType =
-  | 'mousedown'
-  | 'mouseup'
-  | 'touchstart'
-  | 'touchend'
-  | 'focusin'
-  | 'focusout'
+  'mousedown' | 'mouseup' | 'touchstart' | 'touchend' | 'focusin' | 'focusout'
 
 export function useOnClickOutside<T extends HTMLElement = HTMLElement>(
   ref: RefObject<T | null> | RefObject<T | null>[],

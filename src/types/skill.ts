@@ -25,10 +25,12 @@ export type Skill = {
   is_new?: boolean
   is_changed?: boolean
   changes?: {
-    [key in Exclude<
-      keyof Skill,
-      'changes' | 'is_new' | 'is_changed' | 'levels'
-    >]: {
+    [
+      key in Exclude<
+        keyof Skill,
+        'changes' | 'is_new' | 'is_changed' | 'levels'
+      >
+    ]: {
       old: Skill[key]
       new: Skill[key]
     }

@@ -29,10 +29,9 @@ export type Item = {
   is_new?: boolean
   is_changed?: boolean
   changes?: {
-    [key in Exclude<
-      keyof Item,
-      'changes' | 'is_new' | 'is_changed' | 'sets'
-    >]: {
+    [
+      key in Exclude<keyof Item, 'changes' | 'is_new' | 'is_changed' | 'sets'>
+    ]: {
       old: Item[key]
       new: Item[key]
     }

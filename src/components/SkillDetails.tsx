@@ -215,13 +215,20 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
         searchParams.get('show') === 'changes'
 
       if (shouldShowChanges) {
-        setShowChangedProperties(true)
-        setTimeout(() => {
+        const showChangesTimeout = window.setTimeout(() => {
+          setShowChangedProperties(true)
+        }, 0)
+        const scrollTimeout = window.setTimeout(() => {
           const changesSection = document.getElementById('changes-section')
           if (changesSection) {
             changesSection.scrollIntoView({ behavior: 'smooth' })
           }
         }, 100)
+
+        return () => {
+          window.clearTimeout(showChangesTimeout)
+          window.clearTimeout(scrollTimeout)
+        }
       }
     }
   }, [isLoading, skill, searchParams])
