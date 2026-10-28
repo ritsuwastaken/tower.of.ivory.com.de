@@ -1,4 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export const Container = styled.div``
 
@@ -8,34 +10,6 @@ export const TableContainer = styled.div`
   padding: 1rem;
   flex: 1;
   min-width: 0;
-
-  .notificationPanel {
-    margin-bottom: 1rem;
-    padding: 10px 15px;
-    border-radius: 4px;
-    font-weight: 500;
-  }
-
-  .newItem {
-    background-color: rgba(0, 128, 0, 0.15);
-    border-left: 4px solid #008000;
-    color: #006400;
-  }
-
-  .changedItem {
-    background-color: rgba(255, 165, 0, 0.15);
-    border-left: 4px solid #ffa500;
-    color: #8b4513;
-  }
-
-  .notificationLink {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-  }
 `
 
 export const ItemHeader = styled.div`
@@ -56,12 +30,6 @@ export const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-
-  .icon {
-    border-radius: 8px;
-    background-color: #2a2a2a;
-    padding: 0.5rem;
-  }
 `
 
 export const HeaderRight = styled.div`
@@ -128,50 +96,14 @@ export const Label = styled.span`
 export const Value = styled.span`
   color: #fff;
   line-break: anywhere;
-
-  .changedTag {
-    display: inline-block;
-    margin-left: 8px;
-    font-size: 0.8rem;
-    color: #ff6b6b;
-    font-weight: bold;
-  }
 `
 
 export const MeshTextureSection = styled.div`
   padding-top: 5px;
-
-  .collapseButton {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px 0;
-    text-align: left;
-    width: 100%;
-    color: #999;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1rem;
-  }
-
-  .collapseButton:hover {
-    color: #ccc;
-  }
 `
 
 export const MeshTextureContent = styled.div`
   margin-top: 5px;
-
-  .increased {
-    color: #4caf50;
-    font-weight: bold;
-  }
-
-  .decreased {
-    color: #f44336;
-    font-weight: bold;
-  }
 `
 
 export const BackButton = styled.a`
@@ -201,4 +133,68 @@ export const ContentWrapper = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
+`
+
+export const NotificationPanel = styled.div<{ $isNew: boolean }>`
+  margin-bottom: 1rem;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: 500;
+  ${({ $isNew }) =>
+    $isNew
+      ? css`
+          background-color: rgba(0, 128, 0, 0.15);
+          border-left: 4px solid #008000;
+          color: #006400;
+        `
+      : css`
+          background-color: rgba(255, 165, 0, 0.15);
+          border-left: 4px solid #ffa500;
+          color: #8b4513;
+        `}
+`
+
+export const NotificationLink = styled(Link)`
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+`
+
+export const DetailIcon = styled(Image)`
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  padding: 0.5rem;
+`
+
+export const ChangedTag = styled.span`
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: #ff6b6b;
+  font-weight: bold;
+`
+
+export const CollapseButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  text-align: left;
+  width: 100%;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  &:hover {
+    color: #ccc;
+  }
+`
+
+export const ChangeArrow = styled.span<{ $increased: boolean }>`
+  color: ${({ $increased }) => ($increased ? '#4caf50' : '#f44336')};
+  font-weight: bold;
 `

@@ -11,7 +11,6 @@ import { ArmorSet, Item } from '@/types'
 import { getDataUrl } from '@/utils/getDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
@@ -19,6 +18,9 @@ import styled from 'styled-components'
 import {
   BackButton,
   Container,
+  NotificationPanel,
+  NotificationLink,
+  DetailIcon,
   ContentWrapper,
   Description,
   ErrorText,
@@ -31,6 +33,7 @@ import {
   Stats,
   TableContainer,
   Value,
+  ChangedTag,
 } from '@/components/primitives/DetailsPrimitives'
 import { Skeleton } from './Skeleton'
 
@@ -76,9 +79,9 @@ const ItemDetailsLoading = () => {
           <Skeleton width={150} />
         </h2>
         <SetCard>
-          <h3 className="setName">
+          <SetName>
             <Skeleton width={180} />
-          </h3>
+          </SetName>
           <SetVisualContainer>
             <Skeleton width={80} height={120} />
           </SetVisualContainer>
@@ -282,36 +285,32 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
       <ContentWrapper>
         <TableContainer>
           {(item?.is_new || item?.is_changed) && (
-            <div
-              className={`notificationPanel ${item?.is_new ? 'newItem' : 'changedItem'}`}
-            >
+            <NotificationPanel $isNew={!!item?.is_new}>
               {item?.is_new ? (
                 t('itemDetails.new')
               ) : hasChangedProperties ? (
-                <Link
+                <NotificationLink
                   href="#changes-section"
-                  className="notificationLink"
                   onClick={() => {
                     setShowChangedProperties(true)
                   }}
                 >
                   {t('itemDetails.changed')}
-                </Link>
+                </NotificationLink>
               ) : (
                 t('itemDetails.changed')
               )}
-            </div>
+            </NotificationPanel>
           )}
           <ItemHeader>
             <HeaderLeft>
-              <Image
+              <DetailIcon
                 src={getDataUrl(
                   `/icon/${item?.icon?.[0].split('.').at(-1)}.webp`,
                 )}
                 alt={item?.name || item?.object_name || ''}
                 width={64}
                 height={64}
-                className="icon"
               />
               <h1>{item?.name || item?.object_name}</h1>
             </HeaderLeft>
@@ -380,10 +379,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                       ? value.join(', ')
                       : value?.toString()}
                     {isChanged && (
-                      <span className="changedTag">
-                        {' '}
-                        {t('details.propertyChanged')}
-                      </span>
+                      <ChangedTag> {t('details.propertyChanged')}</ChangedTag>
                     )}
                   </Value>
                 </StatRow>
@@ -437,7 +433,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
                   key={armorSet.id}
                   href={`/armorsets/${armorSet.id}`}
                 >
-                  <h3 className="setName">{armorSet.name}</h3>
+                  <SetName>{armorSet.name}</SetName>
                 </Link>
                 <SetVisualContainer>
                   <ArmorSetVisual armorSet={armorSet} />
@@ -492,13 +488,6 @@ const ArmorSets = styled.div`
     font-size: 1.2rem;
     text-align: center;
   }
-
-  .setName {
-    margin-top: 0;
-    font-size: 1rem;
-    text-align: center;
-    text-decoration: underline;
-  }
 `
 
 const SetVisualContainer = styled.div`
@@ -538,4 +527,11 @@ const HarborBirthdayItem = styled.img.attrs({
   max-width: 256px;
   border-radius: 4px;
   margin-top: 8px;
+`
+
+const SetName = styled.h3`
+  margin-top: 0;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: underline;
 `

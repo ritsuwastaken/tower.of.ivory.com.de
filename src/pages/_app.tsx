@@ -97,9 +97,8 @@ const robotoMono = Roboto_Mono({
   weight: ['400', '500', '700'],
 })
 
-const Layout = styled.div.attrs({
-  className: robotoMono.className,
-})`
+const Layout = styled.div`
+  font-family: ${robotoMono.style.fontFamily};
   display: flex;
   flex-direction: column;
   flex: 1;

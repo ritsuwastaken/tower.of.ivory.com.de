@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { useState } from 'react'
+import { useState, type KeyboardEvent } from 'react'
 import styled from 'styled-components'
 import { Pagination } from '../Pagination'
 import { Filters } from './Filters'
@@ -357,7 +357,7 @@ const Table = styled.table.attrs({
 const Th = styled.th.attrs<{ onClick?: () => void }>((props) => ({
   tabIndex: 0,
   role: 'columnheader',
-  onKeyDown: (e: React.KeyboardEvent) => {
+  onKeyDown: (e: KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault()
       props.onClick?.()
@@ -398,7 +398,7 @@ const Td = styled.td`
 const TableRow = styled.tr.attrs<{ onClick?: () => void }>((props) => ({
   tabIndex: props.onClick ? 0 : undefined,
   role: 'row',
-  onKeyDown: (e: React.KeyboardEvent) => {
+  onKeyDown: (e: KeyboardEvent) => {
     if (props.onClick && (e.key === 'Enter' || e.key === ' ')) {
       e.preventDefault()
       props.onClick()

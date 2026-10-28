@@ -1,4 +1,6 @@
+import type { ReactNode } from 'react'
 import { SortConfig } from '@/utils/pagination'
+
 interface FilterOption {
   value: string
   label: string
@@ -50,7 +52,7 @@ export interface DataTableProps<T> extends SharedFilterProps {
   onSort: (column: keyof T) => void
   sortConfig: SortConfig<T>
   onRowClick?: (item: T) => void
-  renderCell: (item: T, column: keyof T | string) => React.ReactNode
+  renderCell: (item: T, column: keyof T | string) => ReactNode
   noResultsMessage?: string
   onResetFilters?: () => void
   currentPage: number

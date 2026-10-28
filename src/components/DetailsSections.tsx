@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import {
   Label,
+  CollapseButton,
+  ChangeArrow,
   MeshTextureContent,
   MeshTextureSection,
   StatRow,
@@ -28,9 +30,9 @@ export function CollapsibleSection({
 }: CollapsibleSectionProps) {
   return (
     <MeshTextureSection id={id}>
-      <button className="collapseButton" onClick={onToggle}>
+      <CollapseButton onClick={onToggle}>
         {open ? '−' : '+'} {title}
-      </button>
+      </CollapseButton>
       {open && <MeshTextureContent>{children}</MeshTextureContent>}
     </MeshTextureSection>
   )
@@ -64,15 +66,11 @@ export function ChangedProperties({
                 {isNumeric ? (
                   <>
                     {oldValue?.toString()}{' '}
-                    <span
-                      className={
-                        Number(newValue) > Number(oldValue)
-                          ? 'increased'
-                          : 'decreased'
-                      }
+                    <ChangeArrow
+                      $increased={Number(newValue) > Number(oldValue)}
                     >
                       →
-                    </span>{' '}
+                    </ChangeArrow>{' '}
                     {newValue?.toString()}
                   </>
                 ) : !oldValue ? (
