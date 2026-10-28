@@ -192,3 +192,13 @@ export const ErrorText = styled.div`
   color: #ff6b6b;
   padding: 1rem 0;
 `
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`

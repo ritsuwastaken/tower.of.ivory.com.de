@@ -1,3 +1,4 @@
+import { SortConfig } from '@/utils/tableData'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
@@ -21,10 +22,10 @@ export function useDataTable<T>({
   const [currentPage, setCurrentPage] = useState(
     parseInt(searchParams.get('page') || '1', 10),
   )
-  const [sortConfig, setSortConfig] = useState<{
-    column: keyof T | null
-    direction: 'asc' | 'desc'
-  }>({ column: null, direction: 'asc' })
+  const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
+    column: null,
+    direction: 'asc',
+  })
   const [columnVisibility, setColumnVisibility] = useState(
     defaultColumnVisibility,
   )

@@ -437,34 +437,25 @@ const ResetFilters = styled.a`
   cursor: pointer;
 `
 
-const SkeletonCell = styled(Skeleton).attrs({
-  highlightColor: '#3a3a3a',
-  baseColor: '#2a2a2a',
-})`
+const SkeletonCell = styled(Skeleton).attrs({})`
   width: 100%;
   height: 20px;
   margin: 0;
 `
 
 const SkeletonVisual = styled(Skeleton).attrs({
-  highlightColor: '#3a3a3a',
-  baseColor: '#2a2a2a',
   width: 144,
   height: 144,
   borderRadius: 4,
 })``
 
 const SkeletonIcon = styled(Skeleton).attrs({
-  highlightColor: '#3a3a3a',
-  baseColor: '#2a2a2a',
   width: 32,
   height: 32,
   borderRadius: 4,
 })``
 
 const SkeletonDescription = styled(Skeleton).attrs({
-  highlightColor: '#3a3a3a',
-  baseColor: '#2a2a2a',
   height: 20,
 })`
   min-width: 200px;

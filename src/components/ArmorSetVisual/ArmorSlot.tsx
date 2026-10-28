@@ -2,12 +2,13 @@ import { ArmorSet } from '@/types/armorset'
 import { getDataUrl } from '@/utils/getDataUrl'
 import Image from 'next/image'
 import Link from 'next/link'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 interface ArmorSlotProps {
   slot: {
     type: string
-    position: string
+    column: number
+    row: number
   }
   armorSet: ArmorSet
 }
@@ -37,7 +38,7 @@ export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
   const type = armorPiece?.body_part?.includes('lhand') ? 'weapons' : 'armor'
 
   return (
-    <GridSlot $position={slot.position} $isEmpty={!hasItem}>
+    <GridSlot $column={slot.column} $row={slot.row} $isEmpty={!hasItem}>
       {hasItem ? (
         <IconWrapper
           rel="canonical"
@@ -65,7 +66,11 @@ export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
   )
 }
 
-const GridSlot = styled.div<{ $position: string; $isEmpty: boolean }>`
+const GridSlot = styled.div<{
+  $column: number
+  $row: number
+  $isEmpty: boolean
+}>`
   background-color: rgba(40, 40, 40, 0.8);
   border: 1px solid #444;
   display: flex;
@@ -74,57 +79,8 @@ const GridSlot = styled.div<{ $position: string; $isEmpty: boolean }>`
   position: relative;
   opacity: ${(props) => (props.$isEmpty ? 0.5 : 1)};
 
-  ${(props) => {
-    switch (props.$position) {
-      case 'top':
-        return css`
-          grid-column: 2;
-          grid-row: 1;
-        `
-      case 'top-left':
-        return css`
-          grid-column: 1;
-          grid-row: 1;
-        `
-      case 'top-right':
-        return css`
-          grid-column: 3;
-          grid-row: 1;
-        `
-      case 'middle':
-        return css`
-          grid-column: 2;
-          grid-row: 2;
-        `
-      case 'left':
-        return css`
-          grid-column: 1;
-          grid-row: 2;
-        `
-      case 'right':
-        return css`
-          grid-column: 3;
-          grid-row: 2;
-        `
-      case 'middle-bottom':
-        return css`
-          grid-column: 2;
-          grid-row: 3;
-        `
-      case 'bottom-left':
-        return css`
-          grid-column: 1;
-          grid-row: 3;
-        `
-      case 'bottom':
-        return css`
-          grid-column: 3;
-          grid-row: 3;
-        `
-      default:
-        return ''
-    }
-  }}
+  grid-column: ${(props) => props.$column};
+  grid-row: ${(props) => props.$row};
 `
 
 const IconWrapper = styled(Link)`

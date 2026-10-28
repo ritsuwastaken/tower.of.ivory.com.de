@@ -1,19 +1,5 @@
-import { Head } from '@/components/Head'
+import { ErrorPage } from '@/components/ErrorPage'
 
 export default function Custom404() {
-  return (
-    <>
-      <Head description="Page Not Found" />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '2rem',
-        }}
-      >
-        <h1>404 - Page Not Found</h1>
-      </div>
-    </>
-  )
+  return <ErrorPage status={404} description="Page Not Found" />
 }

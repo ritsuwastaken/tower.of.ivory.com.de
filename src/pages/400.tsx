@@ -1,19 +1,5 @@
-import { Head } from '@/components/Head'
+import { ErrorPage } from '@/components/ErrorPage'
 
 export default function Custom400() {
-  return (
-    <>
-      <Head description="Bad Request" />
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '2rem',
-        }}
-      >
-        <h1>400 - Bad Request</h1>
-      </div>
-    </>
-  )
+  return <ErrorPage status={400} description="Bad Request" />
 }

@@ -1,0 +1,109 @@
+import { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useFormatColumnName } from '@/hooks/useFormatColumnName'
+import {
+  Label,
+  MeshTextureContent,
+  MeshTextureSection,
+  StatRow,
+  Stats,
+  Value,
+} from './primitives/DetailsPrimitives'
+import { Skeleton } from './Skeleton'
+
+interface CollapsibleSectionProps {
+  title: string
+  children: ReactNode
+  id?: string
+  open: boolean
+  onToggle: () => void
+}
+
+export function CollapsibleSection({
+  title,
+  children,
+  id,
+  open,
+  onToggle,
+}: CollapsibleSectionProps) {
+  return (
+    <MeshTextureSection id={id}>
+      <button className="collapseButton" onClick={onToggle}>
+        {open ? '−' : '+'} {title}
+      </button>
+      {open && <MeshTextureContent>{children}</MeshTextureContent>}
+    </MeshTextureSection>
+  )
+}
+
+export function ChangedProperties({
+  changes,
+  open,
+  onToggle,
+}: {
+  changes: Record<string, { old: unknown; new: unknown }>
+  open: boolean
+  onToggle: () => void
+}) {
+  const { t } = useTranslation()
+  const formatColumnName = useFormatColumnName()
+  return (
+    <CollapsibleSection
+      id="changes-section"
+      title={t('details.sections.changedProperties')}
+      open={open}
+      onToggle={onToggle}
+    >
+      {Object.entries(changes).map(
+        ([key, { old: oldValue, new: newValue }]) => {
+          const isNumeric = !isNaN(Number(oldValue)) && !isNaN(Number(newValue))
+          return (
+            <StatRow key={key}>
+              <Label>{formatColumnName(key)}:</Label>
+              <Value>
+                {isNumeric ? (
+                  <>
+                    {oldValue?.toString()}{' '}
+                    <span
+                      className={
+                        Number(newValue) > Number(oldValue)
+                          ? 'increased'
+                          : 'decreased'
+                      }
+                    >
+                      →
+                    </span>{' '}
+                    {newValue?.toString()}
+                  </>
+                ) : !oldValue ? (
+                  '-'
+                ) : Array.isArray(oldValue) ? (
+                  oldValue.join(', ')
+                ) : (
+                  oldValue.toString()
+                )}
+              </Value>
+            </StatRow>
+          )
+        },
+      )}
+    </CollapsibleSection>
+  )
+}
+
+export function LoadingStats() {
+  return (
+    <Stats>
+      {Array.from({ length: 8 }, (_, index) => (
+        <StatRow key={index}>
+          <Label>
+            <Skeleton width={100} />
+          </Label>
+          <Value>
+            <Skeleton width={80} />
+          </Value>
+        </StatRow>
+      ))}
+    </Stats>
+  )
+}

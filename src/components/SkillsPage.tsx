@@ -1,3 +1,4 @@
+import { sortData, paginateData } from '@/utils/tableData'
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types/skill'
@@ -100,27 +101,10 @@ export const SkillsPage = () => {
     return matchesSearch && matchesNew && matchesChanged
   })
 
-  const sortedSkills = [...filteredSkills].sort((a, b) => {
-    if (!sortConfig.column) return 0
-
-    const aValue = a[sortConfig.column]
-    const bValue = b[sortConfig.column]
-
-    if (aValue === bValue) return 0
-    if (aValue === undefined) return 1
-    if (bValue === undefined) return -1
-
-    const compareResult =
-      typeof aValue === 'string'
-        ? (aValue as string).localeCompare(bValue as string)
-        : (aValue as number) - (bValue as number)
-
-    return sortConfig.direction === 'asc' ? compareResult : -compareResult
-  })
-
-  const currentSkills = sortedSkills.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage,
+  const { data: currentSkills, totalPages } = paginateData(
+    sortData(filteredSkills, sortConfig),
+    currentPage,
+    itemsPerPage,
   )
 
   const handleSkillClick = (id: number) => {
@@ -265,7 +249,7 @@ export const SkillsPage = () => {
       onColumnVisibilityChange={handleColumnVisibilityChange}
       formatColumnName={formatColumnName}
       currentPage={currentPage}
-      totalPages={Math.ceil(filteredSkills.length / itemsPerPage)}
+      totalPages={totalPages}
       onPageChange={handlePageChange}
     />
   )

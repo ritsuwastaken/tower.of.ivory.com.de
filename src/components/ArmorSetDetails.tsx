@@ -34,60 +34,30 @@ const ArmorSetDetailsLoading = () => {
       <ItemHeader>
         <HeaderLeft>
           <Icon>
-            <Skeleton
-              width={150}
-              height={150}
-              baseColor="#2a2a2a"
-              highlightColor="#3a3a3a"
-            />
+            <Skeleton width={150} height={150} />
           </Icon>
           <HeaderInfo>
             <h1>
-              <Skeleton
-                width={200}
-                height={32}
-                baseColor="#2a2a2a"
-                highlightColor="#3a3a3a"
-              />
+              <Skeleton width={200} height={32} />
             </h1>
             <div>
-              <Skeleton
-                width={100}
-                height={20}
-                baseColor="#2a2a2a"
-                highlightColor="#3a3a3a"
-              />
+              <Skeleton width={100} height={20} />
             </div>
-            <TotalDefense>
-              <Skeleton
-                width={150}
-                height={20}
-                baseColor="#2a2a2a"
-                highlightColor="#3a3a3a"
-              />
-            </TotalDefense>
-            <TotalPrice>
-              <Skeleton
-                width={180}
-                height={20}
-                baseColor="#2a2a2a"
-                highlightColor="#3a3a3a"
-              />
-            </TotalPrice>
+            <TotalStat>
+              <Skeleton width={150} height={20} />
+            </TotalStat>
+            <TotalStat>
+              <Skeleton width={180} height={20} />
+            </TotalStat>
           </HeaderInfo>
         </HeaderLeft>
         <HeaderRight>
-          <Skeleton
-            width={120}
-            height={30}
-            baseColor="#2a2a2a"
-            highlightColor="#3a3a3a"
-          />
+          <Skeleton width={120} height={30} />
         </HeaderRight>
       </ItemHeader>
 
       <Description>
-        <Skeleton count={2} baseColor="#2a2a2a" highlightColor="#3a3a3a" />
+        <Skeleton count={2} />
       </Description>
 
       <PartsContainer>
@@ -99,69 +69,34 @@ const ArmorSetDetailsLoading = () => {
                 <PartHeaderContainer>
                   <PartIconColumn>
                     <PartIcon>
-                      <Skeleton
-                        borderRadius={4}
-                        width={45}
-                        height={45}
-                        baseColor="#2a2a2a"
-                        highlightColor="#3a3a3a"
-                      />
+                      <Skeleton borderRadius={4} width={45} height={45} />
                     </PartIcon>
                   </PartIconColumn>
                   <PartHeader>
                     <PartMainContainer>
                       <PartMain>
-                        <Skeleton
-                          width={150}
-                          height={24}
-                          baseColor="#2a2a2a"
-                          highlightColor="#3a3a3a"
-                        />
+                        <Skeleton width={150} height={24} />
                       </PartMain>
                       <PartParams>
                         <PartParam>
-                          <Skeleton
-                            width={120}
-                            height={18}
-                            baseColor="#2a2a2a"
-                            highlightColor="#3a3a3a"
-                          />
+                          <Skeleton width={120} height={18} />
                         </PartParam>
                         <PartParam>
-                          <Skeleton
-                            width={80}
-                            height={18}
-                            baseColor="#2a2a2a"
-                            highlightColor="#3a3a3a"
-                          />
+                          <Skeleton width={80} height={18} />
                         </PartParam>
                         <PartParam>
-                          <Skeleton
-                            width={100}
-                            height={18}
-                            baseColor="#2a2a2a"
-                            highlightColor="#3a3a3a"
-                          />
+                          <Skeleton width={100} height={18} />
                         </PartParam>
                       </PartParams>
                     </PartMainContainer>
                     <PartLinks>
-                      <Skeleton
-                        width={80}
-                        height={24}
-                        baseColor="#2a2a2a"
-                        highlightColor="#3a3a3a"
-                      />
+                      <Skeleton width={80} height={24} />
                     </PartLinks>
                   </PartHeader>
                 </PartHeaderContainer>
                 {index % 2 === 0 && (
                   <Description>
-                    <Skeleton
-                      count={1}
-                      baseColor="#2a2a2a"
-                      highlightColor="#3a3a3a"
-                    />
+                    <Skeleton count={1} />
                   </Description>
                 )}
               </PartDetails>
@@ -258,16 +193,16 @@ export const ArmorSetDetails = ({ id }: ArmorSetDetailsProps) => {
                 </div>
               )}
               {totalPhysicalDefense > 0 && (
-                <TotalDefense>
+                <TotalStat>
                   {t('armorSetDetails.totalPDef')}:{' '}
                   <strong>{totalPhysicalDefense}</strong>
-                </TotalDefense>
+                </TotalStat>
               )}
               {totalBasePrice > 0 && (
-                <TotalPrice>
+                <TotalStat>
                   {t('armorSetDetails.basePrice')}:{' '}
                   <strong>{totalBasePrice.toLocaleString()}</strong>
-                </TotalPrice>
+                </TotalStat>
               )}
             </HeaderInfo>
           </HeaderLeft>
@@ -385,13 +320,7 @@ const Icon = styled.div`
   padding: 0.5rem;
 `
 
-const TotalDefense = styled.div`
-  margin-top: 4px;
-  color: #ddd;
-  font-size: 0.95rem;
-`
-
-const TotalPrice = styled.div`
+const TotalStat = styled.div`
   margin-top: 4px;
   color: #ddd;
   font-size: 0.95rem;

@@ -7,15 +7,15 @@ interface ArmorSetVisualProps {
 }
 
 const slotTypes = [
-  { type: 'head', position: 'top' },
-  { type: 'hat', position: 'top-left' },
-  { type: 'chest', position: 'middle' },
-  { type: 'legs', position: 'middle-bottom' },
-  { type: 'feet', position: 'bottom' },
-  { type: 'lhand', position: 'right' },
-  { type: 'cloak', position: 'top-right' },
-  { type: 'rhand', position: 'left' },
-  { type: 'gloves', position: 'bottom-left' },
+  { type: 'head', column: 2, row: 1 },
+  { type: 'hat', column: 1, row: 1 },
+  { type: 'chest', column: 2, row: 2 },
+  { type: 'legs', column: 2, row: 3 },
+  { type: 'feet', column: 3, row: 3 },
+  { type: 'lhand', column: 3, row: 2 },
+  { type: 'cloak', column: 3, row: 1 },
+  { type: 'rhand', column: 1, row: 2 },
+  { type: 'gloves', column: 1, row: 3 },
 ]
 
 export const ArmorSetVisual = ({ armorSet }: ArmorSetVisualProps) => {

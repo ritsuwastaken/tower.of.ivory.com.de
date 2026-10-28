@@ -41,7 +41,10 @@ i18n.use(initReactI18next).init({
 })
 
 i18n.on('languageChanged', (lng) => {
-  localStorage.setItem('i18nextLng', lng)
+  if (typeof window === 'undefined') return
+  try {
+    window.localStorage?.setItem('i18nextLng', lng)
+  } catch { }
 })
 
 export default i18n

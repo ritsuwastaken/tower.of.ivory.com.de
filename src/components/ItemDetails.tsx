@@ -1,3 +1,8 @@
+import {
+  ChangedProperties,
+  LoadingStats,
+  CollapsibleSection,
+} from './DetailsSections'
 import { ArmorSetVisual } from '@/components/ArmorSetVisual'
 import { ExternalLinks } from '@/components/ExternalLinks'
 import { Head } from '@/components/Head'
@@ -15,13 +20,13 @@ import styled from 'styled-components'
 import {
   BackButton,
   Container,
+  ContentWrapper,
   Description,
   ErrorText,
   HeaderLeft,
   HeaderRight,
   ItemHeader,
   Label,
-  MeshTextureContent,
   MeshTextureSection,
   StatRow,
   Stats,
@@ -42,97 +47,41 @@ const ItemDetailsLoading = () => {
       <TableContainer>
         <ItemHeader>
           <HeaderLeft>
-            <Skeleton
-              borderRadius={8}
-              width={64}
-              height={64}
-              baseColor="#2a2a2a"
-              highlightColor="#3a3a3a"
-            />
+            <Skeleton borderRadius={8} width={64} height={64} />
             <h1>
-              <Skeleton
-                width={200}
-                height={32}
-                baseColor="#2a2a2a"
-                highlightColor="#3a3a3a"
-              />
+              <Skeleton width={200} height={32} />
             </h1>
           </HeaderLeft>
           <HeaderRight>
-            <Skeleton
-              width={120}
-              height={30}
-              baseColor="#2a2a2a"
-              highlightColor="#3a3a3a"
-            />
+            <Skeleton width={120} height={30} />
           </HeaderRight>
         </ItemHeader>
 
         <Description>
-          <Skeleton count={3} baseColor="#2a2a2a" highlightColor="#3a3a3a" />
+          <Skeleton count={3} />
         </Description>
 
-        <Stats>
-          {Array(8)
-            .fill(0)
-            .map((_, index) => (
-              <StatRow key={index}>
-                <Label>
-                  <Skeleton
-                    width={100}
-                    baseColor="#2a2a2a"
-                    highlightColor="#3a3a3a"
-                  />
-                </Label>
-                <Value>
-                  <Skeleton
-                    width={80}
-                    baseColor="#2a2a2a"
-                    highlightColor="#3a3a3a"
-                  />
-                </Value>
-              </StatRow>
-            ))}
-        </Stats>
+        <LoadingStats />
 
         <MeshTextureSection>
-          <Skeleton
-            width={200}
-            height={36}
-            baseColor="#2a2a2a"
-            highlightColor="#3a3a3a"
-          />
+          <Skeleton width={200} height={36} />
         </MeshTextureSection>
 
         <MeshTextureSection>
-          <Skeleton
-            width={200}
-            height={36}
-            baseColor="#2a2a2a"
-            highlightColor="#3a3a3a"
-          />
+          <Skeleton width={200} height={36} />
         </MeshTextureSection>
       </TableContainer>
 
       <ArmorSets>
         <h2>
-          <Skeleton width={150} baseColor="#2a2a2a" highlightColor="#3a3a3a" />
+          <Skeleton width={150} />
         </h2>
         <SetCard>
           <h3 className="setName">
-            <Skeleton
-              width={180}
-              baseColor="#2a2a2a"
-              highlightColor="#3a3a3a"
-            />
+            <Skeleton width={180} />
           </h3>
           <SetVisualContainer>
-            <Skeleton
-              width={80}
-              height={120}
-              baseColor="#2a2a2a"
-              highlightColor="#3a3a3a"
-            />
+            <Skeleton width={80} height={120} />
           </SetVisualContainer>
           <SetInfo>
             {Array(3)
@@ -140,18 +89,10 @@ const ItemDetailsLoading = () => {
               .map((_, index) => (
                 <SetInfoItem key={index}>
                   <SetInfoLabel>
-                    <Skeleton
-                      width={70}
-                      baseColor="#2a2a2a"
-                      highlightColor="#3a3a3a"
-                    />
+                    <Skeleton width={70} />
                   </SetInfoLabel>
                   <SetInfoValue>
-                    <Skeleton
-                      width={50}
-                      baseColor="#2a2a2a"
-                      highlightColor="#3a3a3a"
-                    />
+                    <Skeleton width={50} />
                   </SetInfoValue>
                 </SetInfoItem>
               ))}
@@ -176,10 +117,9 @@ const ItemDetailsError = () => {
 export const ItemDetails = ({ id }: ItemDetailsProps) => {
   const { t } = useTranslation()
   const router = useRouter()
-  const [showMeshTexture, setShowMeshTexture] = useState(false)
-  const [showSound, setShowSound] = useState(false)
-  const [showDropProperties, setShowDropProperties] = useState(false)
-  const [showEffectProperties, setShowEffectProperties] = useState(false)
+  const [expandedSections, setExpandedSections] = useState<
+    Record<string, boolean>
+  >({})
   const [showChangedProperties, setShowChangedProperties] = useState(false)
   const formatColumnName = useFormatColumnName()
 
@@ -287,18 +227,24 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
     )
   }
 
-  const hasDropProperties = Object.keys(item || {}).some((key) =>
-    isDropProperty(key),
-  )
-  const hasMeshTextureProperties = Object.keys(item || {}).some((key) =>
-    isMeshTextureProperty(key),
-  )
-  const hasSoundProperties = Object.keys(item || {}).some((key) =>
-    isSoundProperty(key),
-  )
-  const hasEffectProperties = Object.keys(item || {}).some((key) =>
-    isEffectProperty(key),
-  )
+  const propertySections = [
+    { id: 'drop', title: 'Drop Properties', matches: isDropProperty },
+    {
+      id: 'mesh',
+      title: 'Mesh, Texture & Projectile Properties',
+      matches: isMeshTextureProperty,
+    },
+    { id: 'sound', title: 'Sound Properties', matches: isSoundProperty },
+    {
+      id: 'effect',
+      title: t('details.sections.otherProperties'),
+      matches: isEffectProperty,
+    },
+  ].map((section) => ({
+    ...section,
+    entries: Object.entries(item || {}).filter(([key]) => section.matches(key)),
+  }))
+
   const hasChangedProperties =
     item?.is_changed && item?.changes && Object.keys(item.changes).length > 0
 
@@ -447,183 +393,39 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
           </Stats>
 
           {hasChangedProperties && (
-            <MeshTextureSection id="changes-section">
-              <button
-                className="collapseButton"
-                onClick={() => setShowChangedProperties(!showChangedProperties)}
-              >
-                {showChangedProperties ? '−' : '+'}{' '}
-                {t('details.sections.changedProperties')}
-              </button>
-
-              {showChangedProperties && (
-                <MeshTextureContent>
-                  {Object.entries(item.changes || {}).map(
-                    ([key, { old: oldValue, new: newValue }]) => {
-                      const isNumeric =
-                        !isNaN(Number(oldValue)) && !isNaN(Number(newValue))
-
-                      return (
-                        <StatRow key={key}>
-                          <Label>{formatColumnName(key)}:</Label>
-                          <Value>
-                            {isNumeric ? (
-                              <>
-                                {oldValue?.toString()}
-                                {Number(newValue) > Number(oldValue) ? (
-                                  <>
-                                    {' '}
-                                    <span className="increased">→</span>{' '}
-                                    {newValue?.toString()}
-                                  </>
-                                ) : (
-                                  <>
-                                    {' '}
-                                    <span className="decreased">→</span>{' '}
-                                    {newValue?.toString()}
-                                  </>
-                                )}
-                              </>
-                            ) : (
-                              <>
-                                {!oldValue
-                                  ? '-'
-                                  : Array.isArray(oldValue)
-                                    ? oldValue.join(', ')
-                                    : oldValue?.toString()}
-                              </>
-                            )}
-                          </Value>
-                        </StatRow>
-                      )
-                    },
-                  )}
-                </MeshTextureContent>
-              )}
-            </MeshTextureSection>
+            <ChangedProperties
+              changes={item.changes || {}}
+              open={showChangedProperties}
+              onToggle={() => setShowChangedProperties(!showChangedProperties)}
+            />
           )}
 
-          {hasDropProperties && (
-            <MeshTextureSection>
-              <button
-                className="collapseButton"
-                onClick={() => setShowDropProperties(!showDropProperties)}
+          {propertySections
+            .filter((section) => section.entries.length > 0)
+            .map((section) => (
+              <CollapsibleSection
+                key={section.id}
+                title={section.title}
+                open={expandedSections[section.id] ?? false}
+                onToggle={() =>
+                  setExpandedSections((previous) => ({
+                    ...previous,
+                    [section.id]: !previous[section.id],
+                  }))
+                }
               >
-                {showDropProperties ? '−' : '+'} Drop Properties
-              </button>
-
-              {showDropProperties && (
-                <MeshTextureContent>
-                  {Object.entries(item || {}).map(([key, value]) => {
-                    if (!isDropProperty(key)) return null
-
-                    return (
-                      <StatRow key={key}>
-                        <Label>{formatColumnName(key)}:</Label>
-                        <Value>
-                          {Array.isArray(value)
-                            ? value.join(', ')
-                            : value?.toString()}
-                        </Value>
-                      </StatRow>
-                    )
-                  })}
-                </MeshTextureContent>
-              )}
-            </MeshTextureSection>
-          )}
-
-          {hasMeshTextureProperties && (
-            <MeshTextureSection>
-              <button
-                className="collapseButton"
-                onClick={() => setShowMeshTexture(!showMeshTexture)}
-              >
-                {showMeshTexture ? '−' : '+'} Mesh, Texture & Projectile
-                Properties
-              </button>
-
-              {showMeshTexture && (
-                <MeshTextureContent>
-                  {Object.entries(item || {}).map(([key, value]) => {
-                    if (!isMeshTextureProperty(key)) return null
-
-                    return (
-                      <StatRow key={key}>
-                        <Label>{formatColumnName(key)}:</Label>
-                        <Value>
-                          {Array.isArray(value)
-                            ? value.join(', ')
-                            : value?.toString()}
-                        </Value>
-                      </StatRow>
-                    )
-                  })}
-                </MeshTextureContent>
-              )}
-            </MeshTextureSection>
-          )}
-
-          {hasSoundProperties && (
-            <MeshTextureSection>
-              <button
-                className="collapseButton"
-                onClick={() => setShowSound(!showSound)}
-              >
-                {showSound ? '−' : '+'} Sound Properties
-              </button>
-
-              {showSound && (
-                <MeshTextureContent>
-                  {Object.entries(item || {}).map(([key, value]) => {
-                    if (!isSoundProperty(key)) return null
-
-                    return (
-                      <StatRow key={key}>
-                        <Label>{formatColumnName(key)}:</Label>
-                        <Value>
-                          {Array.isArray(value)
-                            ? value.join(', ')
-                            : value?.toString()}
-                        </Value>
-                      </StatRow>
-                    )
-                  })}
-                </MeshTextureContent>
-              )}
-            </MeshTextureSection>
-          )}
-
-          {hasEffectProperties && (
-            <MeshTextureSection>
-              <button
-                className="collapseButton"
-                onClick={() => setShowEffectProperties(!showEffectProperties)}
-              >
-                {showEffectProperties ? '−' : '+'}{' '}
-                {t('details.sections.otherProperties')}
-              </button>
-
-              {showEffectProperties && (
-                <MeshTextureContent>
-                  {Object.entries(item || {}).map(([key, value]) => {
-                    if (!isEffectProperty(key)) return null
-
-                    return (
-                      <StatRow key={key}>
-                        <Label>{formatColumnName(key)}:</Label>
-                        <Value>
-                          {Array.isArray(value)
-                            ? value.join(', ')
-                            : value?.toString()}
-                        </Value>
-                      </StatRow>
-                    )
-                  })}
-                </MeshTextureContent>
-              )}
-            </MeshTextureSection>
-          )}
+                {section.entries.map(([key, value]) => (
+                  <StatRow key={key}>
+                    <Label>{formatColumnName(key)}:</Label>
+                    <Value>
+                      {Array.isArray(value)
+                        ? value.join(', ')
+                        : value?.toString()}
+                    </Value>
+                  </StatRow>
+                ))}
+              </CollapsibleSection>
+            ))}
         </TableContainer>
 
         {item?.sets && item?.sets.length > 0 && (
@@ -671,16 +473,6 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
     )
   }
 }
-
-const ContentWrapper = styled.div`
-  display: flex;
-  gap: 1rem;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`
 
 const ArmorSets = styled.div`
   display: flex;

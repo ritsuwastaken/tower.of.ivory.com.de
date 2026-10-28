@@ -1,3 +1,4 @@
+import { sortData, paginateData } from '@/utils/tableData'
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Item } from '@/types/item'
@@ -179,38 +180,10 @@ export const ItemsPage = ({
     ],
   )
 
-  const sortedItems = [...filteredItems].sort((a, b) => {
-    if (!sortConfig.column) return 0
-
-    const aValue = a[sortConfig.column]
-    const bValue = b[sortConfig.column]
-
-    if (aValue === bValue) return 0
-    if (aValue === undefined) return 1
-    if (bValue === undefined) return -1
-
-    if (sortConfig.column === 'crystal_type') {
-      const gradeOrder = { none: 0, d: 1, c: 2, b: 3, a: 4, s: 5 }
-      const aGrade = (aValue as string)?.toLowerCase() || 'none'
-      const bGrade = (bValue as string)?.toLowerCase() || 'none'
-
-      const aRank = gradeOrder[aGrade as keyof typeof gradeOrder] ?? 0
-      const bRank = gradeOrder[bGrade as keyof typeof gradeOrder] ?? 0
-
-      return sortConfig.direction === 'asc' ? aRank - bRank : bRank - aRank
-    }
-
-    const compareResult =
-      typeof aValue === 'string'
-        ? (aValue as string).localeCompare(bValue as string)
-        : (aValue as number) - (bValue as number)
-
-    return sortConfig.direction === 'asc' ? compareResult : -compareResult
-  })
-
-  const currentItems = sortedItems.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage,
+  const { data: currentItems, totalPages } = paginateData(
+    sortData(filteredItems, sortConfig, 'crystal_type'),
+    currentPage,
+    itemsPerPage,
   )
 
   const formatCrystalType = useCallback(
@@ -442,7 +415,7 @@ export const ItemsPage = ({
   return (
     <DataTable
       currentPage={currentPage}
-      totalPages={Math.ceil(filteredItems.length / itemsPerPage)}
+      totalPages={totalPages}
       onPageChange={handlePageChange}
       data={currentItems}
       columns={columns}

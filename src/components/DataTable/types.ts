@@ -1,3 +1,4 @@
+import { SortConfig } from '@/utils/tableData'
 interface FilterOption {
   value: string
   label: string
@@ -11,45 +12,8 @@ interface FilterConfig {
   onChange: (value: string) => void
 }
 
-export interface FiltersProps {
+interface SharedFilterProps {
   isLoading: boolean
-  showFilters: boolean
-  setShowFilters: (show: boolean) => void
-  filters: FilterConfig[]
-  checkboxFilters: {
-    id: string
-    label: string
-    checked: boolean
-    onChange: () => void
-  }[]
-  columnVisibility: Record<string, boolean>
-  onColumnVisibilityChange: (column: string, visible: boolean) => void
-  formatColumnName: (column: string) => string
-  viewMode: 'table' | 'grid'
-  onViewModeChange?: (mode: 'table' | 'grid') => void
-  allowGridView?: boolean
-}
-
-export interface DataTableProps<T> {
-  data: T[]
-  columns: {
-    key: keyof T | string
-    label: string
-    visible: boolean
-  }[]
-  isLoading: boolean
-  searchTerm: string
-  onSearchChange: (value: string) => void
-  searchPlaceholder?: string
-  onSort: (column: keyof T) => void
-  sortConfig: {
-    column: keyof T | null
-    direction: 'asc' | 'desc'
-  }
-  onRowClick?: (item: T) => void
-  renderCell: (item: T, column: keyof T | string) => React.ReactNode
-  noResultsMessage?: string
-  onResetFilters?: () => void
   filters?: FilterConfig[]
   checkboxFilters?: {
     id: string
@@ -62,6 +26,33 @@ export interface DataTableProps<T> {
   formatColumnName: (column: string) => string
   viewMode?: 'table' | 'grid'
   onViewModeChange?: (mode: 'table' | 'grid') => void
+}
+
+export interface FiltersProps extends SharedFilterProps {
+  showFilters: boolean
+  setShowFilters: (show: boolean) => void
+  filters: FilterConfig[]
+  checkboxFilters: NonNullable<SharedFilterProps['checkboxFilters']>
+  viewMode: 'table' | 'grid'
+  allowGridView?: boolean
+}
+
+export interface DataTableProps<T> extends SharedFilterProps {
+  data: T[]
+  columns: {
+    key: keyof T | string
+    label: string
+    visible: boolean
+  }[]
+  searchTerm: string
+  onSearchChange: (value: string) => void
+  searchPlaceholder?: string
+  onSort: (column: keyof T) => void
+  sortConfig: SortConfig<T>
+  onRowClick?: (item: T) => void
+  renderCell: (item: T, column: keyof T | string) => React.ReactNode
+  noResultsMessage?: string
+  onResetFilters?: () => void
   currentPage: number
   totalPages: number
   onPageChange: (page: number) => void

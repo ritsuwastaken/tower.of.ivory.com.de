@@ -3,7 +3,6 @@ import { GlobalStyles } from '@/components/GlobalStyles'
 import { Header } from '@/components/Header'
 import { Navigation } from '@/components/Navigation'
 import {
-  HydrationBoundary,
   QueryClient,
   QueryClientConfig,
   QueryClientProvider,
@@ -59,31 +58,29 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <HydrationBoundary state={pageProps.dehydratedState}>
-        <GlobalStyles />
-        <Layout>
-          <Header />
-          <Navigation />
-          <Main>
-            <Head>
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1, maximum-scale=1 "
-              />
-              <meta
-                name="description"
-                content="A database of items, skills, and other information from the Harbor client. Not affiliated with the Harbor project."
-              />
-              <meta
-                name="keywords"
-                content="Harbor, Tower of Ivory, C1 X1, database, items, skills, information, ElmoreLab, Harbingers of War, Lineage 2, Lineage II"
-              />
-            </Head>
-            <Component {...pageProps} />
-          </Main>
-          <Footer />
-        </Layout>
-      </HydrationBoundary>
+      <GlobalStyles />
+      <Layout>
+        <Header />
+        <Navigation />
+        <Main>
+          <Head>
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, maximum-scale=1 "
+            />
+            <meta
+              name="description"
+              content="A database of items, skills, and other information from the Harbor client. Not affiliated with the Harbor project."
+            />
+            <meta
+              name="keywords"
+              content="Harbor, Tower of Ivory, C1 X1, database, items, skills, information, ElmoreLab, Harbingers of War, Lineage 2, Lineage II"
+            />
+          </Head>
+          <Component {...pageProps} />
+        </Main>
+        <Footer />
+      </Layout>
     </QueryClientProvider>
   )
 }

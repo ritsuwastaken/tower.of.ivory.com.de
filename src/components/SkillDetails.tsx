@@ -1,3 +1,4 @@
+import { ChangedProperties, LoadingStats } from './DetailsSections'
 import { Head } from '@/components/Head'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types/skill'
@@ -12,6 +13,7 @@ import { ExternalLinks } from './ExternalLinks'
 import styled from 'styled-components'
 import {
   Container,
+  ContentWrapper,
   Description,
   ErrorText,
   HeaderLeft,
@@ -19,7 +21,6 @@ import {
   HeaderInfo,
   ItemHeader,
   Label,
-  MeshTextureContent,
   MeshTextureSection,
   StatRow,
   Stats,
@@ -42,86 +43,35 @@ const SkillDetailsLoading = () => {
         <TableContainer>
           <ItemHeader>
             <HeaderLeft>
-              <Skeleton
-                borderRadius={8}
-                width={64}
-                height={64}
-                baseColor="#2a2a2a"
-                highlightColor="#3a3a3a"
-              />
+              <Skeleton borderRadius={8} width={64} height={64} />
               <HeaderInfo>
                 <h1>
-                  <Skeleton
-                    width={200}
-                    height={32}
-                    baseColor="#2a2a2a"
-                    highlightColor="#3a3a3a"
-                  />
+                  <Skeleton width={200} height={32} />
                 </h1>
                 <MobileLevelSelect>
-                  <Skeleton
-                    width={100}
-                    height={30}
-                    baseColor="#2a2a2a"
-                    highlightColor="#3a3a3a"
-                  />
+                  <Skeleton width={100} height={30} />
                 </MobileLevelSelect>
               </HeaderInfo>
             </HeaderLeft>
             <HeaderRight>
-              <Skeleton
-                width={120}
-                height={30}
-                baseColor="#2a2a2a"
-                highlightColor="#3a3a3a"
-              />
+              <Skeleton width={120} height={30} />
             </HeaderRight>
           </ItemHeader>
 
           <Description>
-            <Skeleton count={3} baseColor="#2a2a2a" highlightColor="#3a3a3a" />
+            <Skeleton count={3} />
           </Description>
 
-          <Stats>
-            {Array(8)
-              .fill(0)
-              .map((_, index) => (
-                <StatRow key={index}>
-                  <Label>
-                    <Skeleton
-                      width={100}
-                      baseColor="#2a2a2a"
-                      highlightColor="#3a3a3a"
-                    />
-                  </Label>
-                  <Value>
-                    <Skeleton
-                      width={80}
-                      baseColor="#2a2a2a"
-                      highlightColor="#3a3a3a"
-                    />
-                  </Value>
-                </StatRow>
-              ))}
-          </Stats>
+          <LoadingStats />
 
           <MeshTextureSection>
-            <Skeleton
-              width={200}
-              height={36}
-              baseColor="#2a2a2a"
-              highlightColor="#3a3a3a"
-            />
+            <Skeleton width={200} height={36} />
           </MeshTextureSection>
         </TableContainer>
 
         <SkillLevels className="desktopOnly">
           <h2>
-            <Skeleton
-              width={100}
-              baseColor="#2a2a2a"
-              highlightColor="#3a3a3a"
-            />
+            <Skeleton width={100} />
           </h2>
           {Array(5)
             .fill(0)
@@ -129,27 +79,13 @@ const SkillDetailsLoading = () => {
               <LevelCard key={index}>
                 <LevelHeader>
                   <LevelNumberContainer>
-                    <Skeleton
-                      width={80}
-                      height={20}
-                      baseColor="#2a2a2a"
-                      highlightColor="#3a3a3a"
-                    />
+                    <Skeleton width={80} height={20} />
                   </LevelNumberContainer>
-                  <Skeleton
-                    width={60}
-                    height={20}
-                    baseColor="#2a2a2a"
-                    highlightColor="#3a3a3a"
-                  />
+                  <Skeleton width={60} height={20} />
                 </LevelHeader>
                 {index % 2 === 0 && (
                   <SmallLevelDescription>
-                    <Skeleton
-                      count={2}
-                      baseColor="#2a2a2a"
-                      highlightColor="#3a3a3a"
-                    />
+                    <Skeleton count={2} />
                   </SmallLevelDescription>
                 )}
               </LevelCard>
@@ -398,62 +334,13 @@ export const SkillDetails = ({ id }: SkillDetailsProps) => {
             </Stats>
 
             {hasChangedProperties && (
-              <MeshTextureSection id="changes-section">
-                <button
-                  className="collapseButton"
-                  onClick={() =>
-                    setShowChangedProperties(!showChangedProperties)
-                  }
-                >
-                  {showChangedProperties ? '−' : '+'}{' '}
-                  {t('details.sections.changedProperties')}
-                </button>
-
-                {showChangedProperties && (
-                  <MeshTextureContent>
-                    {Object.entries(selectedSkill.changes || {}).map(
-                      ([key, { old: oldValue, new: newValue }]) => {
-                        const isNumeric =
-                          !isNaN(Number(oldValue)) && !isNaN(Number(newValue))
-
-                        return (
-                          <StatRow key={key}>
-                            <Label>{formatColumnName(key)}:</Label>
-                            <Value>
-                              {isNumeric ? (
-                                <>
-                                  {oldValue?.toString()}
-                                  {Number(newValue) > Number(oldValue) ? (
-                                    <>
-                                      {' '}
-                                      <span className="increased">→</span>{' '}
-                                      {newValue?.toString()}
-                                    </>
-                                  ) : (
-                                    <>
-                                      {' '}
-                                      <span className="decreased">→</span>{' '}
-                                      {newValue?.toString()}
-                                    </>
-                                  )}
-                                </>
-                              ) : (
-                                <>
-                                  {!oldValue
-                                    ? '-'
-                                    : Array.isArray(oldValue)
-                                      ? oldValue.join(', ')
-                                      : oldValue?.toString()}
-                                </>
-                              )}
-                            </Value>
-                          </StatRow>
-                        )
-                      },
-                    )}
-                  </MeshTextureContent>
-                )}
-              </MeshTextureSection>
+              <ChangedProperties
+                changes={selectedSkill.changes || {}}
+                open={showChangedProperties}
+                onToggle={() =>
+                  setShowChangedProperties(!showChangedProperties)
+                }
+              />
             )}
           </TableContainer>
 
@@ -519,16 +406,6 @@ const StyledLink = styled(Link)`
 
   &:hover {
     color: #fff;
-  }
-`
-
-const ContentWrapper = styled.div`
-  display: flex;
-  gap: 1rem;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
   }
 `
 
@@ -638,6 +515,7 @@ const LevelCard = styled.button`
   border-radius: 6px;
   transition: all 0.2s ease;
   color: var(--text-color);
+  background-color: transparent;
 
   &.activeLevel {
     background: #4a4a4a !important;
