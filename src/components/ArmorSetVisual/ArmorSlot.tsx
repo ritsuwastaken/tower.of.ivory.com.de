@@ -1,4 +1,4 @@
-import { ArmorSet } from '@/types/armorset'
+import { ArmorSet } from '@/types'
 import { getDataUrl } from '@/utils/getDataUrl'
 import Image from 'next/image'
 import Link from 'next/link'

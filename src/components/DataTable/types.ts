@@ -1,4 +1,4 @@
-import { SortConfig } from '@/utils/tableData'
+import { SortConfig } from '@/utils/pagination'
 interface FilterOption {
   value: string
   label: string

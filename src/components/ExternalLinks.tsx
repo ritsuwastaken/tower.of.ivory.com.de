@@ -1,5 +1,4 @@
-import { Item } from '@/types/item'
-import { Skill } from '@/types/skill'
+import { Item, Skill } from '@/types'
 import { getOriginalObjectName } from '@/utils/getOriginalObjectName'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'

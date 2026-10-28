@@ -1,4 +1,4 @@
-import { SortConfig } from '@/utils/tableData'
+import { SortConfig } from '@/utils/pagination'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
 

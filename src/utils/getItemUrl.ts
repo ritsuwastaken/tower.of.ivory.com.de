@@ -1,4 +1,4 @@
-import { Item } from '@/types/item'
+import { Item } from '@/types'
 
 function getItemRoutePath(item: Item): 'weapons' | 'armor' | 'etc' {
   if (item.armor_type) return 'armor'

@@ -1,7 +1,7 @@
 import { ChangedProperties, LoadingStats } from './DetailsSections'
 import { Head } from '@/components/Head'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
-import { Skill } from '@/types/skill'
+import { Skill } from '@/types'
 import { getDataUrl } from '@/utils/getDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'

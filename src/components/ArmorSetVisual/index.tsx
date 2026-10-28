@@ -1,4 +1,4 @@
-import { ArmorSet } from '@/types/armorset'
+import { ArmorSet } from '@/types'
 import styled from 'styled-components'
 import { ArmorSlot } from './ArmorSlot'
 

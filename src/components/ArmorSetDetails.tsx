@@ -1,4 +1,4 @@
-import { ArmorSet } from '@/types/armorset'
+import { ArmorSet } from '@/types'
 import { getDataUrl } from '@/utils/getDataUrl'
 import { getItemUrl } from '@/utils/getItemUrl'
 import { getTotalBasePrice, getTotalPhysicalDefense } from '@/utils/getTotalX'
