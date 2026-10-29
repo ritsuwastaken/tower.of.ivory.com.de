@@ -20,6 +20,7 @@ import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { groupItemProperties } from '@/utils/groupItemProperties'
 import {
   BackButton,
   NotificationPanel,
@@ -31,7 +32,6 @@ import {
   HeaderRight,
   ItemHeader,
   Label,
-  MeshTextureSection,
   StatRow,
   Stats,
   TableContainer,
@@ -48,98 +48,13 @@ const BIRTHDAY_ITEM_ID_2026 = 5600
 export const ItemDetails = ({ item }: ItemDetailsProps) => {
   const { t } = useTranslation()
   const router = useRouter()
-  const [expandedSections, setExpandedSections] = useState<
-    Record<string, boolean>
-  >({})
   const [showChangedProperties, setShowChangedProperties] = useState(false)
   const formatColumnName = useFormatColumnName()
 
-  const priorityPropertyOrder = [
-    'crystal_type',
-    ...(item.body_part?.some((part) => part.toLowerCase().includes('lhand')) &&
-    item.shield_defense
-      ? ['shield_defense']
-      : []),
-    'physical_damage',
-    'magical_damage',
-    'soulshot_count',
-    'spiritshot_count',
-    'attack_speed',
-    'physical_defense',
-    'magical_defense',
-    'mp_consume',
-    'mp_bonus',
-    'base_price',
-    'crystal_count',
-    'weight',
-    'weapon_type',
-    'body_part',
-    'armor_type',
-  ]
-
-  const isPriorityProperty = (key: string) => {
-    return priorityPropertyOrder.includes(key.toLowerCase())
-  }
-
-  const isDropProperty = (key: string) => {
-    return key.toLowerCase().includes('drop')
-  }
-
-  const isEffectProperty = (key: string) => {
-    const lowerKey = key.toLowerCase()
-    return (
-      lowerKey.includes('consume_type') || lowerKey.includes('attack_effect')
-    )
-  }
-
-  const isMeshTextureProperty = (key: string) => {
-    const lowerKey = key.toLowerCase()
-    return (
-      (lowerKey.includes('mesh') ||
-        lowerKey.includes('texture') ||
-        lowerKey.includes('projectile')) &&
-      !lowerKey.includes('drop')
-    )
-  }
-
-  const isSoundProperty = (key: string) => {
-    return key.toLowerCase().includes('sound')
-  }
-
-  const isHiddenProperty = (key: string) => {
-    return (
-      key.toLowerCase() === 'sets' ||
-      key.toLowerCase() === 'is_new' ||
-      key.toLowerCase() === 'is_changed' ||
-      key.toLowerCase() === 'changes'
-    )
-  }
-
-  const propertySections = [
-    {
-      id: 'drop',
-      title: t('details.sections.dropProperties'),
-      matches: isDropProperty,
-    },
-    {
-      id: 'mesh',
-      title: t('details.sections.meshTextureProperties'),
-      matches: isMeshTextureProperty,
-    },
-    {
-      id: 'sound',
-      title: t('details.sections.soundProperties'),
-      matches: isSoundProperty,
-    },
-    {
-      id: 'effect',
-      title: t('details.sections.otherProperties'),
-      matches: isEffectProperty,
-    },
-  ].map((section) => ({
-    ...section,
-    entries: Object.entries(item).filter(([key]) => section.matches(key)),
-  }))
+  const { priority, other, sections } = groupItemProperties(item)
+  const changedKeys = new Set(
+    Object.keys(item.changes || {}).map((key) => key.toLowerCase()),
+  )
 
   const hasChangedProperties =
     item.is_changed && item.changes && Object.keys(item.changes).length > 0
@@ -197,65 +112,32 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
           </Description>
 
           <Stats>
-            {priorityPropertyOrder.map((priorityKey) => {
-              const actualKey = Object.keys(item).find(
-                (key) => key.toLowerCase() === priorityKey,
-              )
-
-              if (!actualKey) return null
-              const value = item[actualKey as keyof Item]
-
-              return (
-                <StatRow key={actualKey}>
-                  <Label>{formatColumnName(actualKey)}:</Label>
-                  <Value>
-                    {actualKey.toLowerCase() === 'crystal_type'
-                      ? String(value).toLowerCase() === 'none'
-                        ? String(value)
-                        : String(value).toUpperCase()
-                      : Array.isArray(value)
-                        ? value.join(', ')
-                        : String(value)}
-                  </Value>
-                </StatRow>
-              )
-            })}
-
-            {Object.entries(item).map(([key, value]) => {
-              if (
-                key === 'icon' ||
-                key === 'name' ||
-                key === 'description' ||
-                isPriorityProperty(key) ||
-                isDropProperty(key) ||
-                isEffectProperty(key) ||
-                isMeshTextureProperty(key) ||
-                isSoundProperty(key) ||
-                isHiddenProperty(key)
-              )
-                return null
-
-              const isChanged =
-                item.changes &&
-                Object.keys(item.changes).some(
-                  (changedKey) =>
-                    changedKey.toLowerCase() === key.toLowerCase(),
-                )
-
-              return (
-                <StatRow key={key}>
-                  <Label>{formatColumnName(key)}:</Label>
-                  <Value>
-                    {Array.isArray(value)
+            {priority.map(({ key, value, normalizedKey }) => (
+              <StatRow key={key}>
+                <Label>{formatColumnName(key)}:</Label>
+                <Value>
+                  {normalizedKey === 'crystal_type'
+                    ? String(value).toLowerCase() === 'none'
+                      ? String(value)
+                      : String(value).toUpperCase()
+                    : Array.isArray(value)
                       ? value.join(', ')
-                      : value?.toString()}
-                    {isChanged && (
-                      <ChangedTag> {t('details.propertyChanged')}</ChangedTag>
-                    )}
-                  </Value>
-                </StatRow>
-              )
-            })}
+                      : String(value)}
+                </Value>
+              </StatRow>
+            ))}
+
+            {other.map(({ key, value, normalizedKey }) => (
+              <StatRow key={key}>
+                <Label>{formatColumnName(key)}:</Label>
+                <Value>
+                  {Array.isArray(value) ? value.join(', ') : value?.toString()}
+                  {changedKeys.has(normalizedKey) && (
+                    <ChangedTag> {t('details.propertyChanged')}</ChangedTag>
+                  )}
+                </Value>
+              </StatRow>
+            ))}
           </Stats>
 
           {hasChangedProperties && (
@@ -266,32 +148,23 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
             />
           )}
 
-          {propertySections
-            .filter((section) => section.entries.length > 0)
-            .map((section) => (
-              <CollapsibleSection
-                key={section.id}
-                title={section.title}
-                open={expandedSections[section.id] ?? false}
-                onToggle={() =>
-                  setExpandedSections((previous) => ({
-                    ...previous,
-                    [section.id]: !previous[section.id],
-                  }))
-                }
-              >
-                {section.entries.map(([key, value]) => (
-                  <StatRow key={key}>
-                    <Label>{formatColumnName(key)}:</Label>
-                    <Value>
-                      {Array.isArray(value)
-                        ? value.join(', ')
-                        : value?.toString()}
-                    </Value>
-                  </StatRow>
-                ))}
-              </CollapsibleSection>
-            ))}
+          {sections.map((section) => (
+            <CollapsibleSection
+              key={section.id}
+              title={t(`details.sections.${section.id}`)}
+            >
+              {section.entries.map(({ key, value }) => (
+                <StatRow key={key}>
+                  <Label>{formatColumnName(key)}:</Label>
+                  <Value>
+                    {Array.isArray(value)
+                      ? value.join(', ')
+                      : value?.toString()}
+                  </Value>
+                </StatRow>
+              ))}
+            </CollapsibleSection>
+          ))}
         </TableContainer>
 
         {item.sets && item.sets.length > 0 && (
@@ -299,11 +172,7 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
             <h2>{t('itemDetails.partOfSets')}</h2>
             {item.sets.map((armorSet) => (
               <div key={armorSet.id}>
-                <Link
-                  rel="canonical"
-                  key={armorSet.id}
-                  href={`/armorsets/${armorSet.id}`}
-                >
+                <Link href={`/armorsets/${armorSet.id}`}>
                   <SetName>{armorSet.name}</SetName>
                 </Link>
                 <SetVisualContainer>

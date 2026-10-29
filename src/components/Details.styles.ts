@@ -191,6 +191,18 @@ export const CollapseButton = styled.button`
   align-items: center;
   gap: 8px;
   font-size: 1rem;
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  details > &::before {
+    content: '+';
+  }
+
+  details[open] > &::before {
+    content: '−';
+  }
+
   &:hover {
     color: #ccc;
   }

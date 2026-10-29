@@ -50,7 +50,7 @@ const SkillNotFound = () => {
   const { t } = useTranslation()
   return (
     <div>
-      <BackButton as={Link} rel="canonical" href="/skills">
+      <BackButton as={Link} href="/skills">
         ⟵
       </BackButton>
       <TableContainer>
@@ -150,7 +150,7 @@ function SkillDetailsContent({
   return (
     <>
       <div>
-        <BackButton as={Link} rel="canonical" href="/skills" scroll={false}>
+        <BackButton as={Link} href="/skills" scroll={false}>
           ⟵
         </BackButton>
 

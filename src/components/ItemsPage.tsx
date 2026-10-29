@@ -115,7 +115,6 @@ export const ItemsPage = ({
       case 'name':
         return (
           <Link
-            rel="canonical"
             href={`/${urlMap[type]}/${item.object_id}`}
             onClick={(e) => e.stopPropagation()}
             tabIndex={-1}

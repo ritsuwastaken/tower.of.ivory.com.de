@@ -102,7 +102,6 @@ export default function ArmorSetsPage({
       case 'name':
         return (
           <Link
-            rel="canonical"
             href={`/armorsets/${armorSet.id}`}
             onClick={(e) => e.stopPropagation()}
             tabIndex={-1}

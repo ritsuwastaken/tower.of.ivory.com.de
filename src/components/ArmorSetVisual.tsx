@@ -41,7 +41,6 @@ export function ArmorSetVisual({ armorSet }: { armorSet: ArmorSet }) {
           <Slot key={type} $type={type}>
             {icon && piece ? (
               <SlotLink
-                rel="canonical"
                 href={getItemUrl(piece)}
                 onClick={(event) => event.stopPropagation()}
               >

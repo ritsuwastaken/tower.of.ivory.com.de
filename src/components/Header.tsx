@@ -17,7 +17,7 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderLeft>
-        <HeaderLink rel="canonical" href="/armorsets">
+        <HeaderLink href="/armorsets">
           <h3 translate="no">Tower of Ivory</h3>
 
           <Description>{t('header.description')}</Description>

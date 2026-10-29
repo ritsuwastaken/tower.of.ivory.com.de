@@ -89,7 +89,6 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
       case 'name':
         return (
           <Link
-            rel="canonical"
             href={`/skills/${skill.skill_id}`}
             onClick={(e) => e.stopPropagation()}
             tabIndex={-1}
