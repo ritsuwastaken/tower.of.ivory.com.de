@@ -11,3 +11,4 @@ Hosted by [Vercel](https://vercel.com) and [GitHub Pages](https://pages.github.c
 ---
 
 GitHub Pages: [https://ritsuwastaken.github.io/tower.of.ivory.com.de/](https://ritsuwastaken.github.io/tower.of.ivory.com.de/)
+Vercel: [https://tower-of-ivory-com-de.vercel.app/](https://tower-of-ivory-com-de.vercel.app/)
