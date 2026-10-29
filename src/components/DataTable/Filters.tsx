@@ -15,27 +15,35 @@ export function Filters({
   allowGridView,
 }: FiltersProps) {
   const { t } = useTranslation()
-  const popoverId = useId()
+  const filterId = useId()
+  const columnToggles = (
+    <ColumnToggles>
+      {Object.entries(columnVisibility).map(([column, isVisible]) => (
+        <CheckboxLabel key={column}>
+          <input
+            type="checkbox"
+            tabIndex={0}
+            checked={isVisible}
+            onChange={() => onColumnVisibilityChange(column, !isVisible)}
+          />
+          {formatColumnName(column)}
+        </CheckboxLabel>
+      ))}
+    </ColumnToggles>
+  )
 
   return (
-    <FiltersDropdown>
-      <FiltersToggle popoverTarget={popoverId}>
-        {t('filters.filters')}
-      </FiltersToggle>
-
-      <FiltersSection id={popoverId} popover="auto">
+    <FiltersSection aria-label={t('filters.filters')}>
+      <SelectFilters>
         {allowGridView && (
           <FilterGroup>
-            <FilterLabel htmlFor={`${popoverId}-view`}>
+            <FilterLabel htmlFor={`${filterId}-view`}>
               {t('filters.view')}:
             </FilterLabel>
             <FilterSelect
-              id={`${popoverId}-view`}
+              id={`${filterId}-view`}
               value={viewMode}
               onChange={(event) => {
-                event.currentTarget
-                  .closest<HTMLElement>('[popover]')
-                  ?.hidePopover()
                 onViewModeChange?.(
                   event.target.value === 'grid' ? 'grid' : 'table',
                 )
@@ -63,97 +71,93 @@ export function Filters({
             </FilterSelect>
           </FilterGroup>
         ))}
+      </SelectFilters>
 
+      <CheckboxFilters>
         {checkboxFilters.map((filter) => (
-          <FilterGroup key={filter.id}>
-            <CheckboxLabel>
-              <input
-                type="checkbox"
-                checked={filter.checked}
-                onChange={filter.onChange}
-              />
-              {filter.label}
-            </CheckboxLabel>
-          </FilterGroup>
+          <CheckboxLabel key={filter.id}>
+            <input
+              type="checkbox"
+              tabIndex={0}
+              checked={filter.checked}
+              onChange={filter.onChange}
+            />
+            {filter.label}
+          </CheckboxLabel>
         ))}
+      </CheckboxFilters>
 
-        <FilterGroup>
-          <FilterLabel>{t('filters.columns')}:</FilterLabel>
-          <ColumnToggles>
-            {Object.entries(columnVisibility).map(([column, isVisible]) => (
-              <CheckboxLabel key={column}>
-                <input
-                  type="checkbox"
-                  checked={isVisible}
-                  onChange={() => onColumnVisibilityChange(column, !isVisible)}
-                />
-                {formatColumnName(column)}
-              </CheckboxLabel>
-            ))}
-          </ColumnToggles>
-        </FilterGroup>
-      </FiltersSection>
-    </FiltersDropdown>
+      <ColumnSettings>
+        <DesktopColumns role="group" aria-label={t('filters.columns')}>
+          {columnToggles}
+        </DesktopColumns>
+        <MobileColumns suppressHydrationWarning>
+          <summary tabIndex={0}>{t('filters.columns')}</summary>
+          {columnToggles}
+        </MobileColumns>
+      </ColumnSettings>
+    </FiltersSection>
   )
 }
 
-const FiltersDropdown = styled.div`
-  position: static;
-`
-
-const FiltersToggle = styled.button`
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #3a3a3a;
-  border-radius: 4px;
-  background-color: #2a2a2a;
-  color: #fff;
-  cursor: pointer;
+const FiltersSection = styled.section`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &:hover {
-    background-color: #3a3a3a;
-  }
-
-  &:focus {
-    background-color: #3a3a3a;
-  }
+  flex-direction: column;
+  gap: 1rem;
 `
 
-const FiltersSection = styled.div`
-  position: fixed;
-  inset: 0;
-  width: calc(100% - 2rem);
-  height: fit-content;
-  margin: auto;
-  color: inherit;
-  background-color: #1a1a1a;
-  border: 1px solid #3a3a3a;
-  border-radius: 4px;
-  padding: 1rem;
-  animation: slideDown 0.2s ease;
-  max-height: min(80dvh, calc(100dvh - 2rem));
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+const SelectFilters = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
+  gap: 1rem;
 
-  @supports (position-area: bottom center) and (anchor-scope: --table-filters) {
-    @media (min-width: 891px) and (hover: hover) {
-      position-anchor: --table-filters;
-      position-area: bottom center;
-      inset: auto;
-      width: 100%;
-      margin: 0.5rem 0 0;
-      max-height: min(80vh, calc(100% - 1rem));
-    }
+  &:empty {
+    display: none;
   }
 `
 
 const FilterGroup = styled.div`
-  margin-bottom: 1rem;
-  padding: 0.25rem 0;
+  min-width: 0;
+`
+
+const CheckboxFilters = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+
+  &:empty {
+    display: none;
+  }
+`
+
+const ColumnSettings = styled.div`
+  border-top: 1px solid #3a3a3a;
+  padding-top: 0.75rem;
+  color: #aaa;
+`
+
+const DesktopColumns = styled.div`
+  @media (max-width: 890px) {
+    display: none;
+  }
+`
+
+const MobileColumns = styled.details`
+  display: none;
+
+  @media (max-width: 890px) {
+    display: block;
+  }
+
+  summary {
+    width: fit-content;
+    color: #aaa;
+    cursor: pointer;
+  }
+
+  &[open] summary {
+    margin-bottom: 0.75rem;
+  }
 `
 
 const FilterLabel = styled.label`

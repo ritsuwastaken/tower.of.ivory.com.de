@@ -44,28 +44,22 @@ export function DataTable<T>({
   function renderInputWithFilters() {
     return (
       <FiltersWrapper>
-        <FiltersContainer>
-          <SearchAndFiltersContainer>
-            <SearchInput
-              aria-label={searchPlaceholder || t('dataTable.searchPlaceholder')}
-              value={searchTerm}
-              onChange={(e) => onSearchChange(e.target.value)}
-              placeholder={
-                searchPlaceholder || t('dataTable.searchPlaceholder')
-              }
-            />
-            <Filters
-              filters={filters}
-              checkboxFilters={checkboxFilters}
-              columnVisibility={columnVisibility}
-              onColumnVisibilityChange={onColumnVisibilityChange}
-              formatColumnName={formatColumnName}
-              viewMode={effectiveViewMode}
-              onViewModeChange={enableGridView ? onViewModeChange : undefined}
-              allowGridView={enableGridView}
-            />
-          </SearchAndFiltersContainer>
-        </FiltersContainer>
+        <SearchInput
+          aria-label={searchPlaceholder || t('dataTable.searchPlaceholder')}
+          value={searchTerm}
+          onChange={(e) => onSearchChange(e.target.value)}
+          placeholder={searchPlaceholder || t('dataTable.searchPlaceholder')}
+        />
+        <Filters
+          filters={filters}
+          checkboxFilters={checkboxFilters}
+          columnVisibility={columnVisibility}
+          onColumnVisibilityChange={onColumnVisibilityChange}
+          formatColumnName={formatColumnName}
+          viewMode={effectiveViewMode}
+          onViewModeChange={enableGridView ? onViewModeChange : undefined}
+          allowGridView={enableGridView}
+        />
         {(filters.some((f) => f.value !== '') ||
           checkboxFilters.some((f) => f.checked)) && (
           <TagsContainer>
@@ -153,29 +147,8 @@ const Container = styled.div`
 const FiltersWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1rem;
   margin-bottom: 1rem;
-`
-
-const FiltersContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  position: relative;
-`
-
-const SearchAndFiltersContainer = styled.div`
-  anchor-name: --table-filters;
-  anchor-scope: --table-filters;
-  display: flex;
-  gap: 1rem;
-  flex: 1;
-  position: relative;
-
-  @media (max-width: 890px) {
-    gap: 0.5rem;
-  }
 `
 
 const SearchInput = styled.input.attrs({
