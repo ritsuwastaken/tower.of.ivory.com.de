@@ -69,9 +69,14 @@ export const SmallLevelDescription = styled.div`
 `
 
 export const LevelSelect = styled.select`
+  appearance: none;
   width: 100%;
-  padding: 0.5rem 1rem;
-  background: #2a2a2a;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  background-color: #2a2a2a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
   border: 1px solid #3a3a3a;
   border-radius: 4px;
   color: #fff;
@@ -79,7 +84,7 @@ export const LevelSelect = styled.select`
   cursor: pointer;
 
   &:hover {
-    background: #333;
+    background-color: #333;
   }
 `
 
