@@ -52,7 +52,6 @@ jobs:
             output: 'export',
             basePath: ${JSON.stringify(basePath)},
             trailingSlash: true,
-            redirects: undefined,
             headers: undefined,
           }
           `)
