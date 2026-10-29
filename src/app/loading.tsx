@@ -1,1 +1,1 @@
-export { default } from '@/components/RouteLoading'
+export { default } from './armorsets/loading'

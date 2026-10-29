@@ -1,5 +1,3 @@
-import { permanentRedirect } from 'next/navigation'
+export { default } from './armorsets/page'
 
-export default function Page() {
-  permanentRedirect('/armorsets')
-}
+export const metadata = { title: 'Armor Sets | Tower of Ivory' }

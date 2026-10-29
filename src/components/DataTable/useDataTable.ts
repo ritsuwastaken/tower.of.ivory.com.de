@@ -38,21 +38,18 @@ export function useDataTable<T>({
     defaultColumnVisibility,
   )
 
-  const updateParams = useCallback(
-    (update: (params: URLSearchParams) => void) => {
-      const params = new URLSearchParams(window.location.search)
-      update(params)
-      const query = params.toString()
-      window.history.replaceState(
-        null,
-        '',
-        `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`,
-      )
-    },
-    [],
-  )
+  const updateParams = (update: (params: URLSearchParams) => void) => {
+    const params = new URLSearchParams(window.location.search)
+    update(params)
+    const query = params.toString()
+    window.history.replaceState(
+      null,
+      '',
+      `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`,
+    )
+  }
 
-  const handleSort = useCallback((column: keyof T) => {
+  const handleSort = (column: keyof T) => {
     startTransition(() => {
       addTransitionType('table-sort')
       setSortConfig((prev) => ({
@@ -61,7 +58,7 @@ export function useDataTable<T>({
           prev.column === column && prev.direction === 'asc' ? 'desc' : 'asc',
       }))
     })
-  }, [])
+  }
 
   const handleColumnVisibilityChange = useCallback(
     (column: string, visible: boolean) => {
@@ -70,42 +67,33 @@ export function useDataTable<T>({
     [],
   )
 
-  const handleViewModeChange = useCallback(
-    (mode: 'table' | 'grid') => {
-      updateParams((params) => params.set('view', mode))
-    },
-    [updateParams],
-  )
+  const handleViewModeChange = (mode: 'table' | 'grid') => {
+    updateParams((params) => params.set('view', mode))
+  }
 
-  const handlePageChange = useCallback(
-    (page: number) => {
-      updateParams((params) => {
-        if (page > 1) params.set('page', String(page))
-        else params.delete('page')
-      })
-    },
-    [updateParams],
-  )
+  const handlePageChange = (page: number) => {
+    updateParams((params) => {
+      if (page > 1) params.set('page', String(page))
+      else params.delete('page')
+    })
+  }
 
-  const handleSearchChange = useCallback(
-    (value: string) => {
-      updateParams((params) => {
-        if (value) params.set('search', value)
-        else params.delete('search')
-        params.delete('page')
-      })
-    },
-    [updateParams],
-  )
+  const handleSearchChange = (value: string) => {
+    updateParams((params) => {
+      if (value) params.set('search', value)
+      else params.delete('search')
+      params.delete('page')
+    })
+  }
 
-  const handleResetFilters = useCallback(() => {
+  const handleResetFilters = () => {
     updateParams((params) => {
       params.delete('search')
       params.delete('page')
     })
     setColumnVisibility(defaultColumnVisibility)
     onResetFilters?.()
-  }, [updateParams, defaultColumnVisibility, onResetFilters])
+  }
 
   const viewMode = useDeferredValue<'table' | 'grid'>(
     searchParams.get('view') === 'grid' ? 'grid' : 'table',

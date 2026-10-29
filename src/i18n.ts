@@ -25,6 +25,8 @@ const resources = {
   },
 }
 
+export const supportedLanguages = Object.keys(resources)
+
 i18n.use(initReactI18next).init({
   resources,
   lng: 'en',

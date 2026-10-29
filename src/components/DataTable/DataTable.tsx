@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { useState, ViewTransition } from 'react'
+import { ViewTransition } from 'react'
 import styled from 'styled-components'
 import { Pagination } from '../Pagination'
 import { Filters } from './Filters'
@@ -32,7 +32,6 @@ export function DataTable<T>({
   enableGridView = false,
 }: DataTableProps<T>) {
   const { t } = useTranslation()
-  const [showFilters, setShowFilters] = useState(false)
   const effectiveViewMode = enableGridView ? viewMode : 'table'
   const pagination = (
     <Pagination
@@ -55,8 +54,6 @@ export function DataTable<T>({
               }
             />
             <Filters
-              showFilters={showFilters}
-              setShowFilters={setShowFilters}
               filters={filters}
               checkboxFilters={checkboxFilters}
               columnVisibility={columnVisibility}
@@ -156,6 +153,8 @@ const FiltersContainer = styled.div`
 `
 
 const SearchAndFiltersContainer = styled.div`
+  anchor-name: --table-filters;
+  anchor-scope: --table-filters;
   display: flex;
   gap: 1rem;
   flex: 1;

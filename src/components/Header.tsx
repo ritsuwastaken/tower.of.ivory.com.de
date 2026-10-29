@@ -1,51 +1,19 @@
-import { useOnClickOutside } from '@/hooks/useOnClickOutside'
 import { getFlagEmoji } from '@/utils/getFlagEmoji'
+import { supportedLanguages } from '@/i18n'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useId } from 'react'
 import styled from 'styled-components'
 
 export const Header = () => {
   const { t, i18n } = useTranslation()
-
-  const [isOpen, setIsOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-
-  const lastUpdateDate = useMemo(() => {
-    if (!process.env.NEXT_PUBLIC_LAST_UPDATE) return null
-    return new Date(
-      parseInt(process.env.NEXT_PUBLIC_LAST_UPDATE),
-    ).toLocaleString(i18n.language, {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    })
-  }, [i18n.language])
-
-  const languages = useMemo(
-    () =>
-      ['en', 'es', 'pt', 'ru', 'de'].map((code) => ({
-        code,
-        label: code.toLowerCase(),
-        flag: getFlagEmoji(code),
-      })),
-    [],
-  )
-
-  const currentLanguage = useMemo(
-    () => languages.find((lang) => lang.code === i18n.language),
-    [languages, i18n.language],
-  )
-
-  const handleLanguageChange = useCallback(
-    (languageCode: string) => {
-      i18n.changeLanguage(languageCode)
-      setIsOpen(false)
-    },
-    [i18n],
-  )
-
-  useOnClickOutside(dropdownRef, () => setIsOpen(false))
+  const languagePopoverId = useId()
+  const lastUpdateDate = process.env.NEXT_PUBLIC_LAST_UPDATE
+    ? new Date(Number(process.env.NEXT_PUBLIC_LAST_UPDATE)).toLocaleString(
+        i18n.language,
+        { year: 'numeric', month: 'long', day: 'numeric' },
+      )
+    : null
 
   return (
     <HeaderWrapper>
@@ -63,26 +31,23 @@ export const Header = () => {
         </HeaderLink>
       </HeaderLeft>
       <HeaderRight>
-        <LanguageSelector ref={dropdownRef}>
-          <LanguageButton onClick={() => setIsOpen((prev) => !prev)}>
-            <span>{currentLanguage?.label}</span>
-          </LanguageButton>
-
-          {isOpen && (
-            <LanguageDropdown>
-              {languages.map((lang) => (
-                <LanguageOption
-                  key={lang.code}
-                  onClick={() => handleLanguageChange(lang.code)}
-                  $isActive={lang.code === i18n.language}
-                >
-                  <LanguageFlag>{lang.flag}</LanguageFlag>
-                  <span>{lang.label}</span>
-                </LanguageOption>
-              ))}
-            </LanguageDropdown>
-          )}
-        </LanguageSelector>
+        <LanguageButton popoverTarget={languagePopoverId}>
+          {i18n.language}
+        </LanguageButton>
+        <LanguageDropdown id={languagePopoverId} popover="auto">
+          {supportedLanguages.map((code) => (
+            <LanguageOption
+              key={code}
+              popoverTarget={languagePopoverId}
+              popoverTargetAction="hide"
+              onClick={() => i18n.changeLanguage(code)}
+              $isActive={code === i18n.language}
+            >
+              <LanguageFlag>{getFlagEmoji(code)}</LanguageFlag>
+              <span>{code}</span>
+            </LanguageOption>
+          ))}
+        </LanguageDropdown>
         <GitHubLink
           href="https://github.com/ritsuwastaken/tower.of.ivory.com.de"
           target="_blank"
@@ -161,16 +126,14 @@ const LastUpdate = styled.p`
 `
 
 const HeaderRight = styled.div`
+  anchor-scope: --language-menu;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 `
 
-const LanguageSelector = styled.div`
-  position: relative;
-`
-
 const LanguageButton = styled.button`
+  anchor-name: --language-menu;
   display: flex;
   align-items: center;
 
@@ -193,18 +156,21 @@ const LanguageButton = styled.button`
 `
 
 const LanguageDropdown = styled.div`
-  position: absolute;
-  top: 100%;
-  right: 0;
-
-  margin-top: 0.3rem;
+  position: fixed;
+  position-anchor: --language-menu;
+  inset: auto;
+  top: anchor(bottom);
+  right: anchor(right);
+  margin: 0.3rem 0 0;
+  padding: 0;
+  border: none;
+  color: inherit;
 
   background-color: #1a1a1a;
   border-radius: 4px;
 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  z-index: 100;
 `
 
 const LanguageOption = styled.button<{ $isActive?: boolean }>`

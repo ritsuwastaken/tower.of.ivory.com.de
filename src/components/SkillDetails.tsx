@@ -20,11 +20,14 @@ import {
 } from '@/components/primitives/SkillDetailsLayout'
 
 import { ChangedProperties } from '@/components/DetailsSections'
-import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'
+import {
+  SearchParamsBoundary,
+  useCatalogSearchParams,
+} from '@/components/SearchParamsBoundary'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types'
 import { useTranslation } from 'react-i18next'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ExternalLinks } from '@/components/ExternalLinks'
 import {
   Container,
@@ -61,6 +64,27 @@ const SkillNotFound = () => {
 }
 
 export default function SkillDetails({ skill }: { skill: Skill }) {
+  const [title, setTitle] = useState(
+    `${skill.name || 'Skill'} · Lvl. ${skill.skill_level ?? 1} · Skills | Tower of Ivory`,
+  )
+
+  return (
+    <>
+      <title>{title}</title>
+      <SearchParamsBoundary>
+        <SkillDetailsContent skill={skill} onTitleChange={setTitle} />
+      </SearchParamsBoundary>
+    </>
+  )
+}
+
+function SkillDetailsContent({
+  skill,
+  onTitleChange,
+}: {
+  skill: Skill
+  onTitleChange: (title: string) => void
+}) {
   const searchParams = useCatalogSearchParams()
   const showChanges = searchParams.get('show') === 'changes'
   const skillLevel = Number(searchParams.get('level')) || skill.skill_level || 1
@@ -92,12 +116,8 @@ export default function SkillDetails({ skill }: { skill: Skill }) {
     }
   }, [showChanges])
 
-  const selectedSkill: Omit<Skill, 'levels'> | null = useMemo(() => {
-    return (
-      skill.levels?.find((level) => level.skill_level === Number(skillLevel)) ??
-      null
-    )
-  }, [skill, skillLevel])
+  const selectedSkill =
+    skill.levels?.find((level) => level.skill_level === skillLevel) ?? null
 
   const pageTitle = selectedSkill
     ? t('skillDetails.pageTitle', {
@@ -110,8 +130,8 @@ export default function SkillDetails({ skill }: { skill: Skill }) {
     : t('meta.skillNotFound')
 
   useEffect(() => {
-    document.title = `${pageTitle} | Tower of Ivory`
-  }, [pageTitle])
+    onTitleChange(`${pageTitle} | Tower of Ivory`)
+  }, [pageTitle, onTitleChange])
 
   const handleLevelClick = (levelData: Skill) => {
     const params = new URLSearchParams(searchParams)

@@ -30,8 +30,6 @@ interface SharedFilterProps {
 }
 
 export interface FiltersProps extends SharedFilterProps {
-  showFilters: boolean
-  setShowFilters: (show: boolean) => void
   filters: FilterConfig[]
   checkboxFilters: NonNullable<SharedFilterProps['checkboxFilters']>
   viewMode: 'table' | 'grid'

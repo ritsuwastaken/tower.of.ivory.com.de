@@ -1,12 +1,9 @@
-import { useOnClickOutside } from '@/hooks/useOnClickOutside'
 import { useTranslation } from 'react-i18next'
-import { useRef } from 'react'
+import { useId } from 'react'
 import styled from 'styled-components'
 import { FiltersProps } from './types'
 
 export function Filters({
-  showFilters,
-  setShowFilters,
   filters,
   checkboxFilters,
   columnVisibility,
@@ -17,90 +14,77 @@ export function Filters({
   allowGridView,
 }: FiltersProps) {
   const { t } = useTranslation()
-  const toggleRef = useRef<HTMLButtonElement>(null)
-  const filtersRef = useRef<HTMLDivElement>(null)
-  useOnClickOutside(filtersRef, (e) => {
-    const toggleClicked =
-      toggleRef.current && toggleRef.current.contains(e.target as Node)
-    return !toggleClicked && setShowFilters(false)
-  })
+  const popoverId = useId()
 
   return (
     <FiltersDropdown>
-      <FiltersToggle
-        ref={toggleRef}
-        onClick={() => setShowFilters(!showFilters)}
-      >
+      <FiltersToggle popoverTarget={popoverId}>
         {t('filters.filters')}
       </FiltersToggle>
 
-      {showFilters && (
-        <FiltersSection ref={filtersRef}>
-          {allowGridView && (
-            <FilterGroup>
-              <FilterLabel>{t('filters.view')}:</FilterLabel>
-              <ViewToggle
-                onClick={() =>
-                  onViewModeChange?.(viewMode === 'table' ? 'grid' : 'table')
-                }
-                style={{ width: '100%', marginBottom: '1rem' }}
-              >
-                {viewMode === 'table'
-                  ? t('filters.viewModeGrid')
-                  : t('filters.viewModeTable')}
-              </ViewToggle>
-            </FilterGroup>
-          )}
+      <FiltersSection id={popoverId} popover="auto">
+        {allowGridView && (
+          <FilterGroup>
+            <FilterLabel>{t('filters.view')}:</FilterLabel>
+            <ViewToggle
+              onClick={() =>
+                onViewModeChange?.(viewMode === 'table' ? 'grid' : 'table')
+              }
+              style={{ width: '100%', marginBottom: '1rem' }}
+            >
+              {viewMode === 'table'
+                ? t('filters.viewModeGrid')
+                : t('filters.viewModeTable')}
+            </ViewToggle>
+          </FilterGroup>
+        )}
 
-          {filters.map((filter) => (
-            <FilterGroup key={filter.id}>
-              <FilterLabel htmlFor={filter.id}>{filter.label}</FilterLabel>
-              <FilterSelect
-                id={filter.id}
-                value={filter.value}
-                onChange={(e) => filter.onChange(e.target.value)}
-              >
-                {filter.options.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </FilterSelect>
-            </FilterGroup>
-          ))}
+        {filters.map((filter) => (
+          <FilterGroup key={filter.id}>
+            <FilterLabel htmlFor={filter.id}>{filter.label}</FilterLabel>
+            <FilterSelect
+              id={filter.id}
+              value={filter.value}
+              onChange={(e) => filter.onChange(e.target.value)}
+            >
+              {filter.options.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </FilterSelect>
+          </FilterGroup>
+        ))}
 
-          {checkboxFilters.map((filter) => (
-            <FilterGroup key={filter.id}>
-              <CheckboxLabel>
+        {checkboxFilters.map((filter) => (
+          <FilterGroup key={filter.id}>
+            <CheckboxLabel>
+              <input
+                type="checkbox"
+                checked={filter.checked}
+                onChange={filter.onChange}
+              />
+              {filter.label}
+            </CheckboxLabel>
+          </FilterGroup>
+        ))}
+
+        <FilterGroup>
+          <FilterLabel>{t('filters.columns')}:</FilterLabel>
+          <ColumnToggles>
+            {Object.entries(columnVisibility).map(([column, isVisible]) => (
+              <CheckboxLabel key={column}>
                 <input
                   type="checkbox"
-                  checked={filter.checked}
-                  onChange={filter.onChange}
+                  checked={isVisible}
+                  onChange={() => onColumnVisibilityChange(column, !isVisible)}
                 />
-                {filter.label}
+                {formatColumnName(column)}
               </CheckboxLabel>
-            </FilterGroup>
-          ))}
-
-          <FilterGroup>
-            <FilterLabel>{t('filters.columns')}:</FilterLabel>
-            <ColumnToggles>
-              {Object.entries(columnVisibility).map(([column, isVisible]) => (
-                <CheckboxLabel key={column}>
-                  <input
-                    type="checkbox"
-                    checked={isVisible}
-                    onChange={() =>
-                      onColumnVisibilityChange(column, !isVisible)
-                    }
-                  />
-                  {formatColumnName(column)}
-                </CheckboxLabel>
-              ))}
-            </ColumnToggles>
-          </FilterGroup>
-        </FiltersSection>
-      )}
+            ))}
+          </ColumnToggles>
+        </FilterGroup>
+      </FiltersSection>
     </FiltersDropdown>
   )
 }
@@ -132,20 +116,21 @@ const FiltersToggle = styled.button`
 `
 
 const FiltersSection = styled.div`
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
+  position: fixed;
+  position-anchor: --table-filters;
+  position-area: bottom center;
+  inset: auto;
+  width: 100%;
+  margin: 0.5rem 0 0;
+  color: inherit;
   background-color: #1a1a1a;
   border: 1px solid #3a3a3a;
   border-radius: 4px;
   padding: 1rem;
-  z-index: 100;
   animation: slideDown 0.2s ease;
-  max-height: 80vh;
+  max-height: min(80vh, calc(100% - 1rem));
   overflow-y: auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  margin-top: 0.5rem;
 `
 
 const FilterGroup = styled.div`

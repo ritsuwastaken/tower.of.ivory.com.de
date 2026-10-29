@@ -1,4 +1,4 @@
-import { memo, type KeyboardEvent } from 'react'
+import type { KeyboardEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { DataTableProps } from './types'
@@ -15,7 +15,7 @@ type ResultsProps<T> = Pick<
   | 'onResetFilters'
 > & { viewMode: 'table' | 'grid' }
 
-function Results<T>({
+export function TableResults<T>({
   data,
   columns,
   onSort,
@@ -105,8 +105,6 @@ function Results<T>({
     ? renderData()
     : renderNoResults(noResultsMessage ?? t('dataTable.noResults'))
 }
-
-export const TableResults = memo(Results) as typeof Results
 
 const Table = styled.table.attrs({
   role: 'grid',
