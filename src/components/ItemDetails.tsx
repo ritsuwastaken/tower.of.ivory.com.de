@@ -155,12 +155,6 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
       >
         ⟵
       </BackButton>
-      {renderItemDetails()}
-    </div>
-  )
-
-  function renderItemDetails() {
-    return (
       <ContentWrapper>
         <TableContainer>
           {(item.is_new || item.is_changed) && (
@@ -342,6 +336,6 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
           </ArmorSets>
         )}
       </ContentWrapper>
-    )
-  }
+    </div>
+  )
 }

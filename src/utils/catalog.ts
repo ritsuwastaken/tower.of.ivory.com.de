@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import type { ArmorSet, Item, Skill } from '@/types'
-import { getTotalBasePrice, getTotalPhysicalDefense } from './getTotalX'
+import { sumProperty } from './sumProperty'
 
 type Datasets = {
   weapon: Item[]
@@ -112,8 +112,8 @@ export async function getSkills(): Promise<Skill[]> {
 export async function getArmorSets(): Promise<ArmorSet[]> {
   return (await readDataset('armorsets')).map((set) => ({
     ...set,
-    physical_defense: getTotalPhysicalDefense(set.items),
-    base_price: getTotalBasePrice(set.items),
+    physical_defense: sumProperty(set.items, 'physical_defense'),
+    base_price: sumProperty(set.items, 'base_price'),
     items: set.items.map((item) => pickFields(item, itemListFields)),
   }))
 }

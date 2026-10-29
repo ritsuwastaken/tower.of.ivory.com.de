@@ -5,27 +5,25 @@ interface PaginationProps {
   currentPage: number
   totalPages: number
   onPageChange: (page: number) => void
-  disabled?: boolean
 }
 
 export const Pagination = ({
   currentPage,
   totalPages,
   onPageChange,
-  disabled = false,
 }: PaginationProps) => {
   const { t } = useTranslation()
   return (
     <PaginationWrapper>
       <PaginationButton
         onClick={() => onPageChange(1)}
-        disabled={currentPage === 1 || disabled}
+        disabled={currentPage === 1}
       >
         ««
       </PaginationButton>
       <PaginationButton
         onClick={() => onPageChange(Math.max(1, currentPage - 1))}
-        disabled={currentPage === 1 || disabled}
+        disabled={currentPage === 1}
       >
         «
       </PaginationButton>
@@ -42,13 +40,13 @@ export const Pagination = ({
       </PaginationInfo>
       <PaginationButton
         onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
-        disabled={currentPage === totalPages || disabled}
+        disabled={currentPage === totalPages}
       >
         »
       </PaginationButton>
       <PaginationButton
         onClick={() => onPageChange(totalPages)}
-        disabled={currentPage === totalPages || disabled}
+        disabled={currentPage === totalPages}
       >
         »»
       </PaginationButton>

@@ -1,12 +1,6 @@
 import { Item } from '@/types'
 
-function getItemRoutePath(item: Item): 'weapons' | 'armor' | 'etc' {
-  if (item.armor_type) return 'armor'
-  if (item.weapon_type) return 'weapons'
-  return 'etc'
-}
-
 export function getItemUrl(item: Item): string {
-  const route = getItemRoutePath(item)
+  const route = item.armor_type ? 'armor' : item.weapon_type ? 'weapons' : 'etc'
   return `/${route}/${item.object_id}`
 }

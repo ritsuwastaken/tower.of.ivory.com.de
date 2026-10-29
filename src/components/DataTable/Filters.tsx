@@ -1,6 +1,7 @@
 import { useTranslation } from '@/hooks/useTranslation'
 import { useId } from 'react'
 import styled from 'styled-components'
+import { selectStyles } from '@/components/Select.styles'
 import { FiltersProps } from './types'
 
 export function Filters({
@@ -163,19 +164,7 @@ const FilterLabel = styled.label`
 `
 
 const FilterSelect = styled.select`
-  appearance: none;
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #3a3a3a;
-  border-radius: 4px;
-  background-color: #2a2a2a;
-  color: #fff;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 1em;
-  padding-right: 2rem;
-
+  ${selectStyles}
   &:focus {
     outline: none;
     border-color: #5a5a5a;

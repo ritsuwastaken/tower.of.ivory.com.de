@@ -23,7 +23,7 @@ import {
 
 import { ArmorSet } from '@/types'
 import { getItemUrl } from '@/utils/getItemUrl'
-import { getTotalBasePrice, getTotalPhysicalDefense } from '@/utils/getTotalX'
+import { sumProperty } from '@/utils/sumProperty'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useRouter } from 'next/navigation'
 import {
@@ -44,8 +44,8 @@ export default function ArmorSetDetails({ armorSet }: { armorSet: ArmorSet }) {
   const chestPiece = armorSet.items.find(
     ({ armor_type }) => armor_type?.toLowerCase() === 'chest',
   )
-  const totalPhysicalDefense = getTotalPhysicalDefense(armorSet.items)
-  const totalBasePrice = getTotalBasePrice(armorSet.items)
+  const totalPhysicalDefense = sumProperty(armorSet.items, 'physical_defense')
+  const totalBasePrice = sumProperty(armorSet.items, 'base_price')
 
   return (
     <div>
@@ -58,12 +58,6 @@ export default function ArmorSetDetails({ armorSet }: { armorSet: ArmorSet }) {
       >
         ⟵
       </BackButton>
-      {renderDetails()}
-    </div>
-  )
-
-  function renderDetails() {
-    return (
       <TableContainer>
         <ItemHeader>
           <HeaderLeft>
@@ -194,6 +188,6 @@ export default function ArmorSetDetails({ armorSet }: { armorSet: ArmorSet }) {
           ))}
         </PartsContainer>
       </TableContainer>
-    )
-  }
+    </div>
+  )
 }
