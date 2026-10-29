@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useCallback, useMemo, useState } from 'react'
+import { useState } from 'react'
 
 const getDefaultColumns = (category: string) => {
   const common = {
@@ -81,6 +81,8 @@ export const ItemsPage = ({
 
   const {
     searchTerm,
+    deferredSearchTerm,
+    isSearchPending,
     currentPage,
     sortConfig,
     columnVisibility,
@@ -131,55 +133,42 @@ export const ItemsPage = ({
     },
   })
 
-  const filteredItems = useMemo(
-    () =>
-      items.filter((item) => {
-        const matchesSearch = (item.name || item.object_name)
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase())
+  const filteredItems = items.filter((item) => {
+    const matchesSearch = (item.name || item.object_name)
+      .toLowerCase()
+      .includes(deferredSearchTerm.toLowerCase())
 
-        const matchesCrystalType =
-          !crystalType ||
-          (crystalType === 'None'
-            ? !item.crystal_type || item.crystal_type.toLowerCase() === 'none'
-            : item.crystal_type?.toLowerCase() === crystalType.toLowerCase())
+    const matchesCrystalType =
+      !crystalType ||
+      (crystalType === 'None'
+        ? !item.crystal_type || item.crystal_type.toLowerCase() === 'none'
+        : item.crystal_type?.toLowerCase() === crystalType.toLowerCase())
 
-        const matchesBodyPart =
-          !bodyPart ||
-          (item.body_part && item.body_part.includes(bodyPart.toLowerCase()))
-        const matchesArmorType =
-          !armorType ||
-          (item.armor_type &&
-            item.armor_type.toLowerCase() === armorType.toLowerCase())
-        const matchesWeaponType =
-          !weaponType ||
-          (item.weapon_type &&
-            item.weapon_type.toLowerCase() === weaponType.toLowerCase())
+    const matchesBodyPart =
+      !bodyPart ||
+      (item.body_part && item.body_part.includes(bodyPart.toLowerCase()))
+    const matchesArmorType =
+      !armorType ||
+      (item.armor_type &&
+        item.armor_type.toLowerCase() === armorType.toLowerCase())
+    const matchesWeaponType =
+      !weaponType ||
+      (item.weapon_type &&
+        item.weapon_type.toLowerCase() === weaponType.toLowerCase())
 
-        const matchesNew = !showNew || item.is_new === true
-        const matchesChanged = !showChanged || item.is_changed === true
+    const matchesNew = !showNew || item.is_new === true
+    const matchesChanged = !showChanged || item.is_changed === true
 
-        return (
-          matchesSearch &&
-          matchesCrystalType &&
-          matchesBodyPart &&
-          matchesArmorType &&
-          matchesWeaponType &&
-          matchesNew &&
-          matchesChanged
-        )
-      }),
-    [
-      armorType,
-      bodyPart,
-      crystalType,
-      items,
-      searchTerm,
-      showChanged,
-      showNew,
-      weaponType,
-    ],
-  )
+    return (
+      matchesSearch &&
+      matchesCrystalType &&
+      matchesBodyPart &&
+      matchesArmorType &&
+      matchesWeaponType &&
+      matchesNew &&
+      matchesChanged
+    )
+  })
 
   const { data: currentItems, totalPages } = paginateData(
     sortData(filteredItems, sortConfig, 'crystal_type'),
@@ -187,115 +176,91 @@ export const ItemsPage = ({
     itemsPerPage,
   )
 
-  const formatCrystalType = useCallback(
-    (type: string | undefined): string => {
-      if (!type) return '-'
-      return type.toLowerCase() === 'none'
-        ? t('filters.gradeNone')
-        : type.toUpperCase()
-    },
-    [t],
-  )
+  const formatCrystalType = (type: string | undefined): string => {
+    if (!type) return '-'
+    return type.toLowerCase() === 'none'
+      ? t('filters.gradeNone')
+      : type.toUpperCase()
+  }
 
-  const columns = useMemo(
-    () =>
-      Object.entries(columnVisibility).map(([key, visible]) => ({
-        key: key as keyof Item,
-        label: key === 'icon' ? '' : formatColumnName(key),
-        visible,
-      })),
-    [columnVisibility, formatColumnName],
-  )
+  const columns = Object.entries(columnVisibility).map(([key, visible]) => ({
+    key: key as keyof Item,
+    label: key === 'icon' ? '' : formatColumnName(key),
+    visible,
+  }))
 
-  const renderCell = useCallback(
-    (item: Item, column: string) => {
-      switch (column) {
-        case 'name':
-          return (
-            <Link
-              rel="canonical"
-              href={`/${urlMap[type]}/${item.object_id}`}
-              onClick={(e) => e.stopPropagation()}
-              tabIndex={-1}
-            >
-              {item.name || item.object_name}
-            </Link>
-          )
-        case 'icon':
-          return (
-            <Image
-              src={
-                failedImages.has(item.object_id)
-                  ? getDataUrl('/icon/etc_alphabet_ii_i00.webp')
-                  : getDataUrl(
-                      `/icon/${item?.icon?.[0].split('.').at(-1)}.webp`,
-                    )
-              }
-              alt={item.name || item.object_name}
-              width={32}
-              height={32}
-              style={{
-                borderRadius: '4px',
-                border: '1px solid #3a3a3a',
-              }}
-              onError={() => {
-                setFailedImages((prev) => new Set(prev).add(item.object_id))
-              }}
-            />
-          )
-        case 'crystal_type':
-          return formatCrystalType(item.crystal_type)
-        case 'description':
-          return item.description?.replace(/\\n/g, '\n') || '-'
-        case 'base_price':
-          return item.base_price?.toLocaleString() || '-'
-        default:
-          return Array.isArray(item[column as keyof Item])
-            ? (item[column as keyof Item] as string[]).join(', ')
-            : item[column as keyof Item]?.toString() || '-'
-      }
-    },
-    [failedImages, type, formatCrystalType, getDataUrl],
-  )
+  const renderCell = (item: Item, column: string) => {
+    switch (column) {
+      case 'name':
+        return (
+          <Link
+            rel="canonical"
+            href={`/${urlMap[type]}/${item.object_id}`}
+            onClick={(e) => e.stopPropagation()}
+            tabIndex={-1}
+          >
+            {item.name || item.object_name}
+          </Link>
+        )
+      case 'icon':
+        return (
+          <Image
+            src={
+              failedImages.has(item.object_id)
+                ? getDataUrl('/icon/etc_alphabet_ii_i00.webp')
+                : getDataUrl(`/icon/${item?.icon?.[0].split('.').at(-1)}.webp`)
+            }
+            alt={item.name || item.object_name}
+            width={32}
+            height={32}
+            style={{
+              borderRadius: '4px',
+              border: '1px solid #3a3a3a',
+            }}
+            onError={() => {
+              setFailedImages((prev) => new Set(prev).add(item.object_id))
+            }}
+          />
+        )
+      case 'crystal_type':
+        return formatCrystalType(item.crystal_type)
+      case 'description':
+        return item.description?.replace(/\\n/g, '\n') || '-'
+      case 'base_price':
+        return item.base_price?.toLocaleString() || '-'
+      default:
+        return Array.isArray(item[column as keyof Item])
+          ? (item[column as keyof Item] as string[]).join(', ')
+          : item[column as keyof Item]?.toString() || '-'
+    }
+  }
 
-  const uniqueBodyParts = useMemo(
-    () =>
-      [
-        ...new Set(
-          items
-            .flatMap((item) => item.body_part)
-            .filter((part): part is string => !!part?.length)
-            .map((part) => part.toLowerCase()),
-        ),
-      ].sort(),
-    [items],
-  )
+  const uniqueBodyParts = [
+    ...new Set(
+      items
+        .flatMap((item) => item.body_part)
+        .filter((part): part is string => !!part?.length)
+        .map((part) => part.toLowerCase()),
+    ),
+  ].sort()
 
-  const uniqueArmorTypes = useMemo(
-    () =>
-      [
-        ...new Set(
-          items
-            .map((item) => item.armor_type)
-            .filter(Boolean)
-            .map((type) => type!.toLowerCase()),
-        ),
-      ].sort(),
-    [items],
-  )
+  const uniqueArmorTypes = [
+    ...new Set(
+      items
+        .map((item) => item.armor_type)
+        .filter(Boolean)
+        .map((type) => type!.toLowerCase()),
+    ),
+  ].sort()
 
-  const uniqueWeaponTypes = useMemo(
-    () =>
-      [
-        ...new Set(
-          items
-            .map((item) => item.weapon_type)
-            .filter(Boolean)
-            .map((type) => type!.toLowerCase()),
-        ),
-      ].sort(),
-    [items],
-  )
+  const uniqueWeaponTypes = [
+    ...new Set(
+      items
+        .map((item) => item.weapon_type)
+        .filter(Boolean)
+        .map((type) => type!.toLowerCase()),
+    ),
+  ].sort()
 
   const filters = [
     {
@@ -421,6 +386,7 @@ export const ItemsPage = ({
       data={currentItems}
       columns={columns}
       isLoading={isLoading}
+      isSearchPending={isSearchPending}
       searchTerm={searchTerm}
       onSearchChange={handleSearchChange}
       searchPlaceholder={t('itemsPage.searchPlaceholder')}

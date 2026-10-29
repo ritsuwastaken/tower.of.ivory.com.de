@@ -48,6 +48,14 @@ export const GlobalStyles = createGlobalStyle`
     font-family: inherit;
   }
   
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+      animation: none !important;
+    }
+  }
+
   @media (prefers-color-scheme: dark) {
     html {
       color-scheme: dark;

@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const defaultColumns: Partial<Record<keyof Skill, boolean>> = {
   icon: true,
@@ -65,6 +65,8 @@ export default function SkillsPage() {
 
   const {
     searchTerm,
+    deferredSearchTerm,
+    isSearchPending,
     currentPage,
     sortConfig,
     columnVisibility,
@@ -89,14 +91,12 @@ export default function SkillsPage() {
 
   const mergeSkills = mergeSkillsEnabled && !showNew && !showChanged
 
-  const processedSkills = useMemo(() => {
-    return mergeSkills ? mergeSkillLevels(skills) : skills
-  }, [skills, mergeSkills])
+  const processedSkills = mergeSkills ? mergeSkillLevels(skills) : skills
 
   const filteredSkills = processedSkills.filter((skill) => {
     const matchesSearch = skill.name
       ?.toLowerCase()
-      ?.includes(searchTerm.toLowerCase())
+      ?.includes(deferredSearchTerm.toLowerCase())
 
     const matchesNew = !showNew || skill.is_new === true
     const matchesChanged = !showChanged || skill.is_changed === true
@@ -171,61 +171,54 @@ export default function SkillsPage() {
     },
   ]
 
-  const columns = useMemo(
-    () =>
-      Object.entries(columnVisibility).map(([key, visible]) => ({
-        key: key as keyof Skill,
-        label: key === 'icon' ? '' : formatColumnName(key),
-        visible: visible as boolean,
-      })),
-    [columnVisibility, formatColumnName],
-  )
+  const columns = Object.entries(columnVisibility).map(([key, visible]) => ({
+    key: key as keyof Skill,
+    label: key === 'icon' ? '' : formatColumnName(key),
+    visible: visible as boolean,
+  }))
 
-  const renderCell = useCallback(
-    (skill: Skill, column: string) => {
-      switch (column) {
-        case 'name':
-          return (
-            <Link
-              rel="canonical"
-              href={`/skills/${skill.skill_id}`}
-              onClick={(e) => e.stopPropagation()}
-              tabIndex={-1}
-            >
-              {skill.name}
-            </Link>
-          )
-        case 'icon':
-          return (
-            <Image
-              src={
-                failedImages.has(skill.skill_id)
-                  ? getDataUrl('/icon/skill0000.webp')
-                  : getDataUrl(`/icon/${skill.icon?.split('.').at(-1)}.webp`)
-              }
-              alt={
-                skill.name ||
-                t('skillDetails.unnamedSkill', { id: skill.skill_id })
-              }
-              width={32}
-              height={32}
-              onError={() => {
-                setFailedImages((prev) => new Set(prev).add(skill.skill_id))
-              }}
-              style={{
-                borderRadius: '4px',
-                border: '1px solid #3a3a3a',
-              }}
-            />
-          )
-        case 'is_magic':
-          return skill[column] ? t('common.yes') : t('common.no')
-        default:
-          return skill[column as keyof Skill]?.toString() || '-'
-      }
-    },
-    [failedImages, t, getDataUrl],
-  )
+  const renderCell = (skill: Skill, column: string) => {
+    switch (column) {
+      case 'name':
+        return (
+          <Link
+            rel="canonical"
+            href={`/skills/${skill.skill_id}`}
+            onClick={(e) => e.stopPropagation()}
+            tabIndex={-1}
+          >
+            {skill.name}
+          </Link>
+        )
+      case 'icon':
+        return (
+          <Image
+            src={
+              failedImages.has(skill.skill_id)
+                ? getDataUrl('/icon/skill0000.webp')
+                : getDataUrl(`/icon/${skill.icon?.split('.').at(-1)}.webp`)
+            }
+            alt={
+              skill.name ||
+              t('skillDetails.unnamedSkill', { id: skill.skill_id })
+            }
+            width={32}
+            height={32}
+            onError={() => {
+              setFailedImages((prev) => new Set(prev).add(skill.skill_id))
+            }}
+            style={{
+              borderRadius: '4px',
+              border: '1px solid #3a3a3a',
+            }}
+          />
+        )
+      case 'is_magic':
+        return skill[column] ? t('common.yes') : t('common.no')
+      default:
+        return skill[column as keyof Skill]?.toString() || '-'
+    }
+  }
 
   return (
     <>
@@ -234,6 +227,7 @@ export default function SkillsPage() {
         data={currentSkills}
         columns={columns}
         isLoading={isLoading}
+        isSearchPending={isSearchPending}
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
         searchPlaceholder={t('skillsPage.searchPlaceholder')}

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { type ReactNode, startTransition, ViewTransition } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import {
@@ -29,12 +29,17 @@ export function CollapsibleSection({
   onToggle,
 }: CollapsibleSectionProps) {
   return (
-    <MeshTextureSection id={id}>
-      <CollapseButton onClick={onToggle}>
-        {open ? '−' : '+'} {title}
-      </CollapseButton>
-      {open && <MeshTextureContent>{children}</MeshTextureContent>}
-    </MeshTextureSection>
+    <ViewTransition>
+      <MeshTextureSection id={id}>
+        <CollapseButton
+          onClick={() => startTransition(onToggle)}
+          aria-expanded={open}
+        >
+          {open ? '−' : '+'} {title}
+        </CollapseButton>
+        {open && <MeshTextureContent>{children}</MeshTextureContent>}
+      </MeshTextureSection>
+    </ViewTransition>
   )
 }
 

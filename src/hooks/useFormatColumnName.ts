@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import { useCallback } from 'react'
 
 const defaultFormat = (key: string) =>
   key
@@ -9,8 +8,6 @@ const defaultFormat = (key: string) =>
 
 export const useFormatColumnName = () => {
   const { t } = useTranslation()
-  return useCallback(
-    (key: string) => t(`columns.${key}`, { defaultValue: defaultFormat(key) }),
-    [t],
-  )
+  return (key: string) =>
+    t(`columns.${key}`, { defaultValue: defaultFormat(key) })
 }

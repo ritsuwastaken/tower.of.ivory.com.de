@@ -46,6 +46,7 @@ export interface DataTableProps<T> extends SharedFilterProps {
     label: string
     visible: boolean
   }[]
+  isSearchPending?: boolean
   searchTerm: string
   onSearchChange: (value: string) => void
   searchPlaceholder?: string

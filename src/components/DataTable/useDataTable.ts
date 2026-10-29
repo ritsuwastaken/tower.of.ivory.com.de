@@ -1,6 +1,14 @@
 import { SortConfig } from '@/utils/pagination'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  startTransition,
+  addTransitionType,
+  useCallback,
+  useDeferredValue,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 
 interface UseDataTableOptions {
   itemsPerPage?: number
@@ -19,6 +27,7 @@ export function useDataTable<T>({
   const isInitialMount = useRef(true)
 
   const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '')
+  const deferredSearchTerm = useDeferredValue(searchTerm)
   const [currentPage, setCurrentPage] = useState(
     parseInt(searchParams.get('page') || '1', 10),
   )
@@ -31,11 +40,14 @@ export function useDataTable<T>({
   )
 
   const handleSort = useCallback((column: keyof T) => {
-    setSortConfig((prev) => ({
-      column,
-      direction:
-        prev.column === column && prev.direction === 'asc' ? 'desc' : 'asc',
-    }))
+    startTransition(() => {
+      addTransitionType('table-sort')
+      setSortConfig((prev) => ({
+        column,
+        direction:
+          prev.column === column && prev.direction === 'asc' ? 'desc' : 'asc',
+      }))
+    })
   }, [])
 
   const handleColumnVisibilityChange = useCallback(
@@ -100,11 +112,14 @@ export function useDataTable<T>({
     }
   }, [searchTerm, currentPage, pathname, router, searchParams])
 
-  const viewMode: 'table' | 'grid' =
-    searchParams.get('view') === 'grid' ? 'grid' : 'table'
+  const viewMode = useDeferredValue<'table' | 'grid'>(
+    searchParams.get('view') === 'grid' ? 'grid' : 'table',
+  )
 
   return {
     searchTerm,
+    deferredSearchTerm,
+    isSearchPending: searchTerm !== deferredSearchTerm,
     currentPage,
     sortConfig,
     columnVisibility,

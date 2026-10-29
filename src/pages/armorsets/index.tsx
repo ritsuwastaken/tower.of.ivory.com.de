@@ -10,7 +10,7 @@ import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useCallback, useMemo, useState } from 'react'
+import { useState } from 'react'
 
 export default function ArmorSetsPage() {
   const getDataUrl = useDataUrl()
@@ -23,6 +23,8 @@ export default function ArmorSetsPage() {
 
   const {
     searchTerm,
+    deferredSearchTerm,
+    isSearchPending,
     currentPage,
     sortConfig,
     columnVisibility,
@@ -70,15 +72,12 @@ export default function ArmorSetsPage() {
     ...new Set(armorSetsData.map((set) => set.armor_type)),
   ].sort()
 
-  const capitalizeGrade = useCallback(
-    (grade: string | undefined): string => {
-      if (!grade) return '-'
-      return grade.toLowerCase() === 'none'
-        ? t('filters.gradeNone')
-        : grade.toUpperCase()
-    },
-    [t],
-  )
+  const capitalizeGrade = (grade: string | undefined): string => {
+    if (!grade) return '-'
+    return grade.toLowerCase() === 'none'
+      ? t('filters.gradeNone')
+      : grade.toUpperCase()
+  }
 
   const handleRowClick = ({ id }: ArmorSet) => {
     router.push(`/armorsets/${id}`)
@@ -88,7 +87,7 @@ export default function ArmorSetsPage() {
     ? armorSetsData.filter((set) => {
         const matchesSearch = set.name
           .toLowerCase()
-          .includes(searchTerm.toLowerCase())
+          .includes(deferredSearchTerm.toLowerCase())
         const matchesGrade = !grade || set.grade === grade
         const matchesType =
           !armorType ||
@@ -108,85 +107,75 @@ export default function ArmorSetsPage() {
     itemsPerPage,
   )
 
-  const filters = useMemo(() => {
-    const baseFilters = [
-      {
-        id: 'grade',
-        label: t('filters.grade'),
-        value: grade,
-        onChange: setGrade,
-        options: [
-          { value: '', label: t('filters.all') },
-          ...uniqueGrades.map((g) => ({
-            value: g,
-            label: capitalizeGrade(g),
-          })),
-        ],
-      },
-      {
-        id: 'armorType',
-        label: t('filters.armorType'),
-        value: armorType,
-        onChange: setArmorType,
-        options: [
-          { value: '', label: t('filters.all') },
-          ...uniqueArmorTypes.map((type) => ({
-            value: type,
-            label: type,
-          })),
-        ],
-      },
-    ]
-
-    return baseFilters
-  }, [grade, armorType, uniqueGrades, uniqueArmorTypes, t, capitalizeGrade])
-
-  const renderCell = useCallback(
-    (armorSet: ArmorSet, column: string) => {
-      switch (column) {
-        case 'visual':
-          return <ArmorSetVisual armorSet={armorSet} />
-        case 'name':
-          return (
-            <Link
-              rel="canonical"
-              href={`/armorsets/${armorSet.id}`}
-              onClick={(e) => e.stopPropagation()}
-              tabIndex={-1}
-            >
-              {armorSet.name}
-            </Link>
-          )
-        case 'grade':
-          return capitalizeGrade(armorSet.grade)
-        case 'items':
-          return armorSet.items?.map((item) => item.name).join(', ') || '-'
-        case 'bonus_stats':
-          return armorSet.set_bonus || '-'
-        default:
-          return armorSet[column as keyof ArmorSet]?.toString() || '-'
-      }
+  const filters = [
+    {
+      id: 'grade',
+      label: t('filters.grade'),
+      value: grade,
+      onChange: setGrade,
+      options: [
+        { value: '', label: t('filters.all') },
+        ...uniqueGrades.map((g) => ({
+          value: g,
+          label: capitalizeGrade(g),
+        })),
+      ],
     },
-    [capitalizeGrade],
-  )
+    {
+      id: 'armorType',
+      label: t('filters.armorType'),
+      value: armorType,
+      onChange: setArmorType,
+      options: [
+        { value: '', label: t('filters.all') },
+        ...uniqueArmorTypes.map((type) => ({
+          value: type,
+          label: type,
+        })),
+      ],
+    },
+  ]
 
-  const columns = useMemo(() => {
-    const labelMap: Partial<Record<keyof ArmorSet | 'visual', string>> = {
-      visual: '',
-      name: t('armorSetsPage.name'),
-      grade: t('filters.grade'),
-      items: t('armorSetsPage.parts'),
-      bonus_stats: t('armorSetsPage.bonus'),
-      physical_defense: t('armorSetsPage.physicalDefense'),
-      base_price: t('armorSetsPage.basePrice'),
+  const renderCell = (armorSet: ArmorSet, column: string) => {
+    switch (column) {
+      case 'visual':
+        return <ArmorSetVisual armorSet={armorSet} />
+      case 'name':
+        return (
+          <Link
+            rel="canonical"
+            href={`/armorsets/${armorSet.id}`}
+            onClick={(e) => e.stopPropagation()}
+            tabIndex={-1}
+          >
+            {armorSet.name}
+          </Link>
+        )
+      case 'grade':
+        return capitalizeGrade(armorSet.grade)
+      case 'items':
+        return armorSet.items?.map((item) => item.name).join(', ') || '-'
+      case 'bonus_stats':
+        return armorSet.set_bonus || '-'
+      default:
+        return armorSet[column as keyof ArmorSet]?.toString() || '-'
     }
+  }
 
-    return Object.entries(columnVisibility).map(([key, visible]) => ({
-      key: key as keyof ArmorSet | 'visual',
-      label: labelMap[key as keyof typeof labelMap] ?? formatColumnName(key),
-      visible: Boolean(visible),
-    }))
-  }, [columnVisibility, formatColumnName, t])
+  const labelMap: Partial<Record<keyof ArmorSet | 'visual', string>> = {
+    visual: '',
+    name: t('armorSetsPage.name'),
+    grade: t('filters.grade'),
+    items: t('armorSetsPage.parts'),
+    bonus_stats: t('armorSetsPage.bonus'),
+    physical_defense: t('armorSetsPage.physicalDefense'),
+    base_price: t('armorSetsPage.basePrice'),
+  }
+  const columns = Object.entries(columnVisibility).map(([key, visible]) => ({
+    key: key as keyof ArmorSet | 'visual',
+    label: labelMap[key as keyof typeof labelMap] ?? formatColumnName(key),
+    visible: Boolean(visible),
+  }))
 
   return (
     <>
@@ -196,6 +185,7 @@ export default function ArmorSetsPage() {
         data={currentArmorSets}
         columns={columns}
         isLoading={isLoading}
+        isSearchPending={isSearchPending}
         searchTerm={searchTerm}
         onSearchChange={handleSearchChange}
         searchPlaceholder={t('armorSetsPage.searchPlaceholder')}
