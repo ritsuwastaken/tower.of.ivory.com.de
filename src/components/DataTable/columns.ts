@@ -1,3 +1,4 @@
+import type { TFunction } from 'i18next'
 import type { Skill } from '@/types'
 
 export const getDefaultItemColumns = (category: string) => {
@@ -74,3 +75,15 @@ export const defaultArmorSetColumns = {
   items: true,
   bonus_stats: true,
 }
+
+export const getArmorSetColumnLabels = (
+  t: TFunction,
+): Record<string, string> => ({
+  visual: '',
+  name: t('armorSetsPage.name'),
+  grade: t('filters.grade'),
+  items: t('armorSetsPage.parts'),
+  bonus_stats: t('armorSetsPage.bonus'),
+  physical_defense: t('armorSetsPage.physicalDefense'),
+  base_price: t('armorSetsPage.basePrice'),
+})

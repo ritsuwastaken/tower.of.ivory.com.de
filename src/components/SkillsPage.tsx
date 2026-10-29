@@ -14,27 +14,19 @@ import { defaultSkillColumns } from './DataTable/columns'
 const mergeSkillLevels = (skills: Skill[]): Skill[] => {
   const skillMap = new Map<number, Skill>()
 
-  skills.forEach((skill) => {
-    if (!skillMap.has(skill.skill_id)) {
-      skillMap.set(skill.skill_id, {
-        ...skill,
-        levels: [skill],
-      })
-    } else {
-      const existingSkill = skillMap.get(skill.skill_id)!
-      existingSkill.levels!.push(skill)
+  for (const skill of skills) {
+    const previous = skillMap.get(skill.skill_id)
+    const levels = previous?.levels ?? []
+    levels.push(skill)
 
-      if (
-        skill.skill_level &&
-        (!existingSkill.skill_level ||
-          skill.skill_level > existingSkill.skill_level)
-      ) {
-        const latestData = { ...skill }
-        delete latestData.levels
-        Object.assign(existingSkill, latestData)
-      }
+    if (
+      !previous ||
+      (skill.skill_level &&
+        (!previous.skill_level || skill.skill_level > previous.skill_level))
+    ) {
+      skillMap.set(skill.skill_id, { ...previous, ...skill, levels })
     }
-  })
+  }
 
   return Array.from(skillMap.values())
 }

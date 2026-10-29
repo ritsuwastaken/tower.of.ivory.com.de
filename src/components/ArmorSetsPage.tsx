@@ -8,7 +8,10 @@ import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { defaultArmorSetColumns } from './DataTable/columns'
+import {
+  defaultArmorSetColumns,
+  getArmorSetColumnLabels,
+} from './DataTable/columns'
 
 export default function ArmorSetsPage({
   armorSets,
@@ -21,19 +24,10 @@ export default function ArmorSetsPage({
   const [grade, setGrade] = useState('')
   const [armorType, setArmorType] = useState('')
 
-  const labelMap: Partial<Record<keyof ArmorSet | 'visual', string>> = {
-    visual: '',
-    name: t('armorSetsPage.name'),
-    grade: t('filters.grade'),
-    items: t('armorSetsPage.parts'),
-    bonus_stats: t('armorSetsPage.bonus'),
-    physical_defense: t('armorSetsPage.physicalDefense'),
-    base_price: t('armorSetsPage.basePrice'),
-  }
   const { tableProps, deferredSearchTerm, itemsPerPage } =
     useDataTable<ArmorSet>({
       defaultColumnVisibility: defaultArmorSetColumns,
-      columnLabels: labelMap,
+      columnLabels: getArmorSetColumnLabels(t),
       onResetFilters: () => {
         setGrade('')
         setArmorType('')

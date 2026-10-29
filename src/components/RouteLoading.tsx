@@ -6,6 +6,7 @@ import { Skeleton } from './Skeleton'
 import { DataTable } from './DataTable'
 import {
   defaultArmorSetColumns,
+  getArmorSetColumnLabels,
   defaultSkillColumns,
   getDefaultItemColumns,
 } from './DataTable/columns'
@@ -116,17 +117,7 @@ function ListSkeleton({ kind }: { kind: LoadingKind }) {
             kind === 'armor' ? 'armor' : kind === 'etc' ? 'etcitem' : 'weapon',
           )
   const labels: Record<string, string> =
-    kind === 'armorsets'
-      ? {
-          visual: '',
-          name: t('armorSetsPage.name'),
-          grade: t('filters.grade'),
-          physical_defense: t('armorSetsPage.physicalDefense'),
-          base_price: t('armorSetsPage.basePrice'),
-          items: t('armorSetsPage.parts'),
-          bonus_stats: t('armorSetsPage.bonus'),
-        }
-      : { icon: '' }
+    kind === 'armorsets' ? getArmorSetColumnLabels(t) : { icon: '' }
   const columns = Object.entries(visibility).map(([key, visible]) => ({
     key,
     visible,

@@ -2,54 +2,30 @@ import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'
 import { useTranslation } from 'react-i18next'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { useMemo } from 'react'
 import styled from 'styled-components'
 
-const ROUTE_MAPPING = {
-  '/skills': 'skills',
-  '/armorsets': 'armorsets',
-  '/weapons': 'weapon',
-  '/armor': 'armor',
-  '/etc': 'etcitem',
-} as const
-
-const DEFAULT_TYPE = 'armorsets'
-
-const navigationItems: NavigationItem[] = [
+const navigationItems = [
   {
-    type: 'armorsets',
     path: '/armorsets',
     translationKey: 'navigation.armorsets',
   },
-  { type: 'skills', path: '/skills', translationKey: 'navigation.skills' },
-  { type: 'weapon', path: '/weapons', translationKey: 'navigation.weapons' },
-  { type: 'armor', path: '/armor', translationKey: 'navigation.armor' },
+  { path: '/skills', translationKey: 'navigation.skills' },
+  { path: '/weapons', translationKey: 'navigation.weapons' },
+  { path: '/armor', translationKey: 'navigation.armor' },
   {
-    type: 'etcitem',
     path: '/etc',
     translationKey: 'navigation.miscellaneous',
   },
 ]
 
-type NavigationItem = {
-  type: string
-  path: string
-  translationKey: string
-}
-
 export const Navigation = () => {
   const { t } = useTranslation()
   const pathname = usePathname() || ''
   const searchParams = useCatalogSearchParams()
-  const currentType = useMemo(() => {
-    if (pathname === '/') return DEFAULT_TYPE
-
-    for (const [route, type] of Object.entries(ROUTE_MAPPING)) {
-      if (pathname.startsWith(route)) return type
-    }
-
-    return ''
-  }, [pathname])
+  const currentPath = pathname === '/' ? navigationItems[0].path : pathname
+  const activePath = navigationItems.find(
+    ({ path }) => currentPath === path || currentPath.startsWith(`${path}/`),
+  )?.path
 
   const searchValue = searchParams.get('search')
   const queryString = searchValue
@@ -58,12 +34,12 @@ export const Navigation = () => {
 
   return (
     <CategoryTabs>
-      {navigationItems.map(({ type, path, translationKey }) => (
+      {navigationItems.map(({ path, translationKey }) => (
         <TabLink
-          key={type}
-          $isActive={currentType === type}
+          key={path}
+          $isActive={activePath === path}
           href={`${path}${queryString}`}
-          aria-current={currentType === type ? 'page' : undefined}
+          aria-current={activePath === path ? 'page' : undefined}
         >
           {t(translationKey)}
         </TabLink>
