@@ -1,19 +1,4 @@
 import styled, { css } from 'styled-components'
-import Link from 'next/link'
-
-export const StyledLink = styled(Link)`
-  display: inline-block;
-  color: #888;
-  text-decoration: none;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: color 0.2s ease;
-  line-height: 1;
-
-  &:hover {
-    color: #fff;
-  }
-`
 
 export const MobileLevelSelect = styled.div`
   display: none;

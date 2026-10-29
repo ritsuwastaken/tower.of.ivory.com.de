@@ -5,9 +5,7 @@
     },
     "meta": {
         "loading": "Cargando…",
-        "itemNotFound": "Objeto no encontrado",
-        "skillNotFound": "Habilidad no encontrada",
-        "armorSetNotFound": "Conjunto de armadura no encontrado"
+        "skillNotFound": "Habilidad no encontrada"
     },
     "common": {
         "yes": "Sí",
@@ -84,7 +82,6 @@
         "view": "Vista",
         "all": "Todos",
         "gradeNone": "Ninguno",
-        "viewMode": "Modo de vista",
         "viewModeGrid": "Cuadrícula",
         "viewModeTable": "Tabla",
         "armorType": "Tipo de armadura",
@@ -99,8 +96,6 @@
         "bodyPart": "Parte del cuerpo"
     },
     "armorSetDetails": {
-        "loading": "Cargando conjunto de armadura…",
-        "notFound": "Conjunto de armadura no encontrado",
         "totalPDef": "Defensa física total",
         "basePrice": "Precio base",
         "part": "Parte",

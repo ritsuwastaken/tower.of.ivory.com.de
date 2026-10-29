@@ -49,8 +49,6 @@ export const SetInfoValue = styled.span`
   color: var(--text-color, #333);
 `
 
-export const SetCard = styled.div``
-
 export const HarborBirthdayItem = styled(CatalogImage).attrs({
   width: 256,
   height: 256,

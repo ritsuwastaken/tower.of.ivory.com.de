@@ -1,7 +1,6 @@
 'use client'
 
 import {
-  StyledLink,
   MobileLevelSelect,
   SkillLevels,
   LevelCard,
@@ -28,8 +27,10 @@ import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import { ExternalLinks } from '@/components/ExternalLinks'
 import {
+  BackButton,
   Container,
   NotificationPanel,
   NotificationLink,
@@ -53,9 +54,9 @@ const SkillNotFound = () => {
   const { t } = useTranslation()
   return (
     <Container>
-      <StyledLink rel="canonical" href="/skills">
+      <BackButton as={Link} rel="canonical" href="/skills">
         ⟵
-      </StyledLink>
+      </BackButton>
       <TableContainer>
         <ErrorText>{t('meta.skillNotFound')}</ErrorText>
       </TableContainer>
@@ -155,9 +156,9 @@ function SkillDetailsContent({
   return (
     <>
       <Container>
-        <StyledLink rel="canonical" href="/skills" scroll={false}>
+        <BackButton as={Link} rel="canonical" href="/skills" scroll={false}>
           ⟵
-        </StyledLink>
+        </BackButton>
 
         <ContentWrapper>
           <TableContainer>

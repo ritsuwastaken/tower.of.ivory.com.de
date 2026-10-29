@@ -7,7 +7,6 @@ import {
   SetInfoItem,
   SetInfoLabel,
   SetInfoValue,
-  SetCard,
   HarborBirthdayItem,
   SetName,
 } from '@/components/primitives/ItemDetailsLayout'

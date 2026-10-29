@@ -34,21 +34,17 @@ export const ItemsPage = ({
   const searchParams = useCatalogSearchParams()
 
   const { tableProps, deferredSearchTerm, itemsPerPage } = useDataTable<Item>({
-    itemsPerPage: 50,
     defaultColumnVisibility: getDefaultItemColumns(type),
     onResetFilters: () => {
-      setCrystalType('')
-      setBodyPart('')
-      setArmorType('')
-      setWeaponType('')
+      setItemFilters({
+        crystal: '',
+        bodyPart: '',
+        armorType: '',
+        weaponType: '',
+      })
       setChangeFilter('all')
     },
   })
-
-  const crystalTypeFromParams = searchParams.get('crystal') || ''
-  const bodyPartFromParams = searchParams.get('bodyPart') || ''
-  const armorTypeFromParams = searchParams.get('armorType') || ''
-  const weaponTypeFromParams = searchParams.get('weaponType') || ''
 
   const [changeFilter, setChangeFilter] = useState<ChangeFilter>(
     searchParams.get('new') === 'true'
@@ -58,10 +54,15 @@ export const ItemsPage = ({
         : 'all',
   )
 
-  const [crystalType, setCrystalType] = useState(crystalTypeFromParams)
-  const [bodyPart, setBodyPart] = useState(bodyPartFromParams)
-  const [armorType, setArmorType] = useState(armorTypeFromParams)
-  const [weaponType, setWeaponType] = useState(weaponTypeFromParams)
+  const [itemFilters, setItemFilters] = useState({
+    crystal: searchParams.get('crystal') || '',
+    bodyPart: searchParams.get('bodyPart') || '',
+    armorType: searchParams.get('armorType') || '',
+    weaponType: searchParams.get('weaponType') || '',
+  })
+  const { crystal, bodyPart, armorType, weaponType } = itemFilters
+  const updateFilter = (key: keyof typeof itemFilters) => (value: string) =>
+    setItemFilters((previous) => ({ ...previous, [key]: value }))
 
   const filteredItems = items.filter((item) => {
     const matchesSearch = (item.name || item.object_name)
@@ -69,10 +70,10 @@ export const ItemsPage = ({
       .includes(deferredSearchTerm.toLowerCase())
 
     const matchesCrystalType =
-      !crystalType ||
-      (crystalType === 'None'
+      !crystal ||
+      (crystal === 'None'
         ? !item.crystal_type || item.crystal_type.toLowerCase() === 'none'
-        : item.crystal_type?.toLowerCase() === crystalType.toLowerCase())
+        : item.crystal_type?.toLowerCase() === crystal.toLowerCase())
 
     const matchesBodyPart =
       !bodyPart ||
@@ -148,7 +149,7 @@ export const ItemsPage = ({
       id: 'body-part',
       label: t('filters.bodyPart'),
       value: bodyPart,
-      onChange: setBodyPart,
+      onChange: updateFilter('bodyPart'),
       options: getFilterOptions(
         items.flatMap((item) => item.body_part),
         allLabel,
@@ -159,7 +160,7 @@ export const ItemsPage = ({
       id: 'armor-type',
       label: t('filters.armorType'),
       value: armorType,
-      onChange: setArmorType,
+      onChange: updateFilter('armorType'),
       options: getFilterOptions(
         items.map((item) => item.armor_type),
         allLabel,
@@ -170,7 +171,7 @@ export const ItemsPage = ({
       id: 'weapon-type',
       label: t('filters.weaponType'),
       value: weaponType,
-      onChange: setWeaponType,
+      onChange: updateFilter('weaponType'),
       options: getFilterOptions(
         items.map((item) => item.weapon_type),
         allLabel,
@@ -182,8 +183,8 @@ export const ItemsPage = ({
     {
       id: 'crystal-type',
       label: t('filters.grade'),
-      value: crystalType,
-      onChange: setCrystalType,
+      value: crystal,
+      onChange: updateFilter('crystal'),
       options: [
         { value: '', label: allLabel },
         { value: 'None', label: t('filters.gradeNone') },

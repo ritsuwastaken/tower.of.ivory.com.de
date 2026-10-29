@@ -1,64 +1,44 @@
 import { Item, Skill } from '@/types'
-import { getOriginalObjectName } from '@/utils/getOriginalObjectName'
 import { useTranslation } from '@/hooks/useTranslation'
-import Link from 'next/link'
 import styled from 'styled-components'
 
-interface ExternalLink {
-  url: string
-  label: string
-}
-
-interface ExternalLinksProps {
-  data: Skill | Item
-}
-
-export const ExternalLinks = ({ data }: ExternalLinksProps) => {
+export const ExternalLinks = ({ data }: { data: Skill | Item }) => {
   const { t } = useTranslation()
-  const links: ExternalLink[] = []
-
-  if ('skill_id' in data) {
-    links.push({
-      url: `https://knowledgedb.elmorelab.com/#/skills/skill-info?skillId=${data.skill_id}&level=${data.skill_level}&chronicle=c1`,
-      label: t('externalLinks.elmoreLab'),
-    })
-    if (!data.is_new) {
-      links.push({
-        url: `https://l2hub.info/c1/skills/${data.skill_id}:${data.skill_level}`,
-        label: t('externalLinks.l2hub'),
-      })
-    }
-  } else {
-    if (!data.is_new) {
-      const objectName = getOriginalObjectName(data)
-
-      links.push({
-        url: `https://l2hub.info/c1/items/${objectName
-          ?.replace(/[\[\]]/g, '')
-          .toLowerCase()
-          .replace(/ /g, '_')}`,
-        label: t('externalLinks.l2hub'),
-      })
-    }
-
-    links.push({
-      url: `https://knowledgedb.elmorelab.com/#/items?itemId=${data.object_id}&chronicle=c1`,
-      label: t('externalLinks.elmoreLab'),
-    })
-  }
+  const isSkill = 'skill_id' in data
+  const elmoreLabLink = (
+    <StyledLink
+      href={
+        isSkill
+          ? `https://knowledgedb.elmorelab.com/#/skills/skill-info?skillId=${data.skill_id}&level=${data.skill_level}&chronicle=c1`
+          : `https://knowledgedb.elmorelab.com/#/items?itemId=${data.object_id}&chronicle=c1`
+      }
+    >
+      {t('externalLinks.elmoreLab')}
+    </StyledLink>
+  )
+  const l2hubLink = !data.is_new && (
+    <StyledLink
+      href={
+        isSkill
+          ? `https://l2hub.info/c1/skills/${data.skill_id}:${data.skill_level}`
+          : `https://l2hub.info/c1/items/${(
+              (data.is_changed && data.changes?.object_name?.old) ||
+              data.object_name
+            )
+              .replace(/[\[\]]/g, '')
+              .toLowerCase()
+              .replace(/ /g, '_')}`
+      }
+    >
+      {t('externalLinks.l2hub')}
+    </StyledLink>
+  )
 
   return (
     <LinksContainer>
-      {links.map((link, index) => (
-        <StyledLink
-          key={index}
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {link.label}
-        </StyledLink>
-      ))}
+      {isSkill && elmoreLabLink}
+      {l2hubLink}
+      {!isSkill && elmoreLabLink}
     </LinksContainer>
   )
 }
@@ -69,7 +49,10 @@ const LinksContainer = styled.div`
   gap: 1rem;
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled.a.attrs({
+  target: '_blank',
+  rel: 'noopener noreferrer',
+})`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;

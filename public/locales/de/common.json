@@ -5,9 +5,7 @@
     },
     "meta": {
         "loading": "Wird geladen...",
-        "itemNotFound": "Gegenstand nicht gefunden",
-        "skillNotFound": "Fertigkeit nicht gefunden",
-        "armorSetNotFound": "Rüstungsset nicht gefunden"
+        "skillNotFound": "Fertigkeit nicht gefunden"
     },
     "common": {
         "yes": "Ja",
@@ -84,7 +82,6 @@
         "view": "Ansicht",
         "all": "Alle",
         "gradeNone": "Keiner",
-        "viewMode": "Ansichtsmodus",
         "viewModeGrid": "Raster",
         "viewModeTable": "Tabelle",
         "armorType": "Rüstungstyp",
@@ -99,8 +96,6 @@
         "bodyPart": "Körperteil"
     },
     "armorSetDetails": {
-        "loading": "Rüstungsset wird geladen…",
-        "notFound": "Rüstungsset nicht gefunden",
         "totalPDef": "Gesamt P.Def",
         "basePrice": "Grundpreis",
         "part": "Teil",

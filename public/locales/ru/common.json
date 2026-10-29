@@ -5,9 +5,7 @@
     },
     "meta": {
         "loading": "Загрузка…",
-        "itemNotFound": "Предмет не найден",
-        "skillNotFound": "Умение не найдено",
-        "armorSetNotFound": "Комплект брони не найден"
+        "skillNotFound": "Умение не найдено"
     },
     "common": {
         "yes": "Да",
@@ -84,7 +82,6 @@
         "view": "Вид",
         "all": "Все",
         "gradeNone": "Нет",
-        "viewMode": "Режим отображения",
         "viewModeGrid": "Сетка",
         "viewModeTable": "Таблица",
         "armorType": "Тип брони",
@@ -99,8 +96,6 @@
         "bodyPart": "Слот экипировки"
     },
     "armorSetDetails": {
-        "loading": "Загрузка комплекта брони…",
-        "notFound": "Комплект брони не найден",
         "totalPDef": "Общая физ. защита",
         "basePrice": "Базовая цена",
         "part": "Предмет",

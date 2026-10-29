@@ -5,9 +5,7 @@
     },
     "meta": {
         "loading": "Loading...",
-        "itemNotFound": "Item not found",
-        "skillNotFound": "Skill not found",
-        "armorSetNotFound": "Armor set not found"
+        "skillNotFound": "Skill not found"
     },
     "common": {
         "yes": "Yes",
@@ -98,7 +96,6 @@
         "bodyPart": "Body Part"
     },
     "armorSetDetails": {
-        "notFound": "Armor set not found",
         "totalPDef": "Total P.Def",
         "basePrice": "Base Price",
         "part": "Part",

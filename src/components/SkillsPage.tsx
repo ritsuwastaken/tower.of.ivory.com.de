@@ -35,17 +35,13 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
   const { t } = useTranslation()
   const router = useRouter()
 
-  const [mergeSkillsEnabled, setMergeSkillsEnabled] = useState(true)
-  const [changeFilter, setChangeFilter] = useState<ChangeFilter>('all')
+  const [mode, setMode] = useState<ChangeFilter | 'merged'>('merged')
   const { tableProps, deferredSearchTerm, itemsPerPage } = useDataTable<Skill>({
     defaultColumnVisibility: defaultSkillColumns,
-    onResetFilters: () => {
-      setMergeSkillsEnabled(true)
-      setChangeFilter('all')
-    },
+    onResetFilters: () => setMode('merged'),
   })
 
-  const mergeSkills = mergeSkillsEnabled && changeFilter === 'all'
+  const mergeSkills = mode === 'merged'
 
   const processedSkills = mergeSkills ? mergeSkillLevels(skills) : skills
 
@@ -54,7 +50,9 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
       ?.toLowerCase()
       ?.includes(deferredSearchTerm.toLowerCase())
 
-    return matchesSearch && matchesChangeFilter(skill, changeFilter)
+    return (
+      matchesSearch && matchesChangeFilter(skill, mergeSkills ? 'all' : mode)
+    )
   })
 
   const { data: currentSkills, totalPages } = paginateData(
@@ -73,21 +71,16 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
       id: 'merge-levels',
       label: t('filters.mergeLevels'),
       checked: mergeSkills,
-      onChange: () => {
-        setMergeSkillsEnabled(!mergeSkills)
-        setChangeFilter('all')
-      },
+      onChange: () => setMode(mergeSkills ? 'all' : 'merged'),
     },
     ...(['new', 'changed'] as const).map((value) => ({
       id: `${value}-items`,
       label: t(
         value === 'new' ? 'filters.onlyNewSkills' : 'filters.onlyChangedSkills',
       ),
-      checked: changeFilter === value,
-      onChange: () => {
-        setMergeSkillsEnabled(false)
-        setChangeFilter((previous) => (previous === value ? 'all' : value))
-      },
+      checked: mode === value,
+      onChange: () =>
+        setMode((previous) => (previous === value ? 'all' : value)),
     })),
   ]
 

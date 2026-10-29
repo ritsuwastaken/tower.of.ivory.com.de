@@ -33,7 +33,6 @@ import {
 } from './primitives/DetailsPrimitives'
 import {
   ArmorSets,
-  SetCard,
   SetInfo,
   SetInfoItem,
   SetInfoLabel,
@@ -242,7 +241,7 @@ function ItemSidebar() {
       <h2>
         <Skeleton $width="150px" />
       </h2>
-      <SetCard>
+      <div>
         <SetName>
           <Skeleton $width="180px" />
         </SetName>
@@ -261,7 +260,7 @@ function ItemSidebar() {
             </SetInfoItem>
           ))}
         </SetInfo>
-      </SetCard>
+      </div>
     </ArmorSets>
   )
 }
