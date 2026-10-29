@@ -9,9 +9,6 @@ const nextConfig: NextConfig = {
   experimental: {
     turbopackFileSystemCacheForBuild: false,
   },
-  images: {
-    unoptimized: true,
-  },
   env: {
     NEXT_PUBLIC_LAST_UPDATE: Date.now().toString(),
   },

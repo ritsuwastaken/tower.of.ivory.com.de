@@ -23,7 +23,6 @@ import { ChangedProperties } from '@/components/DetailsSections'
 import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types'
-import { useDataUrl } from '@/hooks/useDataUrl'
 import { useTranslation } from 'react-i18next'
 import { useEffect, useMemo, useState } from 'react'
 import { ExternalLinks } from '@/components/ExternalLinks'
@@ -62,7 +61,6 @@ const SkillNotFound = () => {
 }
 
 export default function SkillDetails({ skill }: { skill: Skill }) {
-  const getDataUrl = useDataUrl()
   const searchParams = useCatalogSearchParams()
   const showChanges = searchParams.get('show') === 'changes'
   const skillLevel = Number(searchParams.get('level')) || skill.skill_level || 1
@@ -73,31 +71,28 @@ export default function SkillDetails({ skill }: { skill: Skill }) {
   const [showChangedProperties, setShowChangedProperties] = useState(false)
 
   useEffect(() => {
-    if (skill) {
-      const shouldShowChanges =
-        window.location.hash === '#changes-section' || showChanges
+    const shouldShowChanges =
+      window.location.hash === '#changes-section' || showChanges
 
-      if (shouldShowChanges) {
-        const showChangesTimeout = window.setTimeout(() => {
-          setShowChangedProperties(true)
-        }, 0)
-        const scrollTimeout = window.setTimeout(() => {
-          const changesSection = document.getElementById('changes-section')
-          if (changesSection) {
-            changesSection.scrollIntoView({ behavior: 'smooth' })
-          }
-        }, 100)
-
-        return () => {
-          window.clearTimeout(showChangesTimeout)
-          window.clearTimeout(scrollTimeout)
+    if (shouldShowChanges) {
+      const showChangesTimeout = window.setTimeout(() => {
+        setShowChangedProperties(true)
+      }, 0)
+      const scrollTimeout = window.setTimeout(() => {
+        const changesSection = document.getElementById('changes-section')
+        if (changesSection) {
+          changesSection.scrollIntoView({ behavior: 'smooth' })
         }
+      }, 100)
+
+      return () => {
+        window.clearTimeout(showChangesTimeout)
+        window.clearTimeout(scrollTimeout)
       }
     }
-  }, [skill, showChanges])
+  }, [showChanges])
 
   const selectedSkill: Omit<Skill, 'levels'> | null = useMemo(() => {
-    if (!skill) return null
     return (
       skill.levels?.find((level) => level.skill_level === Number(skillLevel)) ??
       null
@@ -119,8 +114,6 @@ export default function SkillDetails({ skill }: { skill: Skill }) {
   }, [pageTitle])
 
   const handleLevelClick = (levelData: Skill) => {
-    if (!skill) return
-
     const params = new URLSearchParams(searchParams)
     params.set('level', String(levelData.skill_level))
     window.history.pushState(null, '', `?${params}`)
@@ -148,7 +141,7 @@ export default function SkillDetails({ skill }: { skill: Skill }) {
 
         <ContentWrapper>
           <TableContainer>
-            {skill?.levels?.some(
+            {skill.levels?.some(
               (level) => level.is_new || level.is_changed,
             ) && (
               <NotificationPanel
@@ -171,9 +164,8 @@ export default function SkillDetails({ skill }: { skill: Skill }) {
             <ItemHeader>
               <HeaderLeft>
                 <DetailIcon
-                  src={getDataUrl(
-                    `/icon/${selectedSkill?.icon?.toLowerCase()?.split('.').at(-1)}.webp`,
-                  )}
+                  icon={selectedSkill.icon?.toLowerCase()}
+                  fallback="skill0000"
                   alt={
                     selectedSkill.name ||
                     t('skillDetails.unnamedSkill', {
@@ -196,7 +188,7 @@ export default function SkillDetails({ skill }: { skill: Skill }) {
                     </LevelDropdownButton>
                     {isDropdownOpen && (
                       <MobileDropdown>
-                        {skill?.levels?.map((levelData: Skill) => (
+                        {skill.levels?.map((levelData: Skill) => (
                           <MobileDropdownItem
                             key={levelData.skill_level}
                             $active={
@@ -263,10 +255,10 @@ export default function SkillDetails({ skill }: { skill: Skill }) {
 
           <SkillLevels>
             <h2>{t('skillDetails.levels')}</h2>
-            {skill?.levels?.map((levelData: Skill) => {
+            {skill.levels?.map((levelData: Skill) => {
               const isDefault = levelData.skill_level === 1
               const hasDifferentDescription =
-                levelData.description !== skill?.levels?.[0].description
+                levelData.description !== skill.levels?.[0].description
               const mpConsume = levelData.mp_consume || 0
               const hpConsume = levelData.hp_consume || 0
               return (

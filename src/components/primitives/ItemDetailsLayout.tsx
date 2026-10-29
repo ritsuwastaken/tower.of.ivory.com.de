@@ -1,3 +1,4 @@
+import { CatalogImage } from '@/components/CatalogImage'
 import styled from 'styled-components'
 
 export const ArmorSets = styled.div`
@@ -50,7 +51,9 @@ export const SetInfoValue = styled.span`
 
 export const SetCard = styled.div``
 
-export const HarborBirthdayItem = styled.img.attrs({
+export const HarborBirthdayItem = styled(CatalogImage).attrs({
+  width: 256,
+  height: 256,
   alt: 'Harbor Birthday 1 year',
 })`
   max-height: 256px;

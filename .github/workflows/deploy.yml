@@ -51,6 +51,7 @@ jobs:
             ...config,
             output: 'export',
             basePath: ${JSON.stringify(basePath)},
+            images: { ...config.images, unoptimized: true },
             trailingSlash: true,
             headers: undefined,
           }

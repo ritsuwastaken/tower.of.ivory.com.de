@@ -9,7 +9,7 @@ import { SearchParamsBoundary } from '@/components/SearchParamsBoundary'
 import { useEffect } from 'react'
 import styled from 'styled-components'
 import i18n from '../i18n'
-import { AssetBasePathContext } from '@/hooks/useDataUrl'
+import { AssetBasePathContext } from '@/components/CatalogImage'
 
 const SUPPORTED_LANGUAGES = ['en', 'es', 'pt', 'ru', 'de'] as const
 

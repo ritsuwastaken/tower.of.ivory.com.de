@@ -17,7 +17,6 @@ import { ArmorSetVisual } from '@/components/ArmorSetVisual'
 import { ExternalLinks } from '@/components/ExternalLinks'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Item } from '@/types'
-import { useDataUrl } from '@/hooks/useDataUrl'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -49,7 +48,6 @@ interface ItemDetailsProps {
 const BIRTHDAY_ITEM_ID_2026 = 5600
 
 export const ItemDetails = ({ item }: ItemDetailsProps) => {
-  const getDataUrl = useDataUrl()
   const { t } = useTranslation()
   const router = useRouter()
   const [expandedSections, setExpandedSections] = useState<
@@ -60,8 +58,8 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
 
   const priorityPropertyOrder = [
     'crystal_type',
-    ...(item?.body_part?.some((part) => part.toLowerCase().includes('lhand')) &&
-    item?.shield_defense
+    ...(item.body_part?.some((part) => part.toLowerCase().includes('lhand')) &&
+    item.shield_defense
       ? ['shield_defense']
       : []),
     'physical_damage',
@@ -134,11 +132,11 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
     },
   ].map((section) => ({
     ...section,
-    entries: Object.entries(item || {}).filter(([key]) => section.matches(key)),
+    entries: Object.entries(item).filter(([key]) => section.matches(key)),
   }))
 
   const hasChangedProperties =
-    item?.is_changed && item?.changes && Object.keys(item.changes).length > 0
+    item.is_changed && item.changes && Object.keys(item.changes).length > 0
 
   return (
     <Container>
@@ -159,9 +157,9 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
     return (
       <ContentWrapper>
         <TableContainer>
-          {(item?.is_new || item?.is_changed) && (
-            <NotificationPanel $isNew={!!item?.is_new}>
-              {item?.is_new ? (
+          {(item.is_new || item.is_changed) && (
+            <NotificationPanel $isNew={!!item.is_new}>
+              {item.is_new ? (
                 t('itemDetails.new')
               ) : hasChangedProperties ? (
                 <NotificationLink
@@ -180,34 +178,32 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
           <ItemHeader>
             <HeaderLeft>
               <DetailIcon
-                src={getDataUrl(
-                  `/icon/${item?.icon?.[0].split('.').at(-1)}.webp`,
-                )}
-                alt={item?.name || item?.object_name || ''}
+                icon={item.icon?.[0]}
+                alt={item.name || item.object_name || ''}
                 width={64}
                 height={64}
               />
-              <h1>{item?.name || item?.object_name}</h1>
+              <h1>{item.name || item.object_name}</h1>
             </HeaderLeft>
-            {item && <ExternalLinks data={item} />}
+            <ExternalLinks data={item} />
           </ItemHeader>
 
           <Description>
-            {item?.description?.replace(/\\n/g, '\n') ||
+            {item.description?.replace(/\\n/g, '\n') ||
               t('details.noDescription')}
-            {item?.object_id === BIRTHDAY_ITEM_ID_2026 && (
-              <HarborBirthdayItem src={getDataUrl('/icon/harborlove.webp')} />
+            {item.object_id === BIRTHDAY_ITEM_ID_2026 && (
+              <HarborBirthdayItem src="/icon/harborlove.webp" />
             )}
           </Description>
 
           <Stats>
             {priorityPropertyOrder.map((priorityKey) => {
-              const actualKey = Object.keys(item || {}).find(
+              const actualKey = Object.keys(item).find(
                 (key) => key.toLowerCase() === priorityKey,
               )
 
               if (!actualKey) return null
-              const value = item?.[actualKey as keyof Item]
+              const value = item[actualKey as keyof Item]
 
               return (
                 <StatRow key={actualKey}>
@@ -225,7 +221,7 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
               )
             })}
 
-            {Object.entries(item || {}).map(([key, value]) => {
+            {Object.entries(item).map(([key, value]) => {
               if (
                 key === 'icon' ||
                 key === 'name' ||
@@ -240,8 +236,8 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
                 return null
 
               const isChanged =
-                item?.changes &&
-                Object.keys(item?.changes).some(
+                item.changes &&
+                Object.keys(item.changes).some(
                   (changedKey) =>
                     changedKey.toLowerCase() === key.toLowerCase(),
                 )
@@ -298,10 +294,10 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
             ))}
         </TableContainer>
 
-        {item?.sets && item?.sets.length > 0 && (
+        {item.sets && item.sets.length > 0 && (
           <ArmorSets>
             <h2>{t('itemDetails.partOfSets')}</h2>
-            {item?.sets.map((armorSet) => (
+            {item.sets.map((armorSet) => (
               <div key={armorSet.id}>
                 <Link
                   rel="canonical"
@@ -318,7 +314,7 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
                     <SetInfoLabel>{t('itemDetails.armorType')}:</SetInfoLabel>
                     <SetInfoValue>
                       {armorSet.armor_type ||
-                        armorSet.items?.[0]?.armor_type ||
+                        armorSet.items[0]?.armor_type ||
                         t('details.notApplicable')}
                     </SetInfoValue>
                   </SetInfoItem>
@@ -326,13 +322,13 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
                     <SetInfoLabel>{t('itemDetails.basePrice')}:</SetInfoLabel>
                     <SetInfoValue>
                       {armorSet.items
-                        ?.reduce((sum, item) => sum + (item.base_price || 0), 0)
+                        .reduce((sum, item) => sum + (item.base_price || 0), 0)
                         .toLocaleString() || t('details.notApplicable')}
                     </SetInfoValue>
                   </SetInfoItem>
                   <SetInfoItem>
                     <SetInfoLabel>{t('itemDetails.pieces')}:</SetInfoLabel>
-                    <SetInfoValue>{armorSet.items?.length || 0}</SetInfoValue>
+                    <SetInfoValue>{armorSet.items.length}</SetInfoValue>
                   </SetInfoItem>
                 </SetInfo>
               </div>

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Image from 'next/image'
+import { CatalogIcon } from '@/components/CatalogImage'
 import Link from 'next/link'
 
 export const Icon = styled.div`
@@ -118,7 +118,7 @@ export const PartLinks = styled.div`
   }
 `
 
-export const PartIconImage = styled(Image)`
+export const PartIconImage = styled(CatalogIcon)`
   border-radius: 4px;
   border: 2px solid #2a2a2a;
 `

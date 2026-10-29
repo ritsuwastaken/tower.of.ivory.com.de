@@ -1,6 +1,5 @@
 import { ArmorSet } from '@/types'
-import { useDataUrl } from '@/hooks/useDataUrl'
-import Image from 'next/image'
+import { CatalogIcon } from '@/components/CatalogImage'
 import Link from 'next/link'
 import styled from 'styled-components'
 
@@ -14,14 +13,13 @@ interface ArmorSlotProps {
 }
 
 export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
-  const getDataUrl = useDataUrl()
-  const armorPiece = armorSet.items?.find((piece) =>
+  const armorPiece = armorSet.items.find((piece) =>
     piece.body_part?.some((part: string) =>
       part.toLowerCase().includes(slot.type.toLowerCase()),
     ),
   )
 
-  const chestPiece = armorSet.items?.find((piece) =>
+  const chestPiece = armorSet.items.find((piece) =>
     piece.body_part?.some((part: string) =>
       part.toLowerCase().includes('chest'),
     ),
@@ -49,15 +47,10 @@ export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
           }}
         >
           <StyledImage
-            src={getDataUrl(`/icon/${iconToUse?.split('.').at(-1)}.webp`)}
+            icon={iconToUse}
             alt={`${armorSet.name} ${slot.type}`}
             width={32}
             height={32}
-            onError={(e) => {
-              ;(e.target as HTMLImageElement).src = getDataUrl(
-                '/icon/etc_alphabet_ii_i00.webp',
-              )
-            }}
           />
         </IconWrapper>
       ) : (
@@ -100,7 +93,8 @@ const IconWrapper = styled(Link)`
   }
 `
 
-const StyledImage = styled(Image)`
+const StyledImage = styled(CatalogIcon)`
+  border: none;
   object-fit: contain;
 `
 

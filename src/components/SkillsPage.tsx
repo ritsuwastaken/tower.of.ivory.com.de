@@ -2,11 +2,10 @@
 
 import { sortData, paginateData } from '@/utils/pagination'
 import { DataTable, useDataTable } from '@/components/DataTable'
-import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types'
-import { useDataUrl } from '@/hooks/useDataUrl'
+import { CatalogIcon } from './CatalogImage'
+import { matchesChangeFilter, type ChangeFilter } from '@/utils/filters'
 import { useTranslation } from 'react-i18next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -41,34 +40,20 @@ const mergeSkillLevels = (skills: Skill[]): Skill[] => {
 }
 
 export default function SkillsPage({ skills }: { skills: Skill[] }) {
-  const getDataUrl = useDataUrl()
   const { t } = useTranslation()
   const router = useRouter()
-  const formatColumnName = useFormatColumnName()
 
   const [mergeSkillsEnabled, setMergeSkillsEnabled] = useState(true)
-  const [showNew, setShowNew] = useState(false)
-  const [showChanged, setShowChanged] = useState(false)
-  const [failedImages, setFailedImages] = useState<Set<number>>(new Set())
-
-  const {
-    searchTerm,
-    deferredSearchTerm,
-    isSearchPending,
-    currentPage,
-    sortConfig,
-    columnVisibility,
-    itemsPerPage,
-    handleSort,
-    handleColumnVisibilityChange,
-    handlePageChange,
-    handleSearchChange,
-    handleResetFilters,
-  } = useDataTable<Skill>({
+  const [changeFilter, setChangeFilter] = useState<ChangeFilter>('all')
+  const { tableProps, deferredSearchTerm, itemsPerPage } = useDataTable<Skill>({
     defaultColumnVisibility: defaultSkillColumns,
+    onResetFilters: () => {
+      setMergeSkillsEnabled(true)
+      setChangeFilter('all')
+    },
   })
 
-  const mergeSkills = mergeSkillsEnabled && !showNew && !showChanged
+  const mergeSkills = mergeSkillsEnabled && changeFilter === 'all'
 
   const processedSkills = mergeSkills ? mergeSkillLevels(skills) : skills
 
@@ -77,24 +62,19 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
       ?.toLowerCase()
       ?.includes(deferredSearchTerm.toLowerCase())
 
-    const matchesNew = !showNew || skill.is_new === true
-    const matchesChanged = !showChanged || skill.is_changed === true
-    return matchesSearch && matchesNew && matchesChanged
+    return matchesSearch && matchesChangeFilter(skill, changeFilter)
   })
 
   const { data: currentSkills, totalPages } = paginateData(
-    sortData(filteredSkills, sortConfig),
-    currentPage,
+    sortData(filteredSkills, tableProps.sortConfig),
+    tableProps.currentPage,
     itemsPerPage,
   )
 
-  const handleSkillClick = (id: number) => {
-    router.push(`/skills/${id}`)
-  }
-
+  const { onColumnVisibilityChange } = tableProps
   useEffect(() => {
-    handleColumnVisibilityChange('skill_level', !mergeSkills)
-  }, [mergeSkills, handleColumnVisibilityChange])
+    onColumnVisibilityChange('skill_level', !mergeSkills)
+  }, [mergeSkills, onColumnVisibilityChange])
 
   const checkboxFilters = [
     {
@@ -102,59 +82,22 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
       label: t('filters.mergeLevels'),
       checked: mergeSkills,
       onChange: () => {
-        setMergeSkillsEnabled((prev) => {
-          const next = !prev
-
-          if (next) {
-            setShowNew(false)
-            setShowChanged(false)
-          }
-
-          return next
-        })
+        setMergeSkillsEnabled(!mergeSkills)
+        setChangeFilter('all')
       },
     },
-    {
-      id: 'new-items',
-      label: t('filters.onlyNewSkills'),
-      checked: showNew,
+    ...(['new', 'changed'] as const).map((value) => ({
+      id: `${value}-items`,
+      label: t(
+        value === 'new' ? 'filters.onlyNewSkills' : 'filters.onlyChangedSkills',
+      ),
+      checked: changeFilter === value,
       onChange: () => {
-        setShowNew((prev) => {
-          const next = !prev
-
-          if (next) {
-            setShowChanged(false)
-            setMergeSkillsEnabled(false)
-          }
-
-          return next
-        })
+        setMergeSkillsEnabled(false)
+        setChangeFilter((previous) => (previous === value ? 'all' : value))
       },
-    },
-    {
-      id: 'changed-items',
-      label: t('filters.onlyChangedSkills'),
-      checked: showChanged,
-      onChange: () => {
-        setShowChanged((prev) => {
-          const next = !prev
-
-          if (next) {
-            setShowNew(false)
-            setMergeSkillsEnabled(false)
-          }
-
-          return next
-        })
-      },
-    },
+    })),
   ]
-
-  const columns = Object.entries(columnVisibility).map(([key, visible]) => ({
-    key: key as keyof Skill,
-    label: key === 'icon' ? '' : formatColumnName(key),
-    visible: visible as boolean,
-  }))
 
   const renderCell = (skill: Skill, column: string) => {
     switch (column) {
@@ -171,25 +114,13 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
         )
       case 'icon':
         return (
-          <Image
-            src={
-              failedImages.has(skill.skill_id)
-                ? getDataUrl('/icon/skill0000.webp')
-                : getDataUrl(`/icon/${skill.icon?.split('.').at(-1)}.webp`)
-            }
+          <CatalogIcon
+            icon={skill.icon}
+            fallback="skill0000"
             alt={
               skill.name ||
               t('skillDetails.unnamedSkill', { id: skill.skill_id })
             }
-            width={32}
-            height={32}
-            onError={() => {
-              setFailedImages((prev) => new Set(prev).add(skill.skill_id))
-            }}
-            style={{
-              borderRadius: '4px',
-              border: '1px solid #3a3a3a',
-            }}
           />
         )
       case 'is_magic':
@@ -200,33 +131,15 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
   }
 
   return (
-    <>
-      <DataTable
-        data={currentSkills}
-        columns={columns}
-        isSearchPending={isSearchPending}
-        searchTerm={searchTerm}
-        onSearchChange={handleSearchChange}
-        searchPlaceholder={t('skillsPage.searchPlaceholder')}
-        onSort={handleSort}
-        sortConfig={sortConfig}
-        onRowClick={(skill) => handleSkillClick(skill.skill_id)}
-        renderCell={renderCell}
-        checkboxFilters={checkboxFilters}
-        noResultsMessage={t('skillsPage.noResults')}
-        onResetFilters={() => {
-          handleResetFilters()
-          setMergeSkillsEnabled(true)
-          setShowNew(false)
-          setShowChanged(false)
-        }}
-        columnVisibility={columnVisibility}
-        onColumnVisibilityChange={handleColumnVisibilityChange}
-        formatColumnName={formatColumnName}
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
-    </>
+    <DataTable
+      {...tableProps}
+      data={currentSkills}
+      totalPages={totalPages}
+      searchPlaceholder={t('skillsPage.searchPlaceholder')}
+      onRowClick={(skill) => router.push(`/skills/${skill.skill_id}`)}
+      renderCell={renderCell}
+      checkboxFilters={checkboxFilters}
+      noResultsMessage={t('skillsPage.noResults')}
+    />
   )
 }

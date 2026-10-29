@@ -1,3 +1,4 @@
+import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { SortConfig } from '@/utils/pagination'
 import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'
 import {
@@ -11,6 +12,7 @@ import {
 interface UseDataTableOptions {
   itemsPerPage?: number
   defaultColumnVisibility?: Record<string, boolean>
+  columnLabels?: Record<string, string>
   onResetFilters?: () => void
 }
 
@@ -18,7 +20,9 @@ export function useDataTable<T>({
   itemsPerPage = 50,
   defaultColumnVisibility = {},
   onResetFilters,
+  columnLabels,
 }: UseDataTableOptions = {}) {
+  const formatColumnName = useFormatColumnName()
   const searchParams = useCatalogSearchParams()
   const searchTerm = searchParams.get('search') || ''
   const deferredSearchTerm = useDeferredValue(searchTerm)
@@ -108,19 +112,28 @@ export function useDataTable<T>({
   )
 
   return {
-    searchTerm,
     deferredSearchTerm,
-    isSearchPending: searchTerm !== deferredSearchTerm,
-    currentPage,
-    sortConfig,
-    columnVisibility,
-    viewMode,
     itemsPerPage,
-    handleSort,
-    handleColumnVisibilityChange,
-    handleViewModeChange,
-    handlePageChange,
-    handleSearchChange,
-    handleResetFilters,
+    tableProps: {
+      searchTerm,
+      isSearchPending: searchTerm !== deferredSearchTerm,
+      currentPage,
+      sortConfig,
+      columnVisibility,
+      formatColumnName,
+      columns: Object.entries(columnVisibility).map(([key, visible]) => ({
+        key,
+        visible,
+        label:
+          columnLabels?.[key] ?? (key === 'icon' ? '' : formatColumnName(key)),
+      })),
+      viewMode,
+      onSort: handleSort,
+      onColumnVisibilityChange: handleColumnVisibilityChange,
+      onViewModeChange: handleViewModeChange,
+      onPageChange: handlePageChange,
+      onSearchChange: handleSearchChange,
+      onResetFilters: handleResetFilters,
+    },
   }
 }

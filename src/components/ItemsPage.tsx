@@ -2,11 +2,14 @@
 
 import { sortData, paginateData } from '@/utils/pagination'
 import { DataTable, useDataTable } from '@/components/DataTable'
-import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Item } from '@/types'
-import { useDataUrl } from '@/hooks/useDataUrl'
+import { CatalogIcon } from './CatalogImage'
+import {
+  getFilterOptions,
+  matchesChangeFilter,
+  type ChangeFilter,
+} from '@/utils/filters'
 import { useTranslation } from 'react-i18next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'
@@ -26,26 +29,11 @@ export const ItemsPage = ({
   type: 'weapon' | 'armor' | 'etcitem'
   items: Item[]
 }) => {
-  const getDataUrl = useDataUrl()
   const { t } = useTranslation()
   const router = useRouter()
   const searchParams = useCatalogSearchParams()
-  const formatColumnName = useFormatColumnName()
 
-  const {
-    searchTerm,
-    deferredSearchTerm,
-    isSearchPending,
-    currentPage,
-    sortConfig,
-    columnVisibility,
-    itemsPerPage,
-    handleSort,
-    handleColumnVisibilityChange,
-    handlePageChange,
-    handleSearchChange,
-    handleResetFilters,
-  } = useDataTable<Item>({
+  const { tableProps, deferredSearchTerm, itemsPerPage } = useDataTable<Item>({
     itemsPerPage: 50,
     defaultColumnVisibility: getDefaultItemColumns(type),
     onResetFilters: () => {
@@ -53,28 +41,27 @@ export const ItemsPage = ({
       setBodyPart('')
       setArmorType('')
       setWeaponType('')
-      setShowNew(false)
-      setShowChanged(false)
+      setChangeFilter('all')
     },
   })
 
-  const crystalTypeFromParams = searchParams?.get('crystal') || ''
-  const bodyPartFromParams = searchParams?.get('bodyPart') || ''
-  const armorTypeFromParams = searchParams?.get('armorType') || ''
-  const weaponTypeFromParams = searchParams?.get('weaponType') || ''
+  const crystalTypeFromParams = searchParams.get('crystal') || ''
+  const bodyPartFromParams = searchParams.get('bodyPart') || ''
+  const armorTypeFromParams = searchParams.get('armorType') || ''
+  const weaponTypeFromParams = searchParams.get('weaponType') || ''
 
-  const showNewFromParams = searchParams?.get('new') === 'true'
-  const showChangedFromParams = searchParams?.get('changed') === 'true'
-
-  const [showNew, setShowNew] = useState(showNewFromParams)
-  const [showChanged, setShowChanged] = useState(showChangedFromParams)
+  const [changeFilter, setChangeFilter] = useState<ChangeFilter>(
+    searchParams.get('new') === 'true'
+      ? 'new'
+      : searchParams.get('changed') === 'true'
+        ? 'changed'
+        : 'all',
+  )
 
   const [crystalType, setCrystalType] = useState(crystalTypeFromParams)
   const [bodyPart, setBodyPart] = useState(bodyPartFromParams)
   const [armorType, setArmorType] = useState(armorTypeFromParams)
   const [weaponType, setWeaponType] = useState(weaponTypeFromParams)
-
-  const [failedImages, setFailedImages] = useState<Set<number>>(new Set())
 
   const filteredItems = items.filter((item) => {
     const matchesSearch = (item.name || item.object_name)
@@ -99,23 +86,19 @@ export const ItemsPage = ({
       (item.weapon_type &&
         item.weapon_type.toLowerCase() === weaponType.toLowerCase())
 
-    const matchesNew = !showNew || item.is_new === true
-    const matchesChanged = !showChanged || item.is_changed === true
-
     return (
       matchesSearch &&
       matchesCrystalType &&
       matchesBodyPart &&
       matchesArmorType &&
       matchesWeaponType &&
-      matchesNew &&
-      matchesChanged
+      matchesChangeFilter(item, changeFilter)
     )
   })
 
   const { data: currentItems, totalPages } = paginateData(
-    sortData(filteredItems, sortConfig, 'crystal_type'),
-    currentPage,
+    sortData(filteredItems, tableProps.sortConfig, 'crystal_type'),
+    tableProps.currentPage,
     itemsPerPage,
   )
 
@@ -125,12 +108,6 @@ export const ItemsPage = ({
       ? t('filters.gradeNone')
       : type.toUpperCase()
   }
-
-  const columns = Object.entries(columnVisibility).map(([key, visible]) => ({
-    key: key as keyof Item,
-    label: key === 'icon' ? '' : formatColumnName(key),
-    visible,
-  }))
 
   const renderCell = (item: Item, column: string) => {
     switch (column) {
@@ -147,22 +124,9 @@ export const ItemsPage = ({
         )
       case 'icon':
         return (
-          <Image
-            src={
-              failedImages.has(item.object_id)
-                ? getDataUrl('/icon/etc_alphabet_ii_i00.webp')
-                : getDataUrl(`/icon/${item?.icon?.[0].split('.').at(-1)}.webp`)
-            }
+          <CatalogIcon
+            icon={item.icon?.[0]}
             alt={item.name || item.object_name}
-            width={32}
-            height={32}
-            style={{
-              borderRadius: '4px',
-              border: '1px solid #3a3a3a',
-            }}
-            onError={() => {
-              setFailedImages((prev) => new Set(prev).add(item.object_id))
-            }}
           />
         )
       case 'crystal_type':
@@ -178,33 +142,42 @@ export const ItemsPage = ({
     }
   }
 
-  const uniqueBodyParts = [
-    ...new Set(
-      items
-        .flatMap((item) => item.body_part)
-        .filter((part): part is string => !!part?.length)
-        .map((part) => part.toLowerCase()),
-    ),
-  ].sort()
-
-  const uniqueArmorTypes = [
-    ...new Set(
-      items
-        .map((item) => item.armor_type)
-        .filter(Boolean)
-        .map((type) => type!.toLowerCase()),
-    ),
-  ].sort()
-
-  const uniqueWeaponTypes = [
-    ...new Set(
-      items
-        .map((item) => item.weapon_type)
-        .filter(Boolean)
-        .map((type) => type!.toLowerCase()),
-    ),
-  ].sort()
-
+  const allLabel = t('filters.all')
+  const optionalFilters = [
+    {
+      id: 'body-part',
+      label: t('filters.bodyPart'),
+      value: bodyPart,
+      onChange: setBodyPart,
+      options: getFilterOptions(
+        items.flatMap((item) => item.body_part),
+        allLabel,
+      ),
+      enabled: true,
+    },
+    {
+      id: 'armor-type',
+      label: t('filters.armorType'),
+      value: armorType,
+      onChange: setArmorType,
+      options: getFilterOptions(
+        items.map((item) => item.armor_type),
+        allLabel,
+      ),
+      enabled: type === 'armor',
+    },
+    {
+      id: 'weapon-type',
+      label: t('filters.weaponType'),
+      value: weaponType,
+      onChange: setWeaponType,
+      options: getFilterOptions(
+        items.map((item) => item.weapon_type),
+        allLabel,
+      ),
+      enabled: type === 'weapon',
+    },
+  ]
   const filters = [
     {
       id: 'crystal-type',
@@ -212,137 +185,37 @@ export const ItemsPage = ({
       value: crystalType,
       onChange: setCrystalType,
       options: [
-        { value: '', label: t('filters.all') },
+        { value: '', label: allLabel },
         { value: 'None', label: t('filters.gradeNone') },
-        { value: 'D', label: 'D' },
-        { value: 'C', label: 'C' },
-        { value: 'B', label: 'B' },
-        { value: 'A', label: 'A' },
-        { value: 'S', label: 'S' },
+        ...['D', 'C', 'B', 'A', 'S'].map((value) => ({ value, label: value })),
       ],
     },
-
-    ...(uniqueBodyParts.length > 0
-      ? [
-          {
-            id: 'body-part',
-            label: t('filters.bodyPart'),
-            value: bodyPart,
-            onChange: setBodyPart,
-            options: [
-              { value: '', label: t('filters.all') },
-              ...uniqueBodyParts.map((part) => ({
-                value: part,
-                label: part
-                  .split(' ')
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(' '),
-              })),
-            ],
-          },
-        ]
-      : []),
-
-    ...(uniqueArmorTypes.length > 0 && type === 'armor'
-      ? [
-          {
-            id: 'armor-type',
-            label: t('filters.armorType'),
-            value: armorType,
-            onChange: setArmorType,
-            options: [
-              { value: '', label: t('filters.all') },
-              ...uniqueArmorTypes.map((type) => ({
-                value: type,
-                label: type
-                  .split(' ')
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(' '),
-              })),
-            ],
-          },
-        ]
-      : []),
-
-    ...(uniqueWeaponTypes.length > 0 && type === 'weapon'
-      ? [
-          {
-            id: 'weapon-type',
-            label: t('filters.weaponType'),
-            value: weaponType,
-            onChange: setWeaponType,
-            options: [
-              { value: '', label: t('filters.all') },
-              ...uniqueWeaponTypes.map((type) => ({
-                value: type,
-                label: type
-                  .split(' ')
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(' '),
-              })),
-            ],
-          },
-        ]
-      : []),
+    ...optionalFilters.filter(
+      (filter) => filter.enabled && filter.options.length > 1,
+    ),
   ]
 
-  const checkboxFilters = [
-    {
-      id: 'new-items',
-      label: t('filters.onlyNewItems'),
-      checked: showNew,
-      onChange: () => {
-        setShowNew((prev) => {
-          const next = !prev
-
-          if (next) {
-            setShowChanged(false)
-          }
-
-          return next
-        })
-      },
-    },
-    {
-      id: 'changed-items',
-      label: t('filters.onlyChangedItems'),
-      checked: showChanged,
-      onChange: () => {
-        setShowChanged((prev) => {
-          const next = !prev
-
-          if (next) {
-            setShowNew(false)
-          }
-
-          return next
-        })
-      },
-    },
-  ]
+  const checkboxFilters = (['new', 'changed'] as const).map((value) => ({
+    id: `${value}-items`,
+    label: t(
+      value === 'new' ? 'filters.onlyNewItems' : 'filters.onlyChangedItems',
+    ),
+    checked: changeFilter === value,
+    onChange: () =>
+      setChangeFilter((previous) => (previous === value ? 'all' : value)),
+  }))
 
   return (
     <DataTable
-      currentPage={currentPage}
+      {...tableProps}
       totalPages={totalPages}
-      onPageChange={handlePageChange}
       data={currentItems}
-      columns={columns}
-      isSearchPending={isSearchPending}
-      searchTerm={searchTerm}
-      onSearchChange={handleSearchChange}
       searchPlaceholder={t('itemsPage.searchPlaceholder')}
-      onSort={handleSort}
-      sortConfig={sortConfig}
       onRowClick={(item) => router.push(`/${urlMap[type]}/${item.object_id}`)}
       renderCell={renderCell}
       filters={filters}
       checkboxFilters={checkboxFilters}
       noResultsMessage={t('itemsPage.noResults')}
-      onResetFilters={handleResetFilters}
-      columnVisibility={columnVisibility}
-      onColumnVisibilityChange={handleColumnVisibilityChange}
-      formatColumnName={formatColumnName}
     />
   )
 }

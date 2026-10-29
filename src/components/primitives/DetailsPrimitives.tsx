@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import Image from 'next/image'
+import { CatalogIcon } from '@/components/CatalogImage'
 import Link from 'next/link'
 
 export const Container = styled.div``
@@ -166,7 +166,8 @@ export const NotificationLink = styled(Link)`
   cursor: pointer;
 `
 
-export const DetailIcon = styled(Image)`
+export const DetailIcon = styled(CatalogIcon)`
+  border: none;
   border-radius: 8px;
   background-color: #2a2a2a;
   padding: 0.5rem;

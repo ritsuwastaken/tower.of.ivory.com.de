@@ -3,7 +3,6 @@
 import { sortData, paginateData } from '@/utils/pagination'
 import { ArmorSetVisual } from '@/components/ArmorSetVisual'
 import { DataTable, useDataTable } from '@/components/DataTable'
-import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { ArmorSet } from '@/types'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
@@ -18,29 +17,28 @@ export default function ArmorSetsPage({
 }) {
   const router = useRouter()
   const { t } = useTranslation()
-  const formatColumnName = useFormatColumnName()
 
   const [grade, setGrade] = useState('')
   const [armorType, setArmorType] = useState('')
 
-  const {
-    searchTerm,
-    deferredSearchTerm,
-    isSearchPending,
-    currentPage,
-    sortConfig,
-    columnVisibility,
-    viewMode,
-    itemsPerPage,
-    handleSort,
-    handleColumnVisibilityChange,
-    handleViewModeChange,
-    handlePageChange,
-    handleSearchChange,
-    handleResetFilters,
-  } = useDataTable<ArmorSet>({
-    defaultColumnVisibility: defaultArmorSetColumns,
-  })
+  const labelMap: Partial<Record<keyof ArmorSet | 'visual', string>> = {
+    visual: '',
+    name: t('armorSetsPage.name'),
+    grade: t('filters.grade'),
+    items: t('armorSetsPage.parts'),
+    bonus_stats: t('armorSetsPage.bonus'),
+    physical_defense: t('armorSetsPage.physicalDefense'),
+    base_price: t('armorSetsPage.basePrice'),
+  }
+  const { tableProps, deferredSearchTerm, itemsPerPage } =
+    useDataTable<ArmorSet>({
+      defaultColumnVisibility: defaultArmorSetColumns,
+      columnLabels: labelMap,
+      onResetFilters: () => {
+        setGrade('')
+        setArmorType('')
+      },
+    })
 
   const uniqueGrades = [...new Set(armorSets.map((set) => set.grade))].sort()
   const uniqueArmorTypes = [
@@ -58,27 +56,19 @@ export default function ArmorSetsPage({
     router.push(`/armorsets/${id}`)
   }
 
-  const filteredArmorSets = Array.isArray(armorSets)
-    ? armorSets.filter((set) => {
-        const matchesSearch = set.name
-          .toLowerCase()
-          .includes(deferredSearchTerm.toLowerCase())
-        const matchesGrade = !grade || set.grade === grade
-        const matchesType =
-          !armorType ||
-          (set.items &&
-            set.items.some(
-              (item) =>
-                item.armor_type &&
-                item.armor_type.toLowerCase() === armorType.toLowerCase(),
-            ))
-        return matchesSearch && matchesGrade && matchesType
-      })
-    : []
+  const filteredArmorSets = armorSets.filter(
+    (set) =>
+      set.name.toLowerCase().includes(deferredSearchTerm.toLowerCase()) &&
+      (!grade || set.grade === grade) &&
+      (!armorType ||
+        set.items.some(
+          (item) => item.armor_type?.toLowerCase() === armorType.toLowerCase(),
+        )),
+  )
 
   const { data: currentArmorSets, totalPages } = paginateData(
-    sortData(filteredArmorSets, sortConfig, 'grade'),
-    currentPage,
+    sortData(filteredArmorSets, tableProps.sortConfig, 'grade'),
+    tableProps.currentPage,
     itemsPerPage,
   )
 
@@ -129,7 +119,7 @@ export default function ArmorSetsPage({
       case 'grade':
         return capitalizeGrade(armorSet.grade)
       case 'items':
-        return armorSet.items?.map((item) => item.name).join(', ') || '-'
+        return armorSet.items.map((item) => item.name).join(', ') || '-'
       case 'bonus_stats':
         return armorSet.set_bonus || '-'
       default:
@@ -137,51 +127,17 @@ export default function ArmorSetsPage({
     }
   }
 
-  const labelMap: Partial<Record<keyof ArmorSet | 'visual', string>> = {
-    visual: '',
-    name: t('armorSetsPage.name'),
-    grade: t('filters.grade'),
-    items: t('armorSetsPage.parts'),
-    bonus_stats: t('armorSetsPage.bonus'),
-    physical_defense: t('armorSetsPage.physicalDefense'),
-    base_price: t('armorSetsPage.basePrice'),
-  }
-  const columns = Object.entries(columnVisibility).map(([key, visible]) => ({
-    key: key as keyof ArmorSet | 'visual',
-    label: labelMap[key as keyof typeof labelMap] ?? formatColumnName(key),
-    visible: Boolean(visible),
-  }))
-
   return (
-    <>
-      <DataTable
-        enableGridView
-        data={currentArmorSets}
-        columns={columns}
-        isSearchPending={isSearchPending}
-        searchTerm={searchTerm}
-        onSearchChange={handleSearchChange}
-        searchPlaceholder={t('armorSetsPage.searchPlaceholder')}
-        onSort={handleSort}
-        sortConfig={sortConfig}
-        onRowClick={handleRowClick}
-        renderCell={renderCell}
-        filters={filters}
-        noResultsMessage={t('armorSetsPage.noResults')}
-        onResetFilters={() => {
-          handleResetFilters()
-          setGrade('')
-          setArmorType('')
-        }}
-        columnVisibility={columnVisibility}
-        onColumnVisibilityChange={handleColumnVisibilityChange}
-        formatColumnName={formatColumnName}
-        viewMode={viewMode}
-        onViewModeChange={handleViewModeChange}
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={handlePageChange}
-      />
-    </>
+    <DataTable
+      {...tableProps}
+      enableGridView
+      data={currentArmorSets}
+      totalPages={totalPages}
+      searchPlaceholder={t('armorSetsPage.searchPlaceholder')}
+      onRowClick={handleRowClick}
+      renderCell={renderCell}
+      filters={filters}
+      noResultsMessage={t('armorSetsPage.noResults')}
+    />
   )
 }
