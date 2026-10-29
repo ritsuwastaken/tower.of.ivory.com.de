@@ -2,7 +2,7 @@ import { sortData, paginateData } from '@/utils/pagination'
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Item } from '@/types'
-import { getDataUrl } from '@/utils/getDataUrl'
+import { useDataUrl } from '@/hooks/useDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -73,6 +73,7 @@ export const ItemsPage = ({
 }: {
   type: 'weapon' | 'armor' | 'etcitem'
 }) => {
+  const getDataUrl = useDataUrl()
   const { t } = useTranslation()
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -254,7 +255,7 @@ export const ItemsPage = ({
             : item[column as keyof Item]?.toString() || '-'
       }
     },
-    [failedImages, type, formatCrystalType],
+    [failedImages, type, formatCrystalType, getDataUrl],
   )
 
   const uniqueBodyParts = useMemo(

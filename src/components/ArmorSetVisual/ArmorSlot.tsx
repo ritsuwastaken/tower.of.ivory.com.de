@@ -1,5 +1,5 @@
 import { ArmorSet } from '@/types'
-import { getDataUrl } from '@/utils/getDataUrl'
+import { useDataUrl } from '@/hooks/useDataUrl'
 import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
@@ -14,6 +14,7 @@ interface ArmorSlotProps {
 }
 
 export const ArmorSlot = ({ slot, armorSet }: ArmorSlotProps) => {
+  const getDataUrl = useDataUrl()
   const armorPiece = armorSet.items?.find((piece) =>
     piece.body_part?.some((part: string) =>
       part.toLowerCase().includes(slot.type.toLowerCase()),

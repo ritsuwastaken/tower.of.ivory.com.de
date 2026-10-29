@@ -5,7 +5,7 @@ import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { ArmorSet } from '@/types'
 import { getTotalBasePrice, getTotalPhysicalDefense } from '@/utils/getTotalX'
-import { getDataUrl } from '@/utils/getDataUrl'
+import { useDataUrl } from '@/hooks/useDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
@@ -13,6 +13,7 @@ import { useRouter } from 'next/navigation'
 import { useCallback, useMemo, useState } from 'react'
 
 export default function ArmorSetsPage() {
+  const getDataUrl = useDataUrl()
   const router = useRouter()
   const { t } = useTranslation()
   const formatColumnName = useFormatColumnName()

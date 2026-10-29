@@ -39,22 +39,24 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           pages_url="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.html_url')"
-          base_path="$(node -e 'process.stdout.write(new URL(process.argv[1]).pathname.replace(/\/$/, ""))' "$pages_url")"
-          printf 'NEXT_PUBLIC_BASE_PATH=%s\n' "$base_path" >> "$GITHUB_ENV"
+          node --input-type=module - "$pages_url" <<'NODE'
+          import { renameSync, writeFileSync } from 'node:fs'
 
-          mv next.config.ts next.config.base.ts
-          cat > next.config.ts <<'EOF'
+          const basePath = new URL(process.argv[2]).pathname.replace(/\/$/, '')
+          renameSync('next.config.ts', 'next.config.base.ts')
+          writeFileSync('next.config.ts', `
           import config from './next.config.base'
 
           export default {
             ...config,
             output: 'export',
-            basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? '',
+            basePath: ${JSON.stringify(basePath)},
             trailingSlash: true,
             redirects: undefined,
             headers: undefined,
           }
-          EOF
+          `)
+          NODE
       - name: Build with Next.js
         run: npm run build
       - name: Upload artifact

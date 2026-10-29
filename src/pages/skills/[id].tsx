@@ -4,7 +4,7 @@ import { ChangedProperties, LoadingStats } from '@/components/DetailsSections'
 import { Head } from '@/components/Head'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types'
-import { getDataUrl } from '@/utils/getDataUrl'
+import { useDataUrl } from '@/hooks/useDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
@@ -110,6 +110,7 @@ const SkillNotFound = () => {
 }
 
 export default function SkillPage() {
+  const getDataUrl = useDataUrl()
   const router = useRouter()
   const idParam = router.query.id
   const id = idParam ? parseInt(idParam as string, 10) : undefined

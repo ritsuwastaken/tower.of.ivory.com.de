@@ -3,7 +3,7 @@ import { sortData, paginateData } from '@/utils/pagination'
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types'
-import { getDataUrl } from '@/utils/getDataUrl'
+import { useDataUrl } from '@/hooks/useDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
@@ -53,6 +53,7 @@ const mergeSkillLevels = (skills: Skill[]): Skill[] => {
 }
 
 export default function SkillsPage() {
+  const getDataUrl = useDataUrl()
   const { t } = useTranslation()
   const router = useRouter()
   const formatColumnName = useFormatColumnName()
@@ -223,7 +224,7 @@ export default function SkillsPage() {
           return skill[column as keyof Skill]?.toString() || '-'
       }
     },
-    [failedImages, t],
+    [failedImages, t, getDataUrl],
   )
 
   return (

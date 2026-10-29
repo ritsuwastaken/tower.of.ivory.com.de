@@ -8,7 +8,7 @@ import { ExternalLinks } from '@/components/ExternalLinks'
 import { Head } from '@/components/Head'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { ArmorSet, Item } from '@/types'
-import { getDataUrl } from '@/utils/getDataUrl'
+import { useDataUrl } from '@/hooks/useDataUrl'
 import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
@@ -117,6 +117,7 @@ const ItemDetailsError = () => {
 }
 
 export const ItemDetails = ({ id }: ItemDetailsProps) => {
+  const getDataUrl = useDataUrl()
   const { t } = useTranslation()
   const router = useRouter()
   const [expandedSections, setExpandedSections] = useState<
@@ -321,7 +322,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
             {item?.description?.replace(/\\n/g, '\n') ||
               t('details.noDescription')}
             {item?.object_id === BIRTHDAY_ITEM_ID_2026 && (
-              <HarborBirthdayItem />
+              <HarborBirthdayItem src={getDataUrl('/icon/harborlove.webp')} />
             )}
           </Description>
 
@@ -520,7 +521,6 @@ const SetInfoValue = styled.span`
 const SetCard = styled.div``
 
 const HarborBirthdayItem = styled.img.attrs({
-  src: getDataUrl('/icon/harborlove.webp'),
   alt: 'Harbor Birthday 1 year',
 })`
   max-height: 256px;

@@ -1,6 +1,6 @@
 import { getStaticPathsFor } from '@/utils/staticPages'
 import { ArmorSet } from '@/types'
-import { getDataUrl } from '@/utils/getDataUrl'
+import { useDataUrl } from '@/hooks/useDataUrl'
 import { getItemUrl } from '@/utils/getItemUrl'
 import { getTotalBasePrice, getTotalPhysicalDefense } from '@/utils/getTotalX'
 import { useQuery } from '@tanstack/react-query'
@@ -105,6 +105,7 @@ const ArmorSetPageLoading = () => {
 }
 
 export default function ArmorSetPage() {
+  const getDataUrl = useDataUrl()
   const { t } = useTranslation()
   const router = useRouter()
   const { id } = router.query
