@@ -20,12 +20,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     display: flex;
     flex-direction: column;
-  
-    & > div {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
+
   }
   
   * {

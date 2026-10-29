@@ -1,6 +1,8 @@
+import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'
 import { useTranslation } from 'react-i18next'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import { useCallback, useMemo } from 'react'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import { useMemo } from 'react'
 import styled from 'styled-components'
 
 const ROUTE_MAPPING = {
@@ -37,9 +39,8 @@ type NavigationItem = {
 
 export const Navigation = () => {
   const { t } = useTranslation()
-  const router = useRouter()
   const pathname = usePathname() || ''
-  const searchParams = useSearchParams()
+  const searchParams = useCatalogSearchParams()
   const currentType = useMemo(() => {
     if (pathname === '/') return DEFAULT_TYPE
 
@@ -50,25 +51,22 @@ export const Navigation = () => {
     return ''
   }, [pathname])
 
-  const handleCategoryChange = useCallback(
-    (path: string) => {
-      const searchValue = searchParams?.get('search')
-      const queryString = searchValue ? `?search=${searchValue}` : ''
-      router.push(`${path}${queryString}`)
-    },
-    [searchParams, router],
-  )
+  const searchValue = searchParams.get('search')
+  const queryString = searchValue
+    ? `?${new URLSearchParams({ search: searchValue })}`
+    : ''
 
   return (
     <CategoryTabs>
       {navigationItems.map(({ type, path, translationKey }) => (
-        <TabButton
+        <TabLink
           key={type}
           $isActive={currentType === type}
-          onClick={() => handleCategoryChange(path)}
+          href={`${path}${queryString}`}
+          aria-current={currentType === type ? 'page' : undefined}
         >
           {t(translationKey)}
-        </TabButton>
+        </TabLink>
       ))}
     </CategoryTabs>
   )
@@ -81,7 +79,7 @@ const CategoryTabs = styled.div`
   margin-bottom: 1rem;
 `
 
-const TabButton = styled.button<{ $isActive?: boolean }>`
+const TabLink = styled(Link)<{ $isActive?: boolean }>`
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 4px;
@@ -89,19 +87,16 @@ const TabButton = styled.button<{ $isActive?: boolean }>`
   color: ${(props) => (props.$isActive ? '#fff' : '#888')};
   cursor: pointer;
   transition: all 0.2s ease;
+  text-decoration: none;
+  font-size: 0.833333rem;
 
   &:focus {
     outline: none;
     background-color: #3a3a3a;
   }
 
-  &:hover:not(:disabled) {
+  &:hover {
     background-color: #3a3a3a;
     color: #fff;
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
   }
 `

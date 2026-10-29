@@ -6,11 +6,11 @@ const nextConfig: NextConfig = {
   compiler: {
     styledComponents: true,
   },
+  experimental: {
+    turbopackFileSystemCacheForBuild: false,
+  },
   images: {
     unoptimized: true,
-  },
-  experimental: {
-    scrollRestoration: true,
   },
   env: {
     NEXT_PUBLIC_LAST_UPDATE: Date.now().toString(),

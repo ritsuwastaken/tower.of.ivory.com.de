@@ -1,20 +1,27 @@
+'use client'
+
 import {
-  ChangedProperties,
-  LoadingStats,
-  CollapsibleSection,
-} from './DetailsSections'
+  ArmorSets,
+  SetVisualContainer,
+  SetInfo,
+  SetInfoItem,
+  SetInfoLabel,
+  SetInfoValue,
+  SetCard,
+  HarborBirthdayItem,
+  SetName,
+} from '@/components/primitives/ItemDetailsLayout'
+
+import { ChangedProperties, CollapsibleSection } from './DetailsSections'
 import { ArmorSetVisual } from '@/components/ArmorSetVisual'
 import { ExternalLinks } from '@/components/ExternalLinks'
-import { Head } from '@/components/Head'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
-import { ArmorSet, Item } from '@/types'
+import { Item } from '@/types'
 import { useDataUrl } from '@/hooks/useDataUrl'
-import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import styled from 'styled-components'
 import {
   BackButton,
   Container,
@@ -23,7 +30,6 @@ import {
   DetailIcon,
   ContentWrapper,
   Description,
-  ErrorText,
   HeaderLeft,
   HeaderRight,
   ItemHeader,
@@ -35,88 +41,14 @@ import {
   Value,
   ChangedTag,
 } from '@/components/primitives/DetailsPrimitives'
-import { Skeleton } from './Skeleton'
 
 interface ItemDetailsProps {
-  id: number
+  item: Item
 }
 
 const BIRTHDAY_ITEM_ID_2026 = 5600
 
-const ItemDetailsLoading = () => {
-  return (
-    <ContentWrapper>
-      <TableContainer>
-        <ItemHeader>
-          <HeaderLeft>
-            <Skeleton borderRadius={8} width={64} height={64} />
-            <h1>
-              <Skeleton width={200} height={32} />
-            </h1>
-          </HeaderLeft>
-          <HeaderRight>
-            <Skeleton width={120} height={30} />
-          </HeaderRight>
-        </ItemHeader>
-
-        <Description>
-          <Skeleton count={3} />
-        </Description>
-
-        <LoadingStats />
-
-        <MeshTextureSection>
-          <Skeleton width={200} height={36} />
-        </MeshTextureSection>
-
-        <MeshTextureSection>
-          <Skeleton width={200} height={36} />
-        </MeshTextureSection>
-      </TableContainer>
-
-      <ArmorSets>
-        <h2>
-          <Skeleton width={150} />
-        </h2>
-        <SetCard>
-          <SetName>
-            <Skeleton width={180} />
-          </SetName>
-          <SetVisualContainer>
-            <Skeleton width={80} height={120} />
-          </SetVisualContainer>
-          <SetInfo>
-            {Array(3)
-              .fill(0)
-              .map((_, index) => (
-                <SetInfoItem key={index}>
-                  <SetInfoLabel>
-                    <Skeleton width={70} />
-                  </SetInfoLabel>
-                  <SetInfoValue>
-                    <Skeleton width={50} />
-                  </SetInfoValue>
-                </SetInfoItem>
-              ))}
-          </SetInfo>
-        </SetCard>
-      </ArmorSets>
-    </ContentWrapper>
-  )
-}
-
-const ItemDetailsError = () => {
-  const { t } = useTranslation()
-  return (
-    <ContentWrapper>
-      <TableContainer>
-        <ErrorText>{t('meta.itemNotFound')}</ErrorText>
-      </TableContainer>
-    </ContentWrapper>
-  )
-}
-
-export const ItemDetails = ({ id }: ItemDetailsProps) => {
+export const ItemDetails = ({ item }: ItemDetailsProps) => {
   const getDataUrl = useDataUrl()
   const { t } = useTranslation()
   const router = useRouter()
@@ -125,49 +57,6 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
   >({})
   const [showChangedProperties, setShowChangedProperties] = useState(false)
   const formatColumnName = useFormatColumnName()
-
-  const {
-    data: item,
-    isLoading,
-    isError,
-  } = useQuery<Item, Error>({
-    queryKey: ['item', id],
-    queryFn: async () => {
-      const [weaponsRes, armorRes, etcRes, setsRes] = await Promise.all([
-        fetch(getDataUrl('/data/weapon.json')),
-        fetch(getDataUrl('/data/armor.json')),
-        fetch(getDataUrl('/data/etcitem.json')),
-        fetch(getDataUrl('/data/armorsets.json')),
-      ])
-
-      if (!weaponsRes.ok || !armorRes.ok || !etcRes.ok || !setsRes.ok) {
-        throw new Error('Failed to fetch item data')
-      }
-
-      const [weapons, armors, etcitems, armorsets] = await Promise.all([
-        weaponsRes.json(),
-        armorRes.json(),
-        etcRes.json(),
-        setsRes.json(),
-      ])
-
-      const allItems: Item[] = [...weapons, ...armors, ...etcitems]
-      const found = allItems.find((i) => i.object_id === id)
-      if (!found) {
-        throw new Error('Item not found')
-      }
-
-      const sets = Array.isArray(armorsets)
-        ? armorsets.filter(
-            (set: ArmorSet) =>
-              Array.isArray(set.items) &&
-              set.items.some((setItem: Item) => setItem.object_id === id),
-          )
-        : []
-
-      return { ...found, sets }
-    },
-  })
 
   const priorityPropertyOrder = [
     'crystal_type',
@@ -253,15 +142,6 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
 
   return (
     <Container>
-      <Head
-        description={
-          isLoading
-            ? t('meta.loading')
-            : isError
-              ? t('meta.itemNotFound')
-              : item?.name
-        }
-      />
       <BackButton
         href="#"
         onClick={(e) => {
@@ -271,13 +151,7 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
       >
         ⟵
       </BackButton>
-      {isLoading ? (
-        <ItemDetailsLoading />
-      ) : isError ? (
-        <ItemDetailsError />
-      ) : (
-        renderItemDetails()
-      )}
+      {renderItemDetails()}
     </Container>
   )
 
@@ -469,69 +343,3 @@ export const ItemDetails = ({ id }: ItemDetailsProps) => {
     )
   }
 }
-
-const ArmorSets = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  align-self: flex-start;
-  gap: 16px;
-
-  @media (max-width: 768px) {
-    align-self: center;
-  }
-
-  h2 {
-    margin-top: 0;
-    font-size: 1.2rem;
-    text-align: center;
-  }
-`
-
-const SetVisualContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 12px;
-`
-
-const SetInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 0.85rem;
-`
-
-const SetInfoItem = styled.div`
-  display: flex;
-  justify-content: space-between;
-`
-
-const SetInfoLabel = styled.span`
-  color: var(--text-color-secondary, #666);
-  font-weight: 500;
-`
-
-const SetInfoValue = styled.span`
-  color: var(--text-color, #333);
-`
-
-const SetCard = styled.div``
-
-const HarborBirthdayItem = styled.img.attrs({
-  alt: 'Harbor Birthday 1 year',
-})`
-  max-height: 256px;
-  max-width: 256px;
-  border-radius: 4px;
-  margin-top: 8px;
-`
-
-const SetName = styled.h3`
-  margin-top: 0;
-  font-size: 1rem;
-  text-align: center;
-  text-decoration: underline;
-`

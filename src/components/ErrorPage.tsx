@@ -1,5 +1,3 @@
-import { Head } from './Head'
-
 export function ErrorPage({
   status,
   description,
@@ -9,7 +7,6 @@ export function ErrorPage({
 }) {
   return (
     <>
-      <Head description={description} />
       <div
         style={{
           display: 'flex',

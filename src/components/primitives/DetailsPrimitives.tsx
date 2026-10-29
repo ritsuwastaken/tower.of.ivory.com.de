@@ -27,6 +27,8 @@ export const ItemHeader = styled.div`
 `
 
 export const HeaderLeft = styled.div`
+  min-width: 0;
+  max-width: 100%;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -48,6 +50,7 @@ export const HeaderRight = styled.div`
 `
 
 export const HeaderInfo = styled.div`
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

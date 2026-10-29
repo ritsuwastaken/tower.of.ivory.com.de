@@ -1,66 +1,17 @@
+'use client'
+
 import { sortData, paginateData } from '@/utils/pagination'
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Item } from '@/types'
 import { useDataUrl } from '@/hooks/useDataUrl'
-import { useQuery } from '@tanstack/react-query'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'
 import { useState } from 'react'
-
-const getDefaultColumns = (category: string) => {
-  const common = {
-    icon: true,
-    object_name: false,
-    name: true,
-    description: false,
-    crystal_type: false,
-    weight: false,
-    crystallizable: false,
-    base_price: true,
-    crystal_count: false,
-    is_new: false,
-    is_changed: false,
-  }
-
-  switch (category) {
-    case 'weapon':
-      return {
-        ...common,
-        crystal_type: true,
-        crystal_count: true,
-        physical_damage: true,
-        magical_damage: true,
-        attack_speed: false,
-        mp_consume: false,
-        weapon_type: true,
-        soulshot_count: false,
-        spiritshot_count: false,
-      }
-    case 'armor':
-      return {
-        ...common,
-        crystal_type: true,
-        crystal_count: true,
-        body_part: false,
-        physical_defense: true,
-        magical_defense: true,
-        armor_type: false,
-        mp_bonus: false,
-        description: true,
-      }
-    case 'etcitem':
-      return {
-        ...common,
-        weight: true,
-        description: true,
-      }
-    default:
-      return common
-  }
-}
+import { getDefaultItemColumns } from './DataTable/columns'
 
 const urlMap: Record<'weapon' | 'armor' | 'etcitem', string> = {
   weapon: 'weapons',
@@ -70,13 +21,15 @@ const urlMap: Record<'weapon' | 'armor' | 'etcitem', string> = {
 
 export const ItemsPage = ({
   type,
+  items,
 }: {
   type: 'weapon' | 'armor' | 'etcitem'
+  items: Item[]
 }) => {
   const getDataUrl = useDataUrl()
   const { t } = useTranslation()
   const router = useRouter()
-  const searchParams = useSearchParams()
+  const searchParams = useCatalogSearchParams()
   const formatColumnName = useFormatColumnName()
 
   const {
@@ -94,7 +47,7 @@ export const ItemsPage = ({
     handleResetFilters,
   } = useDataTable<Item>({
     itemsPerPage: 50,
-    defaultColumnVisibility: getDefaultColumns(type),
+    defaultColumnVisibility: getDefaultItemColumns(type),
     onResetFilters: () => {
       setCrystalType('')
       setBodyPart('')
@@ -122,16 +75,6 @@ export const ItemsPage = ({
   const [weaponType, setWeaponType] = useState(weaponTypeFromParams)
 
   const [failedImages, setFailedImages] = useState<Set<number>>(new Set())
-
-  const { data: items = [], isLoading } = useQuery<Item[], Error>({
-    queryKey: ['items', type],
-    queryFn: async () => {
-      const url = getDataUrl(`/data/${type}.json`)
-      const response = await fetch(url)
-      const data = await response.json()
-      return Array.isArray(data) ? data : []
-    },
-  })
 
   const filteredItems = items.filter((item) => {
     const matchesSearch = (item.name || item.object_name)
@@ -385,7 +328,6 @@ export const ItemsPage = ({
       onPageChange={handlePageChange}
       data={currentItems}
       columns={columns}
-      isLoading={isLoading}
       isSearchPending={isSearchPending}
       searchTerm={searchTerm}
       onSearchChange={handleSearchChange}

@@ -15,7 +15,6 @@ interface FilterConfig {
 }
 
 interface SharedFilterProps {
-  isLoading: boolean
   filters?: FilterConfig[]
   checkboxFilters?: {
     id: string

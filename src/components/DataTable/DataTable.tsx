@@ -9,7 +9,6 @@ import { TableResults } from './Results'
 export function DataTable<T>({
   data,
   columns,
-  isLoading,
   isSearchPending = false,
   searchTerm,
   onSearchChange,
@@ -40,7 +39,6 @@ export function DataTable<T>({
       currentPage={currentPage}
       totalPages={totalPages || 1}
       onPageChange={onPageChange}
-      disabled={isLoading}
     />
   )
 
@@ -57,7 +55,6 @@ export function DataTable<T>({
               }
             />
             <Filters
-              isLoading={isLoading}
               showFilters={showFilters}
               setShowFilters={setShowFilters}
               filters={filters}
@@ -116,7 +113,6 @@ export function DataTable<T>({
           <TableResults
             data={data}
             columns={columns}
-            isLoading={isLoading}
             onSort={onSort}
             sortConfig={sortConfig}
             onRowClick={onRowClick}

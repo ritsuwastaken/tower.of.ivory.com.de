@@ -8,10 +8,8 @@ import {
   MeshTextureContent,
   MeshTextureSection,
   StatRow,
-  Stats,
   Value,
 } from './primitives/DetailsPrimitives'
-import { Skeleton } from './Skeleton'
 
 interface CollapsibleSectionProps {
   title: string
@@ -91,22 +89,5 @@ export function ChangedProperties({
         },
       )}
     </CollapsibleSection>
-  )
-}
-
-export function LoadingStats() {
-  return (
-    <Stats>
-      {Array.from({ length: 8 }, (_, index) => (
-        <StatRow key={index}>
-          <Label>
-            <Skeleton width={100} />
-          </Label>
-          <Value>
-            <Skeleton width={80} />
-          </Value>
-        </StatRow>
-      ))}
-    </Stats>
   )
 }

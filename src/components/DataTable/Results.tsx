@@ -2,13 +2,11 @@ import { memo, type KeyboardEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { DataTableProps } from './types'
-import { Skeleton } from '../Skeleton'
 
 type ResultsProps<T> = Pick<
   DataTableProps<T>,
   | 'data'
   | 'columns'
-  | 'isLoading'
   | 'onSort'
   | 'sortConfig'
   | 'onRowClick'
@@ -20,7 +18,6 @@ type ResultsProps<T> = Pick<
 function Results<T>({
   data,
   columns,
-  isLoading,
   onSort,
   sortConfig,
   onRowClick,
@@ -31,54 +28,6 @@ function Results<T>({
 }: ResultsProps<T>) {
   const { t } = useTranslation()
   const visibleColumns = columns.filter((column) => column.visible)
-
-  function renderLoading() {
-    return viewMode === 'table' ? (
-      <Table>
-        <thead>
-          <tr>
-            {visibleColumns.map((column) => (
-              <Th key={column.key as string}>{column.label}</Th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {Array(10)
-            .fill(0)
-            .map((_, index) => (
-              <SkeletonRow key={index}>
-                {visibleColumns.map((column) => (
-                  <Td key={column.key as string} data-key={column.key}>
-                    {column.key === 'visual' ? (
-                      <SkeletonVisual />
-                    ) : column.key === 'icon' ? (
-                      <SkeletonIcon />
-                    ) : column.key === 'description' ? (
-                      <SkeletonDescription />
-                    ) : (
-                      <SkeletonCell />
-                    )}
-                  </Td>
-                ))}
-              </SkeletonRow>
-            ))}
-        </tbody>
-      </Table>
-    ) : (
-      <GridContainer>
-        {Array(6)
-          .fill(0)
-          .map((_, index) => (
-            <GridItem key={index}>
-              <SkeletonVisual />
-              <div style={{ marginTop: '1rem' }}>
-                <SkeletonCell />
-              </div>
-            </GridItem>
-          ))}
-      </GridContainer>
-    )
-  }
 
   function renderData() {
     return viewMode === 'table' ? (
@@ -152,11 +101,9 @@ function Results<T>({
       </NoResults>
     )
   }
-  return isLoading
-    ? renderLoading()
-    : data.length > 0
-      ? renderData()
-      : renderNoResults(noResultsMessage ?? t('dataTable.noResults'))
+  return data.length > 0
+    ? renderData()
+    : renderNoResults(noResultsMessage ?? t('dataTable.noResults'))
 }
 
 export const TableResults = memo(Results) as typeof Results
@@ -300,35 +247,6 @@ const ResetFilters = styled.a`
   color: #9f9f9f;
   text-decoration: underline;
   cursor: pointer;
-`
-
-const SkeletonCell = styled(Skeleton).attrs({})`
-  width: 100%;
-  height: 20px;
-  margin: 0;
-`
-
-const SkeletonVisual = styled(Skeleton).attrs({
-  width: 144,
-  height: 144,
-  borderRadius: 4,
-})``
-
-const SkeletonIcon = styled(Skeleton).attrs({
-  width: 32,
-  height: 32,
-  borderRadius: 4,
-})``
-
-const SkeletonDescription = styled(Skeleton).attrs({
-  height: 20,
-})`
-  min-width: 200px;
-`
-
-const SkeletonRow = styled(TableRow)`
-  opacity: 0.5;
-  pointer-events: none;
 `
 
 const GridContainer = styled.div`

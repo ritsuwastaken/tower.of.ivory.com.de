@@ -1,12 +1,10 @@
 import { SortConfig } from '@/utils/pagination'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'
 import {
   startTransition,
   addTransitionType,
   useCallback,
   useDeferredValue,
-  useEffect,
-  useRef,
   useState,
 } from 'react'
 
@@ -21,17 +19,12 @@ export function useDataTable<T>({
   defaultColumnVisibility = {},
   onResetFilters,
 }: UseDataTableOptions = {}) {
-  const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-  const isInitialMount = useRef(true)
-
-  const [searchTerm, setSearchTerm] = useState(
-    searchParams?.get('search') || '',
-  )
+  const searchParams = useCatalogSearchParams()
+  const searchTerm = searchParams.get('search') || ''
   const deferredSearchTerm = useDeferredValue(searchTerm)
-  const [currentPage, setCurrentPage] = useState(
-    parseInt(searchParams?.get('page') || '1', 10),
+  const currentPage = Math.max(
+    1,
+    parseInt(searchParams.get('page') || '1', 10) || 1,
   )
   const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
     column: null,
@@ -39,6 +32,20 @@ export function useDataTable<T>({
   })
   const [columnVisibility, setColumnVisibility] = useState(
     defaultColumnVisibility,
+  )
+
+  const updateParams = useCallback(
+    (update: (params: URLSearchParams) => void) => {
+      const params = new URLSearchParams(window.location.search)
+      update(params)
+      const query = params.toString()
+      window.history.replaceState(
+        null,
+        '',
+        `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`,
+      )
+    },
+    [],
   )
 
   const handleSort = useCallback((column: keyof T) => {
@@ -61,65 +68,43 @@ export function useDataTable<T>({
 
   const handleViewModeChange = useCallback(
     (mode: 'table' | 'grid') => {
-      if (!pathname || !searchParams) return
-
-      const params = new URLSearchParams(searchParams)
-      params.set('view', mode)
-      router.replace(`${pathname}?${params}`, {
-        scroll: false,
-      })
+      updateParams((params) => params.set('view', mode))
     },
-    [router, pathname, searchParams],
+    [updateParams],
   )
 
-  const handlePageChange = useCallback((page: number) => {
-    setCurrentPage(page)
-  }, [])
+  const handlePageChange = useCallback(
+    (page: number) => {
+      updateParams((params) => {
+        if (page > 1) params.set('page', String(page))
+        else params.delete('page')
+      })
+    },
+    [updateParams],
+  )
 
-  const handleSearchChange = useCallback((value: string) => {
-    setSearchTerm(value)
-    setCurrentPage(1)
-  }, [])
+  const handleSearchChange = useCallback(
+    (value: string) => {
+      updateParams((params) => {
+        if (value) params.set('search', value)
+        else params.delete('search')
+        params.delete('page')
+      })
+    },
+    [updateParams],
+  )
 
   const handleResetFilters = useCallback(() => {
-    setSearchTerm('')
-    setCurrentPage(1)
+    updateParams((params) => {
+      params.delete('search')
+      params.delete('page')
+    })
     setColumnVisibility(defaultColumnVisibility)
     onResetFilters?.()
-  }, [defaultColumnVisibility, onResetFilters])
-
-  useEffect(() => {
-    if (!pathname || !searchParams) return
-
-    if (isInitialMount.current) {
-      isInitialMount.current = false
-      return
-    }
-
-    const params = new URLSearchParams(searchParams)
-
-    if (searchTerm) {
-      params.set('search', searchTerm)
-    } else {
-      params.delete('search')
-    }
-
-    if (currentPage > 1) {
-      params.set('page', currentPage.toString())
-    } else {
-      params.delete('page')
-    }
-
-    const newUrl = `${pathname}?${params.toString()}`
-    const currentUrl = `${pathname}?${searchParams.toString()}`
-
-    if (newUrl !== currentUrl) {
-      router.replace(newUrl, { scroll: false })
-    }
-  }, [searchTerm, currentPage, pathname, router, searchParams])
+  }, [updateParams, defaultColumnVisibility, onResetFilters])
 
   const viewMode = useDeferredValue<'table' | 'grid'>(
-    searchParams?.get('view') === 'grid' ? 'grid' : 'table',
+    searchParams.get('view') === 'grid' ? 'grid' : 'table',
   )
 
   return {

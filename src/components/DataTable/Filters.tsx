@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import { FiltersProps } from './types'
 
 export function Filters({
-  isLoading,
   showFilters,
   setShowFilters,
   filters,
@@ -31,12 +30,11 @@ export function Filters({
       <FiltersToggle
         ref={toggleRef}
         onClick={() => setShowFilters(!showFilters)}
-        disabled={isLoading}
       >
         {t('filters.filters')}
       </FiltersToggle>
 
-      {showFilters && !isLoading && (
+      {showFilters && (
         <FiltersSection ref={filtersRef}>
           {allowGridView && (
             <FilterGroup>
@@ -45,7 +43,6 @@ export function Filters({
                 onClick={() =>
                   onViewModeChange?.(viewMode === 'table' ? 'grid' : 'table')
                 }
-                disabled={isLoading}
                 style={{ width: '100%', marginBottom: '1rem' }}
               >
                 {viewMode === 'table'
