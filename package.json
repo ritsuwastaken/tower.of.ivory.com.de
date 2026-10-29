@@ -2,6 +2,9 @@
   "name": "tower.of.ivory.com.de",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=26"
+  },
   "scripts": {
     "prepare": "husky",
     "pre-commit": "lint-staged --concurrent false && npm run types:check",
