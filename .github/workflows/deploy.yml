@@ -24,8 +24,6 @@ jobs:
         with:
           node-version: "26"
           cache: npm
-      - name: Setup Pages
-        uses: actions/configure-pages@v6
       - name: Restore cache
         uses: actions/cache@v6
         with:
@@ -36,12 +34,31 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install dependencies
         run: npm ci
-      - name: Build with Next.js
+      - name: Setup Pages
         env:
-          GITHUB_PAGES_BASE_PATH: /${{ github.event.repository.name }}
-        run: npm run build:gh-pages
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          pages_url="$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq '.html_url')"
+          base_path="$(node -e 'process.stdout.write(new URL(process.argv[1]).pathname.replace(/\/$/, ""))' "$pages_url")"
+          printf 'NEXT_PUBLIC_BASE_PATH=%s\n' "$base_path" >> "$GITHUB_ENV"
+
+          mv next.config.ts next.config.base.ts
+          cat > next.config.ts <<'EOF'
+          import config from './next.config.base'
+
+          export default {
+            ...config,
+            output: 'export',
+            basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? '',
+            trailingSlash: true,
+            redirects: undefined,
+            headers: undefined,
+          }
+          EOF
+      - name: Build with Next.js
+        run: npm run build
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./out
 
@@ -54,4 +71,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

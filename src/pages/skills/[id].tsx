@@ -1,3 +1,4 @@
+import { getStaticPathsFor } from '@/utils/staticPages'
 import { useRouter } from 'next/router'
 import { ChangedProperties, LoadingStats } from '@/components/DetailsSections'
 import { Head } from '@/components/Head'
@@ -571,3 +572,7 @@ const LevelTag = styled.span<{ $isNew: boolean }>`
   background-color: ${({ $isNew }) => ($isNew ? '#4caf50' : '#ff9800')};
   color: white;
 `
+
+export { getStaticProps } from '@/utils/staticPages'
+
+export const getStaticPaths = getStaticPathsFor('skills')

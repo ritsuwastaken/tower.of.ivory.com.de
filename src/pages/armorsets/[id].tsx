@@ -1,3 +1,4 @@
+import { getStaticPathsFor } from '@/utils/staticPages'
 import { ArmorSet } from '@/types'
 import { getDataUrl } from '@/utils/getDataUrl'
 import { getItemUrl } from '@/utils/getItemUrl'
@@ -442,3 +443,7 @@ const PartLink = styled(Link)`
     text-decoration: underline;
   }
 `
+
+export { getStaticProps } from '@/utils/staticPages'
+
+export const getStaticPaths = getStaticPathsFor('armorsets')
