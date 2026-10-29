@@ -44,7 +44,7 @@ i18n.on('languageChanged', (lng) => {
   if (typeof window === 'undefined') return
   try {
     window.localStorage?.setItem('i18nextLng', lng)
-  } catch { }
+  } catch {}
 })
 
 export default i18n

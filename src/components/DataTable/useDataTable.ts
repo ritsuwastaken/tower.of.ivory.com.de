@@ -26,10 +26,12 @@ export function useDataTable<T>({
   const searchParams = useSearchParams()
   const isInitialMount = useRef(true)
 
-  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '')
+  const [searchTerm, setSearchTerm] = useState(
+    searchParams?.get('search') || '',
+  )
   const deferredSearchTerm = useDeferredValue(searchTerm)
   const [currentPage, setCurrentPage] = useState(
-    parseInt(searchParams.get('page') || '1', 10),
+    parseInt(searchParams?.get('page') || '1', 10),
   )
   const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
     column: null,
@@ -59,6 +61,8 @@ export function useDataTable<T>({
 
   const handleViewModeChange = useCallback(
     (mode: 'table' | 'grid') => {
+      if (!pathname || !searchParams) return
+
       const params = new URLSearchParams(searchParams)
       params.set('view', mode)
       router.replace(`${pathname}?${params}`, {
@@ -85,6 +89,8 @@ export function useDataTable<T>({
   }, [defaultColumnVisibility, onResetFilters])
 
   useEffect(() => {
+    if (!pathname || !searchParams) return
+
     if (isInitialMount.current) {
       isInitialMount.current = false
       return
@@ -113,7 +119,7 @@ export function useDataTable<T>({
   }, [searchTerm, currentPage, pathname, router, searchParams])
 
   const viewMode = useDeferredValue<'table' | 'grid'>(
-    searchParams.get('view') === 'grid' ? 'grid' : 'table',
+    searchParams?.get('view') === 'grid' ? 'grid' : 'table',
   )
 
   return {

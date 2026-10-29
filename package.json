@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.105.0",
-    "next": "^16.4.3",
+    "next": "^16.5.0-canary.31",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-i18next": "^17.1.9",
@@ -27,8 +27,8 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "babel-plugin-react-compiler": "^1.0.0",
-    "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.3",
+    "eslint": "^10.13.0",
+    "eslint-config-next": "^16.5.0-canary.31",
     "jiti": "^2.7.0",
     "prettier": "^3.9.10",
     "typescript": "^6.0.3"

@@ -52,7 +52,7 @@ export const Navigation = () => {
 
   const handleCategoryChange = useCallback(
     (path: string) => {
-      const searchValue = searchParams.get('search')
+      const searchValue = searchParams?.get('search')
       const queryString = searchValue ? `?search=${searchValue}` : ''
       router.push(`${path}${queryString}`)
     },

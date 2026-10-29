@@ -105,13 +105,13 @@ export const ItemsPage = ({
     },
   })
 
-  const crystalTypeFromParams = searchParams.get('crystal') || ''
-  const bodyPartFromParams = searchParams.get('bodyPart') || ''
-  const armorTypeFromParams = searchParams.get('armorType') || ''
-  const weaponTypeFromParams = searchParams.get('weaponType') || ''
+  const crystalTypeFromParams = searchParams?.get('crystal') || ''
+  const bodyPartFromParams = searchParams?.get('bodyPart') || ''
+  const armorTypeFromParams = searchParams?.get('armorType') || ''
+  const weaponTypeFromParams = searchParams?.get('weaponType') || ''
 
-  const showNewFromParams = searchParams.get('new') === 'true'
-  const showChangedFromParams = searchParams.get('changed') === 'true'
+  const showNewFromParams = searchParams?.get('new') === 'true'
+  const showChangedFromParams = searchParams?.get('changed') === 'true'
 
   const [showNew, setShowNew] = useState(showNewFromParams)
   const [showChanged, setShowChanged] = useState(showChangedFromParams)
