@@ -76,12 +76,6 @@ const HeaderWrapper = styled.header`
   background-color: #1a1a1a;
   color: #fff;
   border-radius: 8px;
-
-  a:focus-visible,
-  select:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 3px;
-  }
 `
 
 const HeaderLeft = styled.div`
@@ -101,10 +95,6 @@ const HeaderLink = styled(Link)`
 
   &:hover h3 {
     color: #aaa;
-  }
-
-  &:focus {
-    outline: none;
   }
 `
 
@@ -167,7 +157,6 @@ const GitHubLink = styled.a`
   }
 
   &:focus {
-    outline: none;
     box-shadow: 0 0 0 2px #4a4a4a;
   }
 `

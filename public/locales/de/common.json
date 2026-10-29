@@ -15,6 +15,7 @@
     "dataTable": {
         "searchPlaceholder": "Suchen…",
         "noResults": "Keine Einträge",
+        "removeFilter": "Filter „{{filter}}“ entfernen",
         "resetFilters": "Filter zurücksetzen?"
     },
     "details": {

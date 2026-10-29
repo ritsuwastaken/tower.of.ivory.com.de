@@ -42,7 +42,7 @@ export const GlobalStyles = createGlobalStyle`
   select {
     font-family: inherit;
   }
-  
+
   @media (prefers-reduced-motion: reduce) {
     ::view-transition-group(*),
     ::view-transition-old(*),

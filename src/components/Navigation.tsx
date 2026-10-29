@@ -67,13 +67,7 @@ const TabLink = styled(Link)<{ $isActive?: boolean }>`
   font-size: 0.833333rem;
 
   &:focus {
-    outline: none;
     background-color: #3a3a3a;
-  }
-
-  &:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 3px;
   }
 
   &:hover {

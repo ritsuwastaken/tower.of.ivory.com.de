@@ -41,7 +41,7 @@ export const SetInfoItem = styled.div`
 `
 
 export const SetInfoLabel = styled.span`
-  color: var(--text-color-secondary, #666);
+  color: #aaa;
   font-weight: 500;
 `
 

@@ -72,7 +72,6 @@ const PaginationButton = styled.button`
   transition: all 0.2s ease;
 
   &:focus {
-    outline: none;
     background-color: #3a3a3a;
   }
 

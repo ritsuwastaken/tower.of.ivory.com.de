@@ -47,6 +47,7 @@ export function DataTable<T>({
         <FiltersContainer>
           <SearchAndFiltersContainer>
             <SearchInput
+              aria-label={searchPlaceholder || t('dataTable.searchPlaceholder')}
               value={searchTerm}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder={
@@ -77,7 +78,12 @@ export function DataTable<T>({
                     filter.options.find((opt) => opt.value === filter.value)
                       ?.label
                   }
-                  <TagRemoveButton onClick={() => filter.onChange('')}>
+                  <TagRemoveButton
+                    aria-label={t('dataTable.removeFilter', {
+                      filter: filter.label,
+                    })}
+                    onClick={() => filter.onChange('')}
+                  >
                     ×
                   </TagRemoveButton>
                 </Tag>
@@ -87,7 +93,14 @@ export function DataTable<T>({
               .map((filter) => (
                 <Tag key={filter.id}>
                   {filter.label}
-                  <TagRemoveButton onClick={filter.onChange}>×</TagRemoveButton>
+                  <TagRemoveButton
+                    aria-label={t('dataTable.removeFilter', {
+                      filter: filter.label,
+                    })}
+                    onClick={filter.onChange}
+                  >
+                    ×
+                  </TagRemoveButton>
                 </Tag>
               ))}
           </TagsContainer>
@@ -176,12 +189,16 @@ const SearchInput = styled.input.attrs({
   background-color: #2a2a2a;
   color: #fff;
 
+  &::placeholder {
+    color: #aaa;
+    opacity: 1;
+  }
+
   @media (max-width: 890px) {
     padding: 0.5rem;
   }
 
   &:focus {
-    outline: none;
     border-color: #5a5a5a;
   }
 `
@@ -206,7 +223,7 @@ const Tag = styled.div`
 const TagRemoveButton = styled.button`
   background: none;
   border: none;
-  color: #888;
+  color: #aaa;
   font-size: 1.2rem;
   padding: 0;
   cursor: pointer;

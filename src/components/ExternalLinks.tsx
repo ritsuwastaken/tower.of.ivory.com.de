@@ -59,11 +59,10 @@ const StyledLink = styled.a.attrs({
   padding: 0.75rem 1rem;
   background-color: #2a2a2a;
   border-radius: 4px;
-  color: #888;
+  color: #aaa;
   text-decoration: none;
   transition: all 0.2s ease;
   font-size: 0.9rem;
-  outline: none;
 
   &:hover,
   &:focus {

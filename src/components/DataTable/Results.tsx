@@ -37,6 +37,13 @@ export function TableResults<T>({
             {visibleColumns.map((column) => (
               <Th
                 key={column.key as string}
+                aria-sort={
+                  sortConfig.column === column.key
+                    ? sortConfig.direction === 'asc'
+                      ? 'ascending'
+                      : 'descending'
+                    : undefined
+                }
                 onClick={() => onSort(column.key as keyof T)}
               >
                 {column.label}
@@ -106,9 +113,7 @@ export function TableResults<T>({
     : renderNoResults(noResultsMessage ?? t('dataTable.noResults'))
 }
 
-const Table = styled.table.attrs({
-  role: 'grid',
-})`
+const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
   table-layout: auto;
@@ -184,7 +189,6 @@ const Th = styled.th.attrs<{ onClick?: () => void }>((props) => ({
 
   &:hover,
   &:focus {
-    outline: none;
     color: #fff;
   }
 `
@@ -209,7 +213,11 @@ const TableRow = styled.tr.attrs<{ onClick?: () => void }>((props) => ({
   tabIndex: props.onClick ? 0 : undefined,
   role: 'row',
   onKeyDown: (e: KeyboardEvent) => {
-    if (props.onClick && (e.key === 'Enter' || e.key === ' ')) {
+    if (
+      e.target === e.currentTarget &&
+      props.onClick &&
+      (e.key === 'Enter' || e.key === ' ')
+    ) {
       e.preventDefault()
       props.onClick()
     }
@@ -222,7 +230,6 @@ const TableRow = styled.tr.attrs<{ onClick?: () => void }>((props) => ({
   &:focus,
   &:focus-within {
     background-color: #222222;
-    outline: none;
   }
 
   @media (max-width: 890px) {
@@ -241,7 +248,10 @@ const NoResults = styled.div`
   text-align: center;
 `
 
-const ResetFilters = styled.a`
+const ResetFilters = styled.button`
+  background: none;
+  border: none;
+  font: inherit;
   color: #9f9f9f;
   text-decoration: underline;
   cursor: pointer;
@@ -276,11 +286,11 @@ const GridItemField = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #888;
+  color: #aaa;
   font-size: 0.9rem;
 
   span:first-child {
-    color: #888;
+    color: #aaa;
   }
 
   span:last-child {

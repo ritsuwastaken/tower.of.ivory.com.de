@@ -118,7 +118,6 @@ const FiltersToggle = styled.button`
   }
 
   &:focus {
-    outline: none;
     background-color: #3a3a3a;
   }
 `
@@ -166,7 +165,6 @@ const FilterLabel = styled.label`
 const FilterSelect = styled.select`
   ${selectStyles}
   &:focus {
-    outline: none;
     border-color: #5a5a5a;
   }
 `

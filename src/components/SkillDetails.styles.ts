@@ -88,19 +88,19 @@ export const LevelNumber = styled.span`
 `
 
 export const Consume = styled.span`
-  color: #4a4a4a;
+  color: #ccc;
   font-size: 0.875rem;
   white-space: nowrap;
 `
 
 export const MpConsume = styled.span`
-  color: #4499ff;
+  color: #90c2ff;
   font-size: 0.875rem;
   white-space: nowrap;
 `
 
 export const HpConsume = styled.span`
-  color: #ff4444;
+  color: #ffabab;
   font-size: 0.875rem;
   white-space: nowrap;
 `
@@ -112,5 +112,5 @@ export const LevelTag = styled.span<{ $isNew: boolean }>`
   border-radius: 3px;
   display: inline-block;
   background-color: ${({ $isNew }) => ($isNew ? '#4caf50' : '#ff9800')};
-  color: white;
+  color: #1a1a1a;
 `

@@ -63,7 +63,7 @@ export const HeaderInfo = styled.div`
 `
 
 export const Description = styled.div`
-  color: #888;
+  color: #aaa;
   font-style: italic;
   padding: 1rem;
   background-color: #2a2a2a;
@@ -146,12 +146,12 @@ export const NotificationPanel = styled.div<{ $isNew: boolean }>`
       ? css`
           background-color: rgba(0, 128, 0, 0.15);
           border-left: 4px solid #008000;
-          color: #006400;
+          color: #81c784;
         `
       : css`
           background-color: rgba(255, 165, 0, 0.15);
           border-left: 4px solid #ffa500;
-          color: #8b4513;
+          color: #ffb74d;
         `}
 `
 

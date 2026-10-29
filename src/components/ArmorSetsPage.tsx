@@ -104,7 +104,7 @@ export default function ArmorSetsPage({
           <Link
             href={`/armorsets/${armorSet.id}`}
             onClick={(e) => e.stopPropagation()}
-            tabIndex={-1}
+            tabIndex={tableProps.viewMode === 'grid' ? undefined : -1}
           >
             {armorSet.name}
           </Link>

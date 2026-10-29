@@ -15,6 +15,7 @@
     "dataTable": {
         "searchPlaceholder": "Поиск…",
         "noResults": "Нет результатов",
+        "removeFilter": "Сбросить фильтр «{{filter}}»",
         "resetFilters": "Сбросить фильтры?"
     },
     "details": {
