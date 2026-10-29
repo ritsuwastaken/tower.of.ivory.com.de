@@ -17,7 +17,6 @@ import {
 } from './SearchParamsBoundary'
 import {
   BackButton,
-  Container,
   ContentWrapper,
   Description,
   HeaderInfo,
@@ -30,7 +29,7 @@ import {
   Stats,
   TableContainer,
   Value,
-} from './primitives/DetailsPrimitives'
+} from './Details.styles'
 import {
   ArmorSets,
   SetInfo,
@@ -39,7 +38,7 @@ import {
   SetInfoValue,
   SetName,
   SetVisualContainer,
-} from './primitives/ItemDetailsLayout'
+} from './ItemDetails.styles'
 import {
   SkillLevels,
   LevelCard,
@@ -47,7 +46,7 @@ import {
   LevelNumberContainer,
   SmallLevelDescription,
   MobileLevelSelect,
-} from './primitives/SkillDetailsLayout'
+} from './SkillDetails.styles'
 import {
   Icon,
   TotalStat,
@@ -63,7 +62,7 @@ import {
   PartParams,
   PartParam,
   PartLinks,
-} from './primitives/ArmorSetDetailsLayout'
+} from './ArmorSetDetails.styles'
 
 type LoadingKind =
   | 'weapons'
@@ -190,7 +189,7 @@ function LoadingStats() {
 
 function DetailSkeleton({ kind }: { kind: 'item' | 'skill' | 'armorset' }) {
   return (
-    <Container>
+    <div>
       <BackButton as="span">⟵</BackButton>
       {kind === 'armorset' ? (
         <ArmorSetSkeleton />
@@ -231,7 +230,7 @@ function DetailSkeleton({ kind }: { kind: 'item' | 'skill' | 'armorset' }) {
           {kind === 'skill' ? <SkillSidebar /> : <ItemSidebar />}
         </ContentWrapper>
       )}
-    </Container>
+    </div>
   )
 }
 

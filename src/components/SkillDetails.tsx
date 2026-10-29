@@ -7,16 +7,13 @@ import {
   LevelHeader,
   LevelNumberContainer,
   SmallLevelDescription,
-  LevelDropdownButton,
-  DropdownArrow,
-  MobileDropdown,
-  MobileDropdownItem,
+  LevelSelect,
   LevelNumber,
   Consume,
   MpConsume,
   HpConsume,
   LevelTag,
-} from '@/components/primitives/SkillDetailsLayout'
+} from '@/components/SkillDetails.styles'
 
 import { ChangedProperties } from '@/components/DetailsSections'
 import {
@@ -31,7 +28,6 @@ import Link from 'next/link'
 import { ExternalLinks } from '@/components/ExternalLinks'
 import {
   BackButton,
-  Container,
   NotificationPanel,
   NotificationLink,
   DetailIcon,
@@ -48,19 +44,19 @@ import {
   Stats,
   TableContainer,
   Value,
-} from '@/components/primitives/DetailsPrimitives'
+} from '@/components/Details.styles'
 
 const SkillNotFound = () => {
   const { t } = useTranslation()
   return (
-    <Container>
+    <div>
       <BackButton as={Link} rel="canonical" href="/skills">
         ⟵
       </BackButton>
       <TableContainer>
         <ErrorText>{t('meta.skillNotFound')}</ErrorText>
       </TableContainer>
-    </Container>
+    </div>
   )
 }
 
@@ -92,7 +88,6 @@ function SkillDetailsContent({
   const { t } = useTranslation()
   const formatColumnName = useFormatColumnName()
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [showChangedProperties, setShowChangedProperties] = useState(false)
 
   useEffect(() => {
@@ -134,11 +129,10 @@ function SkillDetailsContent({
     onTitleChange(`${pageTitle} | Tower of Ivory`)
   }, [pageTitle, onTitleChange])
 
-  const handleLevelClick = (levelData: Skill) => {
+  const handleLevelChange = (level: number | undefined) => {
     const params = new URLSearchParams(searchParams)
-    params.set('level', String(levelData.skill_level))
+    params.set('level', String(level))
     window.history.pushState(null, '', `?${params}`)
-    setIsDropdownOpen(false)
   }
 
   if (!selectedSkill) {
@@ -155,7 +149,7 @@ function SkillDetailsContent({
 
   return (
     <>
-      <Container>
+      <div>
         <BackButton as={Link} rel="canonical" href="/skills" scroll={false}>
           ⟵
         </BackButton>
@@ -199,33 +193,25 @@ function SkillDetailsContent({
                 <HeaderInfo>
                   <h1>{selectedSkill.name}</h1>
                   <MobileLevelSelect>
-                    <LevelDropdownButton
-                      onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    <LevelSelect
+                      aria-label={t('skillDetails.level')}
+                      value={selectedSkill.skill_level}
+                      onChange={(event) =>
+                        handleLevelChange(Number(event.target.value))
+                      }
                     >
-                      {t('skillDetails.levelShort', {
-                        level: selectedSkill.skill_level,
-                      })}
-                      <DropdownArrow>▼</DropdownArrow>
-                    </LevelDropdownButton>
-                    {isDropdownOpen && (
-                      <MobileDropdown>
-                        {skill.levels?.map((levelData: Skill) => (
-                          <MobileDropdownItem
-                            key={levelData.skill_level}
-                            $active={
-                              Number(levelData.skill_level) ===
-                              Number(selectedSkill.skill_level)
-                            }
-                            onClick={() => handleLevelClick(levelData)}
-                          >
-                            {t('skillDetails.levelWithMp', {
-                              level: levelData.skill_level,
-                              mp: levelData.mp_consume || 0,
-                            })}
-                          </MobileDropdownItem>
-                        ))}
-                      </MobileDropdown>
-                    )}
+                      {skill.levels?.map((levelData) => (
+                        <option
+                          key={levelData.skill_level}
+                          value={levelData.skill_level}
+                        >
+                          {t('skillDetails.levelWithMp', {
+                            level: levelData.skill_level,
+                            mp: levelData.mp_consume || 0,
+                          })}
+                        </option>
+                      ))}
+                    </LevelSelect>
                   </MobileLevelSelect>
                 </HeaderInfo>
               </HeaderLeft>
@@ -289,7 +275,7 @@ function SkillDetailsContent({
                     Number(levelData.skill_level) ===
                     Number(selectedSkill.skill_level)
                   }
-                  onClick={() => handleLevelClick(levelData)}
+                  onClick={() => handleLevelChange(levelData.skill_level)}
                 >
                   <LevelHeader>
                     <LevelNumberContainer>
@@ -319,7 +305,7 @@ function SkillDetailsContent({
             })}
           </SkillLevels>
         </ContentWrapper>
-      </Container>
+      </div>
     </>
   )
 }

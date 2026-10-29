@@ -68,7 +68,6 @@
         "levels": "Niveles",
         "unnamedSkill": "Habilidad sin nombre (id {{id}})",
         "pageTitle": "{{name}} · Niv. {{level}} · {{section}}",
-        "levelShort": "Nivel {{level}}",
         "levelWithMp": "Nivel {{level}} (MP: {{mp}})"
     },
     "pagination": {

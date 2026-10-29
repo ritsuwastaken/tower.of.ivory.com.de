@@ -68,7 +68,6 @@
         "levels": "Stufen",
         "unnamedSkill": "Unbenannte Fertigkeit (ID {{id}})",
         "pageTitle": "{{name}} · Stufe {{level}} · {{section}}",
-        "levelShort": "Stufe {{level}}",
         "levelWithMp": "Stufe {{level}} (MP: {{mp}})"
     },
     "pagination": {

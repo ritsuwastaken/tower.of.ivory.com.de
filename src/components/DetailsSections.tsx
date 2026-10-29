@@ -9,7 +9,7 @@ import {
   MeshTextureSection,
   StatRow,
   Value,
-} from './primitives/DetailsPrimitives'
+} from './Details.styles'
 
 interface CollapsibleSectionProps {
   title: string

@@ -19,7 +19,7 @@ import {
   PartLinks,
   PartIconImage,
   PartLink,
-} from '@/components/primitives/ArmorSetDetailsLayout'
+} from '@/components/ArmorSetDetails.styles'
 
 import { ArmorSet } from '@/types'
 import { getItemUrl } from '@/utils/getItemUrl'
@@ -28,14 +28,13 @@ import { useTranslation } from '@/hooks/useTranslation'
 import { useRouter } from 'next/navigation'
 import {
   BackButton,
-  Container,
   Description,
   HeaderInfo,
   HeaderLeft,
   HeaderRight,
   ItemHeader,
   TableContainer,
-} from '@/components/primitives/DetailsPrimitives'
+} from '@/components/Details.styles'
 import { ArmorSetVisual } from '@/components/ArmorSetVisual'
 import { ExternalLinks } from '@/components/ExternalLinks'
 
@@ -49,7 +48,7 @@ export default function ArmorSetDetails({ armorSet }: { armorSet: ArmorSet }) {
   const totalBasePrice = getTotalBasePrice(armorSet.items)
 
   return (
-    <Container>
+    <div>
       <BackButton
         href="#"
         onClick={(e) => {
@@ -60,7 +59,7 @@ export default function ArmorSetDetails({ armorSet }: { armorSet: ArmorSet }) {
         ⟵
       </BackButton>
       {renderDetails()}
-    </Container>
+    </div>
   )
 
   function renderDetails() {

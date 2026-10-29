@@ -68,7 +68,6 @@
         "levels": "Уровни",
         "unnamedSkill": "Умение без названия (ID {{id}})",
         "pageTitle": "{{name}} · Ур. {{level}} · {{section}}",
-        "levelShort": "Уровень {{level}}",
         "levelWithMp": "Уровень {{level}} (MP: {{mp}})"
     },
     "pagination": {

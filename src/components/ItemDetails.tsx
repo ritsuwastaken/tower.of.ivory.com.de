@@ -9,7 +9,7 @@ import {
   SetInfoValue,
   HarborBirthdayItem,
   SetName,
-} from '@/components/primitives/ItemDetailsLayout'
+} from '@/components/ItemDetails.styles'
 
 import { ChangedProperties, CollapsibleSection } from './DetailsSections'
 import { ArmorSetVisual } from '@/components/ArmorSetVisual'
@@ -22,7 +22,6 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import {
   BackButton,
-  Container,
   NotificationPanel,
   NotificationLink,
   DetailIcon,
@@ -38,7 +37,7 @@ import {
   TableContainer,
   Value,
   ChangedTag,
-} from '@/components/primitives/DetailsPrimitives'
+} from '@/components/Details.styles'
 
 interface ItemDetailsProps {
   item: Item
@@ -146,7 +145,7 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
     item.is_changed && item.changes && Object.keys(item.changes).length > 0
 
   return (
-    <Container>
+    <div>
       <BackButton
         href="#"
         onClick={(e) => {
@@ -157,7 +156,7 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
         ⟵
       </BackButton>
       {renderItemDetails()}
-    </Container>
+    </div>
   )
 
   function renderItemDetails() {

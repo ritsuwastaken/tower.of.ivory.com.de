@@ -68,11 +68,8 @@ export const SmallLevelDescription = styled.div`
   line-height: 1.4;
 `
 
-export const LevelDropdownButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
+export const LevelSelect = styled.select`
+  width: 100%;
   padding: 0.5rem 1rem;
   background: #2a2a2a;
   border: 1px solid #3a3a3a;
@@ -80,57 +77,10 @@ export const LevelDropdownButton = styled.button`
   color: #fff;
   font-size: 0.875rem;
   cursor: pointer;
-  width: 100%;
-  transition: background 0.2s ease;
+
   &:hover {
     background: #333;
   }
-`
-
-export const DropdownArrow = styled.span`
-  font-size: 0.75rem;
-  transition: transform 0.2s ease;
-`
-
-export const MobileDropdown = styled.div`
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  right: 0;
-  background: #2a2a2a;
-  border: 1px solid #3a3a3a;
-  border-radius: 4px;
-  margin-top: 0.25rem;
-  max-height: 300px;
-  overflow-y: auto;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-`
-
-export const MobileDropdownItem = styled.button<{ $active: boolean }>`
-  width: 100%;
-  text-align: left;
-  padding: 0.75rem 1rem;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #333;
-  color: #ddd;
-  cursor: pointer;
-  font-size: 0.875rem;
-  transition: background 0.2s ease;
-  &:last-child {
-    border-bottom: none;
-  }
-  &:hover {
-    background: #333;
-  }
-  ${({ $active }) =>
-    $active &&
-    css`
-      background: #444 !important;
-      color: #fff;
-      font-weight: 500;
-    `}
 `
 
 export const LevelNumber = styled.span`

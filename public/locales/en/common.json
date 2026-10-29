@@ -68,7 +68,6 @@
         "levels": "Levels",
         "unnamedSkill": "Unnamed skill (id {{id}})",
         "pageTitle": "{{name}} · Lvl. {{level}} · {{section}}",
-        "levelShort": "Level {{level}}",
         "levelWithMp": "Level {{level}} (MP: {{mp}})"
     },
     "pagination": {

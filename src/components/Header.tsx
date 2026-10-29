@@ -80,7 +80,14 @@ const HeaderWrapper = styled.header`
   margin-bottom: 1rem;
 
   background-color: #1a1a1a;
+  color: #fff;
   border-radius: 8px;
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
 `
 
 const HeaderLeft = styled.div`
@@ -95,13 +102,11 @@ const HeaderLeft = styled.div`
   }
 `
 
-const HeaderLink = styled(Link).attrs({
-  tabIndex: -1,
-})`
+const HeaderLink = styled(Link)`
   text-decoration: none;
 
   &:hover h3 {
-    color: #7a7a7a;
+    color: #aaa;
   }
 
   &:focus {
@@ -122,7 +127,7 @@ const LastUpdate = styled.p`
   margin-bottom: 0;
 
   font-size: 0.65rem;
-  color: #666;
+  color: #999;
 `
 
 const HeaderRight = styled.div`
@@ -143,6 +148,7 @@ const LanguageButton = styled.button`
   border-radius: 4px;
 
   background-color: #1a1a1a;
+  color: inherit;
   cursor: pointer;
   font-size: 0.9rem;
 
@@ -181,7 +187,8 @@ const LanguageOption = styled.button<{ $isActive?: boolean }>`
   padding: 0.7rem 1rem;
 
   border: none;
-  background-color: ${(props) => (props.$isActive ? '#7a7a7a' : 'transparent')};
+  background-color: ${(props) => (props.$isActive ? '#4a4a4a' : 'transparent')};
+  color: inherit;
 
   font-weight: ${(props) => (props.$isActive ? '500' : 'normal')};
 

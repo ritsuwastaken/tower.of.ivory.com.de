@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components'
 import { CatalogIcon } from '@/components/CatalogImage'
 import Link from 'next/link'
 
-export const Container = styled.div``
-
 export const TableContainer = styled.div`
   background-color: #1a1a1a;
   border-radius: 8px;

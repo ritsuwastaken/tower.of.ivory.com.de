@@ -7,6 +7,7 @@ import { Navigation } from '@/components/Navigation'
 import type { ReactNode } from 'react'
 import { SearchParamsBoundary } from '@/components/SearchParamsBoundary'
 import { useEffect } from 'react'
+import { useTranslation } from '@/hooks/useTranslation'
 import styled from 'styled-components'
 import i18n, { defaultLanguage, supportedLanguages } from '@/i18n'
 import { AssetBasePathContext } from '@/components/CatalogImage'
@@ -18,33 +19,23 @@ export default function AppShell({
   children: ReactNode
   basePath?: string
 }) {
+  const { language } = useTranslation()
+
   useEffect(() => {
-    const baseLng = (lng: string) => lng.split('-')[0] || defaultLanguage
-    const applyHtmlLang = (lng: string) => {
-      document.documentElement.lang = baseLng(lng)
-    }
+    document.documentElement.lang = language.split('-')[0] || defaultLanguage
+  }, [language])
 
-    const handleLanguageChanged = (lng: string) => applyHtmlLang(lng)
-
-    i18n.on('languageChanged', handleLanguageChanged)
-
-    let stored: string | null = null
+  useEffect(() => {
     try {
-      stored = localStorage.getItem('i18nextLng')
+      const stored = localStorage.getItem('i18nextLng')
+      if (
+        stored &&
+        supportedLanguages.includes(stored) &&
+        i18n.language.split('-')[0] !== stored
+      ) {
+        void i18n.changeLanguage(stored)
+      }
     } catch {}
-    if (
-      stored &&
-      supportedLanguages.includes(stored) &&
-      baseLng(i18n.language) !== stored
-    ) {
-      void i18n.changeLanguage(stored)
-    } else {
-      applyHtmlLang(i18n.language)
-    }
-
-    return () => {
-      i18n.off('languageChanged', handleLanguageChanged)
-    }
   }, [])
 
   return (

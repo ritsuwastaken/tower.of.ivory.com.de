@@ -48,7 +48,7 @@ export const Navigation = () => {
   )
 }
 
-const CategoryTabs = styled.div`
+const CategoryTabs = styled.nav`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -60,7 +60,7 @@ const TabLink = styled(Link)<{ $isActive?: boolean }>`
   border: none;
   border-radius: 4px;
   background-color: ${(props) => (props.$isActive ? '#4a4a4a' : '#2a2a2a')};
-  color: ${(props) => (props.$isActive ? '#fff' : '#888')};
+  color: ${(props) => (props.$isActive ? '#fff' : '#aaa')};
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
@@ -69,6 +69,11 @@ const TabLink = styled(Link)<{ $isActive?: boolean }>`
   &:focus {
     outline: none;
     background-color: #3a3a3a;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
   }
 
   &:hover {
