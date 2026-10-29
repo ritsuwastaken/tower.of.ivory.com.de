@@ -117,20 +117,31 @@ const FiltersToggle = styled.button`
 
 const FiltersSection = styled.div`
   position: fixed;
-  position-anchor: --table-filters;
-  position-area: bottom center;
-  inset: auto;
-  width: 100%;
-  margin: 0.5rem 0 0;
+  inset: 0;
+  width: calc(100% - 2rem);
+  height: fit-content;
+  margin: auto;
   color: inherit;
   background-color: #1a1a1a;
   border: 1px solid #3a3a3a;
   border-radius: 4px;
   padding: 1rem;
   animation: slideDown 0.2s ease;
-  max-height: min(80vh, calc(100% - 1rem));
+  max-height: min(80dvh, calc(100dvh - 2rem));
   overflow-y: auto;
+  overscroll-behavior: contain;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  @supports (position-area: bottom center) and (anchor-scope: --table-filters) {
+    @media (min-width: 891px) and (hover: hover) {
+      position-anchor: --table-filters;
+      position-area: bottom center;
+      inset: auto;
+      width: 100%;
+      margin: 0.5rem 0 0;
+      max-height: min(80vh, calc(100% - 1rem));
+    }
+  }
 `
 
 const FilterGroup = styled.div`
