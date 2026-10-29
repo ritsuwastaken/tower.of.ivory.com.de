@@ -190,5 +190,5 @@ function runCustom() {
   console.log(`custom: ${out.length} sets → data/armorsets.json`)
 }
 
-runClient();
-runCustom();
+runClient()
+runCustom()
