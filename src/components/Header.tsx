@@ -2,12 +2,10 @@ import { getFlagEmoji } from '@/utils/getFlagEmoji'
 import { supportedLanguages } from '@/i18n'
 import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
-import { useId } from 'react'
 import styled from 'styled-components'
 
 export const Header = () => {
   const { t, i18n, language } = useTranslation()
-  const languagePopoverId = useId()
   const lastUpdateDate = process.env.NEXT_PUBLIC_LAST_UPDATE
     ? new Date(Number(process.env.NEXT_PUBLIC_LAST_UPDATE)).toLocaleString(
         language,
@@ -31,23 +29,18 @@ export const Header = () => {
         </HeaderLink>
       </HeaderLeft>
       <HeaderRight>
-        <LanguageButton popoverTarget={languagePopoverId}>
-          {language}
-        </LanguageButton>
-        <LanguageDropdown id={languagePopoverId} popover="auto">
+        <LanguageSelect
+          aria-label={t('header.language')}
+          translate="no"
+          value={language}
+          onChange={(event) => void i18n.changeLanguage(event.target.value)}
+        >
           {supportedLanguages.map((code) => (
-            <LanguageOption
-              key={code}
-              popoverTarget={languagePopoverId}
-              popoverTargetAction="hide"
-              onClick={() => i18n.changeLanguage(code)}
-              $isActive={code === language}
-            >
-              <LanguageFlag>{getFlagEmoji(code)}</LanguageFlag>
-              <span>{code}</span>
-            </LanguageOption>
+            <option key={code} value={code} lang={code}>
+              {getFlagEmoji(code)} {code}
+            </option>
           ))}
-        </LanguageDropdown>
+        </LanguageSelect>
         <GitHubLink
           href="https://github.com/ritsuwastaken/tower.of.ivory.com.de"
           target="_blank"
@@ -84,7 +77,7 @@ const HeaderWrapper = styled.header`
   border-radius: 8px;
 
   a:focus-visible,
-  button:focus-visible {
+  select:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 3px;
   }
@@ -131,78 +124,29 @@ const LastUpdate = styled.p`
 `
 
 const HeaderRight = styled.div`
-  anchor-scope: --language-menu;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 `
 
-const LanguageButton = styled.button`
-  anchor-name: --language-menu;
-  display: flex;
-  align-items: center;
-
-  padding: 0.5rem 0.8rem;
-
+const LanguageSelect = styled.select`
+  appearance: none;
+  padding: 0.5rem 1.75rem 0.5rem 0.6rem;
   border: none;
   border-radius: 4px;
-
   background-color: #1a1a1a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 0.75rem;
   color: inherit;
   cursor: pointer;
   font-size: 0.9rem;
 
-  transition: all 0.2s ease;
-
   &:hover,
   &:focus {
     background-color: #4a4a4a;
-    outline: none;
   }
-`
-
-const LanguageDropdown = styled.div`
-  position: fixed;
-  position-anchor: --language-menu;
-  inset: auto;
-  top: anchor(bottom);
-  right: anchor(right);
-  margin: 0.3rem 0 0;
-  padding: 0;
-  border: none;
-  color: inherit;
-
-  background-color: #1a1a1a;
-  border-radius: 4px;
-
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-`
-
-const LanguageOption = styled.button<{ $isActive?: boolean }>`
-  display: flex;
-  align-items: center;
-
-  width: 100%;
-  padding: 0.7rem 1rem;
-
-  border: none;
-  background-color: ${(props) => (props.$isActive ? '#4a4a4a' : 'transparent')};
-  color: inherit;
-
-  font-weight: ${(props) => (props.$isActive ? '500' : 'normal')};
-
-  cursor: pointer;
-  text-align: left;
-
-  &:hover {
-    background-color: #4a4a4a;
-  }
-`
-
-const LanguageFlag = styled.span`
-  margin-right: 0.5rem;
-  font-size: 1.1rem;
 `
 
 const GitHubLink = styled.a`

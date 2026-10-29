@@ -1,7 +1,8 @@
 {
     "header": {
         "description": "Base de datos no oficial para el servidor Harbor C1 X1",
-        "lastUpdate": "Última actualización"
+        "lastUpdate": "Última actualización",
+        "language": "Idioma"
     },
     "meta": {
         "loading": "Cargando…",

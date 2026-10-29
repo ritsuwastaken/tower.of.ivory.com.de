@@ -1,7 +1,8 @@
 {
     "header": {
         "description": "Неофициальная база данных для сервера Harbor C1 X1",
-        "lastUpdate": "Последнее обновление"
+        "lastUpdate": "Последнее обновление",
+        "language": "Язык"
     },
     "meta": {
         "loading": "Загрузка…",

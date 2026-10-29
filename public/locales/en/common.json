@@ -1,7 +1,8 @@
 {
     "header": {
         "description": "Unofficial database for Harbor C1 X1 server",
-        "lastUpdate": "Last update"
+        "lastUpdate": "Last update",
+        "language": "Language"
     },
     "meta": {
         "loading": "Loading...",
