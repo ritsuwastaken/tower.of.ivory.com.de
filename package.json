@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "prepare": "husky",
+    "pre-commit": "lint-staged --concurrent false && npm run types:check",
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
@@ -11,6 +13,9 @@
     "lint:check": "eslint .",
     "format:check": "prettier . --check",
     "types:check": "tsc --noEmit"
+  },
+  "overrides": {
+    "eslint": "^10.13.0"
   },
   "dependencies": {
     "next": "^16.5.0-canary.31",
@@ -27,7 +32,9 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^10.13.0",
     "eslint-config-next": "^16.5.0-canary.31",
+    "husky": "^9.1.7",
     "jiti": "^2.7.0",
+    "lint-staged": "^17.6.0",
     "prettier": "^3.9.10",
     "typescript": "^6.0.3"
   },
