@@ -15,15 +15,6 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_LAST_UPDATE: Date.now().toString(),
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/armorsets',
-        permanent: true,
-      },
-    ]
-  },
   async headers() {
     return [
       {
