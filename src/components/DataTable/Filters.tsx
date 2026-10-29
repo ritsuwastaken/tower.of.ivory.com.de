@@ -25,17 +25,24 @@ export function Filters({
       <FiltersSection id={popoverId} popover="auto">
         {allowGridView && (
           <FilterGroup>
-            <FilterLabel>{t('filters.view')}:</FilterLabel>
-            <ViewToggle
-              onClick={() =>
-                onViewModeChange?.(viewMode === 'table' ? 'grid' : 'table')
-              }
-              style={{ width: '100%', marginBottom: '1rem' }}
+            <FilterLabel htmlFor={`${popoverId}-view`}>
+              {t('filters.view')}:
+            </FilterLabel>
+            <FilterSelect
+              id={`${popoverId}-view`}
+              value={viewMode}
+              onChange={(event) => {
+                event.currentTarget
+                  .closest<HTMLElement>('[popover]')
+                  ?.hidePopover()
+                onViewModeChange?.(
+                  event.target.value === 'grid' ? 'grid' : 'table',
+                )
+              }}
             >
-              {viewMode === 'table'
-                ? t('filters.viewModeGrid')
-                : t('filters.viewModeTable')}
-            </ViewToggle>
+              <option value="table">{t('filters.viewModeTable')}</option>
+              <option value="grid">{t('filters.viewModeGrid')}</option>
+            </FilterSelect>
           </FilterGroup>
         )}
 
@@ -198,26 +205,5 @@ const CheckboxLabel = styled.label`
 
   &:hover {
     color: #fff;
-  }
-`
-
-const ViewToggle = styled.button`
-  padding: 0.5rem;
-  border: 1px solid #3a3a3a;
-  border-radius: 4px;
-  background-color: #2a2a2a;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  &:hover {
-    background-color: #3a3a3a;
-  }
-
-  &:focus {
-    outline: none;
-    background-color: #3a3a3a;
   }
 `
