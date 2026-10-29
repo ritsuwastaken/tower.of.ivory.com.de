@@ -60,45 +60,6 @@ export function DataTable<T>({
           onViewModeChange={enableGridView ? onViewModeChange : undefined}
           allowGridView={enableGridView}
         />
-        {(filters.some((f) => f.value !== '') ||
-          checkboxFilters.some((f) => f.checked)) && (
-          <TagsContainer>
-            {filters
-              .filter((filter) => filter.value !== '')
-              .map((filter) => (
-                <Tag key={filter.id}>
-                  {filter.label}:{' '}
-                  {
-                    filter.options.find((opt) => opt.value === filter.value)
-                      ?.label
-                  }
-                  <TagRemoveButton
-                    aria-label={t('dataTable.removeFilter', {
-                      filter: filter.label,
-                    })}
-                    onClick={() => filter.onChange('')}
-                  >
-                    ×
-                  </TagRemoveButton>
-                </Tag>
-              ))}
-            {checkboxFilters
-              .filter((filter) => filter.checked)
-              .map((filter) => (
-                <Tag key={filter.id}>
-                  {filter.label}
-                  <TagRemoveButton
-                    aria-label={t('dataTable.removeFilter', {
-                      filter: filter.label,
-                    })}
-                    onClick={filter.onChange}
-                  >
-                    ×
-                  </TagRemoveButton>
-                </Tag>
-              ))}
-          </TagsContainer>
-        )}
       </FiltersWrapper>
     )
   }
@@ -173,39 +134,6 @@ const SearchInput = styled.input.attrs({
 
   &:focus {
     border-color: #5a5a5a;
-  }
-`
-
-const TagsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-`
-
-const Tag = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  background-color: #2a2a2a;
-  border-radius: 4px;
-  font-size: 0.875rem;
-  color: #fff;
-`
-
-const TagRemoveButton = styled.button`
-  background: none;
-  border: none;
-  color: #aaa;
-  font-size: 1.2rem;
-  padding: 0;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    color: #fff;
   }
 `
 
