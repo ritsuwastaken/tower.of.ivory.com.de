@@ -26,11 +26,12 @@ const resources = {
 }
 
 export const supportedLanguages = Object.keys(resources)
+export const defaultLanguage = 'en'
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'en',
-  fallbackLng: 'en',
+  lng: defaultLanguage,
+  fallbackLng: defaultLanguage,
   debug: process.env.NODE_ENV === 'development',
 
   interpolation: {

@@ -1,16 +1,16 @@
 import { getFlagEmoji } from '@/utils/getFlagEmoji'
 import { supportedLanguages } from '@/i18n'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import { useId } from 'react'
 import styled from 'styled-components'
 
 export const Header = () => {
-  const { t, i18n } = useTranslation()
+  const { t, i18n, language } = useTranslation()
   const languagePopoverId = useId()
   const lastUpdateDate = process.env.NEXT_PUBLIC_LAST_UPDATE
     ? new Date(Number(process.env.NEXT_PUBLIC_LAST_UPDATE)).toLocaleString(
-        i18n.language,
+        language,
         { year: 'numeric', month: 'long', day: 'numeric' },
       )
     : null
@@ -32,7 +32,7 @@ export const Header = () => {
       </HeaderLeft>
       <HeaderRight>
         <LanguageButton popoverTarget={languagePopoverId}>
-          {i18n.language}
+          {language}
         </LanguageButton>
         <LanguageDropdown id={languagePopoverId} popover="auto">
           {supportedLanguages.map((code) => (
@@ -41,7 +41,7 @@ export const Header = () => {
               popoverTarget={languagePopoverId}
               popoverTargetAction="hide"
               onClick={() => i18n.changeLanguage(code)}
-              $isActive={code === i18n.language}
+              $isActive={code === language}
             >
               <LanguageFlag>{getFlagEmoji(code)}</LanguageFlag>
               <span>{code}</span>

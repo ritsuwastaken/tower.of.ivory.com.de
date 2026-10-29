@@ -24,7 +24,7 @@ import {
 import { ArmorSet } from '@/types'
 import { getItemUrl } from '@/utils/getItemUrl'
 import { getTotalBasePrice, getTotalPhysicalDefense } from '@/utils/getTotalX'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import { useRouter } from 'next/navigation'
 import {
   BackButton,

@@ -1,5 +1,5 @@
 import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import styled from 'styled-components'

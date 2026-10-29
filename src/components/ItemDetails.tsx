@@ -17,7 +17,7 @@ import { ArmorSetVisual } from '@/components/ArmorSetVisual'
 import { ExternalLinks } from '@/components/ExternalLinks'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Item } from '@/types'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -118,13 +118,21 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
   }
 
   const propertySections = [
-    { id: 'drop', title: 'Drop Properties', matches: isDropProperty },
+    {
+      id: 'drop',
+      title: t('details.sections.dropProperties'),
+      matches: isDropProperty,
+    },
     {
       id: 'mesh',
-      title: 'Mesh, Texture & Projectile Properties',
+      title: t('details.sections.meshTextureProperties'),
       matches: isMeshTextureProperty,
     },
-    { id: 'sound', title: 'Sound Properties', matches: isSoundProperty },
+    {
+      id: 'sound',
+      title: t('details.sections.soundProperties'),
+      matches: isSoundProperty,
+    },
     {
       id: 'effect',
       title: t('details.sections.otherProperties'),

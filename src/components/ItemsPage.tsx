@@ -9,7 +9,7 @@ import {
   matchesChangeFilter,
   type ChangeFilter,
 } from '@/utils/filters'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useCatalogSearchParams } from '@/components/SearchParamsBoundary'

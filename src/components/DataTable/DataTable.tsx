@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import { ViewTransition } from 'react'
 import styled from 'styled-components'
 import { Pagination } from '../Pagination'

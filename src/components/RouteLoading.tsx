@@ -1,6 +1,6 @@
 'use client'
 
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import styled from 'styled-components'
 import { Skeleton } from './Skeleton'
 import { DataTable } from './DataTable'

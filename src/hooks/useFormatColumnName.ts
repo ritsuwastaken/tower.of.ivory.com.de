@@ -1,13 +1,7 @@
-import { useTranslation } from 'react-i18next'
-
-const defaultFormat = (key: string) =>
-  key
-    .split('_')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
+import { useTranslation } from '@/hooks/useTranslation'
 
 export const useFormatColumnName = () => {
-  const { t } = useTranslation()
+  const { t, i18n, language } = useTranslation()
   return (key: string) =>
-    t(`columns.${key}`, { defaultValue: defaultFormat(key) })
+    i18n.exists(`columns.${key}`, { lng: language }) ? t(`columns.${key}`) : key
 }

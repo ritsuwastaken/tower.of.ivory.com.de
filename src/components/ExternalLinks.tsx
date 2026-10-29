@@ -1,6 +1,6 @@
 import { Item, Skill } from '@/types'
 import { getOriginalObjectName } from '@/utils/getOriginalObjectName'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import styled from 'styled-components'
 

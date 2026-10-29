@@ -6,7 +6,7 @@
     "meta": {
         "loading": "Загрузка…",
         "itemNotFound": "Предмет не найден",
-        "skillNotFound": "Навык не найден",
+        "skillNotFound": "Умение не найдено",
         "armorSetNotFound": "Комплект брони не найден"
     },
     "common": {
@@ -23,49 +23,52 @@
         "notApplicable": "—",
         "propertyChanged": "(изменено)",
         "sections": {
-            "changedProperties": "Изменённые параметры",
-            "otherProperties": "Другие параметры"
+            "changedProperties": "Изменения",
+            "otherProperties": "Прочее",
+            "dropProperties": "Предмет на земле",
+            "meshTextureProperties": "Модели и текстуры",
+            "soundProperties": "Звуки"
         }
     },
     "navigation": {
         "armorsets": "Комплекты брони",
-        "skills": "Навыки",
+        "skills": "Умения",
         "weapons": "Оружие",
         "armor": "Броня",
         "miscellaneous": "Разное"
     },
     "itemsPage": {
         "searchPlaceholder": "Поиск предметов…",
-        "noResults": "Нет подходящих предметов по этим фильтрам"
+        "noResults": "Подходящих предметов не найдено"
     },
     "armorSetsPage": {
-        "noResults": "Нет подходящих комплектов по этим фильтрам",
+        "noResults": "Подходящих комплектов брони не найдено",
         "searchPlaceholder": "Поиск комплектов брони…",
         "name": "Название",
         "physicalDefense": "Физическая защита",
         "basePrice": "Базовая цена",
-        "parts": "Части",
+        "parts": "Состав",
         "bonus": "Бонус",
         "setBonus": "Бонус комплекта"
     },
     "skillsPage": {
-        "searchPlaceholder": "Поиск навыков…",
-        "noResults": "Нет подходящих навыков по этим фильтрам"
+        "searchPlaceholder": "Поиск умений…",
+        "noResults": "Подходящих умений не найдено"
     },
     "itemDetails": {
-        "changed": "Этот предмет изменён на Harbor",
-        "new": "Этот предмет есть только на Harbor",
+        "changed": "Изменено на Harbor",
+        "new": "Добавлено на Harbor",
         "partOfSets": "Входит в комплекты",
         "armorType": "Тип брони",
         "basePrice": "Базовая цена",
-        "pieces": "Части"
+        "pieces": "Предметы"
     },
     "skillDetails": {
-        "changed": "Этот навык изменён на Harbor",
-        "new": "Этот навык есть только на Harbor",
+        "changed": "Изменено на Harbor",
+        "new": "Добавлено на Harbor",
         "level": "Уровень",
         "levels": "Уровни",
-        "unnamedSkill": "Без названия (id {{id}})",
+        "unnamedSkill": "Умение без названия (ID {{id}})",
         "pageTitle": "{{name}} · Ур. {{level}} · {{section}}",
         "levelShort": "Уровень {{level}}",
         "levelWithMp": "Уровень {{level}} (MP: {{mp}})"
@@ -90,24 +93,24 @@
         "columns": "Столбцы",
         "onlyNewItems": "Только новые предметы",
         "onlyChangedItems": "Только изменённые предметы",
-        "onlyNewSkills": "Только новые навыки",
-        "onlyChangedSkills": "Только изменённые навыки",
+        "onlyNewSkills": "Только новые умения",
+        "onlyChangedSkills": "Только изменённые умения",
         "mergeLevels": "Объединить уровни",
-        "bodyPart": "Часть тела"
+        "bodyPart": "Слот экипировки"
     },
     "armorSetDetails": {
         "loading": "Загрузка комплекта брони…",
         "notFound": "Комплект брони не найден",
-        "totalPDef": "Сумма P.Def",
+        "totalPDef": "Общая физ. защита",
         "basePrice": "Базовая цена",
-        "part": "Часть",
+        "part": "Предмет",
         "pDef": "Физ. защита",
         "crystalCount": "Количество кристаллов",
-        "unnamedItem": "Предмет без названия с id"
+        "unnamedItem": "Предмет без названия, ID"
     },
     "externalLinks": {
-        "elmoreLab": "Перейти на ElmoreLab",
-        "l2hub": "Перейти на L2hub"
+        "elmoreLab": "Открыть на ElmoreLab",
+        "l2hub": "Открыть на L2hub"
     },
     "badge": {
         "new": "НОВЫЙ",
@@ -119,8 +122,72 @@
         "crystal_type": "Грейд",
         "physical_defense": "Физ. защита",
         "magical_defense": "Маг. защита",
-        "physical_damage": "Физ. урон",
-        "magical_damage": "Маг. урон",
-        "attack_speed": "Скорость атаки"
+        "physical_damage": "Физ. атака",
+        "magical_damage": "Маг. атака",
+        "attack_speed": "Скорость атаки",
+        "icon": "Значок",
+        "object_id": "ID предмета",
+        "object_name": "Внутреннее название",
+        "weight": "Вес",
+        "crystallizable": "Кристаллизация",
+        "base_price": "Базовая цена",
+        "crystal_count": "Количество кристаллов",
+        "is_new": "Новый",
+        "is_changed": "Изменён",
+        "mp_consume": "Расход MP",
+        "weapon_type": "Тип оружия",
+        "soulshot_count": "Зарядов души",
+        "spiritshot_count": "Зарядов духа",
+        "visual": "Внешний вид",
+        "grade": "Грейд",
+        "items": "Состав",
+        "bonus_stats": "Бонусы",
+        "body_part": "Слот экипировки",
+        "armor_type": "Тип брони",
+        "mp_bonus": "Бонус MP",
+        "shield_defense": "Защита щита",
+        "shield_defense_rate": "Шанс блока щитом",
+        "hp_consume": "Расход HP",
+        "reuse_delay": "Перезарядка",
+        "skill_level": "Уровень умения",
+        "is_magic": "Магическое умение",
+        "skill_id": "ID умения",
+        "hit_time": "Время применения",
+        "target_type": "Тип цели",
+        "operate_type": "Тип умения",
+        "consume_item_id": "Расходуемый предмет (ID)",
+        "consume_item_count": "Расход предметов",
+        "cast_range": "Дальность применения",
+        "skill_time": "Время действия",
+        "abnormal_time": "Длительность эффекта",
+        "abnormal_id": "ID эффекта",
+        "animation": "Анимация",
+        "cast_style": "Стиль применения",
+        "bar_level_main": "Уровень основной панели",
+        "bar_level_sub_max": "Максимальный уровень дополнительной панели",
+        "id": "ID",
+        "set_bonus": "Бонус комплекта",
+        "avoid_modify": "Уклонение",
+        "critical": "Шанс критического удара",
+        "curvature": "Кривизна",
+        "drop_anim_type": "Анимация на земле",
+        "drop_height": "Высота модели на земле",
+        "drop_mesh": "Модель на земле",
+        "drop_radius": "Радиус модели на земле",
+        "drop_sound": "Звук при выбрасывании",
+        "drop_texture": "Текстура на земле",
+        "drop_type": "Тип отображения на земле",
+        "durability": "Прочность",
+        "equip_sound": "Звук при надевании",
+        "hit_modify": "Точность",
+        "item_sound": "Звук предмета",
+        "material_type": "Тип материала",
+        "mesh": "Модель",
+        "projectile": "Снаряд",
+        "random_damage": "Разброс урона",
+        "texture": "Текстура",
+        "attack_effect": "Эффект атаки",
+        "consume_type": "Тип использования",
+        "etcitem_type": "Тип предмета"
     }
 }

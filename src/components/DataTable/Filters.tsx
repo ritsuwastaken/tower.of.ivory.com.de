@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import { useId } from 'react'
 import styled from 'styled-components'
 import { FiltersProps } from './types'

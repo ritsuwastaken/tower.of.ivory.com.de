@@ -8,7 +8,7 @@ import type { ReactNode } from 'react'
 import { SearchParamsBoundary } from '@/components/SearchParamsBoundary'
 import { useEffect } from 'react'
 import styled from 'styled-components'
-import i18n, { supportedLanguages } from '@/i18n'
+import i18n, { defaultLanguage, supportedLanguages } from '@/i18n'
 import { AssetBasePathContext } from '@/components/CatalogImage'
 
 export default function AppShell({
@@ -19,7 +19,7 @@ export default function AppShell({
   basePath?: string
 }) {
   useEffect(() => {
-    const baseLng = (lng: string) => lng.split('-')[0] || 'en'
+    const baseLng = (lng: string) => lng.split('-')[0] || defaultLanguage
     const applyHtmlLang = (lng: string) => {
       document.documentElement.lang = baseLng(lng)
     }

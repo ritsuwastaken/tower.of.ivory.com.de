@@ -1,5 +1,5 @@
 import { type ReactNode, startTransition, ViewTransition } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import {
   Label,

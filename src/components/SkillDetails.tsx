@@ -26,7 +26,7 @@ import {
 } from '@/components/SearchParamsBoundary'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from '@/hooks/useTranslation'
 import { useEffect, useState } from 'react'
 import { ExternalLinks } from '@/components/ExternalLinks'
 import {
