@@ -16,12 +16,5 @@ export default defineConfig({
     browser: true,
     node: true,
   },
-  ignorePatterns: [
-    'node_modules/**',
-    '.next/**',
-    'out/**',
-    'dist/**',
-    'build/**',
-    'next-env.d.ts',
-  ],
+  ignorePatterns: ['node_modules/**', '.next/**', 'out/**', 'next-env.d.ts'],
 })
