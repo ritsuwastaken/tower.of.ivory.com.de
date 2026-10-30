@@ -1,7 +1,8 @@
-import type { KeyboardEvent, ReactNode } from 'react'
+import type { KeyboardEvent } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import styled from 'styled-components'
-import { DataTableProps } from './types'
+import type { ColumnSettingsProps, DataTableProps } from './types'
+import { ColumnSettings } from './ColumnSettings'
 
 type ResultsProps<T> = Pick<
   DataTableProps<T>,
@@ -13,7 +14,7 @@ type ResultsProps<T> = Pick<
   | 'renderCell'
   | 'noResultsMessage'
   | 'onResetFilters'
-> & { viewMode: 'table' | 'grid'; columnSettings: ReactNode }
+> & { viewMode: 'table' | 'grid'; columnSettings: ColumnSettingsProps }
 
 export function TableResults<T>({
   data,
@@ -33,36 +34,56 @@ export function TableResults<T>({
   function renderData() {
     return viewMode === 'table' ? (
       <>
-        <MobileSettings>{columnSettings}</MobileSettings>
-        <Table>
+        <MobileSettings>
+          <ColumnSettings {...columnSettings} />
+        </MobileSettings>
+        <Table
+          onMouseDown={(event) => {
+            if (
+              event.detail > 1 &&
+              event.target instanceof HTMLElement &&
+              event.target.matches('td, th, tr, table')
+            ) {
+              event.preventDefault()
+            }
+          }}
+        >
           <thead>
             <tr>
               {(visibleColumns.length
                 ? visibleColumns
                 : [{ key: 'settings', label: '', visible: true }]
-              ).map((column, index) => (
-                <Th
-                  key={column.key as string}
-                  aria-sort={
-                    sortConfig.column === column.key
-                      ? sortConfig.direction === 'asc'
-                        ? 'ascending'
-                        : 'descending'
-                      : undefined
-                  }
-                  onClick={
-                    column.label
-                      ? () => onSort(column.key as keyof T)
-                      : undefined
-                  }
-                >
-                  {index === 0 && columnSettings}
-                  {column.label}
-                  {sortConfig.column === column.key && (
-                    <span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>
-                  )}
-                </Th>
-              ))}
+              ).map((column, index) =>
+                index === 0 && !column.label ? (
+                  <SettingsTh key={column.key as string}>
+                    <ColumnSettings {...columnSettings} fillCell />
+                  </SettingsTh>
+                ) : (
+                  <Th
+                    key={column.key as string}
+                    aria-sort={
+                      sortConfig.column === column.key
+                        ? sortConfig.direction === 'asc'
+                          ? 'ascending'
+                          : 'descending'
+                        : undefined
+                    }
+                    onClick={
+                      column.label
+                        ? () => onSort(column.key as keyof T)
+                        : undefined
+                    }
+                  >
+                    {index === 0 && <ColumnSettings {...columnSettings} />}
+                    {column.label}
+                    {sortConfig.column === column.key && (
+                      <span>
+                        {sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}
+                      </span>
+                    )}
+                  </Th>
+                ),
+              )}
             </tr>
           </thead>
           <tbody>
@@ -84,7 +105,7 @@ export function TableResults<T>({
       </>
     ) : (
       <>
-        {columnSettings}
+        <ColumnSettings {...columnSettings} />
         <GridContainer>
           {data.map((item, index) => (
             <GridItem key={index} onClick={() => onRowClick?.(item)}>
@@ -127,7 +148,7 @@ export function TableResults<T>({
     renderData()
   ) : (
     <>
-      {columnSettings}
+      <ColumnSettings {...columnSettings} />
       {renderNoResults(noResultsMessage ?? t('dataTable.noResults'))}
     </>
   )
@@ -209,6 +230,7 @@ const Th = styled.th.attrs<{ onClick?: () => void }>((props) => ({
     }
   },
 }))<{ onClick?: () => void }>`
+  position: relative;
   padding: 0.75rem;
   text-align: left;
   border-bottom: 1px solid #2a2a2a;
@@ -221,6 +243,12 @@ const Th = styled.th.attrs<{ onClick?: () => void }>((props) => ({
   &:focus {
     color: #fff;
   }
+`
+
+const SettingsTh = styled(Th)`
+  padding: 0;
+  min-width: 3rem;
+  height: 3rem;
 `
 
 const Td = styled.td`

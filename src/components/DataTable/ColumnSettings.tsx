@@ -1,5 +1,5 @@
 import { useTranslation } from '@/hooks/useTranslation'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { useId } from 'react'
 import type { ColumnSettingsProps } from './types'
 
@@ -7,16 +7,21 @@ export function ColumnSettings({
   columnVisibility,
   onColumnVisibilityChange,
   formatColumnName,
-}: ColumnSettingsProps) {
+  fillCell = false,
+}: ColumnSettingsProps & { fillCell?: boolean }) {
   const { t } = useTranslation()
   const popoverId = useId()
   const anchorName = `--columns-${popoverId.replace(/[^a-zA-Z0-9_-]/g, '')}`
   return (
-    <Container onClick={(event) => event.stopPropagation()}>
+    <Container
+      $fillCell={fillCell}
+      onClick={(event) => event.stopPropagation()}
+    >
       <SettingsButton
         type="button"
         popoverTarget={popoverId}
         $anchorName={anchorName}
+        $fillCell={fillCell}
         aria-label={t('filters.columns')}
         title={t('filters.columns')}
       >
@@ -44,13 +49,16 @@ export function ColumnSettings({
   )
 }
 
-const Container = styled.div`
-  display: inline-block;
+const Container = styled.div<{ $fillCell: boolean }>`
+  display: ${({ $fillCell }) => ($fillCell ? 'contents' : 'inline-block')};
   vertical-align: middle;
   text-align: left;
 `
 
-const SettingsButton = styled.button<{ $anchorName: string }>`
+const SettingsButton = styled.button<{
+  $anchorName: string
+  $fillCell: boolean
+}>`
   anchor-name: ${({ $anchorName }) => $anchorName};
   display: inline-flex;
   align-items: center;
@@ -63,11 +71,24 @@ const SettingsButton = styled.button<{ $anchorName: string }>`
   font: inherit;
   font-size: 1.25rem;
   line-height: 1;
+  user-select: none;
+  -webkit-user-select: none;
 
   @media (max-width: 890px) {
     min-height: 44px;
     padding: 0.5rem;
   }
+
+  ${({ $fillCell }) =>
+    $fillCell &&
+    css`
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0.75rem;
+      justify-content: flex-start;
+    `}
 
   &:hover,
   &:focus-visible {
