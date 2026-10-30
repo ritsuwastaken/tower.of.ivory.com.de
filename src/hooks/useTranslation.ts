@@ -20,5 +20,12 @@ export function useTranslation() {
     getLanguage,
     getServerLanguage,
   )
-  return { ...useI18nextTranslation(undefined, { lng: language }), language }
+  const {
+    t,
+    i18n: translationI18n,
+    ready,
+  } = useI18nextTranslation(undefined, {
+    lng: language,
+  })
+  return { t, i18n: translationI18n, ready, language }
 }

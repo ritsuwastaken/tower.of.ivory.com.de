@@ -1,5 +1,6 @@
 'use client'
 
+import { formatPropertyValue } from '@/utils/formatPropertyValue'
 import { sortData, paginateData } from '@/utils/pagination'
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { Item } from '@/types'
@@ -136,9 +137,7 @@ export const ItemsPage = ({
       case 'base_price':
         return item.base_price?.toLocaleString() || '-'
       default:
-        return Array.isArray(item[column as keyof Item])
-          ? (item[column as keyof Item] as string[]).join(', ')
-          : item[column as keyof Item]?.toString() || '-'
+        return formatPropertyValue(item[column as keyof Item]) || '-'
     }
   }
 

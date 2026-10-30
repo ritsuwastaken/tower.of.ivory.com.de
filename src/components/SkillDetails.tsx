@@ -1,5 +1,6 @@
 'use client'
 
+import { formatPropertyValue } from '@/utils/formatPropertyValue'
 import {
   MobileLevelSelect,
   SkillLevels,
@@ -237,11 +238,7 @@ function SkillDetailsContent({
                 return (
                   <StatRow key={key}>
                     <Label>{formatColumnName(key)}:</Label>
-                    <Value>
-                      {Array.isArray(value)
-                        ? value.join(', ')
-                        : value?.toString()}
-                    </Value>
+                    <Value>{formatPropertyValue(value)}</Value>
                   </StatRow>
                 )
               })}

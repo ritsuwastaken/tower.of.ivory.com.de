@@ -11,7 +11,7 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "src/**/*",
-    "oxlint.config.ts"
+    "oxlint.config.mts"
   ],
   "exclude": ["node_modules"]
 }

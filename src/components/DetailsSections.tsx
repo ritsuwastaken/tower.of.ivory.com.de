@@ -1,3 +1,4 @@
+import { formatPropertyValue } from '@/utils/formatPropertyValue'
 import { type ReactNode, startTransition, ViewTransition } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
@@ -58,20 +59,18 @@ export function ChangedProperties({
                     <Value>
                       {isNumeric ? (
                         <>
-                          {oldValue?.toString()}{' '}
+                          {formatPropertyValue(oldValue)}{' '}
                           <ChangeArrow
                             $increased={Number(newValue) > Number(oldValue)}
                           >
                             →
                           </ChangeArrow>{' '}
-                          {newValue?.toString()}
+                          {formatPropertyValue(newValue)}
                         </>
                       ) : !oldValue ? (
                         '-'
-                      ) : Array.isArray(oldValue) ? (
-                        oldValue.join(', ')
                       ) : (
-                        oldValue.toString()
+                        formatPropertyValue(oldValue)
                       )}
                     </Value>
                   </StatRow>

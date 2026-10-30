@@ -1,5 +1,6 @@
 'use client'
 
+import { formatPropertyValue } from '@/utils/formatPropertyValue'
 import {
   ArmorSets,
   SetVisualContainer,
@@ -29,7 +30,6 @@ import {
   ContentWrapper,
   Description,
   HeaderLeft,
-  HeaderRight,
   ItemHeader,
   Label,
   StatRow,
@@ -117,12 +117,10 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
                 <Label>{formatColumnName(key)}:</Label>
                 <Value>
                   {normalizedKey === 'crystal_type'
-                    ? String(value).toLowerCase() === 'none'
-                      ? String(value)
-                      : String(value).toUpperCase()
-                    : Array.isArray(value)
-                      ? value.join(', ')
-                      : String(value)}
+                    ? formatPropertyValue(value).toLowerCase() === 'none'
+                      ? formatPropertyValue(value)
+                      : formatPropertyValue(value).toUpperCase()
+                    : formatPropertyValue(value)}
                 </Value>
               </StatRow>
             ))}
@@ -131,7 +129,7 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
               <StatRow key={key}>
                 <Label>{formatColumnName(key)}:</Label>
                 <Value>
-                  {Array.isArray(value) ? value.join(', ') : value?.toString()}
+                  {formatPropertyValue(value)}
                   {changedKeys.has(normalizedKey) && (
                     <ChangedTag> {t('details.propertyChanged')}</ChangedTag>
                   )}
@@ -156,11 +154,7 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
               {section.entries.map(({ key, value }) => (
                 <StatRow key={key}>
                   <Label>{formatColumnName(key)}:</Label>
-                  <Value>
-                    {Array.isArray(value)
-                      ? value.join(', ')
-                      : value?.toString()}
-                  </Value>
+                  <Value>{formatPropertyValue(value)}</Value>
                 </StatRow>
               ))}
             </CollapsibleSection>

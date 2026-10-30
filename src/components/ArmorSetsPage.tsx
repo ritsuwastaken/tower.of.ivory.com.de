@@ -1,5 +1,6 @@
 'use client'
 
+import { formatPropertyValue } from '@/utils/formatPropertyValue'
 import { sortData, paginateData } from '@/utils/pagination'
 import { ArmorSetVisual } from '@/components/ArmorSetVisual'
 import { DataTable, useDataTable } from '@/components/DataTable'
@@ -116,7 +117,7 @@ export default function ArmorSetsPage({
       case 'bonus_stats':
         return armorSet.set_bonus || '-'
       default:
-        return armorSet[column as keyof ArmorSet]?.toString() || '-'
+        return formatPropertyValue(armorSet[column as keyof ArmorSet]) || '-'
     }
   }
 

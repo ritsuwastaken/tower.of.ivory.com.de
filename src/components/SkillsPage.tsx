@@ -1,5 +1,6 @@
 'use client'
 
+import { formatPropertyValue } from '@/utils/formatPropertyValue'
 import { sortData, paginateData } from '@/utils/pagination'
 import { DataTable, useDataTable } from '@/components/DataTable'
 import { Skill } from '@/types'
@@ -107,7 +108,7 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
       case 'is_magic':
         return skill[column] ? t('common.yes') : t('common.no')
       default:
-        return skill[column as keyof Skill]?.toString() || '-'
+        return formatPropertyValue(skill[column as keyof Skill]) || '-'
     }
   }
 

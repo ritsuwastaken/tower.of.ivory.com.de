@@ -84,11 +84,8 @@ export default function RouteLoading({
   const { t } = useTranslation()
   const details = kind === 'item' || kind === 'skill' || kind === 'armorset'
   return (
-    <LoadingRegion
-      role="status"
-      aria-label={t('meta.loading')}
-      aria-busy="true"
-    >
+    <LoadingRegion aria-busy="true">
+      <LoadingStatus>{t('meta.loading')}</LoadingStatus>
       <div aria-hidden="true" inert>
         {details ? (
           <DetailSkeleton kind={kind} />
@@ -361,6 +358,16 @@ function ArmorSetSkeleton() {
 const LoadingRegion = styled.div`
   min-height: 70vh;
   width: 100%;
+`
+
+const LoadingStatus = styled.output`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 `
 
 const LineGroup = styled.div`

@@ -27,7 +27,6 @@ export function ColumnSettings({
         id={popoverId}
         popover="auto"
         $anchorName={anchorName}
-        role="group"
         aria-label={t('filters.columns')}
       >
         {Object.entries(columnVisibility).map(([column, isVisible]) => (
@@ -45,7 +44,7 @@ export function ColumnSettings({
   )
 }
 
-const Container = styled.span`
+const Container = styled.div`
   display: inline-block;
   vertical-align: middle;
   text-align: left;
@@ -85,7 +84,7 @@ const MobileLabel = styled.span`
   }
 `
 
-const ColumnToggles = styled.div<{ $anchorName: string }>`
+const ColumnToggles = styled.fieldset<{ $anchorName: string }>`
   &:popover-open {
     display: grid;
   }
