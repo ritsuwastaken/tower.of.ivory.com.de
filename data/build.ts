@@ -110,7 +110,7 @@ function runClient() {
           ? diff({ name: on.name, description: on.description }, { name: nm.name, description: nm.description })
           : { isChanged: false, changes: {} }
         if (nd.isChanged && Object.keys(nd.changes).length) {
-          x.changes = { ...(x.changes || {}), ...nd.changes }
+          x.changes = { ...x.changes, ...nd.changes }
           x.is_changed = true
         }
         x.name = nm.name
@@ -149,7 +149,7 @@ function runClient() {
         ? diff({ name: on.name, description: on.description || '' }, { name: nm.name, description: nm.description || '' })
         : { isChanged: false, changes: {} }
       if (nd.isChanged && Object.keys(nd.changes).length) {
-        x.changes = { ...(x.changes || {}), ...nd.changes }
+        x.changes = { ...x.changes, ...nd.changes }
         x.is_changed = true
       }
       x.name = nm.name

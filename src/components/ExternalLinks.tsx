@@ -25,7 +25,7 @@ export const ExternalLinks = ({ data }: { data: Skill | Item }) => {
               (data.is_changed && data.changes?.object_name?.old) ||
               data.object_name
             )
-              .replace(/[\[\]]/g, '')
+              .replace(/[[\]]/g, '')
               .toLowerCase()
               .replace(/ /g, '_')}`
       }
