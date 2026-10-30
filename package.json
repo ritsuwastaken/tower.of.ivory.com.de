@@ -11,18 +11,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --fix .",
+    "lint": "oxlint --type-aware --fix .",
     "format": "prettier . --write",
-    "lint:check": "eslint .",
+    "lint:check": "oxlint --type-aware .",
     "format:check": "prettier . --check",
     "types:check": "tsc --noEmit"
   },
-  "overrides": {
-    "eslint": "^10.13.0"
-  },
   "dependencies": {
     "i18next": "^26.5.11",
-    "next": "^16.5.0-canary.31",
+    "next": "^16.5.0-canary.32",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-i18next": "^17.1.9",
@@ -34,13 +31,12 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "babel-plugin-react-compiler": "^1.0.0",
-    "eslint": "^10.13.0",
-    "eslint-config-next": "^16.5.0-canary.31",
     "husky": "^9.1.7",
-    "jiti": "^2.7.0",
     "lint-staged": "^17.6.0",
+    "oxlint": "^1.90.0",
+    "oxlint-tsgolint": "^7.0.2005",
     "prettier": "^3.9.10",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "allowScripts": {
     "unrs-resolver": false
