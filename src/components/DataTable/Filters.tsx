@@ -6,6 +6,9 @@ import { FiltersProps } from './types'
 
 export function Filters({
   filters,
+  columnVisibility,
+  onColumnVisibilityChange,
+  formatColumnName,
   viewMode,
   onViewModeChange,
   allowGridView,
@@ -52,6 +55,40 @@ export function Filters({
             </FilterSelect>
           </FilterGroup>
         ))}
+        <FilterGroup>
+          <FilterLabel htmlFor={`${filterId}-columns`}>
+            {t('filters.columns')}
+          </FilterLabel>
+          <FilterSelect
+            id={`${filterId}-columns`}
+            multiple
+            size={1}
+            value={Object.keys(columnVisibility).filter(
+              (column) => columnVisibility[column],
+            )}
+            onChange={(event) => {
+              const selected = new Set(
+                Array.from(
+                  event.currentTarget.selectedOptions,
+                  (option) => option.value,
+                ),
+              )
+              for (const [column, visible] of Object.entries(
+                columnVisibility,
+              )) {
+                if (visible !== selected.has(column)) {
+                  onColumnVisibilityChange(column, selected.has(column))
+                }
+              }
+            }}
+          >
+            {Object.keys(columnVisibility).map((column) => (
+              <option key={column} value={column}>
+                {formatColumnName(column)}
+              </option>
+            ))}
+          </FilterSelect>
+        </FilterGroup>
       </SelectFilters>
     </FiltersSection>
   )
@@ -85,6 +122,14 @@ const FilterLabel = styled.label`
 
 const FilterSelect = styled.select`
   ${selectStyles}
+  height: 2.5rem;
+  font: inherit;
+  line-height: 1.25;
+
+  &[multiple] option {
+    padding: 0.5rem 0.75rem;
+  }
+
   &:focus {
     border-color: #5a5a5a;
   }

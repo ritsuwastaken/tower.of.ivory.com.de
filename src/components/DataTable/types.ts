@@ -20,20 +20,20 @@ interface SharedFilterProps {
   onViewModeChange?: (mode: 'table' | 'grid') => void
 }
 
-export interface ColumnSettingsProps {
+interface ColumnVisibilityProps {
   columnVisibility: Record<string, boolean>
   onColumnVisibilityChange: (column: string, visible: boolean) => void
   formatColumnName: (column: string) => string
 }
 
-export interface FiltersProps extends SharedFilterProps {
+export interface FiltersProps extends SharedFilterProps, ColumnVisibilityProps {
   filters: FilterConfig[]
   viewMode: 'table' | 'grid'
   allowGridView?: boolean
 }
 
 export interface DataTableProps<T>
-  extends SharedFilterProps, ColumnSettingsProps {
+  extends SharedFilterProps, ColumnVisibilityProps {
   data: T[]
   columns: {
     key: keyof T | string

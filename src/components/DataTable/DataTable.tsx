@@ -50,6 +50,9 @@ export function DataTable<T>({
           placeholder={searchPlaceholder || t('dataTable.searchPlaceholder')}
         />
         <Filters
+          columnVisibility={columnVisibility}
+          onColumnVisibilityChange={onColumnVisibilityChange}
+          formatColumnName={formatColumnName}
           filters={filters}
           viewMode={effectiveViewMode}
           onViewModeChange={enableGridView ? onViewModeChange : undefined}
@@ -71,11 +74,6 @@ export function DataTable<T>({
           $isStale={isSearchPending}
         >
           <TableResults
-            columnSettings={{
-              columnVisibility,
-              onColumnVisibilityChange,
-              formatColumnName,
-            }}
             data={data}
             columns={columns}
             onSort={onSort}

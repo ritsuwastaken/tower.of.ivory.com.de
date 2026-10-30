@@ -1,8 +1,7 @@
 import type { KeyboardEvent } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import styled from 'styled-components'
-import type { ColumnSettingsProps, DataTableProps } from './types'
-import { ColumnSettings } from './ColumnSettings'
+import type { DataTableProps } from './types'
 
 type ResultsProps<T> = Pick<
   DataTableProps<T>,
@@ -14,7 +13,7 @@ type ResultsProps<T> = Pick<
   | 'renderCell'
   | 'noResultsMessage'
   | 'onResetFilters'
-> & { viewMode: 'table' | 'grid'; columnSettings: ColumnSettingsProps }
+> & { viewMode: 'table' | 'grid' }
 
 export function TableResults<T>({
   data,
@@ -26,106 +25,83 @@ export function TableResults<T>({
   noResultsMessage,
   onResetFilters,
   viewMode,
-  columnSettings,
 }: ResultsProps<T>) {
   const { t } = useTranslation()
   const visibleColumns = columns.filter((column) => column.visible)
 
   function renderData() {
     return viewMode === 'table' ? (
-      <>
-        <MobileSettings>
-          <ColumnSettings {...columnSettings} />
-        </MobileSettings>
-        <Table
-          onMouseDown={(event) => {
-            if (
-              event.detail > 1 &&
-              event.target instanceof HTMLElement &&
-              event.target.matches('td, th, tr, table')
-            ) {
-              event.preventDefault()
-            }
-          }}
-        >
-          <thead>
-            <tr>
-              {(visibleColumns.length
-                ? visibleColumns
-                : [{ key: 'settings', label: '', visible: true }]
-              ).map((column, index) =>
-                index === 0 && !column.label ? (
-                  <SettingsTh key={column.key as string}>
-                    <ColumnSettings {...columnSettings} fillCell />
-                  </SettingsTh>
-                ) : (
-                  <Th
-                    key={column.key as string}
-                    aria-sort={
-                      sortConfig.column === column.key
-                        ? sortConfig.direction === 'asc'
-                          ? 'ascending'
-                          : 'descending'
-                        : undefined
-                    }
-                    onClick={
-                      column.label
-                        ? () => onSort(column.key as keyof T)
-                        : undefined
-                    }
-                  >
-                    {index === 0 && <ColumnSettings {...columnSettings} />}
-                    {column.label}
-                    {sortConfig.column === column.key && (
-                      <span>
-                        {sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}
-                      </span>
-                    )}
-                  </Th>
-                ),
-              )}
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item, index) => (
-              <TableRow key={index} onClick={() => onRowClick?.(item)}>
-                {visibleColumns.map((column) => (
-                  <Td
-                    key={column.key as string}
-                    data-label={column.label}
-                    data-key={column.key}
-                  >
-                    {renderCell(item, column.key as keyof T | string)}
-                  </Td>
-                ))}
-              </TableRow>
+      <Table
+        onMouseDown={(event) => {
+          if (
+            event.detail > 1 &&
+            event.target instanceof HTMLElement &&
+            event.target.matches('td, th, tr, table')
+          ) {
+            event.preventDefault()
+          }
+        }}
+      >
+        <thead>
+          <tr>
+            {visibleColumns.map((column) => (
+              <Th
+                key={column.key as string}
+                aria-sort={
+                  sortConfig.column === column.key
+                    ? sortConfig.direction === 'asc'
+                      ? 'ascending'
+                      : 'descending'
+                    : undefined
+                }
+                onClick={
+                  column.label ? () => onSort(column.key as keyof T) : undefined
+                }
+              >
+                {column.label}
+                {sortConfig.column === column.key && (
+                  <span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>
+                )}
+              </Th>
             ))}
-          </tbody>
-        </Table>
-      </>
-    ) : (
-      <>
-        <ColumnSettings {...columnSettings} />
-        <GridContainer>
+          </tr>
+        </thead>
+        <tbody>
           {data.map((item, index) => (
-            <GridItem key={index} onClick={() => onRowClick?.(item)}>
-              <GridItemContent>
-                {renderCell(item, 'visual')}
-                {visibleColumns
-                  .filter((col) => col.key !== 'visual')
-                  .map((column) => (
-                    <GridItemField key={column.key as string}>
-                      <span>{column.label}:</span>
-                      <span>
-                        {renderCell(item, column.key as keyof T | string)}
-                      </span>
-                    </GridItemField>
-                  ))}
-              </GridItemContent>
-            </GridItem>
+            <TableRow key={index} onClick={() => onRowClick?.(item)}>
+              {visibleColumns.map((column) => (
+                <Td
+                  key={column.key as string}
+                  data-label={column.label}
+                  data-key={column.key}
+                >
+                  {renderCell(item, column.key as keyof T | string)}
+                </Td>
+              ))}
+            </TableRow>
           ))}
-        </GridContainer>
-      </>
+        </tbody>
+      </Table>
+    ) : (
+      <GridContainer>
+        {data.map((item, index) => (
+          <GridItem key={index} onClick={() => onRowClick?.(item)}>
+            <GridItemContent>
+              {renderCell(item, 'visual')}
+              {visibleColumns
+                .filter((col) => col.key !== 'visual')
+                .map((column) => (
+                  <GridItemField key={column.key as string}>
+                    <span>{column.label}:</span>
+                    <span>
+                      {renderCell(item, column.key as keyof T | string)}
+                    </span>
+                  </GridItemField>
+                ))}
+            </GridItemContent>
+          </GridItem>
+        ))}
+      </GridContainer>
     )
   }
 
@@ -144,25 +120,10 @@ export function TableResults<T>({
       </NoResults>
     )
   }
-  return data.length > 0 ? (
-    renderData()
-  ) : (
-    <>
-      <ColumnSettings {...columnSettings} />
-      {renderNoResults(noResultsMessage ?? t('dataTable.noResults'))}
-    </>
-  )
+  return data.length > 0
+    ? renderData()
+    : renderNoResults(noResultsMessage ?? t('dataTable.noResults'))
 }
-
-const MobileSettings = styled.div`
-  display: none;
-
-  @media (max-width: 890px) {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 0.75rem;
-  }
-`
 
 const Table = styled.table`
   width: 100%;
@@ -230,7 +191,6 @@ const Th = styled.th.attrs<{ onClick?: () => void }>((props) => ({
     }
   },
 }))<{ onClick?: () => void }>`
-  position: relative;
   padding: 0.75rem;
   text-align: left;
   border-bottom: 1px solid #2a2a2a;
@@ -243,12 +203,6 @@ const Th = styled.th.attrs<{ onClick?: () => void }>((props) => ({
   &:focus {
     color: #fff;
   }
-`
-
-const SettingsTh = styled(Th)`
-  padding: 0;
-  min-width: 3rem;
-  height: 3rem;
 `
 
 const Td = styled.td`
