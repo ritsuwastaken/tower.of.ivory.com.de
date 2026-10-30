@@ -20,7 +20,8 @@ export function ColumnSettings({
         aria-label={t('filters.columns')}
         title={t('filters.columns')}
       >
-        ⚙
+        <span aria-hidden="true">⚙</span>
+        <MobileLabel>{t('filters.columns')}</MobileLabel>
       </SettingsButton>
       <ColumnToggles
         id={popoverId}
@@ -52,6 +53,9 @@ const Container = styled.span`
 
 const SettingsButton = styled.button<{ $anchorName: string }>`
   anchor-name: ${({ $anchorName }) => $anchorName};
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.25rem;
   border: none;
   background: none;
@@ -61,9 +65,23 @@ const SettingsButton = styled.button<{ $anchorName: string }>`
   font-size: 1.25rem;
   line-height: 1;
 
+  @media (max-width: 890px) {
+    min-height: 44px;
+    padding: 0.5rem;
+  }
+
   &:hover,
   &:focus-visible {
     color: #fff;
+  }
+`
+
+const MobileLabel = styled.span`
+  display: none;
+
+  @media (max-width: 890px) {
+    display: inline;
+    font-size: 0.9rem;
   }
 `
 
@@ -79,6 +97,11 @@ const ColumnToggles = styled.div<{ $anchorName: string }>`
     left: anchor(left);
     margin: 0;
     position-try-fallbacks: flip-inline, flip-block;
+
+    @media (max-width: 890px) {
+      left: auto;
+      right: anchor(right);
+    }
   }
 
   gap: 0.75rem;
@@ -103,6 +126,10 @@ const CheckboxLabel = styled.label`
   cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
+
+  @media (max-width: 890px) {
+    min-height: 44px;
+  }
 
   input {
     cursor: pointer;

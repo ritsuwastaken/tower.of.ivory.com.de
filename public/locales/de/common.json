@@ -79,6 +79,7 @@
         "text": "Lineage II und alle zugehörigen Inhalte sind Eigentum der NCSOFT Corporation und ihrer Partner. Diese Datenbank dient ausschließlich zu Informationszwecken."
     },
     "filters": {
+        "show": "Anzeigen",
         "filters": "Filter",
         "view": "Ansicht",
         "all": "Alle",

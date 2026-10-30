@@ -79,6 +79,7 @@
         "text": "Lineage II and all associated content is property of NCSOFT Corporation and their partners. This database is provided for informational purposes only."
     },
     "filters": {
+        "show": "Show",
         "filters": "Filters",
         "view": "View",
         "all": "All",

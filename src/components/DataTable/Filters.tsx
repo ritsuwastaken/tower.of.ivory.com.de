@@ -6,7 +6,6 @@ import { FiltersProps } from './types'
 
 export function Filters({
   filters,
-  checkboxFilters,
   viewMode,
   onViewModeChange,
   allowGridView,
@@ -20,7 +19,7 @@ export function Filters({
         {allowGridView && (
           <FilterGroup>
             <FilterLabel htmlFor={`${filterId}-view`}>
-              {t('filters.view')}:
+              {t('filters.view')}
             </FilterLabel>
             <FilterSelect
               id={`${filterId}-view`}
@@ -54,20 +53,6 @@ export function Filters({
           </FilterGroup>
         ))}
       </SelectFilters>
-
-      <CheckboxFilters>
-        {checkboxFilters.map((filter) => (
-          <CheckboxLabel key={filter.id}>
-            <input
-              type="checkbox"
-              tabIndex={0}
-              checked={filter.checked}
-              onChange={filter.onChange}
-            />
-            {filter.label}
-          </CheckboxLabel>
-        ))}
-      </CheckboxFilters>
     </FiltersSection>
   )
 }
@@ -92,16 +77,6 @@ const FilterGroup = styled.div`
   min-width: 0;
 `
 
-const CheckboxFilters = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-
-  &:empty {
-    display: none;
-  }
-`
-
 const FilterLabel = styled.label`
   display: block;
   margin-bottom: 0.5rem;
@@ -112,25 +87,5 @@ const FilterSelect = styled.select`
   ${selectStyles}
   &:focus {
     border-color: #5a5a5a;
-  }
-`
-
-const CheckboxLabel = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #888;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-
-  input {
-    cursor: pointer;
-    margin: 0;
-    flex-shrink: 0;
-  }
-
-  &:hover {
-    color: #fff;
   }
 `

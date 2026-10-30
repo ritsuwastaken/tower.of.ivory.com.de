@@ -195,15 +195,17 @@ export const ItemsPage = ({
     ),
   ]
 
-  const checkboxFilters = (['new', 'changed'] as const).map((value) => ({
-    id: `${value}-items`,
-    label: t(
-      value === 'new' ? 'filters.onlyNewItems' : 'filters.onlyChangedItems',
-    ),
-    checked: changeFilter === value,
-    onChange: () =>
-      setChangeFilter((previous) => (previous === value ? 'all' : value)),
-  }))
+  filters.push({
+    id: 'item-status',
+    label: t('filters.show'),
+    value: changeFilter,
+    onChange: (value) => setChangeFilter(value as ChangeFilter),
+    options: [
+      { value: 'all', label: allLabel },
+      { value: 'new', label: t('filters.onlyNewItems') },
+      { value: 'changed', label: t('filters.onlyChangedItems') },
+    ],
+  })
 
   return (
     <DataTable
@@ -214,7 +216,6 @@ export const ItemsPage = ({
       onRowClick={(item) => router.push(`/${urlMap[type]}/${item.object_id}`)}
       renderCell={renderCell}
       filters={filters}
-      checkboxFilters={checkboxFilters}
       noResultsMessage={t('itemsPage.noResults')}
     />
   )

@@ -32,52 +32,56 @@ export function TableResults<T>({
 
   function renderData() {
     return viewMode === 'table' ? (
-      <Table>
-        <thead>
-          <tr>
-            {(visibleColumns.length
-              ? visibleColumns
-              : [{ key: 'settings', label: '', visible: true }]
-            ).map((column, index) => (
-              <Th
-                key={column.key as string}
-                data-column-settings={index === 0 || undefined}
-                aria-sort={
-                  sortConfig.column === column.key
-                    ? sortConfig.direction === 'asc'
-                      ? 'ascending'
-                      : 'descending'
-                    : undefined
-                }
-                onClick={
-                  column.label ? () => onSort(column.key as keyof T) : undefined
-                }
-              >
-                {index === 0 && columnSettings}
-                {column.label}
-                {sortConfig.column === column.key && (
-                  <span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>
-                )}
-              </Th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item, index) => (
-            <TableRow key={index} onClick={() => onRowClick?.(item)}>
-              {visibleColumns.map((column) => (
-                <Td
+      <>
+        <MobileSettings>{columnSettings}</MobileSettings>
+        <Table>
+          <thead>
+            <tr>
+              {(visibleColumns.length
+                ? visibleColumns
+                : [{ key: 'settings', label: '', visible: true }]
+              ).map((column, index) => (
+                <Th
                   key={column.key as string}
-                  data-label={column.label}
-                  data-key={column.key}
+                  aria-sort={
+                    sortConfig.column === column.key
+                      ? sortConfig.direction === 'asc'
+                        ? 'ascending'
+                        : 'descending'
+                      : undefined
+                  }
+                  onClick={
+                    column.label
+                      ? () => onSort(column.key as keyof T)
+                      : undefined
+                  }
                 >
-                  {renderCell(item, column.key as keyof T | string)}
-                </Td>
+                  {index === 0 && columnSettings}
+                  {column.label}
+                  {sortConfig.column === column.key && (
+                    <span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>
+                  )}
+                </Th>
               ))}
-            </TableRow>
-          ))}
-        </tbody>
-      </Table>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item, index) => (
+              <TableRow key={index} onClick={() => onRowClick?.(item)}>
+                {visibleColumns.map((column) => (
+                  <Td
+                    key={column.key as string}
+                    data-label={column.label}
+                    data-key={column.key}
+                  >
+                    {renderCell(item, column.key as keyof T | string)}
+                  </Td>
+                ))}
+              </TableRow>
+            ))}
+          </tbody>
+        </Table>
+      </>
     ) : (
       <>
         {columnSettings}
@@ -129,6 +133,16 @@ export function TableResults<T>({
   )
 }
 
+const MobileSettings = styled.div`
+  display: none;
+
+  @media (max-width: 890px) {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.75rem;
+  }
+`
+
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -136,15 +150,7 @@ const Table = styled.table`
 
   @media (max-width: 890px) {
     thead {
-      display: block;
-    }
-
-    th {
       display: none;
-    }
-
-    th[data-column-settings] {
-      display: block;
     }
 
     tbody {

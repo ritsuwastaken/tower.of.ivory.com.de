@@ -66,22 +66,19 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
     onColumnVisibilityChange('skill_level', !mergeSkills)
   }, [mergeSkills, onColumnVisibilityChange])
 
-  const checkboxFilters = [
+  const filters = [
     {
-      id: 'merge-levels',
-      label: t('filters.mergeLevels'),
-      checked: mergeSkills,
-      onChange: () => setMode(mergeSkills ? 'all' : 'merged'),
+      id: 'skill-mode',
+      label: t('filters.show'),
+      value: mode,
+      onChange: (value: string) => setMode(value as ChangeFilter | 'merged'),
+      options: [
+        { value: 'merged', label: t('filters.mergeLevels') },
+        { value: 'all', label: t('filters.all') },
+        { value: 'new', label: t('filters.onlyNewSkills') },
+        { value: 'changed', label: t('filters.onlyChangedSkills') },
+      ],
     },
-    ...(['new', 'changed'] as const).map((value) => ({
-      id: `${value}-items`,
-      label: t(
-        value === 'new' ? 'filters.onlyNewSkills' : 'filters.onlyChangedSkills',
-      ),
-      checked: mode === value,
-      onChange: () =>
-        setMode((previous) => (previous === value ? 'all' : value)),
-    })),
   ]
 
   const renderCell = (skill: Skill, column: string) => {
@@ -122,7 +119,7 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
       searchPlaceholder={t('skillsPage.searchPlaceholder')}
       onRowClick={(skill) => router.push(`/skills/${skill.skill_id}`)}
       renderCell={renderCell}
-      checkboxFilters={checkboxFilters}
+      filters={filters}
       noResultsMessage={t('skillsPage.noResults')}
     />
   )

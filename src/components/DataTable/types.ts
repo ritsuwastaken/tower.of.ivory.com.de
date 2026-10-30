@@ -16,12 +16,6 @@ interface FilterConfig {
 
 interface SharedFilterProps {
   filters?: FilterConfig[]
-  checkboxFilters?: {
-    id: string
-    label: string
-    checked: boolean
-    onChange: () => void
-  }[]
   viewMode?: 'table' | 'grid'
   onViewModeChange?: (mode: 'table' | 'grid') => void
 }
@@ -34,7 +28,6 @@ export interface ColumnSettingsProps {
 
 export interface FiltersProps extends SharedFilterProps {
   filters: FilterConfig[]
-  checkboxFilters: NonNullable<SharedFilterProps['checkboxFilters']>
   viewMode: 'table' | 'grid'
   allowGridView?: boolean
 }

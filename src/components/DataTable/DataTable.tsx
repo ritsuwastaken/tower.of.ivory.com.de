@@ -21,7 +21,6 @@ export function DataTable<T>({
   noResultsMessage,
   onResetFilters,
   filters = [],
-  checkboxFilters = [],
   columnVisibility,
   onColumnVisibilityChange,
   formatColumnName,
@@ -53,7 +52,6 @@ export function DataTable<T>({
         />
         <Filters
           filters={filters}
-          checkboxFilters={checkboxFilters}
           viewMode={effectiveViewMode}
           onViewModeChange={enableGridView ? onViewModeChange : undefined}
           allowGridView={enableGridView}
