@@ -13,13 +13,13 @@ export function Footer() {
 }
 
 const FooterWrapper = styled.footer`
-  background-color: #1a1a1a;
+  background-color: ${({ theme }) => theme.colors.surface};
   padding: 0.5rem 0;
   width: 100%;
   flex-shrink: 0;
   border-top-width: 1px;
-  border-radius: 8px;
-  margin-top: 1rem;
+  border-radius: ${({ theme }) => theme.radii.panel};
+  margin-top: ${({ theme }) => theme.spacing.lg};
 `
 
 const Container = styled.div`
@@ -31,14 +31,14 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     flex-direction: column-reverse;
-    gap: 0.5rem;
+    gap: ${({ theme }) => theme.spacing.sm};
   }
 `
 
 const Text = styled.p`
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.75rem;
+  color: ${({ theme }) => theme.colors.footerText};
+  font-size: ${({ theme }) => theme.typography.caption};
   margin: 0;
 `

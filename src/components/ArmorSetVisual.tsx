@@ -73,8 +73,8 @@ const Grid = styled.div`
 
 const Slot = styled.div<{ $type: string }>`
   grid-area: ${({ $type }) => $type};
-  background-color: rgba(40, 40, 40, 0.8);
-  border: 1px solid #444;
+  background-color: ${({ theme }) => theme.colors.slot};
+  border: 1px solid ${({ theme }) => theme.colors.slotBorder};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,7 +93,7 @@ const SlotLink = styled(Link)`
     filter 0.2s ease;
 
   &:hover img {
-    filter: drop-shadow(0 0 4px rgba(128, 128, 128, 0.8));
+    filter: drop-shadow(0 0 4px ${({ theme }) => theme.colors.slotGlow});
   }
 `
 
@@ -103,7 +103,7 @@ const SlotIcon = styled(CatalogIcon)`
 `
 
 const EmptySlot = styled.div`
-  color: #999;
-  font-size: 10px;
+  color: ${({ theme }) => theme.colors.subtle};
+  font-size: ${({ theme }) => theme.typography.slot};
   text-transform: capitalize;
 `

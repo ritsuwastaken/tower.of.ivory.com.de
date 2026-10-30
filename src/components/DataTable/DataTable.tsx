@@ -3,6 +3,7 @@ import { ViewTransition } from 'react'
 import styled from 'styled-components'
 import { Pagination } from '../Pagination'
 import { Filters } from './Filters'
+import { controlStyles } from '../Control.styles'
 import { DataTableProps } from './types'
 import { TableResults } from './Results'
 
@@ -93,45 +94,37 @@ export function DataTable<T>({
 
 const Container = styled.div`
   position: relative;
-  background-color: #1a1a1a;
-  border-radius: 8px;
-  padding: 1rem;
+  background-color: ${({ theme }) => theme.colors.surface};
+  border-radius: ${({ theme }) => theme.radii.panel};
+  padding: ${({ theme }) => theme.spacing.lg};
 
-  @media (max-width: 890px) {
-    padding: 0.5rem;
-    border-radius: 4px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.table}) {
+    padding: ${({ theme }) => theme.spacing.sm};
+    border-radius: ${({ theme }) => theme.radii.control};
   }
 `
 
 const FiltersWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: ${({ theme }) => theme.spacing.lg};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `
 
 const SearchInput = styled.input.attrs({
   type: 'search',
 })`
-  flex: 1;
+  ${controlStyles}
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #3a3a3a;
-  border-radius: 4px;
-  background-color: #2a2a2a;
-  color: #fff;
+  height: var(--control-height);
 
   &::placeholder {
-    color: #aaa;
+    color: ${({ theme }) => theme.colors.secondary};
     opacity: 1;
   }
 
-  @media (max-width: 890px) {
-    padding: 0.5rem;
-  }
-
   &:focus {
-    border-color: #5a5a5a;
+    border-color: ${({ theme }) => theme.colors.focus};
   }
 `
 

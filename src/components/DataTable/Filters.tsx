@@ -97,13 +97,13 @@ export function Filters({
 const FiltersSection = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacing.lg};
 `
 
 const SelectFilters = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacing.lg};
 
   &:empty {
     display: none;
@@ -116,21 +116,20 @@ const FilterGroup = styled.div`
 
 const FilterLabel = styled.label`
   display: block;
-  margin-bottom: 0.5rem;
-  color: #888;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
+  color: ${({ theme }) => theme.colors.muted};
+  font-size: ${({ theme }) => theme.typography.small};
 `
 
 const FilterSelect = styled.select`
   ${selectStyles}
-  height: 2.5rem;
-  font: inherit;
-  line-height: 1.25;
 
   &[multiple] option {
-    padding: 0.5rem 0.75rem;
+    padding: ${({ theme }) => theme.spacing.sm}
+      ${({ theme }) => theme.spacing.md};
   }
 
   &:focus {
-    border-color: #5a5a5a;
+    border-color: ${({ theme }) => theme.colors.focus};
   }
 `

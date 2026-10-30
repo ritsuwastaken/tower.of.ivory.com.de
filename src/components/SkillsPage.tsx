@@ -9,7 +9,7 @@ import { matchesChangeFilter, type ChangeFilter } from '@/utils/filters'
 import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { defaultSkillColumns } from './DataTable/columns'
 
 const mergeSkillLevels = (skills: Skill[]): Skill[] => {
@@ -17,15 +17,13 @@ const mergeSkillLevels = (skills: Skill[]): Skill[] => {
 
   for (const skill of skills) {
     const previous = skillMap.get(skill.skill_id)
-    const levels = previous?.levels ?? []
-    levels.push(skill)
 
     if (
       !previous ||
       (skill.skill_level &&
         (!previous.skill_level || skill.skill_level > previous.skill_level))
     ) {
-      skillMap.set(skill.skill_id, { ...previous, ...skill, levels })
+      skillMap.set(skill.skill_id, skill)
     }
   }
 
@@ -39,7 +37,7 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
   const [mode, setMode] = useState<ChangeFilter | 'merged'>('merged')
   const { tableProps, deferredSearchTerm, itemsPerPage } = useDataTable<Skill>({
     defaultColumnVisibility: defaultSkillColumns,
-    onResetFilters: () => setMode('merged'),
+    onResetFilters: () => handleModeChange('merged'),
   })
 
   const mergeSkills = mode === 'merged'
@@ -62,17 +60,19 @@ export default function SkillsPage({ skills }: { skills: Skill[] }) {
     itemsPerPage,
   )
 
-  const { onColumnVisibilityChange } = tableProps
-  useEffect(() => {
-    onColumnVisibilityChange('skill_level', !mergeSkills)
-  }, [mergeSkills, onColumnVisibilityChange])
+  function handleModeChange(value: string) {
+    setMode(value as ChangeFilter | 'merged')
+    if ((value === 'merged') !== mergeSkills) {
+      tableProps.onColumnVisibilityChange('skill_level', value !== 'merged')
+    }
+  }
 
   const filters = [
     {
       id: 'skill-mode',
       label: t('filters.show'),
       value: mode,
-      onChange: (value: string) => setMode(value as ChangeFilter | 'merged'),
+      onChange: handleModeChange,
       options: [
         { value: 'merged', label: t('filters.mergeLevels') },
         { value: 'all', label: t('filters.all') },

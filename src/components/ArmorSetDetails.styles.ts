@@ -1,29 +1,38 @@
 import styled from 'styled-components'
 import { CatalogIcon } from '@/components/CatalogImage'
 import Link from 'next/link'
+import { HeaderLeft } from './Details.styles'
+
+export const SetHeader = styled(HeaderLeft)`
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+`
 
 export const Icon = styled.div`
-  border-radius: 8px;
-  background-color: #2a2a2a;
-  padding: 0.5rem;
+  border-radius: ${({ theme }) => theme.radii.panel};
+  background-color: ${({ theme }) => theme.colors.control};
+  padding: ${({ theme }) => theme.spacing.sm};
 `
 
 export const TotalStat = styled.div`
   margin-top: 4px;
-  color: #ddd;
-  font-size: 0.95rem;
+  color: ${({ theme }) => theme.colors.strong};
+  font-size: ${({ theme }) => theme.typography.body};
 `
 
 export const PartsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: ${({ theme }) => theme.spacing.lg};
+  margin-top: ${({ theme }) => theme.spacing.lg};
 `
 
 export const PartRow = styled.div`
   display: flex;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid ${({ theme }) => theme.colors.divider};
   padding-bottom: 12px;
   padding-top: 12px;
   align-items: flex-start;
@@ -34,7 +43,12 @@ export const PartIconColumn = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 0.5rem;
+  margin-right: ${({ theme }) => theme.spacing.sm};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-column: 1;
+    grid-row: 2;
+  }
 `
 
 export const PartIcon = styled.div`
@@ -46,18 +60,19 @@ export const PartIcon = styled.div`
 
 export const PartDetails = styled.div`
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.spacing.sm};
 `
 
 export const PartHeaderContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
 
-  @media (max-width: 768px) {
-    flex-direction: column !important;
-    align-items: flex-start;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    row-gap: ${({ theme }) => theme.spacing.md};
   }
 `
 
@@ -67,8 +82,8 @@ export const PartHeader = styled.div`
   align-items: flex-start;
   width: 100%;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: contents;
   }
 `
 
@@ -76,18 +91,24 @@ export const PartMainContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-column: 2;
+    grid-row: 2;
+  }
 `
 
 export const PartMain = styled.div`
   display: flex;
   align-items: center;
+  overflow-wrap: anywhere;
 `
 
 export const PartParams = styled.div`
   display: flex;
   flex-direction: column;
-  color: #aaa;
-  font-size: 0.9em;
+  color: ${({ theme }) => theme.colors.secondary};
+  font-size: ${({ theme }) => theme.typography.small};
   margin-top: 0.3rem;
   margin-bottom: 0.3rem;
   gap: 0.3rem;
@@ -95,37 +116,40 @@ export const PartParams = styled.div`
 
 export const PartParam = styled.span`
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 4px;
 `
 
 export const ParamLabel = styled.span`
-  color: #888;
+  color: ${({ theme }) => theme.colors.muted};
 `
 
 export const ParamValue = styled.span`
-  color: #ddd;
+  color: ${({ theme }) => theme.colors.strong};
   font-weight: 500;
 `
 
 export const PartLinks = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.spacing.sm};
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-column: 1 / -1;
+    grid-row: 1;
     align-self: flex-start;
-    margin-top: 8px;
+    width: 100%;
   }
 `
 
 export const PartIconImage = styled(CatalogIcon)`
-  border-radius: 4px;
-  border: 2px solid #2a2a2a;
+  border-radius: ${({ theme }) => theme.radii.control};
+  border: 2px solid ${({ theme }) => theme.colors.control};
 `
 
 export const PartLink = styled(Link)`
   text-decoration: none;
-  color: #fff;
+  color: ${({ theme }) => theme.colors.text};
   font-weight: 500;
   &:hover {
     text-decoration: underline;

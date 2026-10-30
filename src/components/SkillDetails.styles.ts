@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { selectStyles } from '@/components/Select.styles'
+import { controlStyles } from './Control.styles'
 
 export const MobileLevelSelect = styled.div`
   display: none;
@@ -7,7 +8,7 @@ export const MobileLevelSelect = styled.div`
   width: 100%;
   max-width: 250px;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: block;
     position: relative;
   }
@@ -15,37 +16,38 @@ export const MobileLevelSelect = styled.div`
 
 export const SkillLevels = styled.div`
   width: 300px;
-  padding: 1rem;
-  background: #1a1a1a;
-  border-radius: 8px;
-  font-size: 0.875rem;
+  padding: ${({ theme }) => theme.spacing.lg};
+  background: ${({ theme }) => theme.colors.surface};
+  border-radius: ${({ theme }) => theme.radii.panel};
+  font-size: ${({ theme }) => theme.typography.small};
 
   h2 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: ${({ theme }) => theme.typography.heading};
+    margin-bottom: ${({ theme }) => theme.spacing.lg};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 100%;
   }
 `
 
 export const LevelCard = styled.button<{ $active?: boolean }>`
+  ${controlStyles}
   width: 100%;
   text-align: left;
   border: none;
   cursor: pointer;
-  padding: 0.5rem 0.75rem;
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
   margin: 0.5rem 0;
-  border-radius: 6px;
+  border-radius: ${({ theme }) => theme.radii.control};
   transition: all 0.2s ease;
-  color: var(--text-color);
+  color: ${({ theme }) => theme.colors.text};
   background-color: transparent;
 
   ${({ $active }) =>
     $active &&
     css`
-      background: #4a4a4a !important;
+      background: ${({ theme }) => theme.colors.active} !important;
       font-weight: 500;
     `}
 `
@@ -54,7 +56,7 @@ export const LevelHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacing.lg};
 `
 
 export const LevelNumberContainer = styled.div`
@@ -64,53 +66,47 @@ export const LevelNumberContainer = styled.div`
 `
 
 export const SmallLevelDescription = styled.div`
-  font-size: 0.8125rem;
-  margin-top: 0.5rem;
+  font-size: ${({ theme }) => theme.typography.small};
+  margin-top: ${({ theme }) => theme.spacing.sm};
   line-height: 1.4;
 `
 
 export const LevelSelect = styled.select`
   ${selectStyles}
-  padding: 0.5rem 2.5rem 0.5rem 1rem;
-  background-position: right 0.75rem center;
-  background-size: 1rem;
-  font-size: 0.875rem;
-  cursor: pointer;
-
   &:hover {
-    background-color: #333;
+    background-color: ${({ theme }) => theme.colors.hover};
   }
 `
 
 export const LevelNumber = styled.span`
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: ${({ theme }) => theme.typography.small};
 `
 
 export const Consume = styled.span`
-  color: #ccc;
-  font-size: 0.875rem;
+  color: ${({ theme }) => theme.colors.soft};
+  font-size: ${({ theme }) => theme.typography.small};
   white-space: nowrap;
 `
 
 export const MpConsume = styled.span`
-  color: #90c2ff;
-  font-size: 0.875rem;
+  color: ${({ theme }) => theme.colors.mp};
+  font-size: ${({ theme }) => theme.typography.small};
   white-space: nowrap;
 `
 
 export const HpConsume = styled.span`
-  color: #ffabab;
-  font-size: 0.875rem;
+  color: ${({ theme }) => theme.colors.hp};
+  font-size: ${({ theme }) => theme.typography.small};
   white-space: nowrap;
 `
 
 export const LevelTag = styled.span<{ $isNew: boolean }>`
-  font-size: 0.65rem;
+  font-size: ${({ theme }) => theme.typography.caption};
   font-weight: bold;
   padding: 1px 4px;
   border-radius: 3px;
   display: inline-block;
-  background-color: ${({ $isNew }) => ($isNew ? '#4caf50' : '#ff9800')};
-  color: #1a1a1a;
+  background-color: ${({ theme, $isNew }) => ($isNew ? theme.colors.success : theme.colors.warning)};
+  color: ${({ theme }) => theme.colors.surface};
 `

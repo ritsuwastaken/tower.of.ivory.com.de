@@ -4,6 +4,7 @@ import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { selectStyles } from '@/components/Select.styles'
+import { controlStyles } from './Control.styles'
 
 export const Header = () => {
   const { t, i18n, language } = useTranslation()
@@ -67,25 +68,28 @@ export const Header = () => {
 
 const HeaderWrapper = styled.header`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 0.5rem 0.75rem;
-  margin-bottom: 1rem;
+  gap: ${({ theme }) => theme.spacing.lg};
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 
-  background-color: #1a1a1a;
-  color: #fff;
-  border-radius: 8px;
+  background-color: ${({ theme }) => theme.colors.surface};
+  color: ${({ theme }) => theme.colors.text};
+  border-radius: ${({ theme }) => theme.radii.panel};
 `
 
 const HeaderLeft = styled.div`
+  flex: 1;
+  min-width: min(100%, 12rem);
   display: flex;
   flex-direction: column;
 
   h3 {
-    font-size: 0.9rem;
+    font-size: ${({ theme }) => theme.typography.body};
     font-weight: 500;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.text};
     margin: 0;
   }
 `
@@ -94,7 +98,7 @@ const HeaderLink = styled(Link)`
   text-decoration: none;
 
   &:hover h3 {
-    color: #aaa;
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `
 
@@ -102,62 +106,54 @@ const Description = styled.p`
   margin-top: 0.2rem;
   margin-bottom: 0;
 
-  font-size: 0.7rem;
-  color: #888;
+  font-size: ${({ theme }) => theme.typography.caption};
+  color: ${({ theme }) => theme.colors.muted};
 `
 
 const LastUpdate = styled.p`
   margin-top: 0.2rem;
   margin-bottom: 0;
 
-  font-size: 0.65rem;
-  color: #999;
+  font-size: ${({ theme }) => theme.typography.caption};
+  color: ${({ theme }) => theme.colors.subtle};
 `
 
 const HeaderRight = styled.div`
+  margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.spacing.sm};
 `
 
 const LanguageSelect = styled.select`
   ${selectStyles}
   width: auto;
-  padding: 0.5rem 1.75rem 0.5rem 0.6rem;
-  border: none;
-  background-color: #1a1a1a;
-  background-size: 0.75rem;
-  color: inherit;
-  cursor: pointer;
-  font-size: 0.9rem;
-
   &:hover,
   &:focus {
-    background-color: #4a4a4a;
+    background-color: ${({ theme }) => theme.colors.active};
   }
 `
 
 const GitHubLink = styled.a`
+  ${controlStyles}
+  width: var(--control-height);
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 0.5rem;
-
-  border-radius: 4px;
-
-  color: #888;
+  color: ${({ theme }) => theme.colors.muted};
   text-decoration: none;
 
   transition: 0.2s;
 
   &:hover {
-    color: #fff;
-    background-color: #4a4a4a;
+    color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme }) => theme.colors.active};
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px #4a4a4a;
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.active};
   }
 `
 

@@ -3,6 +3,7 @@ import { useTranslation } from '@/hooks/useTranslation'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import styled from 'styled-components'
+import { controlStyles } from './Control.styles'
 
 const navigationItems = [
   {
@@ -51,27 +52,26 @@ export const Navigation = () => {
 const CategoryTabs = styled.nav`
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: ${({ theme }) => theme.spacing.lg};
+  margin-bottom: ${({ theme }) => theme.spacing.lg};
 `
 
 const TabLink = styled(Link)<{ $isActive?: boolean }>`
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  background-color: ${(props) => (props.$isActive ? '#4a4a4a' : '#2a2a2a')};
-  color: ${(props) => (props.$isActive ? '#fff' : '#aaa')};
+  ${controlStyles}
+  display: inline-flex;
+  align-items: center;
+  background-color: ${({ theme, $isActive }) => ($isActive ? theme.colors.active : theme.colors.control)};
+  color: ${({ theme, $isActive }) => ($isActive ? theme.colors.text : theme.colors.secondary)};
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
-  font-size: 0.833333rem;
 
   &:focus {
-    background-color: #3a3a3a;
+    background-color: ${({ theme }) => theme.colors.hover};
   }
 
   &:hover {
-    background-color: #3a3a3a;
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors.hover};
+    color: ${({ theme }) => theme.colors.text};
   }
 `

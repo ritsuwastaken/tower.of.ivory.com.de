@@ -49,6 +49,7 @@ import {
 } from './SkillDetails.styles'
 import {
   Icon,
+  SetHeader,
   TotalStat,
   PartsContainer,
   PartRow,
@@ -290,7 +291,7 @@ function ArmorSetSkeleton() {
   return (
     <TableContainer>
       <ItemHeader>
-        <HeaderLeft>
+        <SetHeader>
           <Icon>
             <Skeleton $width="150px" $height="150px" />
           </Icon>
@@ -306,7 +307,7 @@ function ArmorSetSkeleton() {
               <Skeleton $width="180px" />
             </TotalStat>
           </HeaderInfo>
-        </HeaderLeft>
+        </SetHeader>
         <HeaderRight>
           <Skeleton $width="120px" $height="30px" />
         </HeaderRight>
@@ -373,7 +374,7 @@ const LoadingStatus = styled.output`
 const LineGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.spacing.sm};
   width: 100%;
   min-width: 160px;
 `

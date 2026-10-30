@@ -2,17 +2,22 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
   :root {
-    --background-color: #111111;
-    --text-color: #fff;
+    --control-height: ${({ theme }) => theme.controls.height};
   }
-  
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    :root {
+      --control-height: ${({ theme }) => theme.controls.mobileHeight};
+    }
+  }
+
   html,
   body {
     min-height: 100vh;
     max-width: 100vw;
     overflow-x: hidden;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -20,7 +25,24 @@ export const GlobalStyles = createGlobalStyle`
   body {
     display: flex;
     flex-direction: column;
+    font-size: ${({ theme }) => theme.typography.body};
+    line-height: ${({ theme }) => theme.typography.lineHeight};
+  }
 
+  h1 {
+    font-size: ${({ theme }) => theme.typography.title};
+    line-height: ${({ theme }) => theme.typography.headingLineHeight};
+    overflow-wrap: anywhere;
+  }
+
+  h2 {
+    font-size: ${({ theme }) => theme.typography.heading};
+    line-height: ${({ theme }) => theme.typography.headingLineHeight};
+  }
+
+  h3 {
+    font-size: ${({ theme }) => theme.typography.body};
+    line-height: ${({ theme }) => theme.typography.headingLineHeight};
   }
   
   * {
@@ -34,13 +56,11 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
   
-  button {
-    font-family: inherit;
-  }
-  
+  button,
   input,
-  select {
-    font-family: inherit;
+  select,
+  textarea {
+    font: inherit;
   }
 
   @media (prefers-reduced-motion: reduce) {

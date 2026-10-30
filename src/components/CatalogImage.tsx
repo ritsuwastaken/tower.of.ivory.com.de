@@ -126,6 +126,6 @@ const Placeholder = styled(Skeleton)`
 `
 
 const IconImage = styled(CatalogImage)`
-  border-radius: 4px;
-  border: 1px solid #3a3a3a;
+  border-radius: ${({ theme }) => theme.radii.control};
+  border: 1px solid ${({ theme }) => theme.colors.border};
 `

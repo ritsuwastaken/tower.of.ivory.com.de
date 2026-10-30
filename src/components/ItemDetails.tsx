@@ -12,7 +12,11 @@ import {
   SetName,
 } from '@/components/ItemDetails.styles'
 
-import { ChangedProperties, CollapsibleSection } from './DetailsSections'
+import {
+  ChangedProperties,
+  CollapsibleSection,
+  openChangedProperties,
+} from './DetailsSections'
 import { ArmorSetVisual } from '@/components/ArmorSetVisual'
 import { ExternalLinks } from '@/components/ExternalLinks'
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
@@ -20,7 +24,6 @@ import { Item } from '@/types'
 import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
 import { groupItemProperties } from '@/utils/groupItemProperties'
 import {
   BackButton,
@@ -48,7 +51,6 @@ const BIRTHDAY_ITEM_ID_2026 = 5600
 export const ItemDetails = ({ item }: ItemDetailsProps) => {
   const { t } = useTranslation()
   const router = useRouter()
-  const [showChangedProperties, setShowChangedProperties] = useState(false)
   const formatColumnName = useFormatColumnName()
 
   const { priority, other, sections } = groupItemProperties(item)
@@ -79,9 +81,7 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
               ) : hasChangedProperties ? (
                 <NotificationLink
                   href="#changes-section"
-                  onClick={() => {
-                    setShowChangedProperties(true)
-                  }}
+                  onClick={openChangedProperties}
                 >
                   {t('itemDetails.changed')}
                 </NotificationLink>
@@ -139,11 +139,7 @@ export const ItemDetails = ({ item }: ItemDetailsProps) => {
           </Stats>
 
           {hasChangedProperties && (
-            <ChangedProperties
-              changes={item.changes || {}}
-              open={showChangedProperties}
-              onToggle={() => setShowChangedProperties(!showChangedProperties)}
-            />
+            <ChangedProperties changes={item.changes || {}} />
           )}
 
           {sections.map((section) => (

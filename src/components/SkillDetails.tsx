@@ -16,7 +16,10 @@ import {
   LevelTag,
 } from '@/components/SkillDetails.styles'
 
-import { ChangedProperties } from '@/components/DetailsSections'
+import {
+  ChangedProperties,
+  openChangedProperties,
+} from '@/components/DetailsSections'
 import {
   SearchParamsBoundary,
   useCatalogSearchParams,
@@ -24,7 +27,6 @@ import {
 import { useFormatColumnName } from '@/hooks/useFormatColumnName'
 import { Skill } from '@/types'
 import { useTranslation } from '@/hooks/useTranslation'
-import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ExternalLinks } from '@/components/ExternalLinks'
 import {
@@ -60,56 +62,19 @@ const SkillNotFound = () => {
 }
 
 export default function SkillDetails({ skill }: { skill: Skill }) {
-  const [title, setTitle] = useState(
-    `${skill.name || 'Skill'} · Lvl. ${skill.skill_level ?? 1} · Skills | Tower of Ivory`,
-  )
-
   return (
-    <>
-      <title>{title}</title>
-      <SearchParamsBoundary>
-        <SkillDetailsContent skill={skill} onTitleChange={setTitle} />
-      </SearchParamsBoundary>
-    </>
+    <SearchParamsBoundary>
+      <SkillDetailsContent skill={skill} />
+    </SearchParamsBoundary>
   )
 }
 
-function SkillDetailsContent({
-  skill,
-  onTitleChange,
-}: {
-  skill: Skill
-  onTitleChange: (title: string) => void
-}) {
+function SkillDetailsContent({ skill }: { skill: Skill }) {
   const searchParams = useCatalogSearchParams()
   const showChanges = searchParams.get('show') === 'changes'
   const skillLevel = Number(searchParams.get('level')) || skill.skill_level || 1
   const { t } = useTranslation()
   const formatColumnName = useFormatColumnName()
-
-  const [showChangedProperties, setShowChangedProperties] = useState(false)
-
-  useEffect(() => {
-    const shouldShowChanges =
-      window.location.hash === '#changes-section' || showChanges
-
-    if (shouldShowChanges) {
-      const showChangesTimeout = window.setTimeout(() => {
-        setShowChangedProperties(true)
-      }, 0)
-      const scrollTimeout = window.setTimeout(() => {
-        const changesSection = document.getElementById('changes-section')
-        if (changesSection) {
-          changesSection.scrollIntoView({ behavior: 'smooth' })
-        }
-      }, 100)
-
-      return () => {
-        window.clearTimeout(showChangesTimeout)
-        window.clearTimeout(scrollTimeout)
-      }
-    }
-  }, [showChanges])
 
   const selectedSkill =
     skill.levels?.find((level) => level.skill_level === skillLevel) ?? null
@@ -124,10 +89,6 @@ function SkillDetailsContent({
       })
     : t('meta.skillNotFound')
 
-  useEffect(() => {
-    onTitleChange(`${pageTitle} | Tower of Ivory`)
-  }, [pageTitle, onTitleChange])
-
   const handleLevelChange = (level: number | undefined) => {
     const params = new URLSearchParams(searchParams)
     params.set('level', String(level))
@@ -135,19 +96,22 @@ function SkillDetailsContent({
   }
 
   if (!selectedSkill) {
-    return <SkillNotFound />
+    return (
+      <>
+        <title>{`${pageTitle} | Tower of Ivory`}</title>
+        <SkillNotFound />
+      </>
+    )
   }
 
   const hasChangedProperties =
     selectedSkill.is_changed &&
     selectedSkill.changes &&
     Object.keys(selectedSkill.changes).length > 0
-  const handleNotificationClick = () => {
-    setShowChangedProperties(true)
-  }
 
   return (
     <>
+      <title>{`${pageTitle} | Tower of Ivory`}</title>
       <div>
         <BackButton as={Link} href="/skills" scroll={false}>
           ⟵
@@ -166,7 +130,7 @@ function SkillDetailsContent({
                 ) : hasChangedProperties ? (
                   <NotificationLink
                     href="#changes-section"
-                    onClick={handleNotificationClick}
+                    onClick={openChangedProperties}
                   >
                     {t('skillDetails.changed')}
                   </NotificationLink>
@@ -247,10 +211,7 @@ function SkillDetailsContent({
             {hasChangedProperties && (
               <ChangedProperties
                 changes={selectedSkill.changes || {}}
-                open={showChangedProperties}
-                onToggle={() =>
-                  setShowChangedProperties(!showChangedProperties)
-                }
+                autoOpen={showChanges}
               />
             )}
           </TableContainer>

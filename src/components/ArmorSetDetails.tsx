@@ -2,6 +2,7 @@
 
 import {
   Icon,
+  SetHeader,
   TotalStat,
   PartsContainer,
   PartRow,
@@ -30,7 +31,6 @@ import {
   BackButton,
   Description,
   HeaderInfo,
-  HeaderLeft,
   HeaderRight,
   ItemHeader,
   TableContainer,
@@ -60,7 +60,7 @@ export default function ArmorSetDetails({ armorSet }: { armorSet: ArmorSet }) {
       </BackButton>
       <TableContainer>
         <ItemHeader>
-          <HeaderLeft>
+          <SetHeader>
             <Icon>
               <ArmorSetVisual armorSet={armorSet} />
             </Icon>
@@ -87,7 +87,7 @@ export default function ArmorSetDetails({ armorSet }: { armorSet: ArmorSet }) {
                 </TotalStat>
               )}
             </HeaderInfo>
-          </HeaderLeft>
+          </SetHeader>
           <HeaderRight>
             {!!chestPiece && <ExternalLinks data={chestPiece} />}
           </HeaderRight>

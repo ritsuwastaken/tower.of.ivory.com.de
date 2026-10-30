@@ -54,13 +54,19 @@ export function TableResults<T>({
                       : 'descending'
                     : undefined
                 }
-                onClick={
-                  column.label ? () => onSort(column.key as keyof T) : undefined
-                }
               >
-                {column.label}
-                {sortConfig.column === column.key && (
-                  <span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>
+                {column.label && (
+                  <SortButton
+                    type="button"
+                    onClick={() => onSort(column.key as keyof T)}
+                  >
+                    {column.label}
+                    {sortConfig.column === column.key && (
+                      <span aria-hidden="true">
+                        {sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}
+                      </span>
+                    )}
+                  </SortButton>
                 )}
               </Th>
             ))}
@@ -130,7 +136,7 @@ const Table = styled.table`
   border-collapse: collapse;
   table-layout: auto;
 
-  @media (max-width: 890px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.table}) {
     thead {
       display: none;
     }
@@ -142,26 +148,26 @@ const Table = styled.table`
 
     tr {
       display: block;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      padding: 0.75rem;
+      margin-bottom: ${({ theme }) => theme.spacing.lg};
+      border-radius: ${({ theme }) => theme.radii.panel};
+      padding: ${({ theme }) => theme.spacing.md};
     }
 
     td {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
-      padding: 0.5rem;
+      gap: ${({ theme }) => theme.spacing.xs};
+      padding: ${({ theme }) => theme.spacing.sm};
       border: none;
 
       &:not(:last-child) {
-        border-bottom: 1px solid #3a3a3a;
+        border-bottom: 1px solid ${({ theme }) => theme.colors.border};
       }
 
       &:before {
         content: attr(data-label);
-        color: #888;
-        font-size: 0.9rem;
+        color: ${({ theme }) => theme.colors.muted};
+        font-size: ${({ theme }) => theme.typography.small};
       }
 
       &[data-key='icon'],
@@ -175,43 +181,46 @@ const Table = styled.table`
       }
 
       &[data-key='visual'] {
-        margin-bottom: 0.5rem;
+        margin-bottom: ${({ theme }) => theme.spacing.sm};
       }
     }
   }
 `
 
-const Th = styled.th.attrs<{ onClick?: () => void }>((props) => ({
-  tabIndex: props.onClick ? 0 : undefined,
-  role: 'columnheader',
-  onKeyDown: (e: KeyboardEvent) => {
-    if (e.target === e.currentTarget && (e.key === 'Enter' || e.key === ' ')) {
-      e.preventDefault()
-      props.onClick?.()
-    }
-  },
-}))<{ onClick?: () => void }>`
-  padding: 0.75rem;
+const Th = styled.th`
+  padding: 0;
   text-align: left;
-  border-bottom: 1px solid #2a2a2a;
-  color: #888;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.control};
+  color: ${({ theme }) => theme.colors.muted};
   font-weight: normal;
+`
+
+const SortButton = styled.button`
+  min-height: var(--control-height);
+  display: block;
+  width: 100%;
+  padding: ${({ theme }) => theme.spacing.md};
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
   cursor: pointer;
   user-select: none;
 
   &:hover,
-  &:focus {
-    color: #fff;
+  &:focus-visible {
+    color: ${({ theme }) => theme.colors.text};
   }
 `
 
 const Td = styled.td`
-  padding: 0.75rem;
+  padding: ${({ theme }) => theme.spacing.md};
   text-align: left;
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.control};
   overflow: hidden;
 
-  @media (max-width: 890px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.table}) {
     text-align: left;
     img,
     video {
@@ -241,30 +250,31 @@ const TableRow = styled.tr.attrs<{ onClick?: () => void }>((props) => ({
   &:hover,
   &:focus,
   &:focus-within {
-    background-color: #222222;
+    background-color: ${({ theme }) => theme.colors.rowHover};
   }
 
-  @media (max-width: 890px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.table}) {
     transition: background-color 0.2s ease;
 
     &:hover,
     &:focus,
     &:focus-within {
-      background-color: #202020;
+      background-color: ${({ theme }) => theme.colors.mobileRowHover};
     }
   }
 `
 
 const NoResults = styled.div`
-  padding: 1rem;
+  padding: ${({ theme }) => theme.spacing.lg};
   text-align: center;
 `
 
 const ResetFilters = styled.button`
+  min-height: var(--control-height);
   background: none;
   border: none;
   font: inherit;
-  color: #9f9f9f;
+  color: ${({ theme }) => theme.colors.link};
   text-decoration: underline;
   cursor: pointer;
 `
@@ -272,40 +282,48 @@ const ResetFilters = styled.button`
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacing.lg};
   padding: 1rem 0;
 `
 
 const GridItem = styled.div`
-  background-color: #2a2a2a;
-  border-radius: 8px;
-  padding: 1rem;
+  background-color: ${({ theme }) => theme.colors.control};
+  border-radius: ${({ theme }) => theme.radii.panel};
+  padding: ${({ theme }) => theme.spacing.lg};
   cursor: pointer;
   transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: #3a3a3a;
+    background-color: ${({ theme }) => theme.colors.hover};
   }
 `
 
 const GridItemContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.spacing.sm};
 `
 
 const GridItemField = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #aaa;
-  font-size: 0.9rem;
+  color: ${({ theme }) => theme.colors.secondary};
+  font-size: ${({ theme }) => theme.typography.small};
+  min-width: 0;
+  overflow-wrap: anywhere;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.table}) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: ${({ theme }) => theme.spacing.xs};
+  }
 
   span:first-child {
-    color: #aaa;
+    color: ${({ theme }) => theme.colors.secondary};
   }
 
   span:last-child {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.text};
   }
 `

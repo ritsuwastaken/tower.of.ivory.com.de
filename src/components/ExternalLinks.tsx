@@ -1,6 +1,7 @@
 import { Item, Skill } from '@/types'
 import { useTranslation } from '@/hooks/useTranslation'
 import styled from 'styled-components'
+import { controlStyles } from './Control.styles'
 
 export const ExternalLinks = ({ data }: { data: Skill | Item }) => {
   const { t } = useTranslation()
@@ -45,28 +46,31 @@ export const ExternalLinks = ({ data }: { data: Skill | Item }) => {
 
 const LinksContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
   align-items: center;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacing.lg};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: ${({ theme }) => theme.spacing.sm};
+  }
 `
 
 const StyledLink = styled.a.attrs({
   target: '_blank',
   rel: 'noopener noreferrer',
 })`
+  ${controlStyles}
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background-color: #2a2a2a;
-  border-radius: 4px;
-  color: #aaa;
+  gap: ${({ theme }) => theme.spacing.sm};
+  color: ${({ theme }) => theme.colors.secondary};
   text-decoration: none;
   transition: all 0.2s ease;
-  font-size: 0.9rem;
 
   &:hover,
   &:focus {
-    background-color: #3a3a3a;
-    color: #aaa;
+    background-color: ${({ theme }) => theme.colors.hover};
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `
