@@ -1,5 +1,5 @@
 import { useTranslation } from '@/hooks/useTranslation'
-import { ViewTransition, useRef } from 'react'
+import { ViewTransition } from 'react'
 import styled from 'styled-components'
 import { Pagination } from '../Pagination'
 import { Filters } from './Filters'
@@ -32,7 +32,6 @@ export function DataTable<T>({
   enableGridView = false,
 }: DataTableProps<T>) {
   const { t } = useTranslation()
-  const searchRef = useRef<HTMLInputElement>(null)
   const effectiveViewMode = enableGridView ? viewMode : 'table'
   const pagination = (
     <Pagination
@@ -46,23 +45,18 @@ export function DataTable<T>({
     return (
       <FiltersWrapper>
         <search>
-          <form
-            onSubmit={(event) => {
-              event.preventDefault()
-              searchRef.current?.blur()
-            }}
-          >
-            <SearchInput
-              ref={searchRef}
-              enterKeyHint="done"
-              aria-label={searchPlaceholder || t('dataTable.searchPlaceholder')}
-              value={searchTerm}
-              onChange={(e) => onSearchChange(e.target.value)}
-              placeholder={
-                searchPlaceholder || t('dataTable.searchPlaceholder')
+          <SearchInput
+            enterKeyHint="done"
+            onKeyUp={(event) => {
+              if (event.key === 'Enter' && !event.nativeEvent.isComposing) {
+                event.currentTarget.blur()
               }
-            />
-          </form>
+            }}
+            aria-label={searchPlaceholder || t('dataTable.searchPlaceholder')}
+            value={searchTerm}
+            onChange={(e) => onSearchChange(e.target.value)}
+            placeholder={searchPlaceholder || t('dataTable.searchPlaceholder')}
+          />
         </search>
         <Filters
           columnVisibility={columnVisibility}
