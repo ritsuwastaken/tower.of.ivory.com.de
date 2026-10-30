@@ -1,4 +1,4 @@
-import type { KeyboardEvent } from 'react'
+import type { KeyboardEvent, ReactNode } from 'react'
 import { useTranslation } from '@/hooks/useTranslation'
 import styled from 'styled-components'
 import { DataTableProps } from './types'
@@ -13,7 +13,7 @@ type ResultsProps<T> = Pick<
   | 'renderCell'
   | 'noResultsMessage'
   | 'onResetFilters'
-> & { viewMode: 'table' | 'grid' }
+> & { viewMode: 'table' | 'grid'; columnSettings: ReactNode }
 
 export function TableResults<T>({
   data,
@@ -25,6 +25,7 @@ export function TableResults<T>({
   noResultsMessage,
   onResetFilters,
   viewMode,
+  columnSettings,
 }: ResultsProps<T>) {
   const { t } = useTranslation()
   const visibleColumns = columns.filter((column) => column.visible)
@@ -34,9 +35,13 @@ export function TableResults<T>({
       <Table>
         <thead>
           <tr>
-            {visibleColumns.map((column) => (
+            {(visibleColumns.length
+              ? visibleColumns
+              : [{ key: 'settings', label: '', visible: true }]
+            ).map((column, index) => (
               <Th
                 key={column.key as string}
+                data-column-settings={index === 0 || undefined}
                 aria-sort={
                   sortConfig.column === column.key
                     ? sortConfig.direction === 'asc'
@@ -44,8 +49,11 @@ export function TableResults<T>({
                       : 'descending'
                     : undefined
                 }
-                onClick={() => onSort(column.key as keyof T)}
+                onClick={
+                  column.label ? () => onSort(column.key as keyof T) : undefined
+                }
               >
+                {index === 0 && columnSettings}
                 {column.label}
                 {sortConfig.column === column.key && (
                   <span>{sortConfig.direction === 'asc' ? ' ▲' : ' ▼'}</span>
@@ -71,25 +79,28 @@ export function TableResults<T>({
         </tbody>
       </Table>
     ) : (
-      <GridContainer>
-        {data.map((item, index) => (
-          <GridItem key={index} onClick={() => onRowClick?.(item)}>
-            <GridItemContent>
-              {renderCell(item, 'visual')}
-              {visibleColumns
-                .filter((col) => col.key !== 'visual')
-                .map((column) => (
-                  <GridItemField key={column.key as string}>
-                    <span>{column.label}:</span>
-                    <span>
-                      {renderCell(item, column.key as keyof T | string)}
-                    </span>
-                  </GridItemField>
-                ))}
-            </GridItemContent>
-          </GridItem>
-        ))}
-      </GridContainer>
+      <>
+        {columnSettings}
+        <GridContainer>
+          {data.map((item, index) => (
+            <GridItem key={index} onClick={() => onRowClick?.(item)}>
+              <GridItemContent>
+                {renderCell(item, 'visual')}
+                {visibleColumns
+                  .filter((col) => col.key !== 'visual')
+                  .map((column) => (
+                    <GridItemField key={column.key as string}>
+                      <span>{column.label}:</span>
+                      <span>
+                        {renderCell(item, column.key as keyof T | string)}
+                      </span>
+                    </GridItemField>
+                  ))}
+              </GridItemContent>
+            </GridItem>
+          ))}
+        </GridContainer>
+      </>
     )
   }
 
@@ -108,9 +119,14 @@ export function TableResults<T>({
       </NoResults>
     )
   }
-  return data.length > 0
-    ? renderData()
-    : renderNoResults(noResultsMessage ?? t('dataTable.noResults'))
+  return data.length > 0 ? (
+    renderData()
+  ) : (
+    <>
+      {columnSettings}
+      {renderNoResults(noResultsMessage ?? t('dataTable.noResults'))}
+    </>
+  )
 }
 
 const Table = styled.table`
@@ -120,7 +136,15 @@ const Table = styled.table`
 
   @media (max-width: 890px) {
     thead {
+      display: block;
+    }
+
+    th {
       display: none;
+    }
+
+    th[data-column-settings] {
+      display: block;
     }
 
     tbody {
@@ -170,10 +194,10 @@ const Table = styled.table`
 `
 
 const Th = styled.th.attrs<{ onClick?: () => void }>((props) => ({
-  tabIndex: 0,
+  tabIndex: props.onClick ? 0 : undefined,
   role: 'columnheader',
   onKeyDown: (e: KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (e.target === e.currentTarget && (e.key === 'Enter' || e.key === ' ')) {
       e.preventDefault()
       props.onClick?.()
     }

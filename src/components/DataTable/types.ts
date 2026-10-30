@@ -22,11 +22,14 @@ interface SharedFilterProps {
     checked: boolean
     onChange: () => void
   }[]
+  viewMode?: 'table' | 'grid'
+  onViewModeChange?: (mode: 'table' | 'grid') => void
+}
+
+export interface ColumnSettingsProps {
   columnVisibility: Record<string, boolean>
   onColumnVisibilityChange: (column: string, visible: boolean) => void
   formatColumnName: (column: string) => string
-  viewMode?: 'table' | 'grid'
-  onViewModeChange?: (mode: 'table' | 'grid') => void
 }
 
 export interface FiltersProps extends SharedFilterProps {
@@ -36,7 +39,8 @@ export interface FiltersProps extends SharedFilterProps {
   allowGridView?: boolean
 }
 
-export interface DataTableProps<T> extends SharedFilterProps {
+export interface DataTableProps<T>
+  extends SharedFilterProps, ColumnSettingsProps {
   data: T[]
   columns: {
     key: keyof T | string

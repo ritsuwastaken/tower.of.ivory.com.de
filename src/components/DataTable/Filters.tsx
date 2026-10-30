@@ -7,30 +7,12 @@ import { FiltersProps } from './types'
 export function Filters({
   filters,
   checkboxFilters,
-  columnVisibility,
-  onColumnVisibilityChange,
-  formatColumnName,
   viewMode,
   onViewModeChange,
   allowGridView,
 }: FiltersProps) {
   const { t } = useTranslation()
   const filterId = useId()
-  const columnToggles = (
-    <ColumnToggles>
-      {Object.entries(columnVisibility).map(([column, isVisible]) => (
-        <CheckboxLabel key={column}>
-          <input
-            type="checkbox"
-            tabIndex={0}
-            checked={isVisible}
-            onChange={() => onColumnVisibilityChange(column, !isVisible)}
-          />
-          {formatColumnName(column)}
-        </CheckboxLabel>
-      ))}
-    </ColumnToggles>
-  )
 
   return (
     <FiltersSection aria-label={t('filters.filters')}>
@@ -86,16 +68,6 @@ export function Filters({
           </CheckboxLabel>
         ))}
       </CheckboxFilters>
-
-      <ColumnSettings>
-        <DesktopColumns role="group" aria-label={t('filters.columns')}>
-          {columnToggles}
-        </DesktopColumns>
-        <MobileColumns suppressHydrationWarning>
-          <summary tabIndex={0}>{t('filters.columns')}</summary>
-          {columnToggles}
-        </MobileColumns>
-      </ColumnSettings>
     </FiltersSection>
   )
 }
@@ -130,36 +102,6 @@ const CheckboxFilters = styled.div`
   }
 `
 
-const ColumnSettings = styled.div`
-  border-top: 1px solid #3a3a3a;
-  padding-top: 0.75rem;
-  color: #aaa;
-`
-
-const DesktopColumns = styled.div`
-  @media (max-width: 890px) {
-    display: none;
-  }
-`
-
-const MobileColumns = styled.details`
-  display: none;
-
-  @media (max-width: 890px) {
-    display: block;
-  }
-
-  summary {
-    width: fit-content;
-    color: #aaa;
-    cursor: pointer;
-  }
-
-  &[open] summary {
-    margin-bottom: 0.75rem;
-  }
-`
-
 const FilterLabel = styled.label`
   display: block;
   margin-bottom: 0.5rem;
@@ -171,12 +113,6 @@ const FilterSelect = styled.select`
   &:focus {
     border-color: #5a5a5a;
   }
-`
-
-const ColumnToggles = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.5rem;
 `
 
 const CheckboxLabel = styled.label`

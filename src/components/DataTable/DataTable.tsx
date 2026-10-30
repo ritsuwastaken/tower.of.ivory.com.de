@@ -3,6 +3,7 @@ import { ViewTransition } from 'react'
 import styled from 'styled-components'
 import { Pagination } from '../Pagination'
 import { Filters } from './Filters'
+import { ColumnSettings } from './ColumnSettings'
 import { DataTableProps } from './types'
 import { TableResults } from './Results'
 
@@ -53,9 +54,6 @@ export function DataTable<T>({
         <Filters
           filters={filters}
           checkboxFilters={checkboxFilters}
-          columnVisibility={columnVisibility}
-          onColumnVisibilityChange={onColumnVisibilityChange}
-          formatColumnName={formatColumnName}
           viewMode={effectiveViewMode}
           onViewModeChange={enableGridView ? onViewModeChange : undefined}
           allowGridView={enableGridView}
@@ -76,6 +74,13 @@ export function DataTable<T>({
           $isStale={isSearchPending}
         >
           <TableResults
+            columnSettings={
+              <ColumnSettings
+                columnVisibility={columnVisibility}
+                onColumnVisibilityChange={onColumnVisibilityChange}
+                formatColumnName={formatColumnName}
+              />
+            }
             data={data}
             columns={columns}
             onSort={onSort}
