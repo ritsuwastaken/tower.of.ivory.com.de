@@ -1,13 +1,9 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
   reactCompiler: true,
   compiler: {
     styledComponents: true,
-  },
-  experimental: {
-    turbopackFileSystemCacheForBuild: false,
   },
   env: {
     NEXT_PUBLIC_LAST_UPDATE: Date.now().toString(),
