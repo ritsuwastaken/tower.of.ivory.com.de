@@ -90,6 +90,7 @@
         "grade": "Grad",
         "weaponType": "Waffentyp",
         "columns": "Spalten",
+        "columnsSelected": "{{count}} ausgewählt",
         "onlyNewItems": "Nur neue Gegenstände",
         "onlyChangedItems": "Nur geänderte Gegenstände",
         "onlyNewSkills": "Nur neue Fertigkeiten",

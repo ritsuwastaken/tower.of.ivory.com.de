@@ -90,6 +90,7 @@
         "grade": "Grado",
         "weaponType": "Tipo de arma",
         "columns": "Columnas",
+        "columnsSelected": "{{count}} seleccionadas",
         "onlyNewItems": "Solo nuevos objetos",
         "onlyChangedItems": "Solo objetos modificados",
         "onlyNewSkills": "Solo nuevas habilidades",

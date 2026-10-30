@@ -90,6 +90,7 @@
         "grade": "Grau",
         "weaponType": "Tipo de arma",
         "columns": "Colunas",
+        "columnsSelected": "{{count}} selecionadas",
         "onlyNewItems": "Apenas itens novos",
         "onlyChangedItems": "Apenas itens alterados",
         "onlyNewSkills": "Apenas habilidades novas",

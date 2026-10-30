@@ -1,4 +1,5 @@
 export const theme = {
+  colorScheme: 'dark',
   colors: {
     background: '#111111',
     surface: '#1a1a1a',
@@ -47,6 +48,7 @@ export const theme = {
   controls: {
     height: '2.25rem',
     mobileHeight: '2.5rem',
+    touchFontSize: '1rem',
     padding: '0.375rem 0.625rem',
   },
   spacing: {

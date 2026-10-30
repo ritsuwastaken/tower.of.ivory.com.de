@@ -1,5 +1,5 @@
 import { useTranslation } from '@/hooks/useTranslation'
-import { ViewTransition } from 'react'
+import { ViewTransition, useRef } from 'react'
 import styled from 'styled-components'
 import { Pagination } from '../Pagination'
 import { Filters } from './Filters'
@@ -32,6 +32,7 @@ export function DataTable<T>({
   enableGridView = false,
 }: DataTableProps<T>) {
   const { t } = useTranslation()
+  const searchRef = useRef<HTMLInputElement>(null)
   const effectiveViewMode = enableGridView ? viewMode : 'table'
   const pagination = (
     <Pagination
@@ -44,12 +45,25 @@ export function DataTable<T>({
   function renderInputWithFilters() {
     return (
       <FiltersWrapper>
-        <SearchInput
-          aria-label={searchPlaceholder || t('dataTable.searchPlaceholder')}
-          value={searchTerm}
-          onChange={(e) => onSearchChange(e.target.value)}
-          placeholder={searchPlaceholder || t('dataTable.searchPlaceholder')}
-        />
+        <search>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault()
+              searchRef.current?.blur()
+            }}
+          >
+            <SearchInput
+              ref={searchRef}
+              enterKeyHint="done"
+              aria-label={searchPlaceholder || t('dataTable.searchPlaceholder')}
+              value={searchTerm}
+              onChange={(e) => onSearchChange(e.target.value)}
+              placeholder={
+                searchPlaceholder || t('dataTable.searchPlaceholder')
+              }
+            />
+          </form>
+        </search>
         <Filters
           columnVisibility={columnVisibility}
           onColumnVisibilityChange={onColumnVisibilityChange}
@@ -117,6 +131,11 @@ const SearchInput = styled.input.attrs({
   ${controlStyles}
   width: 100%;
   height: var(--control-height);
+  min-width: 0;
+
+  @media (pointer: coarse) {
+    font-size: ${({ theme }) => theme.controls.touchFontSize};
+  }
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.secondary};

@@ -12,4 +12,8 @@ export const selectStyles = css`
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 1em;
+
+  @media (pointer: coarse) {
+    font-size: ${({ theme }) => theme.controls.touchFontSize};
+  }
 `

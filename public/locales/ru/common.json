@@ -90,6 +90,7 @@
         "grade": "Грейд",
         "weaponType": "Тип оружия",
         "columns": "Столбцы",
+        "columnsSelected": "Выбрано: {{count}}",
         "onlyNewItems": "Только новые предметы",
         "onlyChangedItems": "Только изменённые предметы",
         "onlyNewSkills": "Только новые умения",

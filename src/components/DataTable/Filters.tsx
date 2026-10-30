@@ -15,6 +15,10 @@ export function Filters({
 }: FiltersProps) {
   const { t } = useTranslation()
   const filterId = useId()
+  const columnsId = `${filterId}-columns`
+  const columnsLabelId = `${columnsId}-label`
+  const popoverId = `${columnsId}-options`
+  const anchorName = `--columns-${filterId.replace(/[^a-zA-Z0-9_-]/g, '')}`
 
   return (
     <FiltersSection aria-label={t('filters.filters')}>
@@ -56,38 +60,54 @@ export function Filters({
           </FilterGroup>
         ))}
         <FilterGroup>
-          <FilterLabel htmlFor={`${filterId}-columns`}>
+          <FilterLabel id={columnsLabelId} htmlFor={columnsId}>
             {t('filters.columns')}
           </FilterLabel>
-          <FilterSelect
-            id={`${filterId}-columns`}
-            multiple
-            size={1}
-            value={Object.keys(columnVisibility).filter(
-              (column) => columnVisibility[column],
-            )}
-            onChange={(event) => {
-              const selected = new Set(
-                Array.from(
-                  event.currentTarget.selectedOptions,
-                  (option) => option.value,
-                ),
-              )
-              for (const [column, visible] of Object.entries(
-                columnVisibility,
-              )) {
-                if (visible !== selected.has(column)) {
-                  onColumnVisibilityChange(column, selected.has(column))
-                }
+          <ColumnsButton
+            id={columnsId}
+            type="button"
+            popoverTarget={popoverId}
+            $anchorName={anchorName}
+            aria-labelledby={`${columnsLabelId} ${columnsId}`}
+          >
+            {t('filters.columnsSelected', {
+              count: Object.values(columnVisibility).filter(Boolean).length,
+            })}
+          </ColumnsButton>
+          <ColumnOptions
+            id={popoverId}
+            popover="auto"
+            $anchorName={anchorName}
+            aria-labelledby={columnsLabelId}
+            onToggle={(event) => {
+              if (
+                event.newState === 'closed' &&
+                (document.activeElement === document.body ||
+                  event.currentTarget.contains(document.activeElement))
+              ) {
+                document.getElementById(columnsId)?.focus()
               }
             }}
           >
-            {Object.keys(columnVisibility).map((column) => (
-              <option key={column} value={column}>
-                {formatColumnName(column)}
-              </option>
-            ))}
-          </FilterSelect>
+            {Object.entries(columnVisibility).map(
+              ([column, visible], index) => (
+                <ColumnOption key={column}>
+                  <input
+                    type="checkbox"
+                    autoFocus={index === 0}
+                    checked={visible}
+                    onChange={(event) =>
+                      onColumnVisibilityChange(
+                        column,
+                        event.currentTarget.checked,
+                      )
+                    }
+                  />
+                  {formatColumnName(column)}
+                </ColumnOption>
+              ),
+            )}
+          </ColumnOptions>
         </FilterGroup>
       </SelectFilters>
     </FiltersSection>
@@ -124,12 +144,69 @@ const FilterLabel = styled.label`
 const FilterSelect = styled.select`
   ${selectStyles}
 
-  &[multiple] option {
-    padding: ${({ theme }) => theme.spacing.sm}
-      ${({ theme }) => theme.spacing.md};
-  }
-
   &:focus {
     border-color: ${({ theme }) => theme.colors.focus};
+  }
+`
+
+const ColumnsButton = styled.button<{ $anchorName: string }>`
+  ${selectStyles}
+  anchor-name: ${({ $anchorName }) => $anchorName};
+  text-align: left;
+
+  &:focus-visible {
+    border-color: ${({ theme }) => theme.colors.focus};
+  }
+`
+
+const ColumnOptions = styled.fieldset<{ $anchorName: string }>`
+  width: 18rem;
+  max-width: calc(100vw - 2rem);
+  max-height: min(24rem, 70dvh);
+  overflow: auto;
+  padding: ${({ theme }) => theme.spacing.xs};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: ${({ theme }) => theme.radii.control};
+  background: ${({ theme }) => theme.colors.control};
+  color: ${({ theme }) => theme.colors.text};
+  font-size: ${({ theme }) => theme.typography.body};
+
+  @supports (position-anchor: auto) {
+    position-anchor: ${({ $anchorName }) => $anchorName};
+    inset: auto;
+    top: anchor(bottom);
+    left: anchor(left);
+    margin: 0;
+    margin-top: ${({ theme }) => theme.spacing.xs};
+    position-try-fallbacks: flip-inline, flip-block;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}),
+    (pointer: coarse) {
+    position: fixed;
+    position-anchor: auto;
+    position-try-fallbacks: none;
+    inset: auto ${({ theme }) => theme.spacing.lg}
+      max(${({ theme }) => theme.spacing.lg}, env(safe-area-inset-bottom))
+      ${({ theme }) => theme.spacing.lg};
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+`
+
+const ColumnOption = styled.label`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.sm};
+  min-height: var(--control-height);
+  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.sm};
+  border-radius: ${({ theme }) => theme.radii.control};
+  cursor: pointer;
+  user-select: none;
+
+  &:hover,
+  &:focus-within {
+    background: ${({ theme }) => theme.colors.hover};
   }
 `

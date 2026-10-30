@@ -90,6 +90,7 @@
         "grade": "Grade",
         "weaponType": "Weapon Type",
         "columns": "Columns",
+        "columnsSelected": "{{count}} selected",
         "onlyNewItems": "Only new items",
         "onlyChangedItems": "Only changed items",
         "onlyNewSkills": "Only new skills",

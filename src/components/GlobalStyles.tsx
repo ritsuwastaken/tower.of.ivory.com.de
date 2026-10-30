@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
   :root {
+    color-scheme: ${({ theme }) => theme.colorScheme};
     --control-height: ${({ theme }) => theme.controls.height};
   }
 
@@ -71,9 +72,5 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
-  @media (prefers-color-scheme: dark) {
-    html {
-      color-scheme: dark;
-    }
-  }
+
 `
