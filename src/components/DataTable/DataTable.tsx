@@ -1,5 +1,6 @@
 import { useTranslation } from '@/hooks/useTranslation'
-import { ViewTransition } from 'react'
+import { useEffect, ViewTransition } from 'react'
+import { clampPage } from '@/utils/pagination'
 import styled from 'styled-components'
 import { Pagination } from '../Pagination'
 import { Filters } from './Filters'
@@ -32,10 +33,17 @@ export function DataTable<T>({
   enableGridView = false,
 }: DataTableProps<T>) {
   const { t } = useTranslation()
+  const activePage = clampPage(currentPage, totalPages)
+  useEffect(() => {
+    if (!isSearchPending && currentPage !== activePage) {
+      onPageChange(activePage)
+    }
+  }, [currentPage, activePage, isSearchPending, onPageChange])
+
   const effectiveViewMode = enableGridView ? viewMode : 'table'
   const pagination = (
     <Pagination
-      currentPage={currentPage}
+      currentPage={activePage}
       totalPages={totalPages || 1}
       onPageChange={onPageChange}
     />

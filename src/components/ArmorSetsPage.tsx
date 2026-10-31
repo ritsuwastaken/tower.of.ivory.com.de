@@ -75,10 +75,7 @@ export default function ArmorSetsPage({
       id: 'grade',
       label: t('filters.grade'),
       value: grade,
-      onChange: (value: string) => {
-        setGrade(value)
-        tableProps.onPageChange(1)
-      },
+      onChange: setGrade,
       options: [
         { value: '', label: t('filters.all') },
         ...uniqueGrades.map((g) => ({
@@ -91,10 +88,7 @@ export default function ArmorSetsPage({
       id: 'armorType',
       label: t('filters.armorType'),
       value: armorType,
-      onChange: (value: string) => {
-        setArmorType(value)
-        tableProps.onPageChange(1)
-      },
+      onChange: setArmorType,
       options: [
         { value: '', label: t('filters.all') },
         ...uniqueArmorTypes.map((type) => ({

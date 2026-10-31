@@ -190,6 +190,8 @@ export const CollapseButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
   padding: 8px 0;
   text-align: left;
   width: 100%;

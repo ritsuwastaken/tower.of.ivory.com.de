@@ -35,9 +35,18 @@ export function sortData<T>(
   })
 }
 
+export function clampPage(page: number, totalPages: number) {
+  return Math.max(1, Math.min(page, totalPages))
+}
+
 export function paginateData<T>(data: T[], page: number, itemsPerPage: number) {
+  const totalPages = Math.max(1, Math.ceil(data.length / itemsPerPage))
+  const currentPage = clampPage(page, totalPages)
   return {
-    data: data.slice((page - 1) * itemsPerPage, page * itemsPerPage),
-    totalPages: Math.ceil(data.length / itemsPerPage),
+    data: data.slice(
+      (currentPage - 1) * itemsPerPage,
+      currentPage * itemsPerPage,
+    ),
+    totalPages,
   }
 }
