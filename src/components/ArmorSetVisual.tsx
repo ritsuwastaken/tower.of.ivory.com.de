@@ -42,6 +42,7 @@ export function ArmorSetVisual({ armorSet }: { armorSet: ArmorSet }) {
             {icon && piece ? (
               <SlotLink
                 href={getItemUrl(piece)}
+                prefetch={false}
                 onClick={(event) => event.stopPropagation()}
               >
                 <SlotIcon icon={icon} alt={`${armorSet.name} ${type}`} />

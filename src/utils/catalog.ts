@@ -81,6 +81,16 @@ const skillListFields = [
   'is_changed',
 ] as const satisfies readonly (keyof Skill)[]
 
+const armorSetItemListFields = [
+  'object_id',
+  'object_name',
+  'name',
+  'icon',
+  'body_part',
+  'armor_type',
+  'weapon_type',
+] as const satisfies readonly (keyof Item)[]
+
 export async function getStaticParams(dataset: keyof Datasets) {
   const records = await readDataset(dataset)
   const ids = new Set(
@@ -114,7 +124,7 @@ export async function getArmorSets(): Promise<ArmorSet[]> {
     ...set,
     physical_defense: sumProperty(set.items, 'physical_defense'),
     base_price: sumProperty(set.items, 'base_price'),
-    items: set.items.map((item) => pickFields(item, itemListFields)),
+    items: set.items.map((item) => pickFields(item, armorSetItemListFields)),
   }))
 }
 

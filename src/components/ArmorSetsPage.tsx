@@ -14,6 +14,8 @@ import {
   getArmorSetColumnLabels,
 } from './DataTable/columns'
 
+const ITEMS_PER_PAGE = 12
+
 export default function ArmorSetsPage({
   armorSets,
 }: {
@@ -27,6 +29,7 @@ export default function ArmorSetsPage({
 
   const { tableProps, deferredSearchTerm, itemsPerPage } =
     useDataTable<ArmorSet>({
+      itemsPerPage: ITEMS_PER_PAGE,
       defaultColumnVisibility: defaultArmorSetColumns,
       columnLabels: getArmorSetColumnLabels(t),
       onResetFilters: () => {
@@ -72,7 +75,10 @@ export default function ArmorSetsPage({
       id: 'grade',
       label: t('filters.grade'),
       value: grade,
-      onChange: setGrade,
+      onChange: (value: string) => {
+        setGrade(value)
+        tableProps.onPageChange(1)
+      },
       options: [
         { value: '', label: t('filters.all') },
         ...uniqueGrades.map((g) => ({
@@ -85,7 +91,10 @@ export default function ArmorSetsPage({
       id: 'armorType',
       label: t('filters.armorType'),
       value: armorType,
-      onChange: setArmorType,
+      onChange: (value: string) => {
+        setArmorType(value)
+        tableProps.onPageChange(1)
+      },
       options: [
         { value: '', label: t('filters.all') },
         ...uniqueArmorTypes.map((type) => ({

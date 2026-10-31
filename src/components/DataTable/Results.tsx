@@ -254,6 +254,8 @@ const TableRow = styled.tr.attrs<{ onClick?: () => void }>((props) => ({
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.table}) {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto 600px;
     transition: background-color 0.2s ease;
 
     &:hover,
@@ -287,6 +289,8 @@ const GridContainer = styled.div`
 `
 
 const GridItem = styled.div`
+  content-visibility: auto;
+  contain-intrinsic-block-size: auto 400px;
   background-color: ${({ theme }) => theme.colors.control};
   border-radius: ${({ theme }) => theme.radii.panel};
   padding: ${({ theme }) => theme.spacing.lg};
