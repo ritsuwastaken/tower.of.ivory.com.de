@@ -3,7 +3,7 @@ import { Roboto_Mono } from 'next/font/google'
 import type { ReactNode } from 'react'
 import AppShell from '@/components/AppShell'
 import StyledComponentsRegistry from '@/components/StyledComponentsRegistry'
-import nextConfig from '../../next.config'
+import nextConfig from '../../next.config.mts'
 
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
