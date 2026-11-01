@@ -43,9 +43,9 @@ jobs:
           import { renameSync, writeFileSync } from 'node:fs'
 
           const basePath = new URL(process.argv[2]).pathname.replace(/\/$/, '')
-          renameSync('next.config.mts', 'next.config.base.ts')
+          renameSync('next.config.mts', 'next.config.base.mts')
           writeFileSync('next.config.mts', `
-          import config from './next.config.base'
+          import config from './next.config.base.mts'
 
           export default {
             ...config,
