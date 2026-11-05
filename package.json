@@ -18,11 +18,11 @@
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
-    "i18next": "^26.7.1",
-    "next": "^16.5.0-canary.40",
+    "i18next": "^26.7.2",
+    "next": "^16.5.0-canary.41",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "react-i18next": "^17.1.12",
+    "react-i18next": "^17.1.13",
     "styled-components": "^6.6.0"
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "oxlint": "^1.91.0",
-    "oxlint-tsgolint": "^7.0.2005",
+    "oxlint-tsgolint": "^7.0.2006",
     "prettier": "^3.9.10",
     "typescript": "^7.0.2"
   }
