@@ -27,13 +27,28 @@ const parseVal = (v: string): number | boolean | string | string[] => {
   return s
 }
 
+const splitFields = (line: string, lineNumber: number) => {
+  let depth = 0
+  const normalized = line.replace(/[[\]{}]| +(?=[a-zA-Z_]\w*=)/g, (match, offset: number) => {
+    if (match === '[' || match === '{') depth++
+    else if (match === ']' || match === '}') depth = Math.max(0, depth - 1)
+    else if (depth === 0 && line[offset - 1] !== '\t') {
+      const key = line.slice(offset + match.length).split('=', 1)[0]
+      console.warn(`Missing tab before ${key} on line ${lineNumber}: ${line.slice(0, 100)}`)
+      return '\t'
+    }
+    return match
+  })
+  return normalized.split('\t')
+}
+
 const parseBlock = (content: string, begin: string, req1: string, req2?: string) => {
   const out: any[] = []
-  for (const rawLine of content.split('\n')) {
+  for (const [index, rawLine] of content.split('\n').entries()) {
     const line = rawLine.trim()
     if (!line || !line.startsWith(begin)) continue
     const o: any = {}
-    for (const part of line.split('\t')) {
+    for (const part of splitFields(line, index + 1)) {
       if (!part) continue
       const [k, v] = part.split('=')
       if (k && v) o[k.trim()] = parseVal(v.trim())
@@ -45,11 +60,11 @@ const parseBlock = (content: string, begin: string, req1: string, req2?: string)
 
 const parseName = (content: string, begin: string, idKey: string, nameKey: string, descKey: string, lvlKey?: string) => {
   const m = new Map<string, any>()
-  for (const rawLine of content.split('\n')) {
+  for (const [index, rawLine] of content.split('\n').entries()) {
     const line = rawLine.trim()
     if (!line || !line.startsWith(begin)) continue
     const o: any = {}
-    for (const part of line.split('\t')) {
+    for (const part of splitFields(line, index + 1)) {
       if (!part) continue
       const [k, v] = part.split('=')
       if (!v) continue

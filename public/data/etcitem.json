@@ -120831,7 +120831,8 @@
   {
     "object_id": 5600,
     "object_name": "harbor_bday_1_year",
-    "drop_type": "0 drop_anim_type",
+    "drop_type": 0,
+    "drop_anim_type": 3,
     "drop_radius": "6.7",
     "drop_height": "3.5",
     "drop_mesh": [
