@@ -17,7 +17,7 @@ import {
   fetchDefinition,
   fileTypes,
   languageOf,
-  openDat,
+  openDatInWorker,
   errorLocation,
   serialize,
   textEncoding,
@@ -33,7 +33,6 @@ type Editor = Parameters<OnMount>[0]
 const monacoMessages: Record<string, () => Promise<unknown>> = {
   de: () => import('monaco-editor/nls/lang/de.js'),
   es: () => import('monaco-editor/nls/lang/es.js'),
-  pt: () => import('monaco-editor/nls/lang/pt-br.js'),
   ru: () => import('monaco-editor/nls/lang/ru.js'),
 }
 
@@ -80,6 +79,7 @@ interface OpenedFile {
 }
 
 const CLIENT_KEY = 'fileedit.client'
+const LARGE_TEXT = 20_000_000
 
 const messageOf = (error: unknown) =>
   error instanceof Error ? error.message : String(error)
@@ -139,6 +139,8 @@ export default function FileEditPage({
   const [revision, setRevision] = useState(0)
   const [definition, setDefinition] = useState<Definition | null>(null)
   const [client, setClient] = useState('')
+  const [matching, setMatching] = useState<string[] | null>(null)
+  const detection = useRef(0)
   const [modified, setModified] = useState(false)
   const [status, setStatus] = useState('')
   const [error, setError] = useState('')
@@ -156,23 +158,49 @@ export default function FileEditPage({
     setRevision((value) => value + 1)
   }
 
-  const loadDat = (opened: OpenedFile, chosen: Definition, version: string) => {
+  const openDefinition = async (
+    opened: OpenedFile,
+    chosen: Definition,
+    version?: string,
+  ) => {
+    const id = ++detection.current
+    const detect = version === undefined && chosen.clients.length > 0
+    const requested = version ?? preferredClient(chosen)
     setDefinition(chosen)
-    setClient(version)
+    setClient(requested)
+    if (version === undefined) setMatching(null)
+    show(null)
+    setError('')
+    setStatus(t(detect ? 'fileEdit.detecting' : 'fileEdit.opening'))
     try {
-      const { schema, text } = openDat(opened.plain, chosen, version)
+      const result = await openDatInWorker(
+        opened.plain,
+        chosen,
+        requested,
+        detect,
+      )
+      if (id !== detection.current) return
+      if (result.matching) setMatching(result.matching)
+      setClient(result.client)
+      if (result.text === null) {
+        setError(
+          result.matching?.length === 0
+            ? `${t('fileEdit.noMatchingClient')}\n${result.error}`
+            : result.error,
+        )
+        return
+      }
       show({
         kind: 'dat',
         ...opened,
         definition: chosen,
-        client: version,
-        schema,
-        text,
+        client: result.client,
+        text: result.text,
       })
-      setError('')
     } catch (failure) {
-      show(null)
-      setError(messageOf(failure))
+      if (id === detection.current) setError(messageOf(failure))
+    } finally {
+      if (id === detection.current) setStatus('')
     }
   }
 
@@ -192,6 +220,8 @@ export default function FileEditPage({
       const opened = { name: selected.name, container, plain }
       setFile(opened)
       setDefinition(null)
+      setMatching(null)
+      detection.current++
       if (extension(selected.name) !== '.dat') {
         show({ kind: 'text', ...opened, ...decodeText(plain) })
         return
@@ -204,7 +234,7 @@ export default function FileEditPage({
         setError(t('fileEdit.noDefinition', { name: selected.name }))
         return
       }
-      loadDat(opened, found, preferredClient(found))
+      await openDefinition(opened, found)
     } catch (failure) {
       setFile(null)
       show(null)
@@ -219,7 +249,7 @@ export default function FileEditPage({
       return
     try {
       const found = await fetchDefinition(basePath, name)
-      if (found) loadDat(file, found, preferredClient(found))
+      if (found) await openDefinition(file, found)
     } catch (failure) {
       setError(messageOf(failure))
     }
@@ -231,7 +261,7 @@ export default function FileEditPage({
     try {
       localStorage.setItem(CLIENT_KEY, version)
     } catch {}
-    loadDat(file, definition, version)
+    void openDefinition(file, definition, version)
   }
 
   const save = async () => {
@@ -246,7 +276,7 @@ export default function FileEditPage({
     setStatus(t('fileEdit.saving'))
     try {
       const bytes = await wrap(
-        serialize(fileDocument, editor.getValue()),
+        await serialize(fileDocument, editor.getValue()),
         fileDocument.container,
         fileDocument.name,
         {
@@ -287,6 +317,7 @@ export default function FileEditPage({
   }
 
   const showDatControls = extension(file?.name ?? '') === '.dat'
+  const large = (fileDocument?.text.length ?? 0) > LARGE_TEXT
   const summary = fileDocument && [
     fileDocument.container.protocol
       ? `Lineage2Ver${fileDocument.container.protocol}`
@@ -294,6 +325,7 @@ export default function FileEditPage({
     fileDocument.kind === 'text'
       ? textEncoding(fileDocument.format)
       : `${fileDocument.definition.name}.json`,
+    ...(large ? [t('fileEdit.largeFile')] : []),
   ]
 
   return (
@@ -347,11 +379,34 @@ export default function FileEditPage({
             value={client}
             onChange={(event) => changeClient(event.target.value)}
           >
-            {definition.clients.map((version) => (
-              <option key={version} value={version}>
-                {version}
-              </option>
-            ))}
+            {matching === null ? (
+              definition.clients.map((version) => (
+                <option key={version} value={version}>
+                  {version}
+                </option>
+              ))
+            ) : (
+              <>
+                {matching.length > 0 && (
+                  <optgroup label={t('fileEdit.matchingClients')}>
+                    {matching.map((version) => (
+                      <option key={version} value={version}>
+                        {version}
+                      </option>
+                    ))}
+                  </optgroup>
+                )}
+                <optgroup label={t('fileEdit.otherClients')}>
+                  {definition.clients
+                    .filter((version) => !matching.includes(version))
+                    .map((version) => (
+                      <option key={version} value={version}>
+                        {version}
+                      </option>
+                    ))}
+                </optgroup>
+              </>
+            )}
           </Select>
         )}
         <Status>
@@ -367,7 +422,7 @@ export default function FileEditPage({
             key={revision}
             theme="vs-dark"
             height="100%"
-            language={languageOf(fileDocument.name)}
+            language={large ? 'plaintext' : languageOf(fileDocument.name)}
             defaultValue={fileDocument.text}
             beforeMount={registerLanguages}
             onMount={onMount}

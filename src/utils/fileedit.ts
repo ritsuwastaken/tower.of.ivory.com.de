@@ -1,6 +1,6 @@
 import { decode, encode, initParams, type Options } from 'l2encdec'
-import { assemble, disassemble, parseSchema, parseSchemas } from 'l2asmdisasm'
-import type { Schema } from 'l2asmdisasm'
+import { parseSchemas } from 'l2asmdisasm'
+import type { DatRequest, DatResponse } from '@/utils/dat.worker'
 
 export const fileTypes = ['.dat', '.ini', '.txt']
 
@@ -40,7 +40,6 @@ export interface DatDocument extends BaseDocument {
   plain: Uint8Array
   definition: Definition
   client: string
-  schema: Schema
 }
 
 export type FileDocument = TextDocument | DatDocument
@@ -181,20 +180,62 @@ export async function fetchDefinition(
   return { name, text, clients }
 }
 
-export function openDat(
+function callDatWorker(request: DatRequest): Promise<DatResponse> {
+  return new Promise((resolve, reject) => {
+    const worker = new Worker(new URL('./dat.worker.ts', import.meta.url), {
+      type: 'module',
+    })
+    worker.onmessage = ({ data }: MessageEvent<DatResponse>) => {
+      worker.terminate()
+      resolve(data)
+    }
+    worker.onerror = (event) => {
+      worker.terminate()
+      reject(new Error(event.message))
+    }
+    worker.postMessage(request)
+  })
+}
+
+export async function openDatInWorker(
   plain: Uint8Array,
   definition: Definition,
   client: string,
-): { schema: Schema; text: string } {
-  const schema = parseSchema(definition.text, client)
-  return { schema, text: disassemble(plain, schema) }
+  detect: boolean,
+) {
+  const response = await callDatWorker({
+    kind: 'open',
+    plain,
+    definition: definition.text,
+    client,
+    detect,
+  })
+  if (response.kind !== 'open') throw new Error('Unexpected worker response')
+  return response
 }
 
-export function serialize(document: FileDocument, text: string): Uint8Array {
-  return document.kind === 'dat'
-    ? assemble(text, document.schema)
-    : encodeText(text, document.format)
+async function assembleInWorker(
+  text: string,
+  document: DatDocument,
+): Promise<Uint8Array> {
+  const response = await callDatWorker({
+    kind: 'save',
+    text,
+    definition: document.definition.text,
+    client: document.client,
+  })
+  if (response.kind !== 'save' || !response.plain)
+    throw new Error(response.error || 'Unexpected worker response')
+  return response.plain
 }
+
+export const serialize = (
+  document: FileDocument,
+  text: string,
+): Promise<Uint8Array> =>
+  document.kind === 'dat'
+    ? assembleInWorker(text, document)
+    : Promise.resolve(encodeText(text, document.format))
 
 export function errorLocation(
   message: string,

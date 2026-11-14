@@ -203,6 +203,11 @@
         "discardChanges": "Discard unsaved changes?",
         "legacyWarning": "This file uses legacy RSA encryption. Saving may produce a file that is incompatible with the original client. Continue?",
         "notEncrypted": "Not encrypted",
-        "hint": "Open or drop a .dat, .ini or .txt file here to edit it."
+        "hint": "Open or drop a .dat, .ini or .txt file here to edit it.",
+        "detecting": "Detecting client version…",
+        "matchingClients": "Matches this file",
+        "otherClients": "Other versions",
+        "noMatchingClient": "This file does not match any client version of the definition.",
+        "largeFile": "large file: syntax highlighting off"
     }
 }

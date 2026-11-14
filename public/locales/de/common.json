@@ -203,6 +203,11 @@
         "discardChanges": "Nicht gespeicherte Änderungen verwerfen?",
         "legacyWarning": "Diese Datei verwendet eine ältere RSA-Verschlüsselung. Beim Speichern kann eine Datei entstehen, die mit dem ursprünglichen Client nicht kompatibel ist. Fortfahren?",
         "notEncrypted": "Nicht verschlüsselt",
-        "hint": "Öffne eine .dat-, .ini- oder .txt-Datei oder ziehe sie hierher, um sie zu bearbeiten."
+        "hint": "Öffne eine .dat-, .ini- oder .txt-Datei oder ziehe sie hierher, um sie zu bearbeiten.",
+        "detecting": "Client-Version wird erkannt…",
+        "matchingClients": "Passt zu dieser Datei",
+        "otherClients": "Andere Versionen",
+        "noMatchingClient": "Diese Datei passt zu keiner Client-Version der Definition.",
+        "largeFile": "große Datei: Syntaxhervorhebung aus"
     }
 }

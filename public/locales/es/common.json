@@ -203,6 +203,11 @@
         "discardChanges": "¿Descartar los cambios sin guardar?",
         "legacyWarning": "Este archivo utiliza un cifrado RSA antiguo. Al guardarlo, el archivo resultante podría ser incompatible con el cliente original. ¿Continuar?",
         "notEncrypted": "Sin cifrar",
-        "hint": "Abre o arrastra aquí un archivo .dat, .ini o .txt para editarlo."
+        "hint": "Abre o arrastra aquí un archivo .dat, .ini o .txt para editarlo.",
+        "detecting": "Detectando la versión del cliente…",
+        "matchingClients": "Coinciden con este archivo",
+        "otherClients": "Otras versiones",
+        "noMatchingClient": "Este archivo no coincide con ninguna versión del cliente de la definición.",
+        "largeFile": "archivo grande: resaltado de sintaxis desactivado"
     }
 }
