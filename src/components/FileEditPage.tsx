@@ -9,6 +9,7 @@ import { AssetBasePathContext } from '@/components/CatalogImage'
 import { controlStyles } from '@/components/Control.styles'
 import { selectStyles } from '@/components/Select.styles'
 import { useTranslation } from '@/hooks/useTranslation'
+import i18n from '@/i18n'
 import {
   baseName,
   decodeText,
@@ -29,8 +30,20 @@ import {
 
 type Editor = Parameters<OnMount>[0]
 
+const monacoMessages: Record<string, () => Promise<unknown>> = {
+  de: () => import('monaco-editor/nls/lang/de.js'),
+  es: () => import('monaco-editor/nls/lang/es.js'),
+  pt: () => import('monaco-editor/nls/lang/pt-br.js'),
+  ru: () => import('monaco-editor/nls/lang/ru.js'),
+}
+
 const Editor = dynamic(
   async () => {
+    try {
+      await monacoMessages[new Intl.Locale(i18n.language).language]?.()
+    } catch {
+      // ignore
+    }
     globalThis.MonacoEnvironment = {
       getWorker(_workerId, label) {
         if (label === 'json')
