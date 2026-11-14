@@ -319,6 +319,7 @@ export default function FileEditPage({
     editor.addAction({
       id: 'fileedit.fullScreen',
       label: t('fileEdit.fullScreen'),
+      keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.Enter],
       contextMenuGroupId: 'navigation',
       run: () =>
         void (document.fullscreenElement
