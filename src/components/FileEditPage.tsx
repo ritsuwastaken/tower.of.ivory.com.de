@@ -133,6 +133,7 @@ export default function FileEditPage({
   const { t } = useTranslation()
   const basePath = useContext(AssetBasePathContext)
   const editorRef = useRef<Editor | null>(null)
+  const frameRef = useRef<HTMLDivElement | null>(null)
   const saveRef = useRef<() => void>(() => {})
   const [file, setFile] = useState<OpenedFile | null>(null)
   const [fileDocument, setFileDocument] = useState<FileDocument | null>(null)
@@ -293,6 +294,7 @@ export default function FileEditPage({
     } catch (failure) {
       const message = messageOf(failure)
       setError(message)
+      if (document.fullscreenElement) void document.exitFullscreen()
       const location = errorLocation(message)
       if (location) {
         const position = { lineNumber: location.line, column: location.column }
@@ -314,6 +316,15 @@ export default function FileEditPage({
     editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () =>
       saveRef.current(),
     )
+    editor.addAction({
+      id: 'fileedit.fullScreen',
+      label: t('fileEdit.fullScreen'),
+      contextMenuGroupId: 'navigation',
+      run: () =>
+        void (document.fullscreenElement
+          ? document.exitFullscreen()
+          : frameRef.current?.requestFullscreen()),
+    })
   }
 
   const showDatControls = extension(file?.name ?? '') === '.dat'
@@ -417,7 +428,7 @@ export default function FileEditPage({
       </Toolbar>
       {error && <ErrorMessage role="alert">{error}</ErrorMessage>}
       {fileDocument ? (
-        <EditorFrame>
+        <EditorFrame ref={frameRef}>
           <Editor
             key={revision}
             theme="vs-dark"
@@ -524,6 +535,11 @@ const EditorFrame = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radii.panel};
   overflow: hidden;
+
+  &:fullscreen {
+    border: none;
+    border-radius: 0;
+  }
 `
 
 const DropZone = styled.div`

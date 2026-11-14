@@ -208,6 +208,7 @@
         "matchingClients": "Passt zu dieser Datei",
         "otherClients": "Andere Versionen",
         "noMatchingClient": "Diese Datei passt zu keiner Client-Version der Definition.",
-        "largeFile": "große Datei: Syntaxhervorhebung aus"
+        "largeFile": "große Datei: Syntaxhervorhebung aus",
+        "fullScreen": "Vollbildmodus"
     }
 }
