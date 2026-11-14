@@ -209,6 +209,6 @@
         "otherClients": "Other versions",
         "noMatchingClient": "This file does not match any client version of the definition.",
         "largeFile": "large file: syntax highlighting off",
-        "fullScreen": "Full Screen"
+        "maximize": "Maximize Editor"
     }
 }

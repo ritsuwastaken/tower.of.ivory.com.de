@@ -209,6 +209,6 @@
         "otherClients": "Otras versiones",
         "noMatchingClient": "Este archivo no coincide con ninguna versión del cliente de la definición.",
         "largeFile": "archivo grande: resaltado de sintaxis desactivado",
-        "fullScreen": "Pantalla completa"
+        "maximize": "Maximizar editor"
     }
 }

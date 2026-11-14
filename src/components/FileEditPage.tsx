@@ -4,7 +4,7 @@ import type { BeforeMount, OnMount } from '@monaco-editor/react'
 import type { languages } from 'monaco-editor'
 import dynamic from 'next/dynamic'
 import { useContext, useEffect, useRef, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { AssetBasePathContext } from '@/components/CatalogImage'
 import { controlStyles } from '@/components/Control.styles'
 import { selectStyles } from '@/components/Select.styles'
@@ -133,7 +133,6 @@ export default function FileEditPage({
   const { t } = useTranslation()
   const basePath = useContext(AssetBasePathContext)
   const editorRef = useRef<Editor | null>(null)
-  const frameRef = useRef<HTMLDivElement | null>(null)
   const saveRef = useRef<() => void>(() => {})
   const [file, setFile] = useState<OpenedFile | null>(null)
   const [fileDocument, setFileDocument] = useState<FileDocument | null>(null)
@@ -145,6 +144,8 @@ export default function FileEditPage({
   const [modified, setModified] = useState(false)
   const [status, setStatus] = useState('')
   const [error, setError] = useState('')
+  const [maximized, setMaximized] = useState(false)
+  const maximizedKey = useRef<{ set(value: boolean): void } | null>(null)
 
   useEffect(() => {
     if (!modified) return
@@ -294,7 +295,7 @@ export default function FileEditPage({
     } catch (failure) {
       const message = messageOf(failure)
       setError(message)
-      if (document.fullscreenElement) void document.exitFullscreen()
+      setMaximized(false)
       const location = errorLocation(message)
       if (location) {
         const position = { lineNumber: location.line, column: location.column }
@@ -316,17 +317,24 @@ export default function FileEditPage({
     editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () =>
       saveRef.current(),
     )
+    maximizedKey.current = editor.createContextKey('fileEditMaximized', false)
     editor.addAction({
-      id: 'fileedit.fullScreen',
-      label: t('fileEdit.fullScreen'),
+      id: 'fileedit.maximize',
+      label: t('fileEdit.maximize'),
       keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.Enter],
       contextMenuGroupId: 'navigation',
-      run: () =>
-        void (document.fullscreenElement
-          ? document.exitFullscreen()
-          : frameRef.current?.requestFullscreen()),
+      run: () => setMaximized((value) => !value),
     })
+    editor.addCommand(
+      monaco.KeyCode.Escape,
+      () => setMaximized(false),
+      'fileEditMaximized && !findWidgetVisible && !suggestWidgetVisible && !parameterHintsVisible && !renameInputVisible',
+    )
   }
+
+  useEffect(() => {
+    maximizedKey.current?.set(maximized)
+  }, [maximized])
 
   const showDatControls = extension(file?.name ?? '') === '.dat'
   const large = (fileDocument?.text.length ?? 0) > LARGE_TEXT
@@ -429,7 +437,7 @@ export default function FileEditPage({
       </Toolbar>
       {error && <ErrorMessage role="alert">{error}</ErrorMessage>}
       {fileDocument ? (
-        <EditorFrame ref={frameRef}>
+        <EditorFrame $maximized={maximized}>
           <Editor
             key={revision}
             theme="vs-dark"
@@ -529,24 +537,31 @@ const ErrorMessage = styled.p`
   white-space: pre-wrap;
 `
 
-const EditorFrame = styled.div`
+const EditorFrame = styled.div<{ $maximized: boolean }>`
   position: relative;
   flex: 1;
-  min-height: 70vh;
+  min-height: 20rem;
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: ${({ theme }) => theme.radii.panel};
   overflow: hidden;
 
-  &:fullscreen {
-    border: none;
-    border-radius: 0;
-  }
+  ${({ $maximized, theme }) =>
+    $maximized &&
+    css`
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      min-height: 0;
+      border: none;
+      border-radius: 0;
+      background-color: ${theme.colors.background};
+    `}
 `
 
 const DropZone = styled.div`
   display: flex;
   flex: 1;
-  min-height: 50vh;
+  min-height: 20rem;
   align-items: center;
   justify-content: center;
   padding: ${({ theme }) => theme.spacing.xl};
