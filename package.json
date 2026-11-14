@@ -23,7 +23,7 @@
     "l2asmdisasm": "^1.0.1",
     "l2encdec": "^1.0.1",
     "monaco-editor": "^0.57.0",
-    "next": "^16.5.0-canary.48",
+    "next": "^16.5.0-canary.50",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-i18next": "^18.0.1",
