@@ -2,6 +2,7 @@
 
 import type * as Monaco from 'monaco-editor'
 import { useEffect, useRef, useState } from 'react'
+import styled, { css, keyframes } from 'styled-components'
 import i18n from '@/i18n'
 
 export type MonacoApi = typeof Monaco
@@ -48,66 +49,101 @@ const loadMonaco = () =>
 export default function MonacoEditor({
   value,
   language,
+  version,
   options,
   loadingText,
+  busyText,
   beforeMount,
   onMount,
   onChange,
 }: {
   value: string
   language: string
+  version?: number
   options?: EditorOptions
   loadingText?: string
+  busyText?: string
   beforeMount?: (monaco: MonacoApi) => void
   onMount?: (editor: Editor, monaco: MonacoApi) => void
   onChange?: () => void
 }) {
   const container = useRef<HTMLDivElement | null>(null)
+  const instance = useRef<{ editor: Editor; monaco: MonacoApi } | null>(null)
+  const latest = useRef({ value, language, options })
   const callbacks = useRef({ beforeMount, onMount, onChange })
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
+    latest.current = { value, language, options }
     callbacks.current = { beforeMount, onMount, onChange }
   })
 
   useEffect(() => {
-    let editor: Editor | null = null
     let disposed = false
     void loadMonaco().then((monaco) => {
       if (disposed || !container.current) return
       callbacks.current.beforeMount?.(monaco)
-      editor = monaco.editor.create(container.current, {
+      const { value, language, options } = latest.current
+      const editor = monaco.editor.create(container.current, {
         ...options,
         value,
         language,
       })
       editor.onDidChangeModelContent(() => callbacks.current.onChange?.())
+      instance.current = { editor, monaco }
       callbacks.current.onMount?.(editor, monaco)
       setReady(true)
     })
     return () => {
       disposed = true
-      editor?.getModel()?.dispose()
-      editor?.dispose()
+      instance.current?.editor.getModel()?.dispose()
+      instance.current?.editor.dispose()
+      instance.current = null
     }
-  }, [value, language, options])
+  }, [])
+
+  useEffect(() => {
+    if (!instance.current) return
+    const { editor, monaco } = instance.current
+    const previous = editor.getModel()
+    editor.setModel(monaco.editor.createModel(value, language))
+    previous?.dispose()
+  }, [value, language, version])
+
+  useEffect(() => {
+    instance.current?.editor.updateOptions({
+      readOnly: !!busyText,
+      readOnlyMessage: { value: busyText ?? '' },
+    })
+  }, [busyText, ready])
+
+  const overlay = ready ? busyText : loadingText
 
   return (
     <>
-      {!ready && (
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          {loadingText}
-        </div>
-      )}
       <div ref={container} style={{ position: 'absolute', inset: 0 }} />
+      {overlay && <Overlay $dim={ready}>{overlay}</Overlay>}
     </>
   )
 }
+
+const appear = keyframes`
+  from {
+    opacity: 0;
+  }
+`
+
+const Overlay = styled.div<{ $dim: boolean }>`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ${appear} 0.2s 0.3s both;
+
+  ${({ $dim }) =>
+    $dim &&
+    css`
+      background-color: rgb(0 0 0 / 0.4);
+    `}
+`

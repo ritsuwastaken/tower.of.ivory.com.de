@@ -132,7 +132,6 @@ export default function FileEditPage({
     setDefinition(chosen)
     setClient(requested)
     if (version === undefined) setMatching(null)
-    show(null)
     setError('')
     setStatus(t(detect ? 'fileEdit.detecting' : 'fileEdit.opening'))
     try {
@@ -146,6 +145,7 @@ export default function FileEditPage({
       if (result.matching) setMatching(result.matching)
       setClient(result.client)
       if (result.text === null) {
+        show(null)
         setError(
           result.matching?.length === 0
             ? `${t('fileEdit.noMatchingClient')}\n${result.error}`
@@ -161,7 +161,9 @@ export default function FileEditPage({
         text: result.text,
       })
     } catch (failure) {
-      if (id === detection.current) setError(messageOf(failure))
+      if (id !== detection.current) return
+      show(null)
+      setError(messageOf(failure))
     } finally {
       if (id === detection.current) setStatus('')
     }
@@ -400,11 +402,12 @@ export default function FileEditPage({
       {fileDocument ? (
         <EditorFrame $maximized={maximized}>
           <MonacoEditor
-            key={revision}
             value={fileDocument.text}
+            version={revision}
             language={large ? 'plaintext' : languageOf(fileDocument.name)}
             options={editorOptions}
             loadingText={t('meta.loading')}
+            busyText={status}
             beforeMount={registerLanguages}
             onMount={onMount}
             onChange={() => setModified(true)}
