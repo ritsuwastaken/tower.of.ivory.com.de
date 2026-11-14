@@ -127,7 +127,11 @@ export default function MonacoEditor({
 
   return (
     <>
-      <div ref={container} style={{ position: 'absolute', inset: 0 }} />
+      <div
+        ref={container}
+        className="monaco-component"
+        style={{ position: 'absolute', inset: 0 }}
+      />
       {overlay && <Overlay $dim={ready}>{overlay}</Overlay>}
     </>
   )
