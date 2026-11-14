@@ -3,8 +3,9 @@
 import type { BeforeMount, OnMount } from '@monaco-editor/react'
 import type { languages } from 'monaco-editor'
 import dynamic from 'next/dynamic'
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
+import { AssetBasePathContext } from '@/components/CatalogImage'
 import { controlStyles } from '@/components/Control.styles'
 import { selectStyles } from '@/components/Select.styles'
 import { useTranslation } from '@/hooks/useTranslation'
@@ -12,8 +13,7 @@ import {
   baseName,
   decodeText,
   extension,
-  getDefinition,
-  definitionNames,
+  fetchDefinition,
   fileTypes,
   languageOf,
   openDat,
@@ -112,8 +112,13 @@ function download(bytes: Uint8Array, name: string) {
   URL.revokeObjectURL(url)
 }
 
-export default function FileEditPage() {
+export default function FileEditPage({
+  definitionNames,
+}: {
+  definitionNames: string[]
+}) {
   const { t } = useTranslation()
+  const basePath = useContext(AssetBasePathContext)
   const editorRef = useRef<Editor | null>(null)
   const saveRef = useRef<() => void>(() => {})
   const [file, setFile] = useState<OpenedFile | null>(null)
@@ -178,7 +183,9 @@ export default function FileEditPage() {
         show({ kind: 'text', ...opened, ...decodeText(plain) })
         return
       }
-      const found = getDefinition(baseName(selected.name))
+      const found = definitionNames.includes(baseName(selected.name))
+        ? await fetchDefinition(basePath, baseName(selected.name))
+        : null
       if (!found) {
         show(null)
         setError(t('fileEdit.noDefinition', { name: selected.name }))
@@ -194,11 +201,11 @@ export default function FileEditPage() {
     }
   }
 
-  const changeDefinition = (name: string) => {
+  const changeDefinition = async (name: string) => {
     if (!file || (modified && !window.confirm(t('fileEdit.discardChanges'))))
       return
     try {
-      const found = getDefinition(name)
+      const found = await fetchDefinition(basePath, name)
       if (found) loadDat(file, found, preferredClient(found))
     } catch (failure) {
       setError(messageOf(failure))
@@ -309,7 +316,7 @@ export default function FileEditPage() {
           <Select
             aria-label={t('fileEdit.definition')}
             value={definition?.name ?? ''}
-            onChange={(event) => changeDefinition(event.target.value)}
+            onChange={(event) => void changeDefinition(event.target.value)}
           >
             {!definition && (
               <option value="">{t('fileEdit.definition')}</option>

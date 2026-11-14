@@ -1,9 +1,6 @@
 import { decode, encode, initParams, type Options } from 'l2encdec'
 import { assemble, disassemble, parseSchema, parseSchemas } from 'l2asmdisasm'
 import type { Schema } from 'l2asmdisasm'
-import definitions from '@/utils/fileedit-definitions'
-
-export { definitionNames } from '@/utils/fileedit-definitions'
 
 export const fileTypes = ['.dat', '.ini', '.txt']
 
@@ -171,9 +168,13 @@ export function textEncoding(format: TextFormat): string {
   return format.bom.length ? 'UTF-8 BOM' : 'UTF-8'
 }
 
-export function getDefinition(name: string): Definition | null {
-  if (!Object.hasOwn(definitions, name)) return null
-  const text = JSON.stringify(definitions[name], null, 2)
+export async function fetchDefinition(
+  basePath: string,
+  name: string,
+): Promise<Definition | null> {
+  const response = await fetch(`${basePath}/definitions/${name}.json`)
+  if (!response.ok) return null
+  const text = await response.text()
   const clients = [
     ...new Set(parseSchemas(text).flatMap((schema) => schema.clients)),
   ].sort((a, b) => a.localeCompare(b))
