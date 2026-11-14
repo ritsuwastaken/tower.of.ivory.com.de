@@ -208,7 +208,8 @@
         "matchingClients": "Matches this file",
         "otherClients": "Other versions",
         "noMatchingClient": "This file does not match any client version of the definition.",
-        "largeFile": "large file: syntax highlighting off",
-        "maximize": "Maximize Editor"
+        "maximize": "Maximize Editor",
+        "highlightOn": "Enable Syntax Highlighting",
+        "highlightOff": "Disable Syntax Highlighting"
     }
 }

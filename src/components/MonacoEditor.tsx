@@ -102,13 +102,19 @@ export default function MonacoEditor({
     }
   }, [])
 
+  const shown = useRef(version)
+
   useEffect(() => {
     if (!instance.current) return
     const { editor, monaco } = instance.current
     const previous = editor.getModel()
-    editor.setModel(monaco.editor.createModel(value, language))
+    const text =
+      shown.current === version && previous ? previous.getValue() : value
+    shown.current = version
+    editor.updateOptions(options ?? {})
+    editor.setModel(monaco.editor.createModel(text, language))
     previous?.dispose()
-  }, [value, language, version])
+  }, [value, language, version, options])
 
   useEffect(() => {
     instance.current?.editor.updateOptions({

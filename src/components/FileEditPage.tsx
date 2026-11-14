@@ -1,5 +1,6 @@
 'use client'
 
+import { parseSchema } from 'l2asmdisasm'
 import { useContext, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { AssetBasePathContext } from '@/components/CatalogImage'
@@ -11,6 +12,7 @@ import MonacoEditor, {
 } from '@/components/MonacoEditor'
 import { selectStyles } from '@/components/Select.styles'
 import { useTranslation } from '@/hooks/useTranslation'
+import { datJsonSchema } from '@/utils/datSchema'
 import {
   baseName,
   decodeText,
@@ -36,7 +38,18 @@ interface OpenedFile {
 }
 
 const CLIENT_KEY = 'fileedit.client'
+// Monaco stops tokenizing above these sizes unless largeFileOptimizations is off
 const LARGE_TEXT = 20_000_000
+const LARGE_LINES = 300_000
+const SCHEMA_LIMIT = 5_000_000
+
+function isLarge(text: string) {
+  if (text.length > LARGE_TEXT) return true
+  let lines = 1
+  for (let i = text.indexOf('\n'); i !== -1; i = text.indexOf('\n', i + 1))
+    if (++lines > LARGE_LINES) return true
+  return false
+}
 
 const messageOf = (error: unknown) =>
   error instanceof Error ? error.message : String(error)
@@ -54,10 +67,16 @@ const preferredClient = (definition: Definition) => {
 const editorOptions: EditorOptions = {
   theme: 'vs-dark',
   automaticLayout: true,
+  fixedOverflowWidgets: true,
   fontSize: 13,
   renderWhitespace: 'boundary',
   scrollBeyondLastLine: false,
   wordWrap: 'off',
+}
+
+const highlightOptions: EditorOptions = {
+  ...editorOptions,
+  largeFileOptimizations: false,
 }
 
 const registerLanguages = (monaco: MonacoApi) => {
@@ -94,6 +113,8 @@ export default function FileEditPage({
   const { t } = useTranslation()
   const basePath = useContext(AssetBasePathContext)
   const editorRef = useRef<Editor | null>(null)
+  const [monaco, setMonaco] = useState<MonacoApi | null>(null)
+  const [highlight, setHighlight] = useState(false)
   const saveRef = useRef<() => void>(() => {})
   const [file, setFile] = useState<OpenedFile | null>(null)
   const [fileDocument, setFileDocument] = useState<FileDocument | null>(null)
@@ -117,6 +138,7 @@ export default function FileEditPage({
 
   const show = (next: FileDocument | null) => {
     setFileDocument(next)
+    setHighlight(false)
     setModified(false)
     setRevision((value) => value + 1)
   }
@@ -277,6 +299,7 @@ export default function FileEditPage({
 
   const onMount = (editor: Editor, monaco: MonacoApi) => {
     editorRef.current = editor
+    setMonaco(monaco)
     editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () =>
       saveRef.current(),
     )
@@ -300,7 +323,43 @@ export default function FileEditPage({
   }, [maximized])
 
   const showDatControls = extension(file?.name ?? '') === '.dat'
-  const large = (fileDocument?.text.length ?? 0) > LARGE_TEXT
+  const large = !!fileDocument && isLarge(fileDocument.text)
+  const plain = large && !highlight
+
+  useEffect(() => {
+    const editor = editorRef.current
+    if (!editor || !large) return
+    const action = editor.addAction({
+      id: 'fileedit.highlight',
+      label: t(highlight ? 'fileEdit.highlightOff' : 'fileEdit.highlightOn'),
+      contextMenuGroupId: 'navigation',
+      contextMenuOrder: 1,
+      run: () => setHighlight((value) => !value),
+    })
+    return () => action.dispose()
+  }, [monaco, large, highlight, t])
+
+  useEffect(() => {
+    if (!monaco) return
+    const dat =
+      fileDocument?.kind === 'dat' && fileDocument.text.length <= SCHEMA_LIMIT
+        ? fileDocument
+        : null
+    monaco.json.jsonDefaults.setDiagnosticsOptions({
+      validate: !!dat,
+      schemas: dat
+        ? [
+            {
+              uri: `fileedit://definitions/${dat.definition.name}.schema.json`,
+              fileMatch: ['*'],
+              schema: datJsonSchema(
+                parseSchema(dat.definition.text, dat.client),
+              ),
+            },
+          ]
+        : [],
+    })
+  }, [monaco, fileDocument])
   const summary = fileDocument && [
     fileDocument.container.protocol
       ? `Lineage2Ver${fileDocument.container.protocol}`
@@ -308,7 +367,6 @@ export default function FileEditPage({
     fileDocument.kind === 'text'
       ? textEncoding(fileDocument.format)
       : `${fileDocument.definition.name}.json`,
-    ...(large ? [t('fileEdit.largeFile')] : []),
   ]
 
   return (
@@ -404,8 +462,8 @@ export default function FileEditPage({
           <MonacoEditor
             value={fileDocument.text}
             version={revision}
-            language={large ? 'plaintext' : languageOf(fileDocument.name)}
-            options={editorOptions}
+            language={plain ? 'plaintext' : languageOf(fileDocument.name)}
+            options={large && highlight ? highlightOptions : editorOptions}
             loadingText={t('meta.loading')}
             busyText={status}
             beforeMount={registerLanguages}

@@ -208,7 +208,8 @@
         "matchingClients": "Compatíveis com este arquivo",
         "otherClients": "Outras versões",
         "noMatchingClient": "Este arquivo não corresponde a nenhuma versão do cliente da definição.",
-        "largeFile": "arquivo grande: destaque de sintaxe desativado",
-        "maximize": "Maximizar editor"
+        "maximize": "Maximizar editor",
+        "highlightOn": "Ativar destaque de sintaxe",
+        "highlightOff": "Desativar destaque de sintaxe"
     }
 }

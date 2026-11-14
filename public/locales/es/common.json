@@ -208,7 +208,8 @@
         "matchingClients": "Coinciden con este archivo",
         "otherClients": "Otras versiones",
         "noMatchingClient": "Este archivo no coincide con ninguna versión del cliente de la definición.",
-        "largeFile": "archivo grande: resaltado de sintaxis desactivado",
-        "maximize": "Maximizar editor"
+        "maximize": "Maximizar editor",
+        "highlightOn": "Activar resaltado de sintaxis",
+        "highlightOff": "Desactivar resaltado de sintaxis"
     }
 }
