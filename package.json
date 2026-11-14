@@ -18,11 +18,10 @@
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@monaco-editor/react": "^4.7.0",
     "i18next": "^27.1.1",
     "l2asmdisasm": "^1.0.1",
     "l2encdec": "^1.0.2",
-    "monaco-editor": "^0.57.0",
+    "monaco-editor": "^0.58.0-dev-20261111",
     "next": "^16.5.0-canary.50",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",

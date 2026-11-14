@@ -1,15 +1,16 @@
 'use client'
 
-import type { BeforeMount, OnMount } from '@monaco-editor/react'
-import type { languages } from 'monaco-editor'
-import dynamic from 'next/dynamic'
 import { useContext, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { AssetBasePathContext } from '@/components/CatalogImage'
 import { controlStyles } from '@/components/Control.styles'
+import MonacoEditor, {
+  type Editor,
+  type EditorOptions,
+  type MonacoApi,
+} from '@/components/MonacoEditor'
 import { selectStyles } from '@/components/Select.styles'
 import { useTranslation } from '@/hooks/useTranslation'
-import i18n from '@/i18n'
 import {
   baseName,
   decodeText,
@@ -27,50 +28,6 @@ import {
   type Definition,
   type FileDocument,
 } from '@/utils/fileedit'
-
-type Editor = Parameters<OnMount>[0]
-
-const monacoMessages: Record<string, () => Promise<unknown>> = {
-  de: () => import('monaco-editor/nls/lang/de.js'),
-  es: () => import('monaco-editor/nls/lang/es.js'),
-  ru: () => import('monaco-editor/nls/lang/ru.js'),
-}
-
-const Editor = dynamic(
-  async () => {
-    try {
-      await monacoMessages[new Intl.Locale(i18n.language).language]?.()
-    } catch {
-      // ignore
-    }
-    globalThis.MonacoEnvironment = {
-      getWorker(_workerId, label) {
-        if (label === 'json')
-          return new Worker(
-            new URL(
-              'monaco-editor/languages/features/json/json.worker.js',
-              import.meta.url,
-            ),
-            { type: 'module' },
-          )
-        return new Worker(
-          new URL(
-            'monaco-editor/editor/common/services/editorWebWorkerMain.js',
-            import.meta.url,
-          ),
-          { type: 'module' },
-        )
-      },
-    }
-    const [monaco, { default: Editor, loader }] = await Promise.all([
-      import('monaco-editor'),
-      import('@monaco-editor/react'),
-    ])
-    loader.config({ monaco })
-    return Editor
-  },
-  { ssr: false },
-)
 
 interface OpenedFile {
   name: string
@@ -94,13 +51,17 @@ const preferredClient = (definition: Definition) => {
     : (definition.clients[0] ?? '')
 }
 
-const registerLanguages: BeforeMount = (monaco) => {
-  if (
-    monaco.languages
-      .getLanguages()
-      .some(({ id }: languages.ILanguageExtensionPoint) => id === 'l2txt')
-  )
-    return
+const editorOptions: EditorOptions = {
+  theme: 'vs-dark',
+  automaticLayout: true,
+  fontSize: 13,
+  renderWhitespace: 'boundary',
+  scrollBeyondLastLine: false,
+  wordWrap: 'off',
+}
+
+const registerLanguages = (monaco: MonacoApi) => {
+  if (monaco.languages.getLanguages().some(({ id }) => id === 'l2txt')) return
   monaco.languages.register({ id: 'l2txt' })
   monaco.languages.setMonarchTokensProvider('l2txt', {
     tokenizer: {
@@ -312,7 +273,7 @@ export default function FileEditPage({
     saveRef.current = () => void save()
   })
 
-  const onMount: OnMount = (editor, monaco) => {
+  const onMount = (editor: Editor, monaco: MonacoApi) => {
     editorRef.current = editor
     editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS, () =>
       saveRef.current(),
@@ -438,30 +399,15 @@ export default function FileEditPage({
       {error && <ErrorMessage role="alert">{error}</ErrorMessage>}
       {fileDocument ? (
         <EditorFrame $maximized={maximized}>
-          <Editor
+          <MonacoEditor
             key={revision}
-            theme="vs-dark"
-            height="100%"
+            value={fileDocument.text}
             language={large ? 'plaintext' : languageOf(fileDocument.name)}
-            defaultValue={fileDocument.text}
+            options={editorOptions}
+            loadingText={t('meta.loading')}
             beforeMount={registerLanguages}
             onMount={onMount}
             onChange={() => setModified(true)}
-            loading={t('meta.loading')}
-            wrapperProps={{
-              style: {
-                display: 'flex',
-                position: 'absolute',
-                inset: 0,
-              },
-            }}
-            options={{
-              automaticLayout: true,
-              fontSize: 13,
-              renderWhitespace: 'boundary',
-              scrollBeyondLastLine: false,
-              wordWrap: 'off',
-            }}
           />
         </EditorFrame>
       ) : (
