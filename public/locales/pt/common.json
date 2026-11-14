@@ -35,7 +35,8 @@
         "skills": "Habilidades",
         "weapons": "Armas",
         "armor": "Armadura",
-        "miscellaneous": "Diversos"
+        "miscellaneous": "Diversos",
+        "fileedit": "Editar ficheiro"
     },
     "itemsPage": {
         "searchPlaceholder": "Pesquisar itens…",
@@ -112,7 +113,8 @@
     },
     "badge": {
         "new": "NOVO",
-        "changed": "ALTERADO"
+        "changed": "ALTERADO",
+        "beta": "Beta"
     },
     "columns": {
         "name": "Nome",
@@ -187,5 +189,20 @@
         "attack_effect": "Efeito de ataque",
         "consume_type": "Tipo de consumo",
         "etcitem_type": "Tipo de item"
+    },
+    "fileEdit": {
+        "open": "Abrir ficheiro",
+        "save": "Guardar",
+        "definition": "Definição",
+        "client": "Versão do cliente",
+        "opening": "A abrir…",
+        "saving": "A guardar…",
+        "encrypting": "A encriptar… {{percent}}%",
+        "unsupported": "Ficheiro não suportado: {{name}}. Abre um ficheiro .dat, .ini ou .txt.",
+        "noDefinition": "Não existe uma definição para {{name}}. Escolhe uma da lista.",
+        "discardChanges": "Descartar as alterações não guardadas?",
+        "legacyWarning": "Este ficheiro utiliza uma encriptação RSA antiga. Ao guardar, o ficheiro resultante poderá ser incompatível com o cliente original. Continuar?",
+        "notEncrypted": "Não encriptado",
+        "hint": "Abre ou arrasta para aqui um ficheiro .dat, .ini ou .txt para o editar."
     }
 }

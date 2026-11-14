@@ -17,6 +17,7 @@ const navigationItems = [
     path: '/etc',
     translationKey: 'navigation.miscellaneous',
   },
+  { path: '/fileedit', translationKey: 'navigation.fileedit', beta: true },
 ]
 
 export const Navigation = () => {
@@ -35,7 +36,7 @@ export const Navigation = () => {
 
   return (
     <CategoryTabs>
-      {navigationItems.map(({ path, translationKey }) => (
+      {navigationItems.map(({ path, translationKey, beta }) => (
         <TabLink
           key={path}
           $isActive={activePath === path}
@@ -43,6 +44,7 @@ export const Navigation = () => {
           aria-current={activePath === path ? 'page' : undefined}
         >
           {t(translationKey)}
+          {beta && <BetaBadge>{t('badge.beta')}</BetaBadge>}
         </TabLink>
       ))}
     </CategoryTabs>
@@ -54,6 +56,18 @@ const CategoryTabs = styled.nav`
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing.lg};
   margin-bottom: ${({ theme }) => theme.spacing.lg};
+`
+
+const BetaBadge = styled.span`
+  margin-left: ${({ theme }) => theme.spacing.sm};
+  padding: 0 ${({ theme }) => theme.spacing.xs};
+  border: 1px solid ${({ theme }) => theme.colors.changedBorder};
+  border-radius: ${({ theme }) => theme.radii.control};
+  background-color: ${({ theme }) => theme.colors.changedBackground};
+  color: ${({ theme }) => theme.colors.changedText};
+  font-size: ${({ theme }) => theme.typography.slot};
+  font-weight: 600;
+  text-transform: uppercase;
 `
 
 const TabLink = styled(Link)<{ $isActive?: boolean }>`

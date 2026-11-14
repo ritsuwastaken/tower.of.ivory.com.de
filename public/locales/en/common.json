@@ -35,7 +35,8 @@
         "skills": "Skills",
         "weapons": "Weapons",
         "armor": "Armor",
-        "miscellaneous": "Miscellaneous"
+        "miscellaneous": "Miscellaneous",
+        "fileedit": "File Edit"
     },
     "itemsPage": {
         "searchPlaceholder": "Search items...",
@@ -112,7 +113,8 @@
     },
     "badge": {
         "new": "NEW",
-        "changed": "CHANGED"
+        "changed": "CHANGED",
+        "beta": "Beta"
     },
     "columns": {
         "name": "Name",
@@ -187,5 +189,20 @@
         "attack_effect": "Attack effect",
         "consume_type": "Consumption type",
         "etcitem_type": "Item type"
+    },
+    "fileEdit": {
+        "open": "Open file",
+        "save": "Save",
+        "definition": "Definition",
+        "client": "Client version",
+        "opening": "Opening…",
+        "saving": "Saving…",
+        "encrypting": "Encrypting… {{percent}}%",
+        "unsupported": "Unsupported file: {{name}}. Open a .dat, .ini or .txt file.",
+        "noDefinition": "No definition for {{name}}. Choose one from the list.",
+        "discardChanges": "Discard unsaved changes?",
+        "legacyWarning": "This file uses legacy RSA encryption. Saving may produce a file that is incompatible with the original client. Continue?",
+        "notEncrypted": "Not encrypted",
+        "hint": "Open or drop a .dat, .ini or .txt file here to edit it."
     }
 }

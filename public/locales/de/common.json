@@ -35,7 +35,8 @@
         "skills": "Fertigkeiten",
         "weapons": "Waffen",
         "armor": "Rüstung",
-        "miscellaneous": "Verschiedenes"
+        "miscellaneous": "Verschiedenes",
+        "fileedit": "Datei bearbeiten"
     },
     "itemsPage": {
         "searchPlaceholder": "Gegenstände suchen…",
@@ -112,7 +113,8 @@
     },
     "badge": {
         "new": "NEU",
-        "changed": "GEÄNDERT"
+        "changed": "GEÄNDERT",
+        "beta": "Beta"
     },
     "columns": {
         "name": "Name",
@@ -187,5 +189,20 @@
         "attack_effect": "Angriffseffekt",
         "consume_type": "Verbrauchstyp",
         "etcitem_type": "Gegenstandstyp"
+    },
+    "fileEdit": {
+        "open": "Datei öffnen",
+        "save": "Speichern",
+        "definition": "Definition",
+        "client": "Client-Version",
+        "opening": "Wird geöffnet…",
+        "saving": "Wird gespeichert…",
+        "encrypting": "Wird verschlüsselt… {{percent}}%",
+        "unsupported": "Nicht unterstützte Datei: {{name}}. Öffne eine .dat-, .ini- oder .txt-Datei.",
+        "noDefinition": "Keine Definition für {{name}}. Wähle eine aus der Liste.",
+        "discardChanges": "Nicht gespeicherte Änderungen verwerfen?",
+        "legacyWarning": "Diese Datei verwendet eine ältere RSA-Verschlüsselung. Beim Speichern kann eine Datei entstehen, die mit dem ursprünglichen Client nicht kompatibel ist. Fortfahren?",
+        "notEncrypted": "Nicht verschlüsselt",
+        "hint": "Öffne eine .dat-, .ini- oder .txt-Datei oder ziehe sie hierher, um sie zu bearbeiten."
     }
 }
