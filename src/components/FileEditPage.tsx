@@ -28,6 +28,8 @@ import {
   type Definition,
   type FileDocument,
 } from '@/utils/fileedit'
+import { type Client as TextClient } from 'l2txt'
+import { validateModel } from 'l2txt/monaco'
 
 interface OpenedFile {
   name: string
@@ -112,6 +114,7 @@ export default function FileEditPage({
   const editorRef = useRef<Editor | null>(null)
   const [monaco, setMonaco] = useState<MonacoApi | null>(null)
   const [highlight, setHighlight] = useState(false)
+  const [textClient, setTextClient] = useState<TextClient | null>(null)
   const saveRef = useRef<() => void>(() => {})
   const [file, setFile] = useState<OpenedFile | null>(null)
   const [fileDocument, setFileDocument] = useState<FileDocument | null>(null)
@@ -347,6 +350,32 @@ export default function FileEditPage({
     })
     return () => action.dispose()
   }, [monaco, large, highlight, t])
+  useEffect(() => {
+    const editor = editorRef.current
+    if (!monaco || !editor || fileDocument?.kind !== 'text' || large) return
+    const { name } = fileDocument
+    const check = () => {
+      const model = editor.getModel()
+      if (!model) return
+      setTextClient(validateModel(monaco, model, { fileName: name }))
+    }
+    let timer = 0
+    const later = () => {
+      window.clearTimeout(timer)
+      timer = window.setTimeout(check, 300)
+    }
+    check()
+    const listeners = [
+      editor.onDidChangeModelContent(later),
+      editor.onDidChangeModel(check),
+    ]
+    return () => {
+      window.clearTimeout(timer)
+      for (const listener of listeners) listener.dispose()
+      setTextClient(null)
+    }
+  }, [monaco, fileDocument, large])
+
   const summary = fileDocument && [
     fileDocument.container.protocol
       ? `Lineage2Ver${fileDocument.container.protocol}`
@@ -354,6 +383,7 @@ export default function FileEditPage({
     fileDocument.kind === 'text'
       ? textEncoding(fileDocument.format)
       : `${fileDocument.definition.name}.json`,
+    ...(textClient ? [textClient] : []),
   ]
 
   return (
