@@ -406,7 +406,9 @@ export default function FileEditPage({
       }}
     >
       <title>
-        {file ? `${file.name} | File Edit` : 'File Edit | Tower of Ivory'}
+        {file
+          ? `${file.name}${modified ? '*' : ''} | File Edit`
+          : 'File Edit | Tower of Ivory'}
       </title>
       <Toolbar>
         <FileButton>
@@ -481,11 +483,7 @@ export default function FileEditPage({
             )}
           </Select>
         )}
-        <Status>
-          {status ||
-            (fileDocument &&
-              `${fileDocument.name}${modified ? '*' : ''} · ${summary?.join(' · ')}`)}
-        </Status>
+        <Status>{status || summary?.join(' · ')}</Status>
       </Toolbar>
       {error && <ErrorMessage role="alert">{error}</ErrorMessage>}
       {fileDocument ? (
