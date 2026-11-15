@@ -116,6 +116,7 @@ export default function FileEditPage({
   const [highlight, setHighlight] = useState(false)
   const [textClient, setTextClient] = useState<TextClient | null>(null)
   const saveRef = useRef<() => void>(() => {})
+  const fileInput = useRef<HTMLInputElement | null>(null)
   const [file, setFile] = useState<OpenedFile | null>(null)
   const [fileDocument, setFileDocument] = useState<FileDocument | null>(null)
   const [revision, setRevision] = useState(0)
@@ -317,10 +318,19 @@ export default function FileEditPage({
     )
     maximizedKey.current = editor.createContextKey('fileEditMaximized', false)
     editor.addAction({
+      id: 'fileedit.open',
+      label: t('fileEdit.open'),
+      keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyO],
+      contextMenuGroupId: 'navigation',
+      contextMenuOrder: 0,
+      run: () => fileInput.current?.click(),
+    })
+    editor.addAction({
       id: 'fileedit.maximize',
       label: t('fileEdit.maximize'),
       keybindings: [monaco.KeyMod.Alt | monaco.KeyCode.Enter],
       contextMenuGroupId: 'navigation',
+      contextMenuOrder: 0.5,
       run: () => setMaximized((value) => !value),
     })
     editor.addCommand(
@@ -399,6 +409,7 @@ export default function FileEditPage({
         <FileButton>
           {t('fileEdit.open')}
           <input
+            ref={fileInput}
             type="file"
             accept={fileTypes.join(',')}
             onChange={(event) => {
