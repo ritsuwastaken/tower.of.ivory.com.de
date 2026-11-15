@@ -46,6 +46,11 @@ const loadMonaco = () =>
     return import('monaco-editor')
   })())
 
+const indentation = (text: string): EditorOptions =>
+  text.includes('\t')
+    ? { detectIndentation: false, insertSpaces: false }
+    : { detectIndentation: true, insertSpaces: true }
+
 export default function MonacoEditor({
   value,
   language,
@@ -86,6 +91,7 @@ export default function MonacoEditor({
       const { value, language, options } = latest.current
       const editor = monaco.editor.create(container.current, {
         ...options,
+        ...indentation(value),
         value,
         language,
       })
@@ -111,7 +117,7 @@ export default function MonacoEditor({
     const text =
       shown.current === version && previous ? previous.getValue() : value
     shown.current = version
-    editor.updateOptions(options ?? {})
+    editor.updateOptions({ ...options, ...indentation(text) })
     editor.setModel(monaco.editor.createModel(text, language))
     previous?.dispose()
   }, [value, language, version, options])
