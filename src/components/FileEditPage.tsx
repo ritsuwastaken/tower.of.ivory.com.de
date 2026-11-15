@@ -405,6 +405,9 @@ export default function FileEditPage({
         if (dropped) void open(dropped)
       }}
     >
+      <title>
+        {file ? `${file.name} | File Edit` : 'File Edit | Tower of Ivory'}
+      </title>
       <Toolbar>
         <FileButton>
           {t('fileEdit.open')}
