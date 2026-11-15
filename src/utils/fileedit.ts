@@ -2,7 +2,7 @@ import { decode, encode, initParams, type Options } from 'l2encdec'
 import { parseSchemas } from 'l2asmdisasm'
 import type { DatRequest, DatResponse, SaveProblem } from '@/utils/dat.worker'
 
-export const fileTypes = ['.dat', '.ini', '.txt']
+export const fileTypes = ['.dat', '.ini', '.int', '.txt']
 
 export type Language = 'json' | 'ini' | 'l2txt'
 
@@ -16,6 +16,7 @@ export interface TextFormat {
   utf16: boolean
   latin1: boolean
   crlf: boolean
+  converted?: string
 }
 
 export interface Definition {
@@ -58,7 +59,7 @@ export const baseName = (name: string) =>
 export const languageOf = (name: string): Language =>
   extension(name) === '.dat'
     ? 'json'
-    : extension(name) === '.ini'
+    : extension(name) === '.ini' || extension(name) === '.int'
       ? 'ini'
       : 'l2txt'
 
@@ -111,6 +112,15 @@ export const wrap = (
 const startsWith = (data: Uint8Array, mark: Uint8Array) =>
   mark.every((byte, i) => data[i] === byte)
 
+function decodeKorean(data: Uint8Array): string | null {
+  try {
+    const text = new TextDecoder('euc-kr', { fatal: true }).decode(data)
+    return /[\uac00-\ud7a3]/.test(text) ? text : null
+  } catch {
+    return null
+  }
+}
+
 export function decodeText(plain: Uint8Array): {
   text: string
   format: TextFormat
@@ -130,6 +140,18 @@ export function decodeText(plain: Uint8Array): {
     text = Array.from(data, (byte) => String.fromCharCode(byte)).join('')
   }
   const crlf = text.includes('\r\n')
+  const korean = latin1 && !bom ? decodeKorean(data) : null
+  if (korean !== null)
+    return {
+      text: crlf ? korean.replaceAll('\r\n', '\n') : korean,
+      format: {
+        bom: UTF16_BOM,
+        utf16: true,
+        latin1: false,
+        crlf,
+        converted: 'CP949',
+      },
+    }
   return {
     text: crlf ? text.replaceAll('\r\n', '\n') : text,
     format: { bom: bom ?? new Uint8Array(), utf16, latin1, crlf },
@@ -162,6 +184,7 @@ export function encodeText(text: string, format: TextFormat): Uint8Array {
 }
 
 export function textEncoding(format: TextFormat): string {
+  if (format.converted) return `${format.converted} to UTF-16LE`
   if (format.utf16) return 'UTF-16LE'
   if (format.latin1) return 'Latin-1'
   return format.bom.length ? 'UTF-8 BOM' : 'UTF-8'
