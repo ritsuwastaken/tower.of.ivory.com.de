@@ -1,6 +1,5 @@
 'use client'
 
-import { parseSchema } from 'l2asmdisasm'
 import { useContext, useEffect, useRef, useState } from 'react'
 import styled, { css } from 'styled-components'
 import { AssetBasePathContext } from '@/components/CatalogImage'
@@ -12,7 +11,6 @@ import MonacoEditor, {
 } from '@/components/MonacoEditor'
 import { selectStyles } from '@/components/Select.styles'
 import { useTranslation } from '@/hooks/useTranslation'
-import { datJsonSchema } from '@/utils/datSchema'
 import {
   baseName,
   decodeText,
@@ -21,7 +19,7 @@ import {
   fileTypes,
   languageOf,
   openDatInWorker,
-  errorLocation,
+  SaveError,
   serialize,
   textEncoding,
   unwrap,
@@ -41,7 +39,6 @@ const CLIENT_KEY = 'fileedit.client'
 // Monaco stops tokenizing above these sizes unless largeFileOptimizations is off
 const LARGE_TEXT = 20_000_000
 const LARGE_LINES = 300_000
-const SCHEMA_LIMIT = 5_000_000
 
 function isLarge(text: string) {
   if (text.length > LARGE_TEXT) return true
@@ -260,6 +257,8 @@ export default function FileEditPage({
     )
       return
     setError('')
+    const model = editor.getModel()
+    if (monaco && model) monaco.editor.setModelMarkers(model, 'l2asmdisasm', [])
     setStatus(t('fileEdit.saving'))
     try {
       const bytes = await wrap(
@@ -278,16 +277,26 @@ export default function FileEditPage({
       download(bytes, fileDocument.name)
       setModified(false)
     } catch (failure) {
-      const message = messageOf(failure)
-      setError(message)
-      setMaximized(false)
-      const location = errorLocation(message)
-      if (location) {
-        const position = { lineNumber: location.line, column: location.column }
-        editor.setPosition(position)
-        editor.revealPositionInCenter(position)
-        editor.focus()
+      const problem = failure instanceof SaveError ? failure.problem : null
+      if (!problem || !monaco || !model) {
+        setError(messageOf(failure))
+        setMaximized(false)
+        return
       }
+      const { message, line, column } = problem
+      monaco.editor.setModelMarkers(model, 'l2asmdisasm', [
+        {
+          severity: monaco.MarkerSeverity.Error,
+          message,
+          startLineNumber: line,
+          startColumn: column,
+          endLineNumber: line,
+          endColumn: column,
+        },
+      ])
+      editor.setPosition({ lineNumber: line, column })
+      editor.focus()
+      editor.trigger('fileedit', 'editor.action.marker.next', null)
     } finally {
       setStatus('')
     }
@@ -338,28 +347,6 @@ export default function FileEditPage({
     })
     return () => action.dispose()
   }, [monaco, large, highlight, t])
-
-  useEffect(() => {
-    if (!monaco) return
-    const dat =
-      fileDocument?.kind === 'dat' && fileDocument.text.length <= SCHEMA_LIMIT
-        ? fileDocument
-        : null
-    monaco.json.jsonDefaults.setDiagnosticsOptions({
-      validate: !!dat,
-      schemas: dat
-        ? [
-            {
-              uri: `fileedit://definitions/${dat.definition.name}.schema.json`,
-              fileMatch: ['*'],
-              schema: datJsonSchema(
-                parseSchema(dat.definition.text, dat.client),
-              ),
-            },
-          ]
-        : [],
-    })
-  }, [monaco, fileDocument])
   const summary = fileDocument && [
     fileDocument.container.protocol
       ? `Lineage2Ver${fileDocument.container.protocol}`

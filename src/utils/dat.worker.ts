@@ -1,4 +1,10 @@
-import { assemble, disassemble, parseSchema, parseSchemas } from 'l2asmdisasm'
+import {
+  assemble,
+  disassemble,
+  L2AsmDisasmError,
+  parseSchema,
+  parseSchemas,
+} from 'l2asmdisasm'
 
 export type DatRequest =
   | {
@@ -18,7 +24,18 @@ export type DatResponse =
       error: string
       matching: string[] | null
     }
-  | { kind: 'save'; plain: Uint8Array | null; error: string }
+  | {
+      kind: 'save'
+      plain: Uint8Array | null
+      error: string
+      problem: SaveProblem | null
+    }
+
+export interface SaveProblem {
+  message: string
+  line: number
+  column: number
+}
 
 const scope = globalThis as unknown as {
   onmessage: ((event: MessageEvent<DatRequest>) => void) | null
@@ -27,6 +44,16 @@ const scope = globalThis as unknown as {
 
 const messageOf = (error: unknown) =>
   error instanceof Error ? error.message : String(error)
+
+function problemOf(error: unknown): SaveProblem | null {
+  if (!(error instanceof L2AsmDisasmError) || error.line === undefined)
+    return null
+  return {
+    message: error.field ? `${error.field}: ${error.detail}` : error.detail,
+    line: error.line,
+    column: error.column ?? 1,
+  }
+}
 
 function attempt(run: () => string): { text: string } | { error: string } {
   try {
@@ -90,8 +117,15 @@ scope.onmessage = ({ data }) => {
   }
   try {
     const plain = assemble(data.text, parseSchema(data.definition, data.client))
-    scope.postMessage({ kind: 'save', plain, error: '' }, [plain.buffer])
+    scope.postMessage({ kind: 'save', plain, error: '', problem: null }, [
+      plain.buffer,
+    ])
   } catch (error) {
-    scope.postMessage({ kind: 'save', plain: null, error: messageOf(error) })
+    scope.postMessage({
+      kind: 'save',
+      plain: null,
+      error: messageOf(error),
+      problem: problemOf(error),
+    })
   }
 }

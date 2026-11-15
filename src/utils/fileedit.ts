@@ -1,6 +1,6 @@
 import { decode, encode, initParams, type Options } from 'l2encdec'
 import { parseSchemas } from 'l2asmdisasm'
-import type { DatRequest, DatResponse } from '@/utils/dat.worker'
+import type { DatRequest, DatResponse, SaveProblem } from '@/utils/dat.worker'
 
 export const fileTypes = ['.dat', '.ini', '.txt']
 
@@ -214,6 +214,15 @@ export async function openDatInWorker(
   return response
 }
 
+export class SaveError extends Error {
+  readonly problem: SaveProblem | null
+
+  constructor(message: string, problem: SaveProblem | null) {
+    super(message)
+    this.problem = problem
+  }
+}
+
 async function assembleInWorker(
   text: string,
   document: DatDocument,
@@ -224,8 +233,8 @@ async function assembleInWorker(
     definition: document.definition.text,
     client: document.client,
   })
-  if (response.kind !== 'save' || !response.plain)
-    throw new Error(response.error || 'Unexpected worker response')
+  if (response.kind !== 'save') throw new Error('Unexpected worker response')
+  if (!response.plain) throw new SaveError(response.error, response.problem)
   return response.plain
 }
 
@@ -236,10 +245,3 @@ export const serialize = (
   document.kind === 'dat'
     ? assembleInWorker(text, document)
     : Promise.resolve(encodeText(text, document.format))
-
-export function errorLocation(
-  message: string,
-): { line: number; column: number } | null {
-  const match = /\(line (\d+), column (\d+)\)/.exec(message)
-  return match ? { line: Number(match[1]), column: Number(match[2]) } : null
-}
