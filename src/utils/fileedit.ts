@@ -1,4 +1,10 @@
-import { decode, encode, initParams, type Options } from 'l2encdec'
+import {
+  decode,
+  detectProtocol,
+  encode,
+  initParams,
+  type Options,
+} from 'l2encdec'
 import { parseSchemas } from 'l2asmdisasm'
 import type { DatRequest, DatResponse, SaveProblem } from '@/utils/dat.worker'
 
@@ -45,8 +51,6 @@ export interface DatDocument extends BaseDocument {
 
 export type FileDocument = TextDocument | DatDocument
 
-const HEADER_PREFIX = 'Lineage2Ver'
-const HEADER_SIZE = 28
 const UTF16_BOM = new Uint8Array([0xff, 0xfe])
 const UTF8_BOM = new Uint8Array([0xef, 0xbb, 0xbf])
 
@@ -63,24 +67,11 @@ export const languageOf = (name: string): Language =>
       ? 'ini'
       : 'l2txt'
 
-export function detectProtocol(file: Uint8Array): number {
-  if (file.length < HEADER_SIZE) return 0
-  let text = ''
-  for (let i = 0; i < HEADER_SIZE; i += 2) {
-    if (file[i + 1] !== 0) return 0
-    text += String.fromCharCode(file[i])
-  }
-  const digits = text.slice(HEADER_PREFIX.length)
-  return text.startsWith(HEADER_PREFIX) && /^\d+$/.test(digits)
-    ? Number(digits)
-    : 0
-}
-
 export async function unwrap(
   file: Uint8Array,
   name: string,
 ): Promise<{ container: Container; plain: Uint8Array }> {
-  const protocol = detectProtocol(file)
+  const protocol = detectProtocol(file) ?? 0
   if (!protocol)
     return { container: { protocol, legacyRsa: false }, plain: file }
   const rsa = protocol >= 411 && protocol <= 414
