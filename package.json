@@ -18,15 +18,15 @@
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
-    "i18next": "^27.1.2",
+    "i18next": "^27.2.4",
     "l2asmdisasm": "^1.0.2",
-    "l2encdec": "^1.0.5",
+    "l2encdec": "^1.0.6",
     "l2txt": "^1.0.2",
-    "monaco-editor": "^0.58.0-dev-20261111",
-    "next": "^16.5.0-canary.51",
+    "monaco-editor": "^0.58.0-dev-20261121",
+    "next": "^16.5.0-canary.60",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "react-i18next": "^18.0.1",
+    "react-i18next": "^18.0.3",
     "styled-components": "^6.6.0"
   },
   "devDependencies": {
@@ -36,9 +36,9 @@
     "@types/react-dom": "^19.3.0",
     "babel-plugin-react-compiler": "^1.0.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.6.0",
-    "oxlint": "^1.93.0",
-    "oxlint-tsgolint": "^7.0.2007",
+    "lint-staged": "^17.6.2",
+    "oxlint": "^1.94.0",
+    "oxlint-tsgolint": "^7.0.2008",
     "prettier": "^3.10.1",
     "typescript": "^7.0.2"
   }
